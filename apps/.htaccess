@@ -1,0 +1,9 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^apps\.enriquegerena\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.apps\.enriquegerena\.com$
+RewriteRule ^/?$ "https\:\/\/egerena\.com\/apps" [R=301,L]
+RewriteCond %{HTTP_HOST} ^apps\.egerena\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.apps\.egerena\.com$
+RewriteRule ^/?$ "https\:\/\/egerena\.com\/apps" [R=301,L]
+

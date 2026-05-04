@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="green">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Games and experimental builds by egerena.com">
+    <meta name="author" content="egerena.com">
+    <title>Games - egerena.com</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/icon-192.png">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- CRT Scanlines -->
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <!-- Breadcrumb + Theme Switcher + Mute -->
+    <nav class="top-bar">
+        <div class="breadcrumb">
+            &gt; <a href="https://egerena.com">egerena.com</a>/games<span class="cursor-blink">_</span>
+        </div>
+        <div class="top-controls">
+            <button class="mute-btn" id="muteBtn" title="Toggle hover sounds" aria-label="Toggle hover sounds">&#9834;</button>
+            <div class="theme-switcher" id="themeSwitcher">
+                <button class="theme-trigger" id="themeTrigger" aria-label="Switch theme" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="theme-dot" id="themeDot"></span>
+                    <span id="themeName">green</span>
+                    <span class="theme-caret">&#9662;</span>
+                </button>
+                <div class="theme-dropdown" id="themeDropdown" role="listbox">
+                    <div class="theme-option" data-theme="green" role="option">
+                        <span class="theme-dot" style="background:#5fff8c"></span>green
+                        <span class="theme-check">&#10003;</span>
+                    </div>
+                    <div class="theme-option" data-theme="amber" role="option">
+                        <span class="theme-dot" style="background:#ffb84d"></span>amber
+                        <span class="theme-check">&#10003;</span>
+                    </div>
+                    <div class="theme-option" data-theme="ice" role="option">
+                        <span class="theme-dot" style="background:#5fcfff"></span>ice
+                        <span class="theme-check">&#10003;</span>
+                    </div>
+                    <div class="theme-option" data-theme="white" role="option">
+                        <span class="theme-dot" style="background:#e8e8e8"></span>white
+                        <span class="theme-check">&#10003;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="header">
+            <h1>GAMES</h1>
+            <p>// experimental builds</p>
+        </header>
+
+        <div class="folders-grid">
+            <!-- Active: STDERR -->
+            <a href="game001.html" class="folder-link">
+                <div class="folder-card active" data-game="stderr">
+                    <span class="badge badge-active">&gt; play_</span>
+                    <div class="folder-icon">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                            <polygon points="6,4 6,20 20,12" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="folder-content">
+                        <h3>stderr</h3>
+                        <p class="folder-description">v0.1 &middot; ready</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- WIP Cards -->
+            <div class="folder-card wip">
+                <span class="badge badge-wip">build</span>
+                <div class="folder-icon wip-icon">~</div>
+                <div class="folder-content">
+                    <h3>game002</h3>
+                    <p class="folder-description">compiling...</p>
+                </div>
+            </div>
+
+            <div class="folder-card wip">
+                <span class="badge badge-wip">wip</span>
+                <div class="folder-icon wip-icon">&#9671;</div>
+                <div class="folder-content">
+                    <h3>game003</h3>
+                    <p class="folder-description">in progress...</p>
+                </div>
+            </div>
+
+            <div class="folder-card wip">
+                <span class="badge badge-wip">dev</span>
+                <div class="folder-icon wip-icon">&hellip;</div>
+                <div class="folder-content">
+                    <h3>game004</h3>
+                    <p class="folder-description">await commit_</p>
+                </div>
+            </div>
+
+            <div class="folder-card wip">
+                <span class="badge badge-wip">beta</span>
+                <div class="folder-icon wip-icon">&#8865;</div>
+                <div class="folder-content">
+                    <h3>game005</h3>
+                    <p class="folder-description">staging...</p>
+                </div>
+            </div>
+
+            <div class="folder-card wip">
+                <span class="badge badge-wip">~</span>
+                <div class="folder-icon wip-icon">&#9638;</div>
+                <div class="folder-content">
+                    <h3>game006</h3>
+                    <p class="folder-description">init: 0%</p>
+                </div>
+            </div>
+
+            <!-- Locked Cards -->
+            <div class="folder-card locked">
+                <span class="badge badge-locked">denied</span>
+                <div class="folder-icon locked-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <line x1="4" y1="4" x2="20" y2="20"/>
+                        <line x1="20" y1="4" x2="4" y2="20"/>
+                    </svg>
+                </div>
+                <div class="folder-content">
+                    <h3>[encrypted]</h3>
+                    <p class="folder-description">access denied</p>
+                </div>
+            </div>
+
+            <div class="folder-card locked">
+                <span class="badge badge-locked">denied</span>
+                <div class="folder-icon locked-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <line x1="4" y1="4" x2="20" y2="20"/>
+                        <line x1="20" y1="4" x2="4" y2="20"/>
+                    </svg>
+                </div>
+                <div class="folder-content">
+                    <h3>[encrypted]</h3>
+                    <p class="folder-description">access denied</p>
+                </div>
+            </div>
+
+            <div class="folder-card locked">
+                <span class="badge badge-locked">denied</span>
+                <div class="folder-icon locked-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <line x1="4" y1="4" x2="20" y2="20"/>
+                        <line x1="20" y1="4" x2="4" y2="20"/>
+                    </svg>
+                </div>
+                <div class="folder-content">
+                    <h3>[encrypted]</h3>
+                    <p class="folder-description">access denied</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2003-2026 <a href="https://egerena.com">egerena.com</a>
+    </footer>
+
+    <!-- Konami code message overlay -->
+    <div class="konami-msg" id="konamiMsg">&gt; cheat code accepted_</div>
+
+    <script src="index.js"></script>
+</body>
+</html>

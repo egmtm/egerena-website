@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EGM Downloader - Professional video downloader with zero-config setup for Linux. 1000+ supported sites, smart quality selection, and concurrent downloads.">
+    <meta name="keywords" content="video downloader, youtube downloader, yt-dlp, linux downloader, multi-site downloader, appimage">
+    <meta name="author" content="egerena.com">
+    <meta property="og:title" content="EGM Downloader v0.93 - Professional Video Downloader for Linux">
+    <meta property="og:description" content="Professional video downloader with zero-config setup for Linux. 1000+ supported sites, smart quality selection, and concurrent downloads.">
+    <meta property="og:url" content="https://egerena.com/apps/egml.html">
+    <title>EGM Downloader for Linux</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="egml.css">
+</head>
+<body>
+    <!-- Matrix Rain Effect -->
+    <canvas id="matrixRain"></canvas>
+    <script src="matrix.js"></script>
+    <script src="egml-color.js"></script>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="index.html">
+                <span class="nav-long">user@linux:~/apps$ cd ..</span>
+                <span class="nav-short">cd ../</span>
+            </a>
+            <a href="https://egerena.com">
+                <span class="nav-long">$ cat ~/egerena.com</span>
+                <span class="nav-short">egerena.com</span>
+            </a>
+            <a href="egm.html">
+                <span class="nav-long">$ ./egm.exe --platform=windows</span>
+                <span class="nav-short">./win.exe</span>
+            </a>
+            <a href="egmac.html">
+                <span class="nav-long">$ ./egm.dmg --platform=macos</span>
+                <span class="nav-short">./mac.dmg</span>
+            </a>
+            <select id="themeSelector" class="theme-selector">
+                <option value="#00ff41">GREEN</option>
+                <option value="#ffb000">AMBER</option>
+                <option value="#00d9ff">CYAN</option>
+                <option value="#c084fc">PURPLE</option>
+                <option value="#ff4444">RED</option>
+            </select>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo-ascii">███████╗  ██████╗  ███╗   ███╗
+██╔════╝ ██╔════╝  ████╗ ████║
+█████╗   ██║  ███╗ ██╔████╔██║
+██╔══╝   ██║   ██║ ██║╚██╔╝██║
+███████╗ ╚██████╔╝ ██║ ╚═╝ ██║
+╚══════╝  ╚═════╝  ╚═╝     ╚═╝
+     ▼▼▼ DOWNLOADER ▼▼▼<span class="cursor"></span></div>
+        
+        <p class="tagline">Download from <a href="https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md" target="_blank" rel="noopener noreferrer">1000+ sites</a> — video, audio, playlists. Runs on your machine. No accounts, no cloud, no tracking.</p>
+
+        <!-- Features Section -->
+        <section class="section">
+            <div class="terminal-box">
+                <div class="section-header">> FEATURES</div>
+                <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h3>[✓] 1000+ Sites</h3>
+                    </div>
+                    <div class="feature-item">
+                        <h3>[✓] Zero-Config</h3>
+                    </div>
+                    <div class="feature-item">
+                        <h3>[✓] Quality Select</h3>
+                    </div>
+                    <div class="feature-item">
+                        <h3>[✓] Playlists</h3>
+                    </div>
+                    <div class="feature-item">
+                        <h3>[✓] Parallel DL</h3>
+                    </div>
+                    <div class="feature-item">
+                        <h3>[✓] 120 Themes</h3>
+                    </div>
+                    <div class="feature-item">
+                        <h3>[✓] Audio Quality</h3>
+                    </div>
+                    <div class="feature-item">
+                        <h3>[✓] ffmpeg Bundled</h3>
+                    </div>
+                    <div class="feature-item">
+                        <h3>[✓] Progress Tracking</h3>
+                    </div>
+                    <div class="feature-item">
+                        <h3>[✓] Batch Operations</h3>
+                    </div>
+                    <div class="feature-item">
+                        <h3>[✓] DL History</h3>
+                    </div>
+                    <div class="feature-item">
+                        <h3>[✓] Theme Import/Export</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section class="section">
+            <div class="terminal-box download-section">
+                <h3>> EGM_DOWNLOADER_v0.98.5<span class="dl-ext">.AppImage</span></h3>
+                <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
+                <p class="sha256-line" style="margin-top:10px">SHA256: d683348a1f16fa2c86c0a74f6071965113b05db10d4713c781ea053a643e8a42</p>
+            </div>
+        </section>
+
+        <!-- What's New Section -->
+        <section class="section">
+            <div class="terminal-box">
+                <div class="section-header">> WHAT'S NEW IN v0.98.5</div>
+                <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
+                <div class="whats-new-subtitle">v0.98.5 — 5/2/2026</div>
+                <p class="terminal-command">$ changelog --latest</p>
+                <ul>
+                    <li>Electron runtime upgraded to v41.5.0 (security and compatibility improvements; v29 line is end-of-life with no security backports — this upgrade incorporates accumulated Chromium security fixes and backported CVEs from the Electron security advisory line)</li>
+                    <li>electron-builder updated to v26.8.1 (build toolchain compatibility with Electron 41)</li>
+                    <li>Improved window initialization reliability — main window now appears consistently when launched from file manager or application launcher on GNOME/Mutter compositors (Ubuntu 24 and similar distros)</li>
+                    <li>Open folder from the expanded download history panel does not work — use the hamburger menu's open folder action instead. Fix planned for next release.</li>
+                    <li>Splash window and certain secondary panels (themes, expanded history, footer link popups) may appear off-center (typically top-left) on first display. Functional behavior unaffected. Targeted fix planned for next release.</li>
+                    <li>Cookies browse dialog does not open on Linux. Linux-specific issue, fix planned for upcoming release.</li>
+                </ul>
+                
+                <details class="history-details">
+                    <summary class="history-summary">$ changelog --show-all</summary>
+                    <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v0.98 — 4/28/2026</div>
+                        <ul>
+                            <li>URL input pane redesigned — compact unified buttons, textarea auto-grows as URLs are added</li>
+                            <li>Drag and drop URLs directly into the URL textarea</li>
+                            <li>Keyboard shortcuts — paste-and-fetch (Ctrl+V / ⌘V), clear (Esc), Fetch Info (Ctrl+Enter / ⌘Return)</li>
+                            <li>All Themes window redesigned — left sidebar categories, compact search bar</li>
+                            <li>Download subtitles, embed metadata, output format selector added to Advanced panel</li>
+                            <li>Video quality expanded — 8K, 4K, 2K added; audio expanded — M4A and OPUS added</li>
+                            <li>Distribution zips now unencrypted — SHA256 replaces password as integrity mechanism</li>
+                            <li>What's New modal reads release notes live from the JSON feed</li>
+                            <li>14 new themes (120 total) — Destiny characters, Hyrule, Velvet Rose, Nocturnix, Hanami, Sugar Riot and more</li>
+                            <li>6 Mood themes — Melancholy, Euphoria, Tension, Serenity, Nostalgia, Focus</li>
+                            <li>Security hardening — URL scheme validation, IPC input allowlists, open-folder path safety</li>
+                            <li>App size reduced ~40MB — Python bundle stripped</li>
+                        </ul>
+
+                        <div class="whats-new-subtitle history-version">v0.97.5 — 4/26/2026</div>
+                        <ul>
+                            <li>100 themes total — 90 permanent across 10 categories plus 10 seasonal easter eggs</li>
+                            <li>14 brand new themes: Music, Nature, Cities categories added</li>
+                            <li>Advanced panel redesigned — sectioned layout with uniform button rows</li>
+                            <li>Security hardening — URL scheme validation, IPC input allowlists, concurrent_fragments clamped</li>
+                            <li>App size reduced ~40MB — Python bundle stripped</li>
+                            <li>Footer spacing tightened for a cleaner layout</li>
+                        </ul>
+
+                        <div class="whats-new-subtitle history-version">v0.97 — 4/26/2026</div>
+                        <ul>
+                            <li>76 themes total — 66 permanent across 8 categories plus 10 seasonal easter eggs</li>
+                            <li>Brand new Themes window — browse all themes in a grid, filter by category, search by name, click to apply instantly</li>
+                            <li>Theme picker always shows your 10 most recently used themes for quick switching</li>
+                            <li>Download History and Themes windows now match your active theme and update live when you switch</li>
+                            <li>Vertical video thumbnails (TikTok, Shorts, Reels) display with the correct portrait aspect ratio</li>
+                            <li>Select video quality before bulk downloads — Best, 1080p, 720p, 480p, or 360p</li>
+                            <li>Download history updates instantly in the panel when a download completes</li>
+                            <li>Plugin update toggles control the Install Updates button — only appears when something needs updating</li>
+                        </ul>
+
+                        <div class="whats-new-subtitle history-version">v0.96 — 4/25/2026</div>
+                        <ul>
+                            <li>Download History with full search, filter, and sort — access from the hamburger menu</li>
+                            <li>Theme import and export — save any theme as a file and share it</li>
+                            <li>Settings and preferences export and import via native file dialogs</li>
+                            <li>Footer redesigned with version pill, Check for Updates, and Support EGM donate button</li>
+                            <li>Cookies section redesigned as a single compact line with browser extension links</li>
+                            <li>Desktop shortcut creation moved to the Advanced settings panel</li>
+                            <li>Update and error states now show as non-intrusive toasts</li>
+                        </ul>
+                        
+                        <div class="whats-new-subtitle history-version">v0.95 — 4/25/2026</div>
+                        <ul>
+                            <li>New Transmission Halo logo — fully adaptive, looks great on every theme</li>
+                            <li>6 new themes replacing the old dark/light toggle</li>
+                            <li>Smooth theme transitions across the whole interface</li>
+                            <li>Audio quality picker for bulk downloads — choose MP3 bitrate or FLAC</li>
+                            <li>ETA and file size shown on active download cards</li>
+                            <li>Window size and position remembered across launches</li>
+                            <li>Advanced settings panel with port configuration, cache clearing, and reinstall options</li>
+                            <li>What's New modal shown automatically on first launch after an update</li>
+                            <li>Friendly error messages for private videos, region locks, and other common failures</li>
+                        </ul>
+                        
+                        <div class="whats-new-subtitle history-version">v0.94 — 4/25/2026</div>
+                        <ul>
+                            <li>Light theme added — Cool Slate palette, toggleable via moon/sun button in header top-right. Preference saved via localStorage and restored on next launch. Dark mode remains the default.</li>
+                            <li>All hardcoded surface/button/overlay colors moved to CSS variables — both themes respect every UI element including thumbnails, modals, log panel, and status badges.</li>
+                        </ul>
+                        
+                        <div class="whats-new-subtitle history-version">v0.93 — 4/24/2026</div>
+                        <ul>
+                            <li>Version sync across Windows, macOS, and Linux</li>
+                            <li>Fixed yt-dlp, ffmpeg, and Deno install on all platforms</li>
+                            <li>Fixed window icon on all platforms</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Roadmap Section -->
+        <section class="section">
+            <div class="terminal-box">
+                <div class="section-header">> WHAT'S COMING</div>
+                <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
+
+                <div class="whats-new-subtitle">v0.99 — Multi-language UI</div>
+                <ul>
+                    <li>Globe icon language picker — English, Spanish, Portuguese, French, German, Italian, Dutch, Japanese, Arabic, and Russian at launch</li>
+                    <li>In-app language switcher — translations already complete for all 10 languages; picker UI ships with v0.99</li>
+                    <li>Community translation system — export any language file, edit it, import it back; custom imports appear alongside the original</li>
+                    <li>10–20 new themes</li>
+                </ul>
+
+                <div class="whats-new-subtitle history-version">v1.0 — Subscriptions</div>
+                <ul>
+                    <li>Save any channel or playlist and check for new videos automatically</li>
+                    <li>Download what's new in one click</li>
+                    <li>Dedicated subscriptions tab and full management window</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Installation Section -->
+        <section class="section">
+            <div class="terminal-box">
+                <div class="section-header">> INSTALLATION</div>
+                <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
+                <p class="terminal-command">$ cd ~/Downloads</p>
+                <p class="terminal-command">$ unzip EGMdL.zip && chmod +x "EGM Downloader.AppImage" && ./"EGM Downloader.AppImage"</p>
+                <div class="terminal-note">
+                    <strong>[!] Run from terminal:</strong> Open your terminal (Ctrl+Alt+T on most distros), navigate to where you downloaded the zip, then run the command above. The AppImage will launch immediately after making it executable.
+                </div>
+                <div class="terminal-note">
+                    <strong>[!] First run:</strong> ~90MB ffmpeg auto-install
+                </div>
+                <div class="terminal-note">
+                    <strong>[!] FUSE error?</strong> Install libfuse2:<br>
+                    <code>$ sudo apt install libfuse2</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Requirements -->
+        <section class="section">
+            <div class="terminal-box">
+                <div class="section-header">> SYSTEM REQUIREMENTS</div>
+                <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
+                <ul>
+                    <li>Linux x86_64 (64-bit)</li>
+                    <li>Desktop environment (GNOME, KDE, XFCE, etc.)</li>
+                    <li>~200 MB disk space (initial), ~300 MB after first run</li>
+                </ul>
+                <div class="section-divider" style="margin-top:1.5rem">─────────────────────────────────────────────────────────────────────</div>
+                <div class="section-header" style="margin-top:1rem">> COMPATIBLE DISTRIBUTIONS</div>
+                <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Family</th>
+                            <th>Distributions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ubuntu / Debian</td>
+                            <td>Ubuntu 20.04, 22.04, 24.04 · Linux Mint 20, 21, 22 · Pop!_OS 22.04 · Zorin OS 16, 17 · elementary OS 7 · Debian 11, 12 · KDE Neon</td>
+                        </tr>
+                        <tr>
+                            <td>Fedora / RHEL</td>
+                            <td>Fedora 39, 40, 41 · Rocky Linux 9 · AlmaLinux 9</td>
+                        </tr>
+                        <tr>
+                            <td>openSUSE</td>
+                            <td>Leap 15.5 · Tumbleweed</td>
+                        </tr>
+                        <tr>
+                            <td>Arch</td>
+                            <td>Arch Linux · Manjaro · EndeavourOS</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="distro-note">
+                    Other x86_64 distros with glibc 2.17+ should also work.
+                </p>
+            </div>
+        </section>
+
+        <!-- GitHub -->
+        <section class="section">
+            <div class="terminal-box">
+                <div class="section-header">> OPEN SOURCE</div>
+                <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
+                <p class="git-clone">
+                    $ git clone <a href="https://github.com/egmtm/EGM-Downloader" target="_blank" rel="noopener noreferrer">https://github.com/egmtm/EGM-Downloader</a>
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        © 2003-2026 <a href="https://egerena.com">egerena.com</a>
+    </footer>
+</body>
+</html>

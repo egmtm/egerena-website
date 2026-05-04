@@ -1,0 +1,82 @@
+---
+# ─────────────────────────────────────────────────────────────────
+# egerena.com — cPanel Git Auto-Deploy Configuration
+# ─────────────────────────────────────────────────────────────────
+#
+# This file controls what gets deployed to the live server when
+# cPanel pulls the `live` branch.
+#
+# CRITICAL SECURITY MODEL: explicit allowlist only.
+# Every deployable file is listed individually below.
+# Files NOT listed here are NEVER touched by the deploy.
+#
+# Files intentionally EXCLUDED (managed manually on server):
+#   - config.php           (SMTP secrets, chmod 600)
+#   - phpmailer/           (third-party library, manually updated)
+#   - games/game001-scores.json     (runtime leaderboard data)
+#   - games/game001-ratelimit.json  (runtime rate-limit data)
+#
+# Files intentionally EXCLUDED (repo-only, not server-deployable):
+#   - README.md            (repo documentation)
+#   - THIRD_PARTY.md       (repo documentation)
+#   - .gitignore           (Git config)
+#   - .cpanel.yml          (this file)
+#
+# DEPLOYPATH: Set during cPanel Git setup (Session 2).
+# Initial target: staging directory (non-public).
+# Final target: /home/USERNAME/public_html/ (production).
+#
+# See README.md for full deploy flow context.
+# See THIRD_PARTY.md for excluded-file rationale.
+# ─────────────────────────────────────────────────────────────────
+
+deployment:
+  tasks:
+    # DEPLOYPATH gets set in cPanel Git config; placeholder until Session 2
+    - export DEPLOYPATH=/home/USERNAME/public_html/
+
+    # ── Ensure target subdirectories exist ──────────────────────
+    - /bin/mkdir -p ${DEPLOYPATH}apps/
+    - /bin/mkdir -p ${DEPLOYPATH}games/
+
+    # ── Root files ──────────────────────────────────────────────
+    - /bin/cp .htaccess ${DEPLOYPATH}
+    - /bin/cp 403.html ${DEPLOYPATH}
+    - /bin/cp 404.html ${DEPLOYPATH}
+    - /bin/cp 500.html ${DEPLOYPATH}
+    - /bin/cp app.js ${DEPLOYPATH}
+    - /bin/cp egc.png ${DEPLOYPATH}
+    - /bin/cp egmm.png ${DEPLOYPATH}
+    - /bin/cp icon-192.png ${DEPLOYPATH}
+    - /bin/cp icon-512.png ${DEPLOYPATH}
+    - /bin/cp index.html ${DEPLOYPATH}
+    - /bin/cp quote-form-handler.php ${DEPLOYPATH}
+    - /bin/cp robots.txt ${DEPLOYPATH}
+    - /bin/cp style.css ${DEPLOYPATH}
+
+    # ── /apps/ — desktop app product pages ──────────────────────
+    - /bin/cp apps/.htaccess ${DEPLOYPATH}apps/
+    - /bin/cp apps/egm-theme.js ${DEPLOYPATH}apps/
+    - /bin/cp apps/egm.css ${DEPLOYPATH}apps/
+    - /bin/cp apps/egm.html ${DEPLOYPATH}apps/
+    - /bin/cp apps/egmac-glass.css ${DEPLOYPATH}apps/
+    - /bin/cp apps/egmac-theme.js ${DEPLOYPATH}apps/
+    - /bin/cp apps/egmac.html ${DEPLOYPATH}apps/
+    - /bin/cp apps/egml-color.js ${DEPLOYPATH}apps/
+    - /bin/cp apps/egml.css ${DEPLOYPATH}apps/
+    - /bin/cp apps/egml.html ${DEPLOYPATH}apps/
+    - /bin/cp apps/index.css ${DEPLOYPATH}apps/
+    - /bin/cp apps/index.html ${DEPLOYPATH}apps/
+    - /bin/cp apps/matrix.js ${DEPLOYPATH}apps/
+
+    # ── /games/ — games hub + STDERR ────────────────────────────
+    # game001-scores.json INTENTIONALLY EXCLUDED (runtime data)
+    # game001-ratelimit.json INTENTIONALLY EXCLUDED (runtime data)
+    - /bin/cp games/game001-scores.php ${DEPLOYPATH}games/
+    - /bin/cp games/game001.html ${DEPLOYPATH}games/
+    - /bin/cp games/index.css ${DEPLOYPATH}games/
+    - /bin/cp games/index.html ${DEPLOYPATH}games/
+    - /bin/cp games/index.js ${DEPLOYPATH}games/
+
+    # ── Done ────────────────────────────────────────────────────
+    - /bin/echo "✅ egerena.com deploy complete — $(date '+%Y-%m-%d %H:%M:%S %Z')"

@@ -1,0 +1,39 @@
+# ── Server-side secrets (NEVER commit) ────────────────────────
+config.php
+.env
+.env.local
+*.key
+*.pem
+secrets.json
+
+# ── Third-party libraries (manually managed on server) ────────
+phpmailer/
+
+# ── Runtime data (server-managed, reset on deploy = bad) ──────
+games/game001-scores.json
+games/game001-ratelimit.json
+
+# ── Build / dependency artifacts ──────────────────────────────
+node_modules/
+dist/
+build/
+
+# ── Logs ──────────────────────────────────────────────────────
+*.log
+logs/
+error_log
+
+# ── OS / IDE noise ────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Temp ──────────────────────────────────────────────────────
+*.tmp
+temp/
+tmp/

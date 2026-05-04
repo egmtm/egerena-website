@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>403 – Access Forbidden</title>
+  <link rel="icon" type="image/png" href="./icon-192.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./style.css"/>
+  <style>
+    .error-code{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:var(--muted);margin-bottom:1rem}
+    .error-msg{font-size:.9rem;line-height:1.9;letter-spacing:.03em;color:var(--muted);max-width:360px;margin-bottom:2rem}
+    .home-link{font-size:.72rem;letter-spacing:.14em;color:var(--tag-fg);text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:color .3s}
+    .home-link .arrow{transition:transform .3s}
+    .home-link:hover{color:var(--fg)}
+    .home-link:hover .arrow{transform:translateX(4px)}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="logo-wrap">
+      <img class="logo-dark"  src="./egmm.png" alt="EGerena.com logo"/>
+      <img class="logo-light" src="./egc.png"  alt="EGerena.com logo"/>
+    </div>
+    <p class="error-code">403</p>
+    <p class="error-msg">You don't have permission to access this resource.</p>
+    <a class="home-link" href="/">
+      <span class="arrow">←</span><span>Back to Home</span>
+    </a>
+  </main>
+</body>
+</html>

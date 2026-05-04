@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EGM Downloader - Professional video downloader for Windows. 1000+ supported sites, smart quality selection, and concurrent downloads.">
+    <meta name="keywords" content="video downloader, youtube downloader, yt-dlp, windows downloader, multi-site downloader">
+    <meta name="author" content="egerena.com">
+    <meta property="og:title" content="EGM Downloader v0.98.5 - Professional Video Downloader">
+    <meta property="og:description" content="Professional video downloader with zero-config setup. 1000+ supported sites, smart quality selection, and concurrent downloads.">
+    <meta property="og:url" content="https://egerena.com/apps/egm.html">
+    <title>EGM Downloader for Windows</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Segoe+UI:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="egm.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="index.html">← Back to Apps</a>
+            <a href="https://egerena.com">egerena.com</a>
+            <a href="egmac.html">macOS</a>
+            <a href="egml.html">Linux</a>
+            <button class="win-toggle" id="themeToggle" title="Switch theme">⊞</button>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <section class="hero">
+            <div class="logo-ascii">███████╗  ██████╗  ███╗   ███╗
+██╔════╝ ██╔════╝  ████╗ ████║
+█████╗   ██║  ███╗ ██╔████╔██║
+██╔══╝   ██║   ██║ ██║╚██╔╝██║
+███████╗ ╚██████╔╝ ██║ ╚═╝ ██║
+╚══════╝  ╚═════╝  ╚═╝     ╚═╝
+     ▼▼▼ DOWNLOADER ▼▼▼</div>
+            <p class="tagline">Download from <a href="https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md" target="_blank" rel="noopener noreferrer">1000+ sites</a> — video, audio, playlists. Runs on your machine. No accounts, no cloud, no tracking.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Features</h2>
+            <div class="features-grid">
+                <div class="feature-item"><span>1000+ Supported Sites</span></div>
+                <div class="feature-item"><span>Zero-Config Setup</span></div>
+                <div class="feature-item"><span>Playlist Support</span></div>
+                <div class="feature-item"><span>Smart Quality Selection</span></div>
+                <div class="feature-item"><span>120 Custom Themes</span></div>
+                <div class="feature-item"><span>Concurrent Downloads</span></div>
+                <div class="feature-item"><span>Built-in FFmpeg</span></div>
+                <div class="feature-item"><span>Auto-Updates</span></div>
+                <div class="feature-item"><span>Progress Tracking</span></div>
+                <div class="feature-item"><span>Audio Quality Selection</span></div>
+                <div class="feature-item"><span>Batch Operations</span></div>
+                <div class="feature-item"><span>Download History</span></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="card download-card">
+                <h2 class="download-title">EGM Downloader v0.98.5</h2>
+                <a href="https://egerena.com/apps/EGMd.zip" class="download-btn">Download EGM Downloader</a>
+                <p class="version-subtitle">Installer &middot; adds Start Menu shortcut &middot; auto-updates</p>
+                <p class="sha256-line">SHA256: 612ddb4763d924371b8080ebd947efceeca0fab1210f7c75e9eebb8773eaaf20</p>
+                <div class="portable-divider"><span>or</span></div>
+                <a href="https://egerena.com/apps/EGMd-portable.zip" class="download-btn download-btn-secondary">Get the portable version</a>
+                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly</p>
+                <p class="sha256-line">SHA256: ce80634e410ee0dd0064f1ab782c9918d0cada065137f88e261664861847455b</p>
+                <div class="whats-new">
+                    <p class="whats-new-heading">What's New in v0.98.5 — 5/2/2026</p>
+                    <ul>
+                        <li>Electron runtime upgraded to v41.5.0 (security and compatibility improvements; v29 line is end-of-life with no security backports — this upgrade incorporates accumulated Chromium security fixes and backported CVEs from the Electron security advisory line)</li>
+                        <li>electron-builder updated to v26.8.1 (build toolchain compatibility with Electron 41)</li>
+                        <li>Open folder from the expanded download history panel does not work — use the hamburger menu's open folder action instead. Fix planned for next release.</li>
+                    </ul>
+                </div>
+                <details class="history-details">
+                    <summary class="history-summary">Previous Updates</summary>
+                    <div class="history-content">
+                        <div class="history-item">
+                            <p class="history-version">v0.98 — 4/28/2026</p>
+                            <ul>
+                                <li>URL input pane redesigned — compact unified buttons, textarea shrinks to 3 lines by default and auto-grows as URLs are added</li>
+                                <li>Drag and drop URLs directly into the URL textarea — visual drag-over feedback, filters comment lines, appends cleanly</li>
+                                <li>Keyboard shortcuts — paste-and-fetch (Ctrl+V / ⌘V), clear textarea (Esc), trigger Fetch Info (Ctrl+Enter / ⌘Return)</li>
+                                <li>All Themes window redesigned — categories moved to left sidebar with collapsible sections; search bar compact; category counts shown</li>
+                                <li>Download subtitles, embed metadata, output format selector added to Advanced panel</li>
+                                <li>Video quality expanded — 8K, 4K, 2K added; audio expanded — M4A and OPUS added</li>
+                                <li>Checksum verification for auto-updates — SHA256 verified before extracting installer</li>
+                                <li>Distribution zips now unencrypted — SHA256 replaces password as integrity mechanism</li>
+                                <li>What's New modal reads release notes live from the JSON feed</li>
+                                <li>14 new themes (120 total) — Destiny characters, Hyrule, Velvet Rose, Nocturnix, Hanami, Sugar Riot and more</li>
+                                <li>6 Mood themes — Melancholy, Euphoria, Tension, Serenity, Nostalgia, Focus</li>
+                                <li>Security hardening — URL scheme validation, IPC input allowlists, open-folder path safety</li>
+                                <li>Windows portable edition — runs from any folder or USB stick; no installer, no registry</li>
+                                <li>Desktop shortcut button shows confirmation dialog; detects if shortcut already exists</li>
+                            </ul>
+                        </div>
+                        <div class="history-item">
+                            <p class="history-version">v0.97.5 — 4/26/2026</p>
+                            <ul>
+                                <li>100 themes total — 90 permanent across 10 categories plus 10 seasonal easter eggs</li>
+                                <li>14 brand new themes: Music, Nature, Cities categories added</li>
+                                <li>Advanced settings panel redesigned — sectioned layout with uniform button rows</li>
+                                <li>Security hardening — URL scheme validation, IPC input allowlists, concurrent_fragments clamped</li>
+                                <li>App size reduced ~40MB — Python bundle stripped of pip, setuptools, idlelib, tkinter, pycache</li>
+                                <li>Footer spacing tightened for a cleaner layout</li>
+                            </ul>
+                        </div>
+                        <div class="history-item">
+                            <p class="history-version">v0.97 — 4/26/2026</p>
+                            <ul>
+                                <li>76 themes total — 66 permanent across 8 categories plus 10 seasonal easter eggs</li>
+                                <li>Brand new Themes window — browse all themes in a grid, filter by category, search by name, click to apply instantly</li>
+                                <li>Theme picker always shows your 10 most recently used themes for quick switching</li>
+                                <li>Download History and Themes windows now match your active theme and update live when you switch</li>
+                                <li>Vertical video thumbnails (TikTok, Shorts, Reels) display with the correct portrait aspect ratio</li>
+                                <li>Select video quality before bulk downloads — Best, 1080p, 720p, 480p, or 360p</li>
+                                <li>Download history updates instantly in the panel when a download completes</li>
+                                <li>Plugin update toggles control the Install Updates button — only appears when something needs updating</li>
+                            </ul>
+                        </div>
+                        <div class="history-item">
+                            <p class="history-version">v0.96 — 4/25/2026</p>
+                            <ul>
+                                <li>Download History with full search, filter, and sort — access from the hamburger menu</li>
+                                <li>Theme import and export — save any theme as a file and share it</li>
+                                <li>Settings and preferences export and import via native file dialogs</li>
+                                <li>Automatic update check on launch — silent unless an update is found</li>
+                                <li>Footer redesigned with version pill, Check for Updates, and Support EGM donate button</li>
+                                <li>Cookies section redesigned as a single compact line with browser extension links</li>
+                                <li>Desktop shortcut creation moved to the Advanced settings panel</li>
+                                <li>Update and error states now show as non-intrusive toasts</li>
+                                <li>Auto-update: silent background download → toast with Restart Now button (8s)</li>
+                                <li>NSIS installer finish page — Add shortcut to desktop checkbox (unchecked by default)</li>
+                            </ul>
+                        </div>
+                        <div class="history-item">
+                            <p class="history-version">v0.95 — 4/25/2026</p>
+                            <ul>
+                                <li>New Transmission Halo logo — fully adaptive, looks great on every theme</li>
+                                <li>6 new themes replacing the old dark/light toggle</li>
+                                <li>Smooth theme transitions across the whole interface</li>
+                                <li>Audio quality picker for bulk downloads — choose MP3 bitrate or FLAC</li>
+                                <li>ETA and file size shown on active download cards</li>
+                                <li>Window size and position remembered across launches</li>
+                                <li>Minimize to tray on close — clicking X sends the app to the system tray; right-click tray icon to restore or quit</li>
+                                <li>Advanced settings panel with port configuration, cache clearing, and reinstall options</li>
+                                <li>What's New modal shown automatically on first launch after an update</li>
+                                <li>Friendly error messages for private videos, region locks, and other common failures</li>
+                            </ul>
+                        </div>
+                        <div class="history-item">
+                            <p class="history-version">v0.94 — 4/25/2026</p>
+                            <ul>
+                                <li>Light theme added — Cool Slate palette, toggleable via moon/sun button in header top-right. Preference saved via localStorage and restored on next launch. Dark mode remains the default.</li>
+                                <li>All hardcoded surface/button/overlay colors moved to CSS variables — both themes respect every UI element including thumbnails, modals, log panel, and status badges.</li>
+                            </ul>
+                        </div>
+                        <div class="history-item">
+                            <p class="history-version">v0.93 — 4/24/2026</p>
+                            <ul>
+                                <li>Version sync across Windows, macOS, and Linux</li>
+                                <li>Fixed yt-dlp, ffmpeg, and Deno install on all platforms</li>
+                                <li>Fixed window icon on all platforms</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="card">
+                <h2 class="section-title" style="margin-top:0">What's Coming</h2>
+                <div class="history-item">
+                    <p class="history-version">v0.99 — Multi-language UI</p>
+                    <ul>
+                        <li>Globe icon language picker — English, Spanish, Portuguese, French, German, Italian, Dutch, Japanese, Arabic, and Russian at launch</li>
+                        <li>In-app language switcher — translations already complete for all 10 languages; picker UI ships with v0.99</li>
+                        <li>Community translation system — export any language file, edit it, import it back; custom imports appear alongside the original</li>
+                        <li>10–20 new themes</li>
+                    </ul>
+                </div>
+                <div class="history-item">
+                    <p class="history-version">v1.0 — Subscriptions</p>
+                    <ul>
+                        <li>Save any channel or playlist and check for new videos automatically</li>
+                        <li>Download what's new in one click</li>
+                        <li>Dedicated subscriptions tab and full management window</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Requirements &amp; Installation</h2>
+            <div class="info-grid">
+                <div class="card info-card">
+                    <h3 class="info-heading">System Requirements</h3>
+                    <ul>
+                        <li>Windows 10 or 11 (64-bit)</li>
+                        <li><a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">Python 3.10 or newer</a></li>
+                        <li>~350 MB disk space (first launch)</li>
+                        <li>No admin rights required</li>
+                    </ul>
+                </div>
+                <div class="card info-card">
+                    <h3 class="info-heading">Installation</h3>
+                    <ol>
+                        <li>Extract <code>EGMd.zip</code></li>
+                        <li>Run <code>egm-setup.exe</code></li>
+                        <li>Follow the installer</li>
+                        <li>Launch from Start Menu or finish screen</li>
+                    </ol>
+                    <p class="install-note">First launch downloads ~350 MB of dependencies. Subsequent launches are near-instant.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <span>© 2003-2026 egerena.com</span>
+        <div class="footer-links">
+            <a href="https://egerena.com">Back to Main Page</a>
+            <span class="sep">•</span>
+            <a href="https://github.com/egmtm/EGM-Downloader" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+    </footer>
+
+    <script src="egm-theme.js"></script>
+</body>
+</html>

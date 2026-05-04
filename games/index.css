@@ -1,0 +1,492 @@
+/* Games Index — Terminal Cyberpunk */
+/* Four themes: green, amber, ice, white */
+
+/* ── Locked colors (constant across all themes) ── */
+:root {
+    --locked-color: #ff5555;
+    --locked-color-soft: #ff7575;
+    --locked-bd: #5a1f1f;
+    --locked-bg: #1a0808;
+}
+
+/* ── GREEN (default) ── */
+[data-theme="green"] {
+    --bg: #0a0a0a;
+    --accent: #5fff8c;
+    --accent-2: #3fa05c;
+    --text: #9fffb8;
+    --text-dim: #3fa05c;
+    --card-bg: #0e1410;
+    --card-bd: #2a4a35;
+    --active-bg: #0e1f15;
+    --wip-color: #d4a35f;
+    --wip-bg: #1a1408;
+    --hover-glow: rgba(95, 255, 140, 0.08);
+}
+
+/* ── AMBER ── */
+[data-theme="amber"] {
+    --bg: #0a0805;
+    --accent: #ffb84d;
+    --accent-2: #a87a2c;
+    --text: #ffd49b;
+    --text-dim: #a87a2c;
+    --card-bg: #1a1208;
+    --card-bd: #4a3a1a;
+    --active-bg: #251806;
+    --wip-color: #a89570;
+    --wip-bg: #15110a;
+    --hover-glow: rgba(255, 184, 77, 0.08);
+}
+
+/* ── ICE ── */
+[data-theme="ice"] {
+    --bg: #050810;
+    --accent: #5fcfff;
+    --accent-2: #3a8aab;
+    --text: #9fdfff;
+    --text-dim: #3a8aab;
+    --card-bg: #0a1320;
+    --card-bd: #1a3a5a;
+    --active-bg: #0a1f30;
+    --wip-color: #a890d4;
+    --wip-bg: #0f0a1a;
+    --hover-glow: rgba(95, 207, 255, 0.08);
+}
+
+/* ── WHITE ── */
+[data-theme="white"] {
+    --bg: #080808;
+    --accent: #e8e8e8;
+    --accent-2: #888888;
+    --text: #c8c8c8;
+    --text-dim: #6a6a6a;
+    --card-bg: #101010;
+    --card-bd: #3a3a3a;
+    --active-bg: #1a1a1a;
+    --wip-color: #888888;
+    --wip-bg: #0e0e0e;
+    --hover-glow: rgba(232, 232, 232, 0.06);
+}
+
+/* ── Transitions (350ms smooth) ── */
+body, .folder-card, .folder-icon, .folder-content h3,
+.folder-description, .badge, .breadcrumb, .breadcrumb a,
+.container, .header h1, .header p, footer, footer a,
+.theme-switcher, .theme-trigger, .theme-dropdown,
+.theme-option, .top-bar, .mute-btn {
+    transition:
+        background-color 350ms cubic-bezier(0.4, 0, 0.2, 1),
+        color 350ms cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 350ms cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { transition-duration: 0.001s !important; animation-duration: 0.001s !important; }
+}
+
+/* ── Reset ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+a { color: inherit; }
+
+/* ── CRT Scanlines ── */
+.scanlines {
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.025) 0 1px,
+        transparent 1px 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+    animation: scanScroll 8s linear infinite;
+}
+
+@keyframes scanScroll {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 200px; }
+}
+
+/* ── Top Bar (breadcrumb + controls) ── */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
+    position: relative;
+    z-index: 100;
+}
+
+.breadcrumb {
+    font-size: 0.875rem;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+}
+
+.breadcrumb a {
+    color: var(--accent-2);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover { color: var(--accent); }
+
+.cursor-blink {
+    animation: blink 1s step-end infinite;
+    color: var(--accent);
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* ── Top Controls (mute + theme switcher) ── */
+.top-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ── Mute Button ── */
+.mute-btn {
+    background: transparent;
+    border: 1px solid var(--card-bd);
+    color: var(--accent-2);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mute-btn:hover { border-color: var(--accent); color: var(--accent); }
+.mute-btn.muted { opacity: 0.35; }
+
+/* ── Theme Switcher ── */
+.theme-switcher { position: relative; }
+
+.theme-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-bd);
+    border-radius: 4px;
+    padding: 0.35rem 0.75rem;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text);
+    min-width: 110px;
+}
+
+.theme-trigger:hover { border-color: var(--accent); }
+
+.theme-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+.theme-caret { margin-left: auto; font-size: 0.7rem; opacity: 0.6; }
+
+.theme-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    background: var(--card-bg);
+    border: 1px solid var(--card-bd);
+    border-radius: 4px;
+    min-width: 140px;
+    z-index: 200;
+    overflow: hidden;
+}
+
+.theme-switcher.open .theme-dropdown { display: block; }
+.theme-switcher.open .theme-caret { transform: rotate(180deg); }
+
+.theme-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+}
+
+.theme-option:hover { background: var(--hover-glow); color: var(--text); }
+
+.theme-option .theme-check { margin-left: auto; display: none; color: var(--accent); }
+.theme-option.selected { color: var(--accent); }
+.theme-option.selected .theme-check { display: inline; }
+
+/* ── Container ── */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 2rem 3rem;
+}
+
+/* ── Header ── */
+.header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+}
+
+.header p {
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: var(--text-dim);
+    margin-top: 0.25rem;
+}
+
+/* ── Grid ── */
+.folders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+/* ── Cards (shared) ── */
+.folder-card {
+    position: relative;
+    background: var(--card-bg);
+    border: 1px solid var(--card-bd);
+    border-radius: 6px;
+    padding: 1.5rem;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.folder-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.badge {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 0.625rem;
+    font-weight: 500;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    letter-spacing: 0.06em;
+}
+
+.folder-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    line-height: 1;
+}
+
+.folder-content h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.folder-description {
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+}
+
+/* ── Active Card ── */
+.folder-card.active {
+    border-color: var(--accent);
+    background: var(--active-bg);
+    cursor: pointer;
+}
+
+.folder-card.active:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px var(--hover-glow);
+}
+
+.folder-card.active .folder-icon { color: var(--accent); }
+.folder-card.active h3 { color: var(--accent); }
+.folder-card.active .folder-description { color: var(--text-dim); }
+
+.badge-active {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+/* ── WIP Cards ── */
+.folder-card.wip {
+    border: 1px dashed var(--wip-color);
+    background: var(--wip-bg);
+    cursor: not-allowed;
+}
+
+.folder-card.wip:hover { border-color: var(--wip-color); }
+
+.folder-card.wip h3 { color: var(--wip-color); }
+.folder-card.wip .folder-description { color: var(--wip-color); opacity: 0.5; }
+.folder-card.wip .wip-icon { color: var(--wip-color); opacity: 0.6; }
+
+.badge-wip {
+    background: transparent;
+    border: 1px solid var(--wip-color);
+    color: var(--wip-color);
+}
+
+/* ── Locked Cards ── */
+.folder-card.locked {
+    border: 1px solid var(--locked-bd);
+    background: var(--locked-bg);
+    cursor: not-allowed;
+}
+
+.folder-card.locked h3 { color: var(--locked-color); }
+.folder-card.locked .folder-description { color: var(--locked-color); opacity: 0.5; }
+.folder-card.locked .locked-icon { color: var(--locked-color); }
+
+.badge-locked {
+    background: transparent;
+    border: 1px solid var(--locked-bd);
+    color: var(--locked-color);
+}
+
+.folder-card.locked:hover {
+    animation: lockedShake 0.4s ease-in-out;
+    border-color: var(--locked-color);
+}
+
+@keyframes lockedShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+}
+
+/* Locked tooltip */
+.folder-card.locked::after {
+    content: '> error: insufficient clearance_';
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.6875rem;
+    color: var(--locked-color);
+    background: var(--bg);
+    border: 1px solid var(--locked-bd);
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-family: 'JetBrains Mono', monospace;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.folder-card.locked:hover::after { opacity: 1; }
+
+/* ── Visited Tag ── */
+.visited-tag {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    font-size: 0.6rem;
+    color: var(--accent-2);
+    letter-spacing: 0.06em;
+    opacity: 0.7;
+}
+
+/* ── Footer ── */
+footer {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    font-size: 0.875rem;
+    color: var(--text-dim);
+}
+
+footer a {
+    color: var(--accent-2);
+    text-decoration: none;
+}
+
+footer a:hover { color: var(--accent); }
+
+/* ── Konami Message ── */
+.konami-msg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.25rem;
+    color: var(--accent);
+    background: var(--bg);
+    border: 1px solid var(--accent);
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    z-index: 10000;
+    display: none;
+    text-shadow: 0 0 10px var(--accent);
+}
+
+/* ── Responsive ── */
+
+/* Tablet */
+@media (max-width: 768px) {
+    .folders-grid { grid-template-columns: repeat(2, 1fr); }
+    .folder-card { min-height: 160px; padding: 1.25rem; }
+    .header h1 { font-size: 1.5rem; }
+    .container { padding: 1rem 1.5rem 2rem; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .folders-grid { grid-template-columns: 1fr; }
+    .folder-card { min-height: 120px; padding: 1rem; }
+    .header h1 { font-size: 1.25rem; }
+    .header p { font-size: 0.8rem; }
+    .container { padding: 0.75rem 1rem 2rem; }
+    .top-bar { padding: 0.6rem 1rem; }
+    .breadcrumb { font-size: 0.75rem; }
+    .theme-trigger { min-width: 95px; font-size: 0.72rem; padding: 0.3rem 0.5rem; }
+    .mute-btn { width: 24px; height: 24px; font-size: 0.75rem; }
+
+    /* Hide locked tooltip on mobile — no hover */
+    .folder-card.locked::after { display: none; }
+}
+
+/* Touch devices — no hover blip */
+@media (hover: none) {
+    .folder-card.locked::after { display: none; }
+}

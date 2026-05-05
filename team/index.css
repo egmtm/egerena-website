@@ -362,3 +362,22 @@ footer a:hover { color: #666; }
 @media (prefers-reduced-motion: reduce) {
     .scan-line { animation: none; }
 }
+
+/* Mobile — always-on subtle glow since hover doesn't exist on touch */
+@media (hover: none) {
+    .member-card {
+        border-color: #1e1e1e;
+        box-shadow: 0 0 20px var(--card-glow);
+    }
+
+    .clearance {
+        color: var(--card-color);
+        opacity: 0.6;
+    }
+
+    .divider {
+        background: var(--card-color);
+        opacity: 0.4;
+        width: 32px;
+    }
+}

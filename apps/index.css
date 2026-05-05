@@ -618,3 +618,21 @@ footer a:hover {
         font-size: 0.9375rem;
     }
 }
+
+/* Team link */
+.team-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    transition: var(--transition);
+    border-bottom: 1px solid transparent;
+}
+
+.team-link:hover {
+    color: var(--blue-accent);
+    border-bottom-color: var(--blue-accent);
+}

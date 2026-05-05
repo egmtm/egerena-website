@@ -1,0 +1,364 @@
+/* EGM Team Page */
+/* Dark, cinematic, most-wanted aesthetic */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { overflow-x: hidden; }
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background: #080808;
+    color: #c8c8c8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.25rem 0;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Noise texture overlay */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+}
+
+/* Vignette */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.7) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* BREADCRUMB */
+.breadcrumb {
+    position: relative;
+    z-index: 1;
+    font-size: 0.75rem;
+    color: #444;
+    letter-spacing: 0.1em;
+    margin-bottom: 2.5rem;
+    align-self: flex-start;
+}
+
+.breadcrumb a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover { color: #888; }
+
+.breadcrumb .sep { margin: 0 0.5rem; }
+
+/* HEADER */
+.header {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.classified-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: #333;
+    margin-bottom: 0.75rem;
+}
+
+.header h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #e0e0e0;
+    text-shadow: 0 0 40px rgba(255,255,255,0.06);
+}
+
+.subtitle {
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    color: #444;
+    letter-spacing: 0.12em;
+}
+
+/* CARDS GRID */
+.cards-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    max-width: 1100px;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+/* EGM featured card spans full width centered */
+.member-card.featured {
+    grid-column: 1 / -1;
+    max-width: 260px;
+    justify-self: center;
+}
+
+/* MEMBER CARD */
+.member-card {
+    background: #0e0e0e;
+    border: 1px solid #1a1a1a;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+.member-card:hover {
+    border-color: var(--card-color);
+    box-shadow: 0 0 30px var(--card-glow);
+}
+
+/* Color vars per card */
+.member-card[data-color="purple"] { --card-color: #7a50cc; --card-glow: rgba(122,80,204,0.15); --card-rgb: 122,80,204; }
+.member-card[data-color="amber"]  { --card-color: #cc8800; --card-glow: rgba(204,136,0,0.15);  --card-rgb: 204,136,0; }
+.member-card[data-color="gold"]   { --card-color: #c09820; --card-glow: rgba(192,152,32,0.15); --card-rgb: 192,152,32; }
+.member-card[data-color="teal"]   { --card-color: #008878; --card-glow: rgba(0,136,120,0.15);  --card-rgb: 0,136,120; }
+.member-card[data-color="blue"]   { --card-color: #0078b0; --card-glow: rgba(0,120,176,0.2);   --card-rgb: 0,120,176; }
+
+/* PORTRAIT */
+.portrait {
+    width: 100%;
+    height: 180px;
+    background: #060606;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #141414;
+}
+
+/* Silhouettes — abstract dark human shapes */
+.silhouette {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.55;
+    filter: blur(1px);
+}
+
+/* Silhouette A — upright, slightly forward leaning */
+.silhouette-a {
+    width: 60px;
+    height: 155px;
+    background: linear-gradient(to top, #1a1a1a, #0d0d0d);
+    clip-path: polygon(
+        35% 0%, 65% 0%, 70% 8%, 68% 18%,
+        75% 22%, 78% 35%, 72% 36%, 70% 50%,
+        85% 100%, 15% 100%, 30% 50%, 28% 36%,
+        22% 35%, 25% 22%, 32% 18%, 30% 8%
+    );
+    filter: blur(2px);
+}
+
+/* Silhouette B — head tilt */
+.silhouette-b {
+    width: 58px;
+    height: 150px;
+    background: linear-gradient(to top, #181818, #0c0c0c);
+    clip-path: polygon(
+        40% 0%, 60% 2%, 68% 10%, 65% 20%,
+        74% 24%, 76% 38%, 70% 38%, 68% 52%,
+        82% 100%, 18% 100%, 32% 52%, 30% 38%,
+        24% 38%, 26% 24%, 35% 20%, 32% 10%
+    );
+    filter: blur(2px);
+}
+
+/* Silhouette C — slightly wider, authoritative */
+.silhouette-c {
+    width: 65px;
+    height: 158px;
+    background: linear-gradient(to top, #161616, #0a0a0a);
+    clip-path: polygon(
+        33% 0%, 67% 0%, 72% 9%, 70% 17%,
+        80% 22%, 82% 38%, 74% 38%, 72% 50%,
+        88% 100%, 12% 100%, 28% 50%, 26% 38%,
+        18% 38%, 20% 22%, 30% 17%, 28% 9%
+    );
+    filter: blur(2px);
+}
+
+/* Silhouette D — slightly different stance */
+.silhouette-d {
+    width: 56px;
+    height: 152px;
+    background: linear-gradient(to top, #1c1c1c, #0e0e0e);
+    clip-path: polygon(
+        36% 0%, 64% 1%, 69% 9%, 66% 19%,
+        76% 23%, 77% 37%, 71% 37%, 69% 51%,
+        84% 100%, 16% 100%, 31% 51%, 29% 37%,
+        23% 37%, 24% 23%, 34% 19%, 31% 9%
+    );
+    filter: blur(2px);
+}
+
+/* Silhouette E — EGM, featured, slightly larger */
+.silhouette-e {
+    width: 70px;
+    height: 162px;
+    background: linear-gradient(to top, #1e1e1e, #101010);
+    clip-path: polygon(
+        34% 0%, 66% 0%, 71% 8%, 69% 17%,
+        78% 21%, 80% 36%, 73% 37%, 71% 50%,
+        86% 100%, 14% 100%, 29% 50%, 27% 37%,
+        20% 36%, 22% 21%, 31% 17%, 29% 8%
+    );
+    filter: blur(2.5px);
+}
+
+/* Fog overlay on portrait */
+.fog {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 80%, transparent 20%, #060606 85%);
+    pointer-events: none;
+}
+
+/* Color tint on hover via ::after on portrait */
+.member-card:hover .portrait::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 70%, rgba(var(--card-rgb), 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Scan line animation */
+.scan-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.015), transparent);
+    animation: scan 6s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scan {
+    0%   { top: -2px; opacity: 0; }
+    5%   { opacity: 1; }
+    95%  { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+/* MEMBER INFO */
+.member-info {
+    padding: 1.25rem 1.1rem 1.4rem;
+}
+
+.clearance {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: #333;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+}
+
+.member-card:hover .clearance {
+    color: var(--card-color);
+}
+
+.codename {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #d0d0d0;
+    margin-bottom: 0.75rem;
+    transition: color 0.3s;
+}
+
+.member-card:hover .codename {
+    color: #f0f0f0;
+}
+
+.divider {
+    width: 24px;
+    height: 1px;
+    background: #222;
+    margin-bottom: 0.75rem;
+    transition: background 0.3s, width 0.3s;
+}
+
+.member-card:hover .divider {
+    background: var(--card-color);
+    width: 40px;
+}
+
+.description {
+    font-size: 0.72rem;
+    color: #555;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+}
+
+/* FEATURED CARD (EGM) */
+.member-card.featured .portrait {
+    height: 200px;
+}
+
+.member-card.featured .codename {
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+}
+
+.member-card.featured .clearance {
+    letter-spacing: 0.25em;
+}
+
+/* FOOTER */
+footer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 2rem 0 2.5rem;
+    font-size: 0.7rem;
+    color: #333;
+    letter-spacing: 0.08em;
+}
+
+footer a { color: #3a3a3a; text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: #666; }
+
+.footer-sep { opacity: 0.4; }
+.footer-motto { font-style: italic; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .member-card.featured {
+        grid-column: 1 / -1;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 540px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .member-card.featured {
+        grid-column: 1;
+    }
+    .header h1 { font-size: 2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scan-line { animation: none; }
+}

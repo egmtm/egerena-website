@@ -78,5 +78,10 @@ deployment:
     - /bin/cp games/index.html ${DEPLOYPATH}games/
     - /bin/cp games/index.js ${DEPLOYPATH}games/
 
+    # ── /team/ — team page ──────────────────────────────────────
+    - /bin/mkdir -p ${DEPLOYPATH}team/
+    - /bin/cp team/index.html ${DEPLOYPATH}team/
+    - /bin/cp team/index.css ${DEPLOYPATH}team/
+
     # ── Done ────────────────────────────────────────────────────
     - /bin/echo "✅ egerena.com deploy complete — $(date '+%Y-%m-%d %H:%M:%S %Z')"

@@ -12,6 +12,7 @@ This repository is auto-deployed to the live server via cPanel Git integration.
 - **Root** — homepage (`index.html`), site CSS/JS, error pages, contact form handler
 - **`/apps/`** — desktop app product pages (Windows, macOS, Linux variants)
 - **`/games/`** — games hub and STDERR (game001) game + leaderboard
+- **`/team/`** — team page (dark cinematic aesthetic)
 
 ---
 

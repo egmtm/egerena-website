@@ -60,25 +60,32 @@
 
         <section class="section">
             <div class="card download-card">
-                <h2 class="download-title">EGM Downloader v0.98.5</h2>
+                <h2 class="download-title">EGM Downloader v0.98.6</h2>
                 <a href="https://egerena.com/apps/EGMd.zip" class="download-btn">Download EGM Downloader</a>
                 <p class="version-subtitle">Installer &middot; adds Start Menu shortcut &middot; auto-updates</p>
-                <p class="sha256-line">SHA256: 612ddb4763d924371b8080ebd947efceeca0fab1210f7c75e9eebb8773eaaf20</p>
+                <p class="sha256-line">SHA256: 83db704418ac4415b4bee087cda7a84ee5a50e3dcfe9b251a5a66192d5318fd3</p>
                 <div class="portable-divider"><span>or</span></div>
                 <a href="https://egerena.com/apps/EGMd-portable.zip" class="download-btn download-btn-secondary">Get the portable version</a>
                 <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly</p>
-                <p class="sha256-line">SHA256: ce80634e410ee0dd0064f1ab782c9918d0cada065137f88e261664861847455b</p>
+                <p class="sha256-line">SHA256: 9d0998090bcf05510464d6092e43e7d09034f32cae8ae193b35186e7ef8c0bc4</p>
                 <div class="whats-new">
-                    <p class="whats-new-heading">What's New in v0.98.5 — 5/2/2026</p>
+                    <p class="whats-new-heading">What's New in v0.98.6 — 5/4/2026</p>
                     <ul>
-                        <li>Electron runtime upgraded to v41.5.0 (security and compatibility improvements; v29 line is end-of-life with no security backports — this upgrade incorporates accumulated Chromium security fixes and backported CVEs from the Electron security advisory line)</li>
-                        <li>electron-builder updated to v26.8.1 (build toolchain compatibility with Electron 41)</li>
-                        <li>Open folder from the expanded download history panel does not work — use the hamburger menu's open folder action instead. Fix planned for next release.</li>
+                        <li>Open folder from expanded download history panel now works correctly (history window was missing API bridge that prevented folder actions, theme sync, and URL re-add)</li>
+                        <li>Video thumbnail aspect ratio corrected — widescreen videos now display at proper 16:9 proportions instead of appearing stretched vertically</li>
+                        <li>Version references corrected — footer version pill and What's New header now update correctly during version bumps (scripts coverage gap fixed)</li>
                     </ul>
                 </div>
                 <details class="history-details">
                     <summary class="history-summary">Previous Updates</summary>
                     <div class="history-content">
+                        <div class="history-item">
+                            <p class="history-version">v0.98.5 — 5/2/2026</p>
+                            <ul>
+                                <li>Electron runtime upgraded to v41.5.0 — security and compatibility improvements; incorporates accumulated Chromium security fixes and backported CVEs</li>
+                                <li>electron-builder updated to v26.8.1 (build toolchain compatibility with Electron 41)</li>
+                            </ul>
+                        </div>
                         <div class="history-item">
                             <p class="history-version">v0.98 — 4/28/2026</p>
                             <ul>

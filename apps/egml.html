@@ -112,31 +112,38 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3>> EGM_DOWNLOADER_v0.98.5<span class="dl-ext">.AppImage</span></h3>
+                <h3>> EGM_DOWNLOADER_v0.98.6<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: d683348a1f16fa2c86c0a74f6071965113b05db10d4713c781ea053a643e8a42</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: f0a692fbd5934aa4c3b9cd1c959bb3f7b7cb8bd0e495d7143533007be0873bc5</p>
             </div>
         </section>
 
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN v0.98.5</div>
+                <div class="section-header">> WHAT'S NEW IN v0.98.6</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-                <div class="whats-new-subtitle">v0.98.5 — 5/2/2026</div>
+                <div class="whats-new-subtitle">v0.98.6 — 5/4/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
                 <ul>
-                    <li>Electron runtime upgraded to v41.5.0 (security and compatibility improvements; v29 line is end-of-life with no security backports — this upgrade incorporates accumulated Chromium security fixes and backported CVEs from the Electron security advisory line)</li>
-                    <li>electron-builder updated to v26.8.1 (build toolchain compatibility with Electron 41)</li>
-                    <li>Improved window initialization reliability — main window now appears consistently when launched from file manager or application launcher on GNOME/Mutter compositors (Ubuntu 24 and similar distros)</li>
-                    <li>Open folder from the expanded download history panel does not work — use the hamburger menu's open folder action instead. Fix planned for next release.</li>
-                    <li>Splash window and certain secondary panels (themes, expanded history, footer link popups) may appear off-center (typically top-left) on first display. Functional behavior unaffected. Targeted fix planned for next release.</li>
-                    <li>Cookies browse dialog does not open on Linux. Linux-specific issue, fix planned for upcoming release.</li>
+                    <li>Window centering fixed — main window and secondary panels now appear centered on first launch on GNOME/Mutter compositors (forced X11 backend restores reliable window positioning lost in Electron 41's Wayland auto-detection change)</li>
+                    <li>Open folder from expanded download history panel now works correctly (history window was missing API bridge that prevented folder actions, theme sync, and URL re-add)</li>
+                    <li>Video thumbnail aspect ratio corrected — widescreen videos now display at proper 16:9 proportions instead of appearing stretched vertically</li>
+                    <li>Version references corrected — footer version pill and What's New header now update correctly during version bumps (scripts coverage gap fixed)</li>
+                    <li>Cookies browse dialog does not open on Linux. Linux-specific fix planned for upcoming release.</li>
+                    <li>Virtual machine environments (VMware, VirtualBox) are not officially supported. The app is designed and tested for bare-metal Linux installations.</li>
                 </ul>
                 
                 <details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v0.98.5 — 5/2/2026</div>
+                        <ul>
+                            <li>Electron runtime upgraded to v41.5.0 — security and compatibility improvements; incorporates accumulated Chromium security fixes and backported CVEs</li>
+                            <li>electron-builder updated to v26.8.1 (build toolchain compatibility with Electron 41)</li>
+                            <li>Improved window initialization reliability on GNOME/Mutter compositors (Ubuntu 24 and similar distros)</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version">v0.98 — 4/28/2026</div>
                         <ul>
                             <li>URL input pane redesigned — compact unified buttons, textarea auto-grows as URLs are added</li>

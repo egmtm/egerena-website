@@ -22,20 +22,18 @@
 <body>
 
   <div class="ctrl-left">
-    <button class="ctrl-btn" id="langToggle" aria-label="Switch language">
+    <button class="ctrl-btn" id="langToggle">
       <span class="lang-label" id="langBtn">ES</span>
     </button>
   </div>
 
   <div class="ctrl-right">
-    <button class="ctrl-btn toggle" id="themeToggle" aria-label="Toggle theme">
+    <button class="ctrl-btn toggle" id="themeToggle">
       <svg id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       <svg id="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
     </button>
   </div>
 
-  <div class="toast" id="langToast"></div>
-  <div class="toast" id="themeToast"></div>
 
   <main class="card" id="card">
     <div class="logo-wrap">
@@ -47,21 +45,21 @@
       <span class="quote-author" id="quoteAuthor"></span>
     </div>
     <hr/>
+    <div class="apps-row">
+      <a class="apps-link apps-link-lg" href="./apps/index.html" id="appsLink">
+        <span id="appsLinkText">EGM APPS</span>
+      </a>
+      <span class="service-sep">&middot;</span>
+      <a class="apps-link apps-link-lg" href="./games/index.html" id="gamesLink">
+        <span id="gamesLinkText">EGM GAMES</span>
+      </a>
+    </div>
     <p class="bio" id="bioText">IT Engineer with over 20 years of experience designing, building, and consulting on technology solutions that are simple, resilient, and forward-thinking.</p>
     <div class="services" id="servicesSection">
       <p class="services-title" id="servicesTitle"></p>
       <div class="services-grid" id="servicesGrid"></div>
     </div>
     <div class="contact">
-      <div class="apps-row">
-        <a class="apps-link" href="./apps/index.html" id="appsLink">
-          <span id="appsLinkText">EGM APPS</span>
-        </a>
-        <span class="service-sep">&middot;</span>
-        <a class="apps-link" href="./games/index.html" id="gamesLink">
-          <span id="gamesLinkText">EGM GAMES</span>
-        </a>
-      </div>
       <a class="quote-link" href="#" id="quoteLink">
         <span class="arrow">→</span><span id="quoteLinkText">Request a Consulting Quote</span>
       </a>
@@ -75,7 +73,7 @@
       <button class="modal-close" id="closeModal" aria-label="Close">&times;</button>
       <h2 class="modal-title" id="modalTitle">Consulting Quote</h2>
       
-      <form id="quoteForm" class="quote-form" method="POST" action="./quote-form-handler.php" novalidate>
+      <form id="quoteForm" class="quote-form" method="POST" action="./quote-form-handler.php">
         <!-- Basic Info -->
         <div class="form-section">
           <div class="form-group">
@@ -205,6 +203,6 @@
     </div>
   </noscript>
 
-  <script src="./app.js?v=13"></script>
+  <script src="./app.js?v=14"></script>
 </body>
 </html>

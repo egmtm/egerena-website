@@ -114,7 +114,7 @@
             <div class="terminal-box download-section">
                 <h3>> EGM_DOWNLOADER_v0.98.6<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: f0a692fbd5934aa4c3b9cd1c959bb3f7b7cb8bd0e495d7143533007be0873bc5</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: 6b6b5f05b9d960889277a20c6064380bdc90f3d43e2ba9db646605df01af707e</p>
             </div>
         </section>
 
@@ -126,12 +126,12 @@
                 <div class="whats-new-subtitle">v0.98.6 — 5/4/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
                 <ul>
-                    <li>Window centering fixed — main window and secondary panels now appear centered on first launch on GNOME/Mutter compositors (forced X11 backend restores reliable window positioning lost in Electron 41's Wayland auto-detection change)</li>
-                    <li>Open folder from expanded download history panel now works correctly (history window was missing API bridge that prevented folder actions, theme sync, and URL re-add)</li>
-                    <li>Video thumbnail aspect ratio corrected — widescreen videos now display at proper 16:9 proportions instead of appearing stretched vertically</li>
+                    <li>Open folder from expanded download history panel now works correctly (history window was missing API bridge that prevented folder actions)</li>
+                    <li>Video thumbnail aspect ratio corrected — widescreen (16:9) videos now display at proper proportions instead of appearing stretched vertically</li>
                     <li>Version references corrected — footer version pill and What's New header now update correctly during version bumps (scripts coverage gap fixed)</li>
+                    <li>Window position is not remembered between sessions on Wayland compositors. Cosmetic only — app launches centered on each start.</li>
                     <li>Cookies browse dialog does not open on Linux. Linux-specific fix planned for upcoming release.</li>
-                    <li>Virtual machine environments (VMware, VirtualBox) are not officially supported. The app is designed and tested for bare-metal Linux installations.</li>
+                    <li>Virtual machine environments (VMware, VirtualBox, etc.) may experience display rendering issues. The app is primarily designed and tested for bare-metal Linux installations.</li>
                 </ul>
                 
                 <details class="history-details">

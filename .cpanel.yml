@@ -22,8 +22,8 @@
 #   - .gitignore           (Git config)
 #   - .cpanel.yml          (this file)
 #
-# DEPLOYPATH: Staging phase — deploys to non-public directory for verification.
-# Cutover (Group 2B): change to /home1/aigigvmy/public_html/ for production.
+# DEPLOYPATH: Production — deploys directly to live site.
+# Changed from staging_deploy/ after Group 2A verification passed.
 #
 # See README.md for full deploy flow context.
 # See THIRD_PARTY.md for excluded-file rationale.
@@ -31,8 +31,8 @@
 
 deployment:
   tasks:
-    # DEPLOYPATH: staging at /home1/aigigvmy/staging_deploy/
-    - export DEPLOYPATH=/home1/aigigvmy/staging_deploy/
+    # DEPLOYPATH: production at /home1/aigigvmy/public_html/
+    - export DEPLOYPATH=/home1/aigigvmy/public_html/
 
     # ── Ensure target subdirectories exist ──────────────────────
     - /bin/mkdir -p ${DEPLOYPATH}apps/

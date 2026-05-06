@@ -43,12 +43,30 @@ body::after {
 .breadcrumb {
     position: relative;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     font-size: 0.75rem;
     color: #444;
     letter-spacing: 0.1em;
     margin-bottom: 2.5rem;
-    align-self: flex-start;
+    width: 100%;
+    max-width: 1100px;
 }
+
+.breadcrumb-left { display: flex; align-items: center; gap: 0; }
+
+.breadcrumb-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
+.breadcrumb-dot { opacity: 0.3; }
 
 .breadcrumb a {
     color: #555;
@@ -361,4 +379,23 @@ footer a:hover { color: #666; }
 
 @media (prefers-reduced-motion: reduce) {
     .scan-line { animation: none; }
+}
+
+/* Mobile — always-on subtle glow since hover doesn't exist on touch */
+@media (hover: none) {
+    .member-card {
+        border-color: #1e1e1e;
+        box-shadow: 0 0 20px var(--card-glow);
+    }
+
+    .clearance {
+        color: var(--card-color);
+        opacity: 0.6;
+    }
+
+    .divider {
+        background: var(--card-color);
+        opacity: 0.4;
+        width: 32px;
+    }
 }

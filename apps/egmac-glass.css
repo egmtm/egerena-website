@@ -250,7 +250,7 @@ body::before {
 }
 
 /* Download */
-.download-section { text-align: center; padding: 1rem 0; }
+.download-section { text-align: left; padding: 1rem 0; }
 
 .download-section h3 {
     font-size: 1.65rem;

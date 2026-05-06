@@ -6,7 +6,6 @@ const S = {
     servicesTitle: 'Areas of Expertise',
     services:      ['Web Design', 'Graphic & Brand Design', 'Custom Applications', 'Media Production', 'Sound Design & Mixing', 'UI/UX Design', 'Social Media Design', 'Album Art', 'IT Consulting', 'Business Consulting', 'Security Consulting'],
     appsLink:      'EGM APPS',
-    gamesLink:     'EGM GAMES',
     quoteLink:     'Request a Consulting Quote',
     langBtn:       'ES',
     toastLang:     '\uD83C\uDF0E También disponible en Español',
@@ -63,7 +62,6 @@ const S = {
     servicesTitle: 'Áreas de Especialización',
     services:      ['Diseño Web', 'Diseño Gráfico y de Marca', 'Aplicaciones Personalizadas', 'Producción Multimedia', 'Diseño de Sonido y Mezcla', 'Diseño UI/UX', 'Diseño para Redes Sociales', 'Arte de Álbum', 'Consultoría TI', 'Consultoría Empresarial', 'Consultoría de Seguridad'],
     appsLink:      'APLICACIONES DE EGM',
-    gamesLink:     'JUEGOS EGM',
     quoteLink:     'Solicitar Cotización de Consultoría',
     langBtn:       'EN',
     toastLang:     '\uD83C\uDF10 Also available in English',
@@ -277,7 +275,6 @@ function applyLang(l, animate, save) {
       `<span class="service-tag">${svc}</span>${i < s.services.length - 1 ? '<span class="service-sep">~</span>' : ''}`
     ).join('');
     $('appsLinkText').textContent  = s.appsLink;
-    if ($('gamesLinkText')) $('gamesLinkText').textContent = s.gamesLink;
     $('quoteLinkText').textContent = s.quoteLink;
     $('langBtn').textContent       = s.langBtn;
     
@@ -519,8 +516,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  setTimeout(() => showToast('langToast',  S[lang].toastLang, false, 3000), 2000);
-  setTimeout(() => showToast('themeToast', theme === 'dark' ? S[lang].toastDark : S[lang].toastLight, true, 3000), 6000);
+  // toasts removed per design decision
 
   document.querySelector('.foot').innerHTML = `© 2003–${new Date().getFullYear()} EGerena.com`;
 });

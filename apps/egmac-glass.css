@@ -26,7 +26,7 @@
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
     --text-primary: #00e5ff;
     --text-secondary: #80deea;
-    --accent-gradient: linear-gradient(135deg, #00e5ff, #00e676, #76ff03);
+    --accent-gradient: linear-gradient(135deg, #0090b8, #007a9a, #006080);
     --feature-bg: rgba(0, 22, 28, 0.65);
     --feature-border: rgba(0, 229, 255, 0.18);
     --feature-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
@@ -285,6 +285,7 @@ body::before {
     text-decoration: none;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 .download-btn:hover {

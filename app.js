@@ -246,13 +246,16 @@ function savePrefs() {
   } catch(e) {}
 }
 
+const THEMES = ['slate','obsidian','parchment','dusk'];
+const THEME_ICONS = { slate:'◑', obsidian:'◉', parchment:'○', dusk:'◐' };
+
 function applyTheme(t, save) {
   const card = $('card');
   const doSwap = () => {
     theme = t;
     document.documentElement.setAttribute('data-theme', t);
-    $('icon-sun').style.display  = t === 'dark' ? 'block' : 'none';
-    $('icon-moon').style.display = t === 'dark' ? 'none'  : 'block';
+    const btn = $('themeToggle');
+    if (btn) { const lbl = btn.querySelector('.lang-label'); if (lbl) lbl.textContent = THEME_ICONS[t] || '◑'; }
     if (save) savePrefs();
   };
   if (save) {

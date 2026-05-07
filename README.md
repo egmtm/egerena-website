@@ -1,5 +1,7 @@
 # egerena.com — Website Source
 
+![Version](https://img.shields.io/badge/dynamic/json?url=https://egerena.com/version.json&query=version&label=version&style=flat-square&color=0078b0)
+
 Source code for [egerena.com](https://egerena.com), the personal portfolio and
 desktop app distribution site for EGM.
 

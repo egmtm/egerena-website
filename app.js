@@ -219,7 +219,7 @@ const QES = [
   {text:"La función del buen software es hacer que lo complejo parezca simple.",author:"Grady Booch"}
 ];
 
-let lang = 'en', theme = 'dark', idx = 0, timer = null;
+let lang = 'en', theme = 'slate', idx = 0, timer = null;
 let qEN = [...QEN], qES = [...QES];
 
 const shuffle = a => {
@@ -235,7 +235,7 @@ const $ = id => document.getElementById(id);
 
 function loadPrefs() {
   try {
-    theme = localStorage.getItem('egm_theme') || theme;
+    theme = localStorage.getItem('egm_theme') || 'slate';
     lang  = localStorage.getItem('egm_lang')  || lang;
   } catch(e) {}
 }
@@ -262,7 +262,7 @@ function applyTheme(t, save) {
     doSwap();
   }
 }
-function toggleTheme() { applyTheme(theme === 'dark' ? 'light' : 'dark', true); }
+function toggleTheme() { const i = THEMES.indexOf(theme); applyTheme(THEMES[(i + 1) % THEMES.length], true); }
 
 function applyLang(l, animate, save) {
   lang = l;

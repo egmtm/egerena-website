@@ -51,6 +51,7 @@ deployment:
     - /bin/cp quote-form-handler.php ${DEPLOYPATH}
     - /bin/cp robots.txt ${DEPLOYPATH}
     - /bin/cp style.css ${DEPLOYPATH}
+    - /bin/cp version.json ${DEPLOYPATH}
 
     # ── /apps/ — desktop app product pages ──────────────────────
     - /bin/cp apps/.htaccess ${DEPLOYPATH}apps/

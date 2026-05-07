@@ -636,3 +636,14 @@ footer a:hover {
     color: var(--blue-accent);
     border-bottom-color: var(--blue-accent);
 }
+
+/* Platform SVG icons — give them proper space */
+.folder-card.active .folder-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.folder-card.active .folder-icon svg {
+    max-width: 100%;
+    max-height: 100%;
+}

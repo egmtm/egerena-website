@@ -44,8 +44,7 @@ deployment:
     - /bin/cp 404.html ${DEPLOYPATH}
     - /bin/cp 500.html ${DEPLOYPATH}
     - /bin/cp app.js ${DEPLOYPATH}
-    - /bin/cp egc.png ${DEPLOYPATH}
-    - /bin/cp egmm.png ${DEPLOYPATH}
+    - /bin/cp egm-logo.svg ${DEPLOYPATH}
     - /bin/cp icon-192.png ${DEPLOYPATH}
     - /bin/cp icon-512.png ${DEPLOYPATH}
     - /bin/cp index.html ${DEPLOYPATH}

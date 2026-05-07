@@ -50,7 +50,7 @@ body::before{background:var(--logo-grad)}
 
 .logo-wrap{width:min(270px,70vw);display:grid;place-items:center;margin-bottom:1rem}
 @media(min-width:600px){.logo-wrap{width:459px}}
-.egm-logo{width:100%;height:auto}
+.egm-logo{width:100%;height:auto;display:block;margin:0 auto}
 .egm-mark rect{fill:var(--logo-fill);transition:fill .4s}
 .egm-divider{fill:var(--logo-fill)}
 .egm-wordmark{fill:var(--logo-fill);transition:fill .4s}

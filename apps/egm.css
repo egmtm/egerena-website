@@ -477,3 +477,14 @@ footer {
 .card .history-item ul li {
     margin-bottom: 0.25rem;
 }
+
+/* The Polish label */
+.polish-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    color: var(--text-dim);
+    font-style: italic;
+    margin-bottom: 0.75rem;
+    display: block;
+    opacity: 0.6;
+}

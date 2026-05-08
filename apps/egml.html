@@ -130,13 +130,15 @@
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
                 <div class="whats-new-subtitle">v0.98.7 — 5/7/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
+                <div class="polish-label">// the polish</div>
                 <ul>
-                    <li>Open folder from expanded download history panel now works correctly (history window was missing API bridge that prevented folder actions)</li>
-                    <li>Video thumbnail aspect ratio corrected — widescreen (16:9) videos now display at proper proportions instead of appearing stretched vertically</li>
-                    <li>Version references corrected — footer version pill and What's New header now update correctly during version bumps (scripts coverage gap fixed)</li>
-                    <li>Window position is not remembered between sessions on Wayland compositors. Cosmetic only — app launches centered on each start.</li>
-                    <li>Cookies browse dialog does not open on Linux. Linux-specific fix planned for upcoming release.</li>
-                    <li>Virtual machine environments (VMware, VirtualBox, etc.) may experience display rendering issues. The app is primarily designed and tested for bare-metal Linux installations.</li>
+                    <li>Cookies browse now uses native file dialog instead of browser file picker — fixes cookies browse on Linux and improves reliability on all platforms</li>
+                    <li>Cookies section condensed to single always-visible row with extension tooltips — no more expand/collapse needed</li>
+                    <li>Download folder section condensed — removed redundant "Files saved to" line</li>
+                    <li>Check for Updates button moved to Update Plugins header — auto-expands panel when clicked</li>
+                    <li>Advanced panel: added descriptive tooltips to all action buttons (Desktop shortcut, Clear cache, Export/Import settings, Reinstall ffmpeg/Deno, Reset settings)</li>
+                    <li>Version tooltip removed from header badge — cleaner look</li>
+                    <li>Dead code cleanup: removed legacy password-protected zip support from all platforms — codebase now reflects v0.98 unencrypted distribution model with SHA256 verification</li>
                 </ul>
                 
                 <details class="history-details">

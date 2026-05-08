@@ -67,6 +67,10 @@ deployment:
     - /bin/cp apps/index.css ${DEPLOYPATH}apps/
     - /bin/cp apps/index.html ${DEPLOYPATH}apps/
     - /bin/cp apps/matrix.js ${DEPLOYPATH}apps/
+    - /bin/cp apps/egm-version.json ${DEPLOYPATH}apps/
+    - /bin/cp apps/egm-portable-version.json ${DEPLOYPATH}apps/
+    - /bin/cp apps/egmac-update.json ${DEPLOYPATH}apps/
+    - /bin/cp apps/egmlinux-update.json ${DEPLOYPATH}apps/
 
     # ── /games/ — games hub + STDERR ────────────────────────────
     # game001-scores.json INTENTIONALLY EXCLUDED (runtime data)

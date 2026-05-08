@@ -523,3 +523,14 @@ footer {
 @media (max-width: 640px) {
     .info-grid { grid-template-columns: 1fr; }
 }
+
+/* The Polish label */
+.polish-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    color: var(--text-secondary);
+    font-style: italic;
+    opacity: 0.55;
+    display: block;
+    margin-bottom: 0.5rem;
+}

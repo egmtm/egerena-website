@@ -35,6 +35,92 @@
     --btn-shadow: rgba(0, 229, 255, 0.25);
 }
 
+/* Aqua — macOS X classic */
+[data-theme="aqua"] {
+    --bg-gradient-1: linear-gradient(135deg, #d4e8f4 0%, #b8d4ec 40%, #c8e4f8 70%, #d8eef8 100%);
+    --bg-overlay: rgba(255, 255, 255, 0.3);
+    --glass-bg: rgba(200, 228, 248, 0.78);
+    --glass-border: rgba(0, 100, 180, 0.28);
+    --glass-shadow: 0 8px 32px rgba(0, 80, 160, 0.15);
+    --text-primary: #1a3a5c;
+    --text-secondary: #2a5a8c;
+    --accent-gradient: linear-gradient(180deg, #5ab0e8 0%, #2a80d8 60%, #1a60b8 100%);
+    --feature-bg: rgba(210, 235, 252, 0.7);
+    --feature-border: rgba(0, 100, 180, 0.22);
+    --feature-shadow: 0 4px 16px rgba(0, 80, 160, 0.1);
+    --link-color: #1a5a9c;
+    --nav-link: #1a5a9c;
+    --btn-shadow: rgba(0, 80, 160, 0.3);
+    --nav-bg: rgba(180, 210, 235, 0.85);
+    --nav-border: rgba(0, 100, 180, 0.2);
+    --text-dim: rgba(40, 90, 140, 0.45);
+    --btn-text: #ffffff;
+    --info-bg: rgba(200, 228, 248, 0.6);
+}
+
+/* Platinum — Mac OS 9 */
+[data-theme="platinum"] {
+    --bg-gradient-1: linear-gradient(180deg, #d8d4cc 0%, #c8c4bc 50%, #d4d0c8 100%);
+    --bg-overlay: rgba(0, 0, 0, 0.05);
+    --glass-bg: rgba(200, 196, 188, 0.88);
+    --glass-border: rgba(0, 0, 0, 0.22);
+    --glass-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    --text-primary: #1a1a1a;
+    --text-secondary: #444444;
+    --accent-gradient: linear-gradient(180deg, #cccccc 0%, #999999 100%);
+    --feature-bg: rgba(212, 208, 200, 0.8);
+    --feature-border: rgba(0, 0, 0, 0.18);
+    --feature-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    --link-color: #000080;
+    --nav-link: #000080;
+    --btn-shadow: rgba(0, 0, 0, 0.25);
+    --nav-bg: rgba(176, 172, 164, 0.92);
+    --nav-border: rgba(0, 0, 0, 0.15);
+    --text-dim: rgba(80, 80, 80, 0.5);
+    --btn-text: #1a1a1a;
+    --info-bg: rgba(200, 196, 188, 0.65);
+}
+
+/* Aqua — component overrides */
+[data-theme="aqua"] .download-btn { color: #ffffff; }
+[data-theme="aqua"] .section-title span { color: #1a3a5c; }
+[data-theme="aqua"] .nav { background: rgba(180, 210, 235, 0.85); backdrop-filter: blur(10px); }
+[data-theme="aqua"] .whats-new-content { background: rgba(210, 235, 252, 0.65); }
+[data-theme="aqua"] .sha256-line { color: rgba(40, 90, 140, 0.55); }
+[data-theme="aqua"] .logo-ascii { color: #1a3a5c; }
+
+/* Platinum — component overrides */
+[data-theme="platinum"] .download-btn { background: linear-gradient(180deg, #d4d0c8 0%, #b0aca4 100%); border: 2px solid; border-color: #ffffff #888 #888 #ffffff; border-radius: 4px; color: #1a1a1a; box-shadow: none; }
+[data-theme="platinum"] .download-btn:hover { background: linear-gradient(180deg, #dcd8d0 0%, #bcb8b0 100%); }
+[data-theme="platinum"] .section-title span {
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: #1a1a1a;
+    background-clip: unset;
+    color: #1a1a1a;
+}
+[data-theme="platinum"] .logo-ascii {
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: #1a1a1a;
+    background-clip: unset;
+    color: #1a1a1a;
+}
+[data-theme="platinum"] .download-section h3 {
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: #1a1a1a;
+    background-clip: unset;
+    color: #1a1a1a;
+}
+[data-theme="platinum"] .nav { background: rgba(176, 172, 164, 0.92); border-bottom: 1px solid rgba(0,0,0,0.2); }
+[data-theme="platinum"] .nav a { color: #000080; }
+[data-theme="platinum"] .nav a:hover { color: #0000cc; }
+[data-theme="platinum"] .whats-new-content { background: rgba(210, 206, 198, 0.7); }
+[data-theme="platinum"] .sha256-line { color: rgba(60, 60, 60, 0.55); }
+[data-theme="platinum"] .polish-label { color: #444444; }
+[data-theme="platinum"] .info-heading { color: #1a1a1a; }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -62,7 +148,7 @@ body::before {
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border: 1px solid var(--glass-border);
     border-radius: 50px;
-    padding: 0.65rem 1.4rem;
+    padding: 0.5rem 1.1rem;
     cursor: pointer;
     font-size: 0.9rem;
     font-weight: 600;
@@ -71,11 +157,9 @@ body::before {
     transition: all 0.3s ease;
     white-space: nowrap;
     flex-shrink: 0;
-    /* Desktop: fixed top-right */
-    position: fixed;
-    top: 1.5rem;
-    right: 1.5rem;
-    z-index: 1000;
+    margin-left: auto;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.8rem;
 }
 
 .theme-toggle:hover {
@@ -85,11 +169,8 @@ body::before {
 
 @media (max-width: 768px) {
     .theme-toggle {
-        position: static;
-        margin-left: auto;
         padding: 0.4rem 0.9rem;
         font-size: 0.78rem;
-        transform: none;
     }
 
     .logo-ascii {
@@ -119,8 +200,13 @@ body::before {
 
 /* Nav */
 .nav {
-    padding: 1.25rem 1rem;
-    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    padding: 0.65rem 1rem;
+    text-align: left;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .nav-content {
@@ -128,7 +214,7 @@ body::before {
     flex-wrap: nowrap;
     align-items: center;
     gap: 1.25rem;
-    justify-content: center;
+    justify-content: flex-start;
     overflow: hidden;
 }
 

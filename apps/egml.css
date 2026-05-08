@@ -21,6 +21,7 @@ html {
 }
 
 body {
+    padding-top: 42px;
     background: var(--terminal-bg);
     color: var(--terminal-color);
     font-family: 'Share Tech Mono', 'Courier New', monospace;
@@ -64,7 +65,10 @@ body {
 
 /* Navigation */
 .nav {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
     width: 100%;
 }

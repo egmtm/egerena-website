@@ -492,3 +492,66 @@ ul li::marker {
 .logo-ascii:hover {
     text-shadow: 0 0 20px var(--terminal-color), 0 0 40px rgba(0, 255, 65, 0.3);
 }
+
+/* Re-release notice */
+.rerelease-notice {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    background: rgba(255, 176, 0, 0.06);
+    border: 1px solid rgba(255, 176, 0, 0.3);
+    border-radius: 4px;
+    padding: 0.875rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.rerelease-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ffb000;
+    flex-shrink: 0;
+    margin-top: 3px;
+    animation: rereleaseP 1.5s ease-in-out infinite;
+}
+
+@keyframes rereleaseP {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.rerelease-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: #ffb000;
+    margin-bottom: 4px;
+}
+
+.rerelease-msg {
+    font-size: 0.75rem;
+    color: var(--terminal-dim);
+    line-height: 1.6;
+}
+
+/* Disabled download */
+.download-disabled {
+    opacity: 0.35;
+    pointer-events: none;
+    user-select: none;
+}
+
+.download-btn-off {
+    cursor: not-allowed;
+    display: block;
+}
+
+/* The Polish label */
+.polish-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    color: var(--terminal-dim);
+    font-family: 'Share Tech Mono', monospace;
+    opacity: 0.55;
+    margin-bottom: 0.75rem;
+}

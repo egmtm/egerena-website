@@ -1,0 +1,104 @@
+{
+  "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
+  "_version_notes": [
+    "Cookies browse now uses native file dialog instead of browser file picker \u2014 fixes cookies browse on Linux and improves reliability on all platforms",
+    "Cookies section condensed to single always-visible row with extension tooltips \u2014 no more expand/collapse needed",
+    "Download folder section condensed \u2014 removed redundant \"Files saved to\" line",
+    "Check for Updates button moved to Update Plugins header \u2014 auto-expands panel when clicked",
+    "Advanced panel: added descriptive tooltips to all action buttons (Desktop shortcut, Clear cache, Export/Import settings, Reinstall ffmpeg/Deno, Reset settings)",
+    "Version tooltip removed from header badge \u2014 cleaner look",
+    "Dead code cleanup: removed legacy password-protected zip support (APP_UPDATE_PASSWORD, pyzipper dependency) from all platforms \u2014 codebase now reflects v0.98 unencrypted distribution model with SHA256 verification"
+  ],
+  "_history": [
+    {
+      "version": "0.98.7",
+      "date": "5/7/2026 8:38 PM EST",
+      "notes": [
+        "Cookies browse now uses native file dialog instead of browser file picker \u2014 fixes cookies browse on Linux and improves reliability on all platforms",
+        "Cookies section condensed to single always-visible row with extension tooltips \u2014 no more expand/collapse needed",
+        "Download folder section condensed \u2014 removed redundant \"Files saved to\" line",
+        "Check for Updates button moved to Update Plugins header \u2014 auto-expands panel when clicked",
+        "Advanced panel: added descriptive tooltips to all action buttons (Desktop shortcut, Clear cache, Export/Import settings, Reinstall ffmpeg/Deno, Reset settings)",
+        "Version tooltip removed from header badge \u2014 cleaner look",
+        "Dead code cleanup: removed legacy password-protected zip support (APP_UPDATE_PASSWORD, pyzipper dependency) from all platforms \u2014 codebase now reflects v0.98 unencrypted distribution model with SHA256 verification"
+      ]
+    },
+    {
+      "version": "0.98.6",
+      "date": "5/4/2026 11:10 PM EST",
+      "notes": [
+        "Open folder from expanded download history panel now works correctly (history window was missing API bridge that prevented folder actions)",
+        "Video thumbnail aspect ratio corrected \u2014 widescreen (16:9) videos now display at proper proportions instead of appearing stretched vertically",
+        "Version references corrected \u2014 footer version pill and What's New header now update correctly during version bumps (scripts coverage gap fixed)",
+        "Portable: Update Plugins pane now accessible in portable mode with safety disclaimer for plugin recovery"
+      ]
+    },
+    {
+      "version": "0.98.5",
+      "date": "5/2/2026 2:25 AM EST",
+      "notes": [
+        "Electron runtime upgraded to v41.5.0 (security and compatibility improvements; v29 line is end-of-life with no security backports \u2014 this upgrade incorporates accumulated Chromium security fixes and backported CVEs from the Electron security advisory line)",
+        "electron-builder updated to v26.8.1 (build toolchain compatibility with Electron 41)",
+        "Open folder from the expanded download history panel does not work \u2014 use the hamburger menu's open folder action instead. Fix planned for next release."
+      ]
+    },
+    {
+      "version": "0.98",
+      "date": "4/28/2026 1:47 AM EST",
+      "notes": [
+        "URL input pane redesigned \u2014 compact unified buttons (28px), textarea shrinks to 3 lines by default and auto-grows as URLs are added, \"Max videos\" caption replaces \"Videos\"",
+        "Drag and drop URLs directly into the URL textarea \u2014 visual drag-over feedback, filters comment lines, appends cleanly",
+        "Keyboard shortcuts \u2014 paste-and-fetch (Ctrl+V / \u2318V), clear textarea (Esc), trigger Fetch Info (Ctrl+Enter / \u2318Return)",
+        "All Themes window redesigned \u2014 categories moved to left sidebar with collapsible sections (Style, Vibe, Culture, Other); search bar compact (expands on focus); category counts shown",
+        "Download subtitles toggle in Advanced panel \u2014 embeds English subtitles (manual preferred, auto-generated fallback) directly into video file; no separate .srt files",
+        "Embed metadata toggle in Advanced panel (ON by default) \u2014 embeds thumbnail, chapter markers, and title/artist/date metadata into downloaded videos",
+        "Output format selector in Advanced panel \u2014 switch between MP4 (default) and MKV container for video downloads",
+        "Video quality picker expanded \u2014 8K (4320p), 4K (2160p), and 2K (1440p) added with High Resolution / Standard tier separators",
+        "Audio quality picker expanded \u2014 M4A (256 kbps) and OPUS (128 kbps, 192 kbps) formats added alongside MP3 and FLAC with format section dividers",
+        "Checksum verification for auto-updates \u2014 SHA256 computed during build, embedded in JSON feed, verified before extracting installer; tampering detected and blocked",
+        "Distribution zips are now unencrypted \u2014 EGMd.zip and EGMdM.zip are standard zips; pyzipper dependency removed; SHA256 replaces password as integrity mechanism",
+        "What's New modal now reads release notes live from the JSON feed \u2014 no more hardcoded bullets; shows \"Loading\u2026\" while fetching, graceful fallback if offline",
+        "14 new themes (120 total: 110 permanent + 10 seasonal) \u2014 Destiny characters (Cayde-6, Zavala, Savath\u00fbn, The Witness), Hyrule, Velvet Rose, Nocturnix, Hanami, Sugar Riot, Sundrop, Dream Dust, First Light, Neon Kiss, Prism",
+        "6 Mood themes added \u2014 Melancholy, Euphoria, Tension, Serenity, Nostalgia, Focus",
+        "Theme CSS is now a single shared source \u2014 main app and themes window both include theme_styles.html; new themes apply everywhere automatically",
+        "Theme validation switched from static allowlist to regex \u2014 future themes work without code changes",
+        "Mac auto-update now opens the download page in the browser \u2014 no more confusing error on non-installer builds",
+        "Double update toast guard added \u2014 auto-check on launch no longer fires twice",
+        "Security hardening \u2014 URL scheme validation on all API endpoints, IPC input allowlists, concurrent_fragments clamped 1\u201316, video_height allowlisted, open-folder path safety",
+        "App size reduced ~40MB \u2014 Python bundle stripped of pip, setuptools, idlelib, tkinter, pycache on Mac and Linux builds",
+        "Desktop shortcut button shows confirmation dialog; detects if shortcut already exists and shows \"already exists\" toast instead of overwriting",
+        "Reinstall ffmpeg and Reinstall Deno now have distinct icons (\u25b6 and \u2b21) for quick visual identification",
+        "Advanced panel section labels removed \u2014 cleaner layout for power users; buttons are self-explanatory",
+        "Footer spacing tightened between Advanced panel and footer",
+        "Windows portable edition \u2014 EGMd-portable.zip runs from any folder or USB stick; no installer, no registry, no system changes; settings and history stay in data/ inside the portable folder; auto-update disabled",
+        "Portable variant has its own update feed (egm-portable-version.json) and update UI is hidden automatically when running portable",
+        "Build pipeline now produces both installer and portable zips in one pass"
+      ]
+    },
+    {
+      "version": "0.97.5",
+      "date": "4/26/2026 10:25 PM EST",
+      "notes": [
+        "Mac auto-update \u2014 now opens download page in browser instead of attempting installer launch; no false error",
+        "Footer spacing \u2014 gap between Advanced panel and footer reduced to match top spacing",
+        "Advanced panel redesigned \u2014 sectioned layout with General, Settings, Plugins, System labels and uniform button rows",
+        "Security hardening \u2014 URL scheme validation on all API endpoints, IPC input allowlists, concurrent_fragments clamped, video_height allowlisted, open-folder path safety",
+        "App size reduction \u2014 Python bundle stripped of pip, setuptools, idlelib, tkinter, pycache (~40MB saved on Linux/Mac)",
+        "14 new themes: Music (Vinyl, Lo-Fi, Jazz Club, Studio Midnight, Rave, Acoustic), Nature (Bioluminescent, Aurora, Desert Dusk, Volcanic), Cities (Tokyo Neon, Havana, Dubai Midnight, Favela Sunset)",
+        "Music, Cities, Moods category tabs added to themes window; total theme count reaches 100"
+      ]
+    }
+  ],
+  "_last_updated": "2026-05-07T23:22:31-05:00",
+  "version": "0.98.7",
+  "build": 104,
+  "label": "v0.98.7 - Build 104 - 5/7/2026 8:38 PM EST",
+  "downloadUrl": "https://egerena.com/apps/EGMd.zip",
+  "installer": "egm-setup.exe",
+  "zip": "EGMd.zip",
+  "_checksums": {
+    "sha256": "e33825b4637e1313897383f2d3b35fadf838a1f45e28c657c86e5a0a5d172b7f",
+    "algorithm": "SHA-256",
+    "file": "EGMd.zip"
+  }
+}

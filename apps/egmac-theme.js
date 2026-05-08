@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const savedTheme = localStorage.getItem('egmac-theme') || 'light';
     if (savedTheme === 'dark') {
         html.setAttribute('data-theme', 'dark');
-        toggleBtn.textContent = '☀️ Light';
+        toggleBtn.textContent = '☀️';
     } else {
         html.removeAttribute('data-theme');
-        toggleBtn.textContent = '🌙 Dark';
+        toggleBtn.textContent = '🌙';
     }
     
     // Toggle theme
@@ -21,11 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (isDark) {
             html.removeAttribute('data-theme');
-            toggleBtn.textContent = '🌙 Dark';
+            toggleBtn.textContent = '🌙';
             localStorage.setItem('egmac-theme', 'light');
         } else {
             html.setAttribute('data-theme', 'dark');
-            toggleBtn.textContent = '☀️ Light';
+            toggleBtn.textContent = '☀️';
             localStorage.setItem('egmac-theme', 'dark');
         }
     });

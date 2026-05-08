@@ -97,9 +97,16 @@
                 <p class="sha256-line">SHA256: b9934f3c174a40a4073465bf6ddb1f82f780f9865f71d4882264135f0345da50</p>
                 <p class="whats-new-content">
                     <strong>What's New in 0.98.7 — 5/7/2026:</strong><br>
-                    • Open folder from expanded download history panel now works correctly (history window was missing API bridge that prevented folder actions, theme sync, and URL re-add)<br>
-                    • Video thumbnail aspect ratio corrected — widescreen videos now display at proper 16:9 proportions instead of appearing stretched vertically<br>
-                    • Version references corrected — footer version pill and What's New header now update correctly during version bumps (scripts coverage gap fixed)
+                    <em class="polish-label">the polish</em><br><br>
+                    • Cookies browse now uses native file dialog instead of browser file picker — fixes cookies browse on Linux and improves reliability on all platforms<br>
+                    • Cookies section condensed to single always-visible row with extension tooltips — no more expand/collapse needed<br>
+                    • Download folder section condensed — removed redundant "Files saved to" line<br>
+                    • Check for Updates button moved to Update Plugins header — auto-expands panel when clicked<br>
+                    • Advanced panel: added descriptive tooltips to all action buttons (Desktop shortcut, Clear cache, Export/Import settings, Reinstall ffmpeg/Deno, Reset settings)<br>
+                    • Version tooltip removed from header badge — cleaner look<br>
+                    • Dead code cleanup: removed legacy password-protected zip support from all platforms — codebase now reflects v0.98 unencrypted distribution model with SHA256 verification<br>
+                    • Fixed yt-dlp update mechanism — Python bundle's pip module (required for runtime plugin updates) was inadvertently stripped during v0.98 size optimization; restored selectively to enable plugin updates without losing size benefits<br>
+                    • YouTube downloads using latest yt-dlp version (2026.03.17) — extractor fixes for recent YouTube changes now apply automatically through the restored update path
                 </p>
                 
                 <details class="history-details">

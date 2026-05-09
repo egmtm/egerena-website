@@ -86,5 +86,9 @@ deployment:
     - /bin/cp team/index.html ${DEPLOYPATH}team/
     - /bin/cp team/index.css ${DEPLOYPATH}team/
 
+    # ── /.well-known/ — security.txt (RFC 8615) ─────────────────
+    - /bin/mkdir -p ${DEPLOYPATH}.well-known/
+    - /bin/cp .well-known/security.txt ${DEPLOYPATH}.well-known/
+
     # ── Done ────────────────────────────────────────────────────
     - /bin/echo "✅ egerena.com deploy complete — $(date '+%Y-%m-%d %H:%M:%S %Z')"

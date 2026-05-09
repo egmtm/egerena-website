@@ -61,6 +61,11 @@ ErrorDocument 500 /500.html
     Require all denied
 </FilesMatch>
 
+# ── Allow .well-known (RFC 8615 — security.txt, ACME, etc.) ──────
+<IfModule mod_rewrite.c>
+    RewriteRule ^\.well-known/ - [L]
+</IfModule>
+
 # ── Block access to hidden files ─────────────────────────────────
 <FilesMatch "^\.">
     Require all denied

@@ -24,6 +24,8 @@
             <a href="../apps/index.html">← /apps</a>
             <span class="breadcrumb-dot">·</span>
             <a href="../games/index.html">← /games</a>
+            <span class="breadcrumb-dot">·</span>
+            <button class="theme-toggle-btn" id="themeToggle">NOIR</button>
         </div>
     </nav>
 
@@ -119,6 +121,34 @@
         <span class="footer-sep">·</span>
         <span class="footer-motto">Brick by brick.</span>
     </footer>
+    <script>
+    (function() {
+        var THEMES = ['noir', 'classified'];
+        var LABELS = { noir: 'NOIR', classified: 'DECLASSIFIED' };
+        var btn = document.getElementById('themeToggle');
+        var saved = localStorage.getItem('egmTeamTheme') || 'noir';
+        if (!THEMES.includes(saved)) saved = 'noir';
 
+        function applyTheme(t) {
+            if (t === 'noir') {
+                document.documentElement.removeAttribute('data-theme');
+            } else {
+                document.documentElement.setAttribute('data-theme', t);
+            }
+            if (btn) btn.textContent = LABELS[t];
+            localStorage.setItem('egmTeamTheme', t);
+        }
+
+        applyTheme(saved);
+
+        if (btn) {
+            btn.addEventListener('click', function() {
+                var current = localStorage.getItem('egmTeamTheme') || 'noir';
+                var idx = THEMES.indexOf(current);
+                applyTheme(THEMES[(idx + 1) % THEMES.length]);
+            });
+        }
+    })();
+    </script>
 </body>
 </html>

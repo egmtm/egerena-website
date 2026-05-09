@@ -14,6 +14,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 2rem 1.25rem 0;
+    padding-top: 52px;
     position: relative;
     overflow-x: hidden;
 }
@@ -41,8 +42,11 @@ body::after {
 
 /* BREADCRUMB */
 .breadcrumb {
-    position: relative;
-    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -51,9 +55,14 @@ body::after {
     font-size: 0.75rem;
     color: #444;
     letter-spacing: 0.1em;
-    margin-bottom: 2.5rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(8, 8, 8, 0.88);
+    border-bottom: 1px solid #1e1e1e;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    max-width: 100%;
     width: 100%;
-    max-width: 1100px;
+    box-sizing: border-box;
 }
 
 .breadcrumb-left { display: flex; align-items: center; gap: 0; }
@@ -396,6 +405,118 @@ footer a:hover { color: #666; }
     .divider {
         background: var(--card-color);
         opacity: 0.4;
+        width: 32px;
+    }
+}
+
+/* Theme toggle */
+.theme-toggle-btn {
+    background: none;
+    border: 1px solid #333;
+    color: #555;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.theme-toggle-btn:hover {
+    color: #888;
+    border-color: #555;
+}
+
+/* Classified theme */
+[data-theme="classified"] body {
+    background: #e8e2d4;
+    color: #1a1a14;
+}
+
+[data-theme="classified"] body::before {
+    display: none;
+}
+
+[data-theme="classified"] body::after {
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.15) 100%);
+}
+
+[data-theme="classified"] .breadcrumb {
+    background: rgba(200, 194, 178, 0.92);
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+
+[data-theme="classified"] .breadcrumb a { color: #4a4a38; }
+[data-theme="classified"] .breadcrumb a:hover { color: #1a1a14; }
+[data-theme="classified"] .breadcrumb span { color: #6a6a52; }
+
+[data-theme="classified"] .header .classified-tag { color: #8a7a5a; }
+[data-theme="classified"] .header h1 { color: #1a1a14; text-shadow: none; }
+[data-theme="classified"] .header .subtitle { color: #6a6a52; }
+
+[data-theme="classified"] .member-card {
+    background: #d8d2c4;
+    border-color: rgba(0,0,0,0.12);
+}
+
+[data-theme="classified"] .member-card:hover {
+    box-shadow: 0 0 24px var(--card-glow);
+    border-color: var(--card-color);
+}
+
+[data-theme="classified"] .portrait {
+    background: #c8c2b4;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+[data-theme="classified"] .fog {
+    background: radial-gradient(ellipse at 50% 80%, transparent 20%, #d8d2c4 85%);
+}
+
+[data-theme="classified"] .silhouette-a,
+[data-theme="classified"] .silhouette-b,
+[data-theme="classified"] .silhouette-c,
+[data-theme="classified"] .silhouette-d,
+[data-theme="classified"] .silhouette-e {
+    background: linear-gradient(to top, #a09880, #887868);
+    opacity: 0.45;
+}
+
+[data-theme="classified"] .clearance { color: #8a7a5a; }
+[data-theme="classified"] .member-card:hover .clearance { color: var(--card-color); }
+[data-theme="classified"] .codename { color: #1a1a14; }
+[data-theme="classified"] .divider { background: rgba(0,0,0,0.12); }
+[data-theme="classified"] .description { color: #6a6a52; }
+
+[data-theme="classified"] footer { color: #8a7a5a; }
+[data-theme="classified"] footer a { color: #6a6058; }
+[data-theme="classified"] footer a:hover { color: #1a1a14; }
+[data-theme="classified"] .footer-motto { color: #8a7a5a; }
+
+[data-theme="classified"] .theme-toggle-btn {
+    border-color: #b0a890;
+    color: #8a7a5a;
+}
+
+[data-theme="classified"] .theme-toggle-btn:hover {
+    color: #4a4a38;
+    border-color: #6a6a52;
+}
+
+/* Mobile always-on glow — classified */
+@media (hover: none) {
+    [data-theme="classified"] .member-card {
+        border-color: #c0bab0;
+        box-shadow: 0 0 16px var(--card-glow);
+    }
+    [data-theme="classified"] .clearance {
+        color: var(--card-color);
+        opacity: 0.5;
+    }
+    [data-theme="classified"] .divider {
+        background: var(--card-color);
+        opacity: 0.3;
         width: 32px;
     }
 }

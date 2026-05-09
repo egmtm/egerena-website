@@ -6,7 +6,7 @@
     <meta name="description" content="EGM Downloader - Professional video downloader for Windows. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta name="keywords" content="video downloader, youtube downloader, yt-dlp, windows downloader, multi-site downloader">
     <meta name="author" content="egerena.com">
-    <meta property="og:title" content="EGM Downloader v0.98.7 - Professional Video Downloader">
+    <meta property="og:title" content="EGM Downloader v0.98.8 - Professional Video Downloader">
     <meta property="og:description" content="Professional video downloader with zero-config setup. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta property="og:url" content="https://egerena.com/apps/egm.html">
     <title>EGM Downloader for Windows</title>
@@ -61,30 +61,40 @@
 
         <section class="section">
             <div class="card download-card">
-                <h2 class="download-title">EGM Downloader v0.98.7</h2>
+                <h2 class="download-title">EGM Downloader v0.98.8</h2>
                 <a href="https://egerena.com/apps/EGMd.zip" class="download-btn">Download EGM Downloader</a>
                 <p class="version-subtitle">Installer &middot; adds Start Menu shortcut &middot; auto-updates &middot; 303 KB &middot; ~800 MB after install</p>
-                <p class="sha256-line">SHA256: e33825b4637e1313897383f2d3b35fadf838a1f45e28c657c86e5a0a5d172b7f</p>
+                <p class="sha256-line">SHA256: d85bd43c033af3998df8c868f7eb8770e87c2b6359a2f97d589955bff6242b99</p>
                 <div class="portable-divider"><span>or</span></div>
                 <a href="https://egerena.com/apps/EGMd-portable.zip" class="download-btn download-btn-secondary">Get the portable version</a>
                 <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 261 KB &middot; ~800 MB after first run</p>
-                <p class="sha256-line">SHA256: 78434fc3da46964d8b37195a93bd879388443859bcb0f0674b2cbd40df2b6c3d</p>
+                <p class="sha256-line">SHA256: b02df01071b436c7e8bb1d687552b8292b0581bf200819e86a0f600ae108c988</p>
                 <div class="whats-new">
-                    <p class="whats-new-heading">What's New in v0.98.7 — 5/7/2026</p>
-                    <p class="polish-label">the polish</p>
+                    <p class="whats-new-heading">What's New in v0.98.8 — 5/9/2026</p>
+                    <p class="polish-label">security hardened</p>
                     <ul>
-                        <li>Cookies browse now uses native file dialog instead of browser file picker — fixes cookies browse on Linux and improves reliability on all platforms</li>
-                        <li>Cookies section condensed to single always-visible row with extension tooltips — no more expand/collapse needed</li>
-                        <li>Download folder section condensed — removed redundant "Files saved to" line</li>
-                        <li>Check for Updates button moved to Update Plugins header — auto-expands panel when clicked</li>
-                        <li>Advanced panel: added descriptive tooltips to all action buttons (Desktop shortcut, Clear cache, Export/Import settings, Reinstall ffmpeg/Deno, Reset settings)</li>
-                        <li>Version tooltip removed from header badge — cleaner look</li>
-                        <li>Dead code cleanup: removed legacy password-protected zip support from all platforms — codebase now reflects v0.98 unencrypted distribution model with SHA256 verification</li>
+                        <li>API token gate — every /api/* request now requires a per-session cryptographic token (X-EGM-Token header). Token generated fresh by Electron at startup, passed to Flask via environment variable, injected into pages via Jinja. Prevents drive-by localhost requests from malicious websites or local processes</li>
+                        <li>Fail-closed update verification — checksum parameter is now required on /api/download-update. Returns 400 if missing, ensuring no update can proceed without SHA256 verification</li>
+                        <li>Request body size limits — global 2 MB cap (MAX_CONTENT_LENGTH) on all requests. Cookies endpoint capped at 1 MB specifically. Oversized requests return 413</li>
+                        <li>Thread safety — jobs dictionary mutations (creation, deletion) now wrapped with _jobs_lock. Job read in download worker uses .get() with early return guard. Prevents race conditions between concurrent downloads and cleanup worker</li>
+                        <li>Scripts security audit — all 4 build/validation scripts reviewed: no eval/exec, subprocess limited to read-only git ls-files, all paths relative to repo root, no user-controlled path construction. Clean bill of health</li>
                     </ul>
                 </div>
                 <details class="history-details">
                     <summary class="history-summary">Previous Updates</summary>
                     <div class="history-content">
+                        <div class="history-item">
+                            <p class="history-version">v0.98.7 — 5/7/2026</p>
+                            <ul>
+                                <li>Cookies browse now uses native file dialog instead of browser file picker</li>
+                                <li>Cookies section condensed to single always-visible row with extension tooltips</li>
+                                <li>Download folder section condensed — removed redundant "Files saved to" line</li>
+                                <li>Check for Updates button moved to Update Plugins header</li>
+                                <li>Advanced panel tooltips added to all action buttons</li>
+                                <li>Version tooltip removed from header badge</li>
+                                <li>Dead code cleanup — legacy password-protected zip support removed</li>
+                            </ul>
+                        </div>
                         <div class="history-item">
                             <p class="history-version">v0.98.6 — 5/4/2026</p>
                             <ul>

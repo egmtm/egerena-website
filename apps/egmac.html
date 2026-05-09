@@ -91,27 +91,33 @@
         <div class="glass-card">
             <section class="section">
                 <div class="download-section">
-                <h3>📦 EGM Downloader 0.98.7</h3>
+                <h3>📦 EGM Downloader 0.98.8</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
                 <p class="version-subtitle" style="text-align:center;margin-top:4px">110 MB &middot; ~300 MB after install &middot; near instant startup</p>
-                <p class="sha256-line">SHA256: b9934f3c174a40a4073465bf6ddb1f82f780f9865f71d4882264135f0345da50</p>
+                <p class="sha256-line">SHA256: 7c5d788d0604da746c56c99dd3552816b54b2915faef1cb46754136c8e9d84ba</p>
                 <p class="whats-new-content">
-                    <strong>What's New in 0.98.7 — 5/7/2026:</strong><br>
-                    <em class="polish-label">the polish</em><br><br>
-                    • Cookies browse now uses native file dialog instead of browser file picker — fixes cookies browse on Linux and improves reliability on all platforms<br>
-                    • Cookies section condensed to single always-visible row with extension tooltips — no more expand/collapse needed<br>
-                    • Download folder section condensed — removed redundant "Files saved to" line<br>
-                    • Check for Updates button moved to Update Plugins header — auto-expands panel when clicked<br>
-                    • Advanced panel: added descriptive tooltips to all action buttons (Desktop shortcut, Clear cache, Export/Import settings, Reinstall ffmpeg/Deno, Reset settings)<br>
-                    • Version tooltip removed from header badge — cleaner look<br>
-                    • Dead code cleanup: removed legacy password-protected zip support from all platforms — codebase now reflects v0.98 unencrypted distribution model with SHA256 verification<br>
-                    • Fixed yt-dlp update mechanism — Python bundle's pip module (required for runtime plugin updates) was inadvertently stripped during v0.98 size optimization; restored selectively to enable plugin updates without losing size benefits<br>
-                    • YouTube downloads using latest yt-dlp version (2026.03.17) — extractor fixes for recent YouTube changes now apply automatically through the restored update path
+                    <strong>What's New in 0.98.8 — 5/9/2026:</strong><br>
+                    <em class="polish-label">security hardened</em><br><br>
+                    • API token gate — every /api/* request now requires a per-session cryptographic token (X-EGM-Token header). Token generated fresh by Electron at startup, passed to Flask via environment variable, injected into pages via Jinja. Prevents drive-by localhost requests from malicious websites or local processes<br>
+                    • Fail-closed update verification — checksum parameter is now required on /api/download-update. Returns 400 if missing, ensuring no update can proceed without SHA256 verification<br>
+                    • Request body size limits — global 2 MB cap (MAX_CONTENT_LENGTH) on all requests. Cookies endpoint capped at 1 MB specifically. Oversized requests return 413<br>
+                    • Thread safety — jobs dictionary mutations (creation, deletion) now wrapped with _jobs_lock. Job read in download worker uses .get() with early return guard. Prevents race conditions between concurrent downloads and cleanup worker<br>
+                    • Scripts security audit — all 4 build/validation scripts reviewed: no eval/exec, subprocess limited to read-only git ls-files, all paths relative to repo root, no user-controlled path construction. Clean bill of health
                 </p>
                 
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>
                     <div class="history-content">
+                        <p class="history-item">
+                            <strong>v0.98.7 — 5/7/2026:</strong><br>
+                            • Cookies browse now uses native file dialog instead of browser file picker<br>
+                            • Cookies section condensed to single always-visible row with extension tooltips<br>
+                            • Download folder section condensed — removed redundant "Files saved to" line<br>
+                            • Check for Updates button moved to Update Plugins header<br>
+                            • Advanced panel tooltips added to all action buttons<br>
+                            • Fixed yt-dlp update mechanism — pip module restored selectively<br>
+                            • YouTube downloads using latest yt-dlp version (2026.03.17)
+                        </p>
                         <p class="history-item">
                             <strong>v0.98.6 — 5/4/2026:</strong><br>
                             • Open folder from expanded download history panel now works correctly<br>

@@ -1,15 +1,24 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "Cookies browse now uses native file dialog instead of browser file picker \u2014 fixes cookies browse on Linux and improves reliability on all platforms",
-    "Cookies section condensed to single always-visible row with extension tooltips \u2014 no more expand/collapse needed",
-    "Download folder section condensed \u2014 removed redundant \"Files saved to\" line",
-    "Check for Updates button moved to Update Plugins header \u2014 auto-expands panel when clicked",
-    "Advanced panel: added descriptive tooltips to all action buttons (Desktop shortcut, Clear cache, Export/Import settings, Reinstall ffmpeg/Deno, Reset settings)",
-    "Version tooltip removed from header badge \u2014 cleaner look",
-    "Dead code cleanup: removed legacy password-protected zip support (APP_UPDATE_PASSWORD, pyzipper dependency) from all platforms \u2014 codebase now reflects v0.98 unencrypted distribution model with SHA256 verification"
+    "API token gate \u2014 every /api/* request now requires a per-session cryptographic token (X-EGM-Token header). Token generated fresh by Electron at startup, passed to Flask via environment variable, injected into pages via Jinja. Prevents drive-by localhost requests from malicious websites or local processes",
+    "Fail-closed update verification \u2014 checksum parameter is now required on /api/download-update. Returns 400 if missing, ensuring no update can proceed without SHA256 verification",
+    "Request body size limits \u2014 global 2 MB cap (MAX_CONTENT_LENGTH) on all requests. Cookies endpoint capped at 1 MB specifically. Oversized requests return 413",
+    "Thread safety \u2014 jobs dictionary mutations (creation, deletion) now wrapped with _jobs_lock. Job read in download worker uses .get() with early return guard. Prevents race conditions between concurrent downloads and cleanup worker",
+    "Scripts security audit \u2014 all 4 build/validation scripts reviewed: no eval/exec, subprocess limited to read-only git ls-files, all paths relative to repo root, no user-controlled path construction. Clean bill of health"
   ],
   "_history": [
+    {
+      "version": "0.98.8",
+      "date": "5/9/2026 12:26 PM EST",
+      "notes": [
+        "API token gate \u2014 every /api/* request now requires a per-session cryptographic token (X-EGM-Token header). Token generated fresh by Electron at startup, passed to Flask via environment variable, injected into pages via Jinja. Prevents drive-by localhost requests from malicious websites or local processes",
+        "Fail-closed update verification \u2014 checksum parameter is now required on /api/download-update. Returns 400 if missing, ensuring no update can proceed without SHA256 verification",
+        "Request body size limits \u2014 global 2 MB cap (MAX_CONTENT_LENGTH) on all requests. Cookies endpoint capped at 1 MB specifically. Oversized requests return 413",
+        "Thread safety \u2014 jobs dictionary mutations (creation, deletion) now wrapped with _jobs_lock. Job read in download worker uses .get() with early return guard. Prevents race conditions between concurrent downloads and cleanup worker",
+        "Scripts security audit \u2014 all 4 build/validation scripts reviewed: no eval/exec, subprocess limited to read-only git ls-files, all paths relative to repo root, no user-controlled path construction. Clean bill of health"
+      ]
+    },
     {
       "version": "0.98.7",
       "date": "5/7/2026 8:38 PM EST",
@@ -74,30 +83,17 @@
         "Portable variant has its own update feed (egm-portable-version.json) and update UI is hidden automatically when running portable",
         "Build pipeline now produces both installer and portable zips in one pass"
       ]
-    },
-    {
-      "version": "0.97.5",
-      "date": "4/26/2026 10:25 PM EST",
-      "notes": [
-        "Mac auto-update \u2014 now opens download page in browser instead of attempting installer launch; no false error",
-        "Footer spacing \u2014 gap between Advanced panel and footer reduced to match top spacing",
-        "Advanced panel redesigned \u2014 sectioned layout with General, Settings, Plugins, System labels and uniform button rows",
-        "Security hardening \u2014 URL scheme validation on all API endpoints, IPC input allowlists, concurrent_fragments clamped, video_height allowlisted, open-folder path safety",
-        "App size reduction \u2014 Python bundle stripped of pip, setuptools, idlelib, tkinter, pycache (~40MB saved on Linux/Mac)",
-        "14 new themes: Music (Vinyl, Lo-Fi, Jazz Club, Studio Midnight, Rave, Acoustic), Nature (Bioluminescent, Aurora, Desert Dusk, Volcanic), Cities (Tokyo Neon, Havana, Dubai Midnight, Favela Sunset)",
-        "Music, Cities, Moods category tabs added to themes window; total theme count reaches 100"
-      ]
     }
   ],
-  "_last_updated": "2026-05-07T23:22:31-05:00",
-  "version": "0.98.7",
-  "build": 104,
-  "label": "v0.98.7 - Build 104 - 5/7/2026 8:38 PM EST",
+  "_last_updated": "2026-05-09T13:53:15-05:00",
+  "version": "0.98.8",
+  "build": 105,
+  "label": "v0.98.8 - Build 105 - 5/9/2026 12:26 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "e33825b4637e1313897383f2d3b35fadf838a1f45e28c657c86e5a0a5d172b7f",
+    "sha256": "d85bd43c033af3998df8c868f7eb8770e87c2b6359a2f97d589955bff6242b99",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   }

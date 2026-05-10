@@ -10,6 +10,7 @@
     --text-primary: #004d40;
     --text-secondary: #00695c;
     --accent-gradient: linear-gradient(135deg, #00acc1, #00897b, #558b2f);
+    --scrollbar-color: #00897b;
     --feature-bg: rgba(255, 255, 255, 0.55);
     --feature-border: rgba(0, 172, 193, 0.25);
     --feature-shadow: 0 4px 16px rgba(0, 121, 107, 0.1);
@@ -27,6 +28,7 @@
     --text-primary: #00e5ff;
     --text-secondary: #80deea;
     --accent-gradient: linear-gradient(135deg, #0090b8, #007a9a, #006080);
+    --scrollbar-color: #0090b8;
     --feature-bg: rgba(0, 22, 28, 0.65);
     --feature-border: rgba(0, 229, 255, 0.18);
     --feature-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
@@ -45,6 +47,7 @@
     --text-primary: #1a3a5c;
     --text-secondary: #2a5a8c;
     --accent-gradient: linear-gradient(180deg, #5ab0e8 0%, #2a80d8 60%, #1a60b8 100%);
+    --scrollbar-color: #2a80d8;
     --feature-bg: rgba(210, 235, 252, 0.7);
     --feature-border: rgba(0, 100, 180, 0.22);
     --feature-shadow: 0 4px 16px rgba(0, 80, 160, 0.1);
@@ -68,6 +71,7 @@
     --text-primary: #1a1a1a;
     --text-secondary: #444444;
     --accent-gradient: linear-gradient(180deg, #cccccc 0%, #999999 100%);
+    --scrollbar-color: #999999;
     --feature-bg: rgba(212, 208, 200, 0.8);
     --feature-border: rgba(0, 0, 0, 0.18);
     --feature-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
@@ -631,9 +635,6 @@ footer {
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #00897b; border-radius: 3px; }
-[data-theme="dark"]      ::-webkit-scrollbar-thumb { background: #0090b8; }
-[data-theme="aqua"]      ::-webkit-scrollbar-thumb { background: #2a80d8; }
-[data-theme="platinum"]  ::-webkit-scrollbar-thumb { background: #999999; }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-color, #00897b); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { opacity: 1; }
-* { scrollbar-width: thin; scrollbar-color: #00897b transparent; }
+* { scrollbar-width: thin; scrollbar-color: var(--scrollbar-color, #00897b) transparent; }

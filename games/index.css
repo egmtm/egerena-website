@@ -533,3 +533,30 @@ footer a:hover { color: var(--accent); }
     color: var(--accent);
     text-shadow: 0 0 8px var(--accent);
 }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; opacity: 0.6; }
+::-webkit-scrollbar-thumb:hover { opacity: 1; }
+* { scrollbar-width: thin; scrollbar-color: var(--accent) transparent; }
+
+/* Breadcrumb separator and back link */
+.breadcrumb-sep {
+    color: var(--text-dim);
+    opacity: 0.5;
+    margin: 0 0.25rem;
+}
+
+.breadcrumb-back {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+}
+
+.breadcrumb-back:hover {
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--accent);
+}

@@ -173,3 +173,13 @@ hr{width:32px;border:none;border-top:1px solid var(--border);transition:border-c
     font-size: 0.95rem;
     padding: .55rem 1rem;
 }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #444; border-radius: 3px; }
+[data-theme="slate"]     ::-webkit-scrollbar-thumb { background: #556655; }
+[data-theme="obsidian"]  ::-webkit-scrollbar-thumb { background: #2a5080; }
+[data-theme="parchment"] ::-webkit-scrollbar-thumb { background: #8b6a3a; }
+[data-theme="dusk"]      ::-webkit-scrollbar-thumb { background: #6a5a9a; }
+* { scrollbar-width: thin; scrollbar-color: #444 transparent; }

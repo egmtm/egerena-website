@@ -91,23 +91,41 @@
         <div class="glass-card">
             <section class="section">
                 <div class="download-section">
-                <h3>📦 EGM Downloader 0.98.8</h3>
+                <h3>📦 EGM Downloader 0.98.9</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
                 <p class="version-subtitle" style="text-align:center;margin-top:4px">110 MB &middot; ~300 MB after install &middot; near instant startup</p>
-                <p class="sha256-line">SHA256: 7c5d788d0604da746c56c99dd3552816b54b2915faef1cb46754136c8e9d84ba</p>
+                <p class="sha256-line">SHA256: c32e25616b496d981350c786a88e3a1243470f4cbdcd9f431a9d9e2ca975ee8e</p>
                 <p class="whats-new-content">
-                    <strong>What's New in 0.98.8 — 5/9/2026:</strong><br>
-                    <em class="polish-label">security hardened</em><br><br>
-                    • API token gate — every /api/* request now requires a per-session cryptographic token (X-EGM-Token header). Token generated fresh by Electron at startup, passed to Flask via environment variable, injected into pages via Jinja. Prevents drive-by localhost requests from malicious websites or local processes<br>
-                    • Fail-closed update verification — checksum parameter is now required on /api/download-update. Returns 400 if missing, ensuring no update can proceed without SHA256 verification<br>
-                    • Request body size limits — global 2 MB cap (MAX_CONTENT_LENGTH) on all requests. Cookies endpoint capped at 1 MB specifically. Oversized requests return 413<br>
-                    • Thread safety — jobs dictionary mutations (creation, deletion) now wrapped with _jobs_lock. Job read in download worker uses .get() with early return guard. Prevents race conditions between concurrent downloads and cleanup worker<br>
-                    • Scripts security audit — all 4 build/validation scripts reviewed: no eval/exec, subprocess limited to read-only git ls-files, all paths relative to repo root, no user-controlled path construction. Clean bill of health
+                    <strong>What's New in 0.98.9 — 5/10/2026:</strong><br>
+                    <em class="polish-label">fit &amp; finish</em><br><br>
+                    • Theme improvements — four themes renamed for broader appeal; CSS class names unchanged<br>
+                    • Header description updated — "Your personal media downloader for 1000+ sites"<br>
+                    • Clear Completed button removed from download queue — downloads auto-move to history on completion<br>
+                    • Format toggle label changed from "MP3" to "Audio" across all views<br>
+                    • Footer egerena.com link now points to the Mac-specific page<br>
+                    • Header alignment — logo and hamburger button now sit on the same visual line<br>
+                    • Quality picker labels restructured — "4320p - 8K", "2160p - 4K", "1440p - 2K" format<br>
+                    • Throttle tooltip generalized — no longer references YouTube specifically<br>
+                    • Tooltips added to all section headers — Settings, Update Plugins, Advanced<br>
+                    • Tooltips added to Check for Updates button, Quit when done, and Check updates on launch toggles<br>
+                    • Cookies section cursor:help removed — tooltip preserved, question-mark cursor gone<br>
+                    • Flask port field auto-centers when alone on its row<br>
+                    • Update Plugins panel auto-collapses after 3 seconds when no updates are found<br>
+                    • Deno tooltip in Update Plugins — "To update Deno, go to Advanced → Reinstall Deno"<br>
+                    • Scrollbar theming — custom scrollbars adapt to current theme colors via CSS variables
                 </p>
                 
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>
                     <div class="history-content">
+                        <p class="history-item">
+                            <strong>v0.98.8 — 5/9/2026:</strong><br>
+                            • API token gate — per-session cryptographic token required on all /api/* requests<br>
+                            • Fail-closed update verification — checksum required on /api/download-update<br>
+                            • Request body size limits — 2 MB global cap, 1 MB cookies endpoint<br>
+                            • Thread safety — jobs dictionary mutations wrapped with _jobs_lock<br>
+                            • Scripts security audit — all 4 build/validation scripts reviewed clean
+                        </p>
                         <p class="history-item">
                             <strong>v0.98.7 — 5/7/2026:</strong><br>
                             • Cookies browse now uses native file dialog instead of browser file picker<br>
@@ -222,13 +240,13 @@
             <section class="section">
                 <h2 class="section-title"><span>What's Coming</span></h2>
                 <div class="history-item">
-                    <p class="history-item"><strong>v0.99 — Subscriptions</strong><br>
+                    <p class="history-item"><strong>v1.0 — Subscriptions</strong><br>
                     • Save any channel or playlist and check for new videos automatically<br>
                     • Download what's new in one click<br>
                     • Dedicated subscriptions tab and full management window</p>
                 </div>
                 <div class="history-item">
-                    <p class="history-item"><strong>v1.0 — Multi-language UI</strong><br>
+                    <p class="history-item"><strong>v1.1 — Multi-language UI</strong><br>
                     • Globe icon language picker — English, Spanish, Portuguese, French, German, Italian, Dutch, Japanese, Arabic, and Russian at launch<br>
                     • In-app language switcher — translations already complete for all 10 languages; picker UI ships with v1.0<br>
                     • Community translation system — export any language file, edit it, import it back; custom imports appear alongside the original<br>

@@ -520,3 +520,11 @@ footer a:hover { color: #666; }
         width: 32px;
     }
 }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #444; }
+[data-theme="classified"] ::-webkit-scrollbar-thumb { background: #b0a890; }
+* { scrollbar-width: thin; scrollbar-color: #2a2a2a transparent; }

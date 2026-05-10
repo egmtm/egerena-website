@@ -627,3 +627,10 @@ footer {
     display: block;
     margin-bottom: 0.5rem;
 }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { opacity: 1; }
+* { scrollbar-width: thin; scrollbar-color: var(--accent) transparent; }

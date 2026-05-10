@@ -35,6 +35,31 @@ function isValidEmail($email) {
     return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
 }
 
+// ── Turnstile verification ──────────────────────────────────────────────────
+$turnstileToken = $_POST['cf-turnstile-response'] ?? '';
+
+if (empty($turnstileToken)) {
+    redirectBack('error', 'captcha');
+}
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, 'https://challenges.cloudflare.com/turnstile/v0/siteverify');
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
+    'secret'   => TURNSTILE_SECRET,
+    'response' => $turnstileToken,
+    'remoteip' => $_SERVER['REMOTE_ADDR'] ?? ''
+]));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+$tsResponse = curl_exec($ch);
+curl_close($ch);
+
+$tsData = json_decode($tsResponse, true);
+if (!$tsData || !$tsData['success']) {
+    redirectBack('error', 'captcha');
+}
+
 // ── Rate limiting ────────────────────────────────────────────────
 $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
 $rateKey = 'rate_limit_' . md5($ip);

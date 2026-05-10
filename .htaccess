@@ -50,7 +50,7 @@ ErrorDocument 500 /500.html
     Header always set X-Content-Type-Options "nosniff"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; script-src-elem 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; script-src-elem 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none' https://challenges.cloudflare.com; frame-ancestors 'none'; upgrade-insecure-requests"
     Header always set Cross-Origin-Opener-Policy "same-origin"
     Header always set Cross-Origin-Resource-Policy "same-origin"
 
@@ -60,11 +60,6 @@ ErrorDocument 500 /500.html
 <FilesMatch "\.(log|sql|bak|env|git|sh|config|ini|yml|yaml)$">
     Require all denied
 </FilesMatch>
-
-# ── Allow .well-known (RFC 8615 — security.txt, ACME, etc.) ──────
-<IfModule mod_rewrite.c>
-    RewriteRule ^\.well-known/ - [L]
-</IfModule>
 
 # ── Block access to hidden files ─────────────────────────────────
 <FilesMatch "^\.">

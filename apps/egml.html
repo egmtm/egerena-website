@@ -116,32 +116,52 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3>> EGM_DOWNLOADER_v0.98.8<span class="dl-ext">.AppImage</span></h3>
+                <h3>> EGM_DOWNLOADER_v0.98.9<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: 900f219446fabbf1d866fcd1ff73cfc9178669565dd635cee528a9585a2aaab8</p>
-                <p class="sha256-line" style="margin-top:6px;opacity:0.5">120 MB &middot; ~300 MB after first run &middot; near instant startup</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: 1f8125d9d64a8dcddccbc4c40ef624c5fd72e3be07b2a2fa807079ce6288195f</p>
+                <p class="sha256-line" style="margin-top:6px;opacity:0.5">128 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
 
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN v0.98.8</div>
+                <div class="section-header">> WHAT'S NEW IN v0.98.9</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-                <div class="whats-new-subtitle">v0.98.8 — 5/9/2026</div>
+                <div class="whats-new-subtitle">v0.98.9 — 5/10/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
-                <div class="polish-label">// security hardened</div>
+                <div class="polish-label">// fit &amp; finish</div>
                 <ul>
-                    <li>API token gate — every /api/* request now requires a per-session cryptographic token (X-EGM-Token header). Prevents drive-by localhost requests from malicious websites or local processes</li>
-                    <li>Fail-closed update verification — checksum parameter is now required on /api/download-update. Returns 400 if missing, ensuring no update can proceed without SHA256 verification</li>
-                    <li>Request body size limits — global 2 MB cap (MAX_CONTENT_LENGTH) on all requests. Cookies endpoint capped at 1 MB specifically. Oversized requests return 413</li>
-                    <li>Thread safety — jobs dictionary mutations now wrapped with _jobs_lock. Prevents race conditions between concurrent downloads and cleanup worker</li>
-                    <li>Scripts security audit — all 4 build/validation scripts reviewed: no eval/exec, subprocess limited to read-only git ls-files, all paths relative to repo root. Clean bill of health</li>
+                    <li>Theme improvements — four themes renamed for broader appeal; CSS class names unchanged</li>
+                    <li>Header description updated — "Your personal media downloader for 1000+ sites"</li>
+                    <li>Clear Completed button removed from download queue — downloads auto-move to history on completion</li>
+                    <li>Format toggle label changed from "MP3" to "Audio" across all views</li>
+                    <li>Footer egerena.com link now points to the Linux-specific page</li>
+                    <li>Header alignment — logo and hamburger button now sit on the same visual line</li>
+                    <li>Quality picker labels restructured — "4320p - 8K", "2160p - 4K", "1440p - 2K" format</li>
+                    <li>Throttle tooltip generalized — no longer references YouTube specifically</li>
+                    <li>Tooltips added to all section headers — Settings, Update Plugins, Advanced</li>
+                    <li>Tooltips added to Check for Updates button, Quit when done, and Check updates on launch toggles</li>
+                    <li>Cookies section cursor:help removed — tooltip preserved, question-mark cursor gone</li>
+                    <li>Flask port field auto-centers when alone on its row</li>
+                    <li>Update Plugins panel auto-collapses after 3 seconds when no updates are found</li>
+                    <li>Deno tooltip in Update Plugins — "To update Deno, go to Advanced → Reinstall Deno"</li>
+                    <li>Scrollbar theming — custom scrollbars adapt to current theme colors via CSS variables</li>
+                    <li>Window position is now remembered between sessions</li>
                 </ul>
                 
                 <details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v0.98.8 — 5/9/2026</div>
+                        <ul>
+                            <li>API token gate — per-session cryptographic token required on all /api/* requests</li>
+                            <li>Fail-closed update verification — checksum required on /api/download-update</li>
+                            <li>Request body size limits — 2 MB global cap, 1 MB cookies endpoint</li>
+                            <li>Thread safety — jobs dictionary mutations wrapped with _jobs_lock</li>
+                            <li>Scripts security audit — all 4 build/validation scripts reviewed clean</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version">v0.98.7 — 5/7/2026</div>
                         <ul>
                             <li>Cookies browse now uses native file dialog instead of browser file picker</li>
@@ -253,14 +273,14 @@
                 <div class="section-header">> WHAT'S COMING</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
 
-                <div class="whats-new-subtitle">v0.99 — Subscriptions</div>
+                <div class="whats-new-subtitle">v1.0 — Subscriptions</div>
                 <ul>
                     <li>Save any channel or playlist and check for new videos automatically</li>
                     <li>Download what's new in one click</li>
                     <li>Dedicated subscriptions tab and full management window</li>
                 </ul>
 
-                <div class="whats-new-subtitle history-version">v1.0 — Multi-language UI</div>
+                <div class="whats-new-subtitle history-version">v1.1 — Multi-language UI</div>
                 <ul>
                     <li>Globe icon language picker — English, Spanish, Portuguese, French, German, Italian, Dutch, Japanese, Arabic, and Russian at launch</li>
                     <li>In-app language switcher — translations already complete for all 10 languages; picker UI ships with v1.0</li>

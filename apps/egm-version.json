@@ -1,13 +1,46 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "API token gate \u2014 every /api/* request now requires a per-session cryptographic token (X-EGM-Token header). Token generated fresh by Electron at startup, passed to Flask via environment variable, injected into pages via Jinja. Prevents drive-by localhost requests from malicious websites or local processes",
-    "Fail-closed update verification \u2014 checksum parameter is now required on /api/download-update. Returns 400 if missing, ensuring no update can proceed without SHA256 verification",
-    "Request body size limits \u2014 global 2 MB cap (MAX_CONTENT_LENGTH) on all requests. Cookies endpoint capped at 1 MB specifically. Oversized requests return 413",
-    "Thread safety \u2014 jobs dictionary mutations (creation, deletion) now wrapped with _jobs_lock. Job read in download worker uses .get() with early return guard. Prevents race conditions between concurrent downloads and cleanup worker",
-    "Scripts security audit \u2014 all 4 build/validation scripts reviewed: no eval/exec, subprocess limited to read-only git ls-files, all paths relative to repo root, no user-controlled path construction. Clean bill of health"
+    "Theme improvements \u2014 four themes renamed for broader appeal. CSS class names unchanged (existing preferences preserved)",
+    "Header description updated \u2014 site list replaced with \"Your personal media downloader for 1000+ sites\" with linked site directory",
+    "Clear Completed button removed from download queue \u2014 downloads auto-move to history on completion",
+    "Format toggle label changed from \"MP3\" to \"Audio\" across all views \u2014 static settings toggle and per-video format selector both updated",
+    "Footer egerena.com link now points to each platform's specific page (Windows/Mac/Linux)",
+    "Header alignment \u2014 logo and hamburger button now sit on the same visual line",
+    "Quality picker labels restructured \u2014 \"4320p - 8K\", \"2160p - 4K\", \"1440p - 2K\" format in both settings and per-video selectors. Removed \"may be slower\" from descriptions",
+    "Throttle tooltip generalized \u2014 no longer references YouTube specifically; now reads \"source throttling on high-bitrate streams is normal\"",
+    "Tooltips added to all section headers \u2014 Settings, Update Plugins, Advanced now match Cookies with descriptive hover text",
+    "Tooltips added to Check for Updates button, Quit when done, and Check updates on launch toggles",
+    "Cookies section cursor:help removed \u2014 tooltip preserved, question-mark cursor gone",
+    "Flask port field auto-centers when alone on its row (Mac/Linux where desktop shortcut is hidden)",
+    "Update Plugins panel auto-collapses after 3 seconds when no updates are found",
+    "Deno tooltip in Update Plugins \u2014 \"To update Deno, go to Advanced \u2192 Reinstall Deno\"",
+    "Scrollbar theming \u2014 custom scrollbars adapt to current theme colors via CSS variables",
+    "[MAC] Cookies browse dialog now filters for .txt files. Linux remains filterless for GTK compatibility"
   ],
   "_history": [
+    {
+      "version": "0.98.9",
+      "date": "5/10/2026 9:43 AM EST",
+      "notes": [
+        "Theme improvements \u2014 four themes renamed for broader appeal. CSS class names unchanged (existing preferences preserved)",
+        "Header description updated \u2014 site list replaced with \"Your personal media downloader for 1000+ sites\" with linked site directory",
+        "Clear Completed button removed from download queue \u2014 downloads auto-move to history on completion",
+        "Format toggle label changed from \"MP3\" to \"Audio\" across all views \u2014 static settings toggle and per-video format selector both updated",
+        "Footer egerena.com link now points to each platform's specific page (Windows/Mac/Linux)",
+        "Header alignment \u2014 logo and hamburger button now sit on the same visual line",
+        "Quality picker labels restructured \u2014 \"4320p - 8K\", \"2160p - 4K\", \"1440p - 2K\" format in both settings and per-video selectors. Removed \"may be slower\" from descriptions",
+        "Throttle tooltip generalized \u2014 no longer references YouTube specifically; now reads \"source throttling on high-bitrate streams is normal\"",
+        "Tooltips added to all section headers \u2014 Settings, Update Plugins, Advanced now match Cookies with descriptive hover text",
+        "Tooltips added to Check for Updates button, Quit when done, and Check updates on launch toggles",
+        "Cookies section cursor:help removed \u2014 tooltip preserved, question-mark cursor gone",
+        "Flask port field auto-centers when alone on its row (Mac/Linux where desktop shortcut is hidden)",
+        "Update Plugins panel auto-collapses after 3 seconds when no updates are found",
+        "Deno tooltip in Update Plugins \u2014 \"To update Deno, go to Advanced \u2192 Reinstall Deno\"",
+        "Scrollbar theming \u2014 custom scrollbars adapt to current theme colors via CSS variables",
+        "[MAC] Cookies browse dialog now filters for .txt files. Linux remains filterless for GTK compatibility"
+      ]
+    },
     {
       "version": "0.98.8",
       "date": "5/9/2026 12:26 PM EST",
@@ -50,50 +83,17 @@
         "electron-builder updated to v26.8.1 (build toolchain compatibility with Electron 41)",
         "Open folder from the expanded download history panel does not work \u2014 use the hamburger menu's open folder action instead. Fix planned for next release."
       ]
-    },
-    {
-      "version": "0.98",
-      "date": "4/28/2026 1:47 AM EST",
-      "notes": [
-        "URL input pane redesigned \u2014 compact unified buttons (28px), textarea shrinks to 3 lines by default and auto-grows as URLs are added, \"Max videos\" caption replaces \"Videos\"",
-        "Drag and drop URLs directly into the URL textarea \u2014 visual drag-over feedback, filters comment lines, appends cleanly",
-        "Keyboard shortcuts \u2014 paste-and-fetch (Ctrl+V / \u2318V), clear textarea (Esc), trigger Fetch Info (Ctrl+Enter / \u2318Return)",
-        "All Themes window redesigned \u2014 categories moved to left sidebar with collapsible sections (Style, Vibe, Culture, Other); search bar compact (expands on focus); category counts shown",
-        "Download subtitles toggle in Advanced panel \u2014 embeds English subtitles (manual preferred, auto-generated fallback) directly into video file; no separate .srt files",
-        "Embed metadata toggle in Advanced panel (ON by default) \u2014 embeds thumbnail, chapter markers, and title/artist/date metadata into downloaded videos",
-        "Output format selector in Advanced panel \u2014 switch between MP4 (default) and MKV container for video downloads",
-        "Video quality picker expanded \u2014 8K (4320p), 4K (2160p), and 2K (1440p) added with High Resolution / Standard tier separators",
-        "Audio quality picker expanded \u2014 M4A (256 kbps) and OPUS (128 kbps, 192 kbps) formats added alongside MP3 and FLAC with format section dividers",
-        "Checksum verification for auto-updates \u2014 SHA256 computed during build, embedded in JSON feed, verified before extracting installer; tampering detected and blocked",
-        "Distribution zips are now unencrypted \u2014 EGMd.zip and EGMdM.zip are standard zips; pyzipper dependency removed; SHA256 replaces password as integrity mechanism",
-        "What's New modal now reads release notes live from the JSON feed \u2014 no more hardcoded bullets; shows \"Loading\u2026\" while fetching, graceful fallback if offline",
-        "14 new themes (120 total: 110 permanent + 10 seasonal) \u2014 Destiny characters (Cayde-6, Zavala, Savath\u00fbn, The Witness), Hyrule, Velvet Rose, Nocturnix, Hanami, Sugar Riot, Sundrop, Dream Dust, First Light, Neon Kiss, Prism",
-        "6 Mood themes added \u2014 Melancholy, Euphoria, Tension, Serenity, Nostalgia, Focus",
-        "Theme CSS is now a single shared source \u2014 main app and themes window both include theme_styles.html; new themes apply everywhere automatically",
-        "Theme validation switched from static allowlist to regex \u2014 future themes work without code changes",
-        "Mac auto-update now opens the download page in the browser \u2014 no more confusing error on non-installer builds",
-        "Double update toast guard added \u2014 auto-check on launch no longer fires twice",
-        "Security hardening \u2014 URL scheme validation on all API endpoints, IPC input allowlists, concurrent_fragments clamped 1\u201316, video_height allowlisted, open-folder path safety",
-        "App size reduced ~40MB \u2014 Python bundle stripped of pip, setuptools, idlelib, tkinter, pycache on Mac and Linux builds",
-        "Desktop shortcut button shows confirmation dialog; detects if shortcut already exists and shows \"already exists\" toast instead of overwriting",
-        "Reinstall ffmpeg and Reinstall Deno now have distinct icons (\u25b6 and \u2b21) for quick visual identification",
-        "Advanced panel section labels removed \u2014 cleaner layout for power users; buttons are self-explanatory",
-        "Footer spacing tightened between Advanced panel and footer",
-        "Windows portable edition \u2014 EGMd-portable.zip runs from any folder or USB stick; no installer, no registry, no system changes; settings and history stay in data/ inside the portable folder; auto-update disabled",
-        "Portable variant has its own update feed (egm-portable-version.json) and update UI is hidden automatically when running portable",
-        "Build pipeline now produces both installer and portable zips in one pass"
-      ]
     }
   ],
-  "_last_updated": "2026-05-09T13:53:15-05:00",
-  "version": "0.98.8",
-  "build": 105,
-  "label": "v0.98.8 - Build 105 - 5/9/2026 12:26 PM EST",
+  "_last_updated": "2026-05-10T12:39:13-05:00",
+  "version": "0.98.9",
+  "build": 106,
+  "label": "v0.98.9 - Build 106 - 5/10/2026 9:43 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "d85bd43c033af3998df8c868f7eb8770e87c2b6359a2f97d589955bff6242b99",
+    "sha256": "36d8e2b925b996a898fe10a5fe7f000f1e310daea041ce3d305abe23ca923490",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   }

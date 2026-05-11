@@ -1,5 +1,11 @@
 # egerena.com — Website Source
 
+<div align="center">
+  <img src="egm-logo.svg" alt="EGerena.com" width="260"/>
+</div>
+
+<br/>
+
 ![Version](https://img.shields.io/badge/dynamic/json?url=https://egerena.com/version.json&query=version&label=version&style=flat-square&color=0078b0)
 ![Cloudflare](https://img.shields.io/badge/Cloudflare-Protected-F38020?logo=cloudflare&logoColor=white)
 ![SSL](https://img.shields.io/badge/SSL-A+-brightgreen?logo=letsencrypt&logoColor=white)

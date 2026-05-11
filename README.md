@@ -100,4 +100,4 @@ EGM — contact@egerena.com
 
 ## License
 
-© 2024–2026 EGM — All Rights Reserved. See [LICENSE](./LICENSE) for details.
+© 2003–2026 EGM — All Rights Reserved. See [LICENSE](./LICENSE) for details.

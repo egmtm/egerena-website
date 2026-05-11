@@ -1,6 +1,10 @@
 # egerena.com — Website Source
 
 ![Version](https://img.shields.io/badge/dynamic/json?url=https://egerena.com/version.json&query=version&label=version&style=flat-square&color=0078b0)
+![Cloudflare](https://img.shields.io/badge/Cloudflare-Protected-F38020?logo=cloudflare&logoColor=white)
+![SSL](https://img.shields.io/badge/SSL-A+-brightgreen?logo=letsencrypt&logoColor=white)
+![Security Headers](https://img.shields.io/badge/Security_Headers-A-brightgreen?logo=shield&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.x-777BB4?logo=php&logoColor=white)
 
 Source code for [egerena.com](https://egerena.com), the personal portfolio and
 desktop app distribution site for EGM.
@@ -85,3 +89,9 @@ auto-deploy pipeline.
 ## Contact
 
 EGM — contact@egerena.com
+
+---
+
+## License
+
+© 2024–2026 EGM — All Rights Reserved. See [LICENSE](./LICENSE) for details.

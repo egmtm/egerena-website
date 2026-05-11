@@ -6,6 +6,9 @@ config.php
 *.pem
 secrets.json
 
+# ── cPanel deploy config (server-managed, not for public) ─────
+.cpanel.yml
+
 # ── Third-party libraries (manually managed on server) ────────
 phpmailer/
 

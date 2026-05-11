@@ -15,6 +15,7 @@ This repository is auto-deployed to the live server via cPanel Git integration.
 - **`/apps/`** — desktop app product pages (Windows, macOS, Linux variants)
 - **`/games/`** — games hub and STDERR (game001) game + leaderboard
 - **`/team/`** — team page (dark cinematic aesthetic)
+- **`/.well-known/`** — `security.txt` (RFC 8615 vulnerability disclosure)
 
 ---
 
@@ -22,10 +23,11 @@ This repository is auto-deployed to the live server via cPanel Git integration.
 
 Files intentionally excluded from this repo (managed directly on the server):
 
-- **`config.php`** — SMTP credentials for the contact form
+- **`config.php`** — SMTP credentials and Turnstile secret key (chmod 600)
 - **`phpmailer/`** — third-party email library
 - **`games/game001-scores.json`** — runtime leaderboard data
 - **`games/game001-ratelimit.json`** — runtime rate-limit data
+- **`.cpanel.yml`** — cPanel deploy config (server-managed, gitignored)
 
 See [`THIRD_PARTY.md`](./THIRD_PARTY.md) for full context on why each is excluded
 and how each is managed.
@@ -38,11 +40,7 @@ The desktop app source code itself lives in a separate repo:
 ## How updates reach the live site
 
 ```
-Wizard delivers files
-       ↓
-EGM approves
-       ↓
-Commit lands on `main` branch
+Change committed to `main` branch
        ↓
 EGM merges `main` → `live` branch (fast-forward only)
        ↓
@@ -74,12 +72,13 @@ auto-deploy pipeline.
 
 ## Security
 
-- All security headers configured in `.htaccess`
-- HTTPS-only (HTTP → HTTPS 301 redirect)
-- HSTS preload enabled
-- Content Security Policy strictly limits external resources
+- **Cloudflare** — WAF, DDoS protection, global CDN, SSL/TLS A+ rating
+- **Cloudflare Turnstile** — bot protection on the quote/contact form
+- **security.txt** — RFC 8615 vulnerability disclosure at `/.well-known/security.txt`
+- All security headers configured in `.htaccess` (HSTS, CSP, CORP, COOP, X-Frame-Options, etc.)
+- HTTPS-only (HTTP → HTTPS 301 redirect enforced at Cloudflare + server level)
 - `config.php` chmod 600, blocked from web access via `.htaccess`
-- Hidden files (`^\.`) blocked from web access via `.htaccess`
+- Hidden files (`^\\.`) blocked from web access via `.htaccess`
 
 ---
 

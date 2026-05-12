@@ -1,6 +1,7 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
+    "App is now signed and notarized with Apple Developer ID \u2014 no Gatekeeper security warnings on launch",
     "Theme improvements \u2014 four themes renamed for broader appeal. CSS class names unchanged (existing preferences preserved)",
     "Header description updated \u2014 site list replaced with \"Your personal media downloader for 1000+ sites\" with linked site directory",
     "Clear Completed button removed from download queue \u2014 downloads auto-move to history on completion",
@@ -22,6 +23,7 @@
       "version": "0.98.9",
       "date": "5/10/2026 9:43 AM EST",
       "notes": [
+        "App is now signed and notarized with Apple Developer ID \u2014 no Gatekeeper security warnings on launch",
         "Theme improvements \u2014 four themes renamed for broader appeal. CSS class names unchanged (existing preferences preserved)",
         "Header description updated \u2014 site list replaced with \"Your personal media downloader for 1000+ sites\" with linked site directory",
         "Clear Completed button removed from download queue \u2014 downloads auto-move to history on completion",
@@ -82,14 +84,14 @@
       ]
     }
   ],
-  "_last_updated": "2026-05-10T12:39:14-05:00",
+  "_last_updated": "2026-05-12T11:45:48-05:00",
   "version": "0.98.9",
   "build": 106,
   "label": "v0.98.9 - Build 106 - 5/10/2026 9:43 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "c32e25616b496d981350c786a88e3a1243470f4cbdcd9f431a9d9e2ca975ee8e",
+    "sha256": "831832c6856205833aa94d81e10aa4a8a8b2fcb30c9a6b78b5ec721543df590e",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   }

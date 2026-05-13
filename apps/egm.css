@@ -682,3 +682,13 @@ footer {
     .legal-notice { margin: 1.5rem 0; padding: 1rem; font-size: 0.75rem; flex-direction: column; gap: 0.5rem; }
     .legal-notice .legal-icon { display: none; }
 }
+
+/* Teaser line */
+.teaser-line {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+    font-style: italic;
+    opacity: 0.6;
+    margin: 1.5rem 0 0.5rem;
+}

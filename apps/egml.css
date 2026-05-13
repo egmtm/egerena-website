@@ -617,3 +617,13 @@ ul li::marker {
     .legal-notice-terminal { padding: 1rem; font-size: 0.72rem; flex-direction: column; gap: 0.5rem; }
     .legal-notice-terminal .legal-icon { display: none; }
 }
+
+/* Teaser line */
+.terminal-teaser {
+    font-size: 0.72rem;
+    color: var(--terminal-dim);
+    letter-spacing: 0.1em;
+    font-family: 'Share Tech Mono', monospace;
+    opacity: 0.55;
+    margin: 1.5rem 0 0.5rem;
+}

@@ -93,7 +93,7 @@
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "36d8e2b925b996a898fe10a5fe7f000f1e310daea041ce3d305abe23ca923490",
+    "sha256": "fa0d4fe172df728d8ba20c16254d8cd6cad83eccd59027f0bea03782aedf64c1",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   }

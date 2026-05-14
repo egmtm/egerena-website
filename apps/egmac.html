@@ -91,25 +91,31 @@
         <div class="glass-card">
             <section class="section">
                 <div class="download-section">
-                <h3>📦 EGM Downloader 0.98.10</h3>
+                <h3>📦 EGM Downloader 0.99.0</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
                 <p class="version-subtitle" style="text-align:center;margin-top:4px">110 MB &middot; ~300 MB after install &middot; near instant startup</p>
-                <p class="sha256-line">SHA256: ddd3686c0280dc2c1a82e783ab08a64bf36ee827256a959d433c5de7c2ab2fbf</p>
+                <p class="sha256-line">SHA256: 11b46144842e6466ebb472bdbedd19a7a699e95e79581570ec1ea31827da9f2b</p>
 <p class="whats-new-content">
-                    <strong>What's New in 0.98.10 — 5/13/2026:</strong><br>
-                    <em class="polish-label">spectrum</em><br><br>
-                    • New COLORS theme category — 10 gradient themes: Ocean, Peach, Mint, Lavender, Sand (light); Ember, Aurora, Midnight, Forest, Crimson (dark)<br>
-                    • Cookies age tracking fixed — date now stored reliably in settings instead of filesystem metadata<br>
-                    • Cache clear safety — removed overly broad file patterns that could match legitimate files in download folder<br>
-                    • Download timeout protection — ffmpeg and plugin update downloads now have 120-second timeout (previously could hang indefinitely)<br>
-                    • Code quality — bare except clauses replaced with specific exception types across all platforms<br>
-                    • Code quality — deferred imports moved to top-level for clarity and consistency<br>
-                    • DMG volume icon configuration added to build
+                    <strong>What's New in 0.99.0 — 5/14/2026:</strong><br>
+                    <em class="polish-label">security hardened 2.0</em><br><br>
+                    • API token authentication now fail-closed — Electron generates a per-session 32-byte token; Flask refuses to start without it<br>
+                    • IPv6 localhost host parsing fixed — [::1] now correctly recognized<br>
+                    • Token exemption tightened — /api/show-window-check now requires the token (was previously exempt for no reason)<br>
+                    • Multi-field operations on download jobs now properly locked — prevents inconsistent state under concurrent load<br>
+                    • Malformed JSON request bodies handled gracefully — request.json replaced with get_json(silent=True) across all endpoints<br>
+                    • Sensitive files (cookies, settings, history) now created with owner-only permissions (0o600)<br>
+                    • Leftover subtitle temp files (.vtt, .srt) now properly cleaned up after embedded subtitle downloads
                 </p>
                 
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>
                     <div class="history-content">
+                        <p class="history-item">
+                            <strong>v0.98.10 — 5/13/2026:</strong><br>
+                            • Spectrum — 10 new COLORS gradient themes<br>
+                            • Cookies age tracking, cache clear safety, download timeout protection<br>
+                            • Code quality improvements, DMG volume icon configuration
+                        </p>
                         <p class="history-item">
                             <strong>v0.98.9 — 5/10/2026:</strong><br>
                             • App signed and notarized with Apple Developer ID — no Gatekeeper warnings<br>

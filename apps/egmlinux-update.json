@@ -1,15 +1,27 @@
 {
   "_comment": "EGM Downloader Linux \u2014 informational, no auto-update. Upload to egerena.com/apps/egmlinux-update.json",
   "_version_notes": [
-    "New COLORS theme category \u2014 10 gradient themes: Ocean, Peach, Mint, Lavender, Sand (light); Ember, Aurora, Midnight, Forest, Crimson (dark)",
-    "Cookies age tracking fixed \u2014 date now stored reliably in settings instead of filesystem metadata",
-    "Cache clear safety \u2014 removed overly broad file patterns that could match legitimate files in download folder",
-    "Download timeout protection \u2014 ffmpeg and plugin update downloads now have 120-second timeout (previously could hang indefinitely)",
-    "Code quality \u2014 bare except clauses replaced with specific exception types across all platforms",
-    "Code quality \u2014 deferred imports moved to top-level for clarity and consistency",
-    "AppImage icon now displays correctly in AppImageLauncher and system menus"
+    "API token authentication now fail-closed \u2014 Electron generates a per-session 32-byte token; Flask refuses to start without it",
+    "IPv6 localhost host parsing fixed \u2014 [::1] now correctly recognized",
+    "Token exemption tightened \u2014 /api/show-window-check now requires the token (was previously exempt for no reason)",
+    "Multi-field operations on download jobs now properly locked \u2014 prevents inconsistent state under concurrent load",
+    "Malformed JSON request bodies handled gracefully \u2014 request.json replaced with get_json(silent=True) across all endpoints",
+    "Sensitive files (cookies, settings, history) now created with owner-only permissions (0o600)",
+    "Leftover subtitle temp files (.vtt, .srt) now properly cleaned up after embedded subtitle downloads"
   ],
   "_history": [
+    {
+      "version": "0.99.0",
+      "date": "5/14/2026 11:33 AM EST",
+      "notes": [
+        "API token authentication now fail-closed \u2014 Electron generates a per-session 32-byte token; Flask refuses to start without it",
+        "IPv6 localhost host parsing fixed \u2014 [::1] now correctly recognized",
+        "Token exemption tightened \u2014 /api/show-window-check now requires the token (was previously exempt for no reason)",
+        "Multi-field operations on download jobs now properly locked \u2014 prevents inconsistent state under concurrent load",
+        "Malformed JSON request bodies handled gracefully \u2014 request.json replaced with get_json(silent=True) across all endpoints",
+        "Leftover subtitle temp files (.vtt, .srt) now properly cleaned up after embedded subtitle downloads"
+      ]
+    },
     {
       "version": "0.98.10",
       "date": "5/13/2026 7:38 PM EST",
@@ -72,28 +84,16 @@
         "Window position is not remembered between sessions on Wayland compositors. Cosmetic only \u2014 app launches centered on each start.",
         "Virtual machine environments (VMware, VirtualBox, etc.) may experience display rendering issues. The app is primarily designed and tested for bare-metal Linux installations."
       ]
-    },
-    {
-      "version": "0.98.6",
-      "date": "5/4/2026 11:10 PM EST",
-      "notes": [
-        "Open folder from expanded download history panel now works correctly (history window was missing API bridge that prevented folder actions)",
-        "Video thumbnail aspect ratio corrected \u2014 widescreen (16:9) videos now display at proper proportions instead of appearing stretched vertically",
-        "Version references corrected \u2014 footer version pill and What's New header now update correctly during version bumps (scripts coverage gap fixed)",
-        "Window position is not remembered between sessions on Wayland compositors. Cosmetic only \u2014 app launches centered on each start.",
-        "Cookies browse dialog does not open on Linux. Linux-specific fix planned for upcoming release.",
-        "Virtual machine environments (VMware, VirtualBox, etc.) may experience display rendering issues. The app is primarily designed and tested for bare-metal Linux installations."
-      ]
     }
   ],
-  "_last_updated": "2026-05-13T20:51:26-05:00",
-  "version": "0.98.10",
-  "build": 107,
-  "label": "v0.98.10 - Build 107 - 5/13/2026 7:38 PM EST",
+  "_last_updated": "2026-05-14T12:06:19-05:00",
+  "version": "0.99.0",
+  "build": 108,
+  "label": "v0.99.0 - Build 108 - 5/14/2026 11:33 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdL.zip",
   "zip": "EGMdL.zip",
   "_checksums": {
-    "sha256": "69a81925c4e6c9483a0f9bcd7ce11b56fb8f719641b85d393f3663f453d3691c",
+    "sha256": "48bba79ddf97e6507e96e8f0fd9d184e577233e85cb45fece0bbbc878d7a4317",
     "algorithm": "SHA-256",
     "file": "EGMdL.zip"
   }

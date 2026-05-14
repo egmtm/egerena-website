@@ -91,36 +91,31 @@
         <div class="glass-card">
             <section class="section">
                 <div class="download-section">
-                <h3>📦 EGM Downloader 0.98.9</h3>
+                <h3>📦 EGM Downloader 0.98.10</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
                 <p class="version-subtitle" style="text-align:center;margin-top:4px">110 MB &middot; ~300 MB after install &middot; near instant startup</p>
-                <p class="sha256-line">SHA256: 831832c6856205833aa94d81e10aa4a8a8b2fcb30c9a6b78b5ec721543df590e</p>
+                <p class="sha256-line">SHA256: ddd3686c0280dc2c1a82e783ab08a64bf36ee827256a959d433c5de7c2ab2fbf</p>
 <p class="whats-new-content">
-                    <strong>What's New in 0.98.9 — 5/11/2026:</strong><br>
-                    <em class="polish-label">fit &amp; finish</em><br><br>
-                    • App is now signed and notarized with Apple Developer ID — no Gatekeeper security warnings on launch<br>
-                    • Theme improvements — four themes renamed for broader appeal; CSS class names unchanged<br>
-                    • Header description updated — "Your personal media downloader for 1000+ sites"<br>
-                    • Clear Completed button removed from download queue — downloads auto-move to history on completion<br>
-                    • Format toggle label changed from "MP3" to "Audio" across all views<br>
-                    • Footer egerena.com link now points to the Mac-specific page<br>
-                    • Header alignment — logo and hamburger button now sit on the same visual line<br>
-                    • Quality picker labels restructured — "4320p - 8K", "2160p - 4K", "1440p - 2K" format<br>
-                    • Throttle tooltip generalized — no longer references YouTube specifically<br>
-                    • Tooltips added to all section headers — Settings, Update Plugins, Advanced<br>
-                    • Tooltips added to Check for Updates button, Quit when done, and Check updates on launch toggles<br>
-                    • Cookies section cursor:help removed — tooltip preserved, question-mark cursor gone<br>
-                    • Flask port field auto-centers when alone on its row<br>
-                    • Update Plugins panel auto-collapses after 3 seconds when no updates are found<br>
-                    • Deno tooltip in Update Plugins — "To update Deno, go to Advanced → Reinstall Deno"<br>
-                    • Scrollbar theming — custom scrollbars adapt to current theme colors via CSS variables
+                    <strong>What's New in 0.98.10 — 5/13/2026:</strong><br>
+                    <em class="polish-label">spectrum</em><br><br>
+                    • New COLORS theme category — 10 gradient themes: Ocean, Peach, Mint, Lavender, Sand (light); Ember, Aurora, Midnight, Forest, Crimson (dark)<br>
+                    • Cookies age tracking fixed — date now stored reliably in settings instead of filesystem metadata<br>
+                    • Cache clear safety — removed overly broad file patterns that could match legitimate files in download folder<br>
+                    • Download timeout protection — ffmpeg and plugin update downloads now have 120-second timeout (previously could hang indefinitely)<br>
+                    • Code quality — bare except clauses replaced with specific exception types across all platforms<br>
+                    • Code quality — deferred imports moved to top-level for clarity and consistency<br>
+                    • DMG volume icon configuration added to build
                 </p>
                 
-                <p class="teaser-line">⬡ v0.98.10 — dropping tonight</p>
-
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>
                     <div class="history-content">
+                        <p class="history-item">
+                            <strong>v0.98.9 — 5/10/2026:</strong><br>
+                            • App signed and notarized with Apple Developer ID — no Gatekeeper warnings<br>
+                            • Fit &amp; Finish — 15 UI polish items across all platforms<br>
+                            • Scrollbar theming, section tooltips, format/quality label updates
+                        </p>
                         <p class="history-item">
                             <strong>v0.98.8 — 5/9/2026:</strong><br>
                             • API token gate — per-session cryptographic token required on all /api/* requests<br>

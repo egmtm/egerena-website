@@ -1,24 +1,28 @@
 {
   "_comment": "EGM Downloader Linux \u2014 informational, no auto-update. Upload to egerena.com/apps/egmlinux-update.json",
   "_version_notes": [
-    "Theme improvements \u2014 four themes renamed for broader appeal. CSS class names unchanged (existing preferences preserved)",
-    "Header description updated \u2014 site list replaced with \"Your personal media downloader for 1000+ sites\" with linked site directory",
-    "Clear Completed button removed from download queue \u2014 downloads auto-move to history on completion",
-    "Format toggle label changed from \"MP3\" to \"Audio\" across all views \u2014 static settings toggle and per-video format selector both updated",
-    "Footer egerena.com link now points to each platform's specific page (Windows/Mac/Linux)",
-    "Header alignment \u2014 logo and hamburger button now sit on the same visual line",
-    "Quality picker labels restructured \u2014 \"4320p - 8K\", \"2160p - 4K\", \"1440p - 2K\" format in both settings and per-video selectors. Removed \"may be slower\" from descriptions",
-    "Throttle tooltip generalized \u2014 no longer references YouTube specifically; now reads \"source throttling on high-bitrate streams is normal\"",
-    "Tooltips added to all section headers \u2014 Settings, Update Plugins, Advanced now match Cookies with descriptive hover text",
-    "Tooltips added to Check for Updates button, Quit when done, and Check updates on launch toggles",
-    "Cookies section cursor:help removed \u2014 tooltip preserved, question-mark cursor gone",
-    "Flask port field auto-centers when alone on its row (Mac/Linux where desktop shortcut is hidden)",
-    "Update Plugins panel auto-collapses after 3 seconds when no updates are found",
-    "Deno tooltip in Update Plugins \u2014 \"To update Deno, go to Advanced \u2192 Reinstall Deno\"",
-    "Scrollbar theming \u2014 custom scrollbars adapt to current theme colors via CSS variables",
-    "Window position is now remembered between sessions (resolved in v0.98.8, noted here for completeness)"
+    "New COLORS theme category \u2014 10 gradient themes: Ocean, Peach, Mint, Lavender, Sand (light); Ember, Aurora, Midnight, Forest, Crimson (dark)",
+    "Cookies age tracking fixed \u2014 date now stored reliably in settings instead of filesystem metadata",
+    "Cache clear safety \u2014 removed overly broad file patterns that could match legitimate files in download folder",
+    "Download timeout protection \u2014 ffmpeg and plugin update downloads now have 120-second timeout (previously could hang indefinitely)",
+    "Code quality \u2014 bare except clauses replaced with specific exception types across all platforms",
+    "Code quality \u2014 deferred imports moved to top-level for clarity and consistency",
+    "AppImage icon now displays correctly in AppImageLauncher and system menus"
   ],
   "_history": [
+    {
+      "version": "0.98.10",
+      "date": "5/13/2026 7:38 PM EST",
+      "notes": [
+        "New COLORS theme category \u2014 10 gradient themes: Ocean, Peach, Mint, Lavender, Sand (light); Ember, Aurora, Midnight, Forest, Crimson (dark)",
+        "Cookies age tracking fixed \u2014 date now stored reliably in settings instead of filesystem metadata",
+        "Cache clear safety \u2014 removed overly broad file patterns that could match legitimate files in download folder",
+        "Download timeout protection \u2014 ffmpeg and plugin update downloads now have 120-second timeout (previously could hang indefinitely)",
+        "Code quality \u2014 bare except clauses replaced with specific exception types across all platforms",
+        "Code quality \u2014 deferred imports moved to top-level for clarity and consistency",
+        "AppImage icon now displays correctly in AppImageLauncher and system menus"
+      ]
+    },
     {
       "version": "0.98.9",
       "date": "5/10/2026 9:43 AM EST",
@@ -80,28 +84,16 @@
         "Cookies browse dialog does not open on Linux. Linux-specific fix planned for upcoming release.",
         "Virtual machine environments (VMware, VirtualBox, etc.) may experience display rendering issues. The app is primarily designed and tested for bare-metal Linux installations."
       ]
-    },
-    {
-      "version": "0.98.5",
-      "date": "5/2/2026 2:25 AM EST",
-      "notes": [
-        "Electron runtime upgraded to v41.5.0 (security and compatibility improvements; v29 line is end-of-life with no security backports \u2014 this upgrade incorporates accumulated Chromium security fixes and backported CVEs from the Electron security advisory line)",
-        "electron-builder updated to v26.8.1 (build toolchain compatibility with Electron 41)",
-        "Improved window initialization reliability \u2014 main window now appears consistently when launched from file manager or application launcher on GNOME/Mutter compositors (Ubuntu 24 and similar distros)",
-        "Open folder from the expanded download history panel does not work \u2014 use the hamburger menu's open folder action instead. Fix planned for next release.",
-        "Splash window and certain secondary panels (themes, expanded history, footer link popups) may appear off-center (typically top-left) on first display. Functional behavior unaffected. Targeted fix planned for next release.",
-        "Cookies browse dialog does not open on Linux. Linux-specific issue, fix planned for upcoming release."
-      ]
     }
   ],
-  "_last_updated": "2026-05-12T11:45:48-05:00",
-  "version": "0.98.9",
-  "build": 106,
-  "label": "v0.98.9 - Build 106 - 5/10/2026 9:43 AM EST",
+  "_last_updated": "2026-05-13T20:51:26-05:00",
+  "version": "0.98.10",
+  "build": 107,
+  "label": "v0.98.10 - Build 107 - 5/13/2026 7:38 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdL.zip",
   "zip": "EGMdL.zip",
   "_checksums": {
-    "sha256": "1f8125d9d64a8dcddccbc4c40ef624c5fd72e3be07b2a2fa807079ce6288195f",
+    "sha256": "69a81925c4e6c9483a0f9bcd7ce11b56fb8f719641b85d393f3663f453d3691c",
     "algorithm": "SHA-256",
     "file": "EGMdL.zip"
   }

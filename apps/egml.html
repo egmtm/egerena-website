@@ -116,9 +116,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3>> EGM_DOWNLOADER_v0.98.9<span class="dl-ext">.AppImage</span></h3>
+                <h3>> EGM_DOWNLOADER_v0.98.10<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: 1f8125d9d64a8dcddccbc4c40ef624c5fd72e3be07b2a2fa807079ce6288195f</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: 69a81925c4e6c9483a0f9bcd7ce11b56fb8f719641b85d393f3663f453d3691c</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">128 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -126,35 +126,31 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN v0.98.9</div>
+                <div class="section-header">> WHAT'S NEW IN v0.98.10</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
                 <div class="whats-new-subtitle">v0.98.9 — 5/10/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
-                <div class="polish-label">// fit &amp; finish</div>
+                <div class="polish-label">// spectrum</div>
                 <ul>
-                    <li>Theme improvements — four themes renamed for broader appeal; CSS class names unchanged</li>
-                    <li>Header description updated — "Your personal media downloader for 1000+ sites"</li>
-                    <li>Clear Completed button removed from download queue — downloads auto-move to history on completion</li>
-                    <li>Format toggle label changed from "MP3" to "Audio" across all views</li>
-                    <li>Footer egerena.com link now points to the Linux-specific page</li>
-                    <li>Header alignment — logo and hamburger button now sit on the same visual line</li>
-                    <li>Quality picker labels restructured — "4320p - 8K", "2160p - 4K", "1440p - 2K" format</li>
-                    <li>Throttle tooltip generalized — no longer references YouTube specifically</li>
-                    <li>Tooltips added to all section headers — Settings, Update Plugins, Advanced</li>
-                    <li>Tooltips added to Check for Updates button, Quit when done, and Check updates on launch toggles</li>
-                    <li>Cookies section cursor:help removed — tooltip preserved, question-mark cursor gone</li>
-                    <li>Flask port field auto-centers when alone on its row</li>
-                    <li>Update Plugins panel auto-collapses after 3 seconds when no updates are found</li>
-                    <li>Deno tooltip in Update Plugins — "To update Deno, go to Advanced → Reinstall Deno"</li>
-                    <li>Scrollbar theming — custom scrollbars adapt to current theme colors via CSS variables</li>
-                    <li>Window position is now remembered between sessions</li>
+                    <li>New COLORS theme category — 10 gradient themes: Ocean, Peach, Mint, Lavender, Sand (light); Ember, Aurora, Midnight, Forest, Crimson (dark)</li>
+                    <li>Cookies age tracking fixed — date now stored reliably in settings instead of filesystem metadata</li>
+                    <li>Cache clear safety — removed overly broad file patterns that could match legitimate files in download folder</li>
+                    <li>Download timeout protection — ffmpeg and plugin update downloads now have 120-second timeout (previously could hang indefinitely)</li>
+                    <li>Code quality — bare except clauses replaced with specific exception types across all platforms</li>
+                    <li>Code quality — deferred imports moved to top-level for clarity and consistency</li>
+                    <li>AppImage icon now displays correctly in AppImageLauncher and system menus</li>
                 </ul>
                 
-                <p class="teaser-line terminal-teaser">// v0.98.10 — dropping tonight</p>
-
                 <details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v0.98.9 — 5/10/2026</div>
+                        <ul>
+                            <li>Fit &amp; Finish — 15 UI polish items across all platforms</li>
+                            <li>Scrollbar theming, section tooltips, format/quality label updates</li>
+                            <li>Window position now remembered between sessions</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version">v0.98.8 — 5/9/2026</div>
                         <ul>
                             <li>API token gate — per-session cryptographic token required on all /api/* requests</li>

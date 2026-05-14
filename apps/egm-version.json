@@ -1,24 +1,28 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "Theme improvements \u2014 four themes renamed for broader appeal. CSS class names unchanged (existing preferences preserved)",
-    "Header description updated \u2014 site list replaced with \"Your personal media downloader for 1000+ sites\" with linked site directory",
-    "Clear Completed button removed from download queue \u2014 downloads auto-move to history on completion",
-    "Format toggle label changed from \"MP3\" to \"Audio\" across all views \u2014 static settings toggle and per-video format selector both updated",
-    "Footer egerena.com link now points to each platform's specific page (Windows/Mac/Linux)",
-    "Header alignment \u2014 logo and hamburger button now sit on the same visual line",
-    "Quality picker labels restructured \u2014 \"4320p - 8K\", \"2160p - 4K\", \"1440p - 2K\" format in both settings and per-video selectors. Removed \"may be slower\" from descriptions",
-    "Throttle tooltip generalized \u2014 no longer references YouTube specifically; now reads \"source throttling on high-bitrate streams is normal\"",
-    "Tooltips added to all section headers \u2014 Settings, Update Plugins, Advanced now match Cookies with descriptive hover text",
-    "Tooltips added to Check for Updates button, Quit when done, and Check updates on launch toggles",
-    "Cookies section cursor:help removed \u2014 tooltip preserved, question-mark cursor gone",
-    "Flask port field auto-centers when alone on its row (Mac/Linux where desktop shortcut is hidden)",
-    "Update Plugins panel auto-collapses after 3 seconds when no updates are found",
-    "Deno tooltip in Update Plugins \u2014 \"To update Deno, go to Advanced \u2192 Reinstall Deno\"",
-    "Scrollbar theming \u2014 custom scrollbars adapt to current theme colors via CSS variables",
-    "[MAC] Cookies browse dialog now filters for .txt files. Linux remains filterless for GTK compatibility"
+    "New COLORS theme category \u2014 10 gradient themes: Ocean, Peach, Mint, Lavender, Sand (light); Ember, Aurora, Midnight, Forest, Crimson (dark)",
+    "Cookies age tracking fixed \u2014 date now stored reliably in settings instead of filesystem metadata",
+    "Cache clear safety \u2014 removed overly broad file patterns that could match legitimate files in download folder",
+    "Download timeout protection \u2014 ffmpeg and plugin update downloads now have 120-second timeout (previously could hang indefinitely)",
+    "Code quality \u2014 bare except clauses replaced with specific exception types across all platforms",
+    "Code quality \u2014 deferred imports moved to top-level for clarity and consistency",
+    "Desktop and Start Menu shortcuts no longer flash a console window on launch"
   ],
   "_history": [
+    {
+      "version": "0.98.10",
+      "date": "5/13/2026 7:38 PM EST",
+      "notes": [
+        "New COLORS theme category \u2014 10 gradient themes: Ocean, Peach, Mint, Lavender, Sand (light); Ember, Aurora, Midnight, Forest, Crimson (dark)",
+        "Cookies age tracking fixed \u2014 date now stored reliably in settings instead of filesystem metadata",
+        "Cache clear safety \u2014 removed overly broad file patterns that could match legitimate files in download folder",
+        "Download timeout protection \u2014 ffmpeg and plugin update downloads now have 120-second timeout (previously could hang indefinitely)",
+        "Code quality \u2014 bare except clauses replaced with specific exception types across all platforms",
+        "Code quality \u2014 deferred imports moved to top-level for clarity and consistency",
+        "Desktop and Start Menu shortcuts no longer flash a console window on launch"
+      ]
+    },
     {
       "version": "0.98.9",
       "date": "5/10/2026 9:43 AM EST",
@@ -74,26 +78,17 @@
         "Version references corrected \u2014 footer version pill and What's New header now update correctly during version bumps (scripts coverage gap fixed)",
         "Portable: Update Plugins pane now accessible in portable mode with safety disclaimer for plugin recovery"
       ]
-    },
-    {
-      "version": "0.98.5",
-      "date": "5/2/2026 2:25 AM EST",
-      "notes": [
-        "Electron runtime upgraded to v41.5.0 (security and compatibility improvements; v29 line is end-of-life with no security backports \u2014 this upgrade incorporates accumulated Chromium security fixes and backported CVEs from the Electron security advisory line)",
-        "electron-builder updated to v26.8.1 (build toolchain compatibility with Electron 41)",
-        "Open folder from the expanded download history panel does not work \u2014 use the hamburger menu's open folder action instead. Fix planned for next release."
-      ]
     }
   ],
-  "_last_updated": "2026-05-12T11:45:48-05:00",
-  "version": "0.98.9",
-  "build": 106,
-  "label": "v0.98.9 - Build 106 - 5/10/2026 9:43 AM EST",
+  "_last_updated": "2026-05-13T20:51:25-05:00",
+  "version": "0.98.10",
+  "build": 107,
+  "label": "v0.98.10 - Build 107 - 5/13/2026 7:38 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "fa0d4fe172df728d8ba20c16254d8cd6cad83eccd59027f0bea03782aedf64c1",
+    "sha256": "400386d7b9533b2f25e3d976137b61f4870c6f6dd54035352bb2fbbd696ff47c",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   }

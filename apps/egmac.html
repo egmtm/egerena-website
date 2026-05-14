@@ -94,10 +94,11 @@
                 <h3>📦 EGM Downloader 0.99.0</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
                 <p class="version-subtitle" style="text-align:center;margin-top:4px">110 MB &middot; ~300 MB after install &middot; near instant startup</p>
-                <p class="sha256-line">SHA256: 11b46144842e6466ebb472bdbedd19a7a699e95e79581570ec1ea31827da9f2b</p>
+                <p class="sha256-line">SHA256: dda92d61854e5c94e2aa23bf4ff102f3ea4e0842e7853cd9e9364cbdf9d40073</p>
 <p class="whats-new-content">
                     <strong>What's New in 0.99.0 — 5/14/2026:</strong><br>
                     <em class="polish-label">security hardened 2.0</em><br><br>
+                    • Electron shutdown handler now sends the API token — fixes orphan Python process on quit (Windows-visible, latent on Mac/Linux)<br>
                     • API token authentication now fail-closed — Electron generates a per-session 32-byte token; Flask refuses to start without it<br>
                     • IPv6 localhost host parsing fixed — [::1] now correctly recognized<br>
                     • Token exemption tightened — /api/show-window-check now requires the token (was previously exempt for no reason)<br>
@@ -252,7 +253,7 @@
                 <div class="history-item">
                     <p class="history-item"><strong>v1.1 — Multi-language UI</strong><br>
                     • Globe icon language picker — English, Spanish, Portuguese, French, German, Italian, Dutch, Japanese, Arabic, and Russian at launch<br>
-                    • In-app language switcher — translations already complete for all 10 languages; picker UI ships with v1.1<br>
+                    • In-app language switcher — translations already complete for all 10 languages; picker UI ships with v1.0<br>
                     • Community translation system — export any language file, edit it, import it back; custom imports appear alongside the original<br>
                     • 10–20 new themes</p>
                 </div>

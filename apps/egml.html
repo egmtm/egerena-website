@@ -116,9 +116,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3>> EGM_DOWNLOADER_v0.99.0<span class="dl-ext">.AppImage</span></h3>
+                <h3>> EGM_DOWNLOADER_v0.99.1<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: 4625c4a3a30d46aec61ce2ebf286465f9286d44a7dbbcae9c7f3cc7c8f0f08b0</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: 00bf7b5b604cdd16be504f6a7a435c6544685fbc6839398dd6d463d8cc88be34</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">128 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -126,25 +126,26 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN v0.99.0</div>
+                <div class="section-header">> WHAT'S NEW IN v0.99.1</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
                 <div class="whats-new-subtitle">v0.98.9 — 5/10/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
-                <div class="polish-label">// security hardened 2.0</div>
                 <ul>
-                    <li>Electron shutdown handler now sends the API token — fixes orphan Python process on quit (Windows-visible, latent on Mac/Linux)</li>
-                    <li>API token authentication now fail-closed — Electron generates a per-session 32-byte token; Flask refuses to start without it</li>
-                    <li>IPv6 localhost host parsing fixed — [::1] now correctly recognized</li>
-                    <li>Token exemption tightened — /api/show-window-check now requires the token (was previously exempt for no reason)</li>
-                    <li>Multi-field operations on download jobs now properly locked — prevents inconsistent state under concurrent load</li>
-                    <li>Malformed JSON request bodies handled gracefully — request.json replaced with get_json(silent=True) across all endpoints</li>
-                    <li>Sensitive files (cookies, settings, history) now created with owner-only permissions (0o600)</li>
-                    <li>Leftover subtitle temp files (.vtt, .srt) now properly cleaned up after embedded subtitle downloads</li>
+                    <li>ffmpeg and Deno downloads now verified against upstream SHA256 checksums — protects against tampered or corrupted dependency binaries</li>
+                    <li>Auto-update dialog now correctly passes feed checksum to download verification — fixes "Checksum required" error blocking app updates</li>
+                    <li>Subtitle temp file cleanup safety net — leftover .vtt/.srt files now reliably removed after embedded subtitle downloads</li>
                 </ul>
                 
                 <details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v0.99.0 — 5/14/2026</div>
+                        <ul>
+                            <li>Security hardened 2.0 — Electron shutdown token fix, fail-closed auth, IPv6 fix</li>
+                            <li>Token exemption tightened, job locking, malformed JSON handling</li>
+                            <li>Subtitle temp file cleanup</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version">v0.98.10 — 5/13/2026</div>
                         <ul>
                             <li>Spectrum — 10 new COLORS gradient themes</li>
@@ -289,7 +290,7 @@
                 <div class="whats-new-subtitle history-version">v1.1 — Multi-language UI</div>
                 <ul>
                     <li>Globe icon language picker — English, Spanish, Portuguese, French, German, Italian, Dutch, Japanese, Arabic, and Russian at launch</li>
-                    <li>In-app language switcher — translations already complete for all 10 languages; picker UI ships with v1.1</li>
+                    <li>In-app language switcher — translations already complete for all 10 languages; picker UI ships with v1.0</li>
                     <li>Community translation system — export any language file, edit it, import it back; custom imports appear alongside the original</li>
                     <li>10–20 new themes</li>
                 </ul>

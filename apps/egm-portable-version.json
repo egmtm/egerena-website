@@ -2,7 +2,7 @@
   "_comment": "EGM Downloader Windows Portable update feed. Upload to egerena.com/apps/egm-portable-version.json",
   "_version_notes": [
     "ffmpeg and Deno downloads now verified against upstream SHA256 checksums \u2014 protects against tampered or corrupted dependency binaries",
-    "[LINUX] ffmpeg checksum verification uses BtbN's published checksums.sha256",
+    "ffmpeg checksum verification uses BtbN's published checksums.sha256",
     "Deno installation now verified against Deno's published .sha256 file",
     "Auto-update dialog now correctly passes feed checksum to download verification \u2014 fixes \"Checksum required\" error blocking app updates",
     "Subtitle temp file cleanup safety net \u2014 leftover .vtt/.srt files now reliably removed after embedded subtitle downloads"

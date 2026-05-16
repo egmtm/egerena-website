@@ -2,6 +2,7 @@
   "_comment": "EGM Downloader Linux \u2014 informational, no auto-update. Upload to egerena.com/apps/egmlinux-update.json",
   "_version_notes": [
     "ffmpeg and Deno downloads now verified against upstream SHA256 checksums \u2014 protects against tampered or corrupted dependency binaries",
+    "ffmpeg checksum verification uses BtbN's published checksums.sha256",
     "Auto-update dialog now correctly passes feed checksum to download verification \u2014 fixes \"Checksum required\" error blocking app updates",
     "Subtitle temp file cleanup safety net \u2014 leftover .vtt/.srt files now reliably removed after embedded subtitle downloads"
   ],

@@ -1,18 +1,12 @@
 <?php
 /**
  * Quote Form Handler — egerena.com
- * Validates, rate-limits, sends via PHPMailer SMTP.
+ * Validates, rate-limits, sends via Resend API.
  * Redirects back to index.html with ?quote=<status>[&c=<code>]
  */
 
 session_start();
 require_once __DIR__ . '/config.php';
-require_once __DIR__ . '/phpmailer/PHPMailer.php';
-require_once __DIR__ . '/phpmailer/SMTP.php';
-require_once __DIR__ . '/phpmailer/Exception.php';
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -60,7 +54,7 @@ if (!$tsData || !$tsData['success']) {
     redirectBack('error', 'captcha');
 }
 
-// ── Rate limiting ────────────────────────────────────────────────
+// ── Rate limiting ────────────────────────────────────────────────────────────
 $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
 $rateKey = 'rate_limit_' . md5($ip);
 if (!isset($_SESSION[$rateKey]) || time() > $_SESSION[$rateKey]['reset']) {
@@ -71,12 +65,12 @@ if ($_SESSION[$rateKey]['count'] >= RATE_LIMIT) {
 }
 $_SESSION[$rateKey]['count']++;
 
-// ── Honeypot ─────────────────────────────────────────────────────
+// ── Honeypot ─────────────────────────────────────────────────────────────────
 if (!empty($_POST['website'])) {
     redirectBack('success');
 }
 
-// ── Inputs ───────────────────────────────────────────────────────
+// ── Inputs ───────────────────────────────────────────────────────────────────
 $name        = sanitize($_POST['name']          ?? '');
 $email       = sanitize($_POST['email']         ?? '');
 $company     = sanitize($_POST['company']       ?? '');
@@ -85,7 +79,7 @@ $budget      = sanitize($_POST['budget']        ?? '');
 $timeline    = sanitize($_POST['timeline']      ?? '');
 $other       = sanitize($_POST['other_purpose'] ?? '');
 
-// ── Validation ───────────────────────────────────────────────────
+// ── Validation ───────────────────────────────────────────────────────────────
 if ($name === '' || mb_strlen($name) > 200) {
     redirectBack('invalid', 'name');
 }
@@ -107,7 +101,7 @@ if (empty($purposes)) {
     redirectBack('invalid', 'purpose');
 }
 
-// ── Maps ─────────────────────────────────────────────────────────
+// ── Maps ─────────────────────────────────────────────────────────────────────
 $purposeMap = [
     'web_design'           => 'Web Design',
     'graphic_branding'     => 'Graphic Design / Branding',
@@ -150,7 +144,7 @@ if (in_array('other', $purposes, true) && $other !== '') {
 $budgetText   = $budgetMap[$budget]     ?? 'Not specified';
 $timelineText = $timelineMap[$timeline] ?? 'Not specified';
 
-// ── Email body ───────────────────────────────────────────────────
+// ── Email body ────────────────────────────────────────────────────────────────
 $body  = "New Quote Request from EGerena.com\n";
 $body .= str_repeat('=', 50) . "\n\n";
 $body .= "CONTACT\n";
@@ -169,34 +163,35 @@ $body .= "IP:        $ip\n";
 $body .= "User-Agent: " . substr($_SERVER['HTTP_USER_AGENT'] ?? 'unknown', 0, 200) . "\n";
 $body .= "\nReply directly to this message to respond to {$name}.\n";
 
-// ── Send ─────────────────────────────────────────────────────────
-try {
-    $mail = new PHPMailer(true);
+// ── Send via Resend API ───────────────────────────────────────────────────────
+$subjectName = mb_strlen($name) > 60 ? mb_substr($name, 0, 57) . '…' : $name;
 
-    $mail->isSMTP();
-    $mail->Host       = SMTP_HOST;
-    $mail->Port       = SMTP_PORT;
-    $mail->SMTPAuth   = true;
-    $mail->Username   = SMTP_USERNAME;
-    $mail->Password   = SMTP_PASSWORD;
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Timeout    = 15;
-    $mail->CharSet    = 'UTF-8';
-    $mail->Encoding   = 'base64';
+$payload = json_encode([
+    'from'       => MAIL_FROM_NAME . ' <' . MAIL_FROM . '>',
+    'to'         => [MAIL_TO],
+    'reply_to'   => [$email],
+    'subject'    => '[EGerena Quote] ' . $subjectName,
+    'text'       => $body,
+]);
 
-    $mail->setFrom(SMTP_FROM_EMAIL, SMTP_FROM_NAME);
-    $mail->addAddress(SMTP_TO_EMAIL);
-    $mail->addReplyTo($email, $name);
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, 'https://api.resend.com/emails');
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    'Authorization: Bearer ' . RESEND_API_KEY,
+    'Content-Type: application/json',
+]);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_TIMEOUT, 15);
 
-    $mail->isHTML(false);
-    $subjectName = mb_strlen($name) > 60 ? mb_substr($name, 0, 57) . '…' : $name;
-    $mail->Subject = '[EGerena Quote] ' . $subjectName;
-    $mail->Body    = $body;
+$response = curl_exec($ch);
+$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
 
-    $mail->send();
+if ($httpCode === 200 || $httpCode === 201) {
     redirectBack('success');
-
-} catch (Exception $e) {
-    error_log('[EGerena Quote] PHPMailer error: ' . ($mail->ErrorInfo ?? $e->getMessage()));
+} else {
+    error_log('[EGerena Quote] Resend error ' . $httpCode . ': ' . $response);
     redirectBack('error', 'smtp');
 }

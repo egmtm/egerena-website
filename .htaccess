@@ -18,6 +18,9 @@ ErrorDocument 500 /500.html
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Allow .well-known (RFC 8615 — security.txt, ACME, etc.)
+    RewriteRule ^\.well-known/ - [L]
+
     # Block direct access to phpmailer library files
     RewriteRule ^phpmailer/.* - [F,L]
 

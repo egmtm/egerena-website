@@ -91,21 +91,26 @@
         <div class="glass-card">
             <section class="section">
                 <div class="download-section">
-                <h3>📦 EGM Downloader 0.99.1</h3>
+                <h3>📦 EGM Downloader 0.99.2</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
                 <p class="version-subtitle" style="text-align:center;margin-top:4px">110 MB &middot; ~300 MB after install &middot; near instant startup</p>
-                <p class="sha256-line">SHA256: 9aa19c34af53fc764fa3cf6c271fb9057544d5ebc4fa16377ecd16c8c45a67a3</p>
+                <p class="sha256-line">SHA256: 82c0280f0cdf87974dea6990e707247a0a5155bb7e3ab485cde1bbb07459e93e</p>
 <p class="whats-new-content">
-                    <strong>What's New in 0.99.1 — 5/15/2026:</strong><br>
-• ffmpeg and Deno downloads now verified against upstream SHA256 checksums — protects against tampered or corrupted dependency binaries<br>
-                    • Switched ffmpeg source from evermeet.cx to ffmpeg.martin-riedl.de — native Apple Silicon (ARM64) builds, significantly faster downloads, with proper SHA256 verification<br>
-                    • Auto-update dialog now correctly passes feed checksum to download verification — fixes "Checksum required" error blocking app updates<br>
-                    • Subtitle temp file cleanup safety net — leftover .vtt/.srt files now reliably removed after embedded subtitle downloads
+                    <strong>What's New in 0.99.2 — 5/16/2026:</strong><br>
+<em class="polish-label">sealed</em><br><br>
+                    • Security: dependency download integrity now strictly enforced — ffmpeg and Deno installs require valid upstream checksums to proceed (previously fell back silently on verification errors)<br>
+                    • Security: release notes from update feed now rendered as text only — eliminates potential script injection from compromised feeds<br>
+                    • Security: open download folder now validates path is an existing directory — prevents the IPC handler from being used to launch arbitrary files
                 </p>
                 
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>
                     <div class="history-content">
+                        <p class="history-item">
+                            <strong>v0.99.1 — 5/15/2026:</strong><br>
+                            • ffmpeg verified against upstream SHA256 checksums (martin-riedl.de ARM64 builds)<br>
+                            • Auto-update checksum fix, subtitle temp cleanup safety net
+                        </p>
                         <p class="history-item">
                             <strong>v0.99.0 — 5/14/2026:</strong><br>
                             • Security hardened 2.0 — Electron shutdown token fix, fail-closed auth, IPv6 fix<br>

@@ -116,9 +116,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3>> EGM_DOWNLOADER_v0.99.1<span class="dl-ext">.AppImage</span></h3>
+                <h3>> EGM_DOWNLOADER_v0.99.2<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: 00bf7b5b604cdd16be504f6a7a435c6544685fbc6839398dd6d463d8cc88be34</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: 5f7370631fe08ac1f59043f5f53c85d909a05474544bd4af9bb6a034762a72d3</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">128 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -126,19 +126,26 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN v0.99.1</div>
+                <div class="section-header">> WHAT'S NEW IN v0.99.2</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
                 <div class="whats-new-subtitle">v0.98.9 — 5/10/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
+                <div class="polish-label">// sealed</div>
                 <ul>
-                    <li>ffmpeg and Deno downloads now verified against upstream SHA256 checksums — protects against tampered or corrupted dependency binaries</li>
-                    <li>Auto-update dialog now correctly passes feed checksum to download verification — fixes "Checksum required" error blocking app updates</li>
-                    <li>Subtitle temp file cleanup safety net — leftover .vtt/.srt files now reliably removed after embedded subtitle downloads</li>
+                    <li>Security: dependency download integrity now strictly enforced — ffmpeg and Deno installs require valid upstream checksums to proceed (previously fell back silently on verification errors)</li>
+                    <li>Security: release notes from update feed now rendered as text only — eliminates potential script injection from compromised feeds</li>
+                    <li>Security: open download folder now validates path is an existing directory — prevents the IPC handler from being used to launch arbitrary files</li>
                 </ul>
                 
                 <details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v0.99.1 — 5/15/2026</div>
+                        <ul>
+                            <li>ffmpeg verified against upstream SHA256 checksums (BtbN)</li>
+                            <li>Auto-update checksum fix, subtitle temp cleanup safety net</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version">v0.99.0 — 5/14/2026</div>
                         <ul>
                             <li>Security hardened 2.0 — Electron shutdown token fix, fail-closed auth, IPv6 fix</li>

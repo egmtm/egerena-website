@@ -6,7 +6,7 @@
     <meta name="description" content="EGM Downloader - Professional video downloader for Windows. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta name="keywords" content="video downloader, youtube downloader, yt-dlp, windows downloader, multi-site downloader">
     <meta name="author" content="egerena.com">
-    <meta property="og:title" content="EGM Downloader v0.99.2 - Professional Video Downloader">
+    <meta property="og:title" content="EGM Downloader v0.99.3 - Professional Video Downloader">
     <meta property="og:description" content="Professional video downloader with zero-config setup. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta property="og:url" content="https://egerena.com/apps/egm.html">
     <title>EGM Downloader for Windows</title>
@@ -61,14 +61,14 @@
 
         <section class="section">
             <div class="card download-card">
-                <h2 class="download-title">EGM Downloader v0.99.2</h2>
+                <h2 class="download-title">EGM Downloader v0.99.3</h2>
                 <a href="https://egerena.com/apps/EGMd.zip" class="download-btn">Download EGM Downloader</a>
-                <p class="version-subtitle">Installer &middot; adds Start Menu shortcut &middot; auto-updates &middot; 318 KB &middot; ~800 MB after install</p>
-                <p class="sha256-line">SHA256: eaa330295f80176d1cfc1990bbf0c60e5034c75d0363d789beae09ad9e31322f</p>
+                <p class="version-subtitle">Installer &middot; adds Start Menu shortcut &middot; auto-updates &middot; 319 KB &middot; ~800 MB after install</p>
+                <p class="sha256-line">SHA256: 476ab9fd55dffb3cf7ca2a7cb7f3e64649a790d1c3692ce14ecdc382374f43e4</p>
                 <div class="portable-divider"><span>or</span></div>
                 <a href="https://egerena.com/apps/EGMd-portable.zip" class="download-btn download-btn-secondary">Get the portable version</a>
-                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 271 KB &middot; ~800 MB after first run</p>
-                <p class="sha256-line">SHA256: 5181ea1a218ecb677536b522c199c3c2f7a7de769e49c852a3cf6e969c715212</p>
+                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 273 KB &middot; ~800 MB after first run</p>
+                <p class="sha256-line">SHA256: bf92cebdd714dc33a73e5b04c908cc481a236b9ea2d6246f1e83406c209dcd00</p>
         <!-- SmartScreen Disclaimer -->
         <details class="disclaimer-collapsible smartscreen-disclaimer" id="smartscreen-disclaimer">
             <summary class="disclaimer-summary">
@@ -94,19 +94,27 @@
         </details>
 
 <div class="whats-new">
-                    <p class="whats-new-heading">What's New in v0.99.2 — 5/16/2026</p>
-                    <p class="polish-label">sealed</p>
+                    <p class="whats-new-heading">What's New in v0.99.3 — 5/17/2026</p>
+                    <p class="polish-label">runtime hardened</p>
                     <ul>
-                        <li>Security: dependency download integrity now strictly enforced — ffmpeg and Deno installs require valid upstream checksums to proceed (previously fell back silently on verification errors)</li>
-                        <li>Security: release notes from update feed now rendered as text only — eliminates potential script injection from compromised feeds</li>
-                        <li>Security: open download folder now validates path is an existing directory — prevents the IPC handler from being used to launch arbitrary files</li>
-                        <li>Security: auto-update installer launch now requires exact path match (was substring) — only the installer at the expected temp location can be launched</li>
-                        <li>Deno checksum verification — fixed checksum file URL (.sha256 → .sha256sum) and added support for Deno's PowerShell hash format</li>
+                        <li>Electron runtime upgraded from v29 to v41 — brings 12 major versions of Chromium security fixes and performance improvements</li>
+                        <li>First launch after update reinstalls Electron (~250 MB) to apply the runtime upgrade — shown as "Updating Electron to new major version…"</li>
+                        <li>Security: renderer processes now run in OS-level sandbox (hardware-enforced isolation from filesystem and system resources)</li>
+                        <li>Security: external links always open in your default browser; in-window navigation locked to the local app origin</li>
+                        <li>Security: Content-Security-Policy enforced on all app pages — blocks external scripts, iframes, and plugins</li>
+                        <li>Security: HTML escape helper strengthened with single-quote handling (defensive — no current vulnerability, eliminates future foot-gun)</li>
                     </ul>
                 </div>
                 <details class="history-details">
                     <summary class="history-summary">Previous Updates</summary>
                     <div class="history-content">
+                        <div class="history-item">
+                            <p class="history-version">v0.99.2 — 5/16/2026</p>
+                            <ul>
+                                <li>Sealed — dependency integrity enforced, release notes text-only, folder path validation</li>
+                                <li>Auto-update exact path match, Deno checksum URL fix</li>
+                            </ul>
+                        </div>
                         <div class="history-item">
                             <p class="history-version">v0.99.1 — 5/15/2026</p>
                             <ul>
@@ -281,7 +289,7 @@
                     </ul>
                 </div>
                 <div class="history-item">
-                    <p class="history-version">v1.1 — Multi-language UI</p>
+                    <p class="history-version">v1.1 — In-app language switcher (translations complete for all 10 languages)</p>
                     <ul>
                         <li>Globe icon language picker — English, Spanish, Portuguese, French, German, Italian, Dutch, Japanese, Arabic, and Russian at launch</li>
                         <li>In-app language switcher — translations already complete for all 10 languages; picker UI ships with v1.1</li>

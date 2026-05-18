@@ -133,7 +133,7 @@
                 <div class="polish-label">// runtime hardened</div>
                 <ul>
                     <li>Electron runtime upgraded from v29 to v41 — brings 12 major versions of Chromium security fixes and performance improvements</li>
-                    <li>Security: renderer processes now run in OS-level sandbox (hardware-enforced isolation from filesystem and system resources)</li>
+                    <li>Security: renderer process sandbox hardened where supported — AppImage runs without OS-level sandbox (AppImage SUID limitation); all other security layers active (CSP, token auth, navigation handlers, checksum verification)</li>
                     <li>Security: external links always open in your default browser; in-window navigation locked to the local app origin</li>
                     <li>Security: Content-Security-Policy enforced on all app pages — blocks external scripts, iframes, and plugins</li>
                     <li>Security: HTML escape helper strengthened with single-quote handling (defensive — no current vulnerability, eliminates future foot-gun)</li>
@@ -408,3 +408,4 @@
     </footer>
 </body>
 </html>
+

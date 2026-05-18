@@ -1,11 +1,24 @@
 {
   "_comment": "EGM Downloader Linux \u2014 informational, no auto-update. Upload to egerena.com/apps/egmlinux-update.json",
   "_version_notes": [
-    "Security: dependency download integrity now strictly enforced \u2014 ffmpeg and Deno installs require valid upstream checksums to proceed (previously fell back silently on verification errors)",
-    "Security: release notes from update feed now rendered as text only \u2014 eliminates potential script injection from compromised feeds",
-    "Security: open download folder now validates path is an existing directory \u2014 prevents the IPC handler from being used to launch arbitrary files"
+    "Electron runtime upgraded from v29 to v41 \u2014 brings 12 major versions of Chromium security fixes and performance improvements",
+    "Security: renderer processes now run in OS-level sandbox (hardware-enforced isolation from filesystem and system resources)",
+    "Security: external links always open in your default browser; in-window navigation locked to the local app origin",
+    "Security: Content-Security-Policy enforced on all app pages \u2014 blocks external scripts, iframes, and plugins",
+    "Security: HTML escape helper strengthened with single-quote handling (defensive \u2014 no current vulnerability, eliminates future foot-gun)"
   ],
   "_history": [
+    {
+      "version": "0.99.3",
+      "date": "5/17/2026 1:44 PM EST",
+      "notes": [
+        "Electron runtime upgraded from v29 to v41 \u2014 brings 12 major versions of Chromium security fixes and performance improvements",
+        "Security: renderer processes now run in OS-level sandbox (hardware-enforced isolation from filesystem and system resources)",
+        "Security: external links always open in your default browser; in-window navigation locked to the local app origin",
+        "Security: Content-Security-Policy enforced on all app pages \u2014 blocks external scripts, iframes, and plugins",
+        "Security: HTML escape helper strengthened with single-quote handling (defensive \u2014 no current vulnerability, eliminates future foot-gun)"
+      ]
+    },
     {
       "version": "0.99.2",
       "date": "5/16/2026 8:51 PM EST",
@@ -51,39 +64,18 @@
         "Code quality \u2014 deferred imports moved to top-level for clarity and consistency",
         "AppImage icon now displays correctly in AppImageLauncher and system menus"
       ]
-    },
-    {
-      "version": "0.98.9",
-      "date": "5/10/2026 9:43 AM EST",
-      "notes": [
-        "Theme improvements \u2014 four themes renamed for broader appeal. CSS class names unchanged (existing preferences preserved)",
-        "Header description updated \u2014 site list replaced with \"Your personal media downloader for 1000+ sites\" with linked site directory",
-        "Clear Completed button removed from download queue \u2014 downloads auto-move to history on completion",
-        "Format toggle label changed from \"MP3\" to \"Audio\" across all views \u2014 static settings toggle and per-video format selector both updated",
-        "Footer egerena.com link now points to each platform's specific page (Windows/Mac/Linux)",
-        "Header alignment \u2014 logo and hamburger button now sit on the same visual line",
-        "Quality picker labels restructured \u2014 \"4320p - 8K\", \"2160p - 4K\", \"1440p - 2K\" format in both settings and per-video selectors. Removed \"may be slower\" from descriptions",
-        "Throttle tooltip generalized \u2014 no longer references YouTube specifically; now reads \"source throttling on high-bitrate streams is normal\"",
-        "Tooltips added to all section headers \u2014 Settings, Update Plugins, Advanced now match Cookies with descriptive hover text",
-        "Tooltips added to Check for Updates button, Quit when done, and Check updates on launch toggles",
-        "Cookies section cursor:help removed \u2014 tooltip preserved, question-mark cursor gone",
-        "Flask port field auto-centers when alone on its row (Mac/Linux where desktop shortcut is hidden)",
-        "Update Plugins panel auto-collapses after 3 seconds when no updates are found",
-        "Deno tooltip in Update Plugins \u2014 \"To update Deno, go to Advanced \u2192 Reinstall Deno\"",
-        "Scrollbar theming \u2014 custom scrollbars adapt to current theme colors via CSS variables",
-        "Window position is now remembered between sessions (resolved in v0.98.8, noted here for completeness)"
-      ]
     }
   ],
-  "_last_updated": "2026-05-16T21:38:48-05:00",
-  "version": "0.99.2",
-  "build": 110,
-  "label": "v0.99.2 - Build 110 - 5/16/2026 8:51 PM EST",
+  "_last_updated": "2026-05-17T20:08:21-05:00",
+  "version": "0.99.3",
+  "build": 111,
+  "label": "v0.99.3 - Build 111 - 5/17/2026 1:44 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdL.zip",
   "zip": "EGMdL.zip",
   "_checksums": {
-    "sha256": "5f7370631fe08ac1f59043f5f53c85d909a05474544bd4af9bb6a034762a72d3",
+    "sha256": "b3a78964659da4cefa3e024fbf492b17ceca79124e5c6a5977f44c46b5a8a0ed",
     "algorithm": "SHA-256",
     "file": "EGMdL.zip"
-  }
+  },
+  "size_bytes": 139558554
 }

@@ -1,19 +1,26 @@
 {
   "_comment": "EGM Downloader Linux \u2014 informational, no auto-update. Upload to egerena.com/apps/egmlinux-update.json",
   "_version_notes": [
-    "Electron runtime upgraded from v29 to v41 \u2014 brings 12 major versions of Chromium security fixes and performance improvements",
-    "Security: renderer processes now run in OS-level sandbox (hardware-enforced isolation from filesystem and system resources)",
-    "Security: external links always open in your default browser; in-window navigation locked to the local app origin",
-    "Security: Content-Security-Policy enforced on all app pages \u2014 blocks external scripts, iframes, and plugins",
-    "Security: HTML escape helper strengthened with single-quote handling (defensive \u2014 no current vulnerability, eliminates future foot-gun)"
+    "Security: API token comparison hardened to constant-time (hmac.compare_digest) \u2014 closes theoretical timing-attack vector on the per-session token check",
+    "Security: audio bitrate values validated before use in yt-dlp postprocessor args \u2014 invalid values now rejected cleanly (was: unvalidated interpolation)",
+    "Security: format_id values validated against allowed character set before use in yt-dlp format selector \u2014 prevents unexpected selector injection"
   ],
   "_history": [
+    {
+      "version": "0.99.4",
+      "date": "5/18/2026 8:29 PM EST",
+      "notes": [
+        "Security: API token comparison hardened to constant-time (hmac.compare_digest) \u2014 closes theoretical timing-attack vector on the per-session token check",
+        "Security: audio bitrate values validated before use in yt-dlp postprocessor args \u2014 invalid values now rejected cleanly (was: unvalidated interpolation)",
+        "Security: format_id values validated against allowed character set before use in yt-dlp format selector \u2014 prevents unexpected selector injection"
+      ]
+    },
     {
       "version": "0.99.3",
       "date": "5/17/2026 1:44 PM EST",
       "notes": [
         "Electron runtime upgraded from v29 to v41 \u2014 brings 12 major versions of Chromium security fixes and performance improvements",
-        "Security: renderer processes now run in OS-level sandbox (hardware-enforced isolation from filesystem and system resources)",
+        "Security: renderer process sandbox hardened where supported \u2014 AppImage runs without OS-level sandbox (AppImage SUID limitation); all other security layers active (CSP, token auth, navigation handlers, checksum verification)",
         "Security: external links always open in your default browser; in-window navigation locked to the local app origin",
         "Security: Content-Security-Policy enforced on all app pages \u2014 blocks external scripts, iframes, and plugins",
         "Security: HTML escape helper strengthened with single-quote handling (defensive \u2014 no current vulnerability, eliminates future foot-gun)"
@@ -51,31 +58,18 @@
         "Sensitive files (cookies, settings, history) now created with owner-only permissions (0o600)",
         "Leftover subtitle temp files (.vtt, .srt) now properly cleaned up after embedded subtitle downloads"
       ]
-    },
-    {
-      "version": "0.98.10",
-      "date": "5/13/2026 7:38 PM EST",
-      "notes": [
-        "New COLORS theme category \u2014 10 gradient themes: Ocean, Peach, Mint, Lavender, Sand (light); Ember, Aurora, Midnight, Forest, Crimson (dark)",
-        "Cookies age tracking fixed \u2014 date now stored reliably in settings instead of filesystem metadata",
-        "Cache clear safety \u2014 removed overly broad file patterns that could match legitimate files in download folder",
-        "Download timeout protection \u2014 ffmpeg and plugin update downloads now have 120-second timeout (previously could hang indefinitely)",
-        "Code quality \u2014 bare except clauses replaced with specific exception types across all platforms",
-        "Code quality \u2014 deferred imports moved to top-level for clarity and consistency",
-        "AppImage icon now displays correctly in AppImageLauncher and system menus"
-      ]
     }
   ],
-  "_last_updated": "2026-05-17T20:08:21-05:00",
-  "version": "0.99.3",
-  "build": 111,
-  "label": "v0.99.3 - Build 111 - 5/17/2026 1:44 PM EST",
+  "_last_updated": "2026-05-18T21:07:41-05:00",
+  "version": "0.99.4",
+  "build": 112,
+  "label": "v0.99.4 - Build 112 - 5/18/2026 8:29 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdL.zip",
   "zip": "EGMdL.zip",
   "_checksums": {
-    "sha256": "b3a78964659da4cefa3e024fbf492b17ceca79124e5c6a5977f44c46b5a8a0ed",
+    "sha256": "cc88afde28f413b6d99f60a5d2db27fe4c63d787bf46e6655e07ecb501586bbf",
     "algorithm": "SHA-256",
     "file": "EGMdL.zip"
   },
-  "size_bytes": 139558554
+  "size_bytes": 139559035
 }

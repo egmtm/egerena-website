@@ -1,14 +1,20 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "Electron runtime upgraded from v29 to v41 \u2014 brings 12 major versions of Chromium security fixes and performance improvements",
-    "First launch after update reinstalls Electron (~250 MB) to apply the runtime upgrade \u2014 shown as \"Updating Electron to new major version\u2026\"",
-    "Security: renderer processes now run in OS-level sandbox (hardware-enforced isolation from filesystem and system resources)",
-    "Security: external links always open in your default browser; in-window navigation locked to the local app origin",
-    "Security: Content-Security-Policy enforced on all app pages \u2014 blocks external scripts, iframes, and plugins",
-    "Security: HTML escape helper strengthened with single-quote handling (defensive \u2014 no current vulnerability, eliminates future foot-gun)"
+    "Security: API token comparison hardened to constant-time (hmac.compare_digest) \u2014 closes theoretical timing-attack vector on the per-session token check",
+    "Security: audio bitrate values validated before use in yt-dlp postprocessor args \u2014 invalid values now rejected cleanly (was: unvalidated interpolation)",
+    "Security: format_id values validated against allowed character set before use in yt-dlp format selector \u2014 prevents unexpected selector injection"
   ],
   "_history": [
+    {
+      "version": "0.99.4",
+      "date": "5/18/2026 8:29 PM EST",
+      "notes": [
+        "Security: API token comparison hardened to constant-time (hmac.compare_digest) \u2014 closes theoretical timing-attack vector on the per-session token check",
+        "Security: audio bitrate values validated before use in yt-dlp postprocessor args \u2014 invalid values now rejected cleanly (was: unvalidated interpolation)",
+        "Security: format_id values validated against allowed character set before use in yt-dlp format selector \u2014 prevents unexpected selector injection"
+      ]
+    },
     {
       "version": "0.99.3",
       "date": "5/17/2026 1:44 PM EST",
@@ -55,32 +61,19 @@
         "Malformed JSON request bodies handled gracefully \u2014 request.json replaced with get_json(silent=True) across all endpoints",
         "Leftover subtitle temp files (.vtt, .srt) now properly cleaned up after embedded subtitle downloads"
       ]
-    },
-    {
-      "version": "0.98.10",
-      "date": "5/13/2026 7:38 PM EST",
-      "notes": [
-        "New COLORS theme category \u2014 10 gradient themes: Ocean, Peach, Mint, Lavender, Sand (light); Ember, Aurora, Midnight, Forest, Crimson (dark)",
-        "Cookies age tracking fixed \u2014 date now stored reliably in settings instead of filesystem metadata",
-        "Cache clear safety \u2014 removed overly broad file patterns that could match legitimate files in download folder",
-        "Download timeout protection \u2014 ffmpeg and plugin update downloads now have 120-second timeout (previously could hang indefinitely)",
-        "Code quality \u2014 bare except clauses replaced with specific exception types across all platforms",
-        "Code quality \u2014 deferred imports moved to top-level for clarity and consistency",
-        "Desktop and Start Menu shortcuts no longer flash a console window on launch"
-      ]
     }
   ],
-  "_last_updated": "2026-05-17T20:08:20-05:00",
-  "version": "0.99.3",
-  "build": 111,
-  "label": "v0.99.3 - Build 111 - 5/17/2026 1:44 PM EST",
+  "_last_updated": "2026-05-18T21:07:40-05:00",
+  "version": "0.99.4",
+  "build": 112,
+  "label": "v0.99.4 - Build 112 - 5/18/2026 8:29 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "476ab9fd55dffb3cf7ca2a7cb7f3e64649a790d1c3692ce14ecdc382374f43e4",
+    "sha256": "02df05fb61c7acc3043f60ed4543d74641474ee0b753a110d61a1380e312fc76",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },
-  "size_bytes": 326656
+  "size_bytes": 327680
 }

@@ -156,6 +156,7 @@ body::after {
 .member-card[data-color="amber"]  { --card-color: #cc8800; --card-glow: rgba(204,136,0,0.15);  --card-rgb: 204,136,0; }
 .member-card[data-color="gold"]   { --card-color: #c09820; --card-glow: rgba(192,152,32,0.15); --card-rgb: 192,152,32; }
 .member-card[data-color="teal"]   { --card-color: #008878; --card-glow: rgba(0,136,120,0.15);  --card-rgb: 0,136,120; }
+[data-color="crimson"] { --card-color: #b5375f; --card-glow: rgba(181,55,95,0.15);  --card-rgb: 181,55,95; }
 .member-card[data-color="blue"]   { --card-color: #0078b0; --card-glow: rgba(0,120,176,0.2);   --card-rgb: 0,120,176; }
 
 /* PORTRAIT */
@@ -246,6 +247,21 @@ body::after {
         20% 36%, 22% 21%, 31% 17%, 29% 8%
     );
     filter: blur(2.5px);
+}
+.silhouette-f {
+    width: 55px;
+    height: 150px;
+    background: linear-gradient(to top, #1a1a1a, #0d0d0d);
+    clip-path: polygon(
+        38% 0%, 62% 0%, 68% 10%, 65% 20%,
+        72% 26%, 74% 38%,
+        78% 55%, 72% 72%,
+        80% 85%, 75% 100%,
+        25% 100%, 20% 85%,
+        28% 72%, 22% 55%,
+        26% 38%, 28% 26%,
+        35% 20%, 32% 10%
+    );
 }
 
 /* Fog overlay on portrait */

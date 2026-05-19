@@ -116,9 +116,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3>> EGM_DOWNLOADER_v0.99.4<span class="dl-ext">.AppImage</span></h3>
+                <h3>> EGM_DOWNLOADER_v0.99.5<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: cc88afde28f413b6d99f60a5d2db27fe4c63d787bf46e6655e07ecb501586bbf</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: 55ad05cb37fdc7ed17fc4af3b1eb6c29b31285d0e6a6f324f5c118f820bdbcfc</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">133 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -126,20 +126,28 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN v0.99.4</div>
+                <div class="section-header">> WHAT'S NEW IN v0.99.5</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
                 <div class="whats-new-subtitle">v0.98.9 — 5/10/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
-                <div class="polish-label">// tight</div>
+                <div class="polish-label">// locked down</div>
                 <ul>
-                    <li>Security: API token comparison hardened to constant-time (hmac.compare_digest) — closes theoretical timing-attack vector on the per-session token check</li>
-                    <li>Security: audio bitrate values validated before use in yt-dlp postprocessor args — invalid values now rejected cleanly (was: unvalidated interpolation)</li>
-                    <li>Security: format_id values validated against allowed character set before use in yt-dlp format selector — prevents unexpected selector injection</li>
+                    <li>Security: outbound HTTP requests now restricted to a whitelist of trusted hosts (GitHub, PyPI, ffmpeg sources, egerena.com) — prevents any future code path from accidentally reaching unintended destinations</li>
+                    <li>Security: redirect targets verified against the same whitelist — blocks redirects that lead off-list, even from legitimate hosts</li>
+                    <li>Security: archive extractions (ffmpeg, Deno, app installer) now explicitly guard against path traversal — defense in depth alongside Python's existing zipfile sanitization</li>
+                    <li>Security: job queue bounded to prevent unbounded memory growth in long sessions — returns 429 if a session ever accumulates 1000+ jobs</li>
+                    <li>Polish: HTTP timeouts centralized into two named constants (15s for metadata, 120s for downloads) — consistent behavior across every outbound request</li>
+                    <li>Theme files synchronized with canonical definitions — corrects rendering of Ghost of Sparta (Cyrillic character typo) and Neo Geo (malformed color value), aligns naming with current branding (Evergreen, Meadow, Aurora Deep), brings Linux theme picker in line with Windows/Mac</li>
                 </ul>
                 
                 <details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v0.99.4 — 5/18/2026</div>
+                        <ul>
+                            <li>Tight — constant-time token, bitrate validation, format_id validation</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version">v0.99.3 — 5/17/2026</div>
                         <ul>
                             <li>Runtime hardened — Electron v29→v41, sandbox hardened, CSP, navigation lockdown</li>
@@ -296,8 +304,6 @@
             <div class="terminal-box">
                 <div class="section-header">> WHAT'S COMING</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-
-                <div class="whats-new-subtitle history-version">v0.99.5 — additional security hardening (coming soon)</div>
 
                 <div class="whats-new-subtitle">v1.0 — Subscriptions</div>
                 <ul>

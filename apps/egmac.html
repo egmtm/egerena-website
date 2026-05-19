@@ -91,10 +91,10 @@
         <div class="glass-card">
             <section class="section">
                 <div class="download-section">
-                <h3>📦 EGM Downloader 0.99.3</h3>
+                <h3>📦 EGM Downloader 0.99.4</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
                 <p class="version-subtitle" style="text-align:center;margin-top:4px">115 MB &middot; ~300 MB after install &middot; near instant startup</p>
-                <p class="sha256-line">SHA256: 1903baf2658c7b8525a3919903849dd536e5feebd5edaa254a94f36303752f40</p>
+                <p class="sha256-line">SHA256: be460279b5b5d2ff38d7e652b62395119a4301b9b3f996b4ae7fb2324b83b573</p>
 
                 <!-- Apple Notarization Trust Signal -->
                 <details class="disclaimer-collapsible apple-trust-signal" id="apple-trust-signal">
@@ -110,18 +110,20 @@
                 </details>
 
 <p class="whats-new-content">
-                    <strong>What's New in 0.99.3 — 5/17/2026:</strong><br>
-<em class="polish-label">runtime hardened</em><br><br>
-                    • Electron runtime upgraded from v29 to v41 — brings 12 major versions of Chromium security fixes and performance improvements<br>
-                    • Security: renderer processes now run in OS-level sandbox (hardware-enforced isolation from filesystem and system resources)<br>
-                    • Security: external links always open in your default browser; in-window navigation locked to the local app origin<br>
-                    • Security: Content-Security-Policy enforced on all app pages — blocks external scripts, iframes, and plugins<br>
-                    • Security: HTML escape helper strengthened with single-quote handling (defensive — no current vulnerability, eliminates future foot-gun)
+                    <strong>What's New in 0.99.4 — 5/18/2026:</strong><br>
+<em class="polish-label">tight</em><br><br>
+                    • Security: API token comparison hardened to constant-time (hmac.compare_digest) — closes theoretical timing-attack vector on the per-session token check<br>
+                    • Security: audio bitrate values validated before use in yt-dlp postprocessor args — invalid values now rejected cleanly (was: unvalidated interpolation)<br>
+                    • Security: format_id values validated against allowed character set before use in yt-dlp format selector — prevents unexpected selector injection
                 </p>
                 
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>
                     <div class="history-content">
+                        <p class="history-item">
+                            <strong>v0.99.3 — 5/17/2026:</strong><br>
+                            • Runtime hardened — Electron v29→v41, OS-level sandbox, CSP, navigation lockdown
+                        </p>
                         <p class="history-item">
                             <strong>v0.99.2 — 5/16/2026:</strong><br>
                             • Sealed — dependency integrity enforced, release notes text-only, folder path validation
@@ -277,7 +279,10 @@
                     • Dedicated subscriptions tab and full management window</p>
                 </div>
                 <div class="history-item">
-                    <p class="history-item"><strong>v1.1 — In-app language switcher (translations complete for all 10 languages)</strong><br>
+                    <p class="history-item"><strong>v0.99.5 — additional security hardening (coming tomorrow)</strong>
+                        </p>
+                        <p class="history-item">
+                            <strong>v1.1 — In-app language switcher (translations complete for all 10 languages)</strong><br>
                     • Globe icon language picker — English, Spanish, Portuguese, French, German, Italian, Dutch, Japanese, Arabic, and Russian at launch<br>
                     • In-app language switcher — translations already complete for all 10 languages; picker UI ships with v1.1<br>
                     • Community translation system — export any language file, edit it, import it back; custom imports appear alongside the original<br>

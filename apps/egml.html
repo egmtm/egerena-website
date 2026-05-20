@@ -1,9 +1,4 @@
-<div class="polish-label">// crisp</div>
-                <ul>
-                    <li>Fix: splash screen no longer closes prematurely during ffmpeg/Deno downloads — the 5-second timeout fallback now starts after the page loads, not before the backend is ready</li>
-                    <li>Fix: cookies age display now shows "0d old" on fresh installs and after settings reset — falls back to file modification time when the saved timestamp is missing from settings</li>
-                    <li>Polish: plugin version display now uses a stacked layout (name above, version below) — prevents long version strings from overlapping adjacent UI elements</li>
-                </ul><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -120,7 +115,7 @@
                 <h3>> EGM_DOWNLOADER_v0.99.7<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
                 <p class="sha256-line" style="margin-top:10px">SHA256: 77eda534bdfd98a9a065becfd5dacf5c72a77c25ecb904664f329eb0826b72b4</p>
-                <p class="sha256-line" style="margin-top:6px;opacity:0.5">134 MB &middot; ~300 MB after first run &middot; near instant startup</p>
+                <p class="sha256-line" style="margin-top:6px;opacity:0.5">133 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
 
@@ -131,16 +126,12 @@
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
                 <div class="whats-new-subtitle">v0.98.9 — 5/10/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
-                <div class="polish-label">// locked down</div>
+                <div class="polish-label">// crisp</div>
                 <ul>
-                    <li>Security: outbound HTTP requests now restricted to a whitelist of trusted hosts (GitHub, PyPI, ffmpeg sources, egerena.com) — prevents any future code path from accidentally reaching unintended destinations</li>
-                    <li>Security: redirect targets verified against the same whitelist — blocks redirects that lead off-list, even from legitimate hosts</li>
-                    <li>Security: archive extractions (ffmpeg, Deno, app installer) now explicitly guard against path traversal — defense in depth alongside Python's existing zipfile sanitization</li>
-                    <li>Security: job queue bounded to prevent unbounded memory growth in long sessions — returns 429 if a session ever accumulates 1000+ jobs</li>
-                    <li>Polish: HTTP timeouts centralized into two named constants (15s for metadata, 120s for downloads) — consistent behavior across every outbound request</li>
-                    <li>Theme files synchronized with canonical definitions — corrects rendering of Ghost of Sparta (Cyrillic character typo) and Neo Geo (malformed color value), aligns naming with current branding (Evergreen, Meadow, Aurora Deep), brings Linux theme picker in line with Windows/Mac</li>
-                </ul>
-                
+                    <li>Fix: splash screen no longer closes prematurely during ffmpeg/Deno downloads — the 5-second timeout fallback now starts after the page loads, not before the backend is ready</li>
+                    <li>Fix: cookies age display now shows "0d old" on fresh installs and after settings reset — falls back to file modification time when the saved timestamp is missing from settings</li>
+                    <li>Polish: plugin version display now uses a stacked layout (name above, version below) — prevents long version strings from overlapping adjacent UI elements</li>
+                </ul>                
                 <details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">

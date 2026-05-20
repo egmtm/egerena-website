@@ -1,12 +1,16 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "New: splash screen with progress bar during startup \u2014 shows backend initialization and ffmpeg download status instead of a blank gap after the launcher closes",
-    "Fix: cookies age display now shows \"0d old\" on fresh installs and after settings reset \u2014 falls back to file modification time when the saved timestamp is missing from settings",
-    "Polish: plugin version display now uses a stacked layout (name above, version below) \u2014 prevents long version strings from overlapping adjacent UI elements",
-    "Fix: CMD window no longer flashes briefly when launching from the installer finish page \u2014 NSIS now invokes the VBS launcher directly instead of through a batch file"
+    "Upgrade: Electron 42.2.0 (Chromium 148) \u2014 latest stable runtime with updated security patches and performance improvements"
   ],
   "_history": [
+    {
+      "version": "0.99.8",
+      "date": "5/20/2026 4:09 PM EST",
+      "notes": [
+        "Upgrade: Electron 42.2.0 (Chromium 148) \u2014 latest stable runtime with updated security patches and performance improvements"
+      ]
+    },
     {
       "version": "0.99.7",
       "date": "5/20/2026 10:38 AM EST",
@@ -44,29 +48,17 @@
         "Security: audio bitrate values validated before use in yt-dlp postprocessor args \u2014 invalid values now rejected cleanly (was: unvalidated interpolation)",
         "Security: format_id values validated against allowed character set before use in yt-dlp format selector \u2014 prevents unexpected selector injection"
       ]
-    },
-    {
-      "version": "0.99.3",
-      "date": "5/17/2026 1:44 PM EST",
-      "notes": [
-        "Electron runtime upgraded from v29 to v41 \u2014 brings 12 major versions of Chromium security fixes and performance improvements",
-        "First launch after update reinstalls Electron (~250 MB) to apply the runtime upgrade \u2014 shown as \"Updating Electron to new major version\u2026\"",
-        "Security: renderer processes now run in OS-level sandbox (hardware-enforced isolation from filesystem and system resources)",
-        "Security: external links always open in your default browser; in-window navigation locked to the local app origin",
-        "Security: Content-Security-Policy enforced on all app pages \u2014 blocks external scripts, iframes, and plugins",
-        "Security: HTML escape helper strengthened with single-quote handling (defensive \u2014 no current vulnerability, eliminates future foot-gun)"
-      ]
     }
   ],
-  "_last_updated": "2026-05-20T12:47:09-05:00",
-  "version": "0.99.7",
-  "build": 115,
-  "label": "v0.99.7 - Build 115 - 5/20/2026 10:38 AM EST",
+  "_last_updated": "2026-05-20T16:35:37-05:00",
+  "version": "0.99.8",
+  "build": 116,
+  "label": "v0.99.8 - Build 116 - 5/20/2026 4:09 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "222af0a5102be4943b09a2badf161db45f480d8efc543884f86d85e4f435ddaa",
+    "sha256": "3eecf4f9e0bdf68c705027eeae05eb291fe5ae82687e8ba769b7eafbc36fd145",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },

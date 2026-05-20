@@ -112,9 +112,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3>> EGM_DOWNLOADER_v0.99.7<span class="dl-ext">.AppImage</span></h3>
+                <h3>> EGM_DOWNLOADER_v0.99.8<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: 77eda534bdfd98a9a065becfd5dacf5c72a77c25ecb904664f329eb0826b72b4</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: 8fcfc290efeb27db51575f707c4857f95a8d1108f3061802a1f5754c91431fbb</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">133 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -122,19 +122,22 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN v0.99.7</div>
+                <div class="section-header">> WHAT'S NEW IN v0.99.8</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
                 <div class="whats-new-subtitle">v0.98.9 — 5/10/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
-                <div class="polish-label">// crisp</div>
+                <div class="polish-label">// bogaloo</div>
                 <ul>
-                    <li>Fix: splash screen no longer closes prematurely during ffmpeg/Deno downloads — the 5-second timeout fallback now starts after the page loads, not before the backend is ready</li>
-                    <li>Fix: cookies age display now shows "0d old" on fresh installs and after settings reset — falls back to file modification time when the saved timestamp is missing from settings</li>
-                    <li>Polish: plugin version display now uses a stacked layout (name above, version below) — prevents long version strings from overlapping adjacent UI elements</li>
-                </ul>                
+                    <li>Upgrade: Electron 42.2.0 (Chromium 148) — latest stable runtime with updated security patches and performance improvements</li>
+                </ul>               
                 <details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v0.99.7 — 5/20/2026</div>
+                        <ul>
+                            <li>Crisp — splash premature close fix, cookies age display, plugin layout</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version">v0.99.6 — 5/19/2026</div>
                         <ul>
                             <li>Depth — format_id use-site validation, explicit bitrate failure</li>

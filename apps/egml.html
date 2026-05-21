@@ -112,9 +112,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3>> EGM_DOWNLOADER_v0.99.8<span class="dl-ext">.AppImage</span></h3>
+                <h3>> EGM_DOWNLOADER_v0.99.9<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: 8fcfc290efeb27db51575f707c4857f95a8d1108f3061802a1f5754c91431fbb</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: 9384496f22540101279ab8bf54d28113303146b3b8d7489f1be47d309d2534a9</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">133 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -122,17 +122,26 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN v0.99.8</div>
+                <div class="section-header">> WHAT'S NEW IN v0.99.9</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
                 <div class="whats-new-subtitle">v0.98.9 — 5/10/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
-                <div class="polish-label">// bogaloo</div>
+                <div class="polish-label">// command center</div>
                 <ul>
-                    <li>Upgrade: Electron 42.2.0 (Chromium 148) — latest stable runtime with updated security patches and performance improvements</li>
-                </ul>               
+                    <li>New: Advanced panel moved to dedicated third tab on hamburger menu — main window decluttered, all settings accessible via History/Themes/Advanced tabs</li>
+                    <li>Fix: auto-update check no longer fires when the toggle is off — removed unconditional 3-second timer that bypassed the setting</li>
+                    <li>Security: updateSplash escape chain hardened — backslash, single quote, carriage return, and Unicode line terminators now properly escaped; progress value clamped 0-100</li>
+                    <li>Polish: splash progress bar shimmer animation — subtle sweep effect indicates activity during backend startup</li>
+                    <li>New: 20 themes added across 4 new categories — Food & Drink (Espresso, Matcha, Honey, Merlot, Saffron), Weather (Golden Hour, Overcast, Northern Lights, Thunderstorm, Sirocco), Space (Nebula, Pulsar, Solar Flare, Event Horizon, Andromeda), Architecture (Brutalist, Art Deco, Blueprint, Marble, Gothic)</li>
+                </ul>              
                 <details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v0.99.8 — 5/20/2026</div>
+                        <ul>
+                            <li>Bogaloo — Electron 42.2.0 / Chromium 148</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version">v0.99.7 — 5/20/2026</div>
                         <ul>
                             <li>Crisp — splash premature close fix, cookies age display, plugin layout</li>
@@ -309,13 +318,6 @@
             <div class="terminal-box">
                 <div class="section-header">> WHAT'S COMING</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-
-                <div class="whats-new-subtitle history-version">v0.99.9 — COMMAND CENTER</div>
-                <ul>
-                    <li>Advanced panel moves to dedicated hamburger tab — History | Themes | Advanced</li>
-                    <li>Splash screen polish and escape fix</li>
-                    <li>+20 new themes</li>
-                </ul>
 
                 <div class="whats-new-subtitle history-version">v0.99.10 — DIRECTOR'S CUT</div>
                 <ul>

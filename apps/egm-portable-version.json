@@ -6,7 +6,8 @@
     "Polish: 36 themes received contrast readability improvements (text2 and log-text bumps; Savath\u00fbn identity rework; Valhalla palette differentiation from N64)",
     "Fix: themes window sidebar no longer scrolls away with the page \u2014 sidebar and grid scroll independently at any theme count",
     "Security: thumbnail fetching restricted to HTTPS-only; rejects file://, ftp://, http:// schemes (defense-in-depth, documented in SECURITY.md)",
-    "Docs: SECURITY.md updated with documented threat-model decision for thumbnail CDN fetching"
+    "Docs: SECURITY.md updated with documented threat-model decision for thumbnail CDN fetching",
+    "Trust: .vbs launcher removed; portable now code-signed alongside installer \u2014 fewer SmartScreen warnings, no antivirus false positives."
   ],
   "_history": [
     {
@@ -18,7 +19,8 @@
         "Polish: 36 themes received contrast readability improvements (text2 and log-text bumps; Savath\u00fbn identity rework; Valhalla palette differentiation from N64)",
         "Fix: themes window sidebar no longer scrolls away with the page \u2014 sidebar and grid scroll independently at any theme count",
         "Security: thumbnail fetching restricted to HTTPS-only; rejects file://, ftp://, http:// schemes (defense-in-depth, documented in SECURITY.md)",
-        "Docs: SECURITY.md updated with documented threat-model decision for thumbnail CDN fetching"
+        "Docs: SECURITY.md updated with documented threat-model decision for thumbnail CDN fetching",
+        "Trust: .vbs launcher removed; portable now code-signed alongside installer \u2014 fewer SmartScreen warnings, no antivirus false positives."
       ]
     },
     {
@@ -63,16 +65,16 @@
       ]
     }
   ],
-  "_last_updated": "2026-05-23T11:28:12-05:00",
+  "_last_updated": "2026-05-23T15:29:21-05:00",
   "version": "0.99.11",
   "build": 119,
-  "label": "v0.99.11 - Build 119 - 5/23/2026 10:05 AM EST",
+  "label": "v0.99.11 - Build 119 - 5/23/2026 3:14 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd-portable.zip",
   "zip": "EGMd-portable.zip",
   "_checksums": {
-    "sha256": "3bb3642173bf9f1e351fcf9b5bac8de7681717ab4ebe392a56073ebeba4e4d40",
+    "sha256": "11d1bfdbd73a719a855537428361f887aa685582fe5622426e97c77b0768ce26",
     "algorithm": "SHA-256",
     "file": "EGMd-portable.zip"
   },
-  "size_bytes": 322560
+  "size_bytes": 366592
 }

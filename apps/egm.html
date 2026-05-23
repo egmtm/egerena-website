@@ -6,7 +6,7 @@
     <meta name="description" content="EGM Downloader - Professional video downloader for Windows. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta name="keywords" content="video downloader, youtube downloader, yt-dlp, windows downloader, multi-site downloader">
     <meta name="author" content="egerena.com">
-    <meta property="og:title" content="EGM Downloader v0.99.9 - Professional Video Downloader">
+    <meta property="og:title" content="EGM Downloader v0.99.10 - Professional Video Downloader">
     <meta property="og:description" content="Professional video downloader with zero-config setup. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta property="og:url" content="https://egerena.com/apps/egm.html">
     <title>EGM Downloader for Windows</title>
@@ -47,7 +47,7 @@
                 <div class="feature-item"><span>Zero-Config Setup</span></div>
                 <div class="feature-item"><span>Playlist Support</span></div>
                 <div class="feature-item"><span>Smart Quality Selection</span></div>
-                <div class="feature-item"><span>140 Custom Themes</span></div>
+                <div class="feature-item"><span>170 Custom Themes</span></div>
                 <div class="feature-item"><span>Concurrent Downloads</span></div>
                 <div class="feature-item"><span>Built-in FFmpeg</span></div>
                 <div class="feature-item"><span>Auto-Updates</span></div>
@@ -60,14 +60,14 @@
 
         <section class="section">
             <div class="card download-card">
-                <h2 class="download-title">EGM Downloader v0.99.9</h2>
+                <h2 class="download-title">EGM Downloader v0.99.10</h2>
                 <a href="https://egerena.com/apps/EGMd.zip" class="download-btn">Download EGM Downloader</a>
                 <p class="version-subtitle">Installer &middot; adds Start Menu shortcut &middot; auto-updates &middot; 321 KB &middot; ~800 MB after install</p>
-                <p class="sha256-line">SHA256: 5a821f47065ed671b800fff1db3e47d579a6777d0b522edad09830534937dd56</p>
+                <p class="sha256-line">SHA256: 24c2c03f7491910cbdd10736c863e2205a71937fa95599e245fd60880c11223d</p>
                 <div class="portable-divider"><span>or</span></div>
                 <a href="https://egerena.com/apps/EGMd-portable.zip" class="download-btn download-btn-secondary">Get the portable version</a>
                 <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 275 KB &middot; ~800 MB after first run</p>
-                <p class="sha256-line">SHA256: 09b6a83c6ba513a3e7c18e0970efcb7d6af8fcfd3828156fb3b872b4cfa7cb91</p>
+                <p class="sha256-line">SHA256: a68d170d342de509d669bb7209edd4b06ec62947ab5aa457752b4b0e512ede7b</p>
         <!-- SmartScreen Disclaimer -->
         <details class="disclaimer-collapsible smartscreen-disclaimer" id="smartscreen-disclaimer">
             <summary class="disclaimer-summary">
@@ -93,18 +93,26 @@
         </details>
 
 <div class="whats-new">
-                    <p class="whats-new-heading">What's New in v0.99.9 — 5/21/2026</p>
-                    <p class="polish-label">command center</p>
+                    <p class="whats-new-heading">What's New in v0.99.10 — 5/22/2026</p>
+                    <p class="polish-label">director's cut</p>
                     <ul>
-                        <li>New: Advanced panel moved to dedicated third tab on hamburger menu — main window decluttered, all settings accessible via History/Themes/Advanced tabs</li>
-                        <li>Fix: auto-update check no longer fires when the toggle is off — removed unconditional 3-second timer that bypassed the setting</li>
-                        <li>Security: updateSplash escape chain hardened — backslash, single quote, carriage return, and Unicode line terminators now properly escaped; progress value clamped 0-100</li>
-                        <li>Polish: splash progress bar shimmer animation — subtle sweep effect indicates activity during backend startup</li>
-                        <li>New: 20 themes added across 4 new categories — Food & Drink (Espresso, Matcha, Honey, Merlot, Saffron), Weather (Golden Hour, Overcast, Northern Lights, Thunderstorm, Sirocco), Space (Nebula, Pulsar, Solar Flare, Event Horizon, Andromeda), Architecture (Brutalist, Art Deco, Blueprint, Marble, Gothic)</li>
-                    </ul>              </div>
+                        <li>New: video thumbnails on download history — locally cached, shown in hamburger list (cropped) and expanded history (blurred fill for vertical videos); fallback icons for audio and pre-thumbnail entries</li>
+                        <li>New: per-video thumbnail cleanup on history delete, bulk cleanup on cache clear</li>
+                        <li>Fix: single-download audio quality selector now offers full format options (MP3 128/192/320, FLAC, M4A 256, OPUS 128/192) matching the Download All modal — respects saved default</li>
+                        <li>Note: audio quality is the target output — actual quality is bounded by source. Selecting MP3 320 kbps from a source that only offers 128 kbps gives you an MP3 file at the source's actual quality. Format conversion (MP3/FLAC/OPUS) always works as selected.</li>
+                        <li>New: splash redesign — replaced progress bar with spinning indicator and pulsing dots; visually consistent across all startup scenarios including ffmpeg/Deno reinstall</li>
+                        <li>Polish: settings folder hint label removed from header</li>
+                        <li>New: 30 themes added — Eras & Decades (10), Mythology (10), International Seasonal (10); 29 contrast readability fixes; alphabetical sort in themes window</li>
+                    </ul>             </div>
                 <details class="history-details">
                     <summary class="history-summary">Previous Updates</summary>
                     <div class="history-content">
+                        <div class="history-item">
+                            <p class="history-version">v0.99.9 — 5/21/2026</p>
+                            <ul>
+                                <li>Command Center — Advanced hamburger tab, splash shimmer, escape fix</li>
+                            </ul>
+                        </div>
                         <div class="history-item">
                             <p class="history-version">v0.99.8 — 5/20/2026</p>
                             <ul>
@@ -315,15 +323,13 @@
             <div class="card">
                 <h2 class="section-title" style="margin-top:0">What's Coming</h2>
                 <div class="history-item">
-                    <p class="history-version">v0.99.10 — DIRECTOR'S CUT</p>
+                    <p class="history-version">v0.99.11 — MYSTERY</p>
                     <ul>
-                        <li>Video thumbnails in download history — hamburger quick list and full expanded view</li>
-                        <li>Expanded audio quality options for single downloads</li>
-                        <li>+20 new themes</li>
+                        <li>🕵️ Details coming soon</li>
                     </ul>
                 </div>
                 <div class="history-item">
-                    <p class="history-version">v0.99.11 — VAULT</p>
+                    <p class="history-version">v0.99.12+ — VAULT</p>
                     <ul>
                         <li>Signed update manifests — cryptographically verified before any update installs</li>
                         <li>Security test suite covering all critical paths</li>

@@ -331,10 +331,19 @@
                 <div class="section-header">> WHAT'S COMING</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
 
-                <div class="whats-new-subtitle history-version">v0.99.12+ — VAULT</div>
+                <div class="whats-new-subtitle history-version">v0.99.12 — VAULT</div>
                 <ul>
-                    <li>Signed update manifests — cryptographically verified before any update installs</li>
-                    <li>Security test suite covering all critical paths</li>
+                    <li>Theme contrast fix — placeholder text and section labels restored to full readability (Known Issues from v0.99.11 resolved)</li>
+                    <li>Signed update manifests — ed25519 signatures verified before any update content is trusted</li>
+                    <li>Structured security event logging — all security-relevant events logged to a rotating security.log</li>
+                    <li>Security test suite + GitHub Actions CI — historical regressions and security boundaries covered</li>
+                </ul>
+
+                <div class="whats-new-subtitle history-version">v0.99.13 — SOLID</div>
+                <ul>
+                    <li>Atomic file writes — settings, history, and cookies saved crash-safely via atomic rename</li>
+                    <li>Strict image type validation — magic byte detection + Content-Type header enforcement on all thumbnail fetches</li>
+                    <li>Portable bundle hygiene + robustness improvements</li>
                 </ul>
 
                 <div class="whats-new-subtitle history-version">v1.0 — IGNITION</div>

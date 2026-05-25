@@ -112,9 +112,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3>> EGM_DOWNLOADER_v0.99.11<span class="dl-ext">.AppImage</span></h3>
+                <h3>> EGM_DOWNLOADER_v0.99.12<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: 06e704b3041e4c2674c3fdb75c3f37a9f7ca0adea3a95e0b2142b26301309177</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: a5fa2122d04bc49bd5a2dedef47f8a66b342b4ad9d5d91133b0b8c1d95c4fad2</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">133 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -122,23 +122,25 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN v0.99.11</div>
+                <div class="section-header">> WHAT'S NEW IN v0.99.12</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-                <div class="whats-new-subtitle">v0.99.11 — 5/23/2026</div>
+                <div class="whats-new-subtitle">v0.99.12 — 5/25/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
-                <div class="polish-label">// mystery</div>
+                <div class="polish-label">// vault</div>
                 <ul>
-                    <li>New: 67 themes added — Puerto Rico Collection (22 themes celebrating Ponce, the island, holidays, icons, and culture), Team Easter Eggs (5 themes named after the team behind EGM), and category expansion (cities, space, movies, retro, music, moods, architecture, food, weather)</li>
-                    <li>New: dedicated Puerto Rico section in the themes sidebar with flag identifier</li>
-                    <li>Polish: 36 themes received contrast readability improvements (text2 and log-text bumps; Savathûn identity rework; Valhalla palette differentiation from N64)</li>
-                    <li>Fix: themes window sidebar no longer scrolls away with the page — sidebar and grid scroll independently at any theme count</li>
-                    <li>Security: thumbnail fetching restricted to HTTPS-only; rejects file://, ftp://, http:// schemes (defense-in-depth, documented in SECURITY.md)</li>
-                    <li>Docs: SECURITY.md updated with documented threat-model decision for thumbnail CDN fetching</li>
-                    <li>Known Issues: Some placeholder text and section labels may have low contrast on certain themes. A fix is ready and will ship in the next release.</li>
-                </ul>            
+                    <li>Fix: placeholder text and section labels now use theme-aware color across all 238 themes — closes v0.99.11 known issue</li>
+                    <li>Security: signed update manifests — ed25519 signature verified on every update check before any content is trusted; unsigned or tampered manifests silently rejected</li>
+                    <li>Security: structured security event logging — all security-relevant events (token mismatch, host rejection, checksum failure, path traversal, thumbnail URL rejection, manifest verification failure) logged to console and rotating DATA_DIR/logs/security.log</li>
+                    <li>Quality: unit test suite — 17 tests covering cross-platform parity, security boundaries, and historical regressions; wired into GitHub Actions CI (runs on every push to main)</li>
+                </ul>           
                 <details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v0.99.11 — 5/23/2026</div>
+                        <ul>
+                            <li>Mystery — Puerto Rico Collection, 67 themes, sidebar fix, HTTPS thumbnails</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version">v0.99.10 — 5/22/2026</div>
                         <ul>
                             <li>Director's Cut — thumbnails, audio quality, 170 themes, splash redesign</li>
@@ -332,14 +334,6 @@
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
 
                 <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--terminal-color);opacity:0.6;padding:4px 0 8px;margin:0;">// hardening</p>
-                <div class="whats-new-subtitle history-version">v0.99.12 — VAULT</div>
-                <ul>
-                    <li>Theme contrast fix — placeholder text and section labels restored to full readability (Known Issues from v0.99.11 resolved)</li>
-                    <li>Signed update manifests — ed25519 signatures verified before any update content is trusted</li>
-                    <li>Structured security event logging — all security-relevant events logged to a rotating security.log</li>
-                    <li>Security test suite + GitHub Actions CI — historical regressions and security boundaries covered</li>
-                </ul>
-
                 <div class="whats-new-subtitle history-version">v0.99.13 — SOLID</div>
                 <ul>
                     <li>Atomic file writes — settings, history, and cookies saved crash-safely via atomic rename</li>

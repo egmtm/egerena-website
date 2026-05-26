@@ -6,7 +6,7 @@
     <meta name="description" content="EGM Downloader - Professional video downloader for Windows. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta name="keywords" content="video downloader, youtube downloader, yt-dlp, windows downloader, multi-site downloader">
     <meta name="author" content="egerena.com">
-    <meta property="og:title" content="EGM Downloader v0.99.12 - Professional Video Downloader">
+    <meta property="og:title" content="EGM Downloader v0.99.13 - Professional Video Downloader">
     <meta property="og:description" content="Professional video downloader with zero-config setup. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta property="og:url" content="https://egerena.com/apps/egm.html">
     <title>EGM Downloader for Windows</title>
@@ -60,14 +60,14 @@
 
         <section class="section">
             <div class="card download-card">
-                <h2 class="download-title">EGM Downloader v0.99.12</h2>
+                <h2 class="download-title">EGM Downloader v0.99.13</h2>
                 <a href="https://egerena.com/apps/EGMd.zip" class="download-btn">Download EGM Downloader</a>
                 <p class="version-subtitle">Installer &middot; adds Start Menu shortcut &middot; auto-updates &middot; 321 KB &middot; ~800 MB after install</p>
-                <p class="sha256-line">SHA256: 0b0e40524cba76ea35dfad2768f3c7cb01fad6997409ea9dfd1e9a6d638e52dc</p>
+                <p class="sha256-line">SHA256: ef6fd4f7edc2bb178e65d40899cda6630a07045355665e2a41c05899351addb6</p>
                 <div class="portable-divider"><span>or</span></div>
                 <a href="https://egerena.com/apps/EGMd-portable.zip" class="download-btn download-btn-secondary">Get the portable version</a>
                 <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 351 KB &middot; ~800 MB after first run &middot; digitally signed</p>
-                <p class="sha256-line">SHA256: 42f7433456064a69a3242e1996f5d7cadecace0526b87e00f9b061aa547cd551</p>
+                <p class="sha256-line">SHA256: 9b973f6bdb054c402b29ea0670f4f482eca5f976dc9f2e01e6e5ed71281515a4</p>
         <!-- SmartScreen Disclaimer -->
         <details class="disclaimer-collapsible smartscreen-disclaimer" id="smartscreen-disclaimer">
             <summary class="disclaimer-summary">
@@ -93,17 +93,22 @@
         </details>
 
 <div class="whats-new">
-                    <p class="whats-new-heading">What's New in v0.99.12 — 5/25/2026</p>
-                    <p class="polish-label">vault</p>
+                    <p class="whats-new-heading">What's New in v0.99.13 — 5/26/2026</p>
+                    <p class="polish-label">solid</p>
                     <ul>
-                        <li>Fix: placeholder text and section labels now use theme-aware color across all 238 themes — closes v0.99.11 known issue</li>
-                        <li>Security: signed update manifests — ed25519 signature verified on every update check before any content is trusted; unsigned or tampered manifests silently rejected</li>
-                        <li>Security: structured security event logging — all security-relevant events (token mismatch, host rejection, checksum failure, path traversal, thumbnail URL rejection, manifest verification failure) logged to console and rotating DATA_DIR/logs/security.log</li>
-                        <li>Quality: unit test suite — 17 tests covering cross-platform parity, security boundaries, and historical regressions; wired into GitHub Actions CI (runs on every push to main)</li>
-                    </ul>           </div>
+                        <li>Robustness: settings, history, and cookies now written atomically — no file corruption on crash or power loss mid-write</li>
+                        <li>Fix: strict image format detection on cached thumbnails — unknown formats rejected instead of mis-tagged as JPG; WAV-tagged-as-WebP stops happening</li>
+                        <li>Fix: Content-Type header validated before reading thumbnail body — non-image responses close immediately without consuming bandwidth</li>
+                    </ul>          </div>
                 <details class="history-details">
                     <summary class="history-summary">Previous Updates</summary>
                     <div class="history-content">
+                        <div class="history-item">
+                            <p class="history-version">v0.99.12 — 5/25/2026</p>
+                            <ul>
+                                <li>Vault — theme fix, signed manifests, security logging, 17-test suite</li>
+                            </ul>
+                        </div>
                         <div class="history-item">
                             <p class="history-version">v0.99.11 — 5/23/2026</p>
                             <ul>
@@ -331,16 +336,6 @@
         <section class="section">
             <div class="card">
                 <h2 class="section-title" style="margin-top:0">What's Coming</h2>
-                <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-dim);padding:4px 0 8px;margin:0;">Hardening</p>
-                <div class="history-item">
-                    <p class="history-version">v0.99.13 — SOLID</p>
-                    <ul>
-                        <li>Atomic file writes — settings, history, and cookies saved crash-safely via atomic rename</li>
-                        <li>Strict image type validation — magic byte detection + Content-Type header enforcement on all thumbnail fetches</li>
-                        <li>Portable bundle hygiene + robustness improvements</li>
-                    </ul>
-                </div>
-                <div style="display:flex;align-items:center;gap:10px;margin:12px 0;"><div style="flex:1;height:1px;background:var(--border);opacity:0.4;"></div><span style="font-size:10px;letter-spacing:0.06em;color:var(--text-dim);">✓ verify checkpoint</span><div style="flex:1;height:1px;background:var(--border);opacity:0.4;"></div></div>
                 <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-dim);padding:4px 0 8px;margin:0;">Launch &amp; beyond</p>
                 <div class="history-item">
                     <p class="history-version">v1.0 — CORNERSTONE</p>

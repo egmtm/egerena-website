@@ -1,6 +1,9 @@
 {
   "_comment": "EGM Downloader Linux \u2014 informational, no auto-update. Upload to egerena.com/apps/egmlinux-update.json",
   "_version_notes": [
+    "New: 22 Operating System themes \u2014 Windows (95, 98, XP, Vista, 7, 11), macOS (9, X Aqua, Big Sur, Sequoia), Linux (Ubuntu, Arch, Kali, Fedora), and retro OS (BeOS, Amiga, DOS, NeXTSTEP, OS/2 Warp, Solaris, Unix, BSD) \u2014 total now 260 themes",
+    "Fix: theme registry corrections \u2014 void, aurora-deep, St. Patrick's Day, and Valentine's Day now correctly registered with proper labels and categories",
+    "Polish: sidebar category labels and search placeholders now readable across all themes \u2014 contrast audit resolved 4 additional surfaces using the same fix pattern as v0.99.11",
     "Robustness: settings, history, and cookies now written atomically \u2014 no file corruption on crash or power loss mid-write",
     "Fix: strict image format detection on cached thumbnails \u2014 unknown formats rejected instead of mis-tagged as JPG; WAV-tagged-as-WebP stops happening",
     "Fix: Content-Type header validated before reading thumbnail body \u2014 non-image responses close immediately without consuming bandwidth"
@@ -10,6 +13,9 @@
       "version": "0.99.13",
       "date": "5/26/2026 11:06 AM EST",
       "notes": [
+        "New: 22 Operating System themes \u2014 Windows (95, 98, XP, Vista, 7, 11), macOS (9, X Aqua, Big Sur, Sequoia), Linux (Ubuntu, Arch, Kali, Fedora), and retro OS (BeOS, Amiga, DOS, NeXTSTEP, OS/2 Warp, Solaris, Unix, BSD) \u2014 total now 260 themes",
+        "Fix: theme registry corrections \u2014 void, aurora-deep, St. Patrick's Day, and Valentine's Day now correctly registered with proper labels and categories",
+        "Polish: sidebar category labels and search placeholders now readable across all themes \u2014 contrast audit resolved 4 additional surfaces using the same fix pattern as v0.99.11",
         "Robustness: settings, history, and cookies now written atomically \u2014 no file corruption on crash or power loss mid-write",
         "Fix: strict image format detection on cached thumbnails \u2014 unknown formats rejected instead of mis-tagged as JPG; WAV-tagged-as-WebP stops happening",
         "Fix: Content-Type header validated before reading thumbnail body \u2014 non-image responses close immediately without consuming bandwidth"
@@ -63,7 +69,7 @@
       ]
     }
   ],
-  "_last_updated": "2026-05-26T12:15:00-05:00",
+  "_last_updated": "2026-05-26T12:41:48-05:00",
   "version": "0.99.13",
   "build": 121,
   "label": "v0.99.13 - Build 121 - 5/26/2026 11:06 AM EST",
@@ -75,5 +81,5 @@
     "file": "EGMdL.zip"
   },
   "size_bytes": 146800640,
-  "signature": "Td8qIhVdZeWazCC5WK92i15brijNINjj5zZVMdFdurydZuaeTkGIBOthkj0mBBOJV7fh4BNv6FpeAcYlz9t9BQ=="
+  "signature": "gHNSyMz/9ZnA1FgEmykqADr+5UwMwfAsPFcX2z8TEssZsVvboltmmGcTTh6fxTficeT1K8jlCNlQgsjX39ntCQ=="
 }

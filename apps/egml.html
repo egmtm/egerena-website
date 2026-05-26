@@ -112,9 +112,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3>> EGM_DOWNLOADER_v0.99.12<span class="dl-ext">.AppImage</span></h3>
+                <h3>> EGM_DOWNLOADER_v0.99.13<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: a5fa2122d04bc49bd5a2dedef47f8a66b342b4ad9d5d91133b0b8c1d95c4fad2</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: 73b1fc8782579eb7f0f7a38db746d25859578e6a8fa042a390421259991f97b6</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">133 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -122,20 +122,24 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN v0.99.12</div>
+                <div class="section-header">> WHAT'S NEW IN v0.99.13</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-                <div class="whats-new-subtitle">v0.99.12 — 5/25/2026</div>
+                <div class="whats-new-subtitle">v0.99.13 — 5/26/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
-                <div class="polish-label">// vault</div>
+                <div class="polish-label">// solid</div>
                 <ul>
-                    <li>Fix: placeholder text and section labels now use theme-aware color across all 238 themes — closes v0.99.11 known issue</li>
-                    <li>Security: signed update manifests — ed25519 signature verified on every update check before any content is trusted; unsigned or tampered manifests silently rejected</li>
-                    <li>Security: structured security event logging — all security-relevant events (token mismatch, host rejection, checksum failure, path traversal, thumbnail URL rejection, manifest verification failure) logged to console and rotating DATA_DIR/logs/security.log</li>
-                    <li>Quality: unit test suite — 17 tests covering cross-platform parity, security boundaries, and historical regressions; wired into GitHub Actions CI (runs on every push to main)</li>
-                </ul>           
+                    <li>Robustness: settings, history, and cookies now written atomically — no file corruption on crash or power loss mid-write</li>
+                    <li>Fix: strict image format detection on cached thumbnails — unknown formats rejected instead of mis-tagged as JPG; WAV-tagged-as-WebP stops happening</li>
+                    <li>Fix: Content-Type header validated before reading thumbnail body — non-image responses close immediately without consuming bandwidth</li>
+                </ul>          
                 <details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v0.99.12 — 5/25/2026</div>
+                        <ul>
+                            <li>Vault — theme fix, signed manifests, security logging, 17-test suite</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version">v0.99.11 — 5/23/2026</div>
                         <ul>
                             <li>Mystery — Puerto Rico Collection, 67 themes, sidebar fix, HTTPS thumbnails</li>
@@ -333,15 +337,6 @@
                 <div class="section-header">> WHAT'S COMING</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
 
-                <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--terminal-color);opacity:0.6;padding:4px 0 8px;margin:0;">// hardening</p>
-                <div class="whats-new-subtitle history-version">v0.99.13 — SOLID</div>
-                <ul>
-                    <li>Atomic file writes — settings, history, and cookies saved crash-safely via atomic rename</li>
-                    <li>Strict image type validation — magic byte detection + Content-Type header enforcement on all thumbnail fetches</li>
-                    <li>Portable bundle hygiene + robustness improvements</li>
-                </ul>
-
-                <div style="display:flex;align-items:center;gap:10px;margin:12px 0;"><div style="flex:1;height:1px;background:var(--terminal-color);opacity:0.2;"></div><span style="font-size:10px;letter-spacing:0.06em;color:var(--terminal-color);opacity:0.5;">✓ verify checkpoint</span><div style="flex:1;height:1px;background:var(--terminal-color);opacity:0.2;"></div></div>
                 <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--terminal-color);opacity:0.6;padding:4px 0 8px;margin:0;">// launch &amp; beyond</p>
                 <div class="whats-new-subtitle history-version">v1.0 — CORNERSTONE</div>
                 <ul>

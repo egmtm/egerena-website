@@ -90,10 +90,10 @@
         <div class="glass-card">
             <section class="section">
                 <div class="download-section">
-                <h3>📦 EGM Downloader 0.99.12</h3>
+                <h3>📦 EGM Downloader 0.99.13</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
                 <p class="version-subtitle" style="text-align:center;margin-top:4px">126 MB &middot; ~300 MB after install &middot; near instant startup</p>
-                <p class="sha256-line">SHA256: b1036987ecf937cd43e1489c36035445a32f9d3c8e77e3c5c3680bbad72618ba</p>
+                <p class="sha256-line">SHA256: 87438655ea173bc7a656fdd44c69454131890a249126710860973e2ebbaa9d5e</p>
 
                 <!-- Apple Notarization Trust Signal -->
                 <details class="disclaimer-collapsible apple-trust-signal" id="apple-trust-signal">
@@ -109,17 +109,20 @@
                 </details>
 
 <p class="whats-new-content">
-                    <strong>What's New in 0.99.12 — 5/25/2026:</strong><br>
-<em class="polish-label">vault</em><br><br>
-                    • Fix: placeholder text and section labels now use theme-aware color across all 238 themes — closes v0.99.11 known issue<br>
-                    • Security: signed update manifests — ed25519 signature verified on every update check before any content is trusted; unsigned or tampered manifests silently rejected<br>
-                    • Security: structured security event logging — all security-relevant events (token mismatch, host rejection, checksum failure, path traversal, thumbnail URL rejection, manifest verification failure) logged to console and rotating DATA_DIR/logs/security.log<br>
-                    • Quality: unit test suite — 17 tests covering cross-platform parity, security boundaries, and historical regressions; wired into GitHub Actions CI (runs on every push to main)
+                    <strong>What's New in 0.99.13 — 5/26/2026:</strong><br>
+<em class="polish-label">solid</em><br><br>
+                    • Robustness: settings, history, and cookies now written atomically — no file corruption on crash or power loss mid-write<br>
+                    • Fix: strict image format detection on cached thumbnails — unknown formats rejected instead of mis-tagged as JPG; WAV-tagged-as-WebP stops happening<br>
+                    • Fix: Content-Type header validated before reading thumbnail body — non-image responses close immediately without consuming bandwidth
                 </p>
                 
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>
                     <div class="history-content">
+                        <p class="history-item">
+                            <strong>v0.99.12 — 5/25/2026:</strong><br>
+                            • Vault — theme fix, signed manifests, security logging, 17-test suite
+                        </p>
                         <p class="history-item">
                             <strong>v0.99.11 — 5/23/2026:</strong><br>
                             • Mystery — Puerto Rico Collection, 67 themes, sidebar fix, HTTPS thumbnails
@@ -304,14 +307,6 @@
         <div class="glass-card">
             <section class="section">
                 <h2 class="section-title"><span>What's Coming</span></h2>
-                <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);padding:4px 0 8px;margin:0;">Hardening</p>
-                <div class="history-item">
-                    <p class="history-item"><strong>v0.99.13 — SOLID</strong><br>
-                    • Atomic file writes — settings, history, and cookies saved crash-safely via atomic rename<br>
-                    • Strict image type validation — magic byte detection + Content-Type header enforcement on all thumbnail fetches<br>
-                    • Portable bundle hygiene + robustness improvements</p>
-                </div>
-                <div style="display:flex;align-items:center;gap:10px;margin:12px 0;"><div style="flex:1;height:1px;background:var(--glass-border);opacity:0.6;"></div><span style="font-size:10px;letter-spacing:0.06em;color:var(--text-secondary);">✓ verify checkpoint</span><div style="flex:1;height:1px;background:var(--glass-border);opacity:0.6;"></div></div>
                 <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);padding:4px 0 8px;margin:0;">Launch &amp; beyond</p>
                 <div class="history-item">
                     <p class="history-item"><strong>v1.0 — CORNERSTONE</strong><br>

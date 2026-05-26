@@ -1,12 +1,20 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "Fix: placeholder text and section labels now use theme-aware color across all 238 themes \u2014 closes v0.99.11 known issue",
-    "Security: signed update manifests \u2014 ed25519 signature verified on every update check before any content is trusted; unsigned or tampered manifests silently rejected",
-    "Security: structured security event logging \u2014 all security-relevant events (token mismatch, host rejection, checksum failure, path traversal, thumbnail URL rejection, manifest verification failure) logged to console and rotating DATA_DIR/logs/security.log",
-    "Quality: unit test suite \u2014 17 tests covering cross-platform parity, security boundaries, and historical regressions; wired into GitHub Actions CI (runs on every push to main)"
+    "Robustness: settings, history, and cookies now written atomically \u2014 no file corruption on crash or power loss mid-write",
+    "Fix: strict image format detection on cached thumbnails \u2014 unknown formats rejected instead of mis-tagged as JPG; WAV-tagged-as-WebP stops happening",
+    "Fix: Content-Type header validated before reading thumbnail body \u2014 non-image responses close immediately without consuming bandwidth"
   ],
   "_history": [
+    {
+      "version": "0.99.13",
+      "date": "5/26/2026 11:06 AM EST",
+      "notes": [
+        "Robustness: settings, history, and cookies now written atomically \u2014 no file corruption on crash or power loss mid-write",
+        "Fix: strict image format detection on cached thumbnails \u2014 unknown formats rejected instead of mis-tagged as JPG; WAV-tagged-as-WebP stops happening",
+        "Fix: Content-Type header validated before reading thumbnail body \u2014 non-image responses close immediately without consuming bandwidth"
+      ]
+    },
     {
       "version": "0.99.12",
       "date": "5/25/2026 11:59 AM EST",
@@ -54,27 +62,20 @@
         "Polish: splash progress bar shimmer animation \u2014 subtle sweep effect indicates activity during backend startup",
         "New: 20 themes added across 4 new categories \u2014 Food & Drink (Espresso, Matcha, Honey, Merlot, Saffron), Weather (Golden Hour, Overcast, Northern Lights, Thunderstorm, Sirocco), Space (Nebula, Pulsar, Solar Flare, Event Horizon, Andromeda), Architecture (Brutalist, Art Deco, Blueprint, Marble, Gothic)"
       ]
-    },
-    {
-      "version": "0.99.8",
-      "date": "5/20/2026 4:09 PM EST",
-      "notes": [
-        "Upgrade: Electron 42.2.0 (Chromium 148) \u2014 latest stable runtime with updated security patches and performance improvements"
-      ]
     }
   ],
-  "_last_updated": "2026-05-25T13:15:27-05:00",
-  "version": "0.99.12",
-  "build": 120,
-  "label": "v0.99.12 - Build 120 - 5/25/2026 11:59 AM EST",
+  "_last_updated": "2026-05-26T12:15:00-05:00",
+  "version": "0.99.13",
+  "build": 121,
+  "label": "v0.99.13 - Build 121 - 5/26/2026 11:06 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "0b0e40524cba76ea35dfad2768f3c7cb01fad6997409ea9dfd1e9a6d638e52dc",
+    "sha256": "ef6fd4f7edc2bb178e65d40899cda6630a07045355665e2a41c05899351addb6",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },
-  "size_bytes": 364544,
-  "signature": "Nb+ALM30GgLirGh0sUm0Z76tsZesLye9s5AhcqT+0unU2QksyKBKsAK/FyFsbwsbat21YQUpJKI+BjHy+08UDw=="
+  "size_bytes": 354304,
+  "signature": "r5eCxUDf1CCFZjXIbryYeZ4d68nl0hIK1WrthRB/QTL4OW6EY/trLYgjriA+uCOGDR+EHYCAqjvIY0BuUS4QCA=="
 }

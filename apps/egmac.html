@@ -90,10 +90,10 @@
         <div class="glass-card">
             <section class="section">
                 <div class="download-section">
-                <h3>📦 EGM Downloader 0.99.13</h3>
+                <h3>📦 EGM Downloader 1.0.0</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
-                <p class="version-subtitle" style="text-align:center;margin-top:4px">126 MB &middot; ~300 MB after install &middot; near instant startup</p>
-                <p class="sha256-line">SHA256: 87438655ea173bc7a656fdd44c69454131890a249126710860973e2ebbaa9d5e</p>
+                <p class="version-subtitle" style="text-align:center;margin-top:4px">119 MB &middot; ~300 MB after install &middot; near instant startup</p>
+                <p class="sha256-line">SHA256: 19716e514dcd3799062530b451e021d86a908383fa3641a6680cdbf39f2d145c</p>
 
                 <!-- Apple Notarization Trust Signal -->
                 <details class="disclaimer-collapsible apple-trust-signal" id="apple-trust-signal">
@@ -109,19 +109,63 @@
                 </details>
 
 <p class="whats-new-content">
-                    <strong>What's New in 0.99.13 — 5/26/2026:</strong><br>
-<em class="polish-label">solid</em><br><br>
-                    • New: 22 Operating System themes — Windows (95, 98, XP, Vista, 7, 11), macOS (9, X Aqua, Big Sur, Sequoia), Linux (Ubuntu, Arch, Kali, Fedora), and retro OS (BeOS, Amiga, DOS, NeXTSTEP, OS/2 Warp, Solaris, Unix, BSD) — total now 260 themes<br>
-                    • Fix: theme registry corrections — void, aurora-deep, St. Patrick's Day, and Valentine's Day now correctly registered with proper labels and categories<br>
-                    • Polish: sidebar category labels and search placeholders now readable across all themes — contrast audit resolved 4 additional surfaces using the same fix pattern as v0.99.11<br>
-                    • Robustness: settings, history, and cookies now written atomically — no file corruption on crash or power loss mid-write<br>
-                    • Fix: strict image format detection on cached thumbnails — unknown formats rejected instead of mis-tagged as JPG; WAV-tagged-as-WebP stops happening<br>
-                    • Fix: Content-Type header validated before reading thumbnail body — non-image responses close immediately without consuming bandwidth
+                    <strong>What's New in 1.0.0 — 6/7/2026:</strong><br>
+<em class="polish-label">cornerstone</em><br><br>
+                    <strong>— Themes &amp; Visual —</strong><br>
+                    • New: 140 new themes — mythology (20), Conejo Malo series 2.0–5.0 (4), sports (10), decades (10), memes (6), cities of the world (30), Balance Pack (11), Futuristic (9), Planets & Space (10), Brands (20), Venues (10), 8-Bit Era (10) — total now 400 themes<br>
+                    • New: Theme Favorites — heart toggle on every theme card, dedicated Favorites sidebar section, persists across restart and in settings export/import, server-side validation (XSS-safe, deduped, capped)<br>
+                    • New: Random theme on launch — optional toggle with Favorites only or All themes scope<br>
+                    • New: double-click theme card to favorite/unfavorite — complements heart icon click<br>
+                    • New: arrow key navigation in themes window — left/right between cards, up/down between rows, Enter applies theme, F toggles favorite<br>
+                    • Polish: Escape clears theme search — hands stay on keyboard<br>
+                    • Polish: accent pulse feedback on theme apply via Enter key<br>
+                    • Polish: sidebar section headers and theme counts improved readability across all themes<br>
+                    • Refactor: sidebar reorganized — Style, Vibe, Pop Culture, Heritage, Other; Seasonal promoted to top-level; Planets merged into Space; empty COLORS category removed<br>
+                    • Fix: 13 theme similarity fixes — accent color adjustments to differentiate visually similar themes across categories<br>
+                    • Fix: 5 existing space themes migrated to new Planets category — cleaner taxonomy<br>
+                    <strong>— New Features —</strong><br>
+                    • New: yt-dlp update channel toggle (Stable / Nightly) in Advanced panel — nightly brings frequent improvements, switch back to Stable force-reinstalls<br>
+                    • Fix: YouTube signature solving — adds --remote-components ejs:github to all yt-dlp commands<br>
+                    • Fix: ffmpeg downloads in background — app loads immediately even on slow connections, no frozen splash<br>
+                    • Fix: ffmpeg readiness gate — downloads return clear message while ffmpeg is still downloading instead of failing silently<br>
+                    • Refactor: index.html split into index + index_scripts + index_styles — source maintainability, rendered output byte-identical<br>
+                    • Refactor: THEME_DATA unified into single shared partial (theme_data.html) — eliminates duplication between main window and themes window, one entry point for all theme changes<br>
+                    <strong>— Security —</strong><br>
+                    • Fix: whats-new feed now verified against signed manifest before displaying<br>
+                    • Security: IPC sender validation (isTrustedSender) on all Electron handlers — all platforms<br>
+                    • Security: Electron settings writes now atomic (atomicWriteJson) — all platforms<br>
+                    • Security: file imports capped at 2MB (readFileCapped) — all platforms<br>
+                    • Security: integer input validation (_clamp_int) — prevents 500 on malformed params<br>
+                    • Security: preload bridge validates inputs before sending IPC (isStr, THEME_RE, isHttpUrl) — all platforms<br>
+                    • Security: external links restricted to HTTPS only, navigation pinned to Flask origin — all platforms<br>
+                    • Security: Deno download verified against published SHA-256 checksum — all platforms<br>
+                    • Test: 32 automated tests — security parity (app.py + main.js + preload.js × 3 platforms), theme count consistency, HTML div balance, linux template parity, ejs download path, favorites sanitization, port resolution, channel URL validation, template Jinja render integrity<br>
+                    • Chore: Electron 42.2.0 → 42.3.2 (Chromium 148, security patches, faster launch)<br>
+                    <strong>— Fixes —</strong><br>
+                    • Fix: atomic file writes now use fsync — prevents empty files on power loss<br>
+                    • Fix: thumbnail download hardened — SSRF guard blocks internal hosts, Content-Length pre-check rejects oversized images, redirect re-check<br>
+                    • Fix: history API validates pagination params — prevents 500 errors on bad input, caps per_page at 500<br>
+                    • Fix: flask_port precedence — Electron's PORT env always wins over stale settings, prevents stuck-on-loading<br>
+                    • Fix: DST-aware timestamps in update feeds — no longer hardcodes -05:00<br>
+                    • Fix: yt-dlp nightly install uses download-first approach — bundled pip can't handle GitHub URLs directly<br>
+                    • Fix: save/rename modal no longer dismisses on overlay click — only Cancel, Save, or Escape close it<br>
+                    • Fix: Advanced panel layout — removed CSS transform that triggered Chromium compositor paint bug on Mac/Linux<br>
+                    <strong>— Polish &amp; Cleanup —</strong><br>
+                    • Cleanup: removed unused InvalidSignature import from all app.py — dead code<br>
+                    • Cleanup: removed unreferenced icon-1024.png (515KB saved)<br>
+                    • Refactor: _TOKEN_EXEMPT consolidated — thumbnail prefix moved from inline check to _TOKEN_EXEMPT_PREFIX tuple<br>
+                    • Polish: settings import notes thumbnails are not included after reinstall<br>
+                    • Polish: ffmpeg reinstall button removed — redundant with channel toggles<br>
+                    • Polish: Flask port setting removed from Advanced panel — port is hardcoded in Electron, setting could never take effect<br>
                 </p>
                 
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>
                     <div class="history-content">
+                        <p class="history-item">
+                            <strong>v0.99.13 — 5/26/2026:</strong><br>
+                            • Solid — atomic writes, OS themes, Content-Type validation, 260 themes
+                        </p>
                         <p class="history-item">
                             <strong>v0.99.12 — 5/25/2026:</strong><br>
                             • Vault — theme fix, signed manifests, security logging, 17-test suite
@@ -311,22 +355,7 @@
             <section class="section">
                 <h2 class="section-title"><span>What's Coming</span></h2>
                 <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);padding:4px 0 8px;margin:0;">Launch &amp; beyond</p>
-                <div class="history-item">
-                    <p class="history-item"><strong>v1.0 — CORNERSTONE</strong><br>
-                    • In progress — the foundation release, everything built since v0.93 comes together here<br>
-                    • 400 themes — mythology, sports, decades, memes, cities, space, planets, Conejo Malo series, and more<br>
-                    • Theme Favorites + Random Launch — heart any theme, optionally start fresh every session<br>
-                    • YouTube signature fix — yt-dlp remote components resolve playback issues<br>
-                    • ffmpeg loads in background — app opens immediately, no frozen splash on slow connections<br>
-                    • yt-dlp and ffmpeg channel toggles (Stable / Nightly) in Advanced panel<br>
-                    • IPC hardening — sender validation, atomic writes, signed manifest verification, file import cap, zip-slip guard<br>
-                    • 32 automated tests — security parity across all 3 platforms, theme consistency, template integrity<br>
-                    • Source split — index, scripts, styles, and theme data in dedicated files; rendered output identical<br>
-                    • Electron 42.3.2 — latest stable runtime<br>
-                    • <em>More items TBD</em></p>
-                </div>
-                <div class="history-item">
-                    <p class="history-item"><strong>v1.1 — IGNITION</strong><br>
+                <p class="history-item"><strong>v1.1 — IGNITION</strong><br>
                     • Save any channel or playlist and check for new videos automatically<br>
                     • Download what's new in one click<br>
                     • Dedicated subscriptions tab and full management window</p>

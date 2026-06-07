@@ -120,7 +120,7 @@
       ]
     }
   ],
-  "_last_updated": "2026-06-07T13:02:12-04:00",
+  "_last_updated": "2026-06-07T13:44:30-04:00",
   "version": "1.0.0",
   "build": 124,
   "label": "v1.0.0 - Build 124 - 6/7/2026 11:27 AM EST",
@@ -128,10 +128,10 @@
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "fa674b033562a28041506a9ada0a1983754615801cc3ed685bc2fd98f8e02f26",
+    "sha256": "2f81288f21791b021749b31ef72d1d5a59d7dea5249f47c5444b497d1922ba5a",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },
   "size_bytes": 429056,
-  "signature": "hhxPQg1fdUWypOemqkl9ocezWoPZ9pLh4izjUhlUaVrl8UavU0beOJefBAqhh9ajRhvg/jXNilrwAMQmpeHmAA=="
+  "signature": "gWoM2Qb4UFWVIm/YrjtWob3v4CmtnkINe73lMPmRASXyG/Pt7Mj8HhCL/DcfSItGuATmDfIS/Npyls8R7p3XCg=="
 }

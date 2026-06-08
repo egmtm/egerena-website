@@ -90,10 +90,10 @@
         <div class="glass-card">
             <section class="section">
                 <div class="download-section">
-                <h3>📦 EGM Downloader 1.0.0</h3>
+                <h3>📦 EGM Downloader 1.0.1</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
-                <p class="version-subtitle" style="text-align:center;margin-top:4px">119 MB &middot; ~300 MB after install &middot; near instant startup</p>
-                <p class="sha256-line">SHA256: 19716e514dcd3799062530b451e021d86a908383fa3641a6680cdbf39f2d145c</p>
+                <p class="version-subtitle" style="text-align:center;margin-top:4px">120 MB &middot; ~300 MB after install &middot; near instant startup</p>
+                <p class="sha256-line">SHA256: 03ed8bd5fbbbfe43abe51257bbaa5a7b92f293c06958e6c34400d100d1231ec1</p>
 
                 <!-- Apple Notarization Trust Signal -->
                 <details class="disclaimer-collapsible apple-trust-signal" id="apple-trust-signal">
@@ -109,59 +109,23 @@
                 </details>
 
 <p class="whats-new-content">
-                    <strong>What's New in 1.0.0 — 6/7/2026:</strong><br>
-<em class="polish-label">cornerstone</em><br><br>
-                    <strong>— Themes &amp; Visual —</strong><br>
-                    • New: 140 new themes — mythology (20), Conejo Malo series 2.0–5.0 (4), sports (10), decades (10), memes (6), cities of the world (30), Balance Pack (11), Futuristic (9), Planets & Space (10), Brands (20), Venues (10), 8-Bit Era (10) — total now 400 themes<br>
-                    • New: Theme Favorites — heart toggle on every theme card, dedicated Favorites sidebar section, persists across restart and in settings export/import, server-side validation (XSS-safe, deduped, capped)<br>
-                    • New: Random theme on launch — optional toggle with Favorites only or All themes scope<br>
-                    • New: double-click theme card to favorite/unfavorite — complements heart icon click<br>
-                    • New: arrow key navigation in themes window — left/right between cards, up/down between rows, Enter applies theme, F toggles favorite<br>
-                    • Polish: Escape clears theme search — hands stay on keyboard<br>
-                    • Polish: accent pulse feedback on theme apply via Enter key<br>
-                    • Polish: sidebar section headers and theme counts improved readability across all themes<br>
-                    • Refactor: sidebar reorganized — Style, Vibe, Pop Culture, Heritage, Other; Seasonal promoted to top-level; Planets merged into Space; empty COLORS category removed<br>
-                    • Fix: 13 theme similarity fixes — accent color adjustments to differentiate visually similar themes across categories<br>
-                    • Fix: 5 existing space themes migrated to new Planets category — cleaner taxonomy<br>
-                    <strong>— New Features —</strong><br>
-                    • New: yt-dlp update channel toggle (Stable / Nightly) in Advanced panel — nightly brings frequent improvements, switch back to Stable force-reinstalls<br>
-                    • Fix: YouTube signature solving — adds --remote-components ejs:github to all yt-dlp commands<br>
-                    • Fix: ffmpeg downloads in background — app loads immediately even on slow connections, no frozen splash<br>
-                    • Fix: ffmpeg readiness gate — downloads return clear message while ffmpeg is still downloading instead of failing silently<br>
-                    • Refactor: index.html split into index + index_scripts + index_styles — source maintainability, rendered output byte-identical<br>
-                    • Refactor: THEME_DATA unified into single shared partial (theme_data.html) — eliminates duplication between main window and themes window, one entry point for all theme changes<br>
-                    <strong>— Security —</strong><br>
-                    • Fix: whats-new feed now verified against signed manifest before displaying<br>
-                    • Security: IPC sender validation (isTrustedSender) on all Electron handlers — all platforms<br>
-                    • Security: Electron settings writes now atomic (atomicWriteJson) — all platforms<br>
-                    • Security: file imports capped at 2MB (readFileCapped) — all platforms<br>
-                    • Security: integer input validation (_clamp_int) — prevents 500 on malformed params<br>
-                    • Security: preload bridge validates inputs before sending IPC (isStr, THEME_RE, isHttpUrl) — all platforms<br>
-                    • Security: external links restricted to HTTPS only, navigation pinned to Flask origin — all platforms<br>
-                    • Security: Deno download verified against published SHA-256 checksum — all platforms<br>
-                    • Test: 32 automated tests — security parity (app.py + main.js + preload.js × 3 platforms), theme count consistency, HTML div balance, linux template parity, ejs download path, favorites sanitization, port resolution, channel URL validation, template Jinja render integrity<br>
-                    • Chore: Electron 42.2.0 → 42.3.2 (Chromium 148, security patches, faster launch)<br>
-                    <strong>— Fixes —</strong><br>
-                    • Fix: atomic file writes now use fsync — prevents empty files on power loss<br>
-                    • Fix: thumbnail download hardened — SSRF guard blocks internal hosts, Content-Length pre-check rejects oversized images, redirect re-check<br>
-                    • Fix: history API validates pagination params — prevents 500 errors on bad input, caps per_page at 500<br>
-                    • Fix: flask_port precedence — Electron's PORT env always wins over stale settings, prevents stuck-on-loading<br>
-                    • Fix: DST-aware timestamps in update feeds — no longer hardcodes -05:00<br>
-                    • Fix: yt-dlp nightly install uses download-first approach — bundled pip can't handle GitHub URLs directly<br>
-                    • Fix: save/rename modal no longer dismisses on overlay click — only Cancel, Save, or Escape close it<br>
-                    • Fix: Advanced panel layout — removed CSS transform that triggered Chromium compositor paint bug on Mac/Linux<br>
-                    <strong>— Polish &amp; Cleanup —</strong><br>
-                    • Cleanup: removed unused InvalidSignature import from all app.py — dead code<br>
-                    • Cleanup: removed unreferenced icon-1024.png (515KB saved)<br>
-                    • Refactor: _TOKEN_EXEMPT consolidated — thumbnail prefix moved from inline check to _TOKEN_EXEMPT_PREFIX tuple<br>
-                    • Polish: settings import notes thumbnails are not included after reinstall<br>
-                    • Polish: ffmpeg reinstall button removed — redundant with channel toggles<br>
-                    • Polish: Flask port setting removed from Advanced panel — port is hardcoded in Electron, setting could never take effect<br>
+                    <strong>What's New in 1.0.1 — 6/8/2026:</strong><br>
+<em class="polish-label">update plugins</em><br><br>
+                    • Update Plugins panel moved into hamburger → Advanced tab — cleaner main page<br>
+                    • Collapsible plugins grid with Show/Hide toggle — state remembered across app restarts<br>
+                    • Section dividers in Advanced tab — Channels, Plugins, Maintenance grouping<br>
+                    • Clear cache moved to maintenance zone (after Plugins, before Reset settings)<br>
+                    • Auto-collapse plugins panel after check when all plugins are current<br>
+                    • Update modal now scrollable — max-height 90vh, body scrolls, buttons stay fixed
                 </p>
                 
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>
                     <div class="history-content">
+                        <p class="history-item">
+                            <strong>v1.0.0 — 6/7/2026:</strong><br>
+                            • Cornerstone — 400 themes, favorites, 32 tests, full security hardening
+                        </p>
                         <p class="history-item">
                             <strong>v0.99.13 — 5/26/2026:</strong><br>
                             • Solid — atomic writes, OS themes, Content-Type validation, 260 themes

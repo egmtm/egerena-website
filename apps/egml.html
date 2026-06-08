@@ -112,9 +112,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3>> EGM_DOWNLOADER_v1.0.0<span class="dl-ext">.AppImage</span></h3>
+                <h3>> EGM_DOWNLOADER_v1.0.1<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: 265e2cf188bee86f2e8c67cc971e75601dbb216a611edf00a34947910466544f</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: 22597e9ca54f2f0bcba65f77a0861e46110a496ecd006cb1969e1abeafabe2cf</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">133 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -122,62 +122,27 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN v1.0.0</div>
+                <div class="section-header">> WHAT'S NEW IN v1.0.1</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-                <div class="whats-new-subtitle">v1.0.0 — 6/7/2026</div>
+                <div class="whats-new-subtitle">v1.0.1 — 6/8/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
-                <div class="polish-label">// cornerstone</div>
+                <div class="polish-label">// update plugins</div>
                 <ul>
-                    <li style="list-style:none;padding:8px 0 3px;font-weight:600;color:var(--acc);">// themes &amp; visual</li>
-                    <li>New: 140 new themes — mythology (20), Conejo Malo series 2.0–5.0 (4), sports (10), decades (10), memes (6), cities of the world (30), Balance Pack (11), Futuristic (9), Planets & Space (10), Brands (20), Venues (10), 8-Bit Era (10) — total now 400 themes</li>
-                    <li>New: Theme Favorites — heart toggle on every theme card, dedicated Favorites sidebar section, persists across restart and in settings export/import, server-side validation (XSS-safe, deduped, capped)</li>
-                    <li>New: Random theme on launch — optional toggle with Favorites only or All themes scope</li>
-                    <li>New: double-click theme card to favorite/unfavorite — complements heart icon click</li>
-                    <li>New: arrow key navigation in themes window — left/right between cards, up/down between rows, Enter applies theme, F toggles favorite</li>
-                    <li>Polish: Escape clears theme search — hands stay on keyboard</li>
-                    <li>Polish: accent pulse feedback on theme apply via Enter key</li>
-                    <li>Polish: sidebar section headers and theme counts improved readability across all themes</li>
-                    <li>Refactor: sidebar reorganized — Style, Vibe, Pop Culture, Heritage, Other; Seasonal promoted to top-level; Planets merged into Space; empty COLORS category removed</li>
-                    <li>Fix: 13 theme similarity fixes — accent color adjustments to differentiate visually similar themes across categories</li>
-                    <li>Fix: 5 existing space themes migrated to new Planets category — cleaner taxonomy</li>
-                    <li style="list-style:none;padding:8px 0 3px;font-weight:600;color:var(--acc);">// new features</li>
-                    <li>New: yt-dlp update channel toggle (Stable / Nightly) in Advanced panel — nightly brings frequent improvements, switch back to Stable force-reinstalls</li>
-                    <li>Fix: YouTube signature solving — adds --remote-components ejs:github to all yt-dlp commands</li>
-                    <li>Fix: ffmpeg downloads in background — app loads immediately even on slow connections, no frozen splash</li>
-                    <li>Fix: ffmpeg readiness gate — downloads return clear message while ffmpeg is still downloading instead of failing silently</li>
-                    <li>Refactor: index.html split into index + index_scripts + index_styles — source maintainability, rendered output byte-identical</li>
-                    <li>Refactor: THEME_DATA unified into single shared partial (theme_data.html) — eliminates duplication between main window and themes window, one entry point for all theme changes</li>
-                    <li style="list-style:none;padding:8px 0 3px;font-weight:600;color:var(--acc);">// security</li>
-                    <li>Fix: whats-new feed now verified against signed manifest before displaying</li>
-                    <li>Security: IPC sender validation (isTrustedSender) on all Electron handlers — all platforms</li>
-                    <li>Security: Electron settings writes now atomic (atomicWriteJson) — all platforms</li>
-                    <li>Security: file imports capped at 2MB (readFileCapped) — all platforms</li>
-                    <li>Security: integer input validation (_clamp_int) — prevents 500 on malformed params</li>
-                    <li>Security: preload bridge validates inputs before sending IPC (isStr, THEME_RE, isHttpUrl) — all platforms</li>
-                    <li>Security: external links restricted to HTTPS only, navigation pinned to Flask origin — all platforms</li>
-                    <li>Security: Deno download verified against published SHA-256 checksum — all platforms</li>
-                    <li>Test: 32 automated tests — security parity (app.py + main.js + preload.js × 3 platforms), theme count consistency, HTML div balance, linux template parity, ejs download path, favorites sanitization, port resolution, channel URL validation, template Jinja render integrity</li>
-                    <li>Chore: Electron 42.2.0 → 42.3.2 (Chromium 148, security patches, faster launch)</li>
-                    <li style="list-style:none;padding:8px 0 3px;font-weight:600;color:var(--acc);">// fixes</li>
-                    <li>Fix: atomic file writes now use fsync — prevents empty files on power loss</li>
-                    <li>Fix: thumbnail download hardened — SSRF guard blocks internal hosts, Content-Length pre-check rejects oversized images, redirect re-check</li>
-                    <li>Fix: history API validates pagination params — prevents 500 errors on bad input, caps per_page at 500</li>
-                    <li>Fix: flask_port precedence — Electron's PORT env always wins over stale settings, prevents stuck-on-loading</li>
-                    <li>Fix: DST-aware timestamps in update feeds — no longer hardcodes -05:00</li>
-                    <li>Fix: yt-dlp nightly install uses download-first approach — bundled pip can't handle GitHub URLs directly</li>
-                    <li>Fix: save/rename modal no longer dismisses on overlay click — only Cancel, Save, or Escape close it</li>
-                    <li>Fix: Advanced panel layout — removed CSS transform that triggered Chromium compositor paint bug on Mac/Linux</li>
-                    <li style="list-style:none;padding:8px 0 3px;font-weight:600;color:var(--acc);">// polish &amp; cleanup</li>
-                    <li>Cleanup: removed unused InvalidSignature import from all app.py — dead code</li>
-                    <li>Cleanup: removed unreferenced icon-1024.png (515KB saved)</li>
-                    <li>Refactor: _TOKEN_EXEMPT consolidated — thumbnail prefix moved from inline check to _TOKEN_EXEMPT_PREFIX tuple</li>
-                    <li>Polish: settings import notes thumbnails are not included after reinstall</li>
-                    <li>Polish: ffmpeg reinstall button removed — redundant with channel toggles</li>
-                    <li>Polish: Flask port setting removed from Advanced panel — port is hardcoded in Electron, setting could never take effect</li>
-                </ul>        
+                    <li>Update Plugins panel moved into hamburger → Advanced tab — cleaner main page</li>
+                    <li>Collapsible plugins grid with Show/Hide toggle — state remembered across app restarts</li>
+                    <li>Section dividers in Advanced tab — Channels, Plugins, Maintenance grouping</li>
+                    <li>Clear cache moved to maintenance zone (after Plugins, before Reset settings)</li>
+                    <li>Auto-collapse plugins panel after check when all plugins are current</li>
+                    <li>Update modal now scrollable — max-height 90vh, body scrolls, buttons stay fixed</li>
+                </ul>       
                 <details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v1.0.0 — 6/7/2026</div>
+                        <ul>
+                            <li>Cornerstone — 400 themes, favorites, 32 tests, full security hardening</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version">v0.99.13 — 5/26/2026</div>
                         <ul>
                             <li>Solid — atomic writes, OS themes, Content-Type validation, 260 themes</li>

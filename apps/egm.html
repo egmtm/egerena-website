@@ -6,7 +6,7 @@
     <meta name="description" content="EGM Downloader - Professional video downloader for Windows. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta name="keywords" content="video downloader, youtube downloader, yt-dlp, windows downloader, multi-site downloader">
     <meta name="author" content="egerena.com">
-    <meta property="og:title" content="EGM Downloader v1.0.0 - Professional Video Downloader">
+    <meta property="og:title" content="EGM Downloader v1.0.1 - Professional Video Downloader">
     <meta property="og:description" content="Professional video downloader with zero-config setup. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta property="og:url" content="https://egerena.com/apps/egm.html">
     <title>EGM Downloader for Windows</title>
@@ -60,14 +60,14 @@
 
         <section class="section">
             <div class="card download-card">
-                <h2 class="download-title">EGM Downloader v1.0.0</h2>
+                <h2 class="download-title">EGM Downloader v1.0.1</h2>
                 <a href="https://egerena.com/apps/EGMd.zip" class="download-btn">Download EGM Downloader</a>
                 <p class="version-subtitle">Installer &middot; adds Start Menu shortcut &middot; auto-updates &middot; 321 KB &middot; ~800 MB after install</p>
-                <p class="sha256-line">SHA256: 2f81288f21791b021749b31ef72d1d5a59d7dea5249f47c5444b497d1922ba5a</p>
+                <p class="sha256-line">SHA256: 201be7dfd5a68818ee810b4d289354f7ae54009d9082324ca67bf88dea95af55</p>
                 <div class="portable-divider"><span>or</span></div>
                 <a href="https://egerena.com/apps/EGMd-portable.zip" class="download-btn download-btn-secondary">Get the portable version</a>
-                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 390 KB &middot; ~800 MB after first run &middot; digitally signed</p>
-                <p class="sha256-line">SHA256: dc58e5e1a0f506c8615dc34eb6a8182653725d667f0215f145d8248b07976235</p>
+                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 391 KB &middot; ~800 MB after first run &middot; digitally signed</p>
+                <p class="sha256-line">SHA256: fab5fc17f3a0488dc47926fcc51c63781627eedb6d1fb9978b776f0958d4240b</p>
         <!-- SmartScreen Disclaimer -->
         <details class="disclaimer-collapsible smartscreen-disclaimer" id="smartscreen-disclaimer">
             <summary class="disclaimer-summary">
@@ -93,74 +93,25 @@
         </details>
 
 <div class="whats-new">
-                    <p class="whats-new-heading">What's New in v1.0.0 — 6/7/2026</p>
-                    <p class="polish-label">cornerstone</p>
+                    <p class="whats-new-heading">What's New in v1.0.1 — 6/8/2026</p>
+                    <p class="polish-label">update plugins</p>
                     <ul>
-                    <li style="list-style:none;padding:8px 0 3px;font-weight:600;color:var(--acc);">— Themes &amp; Visual —</li>
-                        <li>New: 140 new themes — mythology (20), Conejo Malo series 2.0–5.0 (4), sports (10), decades (10), memes (6), cities of the world (30), Balance Pack (11), Futuristic (9), Planets & Space (10), Brands (20), Venues (10), 8-Bit Era (10) — total now 400 themes</li>
-                        <li>New: Theme Favorites — heart toggle on every theme card, dedicated Favorites sidebar section, persists across restart and in settings export/import, server-side validation (XSS-safe, deduped, capped)</li>
-                        <li>New: Random theme on launch — optional toggle with Favorites only or All themes scope</li>
-                        <li>New: double-click theme card to favorite/unfavorite — complements heart icon click</li>
-                        <li>New: arrow key navigation in themes window — left/right between cards, up/down between rows, Enter applies theme, F toggles favorite</li>
-                        <li>Polish: Escape clears theme search — hands stay on keyboard</li>
-                        <li>Polish: accent pulse feedback on theme apply via Enter key</li>
-                        <li>Polish: sidebar section headers and theme counts improved readability across all themes</li>
-                        <li>Refactor: sidebar reorganized — Style, Vibe, Pop Culture, Heritage, Other; Seasonal promoted to top-level; Planets merged into Space; empty COLORS category removed</li>
-                        <li>Fix: 13 theme similarity fixes — accent color adjustments to differentiate visually similar themes across categories</li>
-                        <li>Fix: 5 existing space themes migrated to new Planets category — cleaner taxonomy</li>
-                    <li style="list-style:none;padding:8px 0 3px;font-weight:600;color:var(--acc);">— New Features —</li>
-                        <li>New: yt-dlp update channel toggle (Stable / Nightly) in Advanced panel — nightly brings frequent improvements, switch back to Stable force-reinstalls</li>
-                        <li>New: ffmpeg update channel toggle (Stable / Nightly) in Advanced panel — Mac uses martin-riedl.de snapshot/release, Linux uses BtbN master/n8.1, Windows uses BtbN master/n8.1</li>
-                        <li>Fix: YouTube signature solving — adds --remote-components ejs:github to all yt-dlp commands</li>
-                        <li>Fix: ffmpeg downloads in background — app loads immediately even on slow connections, no frozen splash</li>
-                        <li>Fix: ffmpeg readiness gate — downloads return clear message while ffmpeg is still downloading instead of failing silently</li>
-                        <li>Refactor: index.html split into index + index_scripts + index_styles — source maintainability, rendered output byte-identical</li>
-                        <li>Refactor: THEME_DATA unified into single shared partial (theme_data.html) — eliminates duplication between main window and themes window, one entry point for all theme changes</li>
-                        <li>New: Electron reinstall button in Advanced panel — creates marker, reinstalls on next restart without full app reinstall</li>
-                    <li style="list-style:none;padding:8px 0 3px;font-weight:600;color:var(--acc);">— Security —</li>
-                        <li>Fix: whats-new feed now verified against signed manifest before displaying</li>
-                        <li>Security: IPC sender validation (isTrustedSender) on all Electron handlers — all platforms</li>
-                        <li>Security: Electron settings writes now atomic (atomicWriteJson) — all platforms</li>
-                        <li>Security: file imports capped at 2MB (readFileCapped) — all platforms</li>
-                        <li>Security: integer input validation (_clamp_int) — prevents 500 on malformed params</li>
-                        <li>Security: preload bridge validates inputs before sending IPC (isStr, THEME_RE, isHttpUrl) — all platforms</li>
-                        <li>Security: external links restricted to HTTPS only, navigation pinned to Flask origin — all platforms</li>
-                        <li>Security: Deno download verified against published SHA-256 checksum — all platforms</li>
-                        <li>Test: 32 automated tests — security parity (app.py + main.js + preload.js × 3 platforms), theme count consistency, HTML div balance, linux template parity, ejs download path, favorites sanitization, port resolution, channel URL validation, template Jinja render integrity</li>
-                        <li>Chore: Electron 42.2.0 → 42.3.2 (Chromium 148, security patches, faster launch)</li>
-                        <li>Security: Node.js download verified against official SHASUMS256.txt before extraction</li>
-                        <li>Security: zip-slip guard on Node.js extraction — rejects path traversal</li>
-                    <li style="list-style:none;padding:8px 0 3px;font-weight:600;color:var(--acc);">— Fixes —</li>
-                        <li>Fix: atomic file writes now use fsync — prevents empty files on power loss</li>
-                        <li>Fix: thumbnail download hardened — SSRF guard blocks internal hosts, Content-Length pre-check rejects oversized images, redirect re-check</li>
-                        <li>Fix: history API validates pagination params — prevents 500 errors on bad input, caps per_page at 500</li>
-                        <li>Fix: flask_port precedence — Electron's PORT env always wins over stale settings, prevents stuck-on-loading</li>
-                        <li>Fix: DST-aware timestamps in update feeds — no longer hardcodes -05:00</li>
-                        <li>Fix: yt-dlp nightly install uses download-first approach — bundled pip can't handle GitHub URLs directly</li>
-                        <li>Fix: save/rename modal no longer dismisses on overlay click — only Cancel, Save, or Escape close it</li>
-                        <li>Fix: Advanced panel layout — removed CSS transform that triggered Chromium compositor paint bug on Mac/Linux</li>
-                        <li>Fix: portable mode isolates Electron data — no settings leak between installed and portable versions</li>
-                        <li>Fix: first-run installs cryptography + mutagen dependencies — prevents update check 502 on fresh installs</li>
-                        <li>Fix: uninstaller restructured — separate dialogs for runtime components vs user data, closes app before uninstall, cleans desktop shortcut</li>
-                        <li>Fix: window state files (history/themes bounds) moved to userData — survives Electron reinstall</li>
-                        <li>Fix: update installer download uses correct timeout for large files</li>
-                        <li>Fix: Aurora/Aurora Deep theme picker HTML structure corrected</li>
-                    <li style="list-style:none;padding:8px 0 3px;font-weight:600;color:var(--acc);">— Polish &amp; Cleanup —</li>
-                        <li>Cleanup: removed unused InvalidSignature import from all app.py — dead code</li>
-                        <li>Cleanup: removed unreferenced icon-1024.png (515KB saved)</li>
-                        <li>Refactor: _TOKEN_EXEMPT consolidated — thumbnail prefix moved from inline check to _TOKEN_EXEMPT_PREFIX tuple</li>
-                        <li>Polish: settings import notes thumbnails are not included after reinstall</li>
-                        <li>Polish: ffmpeg reinstall button removed — redundant with channel toggles</li>
-                        <li>Polish: Flask port setting removed from Advanced panel — port is hardcoded in Electron, setting could never take effect</li>
-                        <li>Polish: download count badge removed from hamburger button — redundant with history</li>
-                        <li>Polish: portable internal files hidden in Explorer — only launcher, instructions, and patchnotes visible</li>
-                        <li>Polish: deterministic Electron install via bundled package-lock.json, prefers npm ci</li>
-                        <li>Polish: gen-update-json validates checksum format, documents signing workflow</li>
-                        <li>Polish: Task Manager shows "EGM Downloader" on all processes — rcedit stamps Electron binary's PE version resource (SHA-256 verified)</li>
-                    </ul>        </div>
+                        <li>Update Plugins panel moved into hamburger → Advanced tab — cleaner main page</li>
+                        <li>Collapsible plugins grid with Show/Hide toggle — state remembered across app restarts</li>
+                        <li>Section dividers in Advanced tab — Channels, Plugins, Maintenance grouping</li>
+                        <li>Clear cache moved to maintenance zone (after Plugins, before Reset settings)</li>
+                        <li>Auto-collapse plugins panel after check when all plugins are current</li>
+                        <li>Update modal now scrollable — max-height 90vh, body scrolls, buttons stay fixed</li>
+                    </ul>       </div>
                 <details class="history-details">
                     <summary class="history-summary">Previous Updates</summary>
                     <div class="history-content">
+                        <div class="history-item">
+                            <p class="history-version">v1.0.0 — 6/7/2026</p>
+                            <ul>
+                                <li>Cornerstone — 400 themes, favorites, 32 tests, full security hardening</li>
+                            </ul>
+                        </div>
                         <div class="history-item">
                             <p class="history-version">v0.99.13 — 5/26/2026</p>
                             <ul>

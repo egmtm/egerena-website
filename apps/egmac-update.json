@@ -1,14 +1,22 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Update Plugins panel moved into hamburger \u2192 Advanced tab \u2014 cleaner main page",
-    "Collapsible plugins grid with Show/Hide toggle \u2014 state remembered across app restarts",
-    "Section dividers in Advanced tab \u2014 Channels, Plugins, Maintenance grouping",
-    "Clear cache moved to maintenance zone (after Plugins, before Reset settings)",
-    "Auto-collapse plugins panel after check when all plugins are current",
-    "Update modal now scrollable \u2014 max-height 90vh, body scrolls, buttons stay fixed"
+    "Direct-access navigation buttons replace hamburger menu \u2014 History, Themes, Advanced each get their own button",
+    "Enlarged app logo (76px) for balanced header layout",
+    "Larger header title and subtitle for visual balance",
+    "History panel loads correctly when switching from another tab"
   ],
   "_history": [
+    {
+      "version": "1.0.2",
+      "date": "6/9/2026",
+      "notes": [
+        "New: Direct-access navigation buttons replace hamburger menu \u2014 History, Themes, Advanced each get their own button",
+        "New: Enlarged app logo (76px) for balanced header layout",
+        "Polish: Larger header title and subtitle for visual balance",
+        "Fix: History panel loads correctly when switching from another tab"
+      ]
+    },
     {
       "version": "1.0.1",
       "date": "6/8/2026",
@@ -97,32 +105,19 @@
         "Docs: SECURITY.md updated with documented threat-model decision for thumbnail CDN fetching",
         "Known Issues: Some placeholder text and section labels may have low contrast on certain themes. A fix is ready and will ship in the next release."
       ]
-    },
-    {
-      "version": "0.99.10",
-      "date": "5/22/2026 7:09 PM EST",
-      "notes": [
-        "New: video thumbnails on download history \u2014 locally cached, shown in hamburger list (cropped) and expanded history (blurred fill for vertical videos); fallback icons for audio and pre-thumbnail entries",
-        "New: per-video thumbnail cleanup on history delete, bulk cleanup on cache clear",
-        "Fix: single-download audio quality selector now offers full format options (MP3 128/192/320, FLAC, M4A 256, OPUS 128/192) matching the Download All modal \u2014 respects saved default",
-        "Note: audio quality is the target output \u2014 actual quality is bounded by source. Selecting MP3 320 kbps from a source that only offers 128 kbps gives you an MP3 file at the source's actual quality. Format conversion (MP3/FLAC/OPUS) always works as selected.",
-        "New: splash redesign \u2014 replaced progress bar with spinning indicator and pulsing dots; visually consistent across all startup scenarios including ffmpeg/Deno reinstall",
-        "Polish: settings folder hint label removed from header",
-        "New: 30 themes added \u2014 Eras & Decades (10), Mythology (10), International Seasonal (10); 29 contrast readability fixes; alphabetical sort in themes window"
-      ]
     }
   ],
-  "_last_updated": "2026-06-08T16:32:26-04:00",
-  "version": "1.0.1",
-  "build": 125,
-  "label": "v1.0.1 - Build 125 - 6/8/2026 3:33 PM EST",
+  "_last_updated": "2026-06-09T12:13:10-04:00",
+  "version": "1.0.2",
+  "build": 126,
+  "label": "v1.0.2 - Build 126 - 6/9/2026 11:25 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "03ed8bd5fbbbfe43abe51257bbaa5a7b92f293c06958e6c34400d100d1231ec1",
+    "sha256": "065b201b48911eb6d17cc4fd089ed152910daa068c545afeee36aae0a51f2904",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 125757963,
-  "signature": "X0QDXYeGOnriU/2+jCTpOnHy/T8B+ks1cjItB5SaWjTcPq/rBU89dvJGvKkXtF1Igklcek+/78N6aCOALcjpBw=="
+  "size_bytes": 125749203,
+  "signature": "W//js7Ur05DY9I6ZbBz6PbB4XoPgEjd49S37tKCCmIMUEOip0GhApmpj10XVP0l80bMqn8YbK97jwYRuMDRHCQ=="
 }

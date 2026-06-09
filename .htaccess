@@ -43,6 +43,13 @@ ErrorDocument 500 /500.html
         Header always set Expires "0"
     </FilesMatch>
 
+    # Cache: ZIP and JSON never cached — update feeds and downloads must always be fresh
+    <FilesMatch "\.(zip|json)$">
+        Header always set Cache-Control "no-cache, no-store, must-revalidate"
+        Header always set Pragma "no-cache"
+        Header always set Expires "0"
+    </FilesMatch>
+
     # Security headers — unset first to prevent server-level duplicates
     Header always unset X-Frame-Options
     Header always unset X-Content-Type-Options

@@ -354,6 +354,16 @@
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
 
                 <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--terminal-color);opacity:0.6;padding:4px 0 8px;margin:0;">// launch &amp; beyond</p>
+                                <div class="whats-new-subtitle history-version">v1.0.3</div>
+                <ul>
+                    <li>In progress</li>
+                    <li>Security: server-side download concurrency cap (BoundedSemaphore) — prevents unbounded process spawns</li>
+                    <li>Security: resolve-first download directory validation — closes path traversal bypass</li>
+                    <li>Security: TOCTOU locks on update and Deno install — prevents double-spawn race on simultaneous requests</li>
+                    <li>Fix: first-run ffmpeg queues downloads instead of 503 — new users can download immediately after install</li>
+                    <li>Electron 42.4.0 — Mac and Linux</li>
+                </ul>
+
                 <div class="whats-new-subtitle history-version">v1.1 — IGNITION</div>
                 <ul>
                     <li>Save any channel or playlist and check for new videos automatically</li>

@@ -112,9 +112,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3>> EGM_DOWNLOADER_v1.0.2<span class="dl-ext">.AppImage</span></h3>
+                <h3>> EGM_DOWNLOADER_v1.0.3<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: 6114f954ad9852ef7f463cf0d3f51e7b5076b14c65099b145c6e95dc6dd39424</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: afe5c38ff63cf4253974662cf07434f21ca4369357bf62cdf7136d89887f0d94</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">133 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -122,20 +122,26 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN v1.0.2</div>
+                <div class="section-header">> WHAT'S NEW IN v1.0.3</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-                <div class="whats-new-subtitle">v1.0.2 — 6/9/2026</div>
+                <div class="whats-new-subtitle">v1.0.3 — 6/9/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
-                <div class="polish-label">// front door</div>
+                <div class="polish-label">// locksmith</div>
                 <ul>
-                    <li>Direct-access navigation buttons replace hamburger menu — History, Themes, Advanced each get their own button</li>
-                    <li>Enlarged app logo (76px) for balanced header layout</li>
-                    <li>Larger header title and subtitle for visual balance</li>
-                    <li>History panel loads correctly when switching from another tab</li>
-                </ul>      
+                    <li>Server-side download concurrency backstop — prevents unbounded process spawns</li>
+                    <li>Resolve-first download directory validation replaces denylist — closes path traversal bypass</li>
+                    <li>TOCTOU locks on update and Deno install singletons — prevents double-spawn race</li>
+                    <li>First-run ffmpeg now queues downloads instead of returning 503</li>
+                    <li>Electron 42.3.2 → 42.4.0</li>
+                </ul>     
                 <details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v1.0.2 — 6/9/2026</div>
+                        <ul>
+                            <li>Front door — direct-access nav buttons, logo polish, history fix</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version">v1.0.1 — 6/8/2026</div>
                         <ul>
                             <li>Update plugins — Advanced tab reorganization, collapsible plugins, section dividers</li>
@@ -354,17 +360,7 @@
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
 
                 <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--terminal-color);opacity:0.6;padding:4px 0 8px;margin:0;">// launch &amp; beyond</p>
-                                <div class="whats-new-subtitle history-version">v1.0.3</div>
-                <ul>
-                    <li>In progress</li>
-                    <li>Security: server-side download concurrency cap (BoundedSemaphore) — prevents unbounded process spawns</li>
-                    <li>Security: resolve-first download directory validation — closes path traversal bypass</li>
-                    <li>Security: TOCTOU locks on update and Deno install — prevents double-spawn race on simultaneous requests</li>
-                    <li>Fix: first-run ffmpeg queues downloads instead of 503 — new users can download immediately after install</li>
-                    <li>Electron 42.4.0 — Mac and Linux</li>
-                </ul>
-
-                <div class="whats-new-subtitle history-version">v1.1 — IGNITION</div>
+                                <div class="whats-new-subtitle history-version">v1.1 — IGNITION</div>
                 <ul>
                     <li>Save any channel or playlist and check for new videos automatically</li>
                     <li>Download what's new in one click</li>

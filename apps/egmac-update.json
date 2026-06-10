@@ -1,13 +1,21 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Server-side download concurrency backstop \u2014 prevents unbounded process spawns",
-    "Resolve-first download directory validation replaces denylist \u2014 closes path traversal bypass",
-    "TOCTOU locks on update and Deno install singletons \u2014 prevents double-spawn race",
-    "First-run ffmpeg now queues downloads instead of returning 503",
-    "Electron 42.3.2 \u2192 42.4.0"
+    "All UI icons upgraded from emoji to inline SVGs \u2014 sharper rendering, consistent across platforms",
+    "Nav buttons, URL panel, Settings, Advanced panel, section titles all use theme-compatible vector icons",
+    "Nav layout refined \u2014 History and Themes grouped, Advanced isolated with visual separator",
+    "Improved contrast on Show/Hide toggle across all themes"
   ],
   "_history": [
+    {
+      "version": "1.0.4",
+      "date": "6/2026",
+      "notes": [
+        "Polish: All UI icons upgraded from emoji to inline SVGs \u2014 sharper rendering, consistent across platforms",
+        "Polish: Nav buttons, URL panel, Settings, Advanced panel, section titles all use theme-compatible vector icons",
+        "Polish: Buttons inherit theme colors via currentColor \u2014 zero extra CSS needed per theme"
+      ]
+    },
     {
       "version": "1.0.3",
       "date": "6/2026",
@@ -94,29 +102,19 @@
         "Fix: strict image format detection on cached thumbnails \u2014 unknown formats rejected instead of mis-tagged as JPG; WAV-tagged-as-WebP stops happening",
         "Fix: Content-Type header validated before reading thumbnail body \u2014 non-image responses close immediately without consuming bandwidth"
       ]
-    },
-    {
-      "version": "0.99.12",
-      "date": "5/25/2026 11:59 AM EST",
-      "notes": [
-        "Fix: placeholder text and section labels now use theme-aware color across all 238 themes \u2014 closes v0.99.11 known issue",
-        "Security: signed update manifests \u2014 ed25519 signature verified on every update check before any content is trusted; unsigned or tampered manifests silently rejected",
-        "Security: structured security event logging \u2014 all security-relevant events (token mismatch, host rejection, checksum failure, path traversal, thumbnail URL rejection, manifest verification failure) logged to console and rotating DATA_DIR/logs/security.log",
-        "Quality: unit test suite \u2014 17 tests covering cross-platform parity, security boundaries, and historical regressions; wired into GitHub Actions CI (runs on every push to main)"
-      ]
     }
   ],
-  "_last_updated": "2026-06-09T23:03:34-04:00",
-  "version": "1.0.3",
-  "build": 127,
-  "label": "v1.0.3 - Build 127 - 6/9/2026 9:53 PM EST",
+  "_last_updated": "2026-06-10T14:13:42-04:00",
+  "version": "1.0.4",
+  "build": 128,
+  "label": "v1.0.4 - Build 128 - 6/10/2026 12:12 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "b764310b6a2edf9f24e173e3fc41e2bb15180d68c99b662035c3d499644e715c",
+    "sha256": "82c678fb51003a11e781baf71d017c80f3fe8c6aaae3740a55bfb3e6cdeef924",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 134613019,
-  "signature": "/+2Z1d0yAQHfKSwYJLd5WgueWhRfhps/6yy37ogJ5vwN8clziPw3jei6YvyGOlAARB7+J0rmk5DHuJl5JF4uCw=="
+  "size_bytes": 134623754,
+  "signature": "V5sdAoMAOE/UcWD3q1b2w4N6xDHj3cZxEFq9sQrwGwjX5QzLis0gI4sR/V6+iwKs0dEhS5SnXqi066gxU6E9Dg=="
 }

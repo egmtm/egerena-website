@@ -1,12 +1,24 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Direct-access navigation buttons replace hamburger menu \u2014 History, Themes, Advanced each get their own button",
-    "Enlarged app logo (76px) for balanced header layout",
-    "Larger header title and subtitle for visual balance",
-    "History panel loads correctly when switching from another tab"
+    "Server-side download concurrency backstop \u2014 prevents unbounded process spawns",
+    "Resolve-first download directory validation replaces denylist \u2014 closes path traversal bypass",
+    "TOCTOU locks on update and Deno install singletons \u2014 prevents double-spawn race",
+    "First-run ffmpeg now queues downloads instead of returning 503",
+    "Electron 42.3.2 \u2192 42.4.0"
   ],
   "_history": [
+    {
+      "version": "1.0.3",
+      "date": "6/2026",
+      "notes": [
+        "Security: Server-side download concurrency backstop \u2014 BoundedSemaphore (cap 24) prevents unbounded process spawns regardless of client pacing",
+        "Security: Resolve-first download directory validation replaces denylist \u2014 closes path traversal bypass, adds boundary-aware root check and writability probe",
+        "Security: TOCTOU locks on update and Deno install singletons \u2014 prevents double-spawn race on simultaneous requests",
+        "Fix: First-run ffmpeg now queues downloads instead of returning 503 \u2014 new users no longer get an error when downloading immediately after install",
+        "Runtime: Electron 42.3.2 \u2192 42.4.0"
+      ]
+    },
     {
       "version": "1.0.2",
       "date": "6/9/2026",
@@ -92,32 +104,19 @@
         "Security: structured security event logging \u2014 all security-relevant events (token mismatch, host rejection, checksum failure, path traversal, thumbnail URL rejection, manifest verification failure) logged to console and rotating DATA_DIR/logs/security.log",
         "Quality: unit test suite \u2014 17 tests covering cross-platform parity, security boundaries, and historical regressions; wired into GitHub Actions CI (runs on every push to main)"
       ]
-    },
-    {
-      "version": "0.99.11",
-      "date": "5/23/2026 10:05 AM EST",
-      "notes": [
-        "New: 67 themes added \u2014 Puerto Rico Collection (22 themes celebrating Ponce, the island, holidays, icons, and culture), Team Easter Eggs (5 themes named after the team behind EGM), and category expansion (cities, space, movies, retro, music, moods, architecture, food, weather)",
-        "New: Puerto Rico themes with flag identifier \u2014 featured first under Heritage",
-        "Polish: 36 themes received contrast readability improvements (text2 and log-text bumps; Savath\u00fbn identity rework; Valhalla palette differentiation from N64)",
-        "Fix: themes window sidebar no longer scrolls away with the page \u2014 sidebar and grid scroll independently at any theme count",
-        "Security: thumbnail fetching restricted to HTTPS-only; rejects file://, ftp://, http:// schemes (defense-in-depth, documented in SECURITY.md)",
-        "Docs: SECURITY.md updated with documented threat-model decision for thumbnail CDN fetching",
-        "Known Issues: Some placeholder text and section labels may have low contrast on certain themes. A fix is ready and will ship in the next release."
-      ]
     }
   ],
-  "_last_updated": "2026-06-09T12:13:10-04:00",
-  "version": "1.0.2",
-  "build": 126,
-  "label": "v1.0.2 - Build 126 - 6/9/2026 11:25 AM EST",
+  "_last_updated": "2026-06-09T23:03:34-04:00",
+  "version": "1.0.3",
+  "build": 127,
+  "label": "v1.0.3 - Build 127 - 6/9/2026 9:53 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "065b201b48911eb6d17cc4fd089ed152910daa068c545afeee36aae0a51f2904",
+    "sha256": "b764310b6a2edf9f24e173e3fc41e2bb15180d68c99b662035c3d499644e715c",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 125749203,
-  "signature": "W//js7Ur05DY9I6ZbBz6PbB4XoPgEjd49S37tKCCmIMUEOip0GhApmpj10XVP0l80bMqn8YbK97jwYRuMDRHCQ=="
+  "size_bytes": 134613019,
+  "signature": "/+2Z1d0yAQHfKSwYJLd5WgueWhRfhps/6yy37ogJ5vwN8clziPw3jei6YvyGOlAARB7+J0rmk5DHuJl5JF4uCw=="
 }

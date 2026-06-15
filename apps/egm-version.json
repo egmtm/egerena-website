@@ -1,24 +1,32 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "All UI icons upgraded from emoji to inline SVGs \u2014 sharper rendering, consistent across platforms",
-    "Nav buttons, URL panel, Settings, Advanced panel, section titles all use theme-compatible vector icons",
-    "Nav layout refined \u2014 History and Themes grouped, Advanced isolated with visual separator",
-    "Improved contrast on Show/Hide toggle across all themes"
+    "Fix: npm resolution for system-wide Node \u2014 resolves npm.cmd via PATH, fixing WinError 2 crash on first launch (Issue #4, reported by @Floffye)",
+    "Fix: Eliminate pre-splash window flash on warm starts \u2014 Tk progress window now lazy-initialized"
   ],
   "_history": [
     {
+      "version": "1.0.5",
+      "date": "6/15/2026",
+      "notes": [
+        "Fix: npm resolution for system-wide Node \u2014 shutil.which('npm') resolves npm.cmd via PATH, fixing WinError 2 crash on first launch when system Node is present but no portable node_bin (Issue #4, reported by @Floffye)",
+        "Fix: Eliminate pre-splash window flash on warm starts \u2014 Tk progress window now lazy-initialized, only shown during first-run installs"
+      ]
+    },
+    {
       "version": "1.0.4",
-      "date": "6/2026",
+      "date": "6/10/2026",
       "notes": [
         "Polish: All UI icons upgraded from emoji to inline SVGs \u2014 sharper rendering, consistent across platforms",
         "Polish: Nav buttons, URL panel, Settings, Advanced panel, section titles all use theme-compatible vector icons",
-        "Polish: Buttons inherit theme colors via currentColor \u2014 zero extra CSS needed per theme"
+        "Polish: Buttons inherit theme colors via currentColor \u2014 zero extra CSS needed per theme",
+        "Polish: Nav layout refined \u2014 History and Themes grouped, Advanced isolated with visual separator",
+        "Fix: Improved contrast on Show/Hide toggle across all themes"
       ]
     },
     {
       "version": "1.0.3",
-      "date": "6/2026",
+      "date": "6/10/2026",
       "notes": [
         "Security: Server-side download concurrency backstop \u2014 BoundedSemaphore (cap 24) prevents unbounded process spawns regardless of client pacing",
         "Security: Resolve-first download directory validation replaces denylist \u2014 closes path traversal bypass, adds boundary-aware root check and writability probe",
@@ -104,32 +112,20 @@
         "New: Electron reinstall button in Advanced panel \u2014 creates marker, reinstalls on next restart without full app reinstall",
         "Polish: Task Manager shows \"EGM Downloader\" on all processes \u2014 rcedit stamps Electron binary's PE version resource (SHA-256 verified)"
       ]
-    },
-    {
-      "version": "0.99.13",
-      "date": "5/26/2026 11:06 AM EST",
-      "notes": [
-        "New: 22 Operating System themes \u2014 Windows (95, 98, XP, Vista, 7, 11), macOS (9, X Aqua, Big Sur, Sequoia), Linux (Ubuntu, Arch, Kali, Fedora), and retro OS (BeOS, Amiga, DOS, NeXTSTEP, OS/2 Warp, Solaris, Unix, BSD) \u2014 total now 260 themes",
-        "Fix: theme registry corrections \u2014 void, aurora-deep, St. Patrick's Day, and Valentine's Day now correctly registered with proper labels and categories",
-        "Polish: sidebar category labels and search placeholders now readable across all themes \u2014 contrast audit resolved 4 additional surfaces using the same fix pattern as v0.99.11",
-        "Robustness: settings, history, and cookies now written atomically \u2014 no file corruption on crash or power loss mid-write",
-        "Fix: strict image format detection on cached thumbnails \u2014 unknown formats rejected instead of mis-tagged as JPG; WAV-tagged-as-WebP stops happening",
-        "Fix: Content-Type header validated before reading thumbnail body \u2014 non-image responses close immediately without consuming bandwidth"
-      ]
     }
   ],
-  "_last_updated": "2026-06-10T14:13:42-04:00",
-  "version": "1.0.4",
-  "build": 128,
-  "label": "v1.0.4 - Build 128 - 6/10/2026 12:12 PM EST",
+  "_last_updated": "2026-06-15T01:23:43-04:00",
+  "version": "1.0.5",
+  "build": 129,
+  "label": "v1.0.5 - Build 129 - 6/15/2026 12:16 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "45c8010b75cf9c6f5d4212b064cda8f6981a879ca559e52427d3bf89dbac41bb",
+    "sha256": "3c1bdf6dab48341ec03934202049808f775d85e1a6dacdf8a783d8011e2fe214",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },
-  "size_bytes": 432170,
-  "signature": "lpiS2GMbK8ZNGQyLwfagLamepP4paJhRDYqNm+28L+Bx+pQNbMXRexV90ZLDNzA7N+YD3bQ7uKj8CRnRCZmgCg=="
+  "size_bytes": 432687,
+  "signature": "ZxRUGdIWYN74uGvTJfuF9m0t5ndaWPskC550ajXXYvl1StI0+8BwVhC23rSW21BN9NBRx1EOrqWT7japLIF1Cg=="
 }

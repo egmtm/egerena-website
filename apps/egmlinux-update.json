@@ -1,24 +1,23 @@
 {
   "_comment": "EGM Downloader Linux \u2014 informational, no auto-update. Upload to egerena.com/apps/egmlinux-update.json",
   "_version_notes": [
-    "All UI icons upgraded from emoji to inline SVGs \u2014 sharper rendering, consistent across platforms",
-    "Nav buttons, URL panel, Settings, Advanced panel, section titles all use theme-compatible vector icons",
-    "Nav layout refined \u2014 History and Themes grouped, Advanced isolated with visual separator",
-    "Improved contrast on Show/Hide toggle across all themes"
+    "Maintenance release \u2014 version alignment across platforms"
   ],
   "_history": [
     {
       "version": "1.0.4",
-      "date": "6/2026",
+      "date": "6/10/2026",
       "notes": [
         "Polish: All UI icons upgraded from emoji to inline SVGs \u2014 sharper rendering, consistent across platforms",
         "Polish: Nav buttons, URL panel, Settings, Advanced panel, section titles all use theme-compatible vector icons",
-        "Polish: Buttons inherit theme colors via currentColor \u2014 zero extra CSS needed per theme"
+        "Polish: Buttons inherit theme colors via currentColor \u2014 zero extra CSS needed per theme",
+        "Polish: Nav layout refined \u2014 History and Themes grouped, Advanced isolated with visual separator",
+        "Fix: Improved contrast on Show/Hide toggle across all themes"
       ]
     },
     {
       "version": "1.0.3",
-      "date": "6/2026",
+      "date": "6/10/2026",
       "notes": [
         "Security: Server-side download concurrency backstop \u2014 BoundedSemaphore (cap 24) prevents unbounded process spawns regardless of client pacing",
         "Security: Resolve-first download directory validation replaces denylist \u2014 closes path traversal bypass, adds boundary-aware root check and writability probe",
@@ -104,17 +103,17 @@
       ]
     }
   ],
-  "_last_updated": "2026-06-10T14:13:42-04:00",
-  "version": "1.0.4",
-  "build": 128,
-  "label": "v1.0.4 - Build 128 - 6/10/2026 12:12 PM EST",
+  "_last_updated": "2026-06-15T01:23:59-04:00",
+  "version": "1.0.5",
+  "build": 129,
+  "label": "v1.0.5 - Build 129 - 6/15/2026 12:16 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdL.zip",
   "zip": "EGMdL.zip",
   "_checksums": {
-    "sha256": "120a7b0693ad6d19998c2cd0353548ff4beb60ae4de9366ccb864dbc2a6ae6a7",
+    "sha256": "3fceb3324513b475180ef95681d51642ecfdd260e6276afddac88b50c199de98",
     "algorithm": "SHA-256",
     "file": "EGMdL.zip"
   },
-  "size_bytes": 151099804,
-  "signature": "LDFKtLK1ioGk06GqXQPEgWrp80oKDEVBNKTggh0dZqU15K/gHEf8OhcKLO5L8efxXQPgSpwrnI9+gUTKIAoFAw=="
+  "size_bytes": 151103822,
+  "signature": "NOzVBbybDCKMiPhHfPwnukSqN/F3Vsdly4QhNsKiGYC6rMxyXgxXGV1fv9nBGYRyFV89sBku8mQF85agPZVYCA=="
 }

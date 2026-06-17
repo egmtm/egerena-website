@@ -45,43 +45,55 @@
         <div class="glass-card">
             <section class="section">
                 <h2 class="section-title"><span>Features</span></h2>
-            <div class="features-grid">
-                <div class="feature-item">
+            <div class="features-grid" id="feat-grid">
+                <div class="feature-item" data-desc="Supports YouTube, Vimeo, SoundCloud, TikTok, Twitter, Reddit, and thousands more — powered by yt-dlp.">
                     <h3>1000+ Supported Sites</h3>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item" data-desc="No account needed, no sign-in, no analytics, no cloud processing. Everything stays on your machine.">
+                    <h3>Private by Default</h3>
+                </div>
+                <div class="feature-item" data-desc="400+ hand-crafted themes across dark, light, retro, cultural, and seasonal categories. Mark favorites and launch with a random one each session.">
+                    <h3>400+ Custom Themes</h3>
+                    <small style="font-size:10px;opacity:0.6;">378 permanent &middot; 22 seasonal</small>
+                </div>
+                <div class="feature-item" data-desc="Drop in a URL and go. No terminal, no configuration, no dependencies to install manually.">
                     <h3>Zero-Config Setup</h3>
                 </div>
-                <div class="feature-item">
-                    <h3>Playlist Support</h3>
+                <div class="feature-item" data-desc="Download up to 8K video or lossless FLAC audio. Choose from Best available, 1080p, 720p, MP3, AAC, OPUS, and more.">
+                    <h3>8K to FLAC Quality</h3>
                 </div>
-                <div class="feature-item">
-                    <h3>Smart Quality Selection</h3>
+                <div class="feature-item" data-desc="Paste a playlist or channel URL and fetch all videos at once. Set a max count or grab everything.">
+                    <h3>Playlists &amp; Channels</h3>
                 </div>
-                <div class="feature-item">
-                    <h3>400+ Custom Themes</h3>
-                    <small style="font-size:10px;opacity:0.6;">378 permanent · 22 seasonal</small>
-                </div>
-                <div class="feature-item">
+                <div class="feature-item" data-desc="Run multiple downloads simultaneously. Configurable concurrency with a server-side cap to keep your system stable.">
                     <h3>Concurrent Downloads</h3>
                 </div>
-                <div class="feature-item">
-                    <h3>Built-in FFmpeg</h3>
+                <div class="feature-item" data-desc="Load cookies from Chrome or Firefox to access age-restricted or login-required content.">
+                    <h3>Cookies Support</h3>
                 </div>
-                <div class="feature-item">
-                    <h3>Auto-Updates</h3>
+                <div class="feature-item" data-desc="Automatically embeds subtitles into the video file during download — no separate steps needed.">
+                    <h3>Subtitle Embedding</h3>
                 </div>
-                <div class="feature-item">
-                    <h3>Progress Tracking</h3>
-                </div>
-                <div class="feature-item">
-                    <h3>Audio Quality Selection</h3>
-                </div>
-                <div class="feature-item">
+                <div class="feature-item" data-desc="Fetch info for multiple URLs at once, select formats per video, and kick off all downloads together.">
                     <h3>Batch Operations</h3>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item" data-desc="Every downloaded video shows its actual thumbnail, title, format, and size in a searchable, filterable history panel.">
+                    <h3>Video Thumbnails</h3>
+                </div>
+                <div class="feature-item" data-desc="Heart any theme to save it as a favorite. Enable Random Launch to open with a different theme each session.">
+                    <h3>Theme Favorites</h3>
+                </div>
+                <div class="feature-item" data-desc="Update manifests are ed25519-signed and verified before any update content is trusted. No silent installs.">
+                    <h3>Signed Updates</h3>
+                </div>
+                <div class="feature-item" data-desc="Browse, search, re-download, or clear past downloads. Filterable by format, date, and type.">
                     <h3>Download History</h3>
+                </div>
+                <div class="feature-item" data-desc="Source code on GitHub under AGPL-3.0. Auditable, forkable, and community-visible.">
+                    <h3>Open Source</h3>
+                </div>
+                <div class="feature-item" data-desc="yt-dlp and ffmpeg update automatically in the background via the Advanced panel. App updates are manual — check via the Check for Updates button in the footer.">
+                    <h3>Auto-Updates</h3>
                 </div>
             </div>
         </section>
@@ -91,10 +103,10 @@
         <div class="glass-card">
             <section class="section">
                 <div class="download-section">
-                <h3>📦 EGM Downloader 1.0.5</h3>
+                <h3>📦 EGM Downloader 1.1.0</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
                 <p class="version-subtitle" style="text-align:center;margin-top:4px">125 MB &middot; ~300 MB after install &middot; near instant startup</p>
-                <p class="sha256-line">SHA256: 98a75f78bc84364f99009a71256b317771d396c0f41ba6a3185adcf084ec6b75</p>
+                <p class="sha256-line">SHA256: 068655ea8d63945ddc2e11f325f5d0a77f6a10aaf2b26fd20878429fadabcc5e</p>
 
                 <!-- Apple Notarization Trust Signal -->
                 <details class="disclaimer-collapsible apple-trust-signal" id="apple-trust-signal">
@@ -110,14 +122,25 @@
                 </details>
 
 <p class="whats-new-content">
-                    <strong>What's New in 1.0.5 — 6/10/2026:</strong><br>
-<em class="polish-label">steady</em><br><br>
-                    • Maintenance release — version alignment across platforms
+                    <strong>What's New in 1.1.0 — 6/15/2026:</strong><br>
+<em class="polish-label">ignition</em><br><br>
+                    • NEW: Subscriptions — follow YouTube channels and manage them in a dedicated window<br>
+                    • NEW: Per-channel settings — format, quality, and download folder per channel<br>
+                    • NEW: Sidebar — collapsible with channel thumbnails, drag-to-resize, right-click menu<br>
+                    • NEW: Export/Import now includes subscriptions (URL-only, re-fetch to load videos)<br>
+                    • UI: SVG wordmark logo, themed modals, smooth transitions, scroll position preserved<br>
+                    • Performance: background fetching, ThreadPoolExecutor (4 concurrent channels)<br>
+                    • Security score: 9.3/10<br>
+                    • Electron 42.4.1
                 </p>
                 
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>
                     <div class="history-content">
+                        <p class="history-item">
+                            <strong>v1.0.5 — 6/10/2026:</strong><br>
+                            • Steady — npm PATH fix, splash flash fix, version alignment
+                        </p>
                         <p class="history-item">
                             <strong>v1.0.4 — 6/10/2026:</strong><br>
                             • Sharp — SVG icons across all UI, nav layout refined, Show/Hide contrast
@@ -331,10 +354,6 @@
             <section class="section">
                 <h2 class="section-title"><span>What's Coming</span></h2>
                 <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);padding:4px 0 8px;margin:0;"><p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);padding:4px 0 8px;margin:0;">Launch &amp; beyond</p>
-                <p class="history-item"><strong>v1.1 — IGNITION</strong><br>
-                    • Save any channel or playlist and check for new videos automatically<br>
-                    • Download what's new in one click<br>
-                    • Dedicated subscriptions tab and full management window</p>
                 <div class="history-item">
                     <p class="history-item"><strong>v1.2 — TBD</strong><br>
                     • Next chapter — details after v1.1 ships<br>
@@ -413,6 +432,34 @@
     </footer>
 
     <script src="egmac-theme.js"></script>
+<script>
+(function(){
+  var grid=document.getElementById('feat-grid');
+  if(!grid)return;
+  var s=document.createElement('style');
+  s.textContent='.feature-item{cursor:pointer;transition:border-color .15s,color .15s,background .15s;}.feature-item.feat-active{outline:1.5px solid var(--acc,currentColor);color:var(--acc,inherit);}#feat-expand{display:none;width:100%;order:99;margin-top:6px;padding:11px 15px;border:0.5px solid var(--acc,currentColor);border-radius:6px;font-size:12px;line-height:1.65;box-sizing:border-box;}@media(max-width:600px){#feat-expand{font-size:11.5px;padding:10px 12px;}}';
+  document.head.appendChild(s);
+  var box=document.createElement('div');
+  box.id='feat-expand';
+  grid.appendChild(box);
+  var active=null;
+  grid.querySelectorAll('.feature-item[data-desc]').forEach(function(t){
+    t.addEventListener('click',function(e){
+      e.stopPropagation();
+      if(active===t){t.classList.remove('feat-active');box.style.display='none';active=null;return;}
+      if(active)active.classList.remove('feat-active');
+      t.classList.add('feat-active');active=t;
+      var el=t.querySelector('span')||t.querySelector('h3');
+      var lbl=el?el.childNodes[0].textContent.trim().replace(/^\[.\]\s*/,''):t.textContent.trim();
+      box.innerHTML='<strong style="display:block;margin-bottom:4px;font-size:12.5px;">'+lbl+'</strong>'+t.dataset.desc;
+      box.style.display='block';
+    });
+  });
+  document.addEventListener('click',function(){
+    if(active){active.classList.remove('feat-active');box.style.display='none';active=null;}
+  });
+})();
+</script>
 </body>
 </html>
 

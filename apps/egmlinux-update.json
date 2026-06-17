@@ -1,9 +1,23 @@
 {
   "_comment": "EGM Downloader Linux \u2014 informational, no auto-update. Upload to egerena.com/apps/egmlinux-update.json",
   "_version_notes": [
-    "Maintenance release \u2014 version alignment across platforms"
+    "NEW: Subscriptions \u2014 follow YouTube channels and manage them in a dedicated window",
+    "NEW: Per-channel settings \u2014 format, quality, and download folder per channel",
+    "NEW: Sidebar \u2014 collapsible with channel thumbnails, drag-to-resize, right-click menu",
+    "NEW: Export/Import now includes subscriptions (URL-only, re-fetch to load videos)",
+    "UI: SVG wordmark logo, themed modals, smooth transitions, scroll position preserved",
+    "Performance: background fetching, ThreadPoolExecutor (4 concurrent channels)",
+    "Security score: 9.3/10",
+    "Electron 42.4.1"
   ],
   "_history": [
+    {
+      "version": "1.0.5",
+      "date": "6/15/2026",
+      "notes": [
+        "Maintenance release \u2014 version alignment across platforms"
+      ]
+    },
     {
       "version": "1.0.4",
       "date": "6/10/2026",
@@ -103,17 +117,17 @@
       ]
     }
   ],
-  "_last_updated": "2026-06-15T01:23:59-04:00",
-  "version": "1.0.5",
-  "build": 129,
-  "label": "v1.0.5 - Build 129 - 6/15/2026 12:16 AM EST",
+  "_last_updated": "2026-06-17T13:12:33-04:00",
+  "version": "1.1.0",
+  "build": 130,
+  "label": "v1.1.0 - Build 130 - 6/17/2026",
   "downloadUrl": "https://egerena.com/apps/EGMdL.zip",
   "zip": "EGMdL.zip",
   "_checksums": {
-    "sha256": "3fceb3324513b475180ef95681d51642ecfdd260e6276afddac88b50c199de98",
+    "sha256": "2fc79b0619cc3d23eb0d899cda03f85927e214f77ee3bda38332ef247e73b844",
     "algorithm": "SHA-256",
     "file": "EGMdL.zip"
   },
-  "size_bytes": 151103822,
-  "signature": "NOzVBbybDCKMiPhHfPwnukSqN/F3Vsdly4QhNsKiGYC6rMxyXgxXGV1fv9nBGYRyFV89sBku8mQF85agPZVYCA=="
+  "size_bytes": 151318419,
+  "signature": "EW1P5D4jwFvHZtVMU9dJWvJVkCUgjOjYmgwAOSPo4k6jysXBJE4dAwWur+7zcSDRcB1YBdVCtbYE8sOzuoM9Dw=="
 }

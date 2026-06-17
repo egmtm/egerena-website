@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Windows Portable update feed. Upload to egerena.com/apps/egm-portable-version.json",
   "_version_notes": [
-    "Fix: Removed stale launch.bat \u2014 called removed .vbs launcher (Issue #5, reported by @derigoleks-wq)",
-    "Fix: Desktop shortcut now points to .exe instead of removed .vbs",
-    "Fix: Python 3.10+ version gate \u2014 clear error dialog if Python too old or missing"
+    "NEW: Subscriptions \u2014 follow YouTube channels and manage them in a dedicated window",
+    "NEW: Per-channel settings \u2014 format, quality, and download folder per channel",
+    "NEW: Sidebar \u2014 collapsible with channel thumbnails, drag-to-resize, right-click menu",
+    "NEW: Export/Import now includes subscriptions (URL-only, re-fetch to load videos)",
+    "UI: SVG wordmark logo, themed modals, smooth transitions, scroll position preserved",
+    "Performance: background fetching, ThreadPoolExecutor (4 concurrent channels)",
+    "Security score: 9.3/10",
+    "Electron 42.4.1",
+    "Portable: embedded Python 3.12.10 \u2014 fully self-contained, no system Python needed",
+    "Portable: Python 3.10+ version check with clear error message"
   ],
   "_history": [
     {
@@ -118,17 +125,17 @@
       ]
     }
   ],
-  "_last_updated": "2026-06-16T08:16:29-04:00",
-  "version": "1.0.5",
-  "build": 129,
-  "label": "v1.0.5 - Build 129 - 6/15/2026 12:16 AM EST",
+  "_last_updated": "2026-06-17T13:12:33-04:00",
+  "version": "1.1.0",
+  "build": 130,
+  "label": "v1.1.0 - Build 130 - 6/17/2026",
   "downloadUrl": "https://egerena.com/apps/EGMd-portable.zip",
   "zip": "EGMd-portable.zip",
   "_checksums": {
-    "sha256": "cdbecb1945b4b922d1753c5ec8e06de33b3678973b0b905d869466d489efa715",
+    "sha256": "bb8a38d0238048471852a4ee20a55a68e6b53945ffb83d54b8feb050015676ff",
     "algorithm": "SHA-256",
     "file": "EGMd-portable.zip"
   },
-  "size_bytes": 404664,
-  "signature": "sba45XgwgUDNTHCo2qe57saI4VSco/bjTy8paVAKGXw0QJ3mvG14evmHcG7r7Q7raTKCY3ofwzHUOuK8W4IsCw=="
+  "size_bytes": 430112,
+  "signature": "CXAbEm+5ULNrIshXgvc5hAeTL9tiatuf707Cg5RhsPR9Thy5t4w4f9K0hd+xrhco5AAVTUv4CE63QCUS240ACw=="
 }

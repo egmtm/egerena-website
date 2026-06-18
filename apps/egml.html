@@ -133,7 +133,7 @@
             <div class="terminal-box download-section">
                 <h3>> EGM_DOWNLOADER_v1.1.0<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: 2fc79b0619cc3d23eb0d899cda03f85927e214f77ee3bda38332ef247e73b844</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: 7e5ad8b044b2746e5943ead4435ab5d7e5689e0c59e54fc638ffe18d7ce0a974</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">133 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -189,201 +189,79 @@
                             <li>Cornerstone — 400 themes, favorites, 32 tests, full security hardening</li>
                         </ul>
 
-                        <div class="whats-new-subtitle history-version">v0.99.13 — 5/26/2026</div>
-                        <ul>
-                            <li>Solid — atomic writes, OS themes, Content-Type validation, 260 themes</li>
-                        </ul>
-
-                        <div class="whats-new-subtitle history-version">v0.99.12 — 5/25/2026</div>
-                        <ul>
-                            <li>Vault — theme fix, signed manifests, security logging, 17-test suite</li>
-                        </ul>
-
-                        <div class="whats-new-subtitle history-version">v0.99.11 — 5/23/2026</div>
-                        <ul>
-                            <li>Mystery — Puerto Rico Collection, 67 themes, sidebar fix, HTTPS thumbnails</li>
-                        </ul>
-
-                        <div class="whats-new-subtitle history-version">v0.99.10 — 5/22/2026</div>
-                        <ul>
-                            <li>Director's Cut — thumbnails, audio quality, 170 themes, splash redesign</li>
-                        </ul>
-
-                        <div class="whats-new-subtitle history-version">v0.99.9 — 5/21/2026</div>
-                        <ul>
-                            <li>Command Center — Advanced hamburger tab, splash shimmer, escape fix</li>
-                        </ul>
-
-                        <div class="whats-new-subtitle history-version">v0.99.8 — 5/20/2026</div>
-                        <ul>
-                            <li>Bogaloo — Electron 42.2.0 / Chromium 148</li>
-                        </ul>
-
-                        <div class="whats-new-subtitle history-version">v0.99.7 — 5/20/2026</div>
-                        <ul>
-                            <li>Crisp — splash premature close fix, cookies age display, plugin layout</li>
-                        </ul>
-
-                        <div class="whats-new-subtitle history-version">v0.99.6 — 5/19/2026</div>
-                        <ul>
-                            <li>Depth — format_id use-site validation, explicit bitrate failure</li>
-                        </ul>
-
-                        <div class="whats-new-subtitle history-version">v0.99.5 — 5/19/2026</div>
-                        <ul>
-                            <li>Locked down — HTTP whitelist, redirect verify, path traversal guards, job cap</li>
-                        </ul>
-
-                        <div class="whats-new-subtitle history-version">v0.99.4 — 5/18/2026</div>
-                        <ul>
-                            <li>Tight — constant-time token, bitrate validation, format_id validation</li>
-                        </ul>
-
-                        <div class="whats-new-subtitle history-version">v0.99.3 — 5/17/2026</div>
-                        <ul>
-                            <li>Runtime hardened — Electron v29→v41, sandbox hardened, CSP, navigation lockdown</li>
-                        </ul>
-
-                        <div class="whats-new-subtitle history-version">v0.99.2 — 5/16/2026</div>
-                        <ul>
-                            <li>Sealed — dependency integrity enforced, release notes text-only, folder path validation</li>
-                        </ul>
-
                         <div class="whats-new-subtitle history-version">v0.99.1 — 5/15/2026</div>
                         <ul>
-                            <li>ffmpeg verified against upstream SHA256 checksums (BtbN)</li>
-                            <li>Auto-update checksum fix, subtitle temp cleanup safety net</li>
+                            <li>Checksums — ffmpeg and Deno verified against upstream SHA256 on every install</li>
                         </ul>
 
                         <div class="whats-new-subtitle history-version">v0.99.0 — 5/14/2026</div>
                         <ul>
-                            <li>Security hardened 2.0 — Electron shutdown token fix, fail-closed auth, IPv6 fix</li>
-                            <li>Token exemption tightened, job locking, malformed JSON handling</li>
-                            <li>Subtitle temp file cleanup</li>
+                            <li>Hardened — Electron token fix, fail-closed auth, IPv6, job locking, 0o600 file permissions</li>
                         </ul>
 
                         <div class="whats-new-subtitle history-version">v0.98.10 — 5/13/2026</div>
                         <ul>
-                            <li>Spectrum — 10 new COLORS gradient themes</li>
-                            <li>Cookies age tracking, cache clear safety, download timeout protection</li>
-                            <li>Code quality improvements, AppImage icon fix</li>
+                            <li>Spectrum — 10 gradient themes, cookies age tracking, download timeout protection</li>
                         </ul>
 
                         <div class="whats-new-subtitle history-version">v0.98.9 — 5/10/2026</div>
                         <ul>
-                            <li>Fit &amp; Finish — 15 UI polish items across all platforms</li>
-                            <li>Scrollbar theming, section tooltips, format/quality label updates</li>
-                            <li>Window position now remembered between sessions</li>
+                            <li>Fit &amp; Finish — 15 UI polish items, scrollbar theming, format/quality label updates</li>
                         </ul>
 
                         <div class="whats-new-subtitle history-version">v0.98.8 — 5/9/2026</div>
                         <ul>
-                            <li>API token gate — per-session cryptographic token required on all /api/* requests</li>
-                            <li>Fail-closed update verification — checksum required on /api/download-update</li>
-                            <li>Request body size limits — 2 MB global cap, 1 MB cookies endpoint</li>
-                            <li>Thread safety — jobs dictionary mutations wrapped with _jobs_lock</li>
-                            <li>Scripts security audit — all 4 build/validation scripts reviewed clean</li>
+                            <li>Token gate — per-session crypto token, fail-closed updates, request size limits, thread safety</li>
                         </ul>
 
                         <div class="whats-new-subtitle history-version">v0.98.7 — 5/7/2026</div>
                         <ul>
-                            <li>Cookies browse now uses native file dialog instead of browser file picker</li>
-                            <li>Cookies section condensed to single always-visible row with extension tooltips</li>
-                            <li>Download folder section condensed — removed redundant "Files saved to" line</li>
-                            <li>Check for Updates button moved to Update Plugins header</li>
-                            <li>Advanced panel tooltips added to all action buttons</li>
-                            <li>Version tooltip removed from header badge</li>
-                            <li>Dead code cleanup — legacy password-protected zip support removed</li>
+                            <li>Polish — native cookies dialog, condensed UI sections, Advanced tooltips, dead code removed</li>
                         </ul>
 
                         <div class="whats-new-subtitle history-version">v0.98.6 — 5/4/2026</div>
                         <ul>
-                            <li>Open folder from expanded download history panel now works correctly</li>
-                            <li>Video thumbnail aspect ratio corrected — widescreen (16:9) videos display at proper proportions</li>
-                            <li>Version references corrected — footer version pill and What's New header now update correctly</li>
-                            <li>Window position not remembered between sessions on Wayland — cosmetic only, app launches centered</li>
+                            <li>Fixes — open folder fix, thumbnail aspect ratio corrected</li>
                         </ul>
 
                         <div class="whats-new-subtitle history-version">v0.98.5 — 5/2/2026</div>
                         <ul>
-                            <li>Electron runtime upgraded to v41.5.0 — security and compatibility improvements; incorporates accumulated Chromium security fixes and backported CVEs</li>
-                            <li>electron-builder updated to v26.8.1 (build toolchain compatibility with Electron 41)</li>
-                            <li>Improved window initialization reliability on GNOME/Mutter compositors (Ubuntu 24 and similar distros)</li>
+                            <li>Electron 41 — runtime upgrade to v41.5.0, accumulated Chromium security fixes</li>
                         </ul>
 
                         <div class="whats-new-subtitle history-version">v0.98 — 4/28/2026</div>
                         <ul>
-                            <li>URL input pane redesigned — compact unified buttons, textarea auto-grows as URLs are added</li>
-                            <li>Drag and drop URLs directly into the URL textarea</li>
-                            <li>Keyboard shortcuts — paste-and-fetch (Ctrl+V / ⌘V), clear (Esc), Fetch Info (Ctrl+Enter / ⌘Return)</li>
-                            <li>All Themes window redesigned — left sidebar categories, compact search bar</li>
-                            <li>Download subtitles, embed metadata, output format selector added to Advanced panel</li>
-                            <li>Video quality expanded — 8K, 4K, 2K added; audio expanded — M4A and OPUS added</li>
-                            <li>Distribution zips now unencrypted — SHA256 replaces password as integrity mechanism</li>
-                            <li>What's New modal reads release notes live from the JSON feed</li>
-                            <li>14 new themes (120 total) — Destiny characters, Hyrule, Velvet Rose, Nocturnix, Hanami, Sugar Riot and more</li>
-                            <li>6 Mood themes — Melancholy, Euphoria, Tension, Serenity, Nostalgia, Focus</li>
-                            <li>Security hardening — URL scheme validation, IPC input allowlists, open-folder path safety</li>
-                            <li>App size reduced ~40MB — Python bundle stripped</li>
+                            <li>Foundation — URL redesign, themes window, drag-and-drop, keyboard shortcuts, 120 themes</li>
                         </ul>
 
                         <div class="whats-new-subtitle history-version">v0.97.5 — 4/26/2026</div>
                         <ul>
-                            <li>100 themes total — 90 permanent across 10 categories plus 10 seasonal easter eggs</li>
-                            <li>14 brand new themes: Music, Nature, Cities categories added</li>
-                            <li>Advanced panel redesigned — sectioned layout with uniform button rows</li>
-                            <li>Security hardening — URL scheme validation, IPC input allowlists, concurrent_fragments clamped</li>
-                            <li>App size reduced ~40MB — Python bundle stripped</li>
-                            <li>Footer spacing tightened for a cleaner layout</li>
+                            <li>100 themes — Music/Nature/Cities categories, Advanced panel redesign, app size reduced 40MB</li>
                         </ul>
 
                         <div class="whats-new-subtitle history-version">v0.97 — 4/26/2026</div>
                         <ul>
-                            <li>76 themes total — 66 permanent across 8 categories plus 10 seasonal easter eggs</li>
-                            <li>Brand new Themes window — browse all themes in a grid, filter by category, search by name, click to apply instantly</li>
-                            <li>Theme picker always shows your 10 most recently used themes for quick switching</li>
-                            <li>Download History and Themes windows now match your active theme and update live when you switch</li>
-                            <li>Vertical video thumbnails (TikTok, Shorts, Reels) display with the correct portrait aspect ratio</li>
-                            <li>Select video quality before bulk downloads — Best, 1080p, 720p, 480p, or 360p</li>
-                            <li>Download history updates instantly in the panel when a download completes</li>
-                            <li>Plugin update toggles control the Install Updates button — only appears when something needs updating</li>
+                            <li>Themes window — browse/filter/search all themes, Download History, bulk quality select</li>
                         </ul>
 
                         <div class="whats-new-subtitle history-version">v0.96 — 4/25/2026</div>
                         <ul>
-                            <li>Download History with full search, filter, and sort — access from the hamburger menu</li>
-                            <li>Theme import and export — save any theme as a file and share it</li>
-                            <li>Settings and preferences export and import via native file dialogs</li>
-                            <li>Footer redesigned with version pill, Check for Updates, and Support EGM donate button</li>
-                            <li>Cookies section redesigned as a single compact line with browser extension links</li>
-                            <li>Desktop shortcut creation moved to the Advanced settings panel</li>
-                            <li>Update and error states now show as non-intrusive toasts</li>
+                            <li>History — Download History, theme import/export, auto-update, footer redesign</li>
                         </ul>
-                        
+
                         <div class="whats-new-subtitle history-version">v0.95 — 4/25/2026</div>
                         <ul>
-                            <li>New Transmission Halo logo — fully adaptive, looks great on every theme</li>
-                            <li>6 new themes replacing the old dark/light toggle</li>
-                            <li>Smooth theme transitions across the whole interface</li>
-                            <li>Audio quality picker for bulk downloads — choose MP3 bitrate or FLAC</li>
-                            <li>ETA and file size shown on active download cards</li>
-                            <li>Window size and position remembered across launches</li>
-                            <li>Advanced settings panel with port configuration, cache clearing, and reinstall options</li>
-                            <li>What's New modal shown automatically on first launch after an update</li>
-                            <li>Friendly error messages for private videos, region locks, and other common failures</li>
+                            <li>Transmission Halo — new logo, 6 themes, audio quality picker, system tray, window memory</li>
                         </ul>
-                        
+
                         <div class="whats-new-subtitle history-version">v0.94 — 4/25/2026</div>
                         <ul>
-                            <li>Light theme added — Cool Slate palette, toggleable via moon/sun button in header top-right. Preference saved via localStorage and restored on next launch. Dark mode remains the default.</li>
-                            <li>All hardcoded surface/button/overlay colors moved to CSS variables — both themes respect every UI element including thumbnails, modals, log panel, and status badges.</li>
+                            <li>Light theme — Cool Slate palette, full CSS variable coverage</li>
                         </ul>
-                        
+
                         <div class="whats-new-subtitle history-version">v0.93 — 4/24/2026</div>
                         <ul>
-                            <li>Version sync across Windows, macOS, and Linux</li>
-                            <li>Fixed yt-dlp, ffmpeg, and Deno install on all platforms</li>
-                            <li>Fixed window icon on all platforms</li>
+                            <li>Cross-platform sync — version sync, yt-dlp/ffmpeg/Deno install fixes</li>
                         </ul>
                     </div>
                 </details>

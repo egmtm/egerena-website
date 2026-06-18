@@ -157,6 +157,7 @@ body::after {
 .member-card[data-color="gold"]   { --card-color: #c09820; --card-glow: rgba(192,152,32,0.15); --card-rgb: 192,152,32; }
 .member-card[data-color="teal"]   { --card-color: #008878; --card-glow: rgba(0,136,120,0.15);  --card-rgb: 0,136,120; }
 [data-color="crimson"] { --card-color: #b5375f; --card-glow: rgba(181,55,95,0.15);  --card-rgb: 181,55,95; }
+[data-color="green"]   { --card-color: #2e8b57; --card-glow: rgba(46,139,87,0.15);   --card-rgb: 46,139,87; }
 .member-card[data-color="blue"]   { --card-color: #0078b0; --card-glow: rgba(0,120,176,0.2);   --card-rgb: 0,120,176; }
 
 /* PORTRAIT */
@@ -261,6 +262,21 @@ body::after {
         28% 72%, 22% 55%,
         26% 38%, 28% 26%,
         35% 20%, 32% 10%
+    );
+}
+.silhouette-g {
+    width: 58px;
+    height: 152px;
+    background: linear-gradient(to top, #1a1a1a, #0d0d0d);
+    clip-path: polygon(
+        36% 0%, 64% 0%, 70% 9%, 67% 19%,
+        74% 24%, 76% 37%,
+        79% 54%, 73% 71%,
+        81% 84%, 76% 100%,
+        24% 100%, 19% 84%,
+        27% 71%, 21% 54%,
+        24% 37%, 26% 24%,
+        33% 19%, 30% 9%
     );
 }
 

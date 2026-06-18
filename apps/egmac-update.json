@@ -117,17 +117,17 @@
       ]
     }
   ],
-  "_last_updated": "2026-06-17T13:12:33-04:00",
+  "_last_updated": "2026-06-18T06:18:16-04:00",
   "version": "1.1.0",
   "build": 130,
   "label": "v1.1.0 - Build 130 - 6/17/2026",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "068655ea8d63945ddc2e11f325f5d0a77f6a10aaf2b26fd20878429fadabcc5e",
+    "sha256": "18faf15da15102e8dbf5ac7d0a279d57fa3f1bc97824985b05baf77fca359221",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 130690329,
-  "signature": "hs1XqM9l4hPzwiQVsWLwU9CZpwKOoVzGE/dG3Bn53Ip+boOpi6YnGwhnrVIuKntLugbL+YlkiazmJ8Y55vXJCA=="
+  "size_bytes": 130688627,
+  "signature": "X+Q3JrDKuIIfY5H4H5jlrvk0h3Gmlt51SoN0AoolUq6I01R45LvKkT8jF6LLgDwC+0398RRjAgX0iTDRaji2Ag=="
 }

@@ -1,23 +1,27 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "NEW: Subscriptions \u2014 follow YouTube channels and manage them in a dedicated window",
-    "NEW: Per-channel settings \u2014 format, quality, and download folder per channel",
-    "NEW: Sidebar \u2014 collapsible with channel thumbnails, drag-to-resize, right-click menu",
-    "NEW: Export/Import now includes subscriptions (URL-only, re-fetch to load videos)",
-    "UI: SVG wordmark logo, themed modals, smooth transitions, scroll position preserved",
-    "Performance: background fetching, ThreadPoolExecutor (4 concurrent channels)",
-    "Security score: 9.3/10",
-    "Electron 42.4.1"
+    "Theme import: CSS variable values fully validated \u2014 blocks XSS, CSS injection, and silent network beacons (url()/image-set()) via crafted theme files",
+    "Theme import preview: color values validated before rendering \u2014 prevents XSS on import modal display",
+    "Fixed console error when switching tabs before all panels are loaded",
+    "@EGMDownloader X/Twitter account added to app footer and all platform instructions",
+    "Support links in platform instructions now point to their respective platform pages",
+    "Import/Export selector \u2014 choose exactly what to include (Settings, History, Themes, Subscriptions); import adapts to what's in the file; default all selected",
+    "Keyboard shortcuts: Ctrl+H (History), Ctrl+T (Themes), Ctrl+, (Advanced), Ctrl+S (Subscriptions)",
+    "Back to top arrow in subscriptions video list",
+    "10 new Animation themes: Yellow Family, Quahog, Mountain Town, Hollow, Beach City, Jump City, Halloween Town, Stop Motion, Super Saiyan, Odd Cab",
+    "Pin to top \u2014 star icon on history entries; pinned items float to top with teal tint; persists across sessions",
+    "Mark all seen \u2014 button in subscriptions channel detail clears all New badges in one click",
+    "Subscriptions drag reorder \u2014 drag handle on sidebar items to reorder channels",
+    "Help modal \u2014 keyboard shortcuts and tips accessible from the footer",
+    "Download queue reorder \u2014 up/down arrows on idle cards to reprioritize before downloading",
+    "Theme subcategory order \u2014 subcategories sorted alphabetically within each section",
+    "Settings: Site Cookies row moved above toggles, within the quality/format panel for quicker access",
+    "Subscriptions: channel quality setting (video height / audio quality) now correctly applied when downloading \u2014 was saved but not sent to the download engine",
+    "Subscriptions: per-video quality override \u2014 each video row has its own Quality selector; overrides the channel default for that download only; resets on channel format change",
+    "Subscriptions: members-only video identification now works correctly \u2014 our code was always ready; requires yt-dlp Nightly (stable does not yet expose the availability flag)"
   ],
   "_history": [
-    {
-      "version": "1.0.5",
-      "date": "6/15/2026",
-      "notes": [
-        "Maintenance release \u2014 version alignment across platforms"
-      ]
-    },
     {
       "version": "1.0.4",
       "date": "6/10/2026",
@@ -31,7 +35,7 @@
     },
     {
       "version": "1.0.3",
-      "date": "6/10/2026",
+      "date": "6/2026",
       "notes": [
         "Security: Server-side download concurrency backstop \u2014 BoundedSemaphore (cap 24) prevents unbounded process spawns regardless of client pacing",
         "Security: Resolve-first download directory validation replaces denylist \u2014 closes path traversal bypass, adds boundary-aware root check and writability probe",
@@ -117,17 +121,17 @@
       ]
     }
   ],
-  "_last_updated": "2026-06-18T06:18:16-04:00",
-  "version": "1.1.0",
-  "build": 130,
-  "label": "v1.1.0 - Build 130 - 6/17/2026",
+  "_last_updated": "2026-06-20T12:39:55-04:00",
+  "version": "1.1.1",
+  "build": 131,
+  "label": "v1.1.1 - Build 131 - 6/20/2026 6:36 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "18faf15da15102e8dbf5ac7d0a279d57fa3f1bc97824985b05baf77fca359221",
+    "sha256": "e1b0fdd5283f71c3181bb7516ad5d8bb93b696414d649b271dd37272fcac0fa1",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 130688627,
-  "signature": "X+Q3JrDKuIIfY5H4H5jlrvk0h3Gmlt51SoN0AoolUq6I01R45LvKkT8jF6LLgDwC+0398RRjAgX0iTDRaji2Ag=="
+  "size_bytes": 130717152,
+  "signature": "/Hq0VdtWuGPPjBIAm0kWTw3oPlOZl0eS25sIqr/LIcokKv88srPaPGWra9s3lFwEi8pTMjsp5Wgp965g4BftAQ=="
 }

@@ -53,8 +53,8 @@
                     <h3>Private by Default</h3>
                 </div>
                 <div class="feature-item" data-desc="400+ hand-crafted themes across dark, light, retro, cultural, and seasonal categories. Mark favorites and launch with a random one each session.">
-                    <h3>400+ Custom Themes</h3>
-                    <small style="font-size:10px;opacity:0.6;">378 permanent &middot; 22 seasonal</small>
+                    <h3>410+ Custom Themes</h3>
+                    <small style="font-size:10px;opacity:0.6;">388 permanent &middot; 22 seasonal</small>
                 </div>
                 <div class="feature-item" data-desc="Drop in a URL and go. No terminal, no configuration, no dependencies to install manually.">
                     <h3>Zero-Config Setup</h3>
@@ -109,10 +109,10 @@
         <div class="glass-card">
             <section class="section">
                 <div class="download-section">
-                <h3>📦 EGM Downloader 1.1.0</h3>
+                <h3>📦 EGM Downloader 1.1.1</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
                 <p class="version-subtitle" style="text-align:center;margin-top:4px">125 MB &middot; ~300 MB after install &middot; near instant startup</p>
-                <p class="sha256-line">SHA256: 18faf15da15102e8dbf5ac7d0a279d57fa3f1bc97824985b05baf77fca359221</p>
+                <p class="sha256-line">SHA256: e1b0fdd5283f71c3181bb7516ad5d8bb93b696414d649b271dd37272fcac0fa1</p>
 
                 <!-- Apple Notarization Trust Signal -->
                 <details class="disclaimer-collapsible apple-trust-signal" id="apple-trust-signal">
@@ -128,21 +128,36 @@
                 </details>
 
 <p class="whats-new-content">
-                    <strong>What's New in 1.1.0 — 6/15/2026:</strong><br>
-<em class="polish-label">ignition</em><br><br>
-                    • NEW: Subscriptions — follow YouTube channels and manage them in a dedicated window<br>
-                    • NEW: Per-channel settings — format, quality, and download folder per channel<br>
-                    • NEW: Sidebar — collapsible with channel thumbnails, drag-to-resize, right-click menu<br>
-                    • NEW: Export/Import now includes subscriptions (URL-only, re-fetch to load videos)<br>
-                    • UI: SVG wordmark logo, themed modals, smooth transitions, scroll position preserved<br>
-                    • Performance: background fetching, ThreadPoolExecutor (4 concurrent channels)<br>
-                    • Security score: 9.3/10<br>
-                    • Electron 42.4.1
+                    <strong>What's New in 1.1.1 — 6/20/2026:</strong><br>
+<em class="polish-label">truly yours</em><br><br>
+                    • Theme import: CSS variable values fully validated — blocks XSS, CSS injection, and silent network beacons (url()/image-set()) via crafted theme files<br>
+                    • Theme import preview: color values validated before rendering — prevents XSS on import modal display<br>
+                    • Fixed console error when switching tabs before all panels are loaded<br>
+                    • @EGMDownloader X/Twitter account added to app footer and all platform instructions<br>
+                    • Support links in platform instructions now point to their respective platform pages<br>
+                    • Import/Export selector — choose exactly what to include (Settings, History, Themes, Subscriptions); import adapts to what's in the file; default all selected<br>
+                    • Keyboard shortcuts: Ctrl+H (History), Ctrl+T (Themes), Ctrl+, (Advanced), Ctrl+S (Subscriptions)<br>
+                    • Back to top arrow in subscriptions video list<br>
+                    • 10 new Animation themes: Yellow Family, Quahog, Mountain Town, Hollow, Beach City, Jump City, Halloween Town, Stop Motion, Super Saiyan, Odd Cab<br>
+                    • Pin to top — star icon on history entries; pinned items float to top with teal tint; persists across sessions<br>
+                    • Mark all seen — button in subscriptions channel detail clears all New badges in one click<br>
+                    • Subscriptions drag reorder — drag handle on sidebar items to reorder channels<br>
+                    • Help modal — keyboard shortcuts and tips accessible from the footer<br>
+                    • Download queue reorder — up/down arrows on idle cards to reprioritize before downloading<br>
+                    • Theme subcategory order — subcategories sorted alphabetically within each section<br>
+                    • Settings: Site Cookies row moved above toggles, within the quality/format panel for quicker access<br>
+                    • Subscriptions: channel quality setting (video height / audio quality) now correctly applied when downloading — was saved but not sent to the download engine<br>
+                    • Subscriptions: per-video quality override — each video row has its own Quality selector; overrides the channel default for that download only; resets on channel format change<br>
+                    • Subscriptions: members-only video identification now works correctly — our code was always ready; requires yt-dlp Nightly (stable does not yet expose the availability flag)
                 </p>
                 
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>
                     <div class="history-content">
+                        <p class="history-item">
+                            <strong>v1.1.0 — 6/15/2026:</strong><br>
+                            • Ignition — subscriptions, channel management, collapsible sidebar, 18 feature tabs
+                        </p>
                         <p class="history-item">
                             <strong>v1.0.5 — 6/10/2026:</strong><br>
                             • Steady — npm PATH fix, splash flash fix, version alignment
@@ -237,22 +252,6 @@
             <section class="section">
                 <h2 class="section-title"><span>What's Coming</span></h2>
                 <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);padding:4px 0 8px;margin:0;">Launch &amp; beyond</p>
-                <div class="history-item">
-                    <p class="history-item"><strong>v1.1.1 — TRULY YOURS</strong><br>
-                    • Shipping June 20, 2026<br>
-                    • Theme import hardened — CSS values fully validated, blocks XSS, CSS injection, and network beacon attempts via crafted theme files<br>
-                    • Import/Export selector — choose exactly what to include (Settings, History, Themes, Subscriptions); default all selected<br>
-                    • Keyboard shortcuts — Ctrl+H (History), Ctrl+T (Themes), Ctrl+, (Advanced), Ctrl+S (Subscriptions)<br>
-                    • Back to top arrow in subscriptions video list<br>
-                    • Pin to top in history — star icon, teal tint, persists across sessions<br>
-                    • Mark all seen — clears all New badges in one click per channel<br>
-                    • Subscriptions drag reorder — drag handle on sidebar items<br>
-                    • Help modal — keyboard shortcuts and tips, accessible from footer<br>
-                    • Download queue reorder — up/down arrows on queued cards to reprioritize before downloading<br>
-                    • Per-video quality override — each video row has its own Quality selector, overrides channel default for that download<br>
-                    • 10 new Animation themes — Yellow Family, Quahog, Mountain Town, Hollow, Beach City, Jump City, Halloween Town, Stop Motion, Super Saiyan, Odd Cab<br>
-                    </p>
-                </div>
                 <div class="history-item">
                     <p class="history-item"><strong>v1.2 — CANVAS</strong><br>
                     • Theme Creator — build your own theme with a live preview color picker, export as .json<br>

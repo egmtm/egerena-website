@@ -1,7 +1,27 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "Fix: Theme changes now propagate live to all open windows (History, Themes, Subscriptions) \u2014 previously required reopening windows to apply (Issue #3)"
+    "Theme import: CSS variable values fully validated \u2014 blocks XSS, CSS injection, and silent network beacons (url()/image-set()) via crafted theme files",
+    "Theme import preview: color values validated before rendering \u2014 prevents XSS on import modal display",
+    "Fixed console error when switching tabs before all panels are loaded",
+    "@EGMDownloader X/Twitter account added to app footer and all platform instructions",
+    "Support links in platform instructions now point to their respective platform pages",
+    "Import/Export selector \u2014 choose exactly what to include (Settings, History, Themes, Subscriptions); import adapts to what's in the file; default all selected",
+    "Keyboard shortcuts: Ctrl+H (History), Ctrl+T (Themes), Ctrl+, (Advanced), Ctrl+S (Subscriptions)",
+    "Back to top arrow in subscriptions video list",
+    "10 new Animation themes: Yellow Family, Quahog, Mountain Town, Hollow, Beach City, Jump City, Halloween Town, Stop Motion, Super Saiyan, Odd Cab",
+    "Pin to top \u2014 star icon on history entries; pinned items float to top with teal tint; persists across sessions",
+    "Mark all seen \u2014 button in subscriptions channel detail clears all New badges in one click",
+    "Subscriptions drag reorder \u2014 drag handle on sidebar items to reorder channels",
+    "Help modal \u2014 keyboard shortcuts and tips accessible from the footer",
+    "Download queue reorder \u2014 up/down arrows on idle cards to reprioritize before downloading",
+    "Theme subcategory order \u2014 subcategories sorted alphabetically within each section",
+    "Settings: Site Cookies row moved above toggles, within the quality/format panel for quicker access",
+    "Subscriptions: channel quality setting (video height / audio quality) now correctly applied when downloading \u2014 was saved but not sent to the download engine",
+    "Subscriptions: per-video quality override \u2014 each video row has its own Quality selector; overrides the channel default for that download only; resets on channel format change",
+    "Subscriptions: members-only video identification now works correctly \u2014 our code was always ready; requires yt-dlp Nightly (stable does not yet expose the availability flag)",
+    "Installer now detects if EGM Downloader is running before installing \u2014 prompts to close it automatically or cancel",
+    "Portable edition now correctly isolates yt-dlp \u2014 was picking up system-installed version instead of its own bundled copy; no manual folder deletion required"
   ],
   "_history": [
     {
@@ -113,18 +133,18 @@
       ]
     }
   ],
-  "_last_updated": "2026-06-18T06:18:16-04:00",
-  "version": "1.1.0",
-  "build": 130,
-  "label": "v1.1.0 - Build 130 - 6/17/2026 2:48 AM EST",
+  "_last_updated": "2026-06-20T12:39:55-04:00",
+  "version": "1.1.1",
+  "build": 131,
+  "label": "v1.1.1 - Build 131 - 6/20/2026 6:36 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "c9872798122924f1fe2f3fddfc7584c6c2dc091679fe1d6dc4bd892b8421664a",
+    "sha256": "0f4fa0c8eaa481868476b93c6e4fdd0ed7d3d13f54c16ae262771ca7985eae73",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },
-  "size_bytes": 452120,
-  "signature": "jpN/fQ2OAbVNyjr2kGGLafBrw7iRxNlZrDMe2/L5o+q1wyqHfoF7Wcb46G35ikwevBHt7XWUWTQ6ICPBkKi5Cw=="
+  "size_bytes": 463526,
+  "signature": "21fliiQ3lLfoNy591Fxnsiwz6snuTBqvKwr7zl3jCF8+SvDIrBhGp+P34bFZiqksYhp+IGRSOmxKAcJNci2gAw=="
 }

@@ -76,8 +76,8 @@
                         <h3>[&#x2713;] Private by Default</h3>
                     </div>
                     <div class="feature-item" data-desc="400+ hand-crafted themes across dark, light, retro, cultural, and seasonal categories. Mark favorites and launch with a random one each session.">
-                        <h3>[&#x2713;] 400+ Themes</h3>
-                        <small style="font-size:10px;opacity:0.55;">378 permanent &middot; 22 seasonal</small>
+                        <h3>[&#x2713;] 410+ Themes</h3>
+                        <small style="font-size:10px;opacity:0.55;">388 permanent &middot; 22 seasonal</small>
                     </div>
                     <div class="feature-item" data-desc="Drop in a URL and go. No terminal, no configuration, no dependencies to install manually.">
                         <h3>[&#x2713;] Zero-Config</h3>
@@ -131,9 +131,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3>> EGM_DOWNLOADER_v1.1.0<span class="dl-ext">.AppImage</span></h3>
+                <h3>> EGM_DOWNLOADER_v1.1.1<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: 7e5ad8b044b2746e5943ead4435ab5d7e5689e0c59e54fc638ffe18d7ce0a974</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: 41d1052c366418e6fb8d28ecb096907c014925c818dcb5f63ab540c37fd87cac</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">133 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -141,24 +141,40 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN v1.1.0</div>
+                <div class="section-header">> WHAT'S NEW IN v1.1.1</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-                <div class="whats-new-subtitle">v1.1.0 — 6/15/2026</div>
+                <div class="whats-new-subtitle">v1.1.1 — 6/20/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
-                <div class="polish-label">// ignition</div>
+                <div class="polish-label">// truly yours</div>
                 <ul>
-                    <li>NEW: Subscriptions — follow YouTube channels and manage them in a dedicated window</li>
-                    <li>NEW: Per-channel settings — format, quality, and download folder per channel</li>
-                    <li>NEW: Sidebar — collapsible with channel thumbnails, drag-to-resize, right-click menu</li>
-                    <li>NEW: Export/Import now includes subscriptions (URL-only, re-fetch to load videos)</li>
-                    <li>UI: SVG wordmark logo, themed modals, smooth transitions, scroll position preserved</li>
-                    <li>Performance: background fetching, ThreadPoolExecutor (4 concurrent channels)</li>
-                    <li>Security score: 9.3/10</li>
-                    <li>Electron 42.4.1</li>
-                </ul>  
+                    <li>Theme import: CSS variable values fully validated — blocks XSS, CSS injection, and silent network beacons (url()/image-set()) via crafted theme files</li>
+                    <li>Theme import preview: color values validated before rendering — prevents XSS on import modal display</li>
+                    <li>Fixed console error when switching tabs before all panels are loaded</li>
+                    <li>@EGMDownloader X/Twitter account added to app footer and all platform instructions</li>
+                    <li>Support links in platform instructions now point to their respective platform pages</li>
+                    <li>Import/Export selector — choose exactly what to include (Settings, History, Themes, Subscriptions); import adapts to what's in the file; default all selected</li>
+                    <li>Keyboard shortcuts: Ctrl+H (History), Ctrl+T (Themes), Ctrl+, (Advanced), Ctrl+S (Subscriptions)</li>
+                    <li>Back to top arrow in subscriptions video list</li>
+                    <li>10 new Animation themes: Yellow Family, Quahog, Mountain Town, Hollow, Beach City, Jump City, Halloween Town, Stop Motion, Super Saiyan, Odd Cab</li>
+                    <li>Pin to top — star icon on history entries; pinned items float to top with teal tint; persists across sessions</li>
+                    <li>Mark all seen — button in subscriptions channel detail clears all New badges in one click</li>
+                    <li>Subscriptions drag reorder — drag handle on sidebar items to reorder channels</li>
+                    <li>Help modal — keyboard shortcuts and tips accessible from the footer</li>
+                    <li>Download queue reorder — up/down arrows on idle cards to reprioritize before downloading</li>
+                    <li>Theme subcategory order — subcategories sorted alphabetically within each section</li>
+                    <li>Settings: Site Cookies row moved above toggles, within the quality/format panel for quicker access</li>
+                    <li>Subscriptions: channel quality setting (video height / audio quality) now correctly applied when downloading — was saved but not sent to the download engine</li>
+                    <li>Subscriptions: per-video quality override — each video row has its own Quality selector; overrides the channel default for that download only; resets on channel format change</li>
+                    <li>Subscriptions: members-only video identification now works correctly — our code was always ready; requires yt-dlp Nightly (stable does not yet expose the availability flag)</li>
+                </ul> 
                 <details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v1.1.0 — 6/15/2026</div>
+                        <ul>
+                            <li>Ignition — subscriptions, channel management, collapsible sidebar, 18 feature tabs</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version">v1.0.5 — 6/10/2026</div>
                         <ul>
                             <li>Steady — npm PATH fix, splash flash fix, version alignment</li>
@@ -275,22 +291,7 @@
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
 
                 <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--terminal-color);opacity:0.6;padding:4px 0 8px;margin:0;">// launch &amp; beyond</p>
-                                <div class="whats-new-subtitle history-version">v1.1.1 — TRULY YOURS</div>
-                <ul>
-                    <li>Shipping June 20, 2026</li>
-                    <li>Theme import hardened — CSS values fully validated, blocks XSS, CSS injection, and network beacon attempts via crafted theme files</li>
-                    <li>Import/Export selector — choose exactly what to include (Settings, History, Themes, Subscriptions); default all selected</li>
-                    <li>Keyboard shortcuts — Ctrl+H (History), Ctrl+T (Themes), Ctrl+, (Advanced), Ctrl+S (Subscriptions)</li>
-                    <li>Back to top arrow in subscriptions video list</li>
-                    <li>Pin to top in history — star icon, teal tint, persists across sessions</li>
-                    <li>Mark all seen — clears all New badges in one click per channel</li>
-                    <li>Subscriptions drag reorder — drag handle on sidebar items</li>
-                    <li>Help modal — keyboard shortcuts and tips, accessible from footer</li>
-                    <li>Download queue reorder — up/down arrows on queued cards to reprioritize before downloading</li>
-                    <li>Per-video quality override — each video row has its own Quality selector, overrides channel default for that download</li>
-                    <li>10 new Animation themes — Yellow Family, Quahog, Mountain Town, Hollow, Beach City, Jump City, Halloween Town, Stop Motion, Super Saiyan, Odd Cab</li>
-                </ul>
-                <div class="whats-new-subtitle history-version">v1.2 — CANVAS</div>
+                                <div class="whats-new-subtitle history-version">v1.2 — CANVAS</div>
                 <ul>
                     <li>Theme Creator — build your own theme with a live preview color picker, export as .json</li>
                     <li>Electron bumps and any bugs that surface post-v1.1</li>

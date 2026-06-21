@@ -1,25 +1,16 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Theme import: CSS variable values fully validated \u2014 blocks XSS, CSS injection, and silent network beacons (url()/image-set()) via crafted theme files",
-    "Theme import preview: color values validated before rendering \u2014 prevents XSS on import modal display",
-    "Fixed console error when switching tabs before all panels are loaded",
-    "@EGMDownloader X/Twitter account added to app footer and all platform instructions",
-    "Support links in platform instructions now point to their respective platform pages",
-    "Import/Export selector \u2014 choose exactly what to include (Settings, History, Themes, Subscriptions); import adapts to what's in the file; default all selected",
-    "Keyboard shortcuts: Ctrl+H (History), Ctrl+T (Themes), Ctrl+, (Advanced), Ctrl+S (Subscriptions)",
-    "Back to top arrow in subscriptions video list",
-    "10 new Animation themes: Yellow Family, Quahog, Mountain Town, Hollow, Beach City, Jump City, Halloween Town, Stop Motion, Super Saiyan, Odd Cab",
-    "Pin to top \u2014 star icon on history entries; pinned items float to top with teal tint; persists across sessions",
-    "Mark all seen \u2014 button in subscriptions channel detail clears all New badges in one click",
-    "Subscriptions drag reorder \u2014 drag handle on sidebar items to reorder channels",
-    "Help modal \u2014 keyboard shortcuts and tips accessible from the footer",
-    "Download queue reorder \u2014 up/down arrows on idle cards to reprioritize before downloading",
-    "Theme subcategory order \u2014 subcategories sorted alphabetically within each section",
-    "Settings: Site Cookies row moved above toggles, within the quality/format panel for quicker access",
-    "Subscriptions: channel quality setting (video height / audio quality) now correctly applied when downloading \u2014 was saved but not sent to the download engine",
-    "Subscriptions: per-video quality override \u2014 each video row has its own Quality selector; overrides the channel default for that download only; resets on channel format change",
-    "Subscriptions: members-only video identification now works correctly \u2014 our code was always ready; requires yt-dlp Nightly (stable does not yet expose the availability flag)"
+    "10 new Kanye West album themes in Music category: College Dropout, Late Registration, Graduation, 808s & Heartbreak, Dark Fantasy, Watch the Throne, Yeezus, Life of Pablo, Ye, Bully",
+    "Settings: Download folder and Format/Quality side by side with divider \u2014 cleaner layout",
+    "Subscriptions: SVG spinner replaces placeholder on fetch cards",
+    "Subscriptions: Fetch All button \u2014 refresh all channels in one click; per-channel status badges; soft cancel",
+    "Subscriptions: Checkbox selections preserved when loading more videos",
+    "Scrollbar theming \u2014 Download History and Themes sidebar scrollbars now follow the active theme",
+    "Import/Export settings modal \u2014 clicking outside no longer dismisses it; only Cancel closes it",
+    "Download all videos/audio modal \u2014 clicking outside no longer dismisses it; only Cancel closes it",
+    "Subscriptions: Download queue scroll position preserved when download status updates",
+    "Single-instance lock \u2014 relaunching the app while Subscriptions is open no longer shows both panels simultaneously"
   ],
   "_history": [
     {
@@ -121,17 +112,17 @@
       ]
     }
   ],
-  "_last_updated": "2026-06-20T12:39:55-04:00",
-  "version": "1.1.1",
-  "build": 131,
-  "label": "v1.1.1 - Build 131 - 6/20/2026 6:36 AM EST",
+  "_last_updated": "2026-06-21T15:00:06-04:00",
+  "version": "1.1.2",
+  "build": 132,
+  "label": "v1.1.2 - Build 132 - 6/21/2026 2:38 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "e1b0fdd5283f71c3181bb7516ad5d8bb93b696414d649b271dd37272fcac0fa1",
+    "sha256": "85f34cb8e8baba2046755331483258190446150b9c78112c156d5e2bde441109",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 130717152,
-  "signature": "/Hq0VdtWuGPPjBIAm0kWTw3oPlOZl0eS25sIqr/LIcokKv88srPaPGWra9s3lFwEi8pTMjsp5Wgp965g4BftAQ=="
+  "size_bytes": 130703092,
+  "signature": "sR+CdHf1CHlZPrau9Jc+OkYFBHilZLcooZtleku3/jzxLcuQZyINdJu2xyotmFhLGFvzLUtTYcmsIu7jHXXMAA=="
 }

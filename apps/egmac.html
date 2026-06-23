@@ -86,6 +86,9 @@
                 <div class="feature-item" data-desc="Heart any theme to save it as a favorite. Enable Random Launch to open with a different theme each session.">
                     <h3>Theme Favorites</h3>
                 </div>
+                <div class="feature-item" data-desc="Build your own theme with 10 live color pickers. Preview changes in real time, export as .json, or save directly to your library with a custom name.">
+                    <h3>Theme Creator</h3>
+                </div>
                 <div class="feature-item" data-desc="Update manifests are ed25519-signed and verified before any update content is trusted. No silent installs.">
                     <h3>Signed Updates</h3>
                 </div>
@@ -98,9 +101,6 @@
                 <div class="feature-item" data-desc="Source code on GitHub under AGPL-3.0. Auditable, forkable, and community-visible.">
                     <h3>Open Source</h3>
                 </div>
-                <div class="feature-item" data-desc="yt-dlp and ffmpeg update automatically in the background via the Advanced panel. App updates are manual — check via the Check for Updates button in the footer.">
-                    <h3>Auto-Updates</h3>
-                </div>
             </div>
         </section>
         </div>
@@ -109,10 +109,10 @@
         <div class="glass-card">
             <section class="section">
                 <div class="download-section">
-                <h3>📦 EGM Downloader 1.1.2</h3>
+                <h3>📦 EGM Downloader 1.2.0</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
                 <p class="version-subtitle" style="text-align:center;margin-top:4px">125 MB &middot; ~300 MB after install &middot; near instant startup</p>
-                <p class="sha256-line">SHA256: 85f34cb8e8baba2046755331483258190446150b9c78112c156d5e2bde441109</p>
+                <p class="sha256-line">SHA256: ac03f67fdaf22ddde5e3a87010887cd12548674a6ce922eddba5450cc38fcaa1</p>
 
                 <!-- Apple Notarization Trust Signal -->
                 <details class="disclaimer-collapsible apple-trust-signal" id="apple-trust-signal">
@@ -128,23 +128,25 @@
                 </details>
 
 <p class="whats-new-content">
-                    <strong>What's New in 1.1.2 — 6/21/2026:</strong><br>
-<em class="polish-label">yours to keep</em><br><br>
-                    • 10 new Kanye West album themes in Music category: College Dropout, Late Registration, Graduation, 808s & Heartbreak, Dark Fantasy, Watch the Throne, Yeezus, Life of Pablo, Ye, Bully<br>
-                    • Settings: Download folder and Format/Quality side by side with divider — cleaner layout<br>
-                    • Subscriptions: SVG spinner replaces placeholder on fetch cards<br>
-                    • Subscriptions: Fetch All button — refresh all channels in one click; per-channel status badges; soft cancel<br>
-                    • Subscriptions: Checkbox selections preserved when loading more videos<br>
-                    • Scrollbar theming — Download History and Themes sidebar scrollbars now follow the active theme<br>
-                    • Import/Export settings modal — clicking outside no longer dismisses it; only Cancel closes it<br>
-                    • Download all videos/audio modal — clicking outside no longer dismisses it; only Cancel closes it<br>
-                    • Subscriptions: Download queue scroll position preserved when download status updates<br>
-                    • Single-instance lock — relaunching the app while Subscriptions is open no longer shows both panels simultaneously
+                    <strong>What's New in 1.2.0 — 6/23/2026:</strong><br>
+<em class="polish-label">canvas</em><br><br>
+                    • Theme Creator — in-page docked panel with 10 color pickers; live preview; export as .json or save to app<br>
+                    • Universal MP4 (H.264) — new video output option guaranteeing max compatibility playback<br>
+                    • Theme Creator panel widens window on open, restores on close — main UI never compresses<br>
+                    • Save to app — saved themes appear in Imported section with custom names; multiple themes coexist; deletable<br>
+                    • Theme import — Apply Theme button fixed (was silently broken across IIFE scopes)<br>
+                    • Themes and History windows now close when main window closes<br>
+                    • Theme import validation — per-type CSS allowlist, stricter than previous guard<br>
+                    • Random theme palette seeding — sample any of 420 built-in themes as a starting point
                 </p>
                 
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>
                     <div class="history-content">
+                        <p class="history-item">
+                            <strong>v1.1.2 — 6/21/2026:</strong><br>
+                            • Yours to Keep — Kanye themes, settings redesign, fetch all, scrollbar theming, single-instance lock, 420 themes
+                        </p>
                         <p class="history-item">
                             <strong>v1.1.1 — 6/20/2026:</strong><br>
                             • Truly Yours — theme import hardened, keyboard shortcuts, pin to top, drag reorder, 10 Animation themes, 420 themes
@@ -247,11 +249,6 @@
             <section class="section">
                 <h2 class="section-title"><span>What's Coming</span></h2>
                 <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);padding:4px 0 8px;margin:0;">Launch &amp; beyond</p>
-                <div class="history-item">
-                    <p class="history-item"><strong>v1.2 — CANVAS</strong><br>
-                    • Theme Creator — build your own theme with a live preview color picker, export as .json<br>
-                    • Electron bumps and any bugs that surface post-v1.1</p>
-                </div>
                 <div class="history-item">
                     <p class="history-item"><strong>v1.3 — POLYGLOT</strong><br>
                     • Globe icon language picker — English, Spanish, Portuguese, French, German, Italian, Dutch, Japanese, Arabic, and Russian at launch<br>

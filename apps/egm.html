@@ -6,7 +6,7 @@
     <meta name="description" content="EGM Downloader - Professional video downloader for Windows. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta name="keywords" content="video downloader, youtube downloader, yt-dlp, windows downloader, multi-site downloader">
     <meta name="author" content="egerena.com">
-    <meta property="og:title" content="EGM Downloader v1.1.2 - Professional Video Downloader">
+    <meta property="og:title" content="EGM Downloader v1.2.0 - Professional Video Downloader">
     <meta property="og:description" content="Professional video downloader with zero-config setup. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta property="og:url" content="https://egerena.com/apps/egm.html">
     <title>EGM Downloader for Windows</title>
@@ -56,24 +56,25 @@
                 <div class="feature-item" data-desc="Fetch info for multiple URLs at once, select formats per video, and kick off all downloads together."><span>Batch Operations</span></div>
                 <div class="feature-item" data-desc="Every downloaded video shows its actual thumbnail, title, format, and size in a searchable, filterable history panel."><span>Video Thumbnails</span></div>
                 <div class="feature-item" data-desc="Heart any theme to save it as a favorite. Enable Random Launch to open with a different theme each session."><span>Theme Favorites</span></div>
+                <div class="feature-item" data-desc="Build your own theme with 10 live color pickers. Preview changes in real time, export as .json, or save directly to your library with a custom name."><span>Theme Creator</span></div>
                 <div class="feature-item" data-desc="Update manifests are ed25519-signed and verified before any update content is trusted. No silent installs."><span>Signed Updates</span></div>
                 <div class="feature-item" data-desc="Browse, search, re-download, or clear past downloads. Filterable by format, date, and type."><span>Download History</span></div>
                 <div class="feature-item" data-desc="Rename downloads before saving — customize file names to keep your library organized."><span>Custom File Naming</span></div>
                 <div class="feature-item" data-desc="Source code on GitHub under AGPL-3.0. Auditable, forkable, and community-visible."><span>Open Source</span></div>
-                <div class="feature-item" data-desc="yt-dlp and ffmpeg update automatically in the background via the Advanced panel. App updates are manual — check via the Check for Updates button in the footer."><span>Auto-Updates</span></div>
+                
             </div>
         </section>
 
         <section class="section">
             <div class="card download-card">
-                <h2 class="download-title">EGM Downloader v1.1.2</h2>
+                <h2 class="download-title">EGM Downloader v1.2.0</h2>
                 <a href="https://egerena.com/apps/EGMd.zip" class="download-btn">Download EGM Downloader</a>
                 <p class="version-subtitle">Installer &middot; adds Start Menu shortcut &middot; auto-updates &middot; 321 KB &middot; ~800 MB after install</p>
-                <p class="sha256-line">SHA256: 42756967c3800ad98778df6d3b9d5ada233a3d9d3a3524fcc8d4145a690f935c</p>
+                <p class="sha256-line">SHA256: fecb650a22bf5bd53a9b30c0173f6d01f991b558f79eef0d5b3391149a3090cf</p>
                 <div class="portable-divider"><span>or</span></div>
                 <a href="https://egerena.com/apps/EGMd-portable.zip" class="download-btn download-btn-secondary">Get the portable version</a>
-                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 435 KB &middot; ~800 MB after first run &middot; digitally signed</p>
-                <p class="sha256-line">SHA256: 1452d7b43fac6e90497665931aed882ba5fe36182b675463abc7f169b1df6474</p>
+                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 454 KB &middot; ~800 MB after first run &middot; digitally signed</p>
+                <p class="sha256-line">SHA256: b3e4b8e37f5ae975dca58a974f3eaf1555d98641c2af23e060222c5c5dab3b7f</p>
         <!-- SmartScreen Disclaimer -->
         <details class="disclaimer-collapsible smartscreen-disclaimer" id="smartscreen-disclaimer">
             <summary class="disclaimer-summary">
@@ -99,23 +100,27 @@
         </details>
 
 <div class="whats-new">
-                    <p class="whats-new-heading">What's New in v1.1.2 — 6/21/2026</p>
-                    <p class="polish-label">yours to keep</p>
+                    <p class="whats-new-heading">What's New in v1.2.0 — 6/23/2026</p>
+                    <p class="polish-label">canvas</p>
                     <ul>
-                        <li>10 new Kanye West album themes in Music category: College Dropout, Late Registration, Graduation, 808s & Heartbreak, Dark Fantasy, Watch the Throne, Yeezus, Life of Pablo, Ye, Bully</li>
-                        <li>Settings: Download folder and Format/Quality side by side with divider — cleaner layout</li>
-                        <li>Subscriptions: SVG spinner replaces placeholder on fetch cards</li>
-                        <li>Subscriptions: Fetch All button — refresh all channels in one click; per-channel status badges; soft cancel</li>
-                        <li>Subscriptions: Checkbox selections preserved when loading more videos</li>
-                        <li>Scrollbar theming — Download History and Themes sidebar scrollbars now follow the active theme</li>
-                        <li>Import/Export settings modal — clicking outside no longer dismisses it; only Cancel closes it</li>
-                        <li>Download all videos/audio modal — clicking outside no longer dismisses it; only Cancel closes it</li>
-                        <li>Subscriptions: Download queue scroll position preserved when download status updates</li>
-                        <li>Single-instance lock — relaunching the app while Subscriptions is open no longer shows both panels simultaneously</li>
-                    </ul></div>
+                        <li>Theme Creator — in-page docked panel with 10 color pickers; live preview; export as .json or save to app</li>
+                        <li>Universal MP4 (H.264) — new video output option guaranteeing max compatibility playback</li>
+                        <li>Theme Creator panel widens window on open, restores on close — main UI never compresses</li>
+                        <li>Save to app — saved themes appear in Imported section with custom names; multiple themes coexist; deletable</li>
+                        <li>Theme import — Apply Theme button fixed (was silently broken across IIFE scopes)</li>
+                        <li>Themes and History windows now close when main window closes</li>
+                        <li>Theme import validation — per-type CSS allowlist, stricter than previous guard</li>
+                        <li>Random theme palette seeding — sample any of 420 built-in themes as a starting point</li>
+                    </ul>/div>
                 <details class="history-details">
                     <summary class="history-summary">Previous Updates</summary>
                     <div class="history-content">
+                        <div class="history-item">
+                            <p class="history-version">v1.1.2 — 6/21/2026</p>
+                            <ul>
+                                <li>Yours to Keep — Kanye themes, settings redesign, fetch all, scrollbar theming, single-instance lock, 420 themes</li>
+                            </ul>
+                        </div>
                         <div class="history-item">
                             <p class="history-version">v1.1.1 — 6/20/2026</p>
                             <ul>
@@ -264,13 +269,6 @@
                 <h2 class="section-title" style="margin-top:0">What's Coming</h2>
                 <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-dim);padding:4px 0 8px;margin:0;">Launch &amp; beyond</p>
                                 <div class="history-item">
-                    <p class="history-version">v1.2 — CANVAS</p>
-                    <ul>
-                        <li>Theme Creator — build your own theme with a live preview color picker, export as .json</li>
-                        <li>Electron bumps and any bugs that surface post-v1.1</li>
-                    </ul>
-                </div>
-                <div class="history-item">
                     <p class="history-version">v1.3 — POLYGLOT</p>
                     <ul>
                         <li>Globe icon language picker — English, Spanish, Portuguese, French, German, Italian, Dutch, Japanese, Arabic, and Russian at launch</li>

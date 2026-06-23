@@ -1,16 +1,14 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "10 new Kanye West album themes in Music category: College Dropout, Late Registration, Graduation, 808s & Heartbreak, Dark Fantasy, Watch the Throne, Yeezus, Life of Pablo, Ye, Bully",
-    "Settings: Download folder and Format/Quality side by side with divider \u2014 cleaner layout",
-    "Subscriptions: SVG spinner replaces placeholder on fetch cards",
-    "Subscriptions: Fetch All button \u2014 refresh all channels in one click; per-channel status badges; soft cancel",
-    "Subscriptions: Checkbox selections preserved when loading more videos",
-    "Scrollbar theming \u2014 Download History and Themes sidebar scrollbars now follow the active theme",
-    "Import/Export settings modal \u2014 clicking outside no longer dismisses it; only Cancel closes it",
-    "Download all videos/audio modal \u2014 clicking outside no longer dismisses it; only Cancel closes it",
-    "Subscriptions: Download queue scroll position preserved when download status updates",
-    "Single-instance lock \u2014 relaunching the app while Subscriptions is open no longer shows both panels simultaneously"
+    "Theme Creator \u2014 in-page docked panel with 10 color pickers; live preview; export as .json or save to app",
+    "Universal MP4 (H.264) \u2014 new video output option guaranteeing max compatibility playback",
+    "Theme Creator panel widens window on open, restores on close \u2014 main UI never compresses",
+    "Save to app \u2014 saved themes appear in Imported section with custom names; multiple themes coexist; deletable",
+    "Theme import \u2014 Apply Theme button fixed (was silently broken across IIFE scopes)",
+    "Themes and History windows now close when main window closes",
+    "Theme import validation \u2014 per-type CSS allowlist, stricter than previous guard",
+    "Random theme palette seeding \u2014 sample any of 420 built-in themes as a starting point"
   ],
   "_history": [
     {
@@ -122,18 +120,18 @@
       ]
     }
   ],
-  "_last_updated": "2026-06-21T15:00:06-04:00",
-  "version": "1.1.2",
-  "build": 132,
-  "label": "v1.1.2 - Build 132 - 6/21/2026 2:38 PM EST",
+  "_last_updated": "2026-06-23T18:20:43-04:00",
+  "version": "1.2.0",
+  "build": 133,
+  "label": "v1.2.0 - Build 133 - 6/23/2026 1:27 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "42756967c3800ad98778df6d3b9d5ada233a3d9d3a3524fcc8d4145a690f935c",
+    "sha256": "fecb650a22bf5bd53a9b30c0173f6d01f991b558f79eef0d5b3391149a3090cf",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },
-  "size_bytes": 466920,
-  "signature": "EZt2R5yd2Uljj8K1fTboCJhzqtpk7CYqU7KEmi09yTciS8iqyeOvqkQMTFYh45QIltc9k0tAS7+ccvqt5Cw7Cw=="
+  "size_bytes": 477192,
+  "signature": "tay5gRvqJVAUgqismg53xs1UUHo3+T5ivfhWHGN5sxevI7HF44t2Np0K8WOvz+Jq6KiEb9NZm3a1+hWXeA5yCg=="
 }

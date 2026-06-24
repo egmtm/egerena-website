@@ -1,14 +1,9 @@
 {
   "_comment": "EGM Downloader Windows Portable update feed. Upload to egerena.com/apps/egm-portable-version.json",
   "_version_notes": [
-    "Theme Creator \u2014 in-page docked panel with 10 color pickers; live preview; export as .json or save to app",
-    "Universal MP4 (H.264) \u2014 new video output option guaranteeing max compatibility playback",
-    "Theme Creator panel widens window on open, restores on close \u2014 main UI never compresses",
-    "Save to app \u2014 saved themes appear in Imported section with custom names; multiple themes coexist; deletable",
-    "Theme import \u2014 Apply Theme button fixed (was silently broken across IIFE scopes)",
-    "Themes and History windows now close when main window closes",
-    "Theme import validation \u2014 per-type CSS allowlist, stricter than previous guard",
-    "Random theme palette seeding \u2014 sample any of 420 built-in themes as a starting point"
+    "Includes everything in v1.2.0 CANVAS \u2014 Theme Creator, Universal MP4, saved themes",
+    "Electron 42.4.1 \u2192 42.5.0 \u2014 Wayland maximize fix, Windows edge cases, frameless window constraints",
+    "Chromium and Node.js security backports included via Electron update"
   ],
   "_history": [
     {
@@ -120,17 +115,17 @@
       ]
     }
   ],
-  "_last_updated": "2026-06-23T18:20:43-04:00",
-  "version": "1.2.0",
-  "build": 133,
-  "label": "v1.2.0 - Build 133 - 6/23/2026 1:27 PM EST",
+  "_last_updated": "2026-06-24T06:26:21-04:00",
+  "version": "1.2.1",
+  "build": 134,
+  "label": "v1.2.1 - Build 134 - 6/24/2026 5:59 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd-portable.zip",
   "zip": "EGMd-portable.zip",
   "_checksums": {
-    "sha256": "b3e4b8e37f5ae975dca58a974f3eaf1555d98641c2af23e060222c5c5dab3b7f",
+    "sha256": "380f399cb5b0174304fb78c89d90e44a58a8a1bf9f1d02c0fb05b40fa1a941dc",
     "algorithm": "SHA-256",
     "file": "EGMd-portable.zip"
   },
-  "size_bytes": 464500,
-  "signature": "gDneRxsS3f3g5jFav2ourW3A05URs7A78Rcl0w9sLU84zANk8eASCGXF/d5JRK65sO/POvlA8MzJ659fqchNDA=="
+  "size_bytes": 464603,
+  "signature": "bIetT1R7uEB7iohR79/+A+FWZbYVlz91lUO30/qRrB+4g5r4f8528wCVqtjYOnPTFrRDyvHz+Q8uIzQzIKbdDw=="
 }

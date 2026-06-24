@@ -1,14 +1,9 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Theme Creator \u2014 in-page docked panel with 10 color pickers; live preview; export as .json or save to app",
-    "Universal MP4 (H.264) \u2014 new video output option guaranteeing max compatibility playback",
-    "Theme Creator panel widens window on open, restores on close \u2014 main UI never compresses",
-    "Save to app \u2014 saved themes appear in Imported section with custom names; multiple themes coexist; deletable",
-    "Theme import \u2014 Apply Theme button fixed (was silently broken across IIFE scopes)",
-    "Themes and History windows now close when main window closes",
-    "Theme import validation \u2014 per-type CSS allowlist, stricter than previous guard",
-    "Random theme palette seeding \u2014 sample any of 420 built-in themes as a starting point"
+    "Includes everything in v1.2.0 CANVAS \u2014 Theme Creator, Universal MP4, saved themes",
+    "Electron 42.4.1 \u2192 42.5.0 \u2014 Wayland maximize fix, Windows edge cases, frameless window constraints",
+    "Chromium and Node.js security backports included via Electron update"
   ],
   "_history": [
     {
@@ -110,17 +105,17 @@
       ]
     }
   ],
-  "_last_updated": "2026-06-23T18:20:43-04:00",
-  "version": "1.2.0",
-  "build": 133,
-  "label": "v1.2.0 - Build 133 - 6/23/2026 1:27 PM EST",
+  "_last_updated": "2026-06-24T06:26:21-04:00",
+  "version": "1.2.1",
+  "build": 134,
+  "label": "v1.2.1 - Build 134 - 6/24/2026 5:59 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "ac03f67fdaf22ddde5e3a87010887cd12548674a6ce922eddba5450cc38fcaa1",
+    "sha256": "6bb9bbdb86796c3c49e484a4fb56747450b54e7692e7a085aa72f1a2e61a40e1",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 130752872,
-  "signature": "QVBUVF36AV8F/ywHGkRUs5tAkUSkx427V/HYwB81svwH3Cl5PFNjai2KklZUeQGT/zNeBwzggz0R8hGOc7HaCQ=="
+  "size_bytes": 130755039,
+  "signature": "jOgqqngKFRl9TQ4bq3k7z5CHexmhaL+0SSQ/Tw83wBqlam91JQXicKeHBZTVibJ73e3iiw131zfIDEAafkNbAg=="
 }

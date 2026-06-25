@@ -131,9 +131,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3>> EGM_DOWNLOADER_v1.2.1<span class="dl-ext">.AppImage</span></h3>
+                <h3>> EGM_DOWNLOADER_v1.2.2<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: 69fabc5e73420dcf980234ce5df70005119b55e8b2f7a9520954bd7069f6f64d</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: 705bb7baacf5ccfbaeddac4071b9b8797468e49af849add36f0d28659deee16d</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">133 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -141,18 +141,23 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN v1.2.1</div>
+                <div class="section-header">> WHAT'S NEW IN v1.2.2</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-                <div class="whats-new-subtitle">v1.2.1 — 6/24/2026</div>
+                <div class="whats-new-subtitle">v1.2.2 — 6/25/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
-                <div class="polish-label">// canvas reloaded</div>
+                <div class="polish-label">// skeleton key</div>
                 <ul>
-                    <li>Includes everything in v1.2.0 CANVAS — Theme Creator, Universal MP4, saved themes</li>
-                    <li>Electron 42.4.1 → 42.5.0 — Wayland maximize fix, Windows edge cases, frameless window constraints</li>
-                    <li>Chromium and Node.js security backports included via Electron update</li>
-                </ul>               <details class="history-details">
+                    <li>Kick VOD downloads — fixed 403 errors caused by missing curl_cffi TLS impersonation library; added to all platform dependency lists</li>
+                    <li>Site compatibility — curl_cffi enables yt-dlp browser TLS impersonation; improves reliability on sites that block standard HTTP clients</li>
+                    <li>Clean installs — curl_cffi added to all platform requirements files; guaranteed present on fresh installs across Windows, Mac, and Linux</li>
+                </ul>              <details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v1.2.1 — 6/24/2026</div>
+                        <ul>
+                            <li>Canvas Reloaded — Electron 42.5.0, Wayland maximize fix, Chromium and Node.js security backports</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version">v1.2.0 — 6/23/2026</div>
                         <ul>
                             <li>Canvas — Theme Creator, Universal MP4 H.264, saved themes, live preview, 9.5/10</li>

@@ -6,7 +6,7 @@
     <meta name="description" content="EGM Downloader - Professional video downloader for Windows. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta name="keywords" content="video downloader, youtube downloader, yt-dlp, windows downloader, multi-site downloader">
     <meta name="author" content="egerena.com">
-    <meta property="og:title" content="EGM Downloader v1.2.1 - Professional Video Downloader">
+    <meta property="og:title" content="EGM Downloader v1.2.2 - Professional Video Downloader">
     <meta property="og:description" content="Professional video downloader with zero-config setup. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta property="og:url" content="https://egerena.com/apps/egm.html">
     <title>EGM Downloader for Windows</title>
@@ -67,14 +67,14 @@
 
         <section class="section">
             <div class="card download-card">
-                <h2 class="download-title">EGM Downloader v1.2.1</h2>
+                <h2 class="download-title">EGM Downloader v1.2.2</h2>
                 <a href="https://egerena.com/apps/EGMd.zip" class="download-btn">Download EGM Downloader</a>
                 <p class="version-subtitle">Installer &middot; adds Start Menu shortcut &middot; auto-updates &middot; 321 KB &middot; ~800 MB after install</p>
-                <p class="sha256-line">SHA256: 3c4c6be99a0f28d2d46bd8b1593ee809dfbb2e05bec386d43ef11ff250fc4cac</p>
+                <p class="sha256-line">SHA256: 9a103060cd29273625cc6f779f3446a3bcff3023094b64aa7d8d341e698fd0e9</p>
                 <div class="portable-divider"><span>or</span></div>
                 <a href="https://egerena.com/apps/EGMd-portable.zip" class="download-btn download-btn-secondary">Get the portable version</a>
                 <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 454 KB &middot; ~800 MB after first run &middot; digitally signed</p>
-                <p class="sha256-line">SHA256: 380f399cb5b0174304fb78c89d90e44a58a8a1bf9f1d02c0fb05b40fa1a941dc</p>
+                <p class="sha256-line">SHA256: d7a3144b5f2c269a5bf5d14cc1ff0c20fd49e91255ef44950101a46f853b5f43</p>
         <!-- SmartScreen Disclaimer -->
         <details class="disclaimer-collapsible smartscreen-disclaimer" id="smartscreen-disclaimer">
             <summary class="disclaimer-summary">
@@ -100,16 +100,23 @@
         </details>
 
 <div class="whats-new">
-                    <p class="whats-new-heading">What's New in v1.2.1 — 6/24/2026</p>
-                    <p class="polish-label">canvas reloaded</p>
+                    <p class="whats-new-heading">What's New in v1.2.2 — 6/25/2026</p>
+                    <p class="polish-label">skeleton key</p>
                     <ul>
-                        <li>Includes everything in v1.2.0 CANVAS — Theme Creator, Universal MP4, saved themes</li>
-                        <li>Electron 42.4.1 → 42.5.0 — Wayland maximize fix, Windows edge cases, frameless window constraints</li>
-                        <li>Chromium and Node.js security backports included via Electron update</li>
-                    </ul>div>
+                        <li>Kick VOD downloads — fixed 403 errors caused by missing curl_cffi TLS impersonation library; added to all platform dependency lists</li>
+                        <li>Site compatibility — curl_cffi enables yt-dlp browser TLS impersonation; improves reliability on sites that block standard HTTP clients</li>
+                        <li>Clean installs — curl_cffi added to all platform requirements files; guaranteed present on fresh installs across Windows, Mac, and Linux</li>
+                        <li>Portable edition — curl_cffi now correctly detected and installed on first launch or when absent from an existing install</li>
+                    </ul>iv>
                 <details class="history-details">
                     <summary class="history-summary">Previous Updates</summary>
                     <div class="history-content">
+                        <div class="history-item">
+                            <p class="history-version">v1.2.1 — 6/24/2026</p>
+                            <ul>
+                                <li>Canvas Reloaded — Electron 42.5.0, Wayland maximize fix, Chromium and Node.js security backports</li>
+                            </ul>
+                        </div>
                         <div class="history-item">
                             <p class="history-version">v1.2.0 — 6/23/2026</p>
                             <ul>

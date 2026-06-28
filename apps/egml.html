@@ -131,9 +131,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3>> EGM_DOWNLOADER_v1.2.2<span class="dl-ext">.AppImage</span></h3>
+                <h3>> EGM_DOWNLOADER_v1.2.3<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: 705bb7baacf5ccfbaeddac4071b9b8797468e49af849add36f0d28659deee16d</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: 37446d961f53fc82abe901a6a2324b5887b0e0b1c947f2ae72557e346f024f9c</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">133 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -141,18 +141,39 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN v1.2.2</div>
+                <div class="section-header">> WHAT'S NEW IN v1.2.3</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-                <div class="whats-new-subtitle">v1.2.2 — 6/25/2026</div>
+                <div class="whats-new-subtitle">v1.2.3 — 6/28/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
-                <div class="polish-label">// skeleton key</div>
+                <div class="polish-label">// fully loaded</div>
                 <ul>
-                    <li>Kick VOD downloads — fixed 403 errors caused by missing curl_cffi TLS impersonation library; added to all platform dependency lists</li>
-                    <li>Site compatibility — curl_cffi enables yt-dlp browser TLS impersonation; improves reliability on sites that block standard HTTP clients</li>
-                    <li>Clean installs — curl_cffi added to all platform requirements files; guaranteed present on fresh installs across Windows, Mac, and Linux</li>
-                </ul>              <details class="history-details">
+                    <li>Optional libraries — brotli, pycryptodomex, websockets, and certifi bundled alongside curl_cffi across all platforms; improves yt-dlp site compatibility and SSL reliability out of the box</li>
+                    <li>Optional libraries — new update card in Advanced → Plugins; check and update all five libraries independently without waiting for an app release</li>
+                    <li>Universal MP4 — now the default output format across all platforms; H.264 + AAC, plays on any device; already-H.264 files are remuxed without re-encoding</li>
+                    <li>Settings panel — redesigned into two side-by-side boxes: Download folder + Format/Quality on the left, Site Cookies on the right; cleaner layout with proper labels and breathing room</li>
+                    <li>Themes panel — Create theme at the top; recent themes list below; View all themes, Import, and Export redesigned as proper footer buttons</li>
+                    <li>History panel — action buttons now SVG icons, hidden until hover; thumbnails enlarged to 48×36; cleaner header with total count; unified footer with Show older and Clear all</li>
+                    <li>Expanded history — action buttons match the main UI panel: SVG icons, hover-reveal, consistent sizing</li>
+                    <li>Keyboard shortcut — Ctrl+K opens the Theme Creator from anywhere in the app; listed in the help modal</li>
+                    <li>Universal MP4 — Linux and Mac now correctly default to Universal MP4 on fresh installs; was Windows-only previously</li>
+                    <li>Optional libraries panel — Linux and Mac show installed versions informally; update action remains Windows-only, consistent with the mutagen model; versions load immediately on first panel expand without requiring a manual check</li>
+                    <li>History panel — Show older pill no longer accumulates in the footer on repeated panel refreshes</li>
+                    <li>Expanded history — horizontal scrollbar suppressed; no longer appears on window resize</li>
+                    <li>Thumbnail fallbacks — emoji placeholders (🎬 ♫ ▶) replaced with inline SVG icons across all templates</li>
+                    <li>Format selector — MP4 · H.264 (Max compatibility) now listed first, matching its default status</li>
+                    <li>URL card — inner content pixel-aligned with the Settings boxes below; textarea edges now flush with Download folder and Site Cookies borders</li>
+                    <li>Themes window — All count now includes imported themes and updates live; Imported count and delete handler corrected</li>
+                    <li>Import theme dialog — cleaned up; shows theme name and color preview; Cancel and Apply Theme</li>
+                    <li>JS syntax gate — new pytest guard checks every JS template module on both platforms; catches syntax errors that bypass all other tests</li>
+                    <li>History panel — title, filename, and URL fields now escaped before rendering; prevents stored XSS from attacker-controlled download metadata</li>
+                </ul>             <details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v1.2.2 — 6/25/2026</div>
+                        <ul>
+                            <li>Skeleton Key — curl_cffi TLS impersonation, VOD 403 fix, site compatibility</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version">v1.2.1 — 6/24/2026</div>
                         <ul>
                             <li>Canvas Reloaded — Electron 42.5.0, Wayland maximize fix, Chromium and Node.js security backports</li>
@@ -294,20 +315,7 @@
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
 
                 <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--terminal-color);opacity:0.6;padding:4px 0 8px;margin:0;">// launch &amp; beyond</p>
-                                <div class="whats-new-subtitle history-version">v1.2.3 — FULLY LOADED (Shipping June 28, 2026)</div>
-                <ul>
-                    <li>In progress</li>
-                    <li>Ctrl+K opens the Theme Creator from anywhere in the app; listed in the help modal</li>
-                    <li>History XSS fix — title, filename, and URL fields are now escaped before rendering in the history panel</li>
-                    <li>Optional libraries bundled — brotli, pycryptodomex, websockets, certifi alongside curl_cffi; expands site compatibility and SSL reliability out of the box</li>
-                    <li>Optional libraries panel — new card in Advanced → Plugins to check and update all five independently; installed versions shown immediately</li>
-                    <li>Universal MP4 now default — H.264 + AAC on all platforms; already-H.264 files remuxed without re-encoding</li>
-                    <li>Themes panel redesign — Create theme at the top, recent themes list below, cleaner footer with proper buttons; All Themes count includes imported themes and updates live</li>
-                    <li>History panel redesign — SVG action icons with hover-reveal, larger thumbnails, total count in header, unified footer with Show older and Clear all</li>
-                    <li>Settings panel redesign — Download folder + Format/Quality and Site Cookies in two side-by-side boxes</li>
-                </ul>
-
-                <div class="whats-new-subtitle history-version">v1.3 — POLYGLOT</div>
+                                <div class="whats-new-subtitle history-version">v1.3 — POLYGLOT</div>
                 <ul>
                     <li>Globe icon language picker — English, Spanish, Portuguese, French, German, Italian, Dutch, Japanese, Arabic, and Russian at launch</li>
                     <li>In-app language switcher — translations already complete for all 10 languages; picker UI ships with v1.1</li>

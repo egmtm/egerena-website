@@ -6,7 +6,7 @@
     <meta name="description" content="EGM Downloader - Professional video downloader for Windows. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta name="keywords" content="video downloader, youtube downloader, yt-dlp, windows downloader, multi-site downloader">
     <meta name="author" content="egerena.com">
-    <meta property="og:title" content="EGM Downloader v1.2.2 - Professional Video Downloader">
+    <meta property="og:title" content="EGM Downloader v1.2.3 - Professional Video Downloader">
     <meta property="og:description" content="Professional video downloader with zero-config setup. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta property="og:url" content="https://egerena.com/apps/egm.html">
     <title>EGM Downloader for Windows</title>
@@ -67,14 +67,14 @@
 
         <section class="section">
             <div class="card download-card">
-                <h2 class="download-title">EGM Downloader v1.2.2</h2>
+                <h2 class="download-title">EGM Downloader v1.2.3</h2>
                 <a href="https://egerena.com/apps/EGMd.zip" class="download-btn">Download EGM Downloader</a>
                 <p class="version-subtitle">Installer &middot; adds Start Menu shortcut &middot; auto-updates &middot; 321 KB &middot; ~800 MB after install</p>
-                <p class="sha256-line">SHA256: 9a103060cd29273625cc6f779f3446a3bcff3023094b64aa7d8d341e698fd0e9</p>
+                <p class="sha256-line">SHA256: ad290ad19e824bc078df89aabd0edbacff21be54609f02b1fcb17eafd366b600</p>
                 <div class="portable-divider"><span>or</span></div>
                 <a href="https://egerena.com/apps/EGMd-portable.zip" class="download-btn download-btn-secondary">Get the portable version</a>
-                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 454 KB &middot; ~800 MB after first run &middot; digitally signed</p>
-                <p class="sha256-line">SHA256: d7a3144b5f2c269a5bf5d14cc1ff0c20fd49e91255ef44950101a46f853b5f43</p>
+                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 457 KB &middot; ~800 MB after first run &middot; digitally signed</p>
+                <p class="sha256-line">SHA256: 04983a103cd9683311106965997387a1991befbdb735bec7c55cbc3097bcc7e6</p>
         <!-- SmartScreen Disclaimer -->
         <details class="disclaimer-collapsible smartscreen-disclaimer" id="smartscreen-disclaimer">
             <summary class="disclaimer-summary">
@@ -100,18 +100,40 @@
         </details>
 
 <div class="whats-new">
-                    <p class="whats-new-heading">What's New in v1.2.2 — 6/25/2026</p>
-                    <p class="polish-label">skeleton key</p>
+                    <p class="whats-new-heading">What's New in v1.2.3 — 6/28/2026</p>
+                    <p class="polish-label">fully loaded</p>
                     <ul>
-                        <li>Kick VOD downloads — fixed 403 errors caused by missing curl_cffi TLS impersonation library; added to all platform dependency lists</li>
-                        <li>Site compatibility — curl_cffi enables yt-dlp browser TLS impersonation; improves reliability on sites that block standard HTTP clients</li>
-                        <li>Clean installs — curl_cffi added to all platform requirements files; guaranteed present on fresh installs across Windows, Mac, and Linux</li>
-                        <li>Portable edition — curl_cffi now correctly detected and installed on first launch or when absent from an existing install</li>
-                    </ul>
-                    </div>
+                        <li>Optional libraries — brotli, pycryptodomex, websockets, and certifi bundled alongside curl_cffi across all platforms; improves yt-dlp site compatibility and SSL reliability out of the box</li>
+                        <li>Optional libraries — new update card in Advanced → Plugins; check and update all five libraries independently without waiting for an app release</li>
+                        <li>Optional libraries — included in installer and portable bootstrap; existing installs receive them automatically on next launch</li>
+                        <li>Universal MP4 — now the default output format across all platforms; H.264 + AAC, plays on any device; already-H.264 files are remuxed without re-encoding</li>
+                        <li>Settings panel — redesigned into two side-by-side boxes: Download folder + Format/Quality on the left, Site Cookies on the right; cleaner layout with proper labels and breathing room</li>
+                        <li>Themes panel — Create theme at the top; recent themes list below; View all themes, Import, and Export redesigned as proper footer buttons</li>
+                        <li>History panel — action buttons now SVG icons, hidden until hover; thumbnails enlarged to 48×36; cleaner header with total count; unified footer with Show older and Clear all</li>
+                        <li>Expanded history — action buttons match the main UI panel: SVG icons, hover-reveal, consistent sizing</li>
+                        <li>Keyboard shortcut — Ctrl+K opens the Theme Creator from anywhere in the app; listed in the help modal</li>
+                        <li>Portable edition — brotli sentinel corrected; brotli installs as a module file, not a directory; was triggering unnecessary pip reinstall on every portable launch</li>
+                        <li>Universal MP4 — Linux and Mac now correctly default to Universal MP4 on fresh installs; was Windows-only previously</li>
+                        <li>Optional libraries panel — Linux and Mac show installed versions informally; update action remains Windows-only, consistent with the mutagen model; versions load immediately on first panel expand without requiring a manual check</li>
+                        <li>History panel — Show older pill no longer accumulates in the footer on repeated panel refreshes</li>
+                        <li>Expanded history — horizontal scrollbar suppressed; no longer appears on window resize</li>
+                        <li>Thumbnail fallbacks — emoji placeholders (🎬 ♫ ▶) replaced with inline SVG icons across all templates</li>
+                        <li>Format selector — MP4 · H.264 (Max compatibility) now listed first, matching its default status</li>
+                        <li>URL card — inner content pixel-aligned with the Settings boxes below; textarea edges now flush with Download folder and Site Cookies borders</li>
+                        <li>Themes window — All count now includes imported themes and updates live; Imported count and delete handler corrected</li>
+                        <li>Import theme dialog — cleaned up; shows theme name and color preview; Cancel and Apply Theme</li>
+                        <li>JS syntax gate — new pytest guard checks every JS template module on both platforms; catches syntax errors that bypass all other tests</li>
+                        <li>History panel — title, filename, and URL fields now escaped before rendering; prevents stored XSS from attacker-controlled download metadata</li>
+                    </ul>                    </div>
                 <details class="history-details">
                     <summary class="history-summary">Previous Updates</summary>
                     <div class="history-content">
+                        <div class="history-item">
+                            <p class="history-version">v1.2.2 — 6/25/2026</p>
+                            <ul>
+                                <li>Skeleton Key — curl_cffi TLS impersonation, VOD 403 fix, site compatibility</li>
+                            </ul>
+                        </div>
                         <div class="history-item">
                             <p class="history-version">v1.2.1 — 6/24/2026</p>
                             <ul>
@@ -278,21 +300,6 @@
                 <h2 class="section-title" style="margin-top:0">What's Coming</h2>
                 <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-dim);padding:4px 0 8px;margin:0;">Launch &amp; beyond</p>
                                 <div class="history-item">
-                    <p class="history-version">v1.2.3 — FULLY LOADED (Shipping June 28, 2026)</p>
-                    <ul>
-                        <li>In progress</li>
-                        <li>Ctrl+K opens the Theme Creator from anywhere in the app; listed in the help modal</li>
-                        <li>History XSS fix — title, filename, and URL fields are now escaped before rendering in the history panel</li>
-                        <li>Optional libraries bundled — brotli, pycryptodomex, websockets, certifi alongside curl_cffi; expands site compatibility and SSL reliability out of the box</li>
-                        <li>Optional libraries panel — new card in Advanced → Plugins to check and update all five independently; installed versions shown immediately</li>
-                        <li>Universal MP4 now default — H.264 + AAC on all platforms; already-H.264 files remuxed without re-encoding</li>
-                        <li>Themes panel redesign — Create theme at the top, recent themes list below, cleaner footer with proper buttons; All Themes count includes imported themes and updates live</li>
-                        <li>History panel redesign — SVG action icons with hover-reveal, larger thumbnails, total count in header, unified footer with Show older and Clear all</li>
-                        <li>Settings panel redesign — Download folder + Format/Quality and Site Cookies in two side-by-side boxes</li>
-                        <li>Windows: Portable brotli sentinel fix — existing installs receive optional libraries automatically on next launch</li>
-                    </ul>
-                </div>
-                <div class="history-item">
                     <p class="history-version">v1.3 — POLYGLOT</p>
                     <ul>
                         <li>Globe icon language picker — English, Spanish, Portuguese, French, German, Italian, Dutch, Japanese, Arabic, and Russian at launch</li>

@@ -1,29 +1,20 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "Optional libraries \u2014 brotli, pycryptodomex, websockets, and certifi bundled alongside curl_cffi across all platforms; improves yt-dlp site compatibility and SSL reliability out of the box",
-    "Optional libraries \u2014 new update card in Advanced \u2192 Plugins; check and update all five libraries independently without waiting for an app release",
-    "Optional libraries \u2014 included in installer and portable bootstrap; existing installs receive them automatically on next launch",
-    "Universal MP4 \u2014 now the default output format across all platforms; H.264 + AAC, plays on any device; already-H.264 files are remuxed without re-encoding",
-    "Settings panel \u2014 redesigned into two side-by-side boxes: Download folder + Format/Quality on the left, Site Cookies on the right; cleaner layout with proper labels and breathing room",
-    "Themes panel \u2014 Create theme at the top; recent themes list below; View all themes, Import, and Export redesigned as proper footer buttons",
-    "History panel \u2014 action buttons now SVG icons, hidden until hover; thumbnails enlarged to 48\u00d736; cleaner header with total count; unified footer with Show older and Clear all",
-    "Expanded history \u2014 action buttons match the main UI panel: SVG icons, hover-reveal, consistent sizing",
-    "Keyboard shortcut \u2014 Ctrl+K opens the Theme Creator from anywhere in the app; listed in the help modal",
-    "Portable edition \u2014 brotli sentinel corrected; brotli installs as a module file, not a directory; was triggering unnecessary pip reinstall on every portable launch",
-    "Universal MP4 \u2014 Linux and Mac now correctly default to Universal MP4 on fresh installs; was Windows-only previously",
-    "Optional libraries panel \u2014 Linux and Mac show installed versions informally; update action remains Windows-only, consistent with the mutagen model; versions load immediately on first panel expand without requiring a manual check",
-    "History panel \u2014 Show older pill no longer accumulates in the footer on repeated panel refreshes",
-    "Expanded history \u2014 horizontal scrollbar suppressed; no longer appears on window resize",
-    "Thumbnail fallbacks \u2014 emoji placeholders (\ud83c\udfac \u266b \u25b6) replaced with inline SVG icons across all templates",
-    "Format selector \u2014 MP4 \u00b7 H.264 (Max compatibility) now listed first, matching its default status",
-    "URL card \u2014 inner content pixel-aligned with the Settings boxes below; textarea edges now flush with Download folder and Site Cookies borders",
-    "Themes window \u2014 All count now includes imported themes and updates live; Imported count and delete handler corrected",
-    "Import theme dialog \u2014 cleaned up; shows theme name and color preview; Cancel and Apply Theme",
-    "JS syntax gate \u2014 new pytest guard checks every JS template module on both platforms; catches syntax errors that bypass all other tests",
-    "History panel \u2014 title, filename, and URL fields now escaped before rendering; prevents stored XSS from attacker-controlled download metadata"
+    "Electron runtime updated to v42.5.1 \u2014 includes upstream Chromium stability improvements backported from the latest Chromium releases",
+    "Update feed \u2014 What's New now shows only the relevant bullets for each platform, with internal tags stripped; previously all platforms could receive bullets intended for a different OS",
+    "Automated test coverage extended \u2014 update feed content is now validated on every CI run; catches feed generation issues before release rather than during signing"
   ],
   "_history": [
+    {
+      "version": "1.2.4",
+      "date": "TBD",
+      "notes": [
+        "Electron runtime updated to v42.5.1 \u2014 includes upstream Chromium stability improvements backported from the latest Chromium releases",
+        "Update feed \u2014 What's New now shows only the relevant bullets for each platform, with internal tags stripped; previously all platforms could receive bullets intended for a different OS",
+        "Automated test coverage extended \u2014 update feed content is now validated on every CI run; catches feed generation issues before release rather than during signing"
+      ]
+    },
     {
       "version": "1.2.3",
       "date": "6/28/2026",
@@ -83,36 +74,20 @@
         "Theme import validation \u2014 per-type CSS allowlist, stricter than previous guard",
         "Random theme palette seeding \u2014 sample any of 420 built-in themes as a starting point"
       ]
-    },
-    {
-      "version": "1.1.2",
-      "date": "6/21/2026",
-      "notes": [
-        "10 new Kanye West album themes in Music category: College Dropout, Late Registration, Graduation, 808s & Heartbreak, Dark Fantasy, Watch the Throne, Yeezus, Life of Pablo, Ye, Bully",
-        "Settings: Download folder and Format/Quality side by side with divider \u2014 cleaner layout",
-        "Subscriptions: SVG spinner replaces placeholder on fetch cards",
-        "Subscriptions: Fetch All button \u2014 refresh all channels in one click; per-channel status badges; soft cancel",
-        "Subscriptions: Checkbox selections preserved when loading more videos",
-        "Scrollbar theming \u2014 Download History and Themes sidebar scrollbars now follow the active theme",
-        "Import/Export settings modal \u2014 clicking outside no longer dismisses it; only Cancel closes it",
-        "Download all videos/audio modal \u2014 clicking outside no longer dismisses it; only Cancel closes it",
-        "Subscriptions: Download queue scroll position preserved when download status updates",
-        "Single-instance lock \u2014 relaunching the app while Subscriptions is open no longer shows both panels simultaneously"
-      ]
     }
   ],
-  "_last_updated": "2026-06-28T11:53:46-04:00",
-  "version": "1.2.3",
-  "build": 136,
-  "label": "v1.2.3 - Build 136 - 6/27/2026 2:28 PM EST",
+  "_last_updated": "2026-06-29T14:22:22-04:00",
+  "version": "1.2.4",
+  "build": 137,
+  "label": "v1.2.4 - Build 137 - 6/29/2026 1:47 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "ad290ad19e824bc078df89aabd0edbacff21be54609f02b1fcb17eafd366b600",
+    "sha256": "961d94115ae3ff2de05f8079db0ddab0b965a81670ad00ec78c506a895bdfb64",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },
-  "size_bytes": 479783,
-  "signature": "ldKCXFcEZqhidg2BmHPnK6FpxFueJNRCH8Efd09FzEnuqJ22b+hvJcFbH7BWjZRMQXNX9sMOIFiEokXIbfiPAQ=="
+  "size_bytes": 479991,
+  "signature": "nPUqiX7lDME5dxBjzMgbAN3g/VWsZx4ZbITNnfOP7/03PBq3RpaBdzJlU2BlwrQHRGq6ecKiLGsudM6/7GwgCw=="
 }

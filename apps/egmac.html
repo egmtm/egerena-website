@@ -109,10 +109,10 @@
         <div class="glass-card">
             <section class="section">
                 <div class="download-section">
-                <h3>📦 EGM Downloader 1.2.3</h3>
+                <h3>📦 EGM Downloader 1.2.4</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
                 <p class="version-subtitle" style="text-align:center;margin-top:4px">132 MB &middot; ~300 MB after install &middot; near instant startup</p>
-                <p class="sha256-line">SHA256: f8e0e202d246f4eaa34ae8cd74bc25b0b17a7418f12a9e6fbdfe043615d2e1cc</p>
+                <p class="sha256-line">SHA256: 9da16e1b9387b2c7dac7b9b97c5926d3f5ff206074f4a4ffa1a30a6baa78ec8b</p>
 
                 <!-- Apple Notarization Trust Signal -->
                 <details class="disclaimer-collapsible apple-trust-signal" id="apple-trust-signal">
@@ -128,32 +128,20 @@
                 </details>
 
 <p class="whats-new-content">
-                    <strong>What's New in 1.2.3 — 6/28/2026:</strong><br>
-<em class="polish-label">fully loaded</em><br><br>
-                    • Optional libraries — brotli, pycryptodomex, websockets, and certifi bundled alongside curl_cffi across all platforms; improves yt-dlp site compatibility and SSL reliability out of the box<br>
-                    • Optional libraries — new update card in Advanced → Plugins; check and update all five libraries independently without waiting for an app release<br>
-                    • Universal MP4 — now the default output format across all platforms; H.264 + AAC, plays on any device; already-H.264 files are remuxed without re-encoding<br>
-                    • Settings panel — redesigned into two side-by-side boxes: Download folder + Format/Quality on the left, Site Cookies on the right; cleaner layout with proper labels and breathing room<br>
-                    • Themes panel — Create theme at the top; recent themes list below; View all themes, Import, and Export redesigned as proper footer buttons<br>
-                    • History panel — action buttons now SVG icons, hidden until hover; thumbnails enlarged to 48×36; cleaner header with total count; unified footer with Show older and Clear all<br>
-                    • Expanded history — action buttons match the main UI panel: SVG icons, hover-reveal, consistent sizing<br>
-                    • Keyboard shortcut — Ctrl+K opens the Theme Creator from anywhere in the app; listed in the help modal<br>
-                    • Universal MP4 — Linux and Mac now correctly default to Universal MP4 on fresh installs; was Windows-only previously<br>
-                    • Optional libraries panel — Linux and Mac show installed versions informally; update action remains Windows-only, consistent with the mutagen model; versions load immediately on first panel expand without requiring a manual check<br>
-                    • History panel — Show older pill no longer accumulates in the footer on repeated panel refreshes<br>
-                    • Expanded history — horizontal scrollbar suppressed; no longer appears on window resize<br>
-                    • Thumbnail fallbacks — emoji placeholders (🎬 ♫ ▶) replaced with inline SVG icons across all templates<br>
-                    • Format selector — MP4 · H.264 (Max compatibility) now listed first, matching its default status<br>
-                    • URL card — inner content pixel-aligned with the Settings boxes below; textarea edges now flush with Download folder and Site Cookies borders<br>
-                    • Themes window — All count now includes imported themes and updates live; Imported count and delete handler corrected<br>
-                    • Import theme dialog — cleaned up; shows theme name and color preview; Cancel and Apply Theme<br>
-                    • JS syntax gate — new pytest guard checks every JS template module on both platforms; catches syntax errors that bypass all other tests<br>
-                    • History panel — title, filename, and URL fields now escaped before rendering; prevents stored XSS from attacker-controlled download metadata
+                    <strong>What's New in 1.2.4 — 6/29/2026:</strong><br>
+<em class="polish-label">fully reloaded</em><br><br>
+                    • Electron runtime updated to v42.5.1 — includes upstream Chromium stability improvements backported from the latest Chromium releases<br>
+                    • Update feed — What's New now shows only the relevant bullets for each platform, with internal tags stripped; previously all platforms could receive bullets intended for a different OS<br>
+                    • Automated test coverage extended — update feed content is now validated on every CI run; catches feed generation issues before release rather than during signing
                 </p>
                 
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>
                     <div class="history-content">
+                        <p class="history-item">
+                            <strong>v1.2.3 — 6/28/2026:</strong><br>
+                            • Fully Loaded — optional libraries, Universal MP4, panel redesigns, Ctrl+K, History XSS fix, 88/88 tests
+                        </p>
                         <p class="history-item">
                             <strong>v1.2.2 — 6/25/2026:</strong><br>
                             • Skeleton Key — curl_cffi TLS impersonation, VOD 403 fix, site compatibility

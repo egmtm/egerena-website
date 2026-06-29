@@ -131,9 +131,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3>> EGM_DOWNLOADER_v1.2.3<span class="dl-ext">.AppImage</span></h3>
+                <h3>> EGM_DOWNLOADER_v1.2.4<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: 37446d961f53fc82abe901a6a2324b5887b0e0b1c947f2ae72557e346f024f9c</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: 59f041f6fdef77fe6bfbdaa1e7e58cc784c89c432b52a8b5b9acba15faa9bc29</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">133 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -141,34 +141,23 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN v1.2.3</div>
+                <div class="section-header">> WHAT'S NEW IN v1.2.4</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-                <div class="whats-new-subtitle">v1.2.3 — 6/28/2026</div>
+                <div class="whats-new-subtitle">v1.2.4 — 6/29/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
-                <div class="polish-label">// fully loaded</div>
+                <div class="polish-label">// fully reloaded</div>
                 <ul>
-                    <li>Optional libraries — brotli, pycryptodomex, websockets, and certifi bundled alongside curl_cffi across all platforms; improves yt-dlp site compatibility and SSL reliability out of the box</li>
-                    <li>Optional libraries — new update card in Advanced → Plugins; check and update all five libraries independently without waiting for an app release</li>
-                    <li>Universal MP4 — now the default output format across all platforms; H.264 + AAC, plays on any device; already-H.264 files are remuxed without re-encoding</li>
-                    <li>Settings panel — redesigned into two side-by-side boxes: Download folder + Format/Quality on the left, Site Cookies on the right; cleaner layout with proper labels and breathing room</li>
-                    <li>Themes panel — Create theme at the top; recent themes list below; View all themes, Import, and Export redesigned as proper footer buttons</li>
-                    <li>History panel — action buttons now SVG icons, hidden until hover; thumbnails enlarged to 48×36; cleaner header with total count; unified footer with Show older and Clear all</li>
-                    <li>Expanded history — action buttons match the main UI panel: SVG icons, hover-reveal, consistent sizing</li>
-                    <li>Keyboard shortcut — Ctrl+K opens the Theme Creator from anywhere in the app; listed in the help modal</li>
-                    <li>Universal MP4 — Linux and Mac now correctly default to Universal MP4 on fresh installs; was Windows-only previously</li>
-                    <li>Optional libraries panel — Linux and Mac show installed versions informally; update action remains Windows-only, consistent with the mutagen model; versions load immediately on first panel expand without requiring a manual check</li>
-                    <li>History panel — Show older pill no longer accumulates in the footer on repeated panel refreshes</li>
-                    <li>Expanded history — horizontal scrollbar suppressed; no longer appears on window resize</li>
-                    <li>Thumbnail fallbacks — emoji placeholders (🎬 ♫ ▶) replaced with inline SVG icons across all templates</li>
-                    <li>Format selector — MP4 · H.264 (Max compatibility) now listed first, matching its default status</li>
-                    <li>URL card — inner content pixel-aligned with the Settings boxes below; textarea edges now flush with Download folder and Site Cookies borders</li>
-                    <li>Themes window — All count now includes imported themes and updates live; Imported count and delete handler corrected</li>
-                    <li>Import theme dialog — cleaned up; shows theme name and color preview; Cancel and Apply Theme</li>
-                    <li>JS syntax gate — new pytest guard checks every JS template module on both platforms; catches syntax errors that bypass all other tests</li>
-                    <li>History panel — title, filename, and URL fields now escaped before rendering; prevents stored XSS from attacker-controlled download metadata</li>
-                </ul>             <details class="history-details">
+                    <li>Electron runtime updated to v42.5.1 — includes upstream Chromium stability improvements backported from the latest Chromium releases</li>
+                    <li>Update feed — What's New now shows only the relevant bullets for each platform, with internal tags stripped; previously all platforms could receive bullets intended for a different OS</li>
+                    <li>Automated test coverage extended — update feed content is now validated on every CI run; catches feed generation issues before release rather than during signing</li>
+                </ul>            <details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v1.2.3 — 6/28/2026</div>
+                        <ul>
+                            <li>Fully Loaded — optional libraries, Universal MP4, panel redesigns, Ctrl+K, History XSS fix, 88/88 tests</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version">v1.2.2 — 6/25/2026</div>
                         <ul>
                             <li>Skeleton Key — curl_cffi TLS impersonation, VOD 403 fix, site compatibility</li>

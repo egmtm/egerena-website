@@ -1,14 +1,23 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Electron runtime updated to v42.5.1 \u2014 includes upstream Chromium stability improvements backported from the latest Chromium releases",
-    "Update feed \u2014 What's New now shows only the relevant bullets for each platform, with internal tags stripped; previously all platforms could receive bullets intended for a different OS",
-    "Automated test coverage extended \u2014 update feed content is now validated on every CI run; catches feed generation issues before release rather than during signing"
+    "Electron runtime updated to v43.0.0 \u2014 includes Chromium and Node.js stability and security updates",
+    "New Modern theme category \u2014 20 themes covering internet-culture and lifestyle aesthetics, from Clean Girl and Dark Academia to Algorithm and Y2K Revival",
+    "Theme catalog now totals 440 built-in themes"
   ],
   "_history": [
     {
+      "version": "1.2.5",
+      "date": "6/30/2026",
+      "notes": [
+        "Electron runtime updated to v43.0.0 \u2014 includes Chromium and Node.js stability and security updates",
+        "New Modern theme category \u2014 20 themes covering internet-culture and lifestyle aesthetics, from Clean Girl and Dark Academia to Algorithm and Y2K Revival",
+        "Theme catalog now totals 440 built-in themes"
+      ]
+    },
+    {
       "version": "1.2.4",
-      "date": "TBD",
+      "date": "6/29/2026",
       "notes": [
         "Electron runtime updated to v42.5.1 \u2014 includes upstream Chromium stability improvements backported from the latest Chromium releases",
         "Update feed \u2014 What's New now shows only the relevant bullets for each platform, with internal tags stripped; previously all platforms could receive bullets intended for a different OS",
@@ -57,33 +66,19 @@
         "Electron 42.4.1 \u2192 42.5.0 \u2014 Wayland maximize fix, Windows edge cases, frameless window constraints",
         "Chromium and Node.js security backports included via Electron update"
       ]
-    },
-    {
-      "version": "1.2.0",
-      "date": "6/23/2026",
-      "notes": [
-        "Theme Creator \u2014 in-page docked panel with 10 color pickers; live preview; export as .json or save to app",
-        "Universal MP4 (H.264) \u2014 new video output option guaranteeing max compatibility playback",
-        "Theme Creator panel widens window on open, restores on close \u2014 main UI never compresses",
-        "Save to app \u2014 saved themes appear in Imported section with custom names; multiple themes coexist; deletable",
-        "Theme import \u2014 Apply Theme button fixed (was silently broken across IIFE scopes)",
-        "Themes and History windows now close when main window closes",
-        "Theme import validation \u2014 per-type CSS allowlist, stricter than previous guard",
-        "Random theme palette seeding \u2014 sample any of 420 built-in themes as a starting point"
-      ]
     }
   ],
-  "_last_updated": "2026-06-29T14:22:22-04:00",
-  "version": "1.2.4",
-  "build": 137,
-  "label": "v1.2.4 - Build 137 - 6/29/2026 1:47 PM EST",
+  "_last_updated": "2026-06-30T14:39:19-04:00",
+  "version": "1.2.5",
+  "build": 138,
+  "label": "v1.2.5 - Build 138 - 6/30/2026 1:15 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "9da16e1b9387b2c7dac7b9b97c5926d3f5ff206074f4a4ffa1a30a6baa78ec8b",
+    "sha256": "7b1311dc67ec3cae0f1140e6980668ec01826dc4e681bb6d981799474bdf0e28",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 138698398,
-  "signature": "ECXC01MFAP54RKgzaaVv2JaI30vyGpBor9h5Nzb+u/KiYx7PKkm1KVE7nH/1R3dmHklicHG2dw9RojmzdFjVAw=="
+  "size_bytes": 140733404,
+  "signature": "FISkVynX+w3tbOTZRcZ0/PSEXB4INQx7Oal7DNZzhKY6IE+C+L4YLSx9n8vxyf1ICtL8XuH8M/SDP70bGTsPCQ=="
 }

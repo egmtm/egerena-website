@@ -1,13 +1,24 @@
 {
   "_comment": "EGM Downloader Linux \u2014 informational, no auto-update. Upload to egerena.com/apps/egmlinux-update.json",
   "_version_notes": [
-    "Frameless windows now have rounded corners by default, matching the existing look on Windows and macOS",
-    "App now shows its correct name and icon in the system volume/audio manager instead of generic \"Chromium\"",
-    "Electron runtime updated to v43.0.0 \u2014 includes Chromium and Node.js stability and security updates",
-    "New Modern theme category \u2014 20 themes covering internet-culture and lifestyle aesthetics, from Clean Girl and Dark Academia to Algorithm and Y2K Revival",
-    "Theme catalog now totals 440 built-in themes"
+    "Fixed MP3/M4A/Opus downloads sometimes saving as VBR (variable bitrate) instead of the selected CBR bitrate \u2014 audio tools like MediaInfo, AIMP, and foobar2000 now correctly report the chosen bitrate (reported by @Krezzin, thank you!)",
+    "Rebalanced the Audio/Video format dropdowns in Settings so longer video format names display in full instead of getting cut off",
+    "Settings and Advanced panels now use a simple arrow instead of \"Show\"/\"Hide\" text to indicate expand/collapse state",
+    "New Sneakers theme category \u2014 10 themes including Bred, Royal, Panda, and Grinch, plus a tribute pair honoring the shoe this project is named after: Brick by Brick and Brick After Brick",
+    "Theme catalog now totals 450 built-in themes"
   ],
   "_history": [
+    {
+      "version": "1.2.6",
+      "date": "7/1/2026",
+      "notes": [
+        "Fixed MP3/M4A/Opus downloads sometimes saving as VBR (variable bitrate) instead of the selected CBR bitrate \u2014 audio tools like MediaInfo, AIMP, and foobar2000 now correctly report the chosen bitrate (reported by @Krezzin, thank you!)",
+        "Rebalanced the Audio/Video format dropdowns in Settings so longer video format names display in full instead of getting cut off",
+        "Settings and Advanced panels now use a simple arrow instead of \"Show\"/\"Hide\" text to indicate expand/collapse state",
+        "New Sneakers theme category \u2014 10 themes including Bred, Royal, Panda, and Grinch, plus a tribute pair honoring the shoe this project is named after: Brick by Brick and Brick After Brick",
+        "Theme catalog now totals 450 built-in themes"
+      ]
+    },
     {
       "version": "1.2.5",
       "date": "6/30/2026",
@@ -61,28 +72,19 @@
         "Site compatibility \u2014 curl_cffi enables yt-dlp browser TLS impersonation; improves reliability on sites that block standard HTTP clients",
         "Clean installs \u2014 curl_cffi added to all platform requirements files; guaranteed present on fresh installs across Windows, Mac, and Linux"
       ]
-    },
-    {
-      "version": "1.2.1",
-      "date": "6/24/2026",
-      "notes": [
-        "Includes everything in v1.2.0 CANVAS \u2014 Theme Creator, Universal MP4, saved themes",
-        "Electron 42.4.1 \u2192 42.5.0 \u2014 Wayland maximize fix, Windows edge cases, frameless window constraints",
-        "Chromium and Node.js security backports included via Electron update"
-      ]
     }
   ],
-  "_last_updated": "2026-06-30T14:39:19-04:00",
-  "version": "1.2.5",
-  "build": 138,
-  "label": "v1.2.5 - Build 138 - 6/30/2026 1:15 PM EST",
+  "_last_updated": "2026-07-01T14:01:14-04:00",
+  "version": "1.2.6",
+  "build": 139,
+  "label": "v1.2.6 - Build 139 - 7/1/2026 1:30 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdL.zip",
   "zip": "EGMdL.zip",
   "_checksums": {
-    "sha256": "17a462f0713e8e4c5e0d49bcf0a8edce318ade9f47be4de304444d956771f53c",
+    "sha256": "0e5e18dcf29db8ae9235c4855147150f2b28b48ce130d833402d476ecc9dfe5d",
     "algorithm": "SHA-256",
     "file": "EGMdL.zip"
   },
-  "size_bytes": 169965821,
-  "signature": "wbhE5L6Z8kxbS2rPniR1S4gonNMh8GZIjq49GUtqOdaUcGCuP8NrNBzk89rG3EN0H0Dg5G6cTrJiizKoK6hFBQ=="
+  "size_bytes": 169968662,
+  "signature": "6wKFJMmllguTJd+N29cTJbAdzbFt8JKwBnANTARbQmBwIjuxRHOP2Udm8vqmOyDXkRP4HsNpJHkbAGsMPbEYCA=="
 }

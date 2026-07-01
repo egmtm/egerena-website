@@ -1,11 +1,24 @@
 {
   "_comment": "EGM Downloader Windows Portable update feed. Upload to egerena.com/apps/egm-portable-version.json",
   "_version_notes": [
-    "Electron runtime updated to v43.0.0 \u2014 includes Chromium and Node.js stability and security updates",
-    "New Modern theme category \u2014 20 themes covering internet-culture and lifestyle aesthetics, from Clean Girl and Dark Academia to Algorithm and Y2K Revival",
-    "Theme catalog now totals 440 built-in themes"
+    "Fixed MP3/M4A/Opus downloads sometimes saving as VBR (variable bitrate) instead of the selected CBR bitrate \u2014 audio tools like MediaInfo, AIMP, and foobar2000 now correctly report the chosen bitrate (reported by @Krezzin, thank you!)",
+    "Rebalanced the Audio/Video format dropdowns in Settings so longer video format names display in full instead of getting cut off",
+    "Settings and Advanced panels now use a simple arrow instead of \"Show\"/\"Hide\" text to indicate expand/collapse state",
+    "New Sneakers theme category \u2014 10 themes including Bred, Royal, Panda, and Grinch, plus a tribute pair honoring the shoe this project is named after: Brick by Brick and Brick After Brick",
+    "Theme catalog now totals 450 built-in themes"
   ],
   "_history": [
+    {
+      "version": "1.2.6",
+      "date": "7/1/2026",
+      "notes": [
+        "Fixed MP3/M4A/Opus downloads sometimes saving as VBR (variable bitrate) instead of the selected CBR bitrate \u2014 audio tools like MediaInfo, AIMP, and foobar2000 now correctly report the chosen bitrate (reported by @Krezzin, thank you!)",
+        "Rebalanced the Audio/Video format dropdowns in Settings so longer video format names display in full instead of getting cut off",
+        "Settings and Advanced panels now use a simple arrow instead of \"Show\"/\"Hide\" text to indicate expand/collapse state",
+        "New Sneakers theme category \u2014 10 themes including Bred, Royal, Panda, and Grinch, plus a tribute pair honoring the shoe this project is named after: Brick by Brick and Brick After Brick",
+        "Theme catalog now totals 450 built-in themes"
+      ]
+    },
     {
       "version": "1.2.5",
       "date": "6/30/2026",
@@ -60,28 +73,19 @@
         "Clean installs \u2014 curl_cffi added to all platform requirements files; guaranteed present on fresh installs across Windows, Mac, and Linux",
         "Portable edition \u2014 curl_cffi now correctly detected and installed on first launch or when absent from an existing install"
       ]
-    },
-    {
-      "version": "1.2.1",
-      "date": "6/24/2026",
-      "notes": [
-        "Includes everything in v1.2.0 CANVAS \u2014 Theme Creator, Universal MP4, saved themes",
-        "Electron 42.4.1 \u2192 42.5.0 \u2014 Wayland maximize fix, Windows edge cases, frameless window constraints",
-        "Chromium and Node.js security backports included via Electron update"
-      ]
     }
   ],
-  "_last_updated": "2026-06-30T14:39:19-04:00",
-  "version": "1.2.5",
-  "build": 138,
-  "label": "v1.2.5 - Build 138 - 6/30/2026 1:15 PM EST",
+  "_last_updated": "2026-07-01T14:01:14-04:00",
+  "version": "1.2.6",
+  "build": 139,
+  "label": "v1.2.6 - Build 139 - 7/1/2026 1:30 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd-portable.zip",
   "zip": "EGMd-portable.zip",
   "_checksums": {
-    "sha256": "539367dfc5d191a0f5d40d89f975ffce8556e19eeb6908463cdad0091569b7ae",
+    "sha256": "52764a036934f12c471b1f05c4b650520e1919e5a6fe191810309c3a56865281",
     "algorithm": "SHA-256",
     "file": "EGMd-portable.zip"
   },
-  "size_bytes": 474450,
-  "signature": "e8mE9Ncv+9qn5QyZ8XXmxdjRRSabHWIKcsQa1V/GLY028yca8zgjOOldpH9FmnulZKNoZwwLdn5PVxIf9NKvAw=="
+  "size_bytes": 477818,
+  "signature": "NAhudkfICdJS7GnhEBcjKxeu4CzZ4YR1mHru6ENWo1yqEaMn5JGutBJnMQ2Z9oGuTw4lGMkOmj/BP5mqaPTKBQ=="
 }

@@ -1,13 +1,40 @@
 {
   "_comment": "EGM Downloader Windows Portable update feed. Upload to egerena.com/apps/egm-portable-version.json",
   "_version_notes": [
-    "Fixed MP3/M4A/Opus downloads sometimes saving as VBR (variable bitrate) instead of the selected CBR bitrate \u2014 audio tools like MediaInfo, AIMP, and foobar2000 now correctly report the chosen bitrate (reported by @Krezzin, thank you!)",
-    "Rebalanced the Audio/Video format dropdowns in Settings so longer video format names display in full instead of getting cut off",
-    "Settings and Advanced panels now use a simple arrow instead of \"Show\"/\"Hide\" text to indicate expand/collapse state",
-    "New Sneakers theme category \u2014 10 themes including Bred, Royal, Panda, and Grinch, plus a tribute pair honoring the shoe this project is named after: Brick by Brick and Brick After Brick",
-    "Theme catalog now totals 450 built-in themes"
+    "Fixed the \"What's New\" update modal never appearing after an update",
+    "Fixed \"Download All\" getting stuck if a queued item was removed mid-run",
+    "Fixed queue reorder arrows sometimes moving the wrong item",
+    "Fixed a crash when switching a subscription's format after setting a per-video quality override",
+    "Fixed audio and video quality selections interfering with each other in some cases",
+    "Fixed the History window sometimes keeping the wrong theme colors after switching themes",
+    "Fixed a rare issue where importing a history backup could affect files outside the app's folder",
+    "Fixed a download getting stuck on \"Queued\" forever if the save folder became unavailable (e.g. an unplugged drive)",
+    "Fixed a download card getting stuck on \"Downloading\u2026\" if the job was cleared from memory",
+    "Fixed the mini History panel permanently hiding half of each batch of entries",
+    "Fixed the Deno \"Install\" button doing nothing",
+    "Reinstalling Deno now applies immediately in the background \u2014 no restart needed",
+    "Reinstalling Electron now offers to restart the app immediately to apply it, instead of requiring a manual close and reopen"
   ],
   "_history": [
+    {
+      "version": "1.2.7",
+      "date": "7/2/2026",
+      "notes": [
+        "Fixed the \"What's New\" update modal never appearing after an update",
+        "Fixed \"Download All\" getting stuck if a queued item was removed mid-run",
+        "Fixed queue reorder arrows sometimes moving the wrong item",
+        "Fixed a crash when switching a subscription's format after setting a per-video quality override",
+        "Fixed audio and video quality selections interfering with each other in some cases",
+        "Fixed the History window sometimes keeping the wrong theme colors after switching themes",
+        "Fixed a rare issue where importing a history backup could affect files outside the app's folder",
+        "Fixed a download getting stuck on \"Queued\" forever if the save folder became unavailable (e.g. an unplugged drive)",
+        "Fixed a download card getting stuck on \"Downloading\u2026\" if the job was cleared from memory",
+        "Fixed the mini History panel permanently hiding half of each batch of entries",
+        "Fixed the Deno \"Install\" button doing nothing",
+        "Reinstalling Deno now applies immediately in the background \u2014 no restart needed",
+        "Reinstalling Electron now offers to restart the app immediately to apply it, instead of requiring a manual close and reopen"
+      ]
+    },
     {
       "version": "1.2.6",
       "date": "7/1/2026",
@@ -63,29 +90,19 @@
         "JS syntax gate \u2014 new pytest guard checks every JS template module on both platforms; catches syntax errors that bypass all other tests",
         "History panel \u2014 title, filename, and URL fields now escaped before rendering; prevents stored XSS from attacker-controlled download metadata"
       ]
-    },
-    {
-      "version": "1.2.2",
-      "date": "6/25/2026",
-      "notes": [
-        "Kick VOD downloads \u2014 fixed 403 errors caused by missing curl_cffi TLS impersonation library; added to all platform dependency lists",
-        "Site compatibility \u2014 curl_cffi enables yt-dlp browser TLS impersonation; improves reliability on sites that block standard HTTP clients",
-        "Clean installs \u2014 curl_cffi added to all platform requirements files; guaranteed present on fresh installs across Windows, Mac, and Linux",
-        "Portable edition \u2014 curl_cffi now correctly detected and installed on first launch or when absent from an existing install"
-      ]
     }
   ],
-  "_last_updated": "2026-07-01T14:01:14-04:00",
-  "version": "1.2.6",
-  "build": 139,
-  "label": "v1.2.6 - Build 139 - 7/1/2026 1:30 PM EST",
+  "_last_updated": "2026-07-02T12:21:43-04:00",
+  "version": "1.2.7",
+  "build": 140,
+  "label": "v1.2.7 - Build 140 - 7/2/2026 10:42 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd-portable.zip",
   "zip": "EGMd-portable.zip",
   "_checksums": {
-    "sha256": "52764a036934f12c471b1f05c4b650520e1919e5a6fe191810309c3a56865281",
+    "sha256": "998f309758ca199e7f09ba5340edb68ddd19914052d6301d18c0f68f12205619",
     "algorithm": "SHA-256",
     "file": "EGMd-portable.zip"
   },
-  "size_bytes": 477818,
-  "signature": "NAhudkfICdJS7GnhEBcjKxeu4CzZ4YR1mHru6ENWo1yqEaMn5JGutBJnMQ2Z9oGuTw4lGMkOmj/BP5mqaPTKBQ=="
+  "size_bytes": 479541,
+  "signature": "s7cxKwJYjG+M4FDqqQWI9wz8Vrnqpr/ki41xnvjXCzYo/SaCi5fLH6+pNZV9BA4iWiHVpiVCtB3prUhov/cvBw=="
 }

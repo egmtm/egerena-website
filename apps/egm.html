@@ -6,7 +6,7 @@
     <meta name="description" content="EGM Downloader - Professional video downloader for Windows. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta name="keywords" content="video downloader, youtube downloader, yt-dlp, windows downloader, multi-site downloader">
     <meta name="author" content="egerena.com">
-    <meta property="og:title" content="EGM Downloader v1.2.6 - Professional Video Downloader">
+    <meta property="og:title" content="EGM Downloader v1.2.7 - Professional Video Downloader">
     <meta property="og:description" content="Professional video downloader with zero-config setup. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta property="og:url" content="https://egerena.com/apps/egm.html">
     <title>EGM Downloader for Windows</title>
@@ -67,14 +67,14 @@
 
         <section class="section">
             <div class="card download-card">
-                <h2 class="download-title">EGM Downloader v1.2.6</h2>
+                <h2 class="download-title">EGM Downloader v1.2.7</h2>
                 <a href="https://egerena.com/apps/EGMd.zip" class="download-btn">Download EGM Downloader</a>
                 <p class="version-subtitle">Installer &middot; adds Start Menu shortcut &middot; auto-updates &middot; 321 KB &middot; ~800 MB after install</p>
-                <p class="sha256-line">SHA256: 5bd6367532ceb175fb7b5829d0728849bced3748fcf98997cec7dafb21853d78</p>
+                <p class="sha256-line">SHA256: 80ba204b9eaf339b7036caef752efc7d34f4e8e5163344bc7d06d1d35194a074</p>
                 <div class="portable-divider"><span>or</span></div>
                 <a href="https://egerena.com/apps/EGMd-portable.zip" class="download-btn download-btn-secondary">Get the portable version</a>
-                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 467 KB &middot; ~800 MB after first run &middot; digitally signed</p>
-                <p class="sha256-line">SHA256: 52764a036934f12c471b1f05c4b650520e1919e5a6fe191810309c3a56865281</p>
+                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 468 KB &middot; ~800 MB after first run &middot; digitally signed</p>
+                <p class="sha256-line">SHA256: 998f309758ca199e7f09ba5340edb68ddd19914052d6301d18c0f68f12205619</p>
         <!-- SmartScreen Disclaimer -->
         <details class="disclaimer-collapsible smartscreen-disclaimer" id="smartscreen-disclaimer">
             <summary class="disclaimer-summary">
@@ -100,18 +100,32 @@
         </details>
 
 <div class="whats-new">
-                    <p class="whats-new-heading">What's New in v1.2.6 — 7/1/2026</p>
-                    <p class="polish-label">right on key</p>
+                    <p class="whats-new-heading">What's New in v1.2.7 — 7/2/2026</p>
+                    <p class="polish-label">stability pass</p>
                     <ul>
-                        <li>Fixed MP3/M4A/Opus downloads sometimes saving as VBR (variable bitrate) instead of the selected CBR bitrate — audio tools like MediaInfo, AIMP, and foobar2000 now correctly report the chosen bitrate (reported by @Krezzin, thank you!)</li>
-                        <li>Rebalanced the Audio/Video format dropdowns in Settings so longer video format names display in full instead of getting cut off</li>
-                        <li>Settings and Advanced panels now use a simple arrow instead of "Show"/"Hide" text to indicate expand/collapse state</li>
-                        <li>New Sneakers theme category — 10 themes including Bred, Royal, Panda, and Grinch, plus a tribute pair honoring the shoe this project is named after: Brick by Brick and Brick After Brick</li>
-                        <li>Theme catalog now totals 450 built-in themes</li>
-                    </ul>                 </div>
+                        <li>Fixed the "What's New" update modal never appearing after an update</li>
+                        <li>Fixed "Download All" getting stuck if a queued item was removed mid-run</li>
+                        <li>Fixed queue reorder arrows sometimes moving the wrong item</li>
+                        <li>Fixed a crash when switching a subscription's format after setting a per-video quality override</li>
+                        <li>Fixed audio and video quality selections interfering with each other in some cases</li>
+                        <li>Fixed the History window sometimes keeping the wrong theme colors after switching themes</li>
+                        <li>Fixed a rare issue where importing a history backup could affect files outside the app's folder</li>
+                        <li>Fixed a download getting stuck on "Queued" forever if the save folder became unavailable (e.g. an unplugged drive)</li>
+                        <li>Fixed a download card getting stuck on "Downloading…" if the job was cleared from memory</li>
+                        <li>Fixed the mini History panel permanently hiding half of each batch of entries</li>
+                        <li>Fixed the Deno "Install" button doing nothing</li>
+                        <li>Reinstalling Deno now applies immediately in the background — no restart needed</li>
+                        <li>Reinstalling Electron now offers to restart the app immediately to apply it, instead of requiring a manual close and reopen</li>
+                    </ul>                </div>
                 <details class="history-details">
                     <summary class="history-summary">Previous Updates</summary>
                     <div class="history-content">
+                        <div class="history-item">
+                            <p class="history-version">v1.2.6 — 7/1/2026</p>
+                            <ul>
+                                <li>Right on Key — audio CBR fix, sneakers themes, arrow toggles, 450 themes</li>
+                            </ul>
+                        </div>
                         <div class="history-item">
                             <p class="history-version">v1.2.5 — 6/30/2026</p>
                             <ul>

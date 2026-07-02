@@ -1,13 +1,40 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Fixed MP3/M4A/Opus downloads sometimes saving as VBR (variable bitrate) instead of the selected CBR bitrate \u2014 audio tools like MediaInfo, AIMP, and foobar2000 now correctly report the chosen bitrate (reported by @Krezzin, thank you!)",
-    "Rebalanced the Audio/Video format dropdowns in Settings so longer video format names display in full instead of getting cut off",
-    "Settings and Advanced panels now use a simple arrow instead of \"Show\"/\"Hide\" text to indicate expand/collapse state",
-    "New Sneakers theme category \u2014 10 themes including Bred, Royal, Panda, and Grinch, plus a tribute pair honoring the shoe this project is named after: Brick by Brick and Brick After Brick",
-    "Theme catalog now totals 450 built-in themes"
+    "Fixed ffmpeg process not closing properly when cancelling a download or quitting the app",
+    "Fixed the \"What's New\" update modal never appearing after an update",
+    "Fixed \"Download All\" getting stuck if a queued item was removed mid-run",
+    "Fixed queue reorder arrows sometimes moving the wrong item",
+    "Fixed a crash when switching a subscription's format after setting a per-video quality override",
+    "Fixed audio and video quality selections interfering with each other in some cases",
+    "Fixed the History window sometimes keeping the wrong theme colors after switching themes",
+    "Fixed a rare issue where importing a history backup could affect files outside the app's folder",
+    "Fixed a download getting stuck on \"Queued\" forever if the save folder became unavailable (e.g. an unplugged drive)",
+    "Fixed a download card getting stuck on \"Downloading\u2026\" if the job was cleared from memory",
+    "Fixed the mini History panel permanently hiding half of each batch of entries",
+    "Fixed the Deno \"Install\" button doing nothing",
+    "Reinstalling Deno now applies immediately in the background \u2014 no restart needed"
   ],
   "_history": [
+    {
+      "version": "1.2.7",
+      "date": "7/2/2026",
+      "notes": [
+        "Fixed ffmpeg process not closing properly when cancelling a download or quitting the app",
+        "Fixed the \"What's New\" update modal never appearing after an update",
+        "Fixed \"Download All\" getting stuck if a queued item was removed mid-run",
+        "Fixed queue reorder arrows sometimes moving the wrong item",
+        "Fixed a crash when switching a subscription's format after setting a per-video quality override",
+        "Fixed audio and video quality selections interfering with each other in some cases",
+        "Fixed the History window sometimes keeping the wrong theme colors after switching themes",
+        "Fixed a rare issue where importing a history backup could affect files outside the app's folder",
+        "Fixed a download getting stuck on \"Queued\" forever if the save folder became unavailable (e.g. an unplugged drive)",
+        "Fixed a download card getting stuck on \"Downloading\u2026\" if the job was cleared from memory",
+        "Fixed the mini History panel permanently hiding half of each batch of entries",
+        "Fixed the Deno \"Install\" button doing nothing",
+        "Reinstalling Deno now applies immediately in the background \u2014 no restart needed"
+      ]
+    },
     {
       "version": "1.2.6",
       "date": "7/1/2026",
@@ -61,28 +88,19 @@
         "JS syntax gate \u2014 new pytest guard checks every JS template module on both platforms; catches syntax errors that bypass all other tests",
         "History panel \u2014 title, filename, and URL fields now escaped before rendering; prevents stored XSS from attacker-controlled download metadata"
       ]
-    },
-    {
-      "version": "1.2.2",
-      "date": "6/25/2026",
-      "notes": [
-        "Kick VOD downloads \u2014 fixed 403 errors caused by missing curl_cffi TLS impersonation library; added to all platform dependency lists",
-        "Site compatibility \u2014 curl_cffi enables yt-dlp browser TLS impersonation; improves reliability on sites that block standard HTTP clients",
-        "Clean installs \u2014 curl_cffi added to all platform requirements files; guaranteed present on fresh installs across Windows, Mac, and Linux"
-      ]
     }
   ],
-  "_last_updated": "2026-07-01T14:01:14-04:00",
-  "version": "1.2.6",
-  "build": 139,
-  "label": "v1.2.6 - Build 139 - 7/1/2026 1:30 PM EST",
+  "_last_updated": "2026-07-02T12:21:43-04:00",
+  "version": "1.2.7",
+  "build": 140,
+  "label": "v1.2.7 - Build 140 - 7/2/2026 10:42 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "8f61a5a3708816545601ecd08e66b6078363f7080f8f7a0a215b5708dd711b5c",
+    "sha256": "329282aa587617d63d02d429a874719a0f14af19ff1c69c184637c6746985ee8",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 140722853,
-  "signature": "wGUFMco7eyI8eHCmJiYLiLonhIzRicI4TWiKZXBYHdk3UXc35yH51OuavUWsLTNrzEG/Ljy5gNPc9YalBIS3AA=="
+  "size_bytes": 140733643,
+  "signature": "c40pe9X7wUJMBTEsPMAeKWGp7GiDZbQyTrPLZxzX9rB/hsAWyY5oPAs2gLt3YEADAUaLSQ6BlzGXcc0PqtFtBg=="
 }

@@ -109,10 +109,10 @@
         <div class="glass-card">
             <section class="section">
                 <div class="download-section">
-                <h3>📦 EGM Downloader 1.2.6</h3>
+                <h3>📦 EGM Downloader 1.2.7</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
                 <p class="version-subtitle" style="text-align:center;margin-top:4px">134 MB &middot; ~300 MB after install &middot; near instant startup</p>
-                <p class="sha256-line">SHA256: 8f61a5a3708816545601ecd08e66b6078363f7080f8f7a0a215b5708dd711b5c</p>
+                <p class="sha256-line">SHA256: 329282aa587617d63d02d429a874719a0f14af19ff1c69c184637c6746985ee8</p>
 
                 <!-- Apple Notarization Trust Signal -->
                 <details class="disclaimer-collapsible apple-trust-signal" id="apple-trust-signal">
@@ -128,18 +128,30 @@
                 </details>
 
 <p class="whats-new-content">
-                    <strong>What's New in 1.2.6 — 7/1/2026:</strong><br>
-<em class="polish-label">right on key</em><br><br>
-                    • Fixed MP3/M4A/Opus downloads sometimes saving as VBR (variable bitrate) instead of the selected CBR bitrate — audio tools like MediaInfo, AIMP, and foobar2000 now correctly report the chosen bitrate (reported by @Krezzin, thank you!)<br>
-                    • Rebalanced the Audio/Video format dropdowns in Settings so longer video format names display in full instead of getting cut off<br>
-                    • Settings and Advanced panels now use a simple arrow instead of "Show"/"Hide" text to indicate expand/collapse state<br>
-                    • New Sneakers theme category — 10 themes including Bred, Royal, Panda, and Grinch, plus a tribute pair honoring the shoe this project is named after: Brick by Brick and Brick After Brick<br>
-                    • Theme catalog now totals 450 built-in themes
+                    <strong>What's New in 1.2.7 — 7/2/2026:</strong><br>
+<em class="polish-label">stability pass</em><br><br>
+                    • Fixed ffmpeg process not closing properly when cancelling a download or quitting the app<br>
+                    • Fixed the "What's New" update modal never appearing after an update<br>
+                    • Fixed "Download All" getting stuck if a queued item was removed mid-run<br>
+                    • Fixed queue reorder arrows sometimes moving the wrong item<br>
+                    • Fixed a crash when switching a subscription's format after setting a per-video quality override<br>
+                    • Fixed audio and video quality selections interfering with each other in some cases<br>
+                    • Fixed the History window sometimes keeping the wrong theme colors after switching themes<br>
+                    • Fixed a rare issue where importing a history backup could affect files outside the app's folder<br>
+                    • Fixed a download getting stuck on "Queued" forever if the save folder became unavailable (e.g. an unplugged drive)<br>
+                    • Fixed a download card getting stuck on "Downloading…" if the job was cleared from memory<br>
+                    • Fixed the mini History panel permanently hiding half of each batch of entries<br>
+                    • Fixed the Deno "Install" button doing nothing<br>
+                    • Reinstalling Deno now applies immediately in the background — no restart needed
                 </p>
                 
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>
                     <div class="history-content">
+                        <p class="history-item">
+                            <strong>v1.2.6 — 7/1/2026:</strong><br>
+                            • Right on Key — audio CBR fix, sneakers themes, arrow toggles, 450 themes
+                        </p>
                         <p class="history-item">
                             <strong>v1.2.5 — 6/30/2026:</strong><br>
                             • Modern — Electron 43, 20 Modern category themes, 440 themes, Linux frameless rounded corners

@@ -130,9 +130,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3>> EGM_DOWNLOADER_v1.2.7<span class="dl-ext">.AppImage</span></h3>
+                <h3>> EGM_DOWNLOADER_v1.3.0<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: 6c8a3fd09f6e14ce6a7916aee1f872dd02bb173f1c1ce3e3c2fe59194afb0cd7</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: af36bab30a47310a67206bbf24fe096366c34687111b2b1bfe4ced69c78cef35</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">133 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -140,27 +140,42 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN v1.2.7</div>
+                <div class="section-header">> WHAT'S NEW IN v1.3.0</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-                <div class="whats-new-subtitle">v1.2.7 — 7/2/2026</div>
+                <div class="whats-new-subtitle">v1.3.0 — 7/12/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
-                <div class="polish-label">// stability pass</div>
+                <div class="polish-label">// full throttle</div>
                 <ul>
-                    <li>Fixed the "What's New" update modal never appearing after an update</li>
-                    <li>Fixed "Download All" getting stuck if a queued item was removed mid-run</li>
-                    <li>Fixed queue reorder arrows sometimes moving the wrong item</li>
-                    <li>Fixed a crash when switching a subscription's format after setting a per-video quality override</li>
-                    <li>Fixed audio and video quality selections interfering with each other in some cases</li>
-                    <li>Fixed the History window sometimes keeping the wrong theme colors after switching themes</li>
-                    <li>Fixed a rare issue where importing a history backup could affect files outside the app's folder</li>
-                    <li>Fixed a download getting stuck on "Queued" forever if the save folder became unavailable (e.g. an unplugged drive)</li>
-                    <li>Fixed a download card getting stuck on "Downloading…" if the job was cleared from memory</li>
-                    <li>Fixed the mini History panel permanently hiding half of each batch of entries</li>
-                    <li>Fixed the Deno "Install" button doing nothing</li>
-                    <li>Reinstalling Deno now applies immediately in the background — no restart needed</li>
-                </ul>         <details class="history-details">
+                    <li>New in-app language selector — EGM Downloader now speaks 10 languages: English, Arabic, German, Spanish, French, Italian, Japanese, Dutch, Portuguese, and Russian</li>
+                    <li>Language auto-detects from your system on first launch, and can be changed anytime from the footer — no restart needed</li>
+                    <li>Language selector can be hidden from Advanced settings for a cleaner footer, and re-enabled anytime</li>
+                    <li>Downloaded subtitles now include your selected app language alongside English (when available for that video)</li>
+                    <li>New opt-in "Upscale to selected quality" — videos smaller than the chosen quality preset are proportionally upscaled to it after download (off by default; adds pixels, not detail)</li>
+                    <li>Video conversion (the "MP4 · H.264" compatibility format and Upscale) now uses your GPU when available, cutting CPU load and heat dramatically — automatically falls back to software encoding if no compatible GPU is found or it's busy</li>
+                    <li>New: HDR downloads — videos with an HDR version (HDR10, HDR10+, HLG, Dolby Vision) now show it as a separate option per resolution. HDR downloads save as MKV to preserve the HDR data untouched (requires an HDR-capable display and player to actually look right)</li>
+                    <li>Fixed Full HD/4K downloads sometimes downloading a smaller video than "Best available" on portrait video (TikTok, Shorts, Reels) — thank you @ligun0510!</li>
+                    <li>Fixed cancel not working during video conversion — clicking Cancel while a video was converting was silently ignored, and the conversion ran to completion anyway</li>
+                    <li>The "Converting…" status now shows which encoder is being used (e.g. "Converting… · h264_nvenc"), so you can confirm hardware acceleration is active</li>
+                    <li>Deno now updates alongside yt-dlp, ffmpeg, and other plugins in Advanced settings, instead of its own separate button</li>
+                    <li>Advanced panel now shows current → latest version for optional libraries and ffmpeg when an update is available, and correctly detects updates after switching ffmpeg channels</li>
+                    <li>Minor spacing polish — collapsed Subscriptions sidebar thumbnails, and the Update/What's New modals no longer crowd their scrollbar against the text</li>
+                    <li>The download queue in Subscriptions now stays pinned at the top of the sidebar — with a long channel list, it used to scroll out of view</li>
+                    <li>Site Cookies panel in Settings redesigned into a more compact, centered layout</li>
+                    <li>Settings panel (including Site Cookies) can now be hidden from Advanced settings for a cleaner look, same as the language selector</li>
+                    <li>Subscriptions now detects and labels members-only videos (requires the latest yt-dlp stable or nightly — this didn't work on older stable releases)</li>
+                    <li>Deleting a custom theme now asks for confirmation first — previously deleted instantly with no way to undo</li>
+                    <li>Removed the "Clear cache" button from Advanced settings — it served no real purpose, since temp/partial files are already cleaned up automatically after every download and on every app launch</li>
+                    <li>Fixed an issue where users were attempting to enter the Konami code.</li>
+                    <li>50 new themes added — 500 total. 8 international holidays and 4 memes, a category-balance batch (Dark, Light, Futuristic, Retro), a new "Old Internet" category, and Vehicle History (10 real, 10 fictional)</li>
+                    <li>Backed by 117 automated tests covering security, process safety, and cross-platform consistency — all passing</li>
+                </ul>        <details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v1.2.7 — 7/2/2026</div>
+                        <ul>
+                            <li>Stability Pass — 13 fixes from Fable review, queue/download/theme reliability</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version">v1.2.6 — 7/1/2026</div>
                         <ul>
                             <li>Right on Key — audio CBR fix, sneakers themes, arrow toggles, 450 themes</li>
@@ -321,47 +336,7 @@
         </section>
 
         <!-- Roadmap Section -->
-        <section class="section">
-            <div class="terminal-box">
-                <div class="section-header">> WHAT'S COMING</div>
-                <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-
-                <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--terminal-color);opacity:0.6;padding:4px 0 8px;margin:0;">// launch &amp; beyond</p>
-                                <div class="whats-new-subtitle history-version">v1.3 — POLYGLOT: FULL THROTTLE</div>
-                <ul>
-                    <li>New in-app language selector — EGM Downloader now speaks 10 languages: English, Arabic, German, Spanish, French, Italian, Japanese, Dutch, Portuguese, and Russian</li>
-                    <li>Language auto-detects from your system on first launch, and can be changed anytime from the footer — no restart needed</li>
-                    <li>Language selector can be hidden from Advanced settings for a cleaner footer, and re-enabled anytime</li>
-                    <li>Downloaded subtitles now include your selected app language alongside English (when available for that video)</li>
-                    <li>New opt-in "Upscale to selected quality" — videos smaller than the chosen quality preset are proportionally upscaled to it after download (off by default; adds pixels, not detail)</li>
-                    <li>Video conversion (the "MP4 · H.264" compatibility format and Upscale) now uses your GPU when available, cutting CPU load and heat dramatically — automatically falls back to software encoding if no compatible GPU is found or it's busy</li>
-                    <li>New: HDR downloads — videos with an HDR version (HDR10, HDR10+, HLG, Dolby Vision) now show it as a separate option per resolution. HDR downloads save as MKV to preserve the HDR data untouched (requires an HDR-capable display and player to actually look right)</li>
-                    <li>Fixed Full HD/4K downloads sometimes downloading a smaller video than "Best available" on portrait video (TikTok, Shorts, Reels)</li>
-                    <li>Fixed cancel not working during video conversion — clicking Cancel while a video was converting was silently ignored, and the conversion ran to completion anyway</li>
-                    <li>The "Converting…" status now shows which encoder is being used (e.g. "Converting… · h264_nvenc"), so you can confirm hardware acceleration is active</li>
-                    <li>Deno now updates alongside yt-dlp, ffmpeg, and other plugins in Advanced settings, instead of its own separate button</li>
-                    <li>Advanced panel now shows current → latest version for optional libraries and ffmpeg when an update is available, and correctly detects updates after switching ffmpeg channels</li>
-                    <li>Minor spacing polish — collapsed Subscriptions sidebar thumbnails, and the Update/What's New modals no longer crowd their scrollbar against the text</li>
-                    <li>The download queue in Subscriptions now stays pinned at the top of the sidebar — with a long channel list, it used to scroll out of view</li>
-                    <li>Site Cookies panel in Settings redesigned into a more compact, centered layout</li>
-                    <li>Settings panel (including Site Cookies) can now be hidden from Advanced settings for a cleaner look, same as the language selector</li>
-                    <li>Subscriptions now detects and labels members-only videos (requires the latest yt-dlp stable or nightly)</li>
-                    <li>Deleting a custom theme now asks for confirmation first — previously deleted instantly with no way to undo</li>
-                    <li>Removed the "Clear cache" button from Advanced settings — temp/partial files are already cleaned up automatically after every download and on every app launch</li>
-                    <li>Fixed an issue where users were attempting to enter the Konami code</li>
-                    <li>Ships with 500 themes</li>
-                    <li>Backed by 117 automated tests covering security, process safety, and cross-platform consistency — all passing</li>
-                    <li>Fixed cancelling a video conversion (H.264 fix-up or Upscale) sometimes closing the whole app instead of just that download</li>
-                    <li>Optional libraries (curl-cffi, brotli, pycryptodomex, websockets, certifi) can now be updated in-app from Advanced settings — previously view-only on these platforms</li>
-                </ul>
-
-
-                <div class="whats-new-subtitle history-version">v1.4 and beyond</div>
-                <ul>
-                    <li><em>Browser extension — send URLs straight to EGM Downloader without leaving your browser. Revisiting when the userbase is stronger.</em></li>
-                </ul>
-            </div>
-        </section>
+        
 
         <!-- Installation Section -->
         <section class="section">

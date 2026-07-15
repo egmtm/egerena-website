@@ -6,7 +6,7 @@
     <meta name="description" content="EGM Downloader - Professional video downloader for Windows. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta name="keywords" content="video downloader, youtube downloader, yt-dlp, windows downloader, multi-site downloader">
     <meta name="author" content="egerena.com">
-    <meta property="og:title" content="EGM Downloader v1.3.0 - Professional Video Downloader">
+    <meta property="og:title" content="EGM Downloader v1.3.1 - Professional Video Downloader">
     <meta property="og:description" content="Professional video downloader with zero-config setup. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta property="og:url" content="https://egerena.com/apps/egm.html">
     <title>EGM Downloader for Windows</title>
@@ -67,14 +67,14 @@
 
         <section class="section">
             <div class="card download-card">
-                <h2 class="download-title">EGM Downloader v1.3.0</h2>
+                <h2 class="download-title">EGM Downloader v1.3.1</h2>
                 <a href="https://egerena.com/apps/EGMd.zip" class="download-btn">Download EGM Downloader</a>
                 <p class="version-subtitle">Installer &middot; adds Start Menu shortcut &middot; auto-updates &middot; 321 KB &middot; ~800 MB after install</p>
-                <p class="sha256-line">SHA256: 5f9a694c9b65430d730a0169d678aff7afeff8cca9f3847d686521532e1a865f</p>
+                <p class="sha256-line">SHA256: 1cfaef13840beb97e9c40b28710153bef28040682e5e43ee2203ff873cd5394c</p>
                 <div class="portable-divider"><span>or</span></div>
                 <a href="https://egerena.com/apps/EGMd-portable.zip" class="download-btn download-btn-secondary">Get the portable version</a>
-                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 574 KB &middot; ~800 MB after first run &middot; digitally signed</p>
-                <p class="sha256-line">SHA256: 51270fa3a8e6ae511d07e08b94aa57fe5730f5c7b0ac956cfef3f8be4360f00a</p>
+                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 591 KB &middot; ~800 MB after first run &middot; digitally signed</p>
+                <p class="sha256-line">SHA256: 4ff5088de1f76931eaba77e207187ad3062c84b6a96961042b5261a5eeebf28a</p>
         <!-- SmartScreen Disclaimer -->
         <details class="disclaimer-collapsible smartscreen-disclaimer" id="smartscreen-disclaimer">
             <summary class="disclaimer-summary">
@@ -100,38 +100,22 @@
         </details>
 
 <div class="whats-new">
-                    <p class="whats-new-heading">What's New in v1.3.0 — 7/12/2026</p>
-                    <p class="polish-label">full throttle</p>
+                    <p class="whats-new-heading">What's New in v1.3.1 — 7/15/2026</p>
+                    <p class="polish-label">lost in translation</p>
                     <ul>
-                        <li>New in-app language selector — EGM Downloader now speaks 10 languages: English, Arabic, German, Spanish, French, Italian, Japanese, Dutch, Portuguese, and Russian</li>
-                        <li>Language auto-detects from your system on first launch, and can be changed anytime from the footer — no restart needed</li>
-                        <li>Language selector can be hidden from Advanced settings for a cleaner footer, and re-enabled anytime</li>
-                        <li>Downloaded subtitles now include your selected app language alongside English (when available for that video)</li>
-                        <li>Installer redesigned to match the app's dark theme, with language selection at setup — available in all 10 supported languages</li>
-                        <li>New opt-in "Upscale to selected quality" — videos smaller than the chosen quality preset are proportionally upscaled to it after download (off by default; adds pixels, not detail)</li>
-                        <li>Video conversion (the "MP4 · H.264" compatibility format and Upscale) now uses your GPU when available, cutting CPU load and heat dramatically — automatically falls back to software encoding if no compatible GPU is found or it's busy</li>
-                        <li>New: HDR downloads — videos with an HDR version (HDR10, HDR10+, HLG, Dolby Vision) now show it as a separate option per resolution. HDR downloads save as MKV to preserve the HDR data untouched (requires an HDR-capable display and player to actually look right)</li>
-                        <li>Fixed Full HD/4K downloads sometimes downloading a smaller video than "Best available" on portrait video (TikTok, Shorts, Reels) — thank you @ligun0510!</li>
-                        <li>Fixed cancel not working during video conversion — clicking Cancel while a video was converting was silently ignored, and the conversion ran to completion anyway</li>
-                        <li>The "Converting…" status now shows which encoder is being used (e.g. "Converting… · h264_nvenc"), so you can confirm hardware acceleration is active</li>
-                        <li>Deno now updates alongside yt-dlp, ffmpeg, and other plugins in Advanced settings, instead of its own separate button</li>
-                        <li>Advanced panel now shows current → latest version for optional libraries and ffmpeg when an update is available, and correctly detects updates after switching ffmpeg channels</li>
-                        <li>Minor spacing polish — collapsed Subscriptions sidebar thumbnails, and the Update/What's New modals no longer crowd their scrollbar against the text</li>
-                        <li>The download queue in Subscriptions now stays pinned at the top of the sidebar — with a long channel list, it used to scroll out of view</li>
-                        <li>Site Cookies panel in Settings redesigned into a more compact, centered layout</li>
-                        <li>Settings panel (including Site Cookies) can now be hidden from Advanced settings for a cleaner look, same as the language selector</li>
-                        <li>Subscriptions now detects and labels members-only videos (requires the latest yt-dlp stable or nightly — this didn't work on older stable releases)</li>
-                        <li>Deleting a custom theme now asks for confirmation first — previously deleted instantly with no way to undo</li>
-                        <li>Removed the "Clear cache" button from Advanced settings — it served no real purpose, since temp/partial files are already cleaned up automatically after every download and on every app launch</li>
-                        <li>Advanced panel tidied up — Check for app update/Desktop shortcut and Reinstall Electron/Reset settings now sit two-to-a-row instead of stacked</li>
-                        <li>Fixed the taskbar right-click menu showing "Electron" instead of "EGM Downloader"</li>
-                        <li>Fixed an issue where users were attempting to enter the Konami code.</li>
-                        <li>50 new themes added — 500 total. 8 international holidays and 4 memes, a category-balance batch (Dark, Light, Futuristic, Retro), a new "Old Internet" category, and Vehicle History (10 real, 10 fictional)</li>
-                        <li>Backed by 117 automated tests covering security, process safety, and cross-platform consistency — all passing</li>
-                    </ul>               </div>
+                        <li>Fixed tooltips across the app — main navigation, Advanced settings, Subscriptions, and more — showing in English regardless of your selected language</li>
+                        <li>Fixed dozens of notifications, status messages, and confirmation dialogs throughout the app also showing in English regardless of language — a deeper follow-up pass after the tooltip fix above</li>
+                        <li>Electron runtime updated to v43.1.1 — includes upstream Chromium and Node.js stability and security updates</li>
+                    </ul>              </div>
                 <details class="history-details">
                     <summary class="history-summary">Previous Updates</summary>
                     <div class="history-content">
+                        <div class="history-item">
+                            <p class="history-version">v1.3.0 — 7/12/2026</p>
+                            <ul>
+                                <li>Full Throttle — 10 languages, HDR, GPU acceleration, upscale, 500 themes, 121 tests, 9.5/10</li>
+                            </ul>
+                        </div>
                         <div class="history-item">
                             <p class="history-version">v1.2.7 — 7/2/2026</p>
                             <ul>

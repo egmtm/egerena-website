@@ -1,11 +1,28 @@
 {
   "_comment": "EGM Downloader Linux \u2014 informational, no auto-update. Upload to egerena.com/apps/egmlinux-update.json",
   "_version_notes": [
-    "Fixed tooltips across the app \u2014 main navigation, Advanced settings, Subscriptions, and more \u2014 showing in English regardless of your selected language",
-    "Fixed dozens of notifications, status messages, and confirmation dialogs throughout the app also showing in English regardless of language \u2014 a deeper follow-up pass after the tooltip fix above",
-    "Electron runtime updated to v43.1.1 \u2014 includes upstream Chromium and Node.js stability and security updates"
+    "New: Log Console (Advanced > Maintenance) \u2014 a read-only window showing the app's live diagnostic log, with an option to also show raw yt-dlp output and export the log to a file, for easier troubleshooting",
+    "Conversion now shows real progress \u2014 a percentage and filling bar instead of just a spinner, when the conversion step supports it",
+    "Download cards and the subscriptions queue now show the estimated time remaining (ETA) alongside speed",
+    "Checking for updates (yt-dlp, ffmpeg, plugins) now feels noticeably faster \u2014 the lookups run in parallel instead of one after another",
+    "Repeated update checks are now protected against hitting GitHub's request limit, which could previously cause version info to briefly show as \"unknown\"",
+    "Added a small diagnostic log file to help troubleshoot issues if they come up",
+    "Minor internal code cleanup \u2014 no user-facing changes"
   ],
   "_history": [
+    {
+      "version": "1.3.2",
+      "date": "7/20/2026",
+      "notes": [
+        "New: Log Console (Advanced > Maintenance) \u2014 a read-only window showing the app's live diagnostic log, with an option to also show raw yt-dlp output and export the log to a file, for easier troubleshooting",
+        "Conversion now shows real progress \u2014 a percentage and filling bar instead of just a spinner, when the conversion step supports it",
+        "Download cards and the subscriptions queue now show the estimated time remaining (ETA) alongside speed",
+        "Checking for updates (yt-dlp, ffmpeg, plugins) now feels noticeably faster \u2014 the lookups run in parallel instead of one after another",
+        "Repeated update checks are now protected against hitting GitHub's request limit, which could previously cause version info to briefly show as \"unknown\"",
+        "Added a small diagnostic log file to help troubleshoot issues if they come up",
+        "Minor internal code cleanup \u2014 no user-facing changes"
+      ]
+    },
     {
       "version": "1.3.1",
       "date": "7/15/2026",
@@ -73,30 +90,19 @@
         "New Sneakers theme category \u2014 10 themes including Bred, Royal, Panda, and Grinch, plus a tribute pair honoring the shoe this project is named after: Brick by Brick and Brick After Brick",
         "Theme catalog now totals 450 built-in themes"
       ]
-    },
-    {
-      "version": "1.2.5",
-      "date": "6/30/2026",
-      "notes": [
-        "Frameless windows now have rounded corners by default, matching the existing look on Windows and macOS",
-        "App now shows its correct name and icon in the system volume/audio manager instead of generic \"Chromium\"",
-        "Electron runtime updated to v43.0.0 \u2014 includes Chromium and Node.js stability and security updates",
-        "New Modern theme category \u2014 20 themes covering internet-culture and lifestyle aesthetics, from Clean Girl and Dark Academia to Algorithm and Y2K Revival",
-        "Theme catalog now totals 440 built-in themes"
-      ]
     }
   ],
-  "_last_updated": "2026-07-15T09:58:21-04:00",
-  "version": "1.3.1",
-  "build": 142,
-  "label": "v1.3.1 - Build 142 - 7/15/2026 9:53 AM EST",
+  "_last_updated": "2026-07-19T22:20:25-04:00",
+  "version": "1.3.2",
+  "build": 143,
+  "label": "v1.3.2 - Build 143 - 7/19/2026 9:29 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdL.zip",
   "zip": "EGMdL.zip",
   "_checksums": {
-    "sha256": "062076f3f744ec688270c74206c88e95fb96b6d6422b9a51eb764fe651685664",
+    "sha256": "3e055306389a03b9e95a3b0b9d8a81a0f053964ee97625749157204af75d36c6",
     "algorithm": "SHA-256",
     "file": "EGMdL.zip"
   },
-  "size_bytes": 169155739,
-  "signature": "3/ZgBVLfTXGIW7OzMfTpNSwc1kfhzkj9dV7qURUN9clBb0h6YZSlM9eJCUVb1rlEFXdSXhJC4ch7A3qyU1ukDA=="
+  "size_bytes": 169162781,
+  "signature": "YORVxxSdeejBQo1ZWiIqhtz5/MabBPbqIAO6oj1DPJdbWrltTMCf3RSMwJjwf4G5kRiGit6vIr8FLB5a28ZUAA=="
 }

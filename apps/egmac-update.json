@@ -1,11 +1,28 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Fixed tooltips across the app \u2014 main navigation, Advanced settings, Subscriptions, and more \u2014 showing in English regardless of your selected language",
-    "Fixed dozens of notifications, status messages, and confirmation dialogs throughout the app also showing in English regardless of language \u2014 a deeper follow-up pass after the tooltip fix above",
-    "Electron runtime updated to v43.1.1 \u2014 includes upstream Chromium and Node.js stability and security updates"
+    "New: Log Console (Advanced > Maintenance) \u2014 a read-only window showing the app's live diagnostic log, with an option to also show raw yt-dlp output and export the log to a file, for easier troubleshooting",
+    "Conversion now shows real progress \u2014 a percentage and filling bar instead of just a spinner, when the conversion step supports it",
+    "Download cards and the subscriptions queue now show the estimated time remaining (ETA) alongside speed",
+    "Checking for updates (yt-dlp, ffmpeg, plugins) now feels noticeably faster \u2014 the lookups run in parallel instead of one after another",
+    "Repeated update checks are now protected against hitting GitHub's request limit, which could previously cause version info to briefly show as \"unknown\"",
+    "Added a small diagnostic log file to help troubleshoot issues if they come up",
+    "Minor internal code cleanup \u2014 no user-facing changes"
   ],
   "_history": [
+    {
+      "version": "1.3.2",
+      "date": "7/20/2026",
+      "notes": [
+        "New: Log Console (Advanced > Maintenance) \u2014 a read-only window showing the app's live diagnostic log, with an option to also show raw yt-dlp output and export the log to a file, for easier troubleshooting",
+        "Conversion now shows real progress \u2014 a percentage and filling bar instead of just a spinner, when the conversion step supports it",
+        "Download cards and the subscriptions queue now show the estimated time remaining (ETA) alongside speed",
+        "Checking for updates (yt-dlp, ffmpeg, plugins) now feels noticeably faster \u2014 the lookups run in parallel instead of one after another",
+        "Repeated update checks are now protected against hitting GitHub's request limit, which could previously cause version info to briefly show as \"unknown\"",
+        "Added a small diagnostic log file to help troubleshoot issues if they come up",
+        "Minor internal code cleanup \u2014 no user-facing changes"
+      ]
+    },
     {
       "version": "1.3.1",
       "date": "7/15/2026",
@@ -75,28 +92,19 @@
         "New Sneakers theme category \u2014 10 themes including Bred, Royal, Panda, and Grinch, plus a tribute pair honoring the shoe this project is named after: Brick by Brick and Brick After Brick",
         "Theme catalog now totals 450 built-in themes"
       ]
-    },
-    {
-      "version": "1.2.5",
-      "date": "6/30/2026",
-      "notes": [
-        "Electron runtime updated to v43.0.0 \u2014 includes Chromium and Node.js stability and security updates",
-        "New Modern theme category \u2014 20 themes covering internet-culture and lifestyle aesthetics, from Clean Girl and Dark Academia to Algorithm and Y2K Revival",
-        "Theme catalog now totals 440 built-in themes"
-      ]
     }
   ],
-  "_last_updated": "2026-07-15T10:39:58-04:00",
-  "version": "1.3.1",
-  "build": 142,
-  "label": "v1.3.1 - Build 142 - 7/15/2026 9:53 AM EST",
+  "_last_updated": "2026-07-19T22:20:25-04:00",
+  "version": "1.3.2",
+  "build": 143,
+  "label": "v1.3.2 - Build 143 - 7/19/2026 9:29 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "39fab4926caf8ce873de3458719f4822aa9787d1f5a3248f23a445f307a61de1",
+    "sha256": "c6c7df01d83e8c1f9a0d931abc1d391ef5ae6cef0b4b802ac75847d912c61626",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 140699961,
-  "signature": "SittGQkql0kLchuFjaZISIdVcrx1tQdIlV7P8Q8rrEy9++bIV+hVP/hWd3QNvM3NX8ew0SoHluOCyVRE1sptBA=="
+  "size_bytes": 140717047,
+  "signature": "rwQyM2QO7HKj+iZVR702fu+feI6A7y0ejND3e1srASoKjKOdnUBtk2fdF0cfVqYmMyHRzbDelod8110ihipZDw=="
 }

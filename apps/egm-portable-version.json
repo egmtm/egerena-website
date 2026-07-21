@@ -1,12 +1,22 @@
 {
   "_comment": "EGM Downloader Windows Portable update feed. Upload to egerena.com/apps/egm-portable-version.json",
   "_version_notes": [
-    "Fixed: right-click the app \u2192 Properties \u2192 Details showed an old, outdated version number \u2014 now matches the actual app version",
-    "Fixed: the reorder arrows on a multi-video fetch could show incorrectly or not update after fetching info for a video",
-    "The diagnostic log file no longer includes full download links or file names, for better privacy",
-    "Expanded internal test coverage for this cycle's fixes"
+    "New: the taskbar/dock icon now shows download/conversion progress and an active-job count badge, for downloads started from the main window or from Subscriptions",
+    "The app now prevents your system from sleeping while a download or conversion is running",
+    "The Log Console is now called Diagnostics, and it's easier to find \u2014 available directly from the footer (next to Help) and from the Subscriptions window, instead of buried in Advanced settings",
+    "Download error messages are now translated into your language where possible, with clearer guidance for common cases (like members-only videos)"
   ],
   "_history": [
+    {
+      "version": "1.3.4",
+      "date": "7/21/2026",
+      "notes": [
+        "New: the taskbar/dock icon now shows download/conversion progress and an active-job count badge, for downloads started from the main window or from Subscriptions",
+        "The app now prevents your system from sleeping while a download or conversion is running",
+        "The Log Console is now called Diagnostics, and it's easier to find \u2014 available directly from the footer (next to Help) and from the Subscriptions window, instead of buried in Advanced settings",
+        "Download error messages are now translated into your language where possible, with clearer guidance for common cases (like members-only videos)"
+      ]
+    },
     {
       "version": "1.3.3",
       "date": "7/20/2026",
@@ -69,38 +79,19 @@
         "50 new themes added \u2014 500 total. 8 international holidays and 4 memes, a category-balance batch (Dark, Light, Futuristic, Retro), a new \"Old Internet\" category, and Vehicle History (10 real, 10 fictional)",
         "Backed by 117 automated tests covering security, process safety, and cross-platform consistency \u2014 all passing"
       ]
-    },
-    {
-      "version": "1.2.7",
-      "date": "7/2/2026",
-      "notes": [
-        "Fixed the \"What's New\" update modal never appearing after an update",
-        "Fixed \"Download All\" getting stuck if a queued item was removed mid-run",
-        "Fixed queue reorder arrows sometimes moving the wrong item",
-        "Fixed a crash when switching a subscription's format after setting a per-video quality override",
-        "Fixed audio and video quality selections interfering with each other in some cases",
-        "Fixed the History window sometimes keeping the wrong theme colors after switching themes",
-        "Fixed a rare issue where importing a history backup could affect files outside the app's folder",
-        "Fixed a download getting stuck on \"Queued\" forever if the save folder became unavailable (e.g. an unplugged drive)",
-        "Fixed a download card getting stuck on \"Downloading\u2026\" if the job was cleared from memory",
-        "Fixed the mini History panel permanently hiding half of each batch of entries",
-        "Fixed the Deno \"Install\" button doing nothing",
-        "Reinstalling Deno now applies immediately in the background \u2014 no restart needed",
-        "Reinstalling Electron now offers to restart the app immediately to apply it, instead of requiring a manual close and reopen"
-      ]
     }
   ],
-  "_last_updated": "2026-07-20T08:55:05-04:00",
-  "version": "1.3.3",
-  "build": 144,
-  "label": "v1.3.3 - Build 144 - 7/20/2026 8:23 AM EST",
+  "_last_updated": "2026-07-21T17:06:15-04:00",
+  "version": "1.3.4",
+  "build": 145,
+  "label": "v1.3.4 - Build 145 - 7/21/2026 4:39 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd-portable.zip",
   "zip": "EGMd-portable.zip",
   "_checksums": {
-    "sha256": "8dc7ed5b401c1b081afff25b8a81bbd0bc836d4f9502b1346039b85b4514ac7c",
+    "sha256": "449c56aea67ae80afd1af6adeb346fdf868f5eb5b3b2913ba880eaee57c926e4",
     "algorithm": "SHA-256",
     "file": "EGMd-portable.zip"
   },
-  "size_bytes": 614178,
-  "signature": "Cp/axhDckFfSDWgRppUxOMzpf6Qf+m2ySqQh330dIAREB2siOZ3QpI8Gx1/wPRVSKKhQN8M3lOSX19XhqMTDDQ=="
+  "size_bytes": 626144,
+  "signature": "kAYy8/AHPBNjiIN1CL7y1oY/lDNxUD0/4KuJoLb4mHORhgbTLiPd+2MdcrHqNqHT6i5TEyWuEfl4KNkXrpYCDw=="
 }

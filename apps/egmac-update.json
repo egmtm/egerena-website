@@ -1,11 +1,22 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Fixed: the reorder arrows on a multi-video fetch could show incorrectly or not update after fetching info for a video",
-    "The diagnostic log file no longer includes full download links or file names, for better privacy",
-    "Expanded internal test coverage for this cycle's fixes"
+    "New: the taskbar/dock icon now shows download/conversion progress and an active-job count badge, for downloads started from the main window or from Subscriptions",
+    "The app now prevents your system from sleeping while a download or conversion is running",
+    "The Log Console is now called Diagnostics, and it's easier to find \u2014 available directly from the footer (next to Help) and from the Subscriptions window, instead of buried in Advanced settings",
+    "Download error messages are now translated into your language where possible, with clearer guidance for common cases (like members-only videos)"
   ],
   "_history": [
+    {
+      "version": "1.3.4",
+      "date": "7/21/2026",
+      "notes": [
+        "New: the taskbar/dock icon now shows download/conversion progress and an active-job count badge, for downloads started from the main window or from Subscriptions",
+        "The app now prevents your system from sleeping while a download or conversion is running",
+        "The Log Console is now called Diagnostics, and it's easier to find \u2014 available directly from the footer (next to Help) and from the Subscriptions window, instead of buried in Advanced settings",
+        "Download error messages are now translated into your language where possible, with clearer guidance for common cases (like members-only videos)"
+      ]
+    },
     {
       "version": "1.3.3",
       "date": "7/20/2026",
@@ -67,38 +78,19 @@
         "50 new themes added \u2014 500 total. 8 international holidays and 4 memes, a category-balance batch (Dark, Light, Futuristic, Retro), a new \"Old Internet\" category, and Vehicle History (10 real, 10 fictional)",
         "Backed by 117 automated tests covering security, process safety, and cross-platform consistency \u2014 all passing"
       ]
-    },
-    {
-      "version": "1.2.7",
-      "date": "7/2/2026",
-      "notes": [
-        "Fixed ffmpeg process not closing properly when cancelling a download or quitting the app",
-        "Fixed the \"What's New\" update modal never appearing after an update",
-        "Fixed \"Download All\" getting stuck if a queued item was removed mid-run",
-        "Fixed queue reorder arrows sometimes moving the wrong item",
-        "Fixed a crash when switching a subscription's format after setting a per-video quality override",
-        "Fixed audio and video quality selections interfering with each other in some cases",
-        "Fixed the History window sometimes keeping the wrong theme colors after switching themes",
-        "Fixed a rare issue where importing a history backup could affect files outside the app's folder",
-        "Fixed a download getting stuck on \"Queued\" forever if the save folder became unavailable (e.g. an unplugged drive)",
-        "Fixed a download card getting stuck on \"Downloading\u2026\" if the job was cleared from memory",
-        "Fixed the mini History panel permanently hiding half of each batch of entries",
-        "Fixed the Deno \"Install\" button doing nothing",
-        "Reinstalling Deno now applies immediately in the background \u2014 no restart needed"
-      ]
     }
   ],
-  "_last_updated": "2026-07-20T08:55:05-04:00",
-  "version": "1.3.3",
-  "build": 144,
-  "label": "v1.3.3 - Build 144 - 7/20/2026 8:23 AM EST",
+  "_last_updated": "2026-07-21T17:06:15-04:00",
+  "version": "1.3.4",
+  "build": 145,
+  "label": "v1.3.4 - Build 145 - 7/21/2026 4:39 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "430481b3f0873a32d63e8527c8caa84b10c43003d53e6cc74159863348bddf85",
+    "sha256": "5564295537c21cbaa668590da5252d849ea58bc56195a8d8ae18854eaee8d400",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 140711338,
-  "signature": "sXPHuvM8c2iARoqPBTB3UoH2UoqdRFC4giH5QHQwURmu7c+12bGEB/x/BosTqdAonoO/4nFVwzZMKNJ5hQ21Cw=="
+  "size_bytes": 140764501,
+  "signature": "N9rwMyu6AiEgCpx/Y8Y4P63n+scv8469dKfvSFYwOI06H3BJ+GsOg0sCxjMfVvlg4oJg1+tc29LFoenOP7ZpAQ=="
 }

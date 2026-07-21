@@ -130,9 +130,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3>> EGM_DOWNLOADER_v1.3.3<span class="dl-ext">.AppImage</span></h3>
+                <h3>> EGM_DOWNLOADER_v1.3.4<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: 297fa7570418eb6cd1a90b37661a46553d4ea5a2a7ce0ee125142f5a4cffbfa8</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: 8d1c6aa7414196ce8f6842e57bc25e7227aeaf1613a5cf2249b570ee54e87747</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">133 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -140,18 +140,24 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN v1.3.3</div>
+                <div class="section-header">> WHAT'S NEW IN v1.3.4</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-                <div class="whats-new-subtitle">v1.3.3 — 7/20/2026</div>
+                <div class="whats-new-subtitle">v1.3.4 — 7/21/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
-                <div class="polish-label">// loose ends</div>
+                <div class="polish-label">// in your face</div>
                 <ul>
-                    <li>Fixed: the reorder arrows on a multi-video fetch could show incorrectly or not update after fetching info for a video</li>
-                    <li>The diagnostic log file no longer includes full download links or file names, for better privacy</li>
-                    <li>Expanded internal test coverage for this cycle's fixes</li>
-                </ul>     <details class="history-details">
+                    <li>New: the taskbar/dock icon now shows download/conversion progress and an active-job count badge, for downloads started from the main window or from Subscriptions</li>
+                    <li>The app now prevents your system from sleeping while a download or conversion is running</li>
+                    <li>The Log Console is now called Diagnostics, and it's easier to find — available directly from the footer (next to Help) and from the Subscriptions window, instead of buried in Advanced settings</li>
+                    <li>Download error messages are now translated into your language where possible, with clearer guidance for common cases (like members-only videos)</li>
+                </ul>    <details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v1.3.3 — LOOSE ENDS — 7/20/2026</div>
+                        <ul>
+                            <li>Properties version string fix, reorder arrow fix, log privacy, expanded tests</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version">v1.3.2 — TUNE-UP — 7/20/2026</div>
                         <ul>
                             <li>Log Console, real conversion progress, ETA display, parallel update checks</li>

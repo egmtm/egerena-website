@@ -1,12 +1,30 @@
 {
   "_comment": "EGM Downloader Linux \u2014 informational, no auto-update. Upload to egerena.com/apps/egmlinux-update.json",
   "_version_notes": [
-    "New: the taskbar/dock icon now shows download/conversion progress and an active-job count badge, for downloads started from the main window or from Subscriptions",
-    "The app now prevents your system from sleeping while a download or conversion is running",
-    "The Log Console is now called Diagnostics, and it's easier to find \u2014 available directly from the footer (next to Help) and from the Subscriptions window, instead of buried in Advanced settings",
-    "Download error messages are now translated into your language where possible, with clearer guidance for common cases (like members-only videos)"
+    "New: a Patreon link in the footer, next to Support EGM, for anyone who'd like to help fund development",
+    "Fixed: hovering the active-downloads row in the Subscriptions queue could make it hard to read",
+    "New: Diagnostics can now show raw Flask output too, alongside the existing yt-dlp toggle \u2014 everything you'd see running the app from a terminal",
+    "New: Diagnostics can now also show raw ffmpeg output during H.264 encoding/upscale conversions, alongside the yt-dlp and Flask toggles \u2014 now including hardware-encoder failure details, previously invisible, for easier GPU troubleshooting",
+    "The Diagnostics toggles now show compact tool names (yt-dlp / Flask / ffmpeg) with the full description as a hover tooltip, to keep the titlebar tidy in longer languages",
+    "Fixed: the taskbar/dock progress badge (added in v1.3.4) wasn't showing for downloads started from Subscriptions",
+    "Up up down down left right left right B A \u2014 still doesn't unlock anything. Now multilingual.",
+    "Electron runtime updated to v43.3.0 \u2014 includes upstream Chromium and Node.js stability and security updates"
   ],
   "_history": [
+    {
+      "version": "1.3.5",
+      "date": "8/6/2026",
+      "notes": [
+        "New: a Patreon link in the footer, next to Support EGM, for anyone who'd like to help fund development",
+        "Fixed: hovering the active-downloads row in the Subscriptions queue could make it hard to read",
+        "New: Diagnostics can now show raw Flask output too, alongside the existing yt-dlp toggle \u2014 everything you'd see running the app from a terminal",
+        "New: Diagnostics can now also show raw ffmpeg output during H.264 encoding/upscale conversions, alongside the yt-dlp and Flask toggles \u2014 now including hardware-encoder failure details, previously invisible, for easier GPU troubleshooting",
+        "The Diagnostics toggles now show compact tool names (yt-dlp / Flask / ffmpeg) with the full description as a hover tooltip, to keep the titlebar tidy in longer languages",
+        "Fixed: the taskbar/dock progress badge (added in v1.3.4) wasn't showing for downloads started from Subscriptions",
+        "Up up down down left right left right B A \u2014 still doesn't unlock anything. Now multilingual.",
+        "Electron runtime updated to v43.3.0 \u2014 includes upstream Chromium and Node.js stability and security updates"
+      ]
+    },
     {
       "version": "1.3.4",
       "date": "7/21/2026",
@@ -47,49 +65,19 @@
         "Fixed dozens of notifications, status messages, and confirmation dialogs throughout the app also showing in English regardless of language \u2014 a deeper follow-up pass after the tooltip fix above",
         "Electron runtime updated to v43.1.1 \u2014 includes upstream Chromium and Node.js stability and security updates"
       ]
-    },
-    {
-      "version": "1.3",
-      "date": "7/12/2026",
-      "notes": [
-        "New in-app language selector \u2014 EGM Downloader now speaks 10 languages: English, Arabic, German, Spanish, French, Italian, Japanese, Dutch, Portuguese, and Russian",
-        "Language auto-detects from your system on first launch, and can be changed anytime from the footer \u2014 no restart needed",
-        "Language selector can be hidden from Advanced settings for a cleaner footer, and re-enabled anytime",
-        "Downloaded subtitles now include your selected app language alongside English (when available for that video)",
-        "New opt-in \"Upscale to selected quality\" \u2014 videos smaller than the chosen quality preset are proportionally upscaled to it after download (off by default; adds pixels, not detail)",
-        "Video conversion (the \"MP4 \u00b7 H.264\" compatibility format and Upscale) now uses your GPU when available, cutting CPU load and heat dramatically \u2014 automatically falls back to software encoding if no compatible GPU is found or it's busy",
-        "New: HDR downloads \u2014 videos with an HDR version (HDR10, HDR10+, HLG, Dolby Vision) now show it as a separate option per resolution. HDR downloads save as MKV to preserve the HDR data untouched (requires an HDR-capable display and player to actually look right)",
-        "Fixed Full HD/4K downloads sometimes downloading a smaller video than \"Best available\" on portrait video (TikTok, Shorts, Reels) \u2014 thank you @ligun0510!",
-        "Fixed cancelling a video conversion (H.264 fix-up or Upscale) sometimes closing the whole app instead of just that download",
-        "Fixed cancel not working during video conversion \u2014 clicking Cancel while a video was converting was silently ignored, and the conversion ran to completion anyway",
-        "The \"Converting\u2026\" status now shows which encoder is being used (e.g. \"Converting\u2026 \u00b7 h264_nvenc\"), so you can confirm hardware acceleration is active",
-        "Deno now updates alongside yt-dlp, ffmpeg, and other plugins in Advanced settings, instead of its own separate button",
-        "Advanced panel now shows current \u2192 latest version for optional libraries and ffmpeg when an update is available, and correctly detects updates after switching ffmpeg channels",
-        "Optional libraries (curl-cffi, brotli, pycryptodomex, websockets, certifi) can now be updated in-app from Advanced settings \u2014 previously view-only on these platforms",
-        "Minor spacing polish \u2014 collapsed Subscriptions sidebar thumbnails, and the Update/What's New modals no longer crowd their scrollbar against the text",
-        "The download queue in Subscriptions now stays pinned at the top of the sidebar \u2014 with a long channel list, it used to scroll out of view",
-        "Site Cookies panel in Settings redesigned into a more compact, centered layout",
-        "Settings panel (including Site Cookies) can now be hidden from Advanced settings for a cleaner look, same as the language selector",
-        "Subscriptions now detects and labels members-only videos (requires the latest yt-dlp stable or nightly \u2014 this didn't work on older stable releases)",
-        "Deleting a custom theme now asks for confirmation first \u2014 previously deleted instantly with no way to undo",
-        "Removed the \"Clear cache\" button from Advanced settings \u2014 it served no real purpose, since temp/partial files are already cleaned up automatically after every download and on every app launch",
-        "Fixed an issue where users were attempting to enter the Konami code.",
-        "50 new themes added \u2014 500 total. 8 international holidays and 4 memes, a category-balance batch (Dark, Light, Futuristic, Retro), a new \"Old Internet\" category, and Vehicle History (10 real, 10 fictional)",
-        "Backed by 117 automated tests covering security, process safety, and cross-platform consistency \u2014 all passing"
-      ]
     }
   ],
-  "_last_updated": "2026-07-21T17:06:15-04:00",
-  "version": "1.3.4",
-  "build": 145,
-  "label": "v1.3.4 - Build 145 - 7/21/2026 4:39 PM EST",
+  "_last_updated": "2026-08-06T01:11:04-04:00",
+  "version": "1.3.5",
+  "build": 146,
+  "label": "v1.3.5 - Build 146 - 8/6/2026 1:05 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdL.zip",
   "zip": "EGMdL.zip",
   "_checksums": {
-    "sha256": "8d1c6aa7414196ce8f6842e57bc25e7227aeaf1613a5cf2249b570ee54e87747",
+    "sha256": "6335b047adb0d94bdfe433e1a1dee3bc75c64e9bbe7cf1dc84ee99c0c0682c5d",
     "algorithm": "SHA-256",
     "file": "EGMdL.zip"
   },
-  "size_bytes": 169248857,
-  "signature": "TmDRWq4VN1915a1JXabPk1LMKgdwzgj3eVgYbqtQ3WvOPRQpegeCjxVjUdzt+4RTOGZkEAVDnuapZHg/AszeDA=="
+  "size_bytes": 170871520,
+  "signature": "STtXuaPIyzR1IarivgHF7Ihd0eTyIW3uVXCbWhJjaqYXiaxZ75zEIsvoc1M0JS9yi6jvRb985UvTaQb1akJdBw=="
 }

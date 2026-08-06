@@ -130,9 +130,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3>> EGM_DOWNLOADER_v1.3.4<span class="dl-ext">.AppImage</span></h3>
+                <h3>> EGM_DOWNLOADER_v1.3.5<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: 8d1c6aa7414196ce8f6842e57bc25e7227aeaf1613a5cf2249b570ee54e87747</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: 6335b047adb0d94bdfe433e1a1dee3bc75c64e9bbe7cf1dc84ee99c0c0682c5d</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">133 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -140,19 +140,28 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN v1.3.4</div>
+                <div class="section-header">> WHAT'S NEW IN v1.3.5</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-                <div class="whats-new-subtitle">v1.3.4 — 7/21/2026</div>
+                <div class="whats-new-subtitle">v1.3.5 — 8/6/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
-                <div class="polish-label">// in your face</div>
+                <div class="polish-label">// full diagnosis</div>
                 <ul>
-                    <li>New: the taskbar/dock icon now shows download/conversion progress and an active-job count badge, for downloads started from the main window or from Subscriptions</li>
-                    <li>The app now prevents your system from sleeping while a download or conversion is running</li>
-                    <li>The Log Console is now called Diagnostics, and it's easier to find — available directly from the footer (next to Help) and from the Subscriptions window, instead of buried in Advanced settings</li>
-                    <li>Download error messages are now translated into your language where possible, with clearer guidance for common cases (like members-only videos)</li>
-                </ul>    <details class="history-details">
+                    <li>New: a Patreon link in the footer, next to Support EGM, for anyone who'd like to help fund development</li>
+                    <li>Fixed: hovering the active-downloads row in the Subscriptions queue could make it hard to read</li>
+                    <li>New: Diagnostics can now show raw Flask output too, alongside the existing yt-dlp toggle — everything you'd see running the app from a terminal</li>
+                    <li>New: Diagnostics can now also show raw ffmpeg output during H.264 encoding/upscale conversions, alongside the yt-dlp and Flask toggles — now including hardware-encoder failure details, previously invisible, for easier GPU troubleshooting</li>
+                    <li>The Diagnostics toggles now show compact tool names (yt-dlp / Flask / ffmpeg) with the full description as a hover tooltip, to keep the titlebar tidy in longer languages</li>
+                    <li>Fixed: the taskbar/dock progress badge (added in v1.3.4) wasn't showing for downloads started from Subscriptions</li>
+                    <li>Up up down down left right left right B A — still doesn't unlock anything. Now multilingual.</li>
+                    <li>Electron runtime updated to v43.3.0 — includes upstream Chromium and Node.js stability and security updates</li>
+                </ul>   <details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v1.3.4 — IN YOUR FACE — 7/21/2026</div>
+                        <ul>
+                            <li>Taskbar/dock progress badge, sleep prevention, Diagnostics rename, translated errors</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version">v1.3.3 — LOOSE ENDS — 7/20/2026</div>
                         <ul>
                             <li>Properties version string fix, reorder arrow fix, log privacy, expanded tests</li>
@@ -433,7 +442,7 @@
     </div>
 
     <footer>
-        © 2003-2026 <a href="https://egerena.com">egerena.com</a> &nbsp;·&nbsp; <a href="https://x.com/EGMDownloader" target="_blank" rel="noopener noreferrer">@EGMDownloader on X</a>
+        © 2003-2026 <a href="https://egerena.com">egerena.com</a> &nbsp;·&nbsp; <a href="https://x.com/EGMDownloader" target="_blank" rel="noopener noreferrer">@EGMDownloader on X</a> &nbsp;·&nbsp; <a href="https://patreon.com/EGMDownloader" target="_blank" rel="noopener noreferrer">Patreon</a>
         <div style="margin-top:8px;"><a href="https://viberank.dev/apps/EGM%20Downloader" target="_blank" rel="noopener noreferrer"><img src="https://viberank.dev/badge?app=EGM%20Downloader&theme=dark" alt="EGM Downloader on VibeRank" style="height:20px;vertical-align:middle;" /></a></div>
             <p style="font-size:10px;opacity:0.45;margin-top:8px;">No tracking or analytics cookies. Cloudflare may set a security cookie (__cf_bm) for bot protection.</p>
     </footer>

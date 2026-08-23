@@ -1,16 +1,20 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "New: a Patreon link in the footer, next to Support EGM, for anyone who'd like to help fund development",
-    "Fixed: hovering the active-downloads row in the Subscriptions queue could make it hard to read",
-    "New: Diagnostics can now show raw Flask output too, alongside the existing yt-dlp toggle \u2014 everything you'd see running the app from a terminal",
-    "New: Diagnostics can now also show raw ffmpeg output during H.264 encoding/upscale conversions, alongside the yt-dlp and Flask toggles \u2014 now including hardware-encoder failure details, previously invisible, for easier GPU troubleshooting",
-    "The Diagnostics toggles now show compact tool names (yt-dlp / Flask / ffmpeg) with the full description as a hover tooltip, to keep the titlebar tidy in longer languages",
-    "Fixed: the taskbar/dock progress badge (added in v1.3.4) wasn't showing for downloads started from Subscriptions",
-    "Up up down down left right left right B A \u2014 still doesn't unlock anything. Now multilingual.",
-    "Electron runtime updated to v43.3.0 \u2014 includes upstream Chromium and Node.js stability and security updates"
+    "Fixed: downloads from Kick.com and other sites requiring browser impersonation were failing due to a dependency version issue",
+    "Electron runtime updated to v43.4.0 \u2014 includes upstream Chromium and Node.js stability and security updates",
+    "Minor internal test suite cleanup"
   ],
   "_history": [
+    {
+      "version": "1.3.6",
+      "date": "8/22/2026",
+      "notes": [
+        "Fixed: downloads from Kick.com and other sites requiring browser impersonation were failing due to a dependency version issue",
+        "Electron runtime updated to v43.4.0 \u2014 includes upstream Chromium and Node.js stability and security updates",
+        "Minor internal test suite cleanup"
+      ]
+    },
     {
       "version": "1.3.5",
       "date": "8/6/2026",
@@ -57,29 +61,20 @@
         "Added a small diagnostic log file to help troubleshoot issues if they come up",
         "Minor internal code cleanup \u2014 no user-facing changes"
       ]
-    },
-    {
-      "version": "1.3.1",
-      "date": "7/15/2026",
-      "notes": [
-        "Fixed tooltips across the app \u2014 main navigation, Advanced settings, Subscriptions, and more \u2014 showing in English regardless of your selected language",
-        "Fixed dozens of notifications, status messages, and confirmation dialogs throughout the app also showing in English regardless of language \u2014 a deeper follow-up pass after the tooltip fix above",
-        "Electron runtime updated to v43.1.1 \u2014 includes upstream Chromium and Node.js stability and security updates"
-      ]
     }
   ],
-  "_last_updated": "2026-08-06T01:27:35-04:00",
-  "version": "1.3.5",
-  "build": 146,
-  "label": "v1.3.5 - Build 146 - 8/6/2026 1:05 AM EST",
+  "_last_updated": "2026-08-22T22:17:44-04:00",
+  "version": "1.3.6",
+  "build": 147,
+  "label": "v1.3.6 - Build 147 - 8/22/2026 9:59 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "fc8720697147e5167b23dfd6074c1213d7a50a2561a86a23fe4bb678250f6206",
+    "sha256": "5d428e987d64f7231a1b2ed3a11ed2392e7ae4af4773093b27524f181f97fa65",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },
-  "size_bytes": 625255,
-  "signature": "5wgJllGv7M5rE1RQpFwkqae2MyudlZA6t4ZMyYwAkli9bQeCLghN865t90Kd2wZP3BRnEI+KZwQv7x10DwFVBQ=="
+  "size_bytes": 626265,
+  "signature": "ht+ZxkrXLUDiwqEPJ3Vzz+LkLapjc3VVqbgk51LMXm2PMENnXWCghPfFeYkiK2slzjYYHMywqmveE6riPQK7DA=="
 }

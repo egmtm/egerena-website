@@ -1,11 +1,16 @@
 {
   "_comment": "EGM Downloader Windows Portable update feed. Upload to egerena.com/apps/egm-portable-version.json",
   "_version_notes": [
-    "Fixed: downloads from Kick.com and other sites requiring browser impersonation were failing due to a dependency version issue",
-    "Electron runtime updated to v43.4.0 \u2014 includes upstream Chromium and Node.js stability and security updates",
-    "Minor internal test suite cleanup"
+    "Electron runtime updated to v43.4.1 \u2014 includes upstream Chromium and Node.js stability and security updates"
   ],
   "_history": [
+    {
+      "version": "1.3.7",
+      "date": "8/24/2026",
+      "notes": [
+        "Electron runtime updated to v43.4.1 \u2014 includes upstream Chromium and Node.js stability and security updates"
+      ]
+    },
     {
       "version": "1.3.6",
       "date": "8/22/2026",
@@ -48,32 +53,19 @@
         "The diagnostic log file no longer includes full download links or file names, for better privacy",
         "Expanded internal test coverage for this cycle's fixes"
       ]
-    },
-    {
-      "version": "1.3.2",
-      "date": "7/20/2026",
-      "notes": [
-        "New: Log Console (Advanced > Maintenance) \u2014 a read-only window showing the app's live diagnostic log, with an option to also show raw yt-dlp output and export the log to a file, for easier troubleshooting",
-        "Conversion now shows real progress \u2014 a percentage and filling bar instead of just a spinner, when the conversion step supports it",
-        "Download cards and the subscriptions queue now show the estimated time remaining (ETA) alongside speed",
-        "Checking for updates (yt-dlp, ffmpeg, plugins) now feels noticeably faster \u2014 the lookups run in parallel instead of one after another",
-        "Repeated update checks are now protected against hitting GitHub's request limit, which could previously cause version info to briefly show as \"unknown\"",
-        "Added a small diagnostic log file to help troubleshoot issues if they come up",
-        "Minor internal code cleanup \u2014 no user-facing changes"
-      ]
     }
   ],
-  "_last_updated": "2026-08-22T22:17:49-04:00",
-  "version": "1.3.6",
-  "build": 147,
-  "label": "v1.3.6 - Build 147 - 8/22/2026 9:59 PM EST",
+  "_last_updated": "2026-08-24T00:37:10-04:00",
+  "version": "1.3.7",
+  "build": 148,
+  "label": "v1.3.7 - Build 148 - 8/24/2026 12:11 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd-portable.zip",
   "zip": "EGMd-portable.zip",
   "_checksums": {
-    "sha256": "c4d6bbf7c07578aca259e7006af75bbb572a938b1859ddd1fe12d16af36474e5",
+    "sha256": "2045c92a7fb4f7608b874b978ecd6a9e70da5928e2853c24e12b4ffd66917dc5",
     "algorithm": "SHA-256",
     "file": "EGMd-portable.zip"
   },
-  "size_bytes": 631820,
-  "signature": "ZFYRzT2j2rqzVHiaHvBAgz8Dm+VbkIZ4C6tgBrPHw6UVlvCp8sHotD6dtijcR4kF08PIIbDZ4pXiE5Idb9phDQ=="
+  "size_bytes": 631839,
+  "signature": "+XOENSu7Ru49lZ8TNW+5OWfUBFRXcd7y6/RzaabzkRxZ/auo3Vab8ZAottJny8+jBG4UuYIILnAigpmxShT8BA=="
 }

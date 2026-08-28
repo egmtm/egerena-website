@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "Electron runtime updated to v43.4.1 \u2014 includes upstream Chromium and Node.js stability and security updates"
+    "Electron runtime updated to v44.0.0 \u2014 includes upstream Chromium 152 and Node.js 24.18.1 stability and security updates"
   ],
   "_history": [
+    {
+      "version": "1.3.8",
+      "date": "8/28/2026",
+      "notes": [
+        "Electron runtime updated to v44.0.0 \u2014 includes upstream Chromium 152 and Node.js 24.18.1 stability and security updates"
+      ]
+    },
     {
       "version": "1.3.7",
       "date": "8/24/2026",
@@ -43,30 +50,20 @@
         "The Log Console is now called Diagnostics, and it's easier to find \u2014 available directly from the footer (next to Help) and from the Subscriptions window, instead of buried in Advanced settings",
         "Download error messages are now translated into your language where possible, with clearer guidance for common cases (like members-only videos)"
       ]
-    },
-    {
-      "version": "1.3.3",
-      "date": "7/20/2026",
-      "notes": [
-        "Fixed: right-click the app \u2192 Properties \u2192 Details showed an old, outdated version number \u2014 now matches the actual app version",
-        "Fixed: the reorder arrows on a multi-video fetch could show incorrectly or not update after fetching info for a video",
-        "The diagnostic log file no longer includes full download links or file names, for better privacy",
-        "Expanded internal test coverage for this cycle's fixes"
-      ]
     }
   ],
-  "_last_updated": "2026-08-24T00:37:04-04:00",
-  "version": "1.3.7",
-  "build": 148,
-  "label": "v1.3.7 - Build 148 - 8/24/2026 12:11 AM EST",
+  "_last_updated": "2026-08-28T01:42:44-04:00",
+  "version": "1.3.8",
+  "build": 149,
+  "label": "v1.3.8 - Build 149 - 8/28/2026 1:23 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "27278115a1989a22bf43e216f2ab07c444a5e2d0143c3cd9ba312484c2433dfe",
+    "sha256": "2a8e22a16c6ed71ee3ab4e3513220ad1649225c26722e5f96aa9dc181fc41d91",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },
-  "size_bytes": 626332,
-  "signature": "oAkH3G07Oo/bariHLRPZ9xquyQY+Wzux35Ka7sbFVZeNLewAzW96jVAH9h0I05uNm4sRaYbUiNuWMdqYV+DjCw=="
+  "size_bytes": 626423,
+  "signature": "mACdc9XNbrLiVTWlDVUZBrz00/J9louGIrcV5T40u4rcNha6O+89lyjoMqC56VisQNGkoFjjtRqMHkVscuJpBg=="
 }

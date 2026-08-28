@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Linux \u2014 informational, no auto-update. Upload to egerena.com/apps/egmlinux-update.json",
   "_version_notes": [
-    "Electron runtime updated to v43.4.1 \u2014 includes upstream Chromium and Node.js stability and security updates"
+    "Electron runtime updated to v44.0.0 \u2014 includes upstream Chromium 152 and Node.js 24.18.1 stability and security updates"
   ],
   "_history": [
+    {
+      "version": "1.3.8",
+      "date": "8/28/2026",
+      "notes": [
+        "Electron runtime updated to v44.0.0 \u2014 includes upstream Chromium 152 and Node.js 24.18.1 stability and security updates"
+      ]
+    },
     {
       "version": "1.3.7",
       "date": "8/24/2026",
@@ -43,28 +50,19 @@
         "The Log Console is now called Diagnostics, and it's easier to find \u2014 available directly from the footer (next to Help) and from the Subscriptions window, instead of buried in Advanced settings",
         "Download error messages are now translated into your language where possible, with clearer guidance for common cases (like members-only videos)"
       ]
-    },
-    {
-      "version": "1.3.3",
-      "date": "7/20/2026",
-      "notes": [
-        "Fixed: the reorder arrows on a multi-video fetch could show incorrectly or not update after fetching info for a video",
-        "The diagnostic log file no longer includes full download links or file names, for better privacy",
-        "Expanded internal test coverage for this cycle's fixes"
-      ]
     }
   ],
-  "_last_updated": "2026-08-24T00:37:25-04:00",
-  "version": "1.3.7",
-  "build": 148,
-  "label": "v1.3.7 - Build 148 - 8/24/2026 12:11 AM EST",
+  "_last_updated": "2026-08-28T01:43:03-04:00",
+  "version": "1.3.8",
+  "build": 149,
+  "label": "v1.3.8 - Build 149 - 8/28/2026 1:23 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdL.zip",
   "zip": "EGMdL.zip",
   "_checksums": {
-    "sha256": "52c3c74e6370783863aa8bd8902e3115fc65349be1f0ce5f2f2c65a37af4a4fe",
+    "sha256": "6eb0f859d37e74a36289546f7e47c89f6b912ee103ca6a50560d64d7d0c65a20",
     "algorithm": "SHA-256",
     "file": "EGMdL.zip"
   },
-  "size_bytes": 170879178,
-  "signature": "VVKqbFL66OTiOjaz+ZZSEgnYtdu82h/Z2Acnozf6vBAZKOQKiu2zJPx1zpQI5z9SrHPjCbceyG1MVcUGJz3mAQ=="
+  "size_bytes": 177140123,
+  "signature": "5VD1YuYXF9ya5LA9gpCwgjsfbylsOd7bpXJ9EHxRw+aprc48mf6NoeF3uJq8iImErt7KSkwHdry8udLTcW+gBw=="
 }

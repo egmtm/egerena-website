@@ -1,9 +1,18 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Electron runtime updated to v43.4.1 \u2014 includes upstream Chromium and Node.js stability and security updates"
+    "Electron runtime updated to v44.0.0 \u2014 includes upstream Chromium 152 and Node.js 24.18.1 stability and security updates",
+    "macOS 13.0 (Ventura) or later is now required \u2014 the Electron 44 runtime no longer supports Big Sur or Monterey"
   ],
   "_history": [
+    {
+      "version": "1.3.8",
+      "date": "8/28/2026",
+      "notes": [
+        "Electron runtime updated to v44.0.0 \u2014 includes upstream Chromium 152 and Node.js 24.18.1 stability and security updates",
+        "macOS 13.0 (Ventura) or later is now required \u2014 the Electron 44 runtime no longer supports Big Sur or Monterey"
+      ]
+    },
     {
       "version": "1.3.7",
       "date": "8/24/2026",
@@ -43,28 +52,19 @@
         "The Log Console is now called Diagnostics, and it's easier to find \u2014 available directly from the footer (next to Help) and from the Subscriptions window, instead of buried in Advanced settings",
         "Download error messages are now translated into your language where possible, with clearer guidance for common cases (like members-only videos)"
       ]
-    },
-    {
-      "version": "1.3.3",
-      "date": "7/20/2026",
-      "notes": [
-        "Fixed: the reorder arrows on a multi-video fetch could show incorrectly or not update after fetching info for a video",
-        "The diagnostic log file no longer includes full download links or file names, for better privacy",
-        "Expanded internal test coverage for this cycle's fixes"
-      ]
     }
   ],
-  "_last_updated": "2026-08-24T00:37:17-04:00",
-  "version": "1.3.7",
-  "build": 148,
-  "label": "v1.3.7 - Build 148 - 8/24/2026 12:11 AM EST",
+  "_last_updated": "2026-08-28T01:42:56-04:00",
+  "version": "1.3.8",
+  "build": 149,
+  "label": "v1.3.8 - Build 149 - 8/28/2026 1:23 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "eebf1242cbcb109bd5c2c4d8c83db30d853c72a78bfdc8b622a23ec842b7f50c",
+    "sha256": "990685cde0f911b2178185e0ccb2c8eecd563c6a6aa793ee421b47d640011681",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 139666716,
-  "signature": "hWard/1wBFg4PVEcPJPOG6kQLRjwI92R9XijSqPv6QWKR0d8l4gwDkI64GJCCqn+bpEkzli2XeD1KKwXYXmhDw=="
+  "size_bytes": 146733017,
+  "signature": "8tOFyqnXhexqWg1+SnOCLIQjRC5tElQABaio5Hw1t2f4PAHyulYDdizzokefMt6fNBN/+nqmk+RqvDvW8XFTBQ=="
 }

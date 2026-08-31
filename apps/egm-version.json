@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "Electron runtime updated to v44.0.0 \u2014 includes upstream Chromium 152 and Node.js 24.18.1 stability and security updates"
+    "Electron runtime updated to v44.1.0 \u2014 includes upstream Chromium 152.0.7977.65 and Node.js 24.19.0 stability and security updates"
   ],
   "_history": [
+    {
+      "version": "1.3.9",
+      "date": "8/31/2026",
+      "notes": [
+        "Electron runtime updated to v44.1.0 \u2014 includes upstream Chromium 152.0.7977.65 and Node.js 24.19.0 stability and security updates"
+      ]
+    },
     {
       "version": "1.3.8",
       "date": "8/28/2026",
@@ -40,30 +47,20 @@
         "Up up down down left right left right B A \u2014 still doesn't unlock anything. Now multilingual.",
         "Electron runtime updated to v43.3.0 \u2014 includes upstream Chromium and Node.js stability and security updates"
       ]
-    },
-    {
-      "version": "1.3.4",
-      "date": "7/21/2026",
-      "notes": [
-        "New: the taskbar/dock icon now shows download/conversion progress and an active-job count badge, for downloads started from the main window or from Subscriptions",
-        "The app now prevents your system from sleeping while a download or conversion is running",
-        "The Log Console is now called Diagnostics, and it's easier to find \u2014 available directly from the footer (next to Help) and from the Subscriptions window, instead of buried in Advanced settings",
-        "Download error messages are now translated into your language where possible, with clearer guidance for common cases (like members-only videos)"
-      ]
     }
   ],
-  "_last_updated": "2026-08-28T01:42:44-04:00",
-  "version": "1.3.8",
-  "build": 149,
-  "label": "v1.3.8 - Build 149 - 8/28/2026 1:23 AM EST",
+  "_last_updated": "2026-08-31T19:38:54-04:00",
+  "version": "1.3.9",
+  "build": 150,
+  "label": "v1.3.9 - Build 150 - 8/31/2026 7:08 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "2a8e22a16c6ed71ee3ab4e3513220ad1649225c26722e5f96aa9dc181fc41d91",
+    "sha256": "fa8f3d99627ea58ecfbacff948b0a9b3bd1ad6abcde37cd2eb6729c7977fe7d8",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },
-  "size_bytes": 626423,
-  "signature": "mACdc9XNbrLiVTWlDVUZBrz00/J9louGIrcV5T40u4rcNha6O+89lyjoMqC56VisQNGkoFjjtRqMHkVscuJpBg=="
+  "size_bytes": 626435,
+  "signature": "B69Er4Rv5aMFnv/4AmZNiemKzAikUEeyjeX+d6vUg7h/2lfCIeqPptc3l64v9rYt7d6HF5AGq+svpBm5TaQEAA=="
 }

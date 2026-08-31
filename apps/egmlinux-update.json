@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Linux \u2014 informational, no auto-update. Upload to egerena.com/apps/egmlinux-update.json",
   "_version_notes": [
-    "Electron runtime updated to v44.0.0 \u2014 includes upstream Chromium 152 and Node.js 24.18.1 stability and security updates"
+    "Electron runtime updated to v44.1.0 \u2014 includes upstream Chromium 152.0.7977.65 and Node.js 24.19.0 stability and security updates"
   ],
   "_history": [
+    {
+      "version": "1.3.9",
+      "date": "8/31/2026",
+      "notes": [
+        "Electron runtime updated to v44.1.0 \u2014 includes upstream Chromium 152.0.7977.65 and Node.js 24.19.0 stability and security updates"
+      ]
+    },
     {
       "version": "1.3.8",
       "date": "8/28/2026",
@@ -40,29 +47,19 @@
         "Up up down down left right left right B A \u2014 still doesn't unlock anything. Now multilingual.",
         "Electron runtime updated to v43.3.0 \u2014 includes upstream Chromium and Node.js stability and security updates"
       ]
-    },
-    {
-      "version": "1.3.4",
-      "date": "7/21/2026",
-      "notes": [
-        "New: the taskbar/dock icon now shows download/conversion progress and an active-job count badge, for downloads started from the main window or from Subscriptions",
-        "The app now prevents your system from sleeping while a download or conversion is running",
-        "The Log Console is now called Diagnostics, and it's easier to find \u2014 available directly from the footer (next to Help) and from the Subscriptions window, instead of buried in Advanced settings",
-        "Download error messages are now translated into your language where possible, with clearer guidance for common cases (like members-only videos)"
-      ]
     }
   ],
-  "_last_updated": "2026-08-28T01:43:03-04:00",
-  "version": "1.3.8",
-  "build": 149,
-  "label": "v1.3.8 - Build 149 - 8/28/2026 1:23 AM EST",
+  "_last_updated": "2026-08-31T19:39:15-04:00",
+  "version": "1.3.9",
+  "build": 150,
+  "label": "v1.3.9 - Build 150 - 8/31/2026 7:08 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdL.zip",
   "zip": "EGMdL.zip",
   "_checksums": {
-    "sha256": "6eb0f859d37e74a36289546f7e47c89f6b912ee103ca6a50560d64d7d0c65a20",
+    "sha256": "15ea7b2867edf993bcf73444f4285b42748ad60ed2f9f9dd398035cea8deddd7",
     "algorithm": "SHA-256",
     "file": "EGMdL.zip"
   },
-  "size_bytes": 177140123,
-  "signature": "5VD1YuYXF9ya5LA9gpCwgjsfbylsOd7bpXJ9EHxRw+aprc48mf6NoeF3uJq8iImErt7KSkwHdry8udLTcW+gBw=="
+  "size_bytes": 177295578,
+  "signature": "eGwcKBugdSNDMG014/X7K9WLYM3yGUPvrd7Y2mKTPv0e3gtPX6VHJ/8S9GehNjOJ63vZAypDPGTBhdNw+S61AQ=="
 }

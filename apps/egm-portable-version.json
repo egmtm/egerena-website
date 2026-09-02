@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Windows Portable update feed. Upload to egerena.com/apps/egm-portable-version.json",
   "_version_notes": [
-    "Electron runtime updated to v44.1.0 \u2014 includes upstream Chromium 152.0.7977.65 and Node.js 24.19.0 stability and security updates"
+    "Electron runtime updated to v44.1.1 \u2014 crash-hardening and stability fixes on top of Chromium 152.0.7977.65 and Node.js 24.19.0"
   ],
   "_history": [
+    {
+      "version": "1.3.10",
+      "date": "9/2/2026",
+      "notes": [
+        "Electron runtime updated to v44.1.1 \u2014 crash-hardening and stability fixes on top of Chromium 152.0.7977.65 and Node.js 24.19.0"
+      ]
+    },
     {
       "version": "1.3.9",
       "date": "8/31/2026",
@@ -33,33 +40,19 @@
         "Electron runtime updated to v43.4.0 \u2014 includes upstream Chromium and Node.js stability and security updates",
         "Minor internal test suite cleanup"
       ]
-    },
-    {
-      "version": "1.3.5",
-      "date": "8/6/2026",
-      "notes": [
-        "New: a Patreon link in the footer, next to Support EGM, for anyone who'd like to help fund development",
-        "Fixed: hovering the active-downloads row in the Subscriptions queue could make it hard to read",
-        "New: Diagnostics can now show raw Flask output too, alongside the existing yt-dlp toggle \u2014 everything you'd see running the app from a terminal",
-        "New: Diagnostics can now also show raw ffmpeg output during H.264 encoding/upscale conversions, alongside the yt-dlp and Flask toggles \u2014 now including hardware-encoder failure details, previously invisible, for easier GPU troubleshooting",
-        "The Diagnostics toggles now show compact tool names (yt-dlp / Flask / ffmpeg) with the full description as a hover tooltip, to keep the titlebar tidy in longer languages",
-        "Fixed: the taskbar/dock progress badge (added in v1.3.4) wasn't showing for downloads started from Subscriptions",
-        "Up up down down left right left right B A \u2014 still doesn't unlock anything. Now multilingual.",
-        "Electron runtime updated to v43.3.0 \u2014 includes upstream Chromium and Node.js stability and security updates"
-      ]
     }
   ],
-  "_last_updated": "2026-08-31T19:39:01-04:00",
-  "version": "1.3.9",
-  "build": 150,
-  "label": "v1.3.9 - Build 150 - 8/31/2026 7:08 PM EST",
+  "_last_updated": "2026-09-02T14:15:29-04:00",
+  "version": "1.3.10",
+  "build": 151,
+  "label": "v1.3.10 - Build 151 - 9/2/2026 1:48 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd-portable.zip",
   "zip": "EGMd-portable.zip",
   "_checksums": {
-    "sha256": "cbfacee9302a0e6fa9a64c37c861d871ddb81f94bed0bf81b1145f5f274f0e54",
+    "sha256": "2ae7c8a703b2caf74c152eb8814154058913c286702f2bcaeb838662e8880e62",
     "algorithm": "SHA-256",
     "file": "EGMd-portable.zip"
   },
-  "size_bytes": 631982,
-  "signature": "7XD1BM7qMwUjl8P2t2qjjxhixKn9zkB6p7qt2nNhphVHVaXwDiBD4C6mtYO7esap4f8A/QwweokAgQoDJ+B3DA=="
+  "size_bytes": 632032,
+  "signature": "cCjnR7/1awCxKyCXqDYvMgwgWHAQ5Kk+DGanXydd+T+wil3GmjF4aqLlNYjrVdVtHHvE9yYuJQJ/MVHTaH2xBQ=="
 }

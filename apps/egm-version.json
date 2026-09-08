@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "Electron runtime updated to v44.2.0 \u2014 includes upstream Chromium 152.0.7977.76 and Node.js 24.20.0 stability and security updates"
+    "Electron runtime updated to v44.3.0 \u2014 crash and correctness fixes on top of Chromium 152.0.7977.78 and Node.js 24.20.0"
   ],
   "_history": [
+    {
+      "version": "1.3.12",
+      "date": "9/8/2026",
+      "notes": [
+        "Electron runtime updated to v44.3.0 \u2014 crash and correctness fixes on top of Chromium 152.0.7977.78 and Node.js 24.20.0"
+      ]
+    },
     {
       "version": "1.3.11",
       "date": "9/4/2026",
@@ -31,27 +38,20 @@
       "notes": [
         "Electron runtime updated to v44.0.0 \u2014 includes upstream Chromium 152 and Node.js 24.18.1 stability and security updates"
       ]
-    },
-    {
-      "version": "1.3.7",
-      "date": "8/24/2026",
-      "notes": [
-        "Electron runtime updated to v43.4.1 \u2014 includes upstream Chromium and Node.js stability and security updates"
-      ]
     }
   ],
-  "_last_updated": "2026-09-04T12:00:40-04:00",
-  "version": "1.3.11",
-  "build": 152,
-  "label": "v1.3.11 - Build 152 - 9/4/2026 11:14 AM EST",
+  "_last_updated": "2026-09-08T17:20:27-04:00",
+  "version": "1.3.12",
+  "build": 153,
+  "label": "v1.3.12 - Build 153 - 9/8/2026 4:55 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "b8bbadf581de56928eebe9ec9bc710d61643d63a03ee25a7b43ec19fa5dd623c",
+    "sha256": "a88c49cf1a1a3cbb47cf0ae959e3829f75fbc6671f59d88d756ae73a2a3d06eb",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },
-  "size_bytes": 626561,
-  "signature": "QeWJkDONmLiMctbjTJNHnxptlKlOU13mgBPHZiF42DhqQWRawX3RQllK3Gr7vUk5LjLMt0Y76KRrDoXJZV3DCw=="
+  "size_bytes": 626487,
+  "signature": "iX+6wj2NCvbfx3qbDciRCi1P0Uuu6Y8sP7sxW/IdVWAWc/gRwickvhcV9yyRlwcSdD/BeNHJ/CaTk4rzFtf3CA=="
 }

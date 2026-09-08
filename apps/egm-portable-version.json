@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Windows Portable update feed. Upload to egerena.com/apps/egm-portable-version.json",
   "_version_notes": [
-    "Electron runtime updated to v44.2.0 \u2014 includes upstream Chromium 152.0.7977.76 and Node.js 24.20.0 stability and security updates"
+    "Electron runtime updated to v44.3.0 \u2014 crash and correctness fixes on top of Chromium 152.0.7977.78 and Node.js 24.20.0"
   ],
   "_history": [
+    {
+      "version": "1.3.12",
+      "date": "9/8/2026",
+      "notes": [
+        "Electron runtime updated to v44.3.0 \u2014 crash and correctness fixes on top of Chromium 152.0.7977.78 and Node.js 24.20.0"
+      ]
+    },
     {
       "version": "1.3.11",
       "date": "9/4/2026",
@@ -31,26 +38,19 @@
       "notes": [
         "Electron runtime updated to v44.0.0 \u2014 includes upstream Chromium 152 and Node.js 24.18.1 stability and security updates"
       ]
-    },
-    {
-      "version": "1.3.7",
-      "date": "8/24/2026",
-      "notes": [
-        "Electron runtime updated to v43.4.1 \u2014 includes upstream Chromium and Node.js stability and security updates"
-      ]
     }
   ],
-  "_last_updated": "2026-09-04T12:00:47-04:00",
-  "version": "1.3.11",
-  "build": 152,
-  "label": "v1.3.11 - Build 152 - 9/4/2026 11:14 AM EST",
+  "_last_updated": "2026-09-08T17:20:34-04:00",
+  "version": "1.3.12",
+  "build": 153,
+  "label": "v1.3.12 - Build 153 - 9/8/2026 4:55 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd-portable.zip",
   "zip": "EGMd-portable.zip",
   "_checksums": {
-    "sha256": "60ea2ca4674a6cf733187ed790f48c24dae3cafb28ce5b56edf78569f996a318",
+    "sha256": "5f378bdc77e599b4af1d325b1d74a1b42e91ba979b16b3d0f79a94bb6f5a7900",
     "algorithm": "SHA-256",
     "file": "EGMd-portable.zip"
   },
-  "size_bytes": 632063,
-  "signature": "S7xJQmTpMnf7h0F/rbIosSJ/Va6jrRnaOLJ1BmknBCowTGeXyqG/3hr0/6Lb0TZ811d3tUtQFtkTVm+hrONOAg=="
+  "size_bytes": 632096,
+  "signature": "AD/UYjWRr0qzsUkEVONHV3bvZVepJMcqlVZ+56XDQ5S7UD8HLxz90cS2w7XtxbDTgqeEXSsPvk9bkahrCKYmDw=="
 }

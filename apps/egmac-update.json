@@ -1,9 +1,18 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Electron runtime updated to v44.3.0 \u2014 crash and correctness fixes on top of Chromium 152.0.7977.78 and Node.js 24.20.0"
+    "New: a \"What's New\" button in the footer, next to Diagnostics, to reopen the release notes for the currently running version at any time",
+    "Electron runtime updated to v44.4.0 \u2014 crash and correctness fixes on top of Chromium 152.0.7977.78 and Node.js 24.21.0"
   ],
   "_history": [
+    {
+      "version": "1.4.0",
+      "date": "9/15/2026",
+      "notes": [
+        "New: a \"What's New\" button in the footer, next to Diagnostics, to reopen the release notes for the currently running version at any time",
+        "Electron runtime updated to v44.4.0 \u2014 crash and correctness fixes on top of Chromium 152.0.7977.78 and Node.js 24.21.0"
+      ]
+    },
     {
       "version": "1.3.12",
       "date": "9/8/2026",
@@ -31,27 +40,19 @@
       "notes": [
         "Electron runtime updated to v44.1.0 \u2014 includes upstream Chromium 152.0.7977.65 and Node.js 24.19.0 stability and security updates"
       ]
-    },
-    {
-      "version": "1.3.8",
-      "date": "8/28/2026",
-      "notes": [
-        "Electron runtime updated to v44.0.0 \u2014 includes upstream Chromium 152 and Node.js 24.18.1 stability and security updates",
-        "macOS 13.0 (Ventura) or later is now required \u2014 the Electron 44 runtime no longer supports Big Sur or Monterey"
-      ]
     }
   ],
-  "_last_updated": "2026-09-08T17:20:43-04:00",
-  "version": "1.3.12",
-  "build": 153,
-  "label": "v1.3.12 - Build 153 - 9/8/2026 4:55 PM EST",
+  "_last_updated": "2026-09-15T23:07:07-04:00",
+  "version": "1.4.0",
+  "build": 154,
+  "label": "v1.4.0 - Build 154 - 9/15/2026 3:07 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "39d55bf717b4cc73cb39c0afa60a6c14bb5f97816a59325a049807209721cd6e",
+    "sha256": "6788f93bd4eea80c871e1fe289726678f253eb09e2f87141bb5703de21fc7f22",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 146773611,
-  "signature": "QaAddbwQx9Bf63tLtwoxwWThuxnAOhI5Z6KLH83Rcqf75sqrM6ADMg1fqC1AYU1mQq7T2fr07En9RMv8jTsFCQ=="
+  "size_bytes": 147548606,
+  "signature": "7X5v+v60aH5sfdnIqy3qweTno+YhHi3CxEDk5N5NWo3Dhhu3vRFJvhEauTYB5sSdzXvqBV4oYmqcB/4DJ+bmDg=="
 }

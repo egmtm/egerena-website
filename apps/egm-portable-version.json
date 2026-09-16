@@ -1,9 +1,18 @@
 {
   "_comment": "EGM Downloader Windows Portable update feed. Upload to egerena.com/apps/egm-portable-version.json",
   "_version_notes": [
-    "Electron runtime updated to v44.3.0 \u2014 crash and correctness fixes on top of Chromium 152.0.7977.78 and Node.js 24.20.0"
+    "New: a \"What's New\" button in the footer, next to Diagnostics, to reopen the release notes for the currently running version at any time",
+    "Electron runtime updated to v44.4.0 \u2014 crash and correctness fixes on top of Chromium 152.0.7977.78 and Node.js 24.21.0"
   ],
   "_history": [
+    {
+      "version": "1.4.0",
+      "date": "9/15/2026",
+      "notes": [
+        "New: a \"What's New\" button in the footer, next to Diagnostics, to reopen the release notes for the currently running version at any time",
+        "Electron runtime updated to v44.4.0 \u2014 crash and correctness fixes on top of Chromium 152.0.7977.78 and Node.js 24.21.0"
+      ]
+    },
     {
       "version": "1.3.12",
       "date": "9/8/2026",
@@ -31,26 +40,19 @@
       "notes": [
         "Electron runtime updated to v44.1.0 \u2014 includes upstream Chromium 152.0.7977.65 and Node.js 24.19.0 stability and security updates"
       ]
-    },
-    {
-      "version": "1.3.8",
-      "date": "8/28/2026",
-      "notes": [
-        "Electron runtime updated to v44.0.0 \u2014 includes upstream Chromium 152 and Node.js 24.18.1 stability and security updates"
-      ]
     }
   ],
-  "_last_updated": "2026-09-08T17:20:34-04:00",
-  "version": "1.3.12",
-  "build": 153,
-  "label": "v1.3.12 - Build 153 - 9/8/2026 4:55 PM EST",
+  "_last_updated": "2026-09-15T23:06:59-04:00",
+  "version": "1.4.0",
+  "build": 154,
+  "label": "v1.4.0 - Build 154 - 9/15/2026 3:07 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd-portable.zip",
   "zip": "EGMd-portable.zip",
   "_checksums": {
-    "sha256": "5f378bdc77e599b4af1d325b1d74a1b42e91ba979b16b3d0f79a94bb6f5a7900",
+    "sha256": "bfde57271321af307cc6cf0d904f895bcbd0eb3e0b0c79644b2d77b88893a6e0",
     "algorithm": "SHA-256",
     "file": "EGMd-portable.zip"
   },
-  "size_bytes": 632096,
-  "signature": "AD/UYjWRr0qzsUkEVONHV3bvZVepJMcqlVZ+56XDQ5S7UD8HLxz90cS2w7XtxbDTgqeEXSsPvk9bkahrCKYmDw=="
+  "size_bytes": 632696,
+  "signature": "3kyxOE1vDqREQdl21It7lQNMzblWOUCH0a2rZuyJQBMOar4M6OcqJWaNx6LTWTy2D4vKNyWfvWo/0FE/g+mVBA=="
 }

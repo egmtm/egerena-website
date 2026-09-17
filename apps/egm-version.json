@@ -1,10 +1,18 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "New: a \"What's New\" button in the footer, next to Diagnostics, to reopen the release notes for the currently running version at any time",
-    "Electron runtime updated to v44.4.0 \u2014 crash and correctness fixes on top of Chromium 152.0.7977.78 and Node.js 24.21.0"
+    "The \"What's New\" footer button is now the first item in the footer, ahead of the website link and version number",
+    "Electron runtime updated to v44.4.1 \u2014 object lifetime and stability fixes"
   ],
   "_history": [
+    {
+      "version": "1.4.1",
+      "date": "9/16/2026",
+      "notes": [
+        "The \"What's New\" footer button is now the first item in the footer, ahead of the website link and version number",
+        "Electron runtime updated to v44.4.1 \u2014 object lifetime and stability fixes"
+      ]
+    },
     {
       "version": "1.4.0",
       "date": "9/15/2026",
@@ -33,27 +41,20 @@
       "notes": [
         "Electron runtime updated to v44.1.1 \u2014 crash-hardening and stability fixes on top of Chromium 152.0.7977.65 and Node.js 24.19.0"
       ]
-    },
-    {
-      "version": "1.3.9",
-      "date": "8/31/2026",
-      "notes": [
-        "Electron runtime updated to v44.1.0 \u2014 includes upstream Chromium 152.0.7977.65 and Node.js 24.19.0 stability and security updates"
-      ]
     }
   ],
-  "_last_updated": "2026-09-15T23:06:53-04:00",
-  "version": "1.4.0",
-  "build": 154,
-  "label": "v1.4.0 - Build 154 - 9/15/2026 3:07 PM EST",
+  "_last_updated": "2026-09-16T21:00:40-04:00",
+  "version": "1.4.1",
+  "build": 155,
+  "label": "v1.4.1 - Build 155 - 9/16/2026 8:36 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "948a6bf5667a24f7ca6038545d00c14bdecc28c9980ba25fe408f51c34e99210",
+    "sha256": "222ace6716212da8547424d30381b3de3b3dcef6e315ce54f265ad33e02b51f0",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },
-  "size_bytes": 626968,
-  "signature": "i4qfRflDuT7I1Ow121l9ZIGfPK8jOT3oHqGfgSihp29yK7MIxzMgE+N+bl9rXFARWMQRrlL+ZcwmeeDtBiGjDw=="
+  "size_bytes": 627058,
+  "signature": "2ZtXfSASNRMNdB4L884GM8igi1DupmjqEWPBE32424aYgxzsKgH0Lpv+JBkM+saW41mIUCXHGQsOz+sfB7sDDQ=="
 }

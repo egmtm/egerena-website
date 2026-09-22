@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Electron runtime updated to v44.4.3 \u2014 backported Chromium, PDFium, Skia, and V8 fixes, plus a faster startup for files packaged inside the app"
+    "Electron runtime updated to v44.4.4 \u2014 fixes a startup reliability issue where the app window could occasionally fail to appear"
   ],
   "_history": [
+    {
+      "version": "1.4.4",
+      "date": "9/22/2026",
+      "notes": [
+        "Electron runtime updated to v44.4.4 \u2014 fixes a startup reliability issue where the app window could occasionally fail to appear"
+      ]
+    },
     {
       "version": "1.4.3",
       "date": "9/18/2026",
@@ -34,26 +41,19 @@
         "New: a \"What's New\" button in the footer, next to Diagnostics, to reopen the release notes for the currently running version at any time",
         "Electron runtime updated to v44.4.0 \u2014 crash and correctness fixes on top of Chromium 152.0.7977.78 and Node.js 24.21.0"
       ]
-    },
-    {
-      "version": "1.3.12",
-      "date": "9/8/2026",
-      "notes": [
-        "Electron runtime updated to v44.3.0 \u2014 crash and correctness fixes on top of Chromium 152.0.7977.78 and Node.js 24.20.0"
-      ]
     }
   ],
-  "_last_updated": "2026-09-18T21:19:01-04:00",
-  "version": "1.4.3",
-  "build": 157,
-  "label": "v1.4.3 - Build 157 - 9/18/2026 4:29 PM EST",
+  "_last_updated": "2026-09-22T15:12:42-04:00",
+  "version": "1.4.4",
+  "build": 158,
+  "label": "v1.4.4 - Build 158 - 9/22/2026 2:46 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "babc4e00720a4cea0e5e662ba30377b98a4ce6084ea4a2e908911a37af356b47",
+    "sha256": "5583fe3064a296d0c15b34412de55be7595d4a3230583623b5ddb04dc04229ac",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 147391198,
-  "signature": "1qRgpcxXECFh96TV8NLd4mebzZ2ZGeWmlcXCJ9Q/aeP5lyasboaRpreJFk6SFn7AxkRygDuQEsttT6SRnzGTAQ=="
+  "size_bytes": 147645911,
+  "signature": "GmWC3JyY/tuHK2/JnCcpJsfYXbCTNr07u2enfxVinEZcOamKv2xnBhcnDRfvZuhnjt3NW66cW8i3gFjHQs3YDg=="
 }

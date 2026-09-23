@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Windows Portable update feed. Upload to egerena.com/apps/egm-portable-version.json",
   "_version_notes": [
-    "Electron runtime updated to v44.4.4 \u2014 fixes a startup reliability issue where the app window could occasionally fail to appear"
+    "Electron runtime updated to v44.4.5 \u2014 backported Chromium, PDFium, and V8 fixes"
   ],
   "_history": [
+    {
+      "version": "1.4.5",
+      "date": "9/23/2026",
+      "notes": [
+        "Electron runtime updated to v44.4.5 \u2014 backported Chromium, PDFium, and V8 fixes"
+      ]
+    },
     {
       "version": "1.4.4",
       "date": "9/22/2026",
@@ -33,27 +40,19 @@
         "The \"What's New\" footer button is now the first item in the footer, ahead of the website link and version number",
         "Electron runtime updated to v44.4.1 \u2014 object lifetime and stability fixes"
       ]
-    },
-    {
-      "version": "1.4.0",
-      "date": "9/15/2026",
-      "notes": [
-        "New: a \"What's New\" button in the footer, next to Diagnostics, to reopen the release notes for the currently running version at any time",
-        "Electron runtime updated to v44.4.0 \u2014 crash and correctness fixes on top of Chromium 152.0.7977.78 and Node.js 24.21.0"
-      ]
     }
   ],
-  "_last_updated": "2026-09-22T15:12:38-04:00",
-  "version": "1.4.4",
-  "build": 158,
-  "label": "v1.4.4 - Build 158 - 9/22/2026 2:46 PM EST",
+  "_last_updated": "2026-09-23T09:15:13-04:00",
+  "version": "1.4.5",
+  "build": 159,
+  "label": "v1.4.5 - Build 159 - 9/23/2026 8:55 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd-portable.zip",
   "zip": "EGMd-portable.zip",
   "_checksums": {
-    "sha256": "f38cac74737c030fefdc517f5c1543fd8fdd12214e008bd913a5612c65d64b4e",
+    "sha256": "d1db67bd3494e00c8d32730d33f8b3565545c053aa4f2bf1d6ecb0cd4ba6de66",
     "algorithm": "SHA-256",
     "file": "EGMd-portable.zip"
   },
-  "size_bytes": 632973,
-  "signature": "guFWFBxhoGQVGJn+MvgbO5100zSTvjgDm4L6lyueql6+NsctXnj5CWJ5wN1bkD54odyotV+JZiLReVCMvSe0Ag=="
+  "size_bytes": 632999,
+  "signature": "WRyDmr/HvJaf05g0D+MhYlHQcOpj/uwExkANo/8BxNmcW3fa6eLCkTmT4Wzd/fc65vptRw4qDoApBHcSf5JCDQ=="
 }

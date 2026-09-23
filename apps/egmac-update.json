@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Electron runtime updated to v44.4.4 \u2014 fixes a startup reliability issue where the app window could occasionally fail to appear"
+    "Electron runtime updated to v44.4.5 \u2014 backported Chromium, PDFium, and V8 fixes"
   ],
   "_history": [
+    {
+      "version": "1.4.5",
+      "date": "9/23/2026",
+      "notes": [
+        "Electron runtime updated to v44.4.5 \u2014 backported Chromium, PDFium, and V8 fixes"
+      ]
+    },
     {
       "version": "1.4.4",
       "date": "9/22/2026",
@@ -33,27 +40,19 @@
         "The \"What's New\" footer button is now the first item in the footer, ahead of the website link and version number",
         "Electron runtime updated to v44.4.1 \u2014 object lifetime and stability fixes"
       ]
-    },
-    {
-      "version": "1.4.0",
-      "date": "9/15/2026",
-      "notes": [
-        "New: a \"What's New\" button in the footer, next to Diagnostics, to reopen the release notes for the currently running version at any time",
-        "Electron runtime updated to v44.4.0 \u2014 crash and correctness fixes on top of Chromium 152.0.7977.78 and Node.js 24.21.0"
-      ]
     }
   ],
-  "_last_updated": "2026-09-22T15:12:42-04:00",
-  "version": "1.4.4",
-  "build": 158,
-  "label": "v1.4.4 - Build 158 - 9/22/2026 2:46 PM EST",
+  "_last_updated": "2026-09-23T09:15:16-04:00",
+  "version": "1.4.5",
+  "build": 159,
+  "label": "v1.4.5 - Build 159 - 9/23/2026 8:55 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "5583fe3064a296d0c15b34412de55be7595d4a3230583623b5ddb04dc04229ac",
+    "sha256": "0edab65067e4586476137d92b16270ab7e0644a448273ae9d9a80c64e761ce39",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 147645911,
-  "signature": "GmWC3JyY/tuHK2/JnCcpJsfYXbCTNr07u2enfxVinEZcOamKv2xnBhcnDRfvZuhnjt3NW66cW8i3gFjHQs3YDg=="
+  "size_bytes": 147724688,
+  "signature": "VsDGqaNt3C70fTCLMhl41BrIwueJeb/vcXCND+J4zGspY8GdMpajFaobTytIxiTY9VXIvXIdVoW+/vdvwNAVDQ=="
 }

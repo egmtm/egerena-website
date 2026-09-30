@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "Electron runtime updated to v44.4.5 \u2014 backported Chromium, PDFium, and V8 fixes"
+    "Electron runtime updated to v44.5.0 \u2014 crash and stability fixes, including Linux file dialog and GPU process startup fixes"
   ],
   "_history": [
+    {
+      "version": "1.4.6",
+      "date": "9/29/2026",
+      "notes": [
+        "Electron runtime updated to v44.5.0 \u2014 crash and stability fixes, including Linux file dialog and GPU process startup fixes"
+      ]
+    },
     {
       "version": "1.4.5",
       "date": "9/23/2026",
@@ -32,28 +39,20 @@
         "The version number is now the second item in the footer, right after the \"What's New\" button",
         "Electron runtime updated to v44.4.2 \u2014 Chromium updated to 152.0.7977.130"
       ]
-    },
-    {
-      "version": "1.4.1",
-      "date": "9/16/2026",
-      "notes": [
-        "The \"What's New\" footer button is now the first item in the footer, ahead of the website link and version number",
-        "Electron runtime updated to v44.4.1 \u2014 object lifetime and stability fixes"
-      ]
     }
   ],
-  "_last_updated": "2026-09-23T09:15:09-04:00",
-  "version": "1.4.5",
-  "build": 159,
-  "label": "v1.4.5 - Build 159 - 9/23/2026 8:55 AM EST",
+  "_last_updated": "2026-09-29T19:57:56-04:00",
+  "version": "1.4.6",
+  "build": 160,
+  "label": "v1.4.6 - Build 160 - 9/29/2026 6:57 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "1f1e2ccffcc42c6181819d40a1b0cfba013961a2a8afb57813086f968d7c014d",
+    "sha256": "6135ca0d09471eb87c98e607fcb93aed5ad8844c62c7d63480ca8edd0b8a01ac",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },
-  "size_bytes": 627278,
-  "signature": "1rgffmoPDZyozBWUzq66XLoVD53swIIzMfuSMULCeJnb9hBGzmJGxAS9TedM/me9C4KfQMBu/bikXNHqcSqEAQ=="
+  "size_bytes": 627235,
+  "signature": "bJLbgq/TZFPDV6YpMC+qifh2cSyfHsIwCR2Mp0GGkpTwxS+tSf7X7qERSPJk5kwgMknkkjDTG4P+Sn+ddrIWDA=="
 }

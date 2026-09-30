@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Electron runtime updated to v44.4.5 \u2014 backported Chromium, PDFium, and V8 fixes"
+    "Electron runtime updated to v44.5.0 \u2014 crash and stability fixes, including Linux file dialog and GPU process startup fixes"
   ],
   "_history": [
+    {
+      "version": "1.4.6",
+      "date": "9/29/2026",
+      "notes": [
+        "Electron runtime updated to v44.5.0 \u2014 crash and stability fixes, including Linux file dialog and GPU process startup fixes"
+      ]
+    },
     {
       "version": "1.4.5",
       "date": "9/23/2026",
@@ -32,27 +39,19 @@
         "The version number is now the second item in the footer, right after the \"What's New\" button",
         "Electron runtime updated to v44.4.2 \u2014 Chromium updated to 152.0.7977.130"
       ]
-    },
-    {
-      "version": "1.4.1",
-      "date": "9/16/2026",
-      "notes": [
-        "The \"What's New\" footer button is now the first item in the footer, ahead of the website link and version number",
-        "Electron runtime updated to v44.4.1 \u2014 object lifetime and stability fixes"
-      ]
     }
   ],
-  "_last_updated": "2026-09-23T09:15:16-04:00",
-  "version": "1.4.5",
-  "build": 159,
-  "label": "v1.4.5 - Build 159 - 9/23/2026 8:55 AM EST",
+  "_last_updated": "2026-09-29T19:57:56-04:00",
+  "version": "1.4.6",
+  "build": 160,
+  "label": "v1.4.6 - Build 160 - 9/29/2026 6:57 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "0edab65067e4586476137d92b16270ab7e0644a448273ae9d9a80c64e761ce39",
+    "sha256": "99f67fea072f0a950f255d15a27fd87f26045443b0c3ff1ebc98b7ad4aeb25cc",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 147724688,
-  "signature": "VsDGqaNt3C70fTCLMhl41BrIwueJeb/vcXCND+J4zGspY8GdMpajFaobTytIxiTY9VXIvXIdVoW+/vdvwNAVDQ=="
+  "size_bytes": 147533133,
+  "signature": "R9PonDLuVvAp2Q0pQhMfC9rXgPMj93RSQO1NBS9vfgm1N6S+sIJpM/D2w1A+XyxiQFxpq9eBrStDba9pb0xRDQ=="
 }

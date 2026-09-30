@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Electron runtime updated to v44.5.0 \u2014 crash and stability fixes, including Linux file dialog and GPU process startup fixes"
+    "Electron runtime updated to v44.5.1 \u2014 backported ANGLE, Chromium, Dawn, and V8 fixes"
   ],
   "_history": [
+    {
+      "version": "1.4.7",
+      "date": "9/30/2026",
+      "notes": [
+        "Electron runtime updated to v44.5.1 \u2014 backported ANGLE, Chromium, Dawn, and V8 fixes"
+      ]
+    },
     {
       "version": "1.4.6",
       "date": "9/29/2026",
@@ -31,27 +38,19 @@
       "notes": [
         "Electron runtime updated to v44.4.3 \u2014 backported Chromium, PDFium, Skia, and V8 fixes, plus a faster startup for files packaged inside the app"
       ]
-    },
-    {
-      "version": "1.4.2",
-      "date": "9/18/2026",
-      "notes": [
-        "The version number is now the second item in the footer, right after the \"What's New\" button",
-        "Electron runtime updated to v44.4.2 \u2014 Chromium updated to 152.0.7977.130"
-      ]
     }
   ],
-  "_last_updated": "2026-09-29T19:57:56-04:00",
-  "version": "1.4.6",
-  "build": 160,
-  "label": "v1.4.6 - Build 160 - 9/29/2026 6:57 PM EST",
+  "_last_updated": "2026-09-30T14:11:46-04:00",
+  "version": "1.4.7",
+  "build": 161,
+  "label": "v1.4.7 - Build 161 - 9/30/2026 1:20 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "99f67fea072f0a950f255d15a27fd87f26045443b0c3ff1ebc98b7ad4aeb25cc",
+    "sha256": "1e3834e8bf985d552ce25d13120ca270c364cf8c38eef9f26ac1899fd87aff32",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 147533133,
-  "signature": "R9PonDLuVvAp2Q0pQhMfC9rXgPMj93RSQO1NBS9vfgm1N6S+sIJpM/D2w1A+XyxiQFxpq9eBrStDba9pb0xRDQ=="
+  "size_bytes": 147479050,
+  "signature": "5bgH2jSFI1iOgkfMhI4+t1GFVFmMRRqoaNVxea2/cJeYRhpFqGscpimIDfD8ihQW0hWQp5BdeXoy1QeoTA5WAg=="
 }

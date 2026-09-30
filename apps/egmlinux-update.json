@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Linux \u2014 informational, no auto-update. Upload to egerena.com/apps/egmlinux-update.json",
   "_version_notes": [
-    "Electron runtime updated to v44.5.0 \u2014 crash and stability fixes, including Linux file dialog and GPU process startup fixes"
+    "Electron runtime updated to v44.5.1 \u2014 backported ANGLE, Chromium, Dawn, and V8 fixes"
   ],
   "_history": [
+    {
+      "version": "1.4.7",
+      "date": "9/30/2026",
+      "notes": [
+        "Electron runtime updated to v44.5.1 \u2014 backported ANGLE, Chromium, Dawn, and V8 fixes"
+      ]
+    },
     {
       "version": "1.4.6",
       "date": "9/29/2026",
@@ -31,27 +38,19 @@
       "notes": [
         "Electron runtime updated to v44.4.3 \u2014 backported Chromium, PDFium, Skia, and V8 fixes, plus a faster startup for files packaged inside the app"
       ]
-    },
-    {
-      "version": "1.4.2",
-      "date": "9/18/2026",
-      "notes": [
-        "The version number is now the second item in the footer, right after the \"What's New\" button",
-        "Electron runtime updated to v44.4.2 \u2014 Chromium updated to 152.0.7977.130"
-      ]
     }
   ],
-  "_last_updated": "2026-09-29T19:57:56-04:00",
-  "version": "1.4.6",
-  "build": 160,
-  "label": "v1.4.6 - Build 160 - 9/29/2026 6:57 PM EST",
+  "_last_updated": "2026-09-30T14:11:46-04:00",
+  "version": "1.4.7",
+  "build": 161,
+  "label": "v1.4.7 - Build 161 - 9/30/2026 1:20 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdL.zip",
   "zip": "EGMdL.zip",
   "_checksums": {
-    "sha256": "a9611947be0bc6af1590284161c20a8d872591588d92b7d5955c7b0851d471da",
+    "sha256": "43bb5b3511ea44604314406449a3762974414715ba7cf8e5b667ad7a01f398c5",
     "algorithm": "SHA-256",
     "file": "EGMdL.zip"
   },
-  "size_bytes": 177515932,
-  "signature": "VyA5ZD55C8sPx3+7nGweM+TgWFETJ8f0BeSbA2ZuwQ2zwB9kxty/4Cu4rkeeJXaDDXDvYq8GMgScD7SJa5wtAg=="
+  "size_bytes": 177483675,
+  "signature": "jgXF8KIwQ+2rVP6fd7eNdvvVh2zhk2OYSU35xFJLrbEF8tUSX+gD0yepiQ4ZNAjQIBKkBYLeta4wD/+oISBrAw=="
 }

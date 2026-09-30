@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "Electron runtime updated to v44.5.0 \u2014 crash and stability fixes, including Linux file dialog and GPU process startup fixes"
+    "Electron runtime updated to v44.5.1 \u2014 backported ANGLE, Chromium, Dawn, and V8 fixes"
   ],
   "_history": [
+    {
+      "version": "1.4.7",
+      "date": "9/30/2026",
+      "notes": [
+        "Electron runtime updated to v44.5.1 \u2014 backported ANGLE, Chromium, Dawn, and V8 fixes"
+      ]
+    },
     {
       "version": "1.4.6",
       "date": "9/29/2026",
@@ -31,28 +38,20 @@
       "notes": [
         "Electron runtime updated to v44.4.3 \u2014 backported Chromium, PDFium, Skia, and V8 fixes, plus a faster startup for files packaged inside the app"
       ]
-    },
-    {
-      "version": "1.4.2",
-      "date": "9/18/2026",
-      "notes": [
-        "The version number is now the second item in the footer, right after the \"What's New\" button",
-        "Electron runtime updated to v44.4.2 \u2014 Chromium updated to 152.0.7977.130"
-      ]
     }
   ],
-  "_last_updated": "2026-09-29T19:57:56-04:00",
-  "version": "1.4.6",
-  "build": 160,
-  "label": "v1.4.6 - Build 160 - 9/29/2026 6:57 PM EST",
+  "_last_updated": "2026-09-30T14:11:46-04:00",
+  "version": "1.4.7",
+  "build": 161,
+  "label": "v1.4.7 - Build 161 - 9/30/2026 1:20 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "6135ca0d09471eb87c98e607fcb93aed5ad8844c62c7d63480ca8edd0b8a01ac",
+    "sha256": "63c187f6efccc2f20c3d2c424e25820735e28f1879f4ab275831cafdab88b0c1",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },
-  "size_bytes": 627235,
-  "signature": "bJLbgq/TZFPDV6YpMC+qifh2cSyfHsIwCR2Mp0GGkpTwxS+tSf7X7qERSPJk5kwgMknkkjDTG4P+Sn+ddrIWDA=="
+  "size_bytes": 627287,
+  "signature": "bVLy94XInfxQ6+MHLsYGgKsYhyMfp7TRGe5gerSKv4+yLBzpcvbvd6FUa0vD4icRYKjdONFbyeJhDV4sMP+aDw=="
 }

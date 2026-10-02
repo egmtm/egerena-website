@@ -58,6 +58,9 @@ deployment:
     - /bin/cp apps/egm-theme.js ${DEPLOYPATH}apps/
     - /bin/cp apps/egm.css ${DEPLOYPATH}apps/
     - /bin/cp apps/egm.html ${DEPLOYPATH}apps/
+    - /bin/cp apps/egm-downloader.css ${DEPLOYPATH}apps/
+    - /bin/cp apps/egm-downloader.html ${DEPLOYPATH}apps/
+    - /bin/cp apps/egm-downloader.js ${DEPLOYPATH}apps/
     - /bin/cp apps/egmac-glass.css ${DEPLOYPATH}apps/
     - /bin/cp apps/egmac-theme.js ${DEPLOYPATH}apps/
     - /bin/cp apps/egmac.html ${DEPLOYPATH}apps/
@@ -80,11 +83,6 @@ deployment:
     - /bin/cp games/index.css ${DEPLOYPATH}games/
     - /bin/cp games/index.html ${DEPLOYPATH}games/
     - /bin/cp games/index.js ${DEPLOYPATH}games/
-
-    # ── /team/ — team page ──────────────────────────────────────
-    - /bin/mkdir -p ${DEPLOYPATH}team/
-    - /bin/cp team/index.html ${DEPLOYPATH}team/
-    - /bin/cp team/index.css ${DEPLOYPATH}team/
 
     # ── /.well-known/ — security.txt (RFC 8615) ─────────────────
     - /bin/mkdir -p ${DEPLOYPATH}.well-known/

@@ -81,7 +81,6 @@ Disallow: /backup/
 Allow: /$
 Allow: /apps/
 Allow: /games/
-Allow: /team/
 Allow: /403.html
 Allow: /404.html
 Allow: /500.html

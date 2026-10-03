@@ -36,6 +36,7 @@ deployment:
 
     # ── Ensure target subdirectories exist ──────────────────────
     - /bin/mkdir -p ${DEPLOYPATH}apps/
+    - /bin/mkdir -p ${DEPLOYPATH}apps/es/
     - /bin/mkdir -p ${DEPLOYPATH}games/
 
     # ── Root files ──────────────────────────────────────────────
@@ -62,6 +63,7 @@ deployment:
     - /bin/cp apps/egm-downloader.css ${DEPLOYPATH}apps/
     - /bin/cp apps/egm-downloader.html ${DEPLOYPATH}apps/
     - /bin/cp apps/egm-downloader.js ${DEPLOYPATH}apps/
+    - /bin/cp apps/es/egm-downloader.html ${DEPLOYPATH}apps/es/
     - /bin/cp apps/egmac-glass.css ${DEPLOYPATH}apps/
     - /bin/cp apps/egmac-theme.js ${DEPLOYPATH}apps/
     - /bin/cp apps/egmac.html ${DEPLOYPATH}apps/

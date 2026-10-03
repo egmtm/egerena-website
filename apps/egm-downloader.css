@@ -33,6 +33,17 @@ html[data-mode="dark"] .ic-sun,html[data-mode="light"] .ic-moon{display:block}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;font-size:20px;letter-spacing:-.01em}
 .nav{display:flex;align-items:center;gap:26px}
 .hdr-end{display:flex;align-items:center;gap:12px}
+/* language menu */
+.lsel{position:relative}
+.lsel summary{list-style:none;display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--surf);color:var(--fg);font:500 14px/1 'DM Mono',ui-monospace,'SF Mono',Menlo,monospace;cursor:pointer;user-select:none}
+.lsel summary::-webkit-details-marker{display:none}
+.lsel summary svg{transition:transform .18s ease}
+.lsel[open] summary svg{transform:rotate(180deg)}
+.lsel-list{position:absolute;inset-inline-end:0;top:calc(100% + 8px);z-index:30;margin:0;padding:6px;list-style:none;min-width:176px;border-radius:16px;border:1.5px solid var(--line);background:var(--surf);box-shadow:0 14px 34px rgba(0,0,0,.3)}
+.lsel-list a{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;text-decoration:none;color:var(--fg);font-size:15px}
+.lsel-list a b{width:26px;font:500 13px/1 'DM Mono',ui-monospace,'SF Mono',Menlo,monospace;color:var(--mut)}
+.lsel-list a:hover{background:var(--surf2)}
+.lsel-list a[aria-current],.lsel-list a[aria-current] b{color:var(--accT)}
 /* hero */
 .hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(520px,100%),1fr));gap:clamp(32px,4vw,56px);align-items:center;padding-top:clamp(24px,4vw,56px);padding-bottom:clamp(48px,6vw,88px)}
 .hero-text{display:flex;flex-direction:column;gap:28px}
@@ -104,7 +115,7 @@ h1{font-weight:800;font-size:clamp(44px,5.6vw,80px);line-height:.96;letter-spaci
 .sw .b{inset:14px;background:var(--s-acc)}
 .sw .c{inset:auto 8px 8px auto;width:16px;height:16px;background:var(--s-acc2);border:2px solid var(--s-bg)}
 .sw[aria-pressed="true"]{box-shadow:0 0 0 3px var(--bg),0 0 0 6px var(--accT)}
-.wearing{display:flex;align-items:center;gap:12px}
+.wearing{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
 .wearing b{font-weight:800;font-size:24px;letter-spacing:-.02em;color:var(--accT)}
 .btn-sm{min-height:38px;padding:0 16px;font-size:14px;border-color:var(--line);color:var(--fg);background:transparent}
 /* sites marquee */
@@ -273,3 +284,10 @@ h1{font-weight:800;font-size:clamp(44px,5.6vw,80px);line-height:.96;letter-spaci
 @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
 .logo.big{width:48px;height:48px}
 .logo.mid{width:40px;height:40px}
+/* keep the header on one line now that it also holds the language menu: tablets, then narrow phones */
+@media (max-width:1040px){.nav{gap:14px}}
+/* translated pages have longer labels: the sample quality dropdown steps aside while the window is narrow */
+@media (min-width:1000px) and (max-width:1180px){html:not([lang="en"]) .vq{display:none}}
+@media (max-width:430px){.hdr{gap:10px}.hdr-end{gap:8px}.lsel summary{padding:0 12px;gap:6px}}
+@media (max-width:389px){.brand{gap:8px;font-size:18px}.logo.big{width:40px;height:40px}.lsel summary{height:44px;padding:0 12px}.lsel summary svg{display:none}.tg{width:44px;height:44px}}
+@media (max-width:340px){.brand{font-size:16px}}

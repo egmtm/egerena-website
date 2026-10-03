@@ -23,6 +23,7 @@ This repository is auto-deployed to the live server via cPanel Git integration.
 
 - **Root** — homepage (`index.html`), site CSS/JS, error pages, contact form handler
 - **`/apps/`** — desktop app product pages (Windows, macOS, Linux variants)
+- **`/i18n/`** — translations and the build script for the translated landing pages (`/apps/<code>/`). Repo only, not deployed
 - **`/games/`** — games hub and STDERR (game001) game + leaderboard
 - **`/.well-known/`** — `security.txt` (RFC 8615 vulnerability disclosure)
 

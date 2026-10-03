@@ -284,7 +284,10 @@ h1{font-weight:800;font-size:clamp(44px,5.6vw,80px);line-height:.96;letter-spaci
 @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
 .logo.big{width:48px;height:48px}
 .logo.mid{width:40px;height:40px}
-/* narrow phones: keep the header on one line now that it also holds the language menu */
+/* keep the header on one line now that it also holds the language menu: tablets, then narrow phones */
+@media (max-width:1040px){.nav{gap:14px}}
+/* translated pages have longer labels: the sample quality dropdown steps aside while the window is narrow */
+@media (min-width:1000px) and (max-width:1180px){html:not([lang="en"]) .vq{display:none}}
 @media (max-width:430px){.hdr{gap:10px}.hdr-end{gap:8px}.lsel summary{padding:0 12px;gap:6px}}
 @media (max-width:389px){.brand{gap:8px;font-size:18px}.logo.big{width:40px;height:40px}.lsel summary{height:44px;padding:0 12px}.lsel summary svg{display:none}.tg{width:44px;height:44px}}
 @media (max-width:340px){.brand{font-size:16px}}

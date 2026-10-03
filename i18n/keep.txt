@@ -92,3 +92,13 @@ Lo-fi Rain Mix
 DOWNLOADER
 Subs
 Windows, macOS, Linux
+# Themes window sidebar in the page mock. The app shows these in English in every language, so the page does too.
+STYLE
+Dark
+Light
+Retro
+Space
+VIBE
+Cities
+Music
+Nature

@@ -1,0 +1,94 @@
+# Names and terms that are never translated (one per line).
+# Brands, tools, formats, theme names and language names stay as written.
+EGM
+EGM Downloader
+EGM DOWNLOADER
+Windows
+macOS
+Linux
+AGPL-3.0
+GitHub
+Patreon
+X
+yt-dlp
+YouTube
+TikTok
+Instagram
+Facebook
+X/Twitter
+Reddit
+Twitch
+Vimeo
+SoundCloud
+Dailymotion
+Bilibili
+Bandcamp
+Rumble
+Odysee
+Pinterest
+Mixcloud
+Streamable
+Imgur
+Tumblr
+Bluesky
+Ghost
+Porcelain
+Eclipse
+La Parguera
+Bone
+Wildfire
+Vaporwave
+Abyssal
+Aurora
+Bauhaus
+Blueprint
+Cassette
+Espresso
+Evergreen
+Frost
+Honey
+Marble
+Meadow
+Monsoon
+Nebula
+Obsidian
+Permafrost
+Polaroid
+Sirocco
+Sundrop
+Surfing
+Tokyo Neon
+MP4
+MKV
+MP3
+M4A
+OPUS
+FLAC
+MP4 H.264
+HDR10
+Dolby Vision
+8K
+4K
+1080p
+English
+العربية
+Deutsch
+Español
+Français
+Italiano
+日本語
+Nederlands
+Português
+Русский
+EN
+ES
+contact@egerena.com
+© 2003-2026 egerena.com
+https://video.example/watch?v=sunset-timelapse
+https://video.example/@samplestudio
+https://video.example/@weekendkitchen
+https://video.example/playlist?list=lofi-rain
+Lo-fi Rain Mix
+DOWNLOADER
+Subs
+Windows, macOS, Linux

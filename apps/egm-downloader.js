@@ -18,6 +18,32 @@
   var cur = 0;
   var manual = false;
 
+  // Language. On a first visit the English page sends the visitor to their own language;
+  // a choice made in the language menu is saved and always wins. Only the English page redirects.
+  var LKEY = 'egm-lang';
+  var alts = {};
+  Array.prototype.forEach.call(document.querySelectorAll('link[rel="alternate"][hreflang]'), function (l) {
+    alts[l.getAttribute('hreflang')] = l.getAttribute('href');
+  });
+  function wanted() {
+    var s = null;
+    try { s = localStorage.getItem(LKEY); } catch (e) {}
+    if (s && alts[s]) return s;
+    var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
+    for (var i = 0; i < list.length; i++) {
+      var c = String(list[i]).toLowerCase().split('-')[0];
+      if (alts[c]) return c;
+    }
+    return 'en';
+  }
+  if (root.lang === 'en') {
+    var want = wanted();
+    if (want !== 'en') {
+      location.replace(new URL(alts[want], location.href).pathname + location.search + location.hash);
+      return;
+    }
+  }
+
   function sys() { return mq && mq.matches ? 1 : 0; } // Porcelain for light systems, Ghost otherwise
 
   function apply(i) {
@@ -59,7 +85,8 @@
       var href = card.querySelector('.btn').getAttribute('href');
       $('#heroDl').setAttribute('href', href);
       $('#navDl').setAttribute('href', href);
-      $('#heroDlText').textContent = 'Download for ' + card.getAttribute('data-name');
+      var dl = $('#heroDlText');
+      dl.textContent = dl.getAttribute('data-t-dl').replace('{0}', card.getAttribute('data-name'));
       $('#heroReq').textContent = card.getAttribute('data-short');
     }
 
@@ -70,7 +97,7 @@
     function paint(animate) {
       swatches.forEach(function (b) { b.setAttribute('aria-pressed', +b.getAttribute('data-i') === cur ? 'true' : 'false'); });
       nameEl.textContent = THEMES[cur].name;
-      modeBtn.setAttribute('aria-label', THEMES[cur].dark ? 'Switch to light mode' : 'Switch to dark mode');
+      modeBtn.setAttribute('aria-label', modeBtn.getAttribute(THEMES[cur].dark ? 'data-t-light' : 'data-t-dark'));
       if (animate) { nameEl.classList.remove('pop'); void nameEl.offsetWidth; nameEl.classList.add('pop'); }
     }
 
@@ -90,6 +117,19 @@
       mq.addEventListener('change', function () { if (!manual) { apply(sys()); paint(true); } });
     }
     paint();
+
+    // Language menu: remember an explicit choice, close on an outside click or Escape.
+    var menu = $('#langSel');
+    $$('#langSel a').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        try { localStorage.setItem(LKEY, a.getAttribute('data-lang')); } catch (x) {}
+        if (a.hasAttribute('aria-current')) { e.preventDefault(); menu.open = false; }
+      });
+    });
+    document.addEventListener('click', function (e) { if (menu.open && !menu.contains(e.target)) menu.open = false; });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.open) { menu.open = false; menu.querySelector('summary').focus(); }
+    });
 
     // Subscriptions demo: switch between the sample channels and playlist.
     var items = $$('.subitem');

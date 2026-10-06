@@ -82,6 +82,13 @@ Português
 Русский
 EN
 ES
+DE
+FR
+IT
+PT
+NL
+RU
+JA
 contact@egerena.com
 © 2003-2026 egerena.com
 https://video.example/watch?v=sunset-timelapse

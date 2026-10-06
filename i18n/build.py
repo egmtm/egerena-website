@@ -157,7 +157,7 @@ class Pass(HTMLParser):
         return ''.join(self.out)
 
 
-LOCALES = {'es': 'es_LA'}
+LOCALES = {'es': 'es_LA', 'de': 'de_DE', 'fr': 'fr_FR', 'it': 'it_IT', 'pt': 'pt_BR', 'nl': 'nl_NL', 'ru': 'ru_RU', 'ja': 'ja_JP'}
 
 
 def run(source, code, strings, keep):

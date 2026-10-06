@@ -5,7 +5,6 @@ const S = {
     bio:           'IT Engineer with over 20 years of experience designing, building, and consulting on technology solutions that are simple, resilient, and forward-thinking.',
     servicesTitle: 'Areas of Expertise',
     services:      ['Web Design', 'Graphic & Brand Design', 'Custom Applications', 'Media Production', 'Sound Design & Mixing', 'UI/UX Design', 'Social Media Design', 'Album Art', 'IT Consulting', 'Business Consulting', 'Security Consulting'],
-    appsLink:      'EGM APPS',
     quoteLink:     'Request a Consulting Quote',
     langBtn:       'ES',
     toastLang:     '\uD83C\uDF0E También disponible en Español',
@@ -61,7 +60,6 @@ const S = {
     bio:           'Ingeniero en Sistemas de Información con más de 20 años de experiencia diseñando, desarrollando y asesorando en soluciones tecnológicas simples, resilientes y orientadas al futuro.',
     servicesTitle: 'Áreas de Especialización',
     services:      ['Diseño Web', 'Diseño Gráfico y de Marca', 'Aplicaciones Personalizadas', 'Producción Multimedia', 'Diseño de Sonido y Mezcla', 'Diseño UI/UX', 'Diseño para Redes Sociales', 'Arte de Álbum', 'Consultoría TI', 'Consultoría Empresarial', 'Consultoría de Seguridad'],
-    appsLink:      'APLICACIONES DE EGM',
     quoteLink:     'Solicitar Cotización de Consultoría',
     langBtn:       'EN',
     toastLang:     '\uD83C\uDF10 Also available in English',
@@ -277,7 +275,6 @@ function applyLang(l, animate, save) {
     grid.innerHTML = s.services.map((svc, i) => 
       `<span class="service-tag">${svc}</span>${i < s.services.length - 1 ? '<span class="service-sep">~</span>' : ''}`
     ).join('');
-    $('appsLinkText').textContent  = s.appsLink;
     $('quoteLinkText').textContent = s.quoteLink;
     $('langBtn').textContent       = s.langBtn;
     

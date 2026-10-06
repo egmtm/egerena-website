@@ -37,6 +37,14 @@ deployment:
     # ── Ensure target subdirectories exist ──────────────────────
     - /bin/mkdir -p ${DEPLOYPATH}apps/
     - /bin/mkdir -p ${DEPLOYPATH}apps/es/
+    - /bin/mkdir -p ${DEPLOYPATH}apps/de/
+    - /bin/mkdir -p ${DEPLOYPATH}apps/fr/
+    - /bin/mkdir -p ${DEPLOYPATH}apps/it/
+    - /bin/mkdir -p ${DEPLOYPATH}apps/pt/
+    - /bin/mkdir -p ${DEPLOYPATH}apps/nl/
+    - /bin/mkdir -p ${DEPLOYPATH}apps/ru/
+    - /bin/mkdir -p ${DEPLOYPATH}apps/ja/
+    - /bin/mkdir -p ${DEPLOYPATH}apps/ar/
     - /bin/mkdir -p ${DEPLOYPATH}games/
 
     # ── Root files ──────────────────────────────────────────────
@@ -64,6 +72,14 @@ deployment:
     - /bin/cp apps/egm-downloader.html ${DEPLOYPATH}apps/
     - /bin/cp apps/egm-downloader.js ${DEPLOYPATH}apps/
     - /bin/cp apps/es/egm-downloader.html ${DEPLOYPATH}apps/es/
+    - /bin/cp apps/de/egm-downloader.html ${DEPLOYPATH}apps/de/
+    - /bin/cp apps/fr/egm-downloader.html ${DEPLOYPATH}apps/fr/
+    - /bin/cp apps/it/egm-downloader.html ${DEPLOYPATH}apps/it/
+    - /bin/cp apps/pt/egm-downloader.html ${DEPLOYPATH}apps/pt/
+    - /bin/cp apps/nl/egm-downloader.html ${DEPLOYPATH}apps/nl/
+    - /bin/cp apps/ru/egm-downloader.html ${DEPLOYPATH}apps/ru/
+    - /bin/cp apps/ja/egm-downloader.html ${DEPLOYPATH}apps/ja/
+    - /bin/cp apps/ar/egm-downloader.html ${DEPLOYPATH}apps/ar/
     - /bin/cp apps/egmac-glass.css ${DEPLOYPATH}apps/
     - /bin/cp apps/egmac-theme.js ${DEPLOYPATH}apps/
     - /bin/cp apps/egmac.html ${DEPLOYPATH}apps/

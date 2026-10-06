@@ -89,7 +89,7 @@ class Pass(HTMLParser):
         raw = self.get_starttag_text()
         a = dict(attrs)
         if tag == 'html' and self.code:
-            raw = raw.replace('lang="en"', 'lang="%s"' % self.code)
+            raw = raw.replace('lang="en"', 'lang="%s"%s' % (self.code, ' dir="rtl"' if self.code in RTL else ''))
         if tag == 'span' and 'lang-cur' in (a.get('class') or ''):
             self.cur_code = True
         if self.code and tag == 'a' and a.get('data-lang') is not None:
@@ -157,7 +157,9 @@ class Pass(HTMLParser):
         return ''.join(self.out)
 
 
-LOCALES = {'es': 'es_LA'}
+LOCALES = {'es': 'es_LA', 'de': 'de_DE', 'fr': 'fr_FR', 'it': 'it_IT', 'pt': 'pt_BR', 'nl': 'nl_NL', 'ru': 'ru_RU', 'ja': 'ja_JP', 'ar': 'ar_AR'}
+
+RTL = {'ar'}  # languages written right to left: the page gets dir="rtl"
 
 
 def run(source, code, strings, keep):

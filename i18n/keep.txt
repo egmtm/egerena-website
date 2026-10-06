@@ -89,6 +89,7 @@ PT
 NL
 RU
 JA
+AR
 contact@egerena.com
 © 2003-2026 egerena.com
 https://video.example/watch?v=sunset-timelapse

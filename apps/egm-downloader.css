@@ -298,3 +298,13 @@ h1{font-weight:800;font-size:clamp(44px,5.6vw,80px);line-height:.96;letter-spaci
 /* Japanese: break lines at phrase boundaries, no negative tracking, and a headline size that fits the column */
 html[lang="ja"] h1,html[lang="ja"] h2,html[lang="ja"] h3{word-break:auto-phrase;line-break:strict;letter-spacing:0;line-height:1.2}
 html[lang="ja"] h1{font-size:clamp(30px,3.4vw,48px)}
+/* Arabic reads right to left. Letters join, so no letter spacing; headings get more line height for the marks above the letters.
+   The sample app windows and the site name strip stay left to right, like the real app, and each line of text in a window orders itself. */
+html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .eyebrow,html[lang="ar"] .wlab,html[lang="ar"] .hero-name small{letter-spacing:0}
+html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3{line-height:1.2}
+html[dir="rtl"] .win,html[dir="rtl"] .mq{direction:ltr}
+html[dir="rtl"] .win{text-align:left}
+html[dir="rtl"] .win *{unicode-bidi:plaintext}
+html[dir="rtl"] .plat .badge{right:auto;left:24px}
+html[lang="ar"] :is(.mono,.chip,.wbtn,.wlab,.sel,.newb){font-family:'DM Mono',system-ui,'Segoe UI',sans-serif}
+html[dir="rtl"] .sr{margin:-1px 0 -1px -1px}

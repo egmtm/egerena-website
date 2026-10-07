@@ -15,6 +15,7 @@ phpmailer/
 # ── Runtime data (server-managed, reset on deploy = bad) ──────
 games/game001-scores.json
 games/game001-ratelimit.json
+apps/.stars-cache.json
 
 # ── Build / dependency artifacts ──────────────────────────────
 node_modules/

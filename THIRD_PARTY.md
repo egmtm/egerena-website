@@ -57,6 +57,14 @@ to prevent accidental overwrites of working server state.
 - **Why not in Git:** Same reason as scores file — runtime data, deploy
   would reset rate limit tracking.
 
+### apps/.stars-cache.json
+
+- **Purpose:** Last known GitHub star count for the landing page
+- **Location on server:** `/apps/.stars-cache.json`
+- **Created by:** `apps/stars.php` on the first request (refreshed at most once an hour)
+- **Why not in Git:** Runtime data. The leading dot keeps it blocked from the web by `.htaccess`.
+  If it is missing or unreadable the page simply hides the star count.
+
 ---
 
 ## Why this document exists

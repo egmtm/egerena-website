@@ -1,4 +1,5 @@
-/* EGM Downloader landing page: theme picker, OS aware download button, subscriptions demo.
+/* EGM Downloader landing page: theme picker, OS aware download button, subscriptions demo,
+   latest version and GitHub star count.
    Loaded in the head so the saved or system theme is applied before first paint. */
 (function () {
   'use strict';
@@ -129,6 +130,30 @@
     document.addEventListener('click', function (e) { if (menu.open && !menu.contains(e.target)) menu.open = false; });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && menu.open) { menu.open = false; menu.querySelector('summary').focus(); }
+    });
+
+    // Latest version (from the update feed) and GitHub star count (from /apps/stars.php).
+    // Both are plain numbers, so there is nothing to translate. Each stays hidden until a
+    // valid value arrives; if a request fails the page simply looks as it did before.
+    function load(url, done) {
+      if (!window.fetch) return;
+      fetch(url, { credentials: 'omit' })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) { if (d) done(d); })
+        .catch(function () {});
+    }
+    load('/apps/egm-version.json', function (d) {
+      var el = $('#ver');
+      if (el && typeof d.version === 'string' && /^\d+\.\d+\.\d+$/.test(d.version)) {
+        el.textContent = 'v' + d.version;
+        el.hidden = false;
+      }
+    });
+    load('/apps/stars.php', function (d) {
+      if (!Number.isInteger(d.stars) || d.stars < 0) return;
+      var n;
+      try { n = new Intl.NumberFormat(root.lang + '-u-nu-latn').format(d.stars); } catch (e) { n = String(d.stars); }
+      $$('[data-stars]').forEach(function (el) { el.querySelector('b').textContent = n; el.hidden = false; });
     });
 
     // Subscriptions demo: switch between the sample channels and playlist.

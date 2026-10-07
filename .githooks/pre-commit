@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+# egerena.com website: pre-commit hook
+# Cache version check. Pages load shared assets as "file.css?v=N". Browsers
+# keep those files for a week, so when an asset changes, every page that
+# loads it must get a new ?v= number in the same commit (otherwise returning
+# visitors run the new page against the old cached file).
+#
+# Rule: when a commit changes an asset that some page loads with ?v=, that
+# page's number must be different from what it says in the last commit.
+#
+# Install once per clone:
+#   git config core.hooksPath .githooks
+
+python3 - <<'PY'
+import posixpath, re, subprocess, sys
+
+def git(*args):
+    r = subprocess.run(["git", *args], capture_output=True, text=True,
+                       encoding="utf-8", errors="replace")
+    return r.stdout if r.returncode == 0 else None
+
+changed = set(filter(None, (git("diff", "--cached", "--name-only",
+                                "--diff-filter=AM", "-z") or "").split("\0")))
+if not changed:
+    sys.exit(0)
+
+REF = re.compile(r'(?:href|src)="([^"?#]+)\?v=([0-9A-Za-z._-]+)"')
+
+def refs(text, page):
+    """Map asset path (repo relative) -> ?v= value for one page."""
+    out = {}
+    for url, v in REF.findall(text or ""):
+        if re.match(r"[A-Za-z][A-Za-z0-9+.-]*:|//", url):
+            continue  # external link
+        base = "" if url.startswith("/") else posixpath.dirname(page)
+        out[posixpath.normpath(posixpath.join(base, url.lstrip("/")))] = v
+    return out
+
+problems = []
+pages = [p for p in (git("ls-files", "-z", "*.html") or "").split("\0") if p]
+for page in pages:
+    now = refs(git("show", ":" + page), page)
+    for asset, v in now.items():
+        if asset not in changed:
+            continue
+        if git("show", "HEAD:" + asset) is None:
+            continue  # new asset, nothing cached yet
+        old = refs(git("show", f"HEAD:{page}"), page).get(asset)
+        if old is not None and old == v:
+            problems.append((asset, page, v))
+
+if problems:
+    print("❌ Cache version not bumped. These files changed, but the page still loads them with the old number:")
+    for asset, page, v in sorted(problems):
+        print(f"   {asset} changed, {page} still says ?v={v}")
+    print("   Bump the ?v= number in every page that loads the file, in the same commit, then retry.")
+    sys.exit(1)
+PY

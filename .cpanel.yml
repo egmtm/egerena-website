@@ -89,6 +89,8 @@ deployment:
     - /bin/cp apps/index.css ${DEPLOYPATH}apps/
     - /bin/cp apps/index.html ${DEPLOYPATH}apps/
     - /bin/cp apps/matrix.js ${DEPLOYPATH}apps/
+    # apps/.stars-cache.json INTENTIONALLY EXCLUDED (runtime data written by stars.php)
+    - /bin/cp apps/stars.php ${DEPLOYPATH}apps/
     - /bin/cp apps/egm-version.json ${DEPLOYPATH}apps/
     - /bin/cp apps/egm-portable-version.json ${DEPLOYPATH}apps/
     - /bin/cp apps/egmac-update.json ${DEPLOYPATH}apps/

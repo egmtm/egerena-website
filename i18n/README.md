@@ -20,6 +20,8 @@
 5. Check the page at phone and tablet widths (320 to 1440). Longer languages need a look at the header between 981 and 1100px, and at the headline on a 320px phone. Language specific CSS lives at the end of `apps/egm-downloader.css`.
 6. Bump the `?v=` number on the CSS and JS links only if `egm-downloader.css` or `.js` changed.
 
+The latest version chip and the GitHub star count on the landing page are filled in by `apps/egm-downloader.js` (from `apps/egm-version.json` and `apps/stars.php`). They are only numbers, so there is nothing to translate. If a label is ever added next to them, it becomes a new string for every language.
+
 Right to left languages (Arabic): also add the code to `RTL` in `i18n/build.py`, which puts `dir="rtl"` on the page. The page mirrors by itself, the sample app windows stay left to right like the app, and the Arabic block at the end of the CSS handles the rest. Wrap file extensions and @handles inside Arabic text in the invisible isolates U+2066 and U+2069 (see `ar.json`), or they show in the wrong order.
 
 ## Changing the English copy

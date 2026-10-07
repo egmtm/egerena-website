@@ -284,6 +284,13 @@ h1{font-weight:800;font-size:clamp(44px,5.6vw,80px);line-height:.96;letter-spaci
 @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
 .logo.big{width:48px;height:48px}
 .logo.mid{width:40px;height:40px}
+/* latest version chip and GitHub star count, filled in by the page script (hidden until a value arrives) */
+.chip[hidden],.stars[hidden]{display:none}
+.stars{display:inline-flex;align-items:center;gap:5px;margin-inline-start:8px;font:500 .8em/1 'DM Mono',ui-monospace,'SF Mono',Menlo,monospace;opacity:.85}
+.stars svg{width:1em;height:1em;fill:currentColor;flex:none}
+.stars b{font-weight:inherit}
+.btn .stars{margin-inline-start:0;font-size:14px;opacity:.75}
+.oss .btn{flex-wrap:wrap;padding-block:6px}
 /* keep the header on one line now that it also holds the language menu: tablets, then narrow phones */
 @media (max-width:1040px){.nav{gap:14px}}
 /* longer labels in other languages: tighten the header links a bit more while the window is narrow */

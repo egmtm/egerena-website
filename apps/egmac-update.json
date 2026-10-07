@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Electron runtime updated to v44.5.1 \u2014 backported ANGLE, Chromium, Dawn, and V8 fixes"
+    "Electron runtime updated to v44.6.0 \u2014 crash fixes and updated timezone data"
   ],
   "_history": [
+    {
+      "version": "1.4.8",
+      "date": "10/6/2026",
+      "notes": [
+        "Electron runtime updated to v44.6.0 \u2014 crash fixes and updated timezone data"
+      ]
+    },
     {
       "version": "1.4.7",
       "date": "9/30/2026",
@@ -31,26 +38,19 @@
       "notes": [
         "Electron runtime updated to v44.4.4 \u2014 fixes a startup reliability issue where the app window could occasionally fail to appear"
       ]
-    },
-    {
-      "version": "1.4.3",
-      "date": "9/18/2026",
-      "notes": [
-        "Electron runtime updated to v44.4.3 \u2014 backported Chromium, PDFium, Skia, and V8 fixes, plus a faster startup for files packaged inside the app"
-      ]
     }
   ],
-  "_last_updated": "2026-09-30T14:11:46-04:00",
-  "version": "1.4.7",
-  "build": 161,
-  "label": "v1.4.7 - Build 161 - 9/30/2026 1:20 PM EST",
+  "_last_updated": "2026-10-06T20:15:49-04:00",
+  "version": "1.4.8",
+  "build": 162,
+  "label": "v1.4.8 - Build 162 - 10/6/2026 7:35 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "1e3834e8bf985d552ce25d13120ca270c364cf8c38eef9f26ac1899fd87aff32",
+    "sha256": "d9afb1897d32ff5e49f89e10d0dd236e9bd9adf496c7741a703deff7d629b70a",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 147479050,
-  "signature": "5bgH2jSFI1iOgkfMhI4+t1GFVFmMRRqoaNVxea2/cJeYRhpFqGscpimIDfD8ihQW0hWQp5BdeXoy1QeoTA5WAg=="
+  "size_bytes": 147535618,
+  "signature": "8ZKrvs2FW6iUs2FP8MXbapLEgKKP/y6EOFbyX+3HaDKuq4XULBOfd0CQ6GdEX41LtmKSy2SM9jT56B6oSwOOCQ=="
 }

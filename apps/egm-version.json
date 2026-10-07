@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "Electron runtime updated to v44.5.1 \u2014 backported ANGLE, Chromium, Dawn, and V8 fixes"
+    "Electron runtime updated to v44.6.0 \u2014 crash fixes and updated timezone data"
   ],
   "_history": [
+    {
+      "version": "1.4.8",
+      "date": "10/6/2026",
+      "notes": [
+        "Electron runtime updated to v44.6.0 \u2014 crash fixes and updated timezone data"
+      ]
+    },
     {
       "version": "1.4.7",
       "date": "9/30/2026",
@@ -31,27 +38,20 @@
       "notes": [
         "Electron runtime updated to v44.4.4 \u2014 fixes a startup reliability issue where the app window could occasionally fail to appear"
       ]
-    },
-    {
-      "version": "1.4.3",
-      "date": "9/18/2026",
-      "notes": [
-        "Electron runtime updated to v44.4.3 \u2014 backported Chromium, PDFium, Skia, and V8 fixes, plus a faster startup for files packaged inside the app"
-      ]
     }
   ],
-  "_last_updated": "2026-09-30T14:11:46-04:00",
-  "version": "1.4.7",
-  "build": 161,
-  "label": "v1.4.7 - Build 161 - 9/30/2026 1:20 PM EST",
+  "_last_updated": "2026-10-06T20:15:49-04:00",
+  "version": "1.4.8",
+  "build": 162,
+  "label": "v1.4.8 - Build 162 - 10/6/2026 7:35 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "63c187f6efccc2f20c3d2c424e25820735e28f1879f4ab275831cafdab88b0c1",
+    "sha256": "0a31cc99a364680eba9c9241b5609b73aa9b5a737dfff1ed551a3102bae1e71b",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },
-  "size_bytes": 627287,
-  "signature": "bVLy94XInfxQ6+MHLsYGgKsYhyMfp7TRGe5gerSKv4+yLBzpcvbvd6FUa0vD4icRYKjdONFbyeJhDV4sMP+aDw=="
+  "size_bytes": 627473,
+  "signature": "/q17ZbCDwWvrpbqpmAz2c7/HxMW/kofTUQgHnLH1eL3mS6OcVfdqyO8WexYi0dmy3RLMBr89s8UnetsLQK03BQ=="
 }

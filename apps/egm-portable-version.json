@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Windows Portable update feed. Upload to egerena.com/apps/egm-portable-version.json",
   "_version_notes": [
-    "Electron runtime updated to v44.5.1 \u2014 backported ANGLE, Chromium, Dawn, and V8 fixes"
+    "Electron runtime updated to v44.6.0 \u2014 crash fixes and updated timezone data"
   ],
   "_history": [
+    {
+      "version": "1.4.8",
+      "date": "10/6/2026",
+      "notes": [
+        "Electron runtime updated to v44.6.0 \u2014 crash fixes and updated timezone data"
+      ]
+    },
     {
       "version": "1.4.7",
       "date": "9/30/2026",
@@ -31,26 +38,19 @@
       "notes": [
         "Electron runtime updated to v44.4.4 \u2014 fixes a startup reliability issue where the app window could occasionally fail to appear"
       ]
-    },
-    {
-      "version": "1.4.3",
-      "date": "9/18/2026",
-      "notes": [
-        "Electron runtime updated to v44.4.3 \u2014 backported Chromium, PDFium, Skia, and V8 fixes, plus a faster startup for files packaged inside the app"
-      ]
     }
   ],
-  "_last_updated": "2026-09-30T14:11:46-04:00",
-  "version": "1.4.7",
-  "build": 161,
-  "label": "v1.4.7 - Build 161 - 9/30/2026 1:20 PM EST",
+  "_last_updated": "2026-10-06T20:15:49-04:00",
+  "version": "1.4.8",
+  "build": 162,
+  "label": "v1.4.8 - Build 162 - 10/6/2026 7:35 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd-portable.zip",
   "zip": "EGMd-portable.zip",
   "_checksums": {
-    "sha256": "0a64bfa60169b76459accbfa6ea2104af16b35b49bf2daea76dbb7d63db30c69",
+    "sha256": "9bddb3f745d16b3e8d50ec9f1a01c3fb5b0630607884048654006192e792bba2",
     "algorithm": "SHA-256",
     "file": "EGMd-portable.zip"
   },
-  "size_bytes": 633061,
-  "signature": "H3JWDLR3Qaf3adT7h1soW/JYVRuK4aa8b/WsHjER7lq3UGjGCpI+g3Gqg5PCt4YN4rRCCLjzZx3OjzI2+vbaAw=="
+  "size_bytes": 633300,
+  "signature": "ni4iA8UA26FDWlWevUshCRf5WtcEZM34sRVv/+Eny+ddnSmp/0xcbcgTlzQG2iKRq9Dx9POIfxN/vtqGqWyoAQ=="
 }

@@ -1,9 +1,22 @@
 {
   "_comment": "EGM Downloader Linux \u2014 informational, no auto-update. Upload to egerena.com/apps/egmlinux-update.json",
   "_version_notes": [
-    "Electron runtime updated to v44.6.0 \u2014 crash fixes and updated timezone data"
+    "Electron runtime updated to v44.7.0 \u2014 backported ANGLE, Chromium, Dawn, fontconfig, Skia, V8 and WebRTC fixes",
+    "Changed: Improved wording in nine languages (Spanish, Arabic, German, French, Italian, Japanese, Dutch, Portuguese and Russian).",
+    "Fixed: The message shown when you stop fetching a playlist is now translated.",
+    "Fixed: Downloads no longer fail with \"No output file found\" when the download folder name contains [ or ]."
   ],
   "_history": [
+    {
+      "version": "1.4.9",
+      "date": "10/7/2026",
+      "notes": [
+        "Electron runtime updated to v44.7.0 \u2014 backported ANGLE, Chromium, Dawn, fontconfig, Skia, V8 and WebRTC fixes",
+        "Changed: Improved wording in nine languages (Spanish, Arabic, German, French, Italian, Japanese, Dutch, Portuguese and Russian).",
+        "Fixed: The message shown when you stop fetching a playlist is now translated.",
+        "Fixed: Downloads no longer fail with \"No output file found\" when the download folder name contains [ or ]."
+      ]
+    },
     {
       "version": "1.4.8",
       "date": "10/6/2026",
@@ -31,26 +44,19 @@
       "notes": [
         "Electron runtime updated to v44.4.5 \u2014 backported Chromium, PDFium, and V8 fixes"
       ]
-    },
-    {
-      "version": "1.4.4",
-      "date": "9/22/2026",
-      "notes": [
-        "Electron runtime updated to v44.4.4 \u2014 fixes a startup reliability issue where the app window could occasionally fail to appear"
-      ]
     }
   ],
-  "_last_updated": "2026-10-06T20:15:49-04:00",
-  "version": "1.4.8",
-  "build": 162,
-  "label": "v1.4.8 - Build 162 - 10/6/2026 7:35 PM EST",
+  "_last_updated": "2026-10-07T21:50:21-04:00",
+  "version": "1.4.9",
+  "build": 163,
+  "label": "v1.4.9 - Build 163 - 10/7/2026 9:27 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdL.zip",
   "zip": "EGMdL.zip",
   "_checksums": {
-    "sha256": "518bb4264a8ee02cddfb4cc8561bbbc3ea017225243d27b10e8b08edc1e48a3b",
+    "sha256": "4bf8b651c50f68e07dde4982a11d44eded498dd269df3b6205789a9a79cc481f",
     "algorithm": "SHA-256",
     "file": "EGMdL.zip"
   },
-  "size_bytes": 177685132,
-  "signature": "Ns4aU7nAp138Vito49rhYBWDeDe5YBmuPrxyQPWZYPQT0DZu9jc+F5T5RZtJq8G9F2MVRWqYhP3L9FTPK5sODQ=="
+  "size_bytes": 177716901,
+  "signature": "PBV5YRLDa1aPfxHgatpTRajpEwRoT7Sh51r0i4Aa2ODvgPJDvnj157eyxxfyRbJmp6h4Lcc0FfhsasCOVMfuDg=="
 }

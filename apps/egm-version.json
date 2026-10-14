@@ -1,12 +1,18 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "Electron runtime updated to v44.7.0 \u2014 backported ANGLE, Chromium, Dawn, fontconfig, Skia, V8 and WebRTC fixes",
-    "Changed: Improved wording in nine languages (Spanish, Arabic, German, French, Italian, Japanese, Dutch, Portuguese and Russian).",
-    "Fixed: The message shown when you stop fetching a playlist is now translated.",
-    "Fixed: Downloads no longer fail with \"No output file found\" when the download folder name contains [ or ]."
+    "Electron runtime updated to v44.7.1 \u2014 Linux crash fixes (no display server, menu bar, folders with non-ASCII names), a renderer crash fix and updated Chromium",
+    "Fixed: The startup cleanup of leftover partial files now only removes files the app created, and a download folder from an imported settings file is checked before it is used."
   ],
   "_history": [
+    {
+      "version": "1.4.10",
+      "date": "10/13/2026",
+      "notes": [
+        "Electron runtime updated to v44.7.1 \u2014 Linux crash fixes (no display server, menu bar, folders with non-ASCII names), a renderer crash fix and updated Chromium",
+        "Fixed: The startup cleanup of leftover partial files now only removes files the app created, and a download folder from an imported settings file is checked before it is used."
+      ]
+    },
     {
       "version": "1.4.9",
       "date": "10/7/2026",
@@ -37,27 +43,20 @@
       "notes": [
         "Electron runtime updated to v44.5.0 \u2014 crash and stability fixes, including Linux file dialog and GPU process startup fixes"
       ]
-    },
-    {
-      "version": "1.4.5",
-      "date": "9/23/2026",
-      "notes": [
-        "Electron runtime updated to v44.4.5 \u2014 backported Chromium, PDFium, and V8 fixes"
-      ]
     }
   ],
-  "_last_updated": "2026-10-07T21:50:21-04:00",
-  "version": "1.4.9",
-  "build": 163,
-  "label": "v1.4.9 - Build 163 - 10/7/2026 9:27 PM EST",
+  "_last_updated": "2026-10-13T21:34:18-04:00",
+  "version": "1.4.10",
+  "build": 164,
+  "label": "v1.4.10 - Build 164 - 10/13/2026 9:12 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "1981f80b352e3fdb3d96e40ce1122b52fba1c5e4e6b4cbb60f3a407c084db5a0",
+    "sha256": "86cec5403da028954c3474cb2ee52a66f26601e46c3091887844174a3490a2cc",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },
-  "size_bytes": 627792,
-  "signature": "dgPdjyITtET5l7Z9ksrJR1jwBsV/u6LDwM+J0FaYkOE0UtJ5X3uslhzxTrUH4M83UMfnKD07v0E3yGCF51JMAQ=="
+  "size_bytes": 628222,
+  "signature": "NP1dZvMJskXbbgocBRIwvEEWNHPRpy/Mbl1XOh691/3eBDV3tTHGvXzyi3pNWX8TO3jcwcQnfy7+90DqTir2BA=="
 }

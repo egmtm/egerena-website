@@ -109,10 +109,10 @@
         <div class="glass-card">
             <section class="section">
                 <div class="download-section">
-                <h3>📦 EGM Downloader 1.4.10</h3>
+                <h3>📦 EGM Downloader 1.4.11</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
-                <p class="version-subtitle" style="text-align:center;margin-top:4px">141 MB &middot; ~350 MB after install &middot; near instant startup</p>
-                <p class="sha256-line">SHA256: 394e87109e630587d3afc4f0beda17ff73711f7e3f59dab40102263f20b73c71</p>
+                <p class="version-subtitle" style="text-align:center;margin-top:4px">141 MB &middot; ~300 MB after install &middot; near instant startup</p>
+                <p class="sha256-line">SHA256: 9534d87ad495a9191af112a2b2c722d298ebd6c70989260f8f35b0bd0f61878a</p>
 
                 <!-- Apple Notarization Trust Signal -->
                 <details class="disclaimer-collapsible apple-trust-signal" id="apple-trust-signal">
@@ -128,15 +128,19 @@
                 </details>
 
 <p class="whats-new-content">
-                    <strong>What's New in 1.4.10 — 10/13/2026:</strong><br>
-<em class="polish-label">last call</em><br><br>
-                    • Electron runtime updated to v44.7.1 — Linux crash fixes (no display server, menu bar, folders with non-ASCII names), a renderer crash fix and updated Chromium<br>
-                    • Fixed: The startup cleanup of leftover partial files now only removes files the app created, and a download folder from an imported settings file is checked before it is used.
+                    <strong>What's New in 1.4.11 — 10/14/2026:</strong><br>
+<em class="polish-label">last call: the return of electron</em><br><br>
+                    • Electron runtime updated to v44.7.2 — backported ANGLE, Chromium, PDFium and V8 fixes<br>
+                    • Electron runtime updated to v44.7.2 — fixes for clicks sent to a background app being dropped and for interrupted updates leaving a broken app behind
                 </p>
 
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>
                     <div class="history-content">
+                        <p class="history-item">
+                            <strong>v1.4.10 — LAST CALL — 10/13/2026:</strong><br>
+                            • Electron 44.7.1 Linux crash fixes, a renderer crash fix and updated Chromium, safer startup cleanup of leftover partial files, check of an imported download folder
+                        </p>
                         <p class="history-item">
                             <strong>v1.4.9 — JUST ANOTHER UPDATE VI — 10/7/2026:</strong><br>
                             • Electron 44.7.0 backported ANGLE, Chromium, Dawn, fontconfig, Skia, V8 and WebRTC fixes, improved wording in nine languages, translated stop fetch message, fix for download folders with [ or ] in the name
@@ -391,8 +395,7 @@
                 <ul>
                     <li>Mac with Apple Silicon (M1, M2, M3, M4, M5)</li>
                     <li>macOS 13.0 (Ventura) or later</li>
-                    <li><a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer" class="text-link">Python 3.10 or newer</a></li>
-                    <li>~500 MB disk space</li>
+                    <li>~300 MB disk space</li>
                     <li>No admin rights required</li>
                 </ul>
             </div>
@@ -404,10 +407,10 @@
                     <li>Run <code>EGM Downloader.dmg</code></li>
                     <li>Drag "EGM Downloader" to Applications folder</li>
                     <li>Launch from Applications</li>
-                    <li>Splash screen: 1–5 seconds (prepackaged — no downloads needed)</li>
+                    <li>Splash screen: 1–5 seconds (Electron and Python are bundled in the package)</li>
                 </ol>
                 <p class="whats-new-content">
-                    <strong>First launch:</strong> ~500 MB of dependencies will auto-install<br>
+                    <strong>First launch:</strong> ffmpeg, ffprobe and Deno download automatically<br>
                     <strong>Subsequent launches:</strong> Near-instant startup
                 </p>
             </div>

@@ -1,11 +1,18 @@
 {
   "_comment": "EGM Downloader Windows Portable update feed. Upload to egerena.com/apps/egm-portable-version.json",
   "_version_notes": [
-    "Electron runtime updated to v44.7.2 \u2014 backported ANGLE, Chromium, PDFium and V8 fixes",
-    "Changed: Electron now updates by itself after an app update. The new version is downloaded first and only replaces the current one once it is ready, so a failed or offline download no longer leaves the app without Electron.",
-    "Changed: The portable edition now checks the file it uses to set up pip with a pinned checksum on first run, like it already does for Python and Node.js."
+    "Electron runtime updated to v44.8.0 \u2014 Chromium 152.0.7977.167 and backported Chromium and V8 fixes",
+    "Electron runtime updated to v44.8.0 \u2014 fixes the mouse cursor going missing over native dialogs in certain cases"
   ],
   "_history": [
+    {
+      "version": "1.4.12",
+      "date": "10/15/2026",
+      "notes": [
+        "Electron runtime updated to v44.8.0 \u2014 Chromium 152.0.7977.167 and backported Chromium and V8 fixes",
+        "Electron runtime updated to v44.8.0 \u2014 fixes the mouse cursor going missing over native dialogs in certain cases"
+      ]
+    },
     {
       "version": "1.4.11",
       "date": "10/14/2026",
@@ -39,26 +46,19 @@
       "notes": [
         "Electron runtime updated to v44.6.0 \u2014 crash fixes and updated timezone data"
       ]
-    },
-    {
-      "version": "1.4.7",
-      "date": "9/30/2026",
-      "notes": [
-        "Electron runtime updated to v44.5.1 \u2014 backported ANGLE, Chromium, Dawn, and V8 fixes"
-      ]
     }
   ],
-  "_last_updated": "2026-10-14T22:12:49-04:00",
-  "version": "1.4.11",
-  "build": 165,
-  "label": "v1.4.11 - Build 165 - 10/14/2026 8:52 PM EST",
+  "_last_updated": "2026-10-15T23:25:26-04:00",
+  "version": "1.4.12",
+  "build": 166,
+  "label": "v1.4.12 - Build 166 - 10/15/2026 10:57 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd-portable.zip",
   "zip": "EGMd-portable.zip",
   "_checksums": {
-    "sha256": "8b30dacb6e53d9fb0105bddb9f6655ef5362490accdc91709401ea16d2d7e64a",
+    "sha256": "387ec68afb49b17077a7a5d23643da83e570f5e0e0115e2a8ae0699558391cf2",
     "algorithm": "SHA-256",
     "file": "EGMd-portable.zip"
   },
-  "size_bytes": 636399,
-  "signature": "D+3HHrJyx7si/AlYn9JByZVuVkZnlfYGpMxv01evwBm3TYM1VH5imNeGEtvTJ0k4/g3Ar4CPjR0skYQ9IUKODQ=="
+  "size_bytes": 636482,
+  "signature": "jayz/Yn/dj6nfogsF85/6wT3IBIEhPEojG6AQ2Fl1B8ppP1Tfl2X/DEEae1jGjvdFCLTVPYodnKkHdEQbkHzDw=="
 }

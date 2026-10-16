@@ -1,10 +1,16 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Electron runtime updated to v44.7.2 \u2014 backported ANGLE, Chromium, PDFium and V8 fixes",
-    "Electron runtime updated to v44.7.2 \u2014 fixes for clicks sent to a background app being dropped and for interrupted updates leaving a broken app behind"
+    "Electron runtime updated to v44.8.0 \u2014 Chromium 152.0.7977.167 and backported Chromium and V8 fixes"
   ],
   "_history": [
+    {
+      "version": "1.4.12",
+      "date": "10/15/2026",
+      "notes": [
+        "Electron runtime updated to v44.8.0 \u2014 Chromium 152.0.7977.167 and backported Chromium and V8 fixes"
+      ]
+    },
     {
       "version": "1.4.11",
       "date": "10/14/2026",
@@ -37,26 +43,19 @@
       "notes": [
         "Electron runtime updated to v44.6.0 \u2014 crash fixes and updated timezone data"
       ]
-    },
-    {
-      "version": "1.4.7",
-      "date": "9/30/2026",
-      "notes": [
-        "Electron runtime updated to v44.5.1 \u2014 backported ANGLE, Chromium, Dawn, and V8 fixes"
-      ]
     }
   ],
-  "_last_updated": "2026-10-14T22:12:49-04:00",
-  "version": "1.4.11",
-  "build": 165,
-  "label": "v1.4.11 - Build 165 - 10/14/2026 8:52 PM EST",
+  "_last_updated": "2026-10-15T23:25:26-04:00",
+  "version": "1.4.12",
+  "build": 166,
+  "label": "v1.4.12 - Build 166 - 10/15/2026 10:57 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "9534d87ad495a9191af112a2b2c722d298ebd6c70989260f8f35b0bd0f61878a",
+    "sha256": "2dcefa78c39031afb019e0d7cfb1964e5c68ccec53ecb92ea9c41c73ca467e28",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 147645806,
-  "signature": "tYqUR0z0iMcBvZ1Kg+M3/teFOXwM51NCW9MK+mdBzFJw2gjFQJi/klY8ImA+ACc8HbCEWJE8O7lapLZKcRDiCA=="
+  "size_bytes": 147804344,
+  "signature": "1fUyJbaKPyBSpI1UuYOaob3Yj3cyZpV8XIy3Znnd6j/JwkgaMksTdfmscGG++N62IVxEPL63IsAqLweXggnFCg=="
 }

@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Linux \u2014 informational, no auto-update. Upload to egerena.com/apps/egmlinux-update.json",
   "_version_notes": [
-    "Electron runtime updated to v44.7.2 \u2014 backported ANGLE, Chromium, PDFium and V8 fixes"
+    "Electron runtime updated to v44.8.0 \u2014 Chromium 152.0.7977.167 and backported Chromium and V8 fixes"
   ],
   "_history": [
+    {
+      "version": "1.4.12",
+      "date": "10/15/2026",
+      "notes": [
+        "Electron runtime updated to v44.8.0 \u2014 Chromium 152.0.7977.167 and backported Chromium and V8 fixes"
+      ]
+    },
     {
       "version": "1.4.11",
       "date": "10/14/2026",
@@ -35,26 +42,19 @@
       "notes": [
         "Electron runtime updated to v44.6.0 \u2014 crash fixes and updated timezone data"
       ]
-    },
-    {
-      "version": "1.4.7",
-      "date": "9/30/2026",
-      "notes": [
-        "Electron runtime updated to v44.5.1 \u2014 backported ANGLE, Chromium, Dawn, and V8 fixes"
-      ]
     }
   ],
-  "_last_updated": "2026-10-14T22:12:49-04:00",
-  "version": "1.4.11",
-  "build": 165,
-  "label": "v1.4.11 - Build 165 - 10/14/2026 8:52 PM EST",
+  "_last_updated": "2026-10-15T23:25:26-04:00",
+  "version": "1.4.12",
+  "build": 166,
+  "label": "v1.4.12 - Build 166 - 10/15/2026 10:57 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdL.zip",
   "zip": "EGMdL.zip",
   "_checksums": {
-    "sha256": "27be9edfe47c05347ac5a018720bfce1ffee58e27437f2865985d098154e9428",
+    "sha256": "1e23766c25e5beab89ef493a9b0b84df2e068a4c63636ca8474f2618bff824f7",
     "algorithm": "SHA-256",
     "file": "EGMdL.zip"
   },
-  "size_bytes": 177714272,
-  "signature": "OwRynZKMp0jHmsFAcM8CDOxUVUjtnJwtFJynaRePcER1TY7H94IugL0ryez5AlGk49n+OBsVXrza7PYc2OOOBQ=="
+  "size_bytes": 178092896,
+  "signature": "f08iAMkJQuhCYbnhDYQrx7tWRZufLh0DSDrOQ90HGj0/QKflcEacNeOiixohYARTBhTrvftrw6mqJPXfeSKLAA=="
 }

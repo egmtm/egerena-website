@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Linux \u2014 informational, no auto-update. Upload to egerena.com/apps/egmlinux-update.json",
   "_version_notes": [
-    "Electron runtime updated to v44.8.0 \u2014 Chromium 152.0.7977.167 and backported Chromium and V8 fixes"
+    "Electron runtime updated to v44.9.0 \u2014 maintenance update with Electron fixes"
   ],
   "_history": [
+    {
+      "version": "1.4.13",
+      "date": "10/17/2026",
+      "notes": [
+        "Electron runtime updated to v44.9.0 \u2014 maintenance update with Electron fixes"
+      ]
+    },
     {
       "version": "1.4.12",
       "date": "10/15/2026",
@@ -35,26 +42,19 @@
         "Fixed: The message shown when you stop fetching a playlist is now translated.",
         "Fixed: Downloads no longer fail with \"No output file found\" when the download folder name contains [ or ]."
       ]
-    },
-    {
-      "version": "1.4.8",
-      "date": "10/6/2026",
-      "notes": [
-        "Electron runtime updated to v44.6.0 \u2014 crash fixes and updated timezone data"
-      ]
     }
   ],
-  "_last_updated": "2026-10-15T23:25:26-04:00",
-  "version": "1.4.12",
-  "build": 166,
-  "label": "v1.4.12 - Build 166 - 10/15/2026 10:57 PM EST",
+  "_last_updated": "2026-10-17T06:12:02-04:00",
+  "version": "1.4.13",
+  "build": 167,
+  "label": "v1.4.13 - Build 167 - 10/17/2026 5:54 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdL.zip",
   "zip": "EGMdL.zip",
   "_checksums": {
-    "sha256": "1e23766c25e5beab89ef493a9b0b84df2e068a4c63636ca8474f2618bff824f7",
+    "sha256": "30e2359f25a6f2a5a30020dcb288d56fba79a7b258b27420897c5af6217709c7",
     "algorithm": "SHA-256",
     "file": "EGMdL.zip"
   },
-  "size_bytes": 178092896,
-  "signature": "f08iAMkJQuhCYbnhDYQrx7tWRZufLh0DSDrOQ90HGj0/QKflcEacNeOiixohYARTBhTrvftrw6mqJPXfeSKLAA=="
+  "size_bytes": 178065449,
+  "signature": "HQGpSr0+8EsIaa/WOLRxWWr8qpbHC7w849Ow1R1IhLqSfNskh+HvE4evKTk7Sh60qo6BhHWaxIhsepPkAkGtDw=="
 }

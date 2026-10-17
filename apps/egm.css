@@ -106,6 +106,24 @@ body {
     transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* SKIP LINK */
+.skip {
+    position: fixed;
+    left: 12px;
+    top: -60px;
+    z-index: 1001;
+    padding: 10px 16px;
+    border-radius: 6px;
+    background: var(--accent);
+    color: var(--btn-text);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.skip:focus {
+    top: 8px;
+}
+
 /* NAV */
 .nav {
     position: fixed;

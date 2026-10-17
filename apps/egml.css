@@ -64,6 +64,22 @@ body {
 }
 
 /* Navigation */
+.skip {
+    position: fixed;
+    left: 12px;
+    top: -60px;
+    z-index: 200;
+    padding: 8px 14px;
+    background: var(--terminal-bg);
+    color: var(--terminal-color);
+    border: 1px solid var(--terminal-color);
+    text-decoration: none;
+}
+
+.skip:focus {
+    top: 8px;
+}
+
 .nav {
     position: fixed;
     top: 0;

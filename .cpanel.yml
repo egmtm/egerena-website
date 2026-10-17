@@ -104,6 +104,12 @@ deployment:
     - /bin/cp apps/egm-portable-version.json ${DEPLOYPATH}apps/
     - /bin/cp apps/egmac-update.json ${DEPLOYPATH}apps/
     - /bin/cp apps/egmlinux-update.json ${DEPLOYPATH}apps/
+    # app icons: favicon (16, 32, 192), apple touch icon (180) and link preview image (512) on the app pages
+    - /bin/cp apps/egm-icon-16.png ${DEPLOYPATH}apps/
+    - /bin/cp apps/egm-icon-32.png ${DEPLOYPATH}apps/
+    - /bin/cp apps/egm-icon-180.png ${DEPLOYPATH}apps/
+    - /bin/cp apps/egm-icon-192.png ${DEPLOYPATH}apps/
+    - /bin/cp apps/egm-icon-512.png ${DEPLOYPATH}apps/
 
     # ── /games/ — games hub + STDERR ────────────────────────────
     # game001-scores.json INTENTIONALLY EXCLUDED (runtime data)

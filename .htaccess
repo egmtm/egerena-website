@@ -54,13 +54,15 @@ ErrorDocument 500 /500.html
     Header always unset X-Frame-Options
     Header always unset X-Content-Type-Options
     Header always unset Content-Security-Policy
+    Header always unset X-XSS-Protection
 
-    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
     Header always set X-Frame-Options "DENY"
     Header always set X-Content-Type-Options "nosniff"
+    Header always set X-XSS-Protection "0"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://static.cloudflareinsights.com; script-src-elem 'self' 'unsafe-inline' https://challenges.cloudflare.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://viberank.dev; connect-src 'self' https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src https://challenges.cloudflare.com; frame-ancestors 'none'; upgrade-insecure-requests"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; script-src-elem 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://viberank.dev; connect-src 'self' https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src https://challenges.cloudflare.com; frame-ancestors 'none'; upgrade-insecure-requests"
     Header always set Cross-Origin-Opener-Policy "same-origin"
     Header always set Cross-Origin-Resource-Policy "same-origin"
 
@@ -80,7 +82,7 @@ ErrorDocument 500 /500.html
 <IfModule mod_mime.c>
     AddType application/javascript       .js
     AddType text/css                     .css
-    AddType application/manifest+json    .json
+    AddType application/json             .json
     AddType image/png                    .png
     AddType image/jpeg                   .jpg .jpeg
     AddType image/webp                   .webp
@@ -92,13 +94,12 @@ ErrorDocument 500 /500.html
 
 # ── Compression ──────────────────────────────────────────────────
 <IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/manifest+json image/svg+xml
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
 </IfModule>
 
 # ── Cache control ────────────────────────────────────────────────
 <IfModule mod_expires.c>
     ExpiresActive On
-    ExpiresByType text/html              "access plus 0 seconds"
     ExpiresByType text/css               "access plus 1 week"
     ExpiresByType application/javascript "access plus 1 week"
     ExpiresByType image/png              "access plus 3 months"
@@ -108,5 +109,4 @@ ErrorDocument 500 /500.html
     ExpiresByType image/svg+xml          "access plus 3 months"
     ExpiresByType image/x-icon           "access plus 6 months"
     ExpiresByType font/woff2             "access plus 6 months"
-    ExpiresByType application/manifest+json "access plus 0 seconds"
 </IfModule>

@@ -199,6 +199,26 @@ body::before {
 }
 
 /* Nav */
+.skip {
+    position: fixed;
+    left: 12px;
+    top: -60px;
+    z-index: 300;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: var(--glass-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.skip:focus {
+    top: 12px;
+}
+
 .nav {
     position: sticky;
     top: 0;

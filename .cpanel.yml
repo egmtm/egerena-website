@@ -19,6 +19,7 @@
 # Files intentionally EXCLUDED (repo-only, not server-deployable):
 #   - README.md            (repo documentation)
 #   - THIRD_PARTY.md       (repo documentation)
+#   - fonts/README.md      (repo documentation)
 #   - .gitignore           (Git config)
 #   - .cpanel.yml          (this file)
 #
@@ -46,6 +47,14 @@ deployment:
     - /bin/mkdir -p ${DEPLOYPATH}apps/ja/
     - /bin/mkdir -p ${DEPLOYPATH}apps/ar/
     - /bin/mkdir -p ${DEPLOYPATH}games/
+    - /bin/mkdir -p ${DEPLOYPATH}fonts/
+    - /bin/mkdir -p ${DEPLOYPATH}fonts/bricolage-grotesque/
+    - /bin/mkdir -p ${DEPLOYPATH}fonts/cormorant-garamond/
+    - /bin/mkdir -p ${DEPLOYPATH}fonts/dm-mono/
+    - /bin/mkdir -p ${DEPLOYPATH}fonts/jetbrains-mono/
+    - /bin/mkdir -p ${DEPLOYPATH}fonts/outfit/
+    - /bin/mkdir -p ${DEPLOYPATH}fonts/share-tech-mono/
+    - /bin/mkdir -p ${DEPLOYPATH}fonts/vt323/
 
     # ── Root files ──────────────────────────────────────────────
     - /bin/cp .htaccess ${DEPLOYPATH}
@@ -104,6 +113,36 @@ deployment:
     - /bin/cp games/index.css ${DEPLOYPATH}games/
     - /bin/cp games/index.html ${DEPLOYPATH}games/
     - /bin/cp games/index.js ${DEPLOYPATH}games/
+
+    # ── /fonts/ — self hosted site fonts (SIL OFL 1.1, LICENSE kept next to each family) ──
+    # fonts/README.md INTENTIONALLY EXCLUDED (repo documentation)
+    - /bin/cp fonts/bricolage-grotesque/LICENSE ${DEPLOYPATH}fonts/bricolage-grotesque/
+    - /bin/cp fonts/bricolage-grotesque/bricolage-grotesque-latin-ext-opsz-normal.woff2 ${DEPLOYPATH}fonts/bricolage-grotesque/
+    - /bin/cp fonts/bricolage-grotesque/bricolage-grotesque-latin-opsz-normal.woff2 ${DEPLOYPATH}fonts/bricolage-grotesque/
+    - /bin/cp fonts/cormorant-garamond/LICENSE ${DEPLOYPATH}fonts/cormorant-garamond/
+    - /bin/cp fonts/cormorant-garamond/cormorant-garamond-latin-ext-wght-italic.woff2 ${DEPLOYPATH}fonts/cormorant-garamond/
+    - /bin/cp fonts/cormorant-garamond/cormorant-garamond-latin-ext-wght-normal.woff2 ${DEPLOYPATH}fonts/cormorant-garamond/
+    - /bin/cp fonts/cormorant-garamond/cormorant-garamond-latin-wght-italic.woff2 ${DEPLOYPATH}fonts/cormorant-garamond/
+    - /bin/cp fonts/cormorant-garamond/cormorant-garamond-latin-wght-normal.woff2 ${DEPLOYPATH}fonts/cormorant-garamond/
+    - /bin/cp fonts/dm-mono/LICENSE ${DEPLOYPATH}fonts/dm-mono/
+    - /bin/cp fonts/dm-mono/dm-mono-latin-300-normal.woff2 ${DEPLOYPATH}fonts/dm-mono/
+    - /bin/cp fonts/dm-mono/dm-mono-latin-400-normal.woff2 ${DEPLOYPATH}fonts/dm-mono/
+    - /bin/cp fonts/dm-mono/dm-mono-latin-500-normal.woff2 ${DEPLOYPATH}fonts/dm-mono/
+    - /bin/cp fonts/dm-mono/dm-mono-latin-ext-300-normal.woff2 ${DEPLOYPATH}fonts/dm-mono/
+    - /bin/cp fonts/dm-mono/dm-mono-latin-ext-400-normal.woff2 ${DEPLOYPATH}fonts/dm-mono/
+    - /bin/cp fonts/dm-mono/dm-mono-latin-ext-500-normal.woff2 ${DEPLOYPATH}fonts/dm-mono/
+    - /bin/cp fonts/fonts.css ${DEPLOYPATH}fonts/
+    - /bin/cp fonts/jetbrains-mono/LICENSE ${DEPLOYPATH}fonts/jetbrains-mono/
+    - /bin/cp fonts/jetbrains-mono/jetbrains-mono-latin-ext-wght-normal.woff2 ${DEPLOYPATH}fonts/jetbrains-mono/
+    - /bin/cp fonts/jetbrains-mono/jetbrains-mono-latin-wght-normal.woff2 ${DEPLOYPATH}fonts/jetbrains-mono/
+    - /bin/cp fonts/outfit/LICENSE ${DEPLOYPATH}fonts/outfit/
+    - /bin/cp fonts/outfit/outfit-latin-ext-wght-normal.woff2 ${DEPLOYPATH}fonts/outfit/
+    - /bin/cp fonts/outfit/outfit-latin-wght-normal.woff2 ${DEPLOYPATH}fonts/outfit/
+    - /bin/cp fonts/share-tech-mono/LICENSE ${DEPLOYPATH}fonts/share-tech-mono/
+    - /bin/cp fonts/share-tech-mono/share-tech-mono-latin-400-normal.woff2 ${DEPLOYPATH}fonts/share-tech-mono/
+    - /bin/cp fonts/vt323/LICENSE ${DEPLOYPATH}fonts/vt323/
+    - /bin/cp fonts/vt323/vt323-latin-400-normal.woff2 ${DEPLOYPATH}fonts/vt323/
+    - /bin/cp fonts/vt323/vt323-latin-ext-400-normal.woff2 ${DEPLOYPATH}fonts/vt323/
 
     # ── /.well-known/ — security.txt (RFC 8615) ─────────────────
     - /bin/mkdir -p ${DEPLOYPATH}.well-known/

@@ -2,7 +2,7 @@
 
 The site serves its own fonts, so no request for a font leaves egerena.com (the Content Security Policy only allows `font-src 'self'`).
 
-`fonts.css` holds every `@font-face` rule and is linked from each page as `/fonts/fonts.css?v=1`. A browser only downloads the files a page actually uses. Bump the `?v=` number on every page that links it whenever `fonts.css` or a font file changes.
+`fonts.css` holds every `@font-face` rule and is linked from each page as `/fonts/fonts.css?v=1`. A browser only downloads the files a page actually uses. Bump the `?v=` number on every page that links it whenever `fonts.css` changes. Font files are cached for six months, so a font file that changes needs a new file name (and a matching `fonts.css` update), not just new contents.
 
 ## Where the files come from
 

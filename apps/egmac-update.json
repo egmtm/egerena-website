@@ -1,9 +1,16 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Electron runtime updated to v44.8.0 \u2014 Chromium 152.0.7977.167 and backported Chromium and V8 fixes"
+    "Electron runtime updated to v44.9.0 \u2014 maintenance update with Electron fixes"
   ],
   "_history": [
+    {
+      "version": "1.4.13",
+      "date": "10/17/2026",
+      "notes": [
+        "Electron runtime updated to v44.9.0 \u2014 maintenance update with Electron fixes"
+      ]
+    },
     {
       "version": "1.4.12",
       "date": "10/15/2026",
@@ -36,26 +43,19 @@
         "Fixed: The message shown when you stop fetching a playlist is now translated.",
         "Fixed: Downloads no longer fail with \"No output file found\" when the download folder name contains [ or ]."
       ]
-    },
-    {
-      "version": "1.4.8",
-      "date": "10/6/2026",
-      "notes": [
-        "Electron runtime updated to v44.6.0 \u2014 crash fixes and updated timezone data"
-      ]
     }
   ],
-  "_last_updated": "2026-10-15T23:25:26-04:00",
-  "version": "1.4.12",
-  "build": 166,
-  "label": "v1.4.12 - Build 166 - 10/15/2026 10:57 PM EST",
+  "_last_updated": "2026-10-17T06:12:02-04:00",
+  "version": "1.4.13",
+  "build": 167,
+  "label": "v1.4.13 - Build 167 - 10/17/2026 5:54 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "2dcefa78c39031afb019e0d7cfb1964e5c68ccec53ecb92ea9c41c73ca467e28",
+    "sha256": "8508d92e2624ff829875c89d875e38366a5ebaf31824151710e93a43fef1aecd",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 147804344,
-  "signature": "1fUyJbaKPyBSpI1UuYOaob3Yj3cyZpV8XIy3Znnd6j/JwkgaMksTdfmscGG++N62IVxEPL63IsAqLweXggnFCg=="
+  "size_bytes": 147939282,
+  "signature": "Dkdaj8e0ZeYfDFi6QTUJO8yYP+fg/0F2qcgkisnP5xiqSvGhEaxM9KQmdWNLJFvHXpRQ8wmvDV8c8AXr6akzBw=="
 }

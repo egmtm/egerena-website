@@ -1,10 +1,16 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "Electron runtime updated to v44.8.0 \u2014 Chromium 152.0.7977.167 and backported Chromium and V8 fixes",
-    "Electron runtime updated to v44.8.0 \u2014 fixes the mouse cursor going missing over native dialogs in certain cases"
+    "Electron runtime updated to v44.9.0 \u2014 maintenance update with Electron fixes"
   ],
   "_history": [
+    {
+      "version": "1.4.13",
+      "date": "10/17/2026",
+      "notes": [
+        "Electron runtime updated to v44.9.0 \u2014 maintenance update with Electron fixes"
+      ]
+    },
     {
       "version": "1.4.12",
       "date": "10/15/2026",
@@ -39,27 +45,20 @@
         "Fixed: The message shown when you stop fetching a playlist is now translated.",
         "Fixed: Downloads no longer fail with \"No output file found\" when the download folder name contains [ or ]."
       ]
-    },
-    {
-      "version": "1.4.8",
-      "date": "10/6/2026",
-      "notes": [
-        "Electron runtime updated to v44.6.0 \u2014 crash fixes and updated timezone data"
-      ]
     }
   ],
-  "_last_updated": "2026-10-15T23:25:26-04:00",
-  "version": "1.4.12",
-  "build": 166,
-  "label": "v1.4.12 - Build 166 - 10/15/2026 10:57 PM EST",
+  "_last_updated": "2026-10-17T06:12:02-04:00",
+  "version": "1.4.13",
+  "build": 167,
+  "label": "v1.4.13 - Build 167 - 10/17/2026 5:54 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "76a629b4d6da0175cfdc68fd1f3ea33ef781230fa863a28c78decc0f912eecb6",
+    "sha256": "268f52b967edd8c369c736247ae68638fb2dc4ae48fba73656e07db745d0b6ee",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },
-  "size_bytes": 630111,
-  "signature": "bFEW/dcI/NrmIgtJmEaYZhJk233sS3sX63SLoQVVFKK8JFDTqy6hBz0FCIWj3j8E16GKf9nZy9pwy4S9Ey8ZBA=="
+  "size_bytes": 630160,
+  "signature": "9DLyoRRPLjum3GJs6nTbW/5DUnozqE2nRoI3gLnI+HmVYAoglB7Zvv8zFxz81s2pj/QlyLBr7MOx+UWQoamKAw=="
 }

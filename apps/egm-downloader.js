@@ -10,7 +10,12 @@
   {name:"La Parguera",dark:true,bg:"#020810",surf:"#030e1a",surf2:"#041424",fg:"#c0f0e8",mut:"#28a090",line:"#083040",acc:"#00d8c0",accT:"#00d8c0",acc2:"#20e8d0",on:"#000000",on2:"#000000",red:"#e04060",yel:"#80e040"},
   {name:"Bone",dark:false,bg:"#f5f0e8",surf:"#ede7d9",surf2:"#e4ddd0",fg:"#1e1810",mut:"#5a4e3a",line:"#c8bfaa",acc:"#2563eb",accT:"#2457c9",acc2:"#3b82f6",on:"#ffffff",on2:"#000000",red:"#b91c1c",yel:"#b45309"},
   {name:"Wildfire",dark:true,bg:"#100600",surf:"#1c0a00",surf2:"#271000",fg:"#ffe0cc",mut:"#c07040",line:"#5a2000",acc:"#f4511e",accT:"#f4511e",acc2:"#ff7043",on:"#000000",on2:"#000000",red:"#ff1744",yel:"#ffca28"},
-  {name:"Vaporwave",dark:true,bg:"#1a0030",surf:"#260040",surf2:"#320050",fg:"#fffb96",mut:"#e088e0",line:"#700090",acc:"#ff71ce",accT:"#ff71ce",acc2:"#ff99dd",on:"#000000",on2:"#000000",red:"#ff71ce",yel:"#fffb96"}
+  {name:"Vaporwave",dark:true,bg:"#1a0030",surf:"#260040",surf2:"#320050",fg:"#fffb96",mut:"#e088e0",line:"#700090",acc:"#ff71ce",accT:"#ff71ce",acc2:"#ff99dd",on:"#000000",on2:"#000000",red:"#ff71ce",yel:"#fffb96"},
+  {name:"San Juan",dark:true,bg:"#04080e",surf:"#080e18",surf2:"#0c1422",fg:"#e0eeff",mut:"#6888c8",line:"#182848",acc:"#5890e8",accT:"#5890e8",acc2:"#70a0f8",on:"#000000",on2:"#000000",red:"#e05050",yel:"#f0d040"},
+  {name:"La Guancha",dark:true,bg:"#040e10",surf:"#081a1c",surf2:"#0c2428",fg:"#c8f0f0",mut:"#3898a8",line:"#184848",acc:"#20b8e0",accT:"#20b8e0",acc2:"#38c8f0",on:"#000000",on2:"#000000",red:"#e05050",yel:"#e0c840"},
+  {name:"Dialup",dark:false,bg:"#c8c0b8",surf:"#c0b8b0",surf2:"#b8b0a8",fg:"#000000",mut:"#404040",line:"#909088",acc:"#000080",accT:"#000080",acc2:"#0000cc",on:"#ffffff",on2:"#ffffff",red:"#800000",yel:"#525200"},
+  {name:"Windows 95",dark:false,bg:"#009090",surf:"#c0c0c0",surf2:"#d4d0c8",fg:"#000000",mut:"#141414",line:"#808080",acc:"#000080",accT:"#00005a",acc2:"#0000aa",on:"#ffffff",on2:"#ffffff",red:"#3c0000",yel:"#606000"},
+  {name:"Ubuntu",dark:true,bg:"#1a0a1e",surf:"#2a1030",surf2:"#381640",fg:"#f8f0f8",mut:"#c890d8",line:"#6a2a70",acc:"#e95420",accT:"#ec693c",acc2:"#f06830",on:"#000000",on2:"#000000",red:"#ec693c",yel:"#e8a820"}
   ];
   var VARS = ['bg', 'surf', 'surf2', 'fg', 'mut', 'line', 'acc', 'accT', 'acc2', 'on', 'on2', 'red', 'yel'];
   var KEY = 'egm-theme';

@@ -24,6 +24,13 @@ ErrorDocument 500 /500.html
     RewriteCond %{HTTP:Content-Type} multipart [NC]
     RewriteRule ^ - [F,L]
 
+    # Refuse large or length less request bodies before they reach PHP: the biggest legitimate POST on this
+    # site (the contact form) is a few KB. A chunked body has no declared length, so it is refused too.
+    RewriteCond %{REQUEST_METHOD} =POST
+    RewriteCond %{HTTP:Content-Length} ^[0-9]{6,}$ [OR]
+    RewriteCond %{HTTP:Transfer-Encoding} .
+    RewriteRule ^ - [R=413,L]
+
     # Allow .well-known (RFC 8615 — security.txt, ACME, etc.)
     RewriteRule ^\.well-known/ - [L]
 

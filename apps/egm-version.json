@@ -1,9 +1,20 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "Electron runtime updated to v44.9.0 \u2014 maintenance update with Electron fixes"
+    "Electron runtime updated to v44.9.2 \u2014 maintenance update with Electron fixes, including blocking the compromised eMudhra certificate authority keys",
+    "Fixed: Seasonal themes now show only in their season in both theme pickers, and Hanami and Velvet Rose have seasons.",
+    "Updated: minimum certifi and websockets versions, so new installs start with the latest certificate list and connection library"
   ],
   "_history": [
+    {
+      "version": "1.4.14",
+      "date": "10/20/2026",
+      "notes": [
+        "Electron runtime updated to v44.9.2 \u2014 maintenance update with Electron fixes, including blocking the compromised eMudhra certificate authority keys",
+        "Fixed: Seasonal themes now show only in their season in both theme pickers, and Hanami and Velvet Rose have seasons.",
+        "Updated: minimum certifi and websockets versions, so new installs start with the latest certificate list and connection library"
+      ]
+    },
     {
       "version": "1.4.13",
       "date": "10/17/2026",
@@ -35,30 +46,20 @@
         "Electron runtime updated to v44.7.1 \u2014 Linux crash fixes (no display server, menu bar, folders with non-ASCII names), a renderer crash fix and updated Chromium",
         "Fixed: The startup cleanup of leftover partial files now only removes files the app created, and a download folder from an imported settings file is checked before it is used."
       ]
-    },
-    {
-      "version": "1.4.9",
-      "date": "10/7/2026",
-      "notes": [
-        "Electron runtime updated to v44.7.0 \u2014 backported ANGLE, Chromium, Dawn, fontconfig, Skia, V8 and WebRTC fixes",
-        "Changed: Improved wording in nine languages (Spanish, Arabic, German, French, Italian, Japanese, Dutch, Portuguese and Russian).",
-        "Fixed: The message shown when you stop fetching a playlist is now translated.",
-        "Fixed: Downloads no longer fail with \"No output file found\" when the download folder name contains [ or ]."
-      ]
     }
   ],
-  "_last_updated": "2026-10-17T06:12:02-04:00",
-  "version": "1.4.13",
-  "build": 167,
-  "label": "v1.4.13 - Build 167 - 10/17/2026 5:54 AM EST",
+  "_last_updated": "2026-10-20T21:07:19-04:00",
+  "version": "1.4.14",
+  "build": 168,
+  "label": "v1.4.14 - Build 168 - 10/20/2026 8:42 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "268f52b967edd8c369c736247ae68638fb2dc4ae48fba73656e07db745d0b6ee",
+    "sha256": "c694d91bfb92889ee984a24c6398c849482844485f84164eac43f17018d8de47",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },
-  "size_bytes": 630160,
-  "signature": "9DLyoRRPLjum3GJs6nTbW/5DUnozqE2nRoI3gLnI+HmVYAoglB7Zvv8zFxz81s2pj/QlyLBr7MOx+UWQoamKAw=="
+  "size_bytes": 641826,
+  "signature": "1aA7io7oHHR96bpzw/S2kC3O+3plUJIeJtwJg+TjklV4hsmR6HLyeobFJTHY9KYtr0osV6MF1t8uluDTBAwdDQ=="
 }

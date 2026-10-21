@@ -1,5 +1,12 @@
 
 RewriteEngine on
+
+# Refuse multipart uploads before they reach PHP: nothing here accepts file uploads.
+# This folder has its own rewrite rules, so the root rule is repeated here.
+RewriteCond %{REQUEST_METHOD} =POST
+RewriteCond %{HTTP:Content-Type} multipart [NC]
+RewriteRule ^ - [F,L]
+
 RewriteCond %{HTTP_HOST} ^apps\.enriquegerena\.com$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.apps\.enriquegerena\.com$
 RewriteRule ^/?$ "https\:\/\/egerena\.com\/apps" [R=301,L]

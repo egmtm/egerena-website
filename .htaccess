@@ -18,6 +18,12 @@ ErrorDocument 500 /500.html
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Refuse multipart uploads before they reach PHP: nothing on this site accepts file uploads.
+    # Kept before every other rule, so the scanner pass through below cannot skip it.
+    RewriteCond %{REQUEST_METHOD} =POST
+    RewriteCond %{HTTP:Content-Type} multipart [NC]
+    RewriteRule ^ - [F,L]
+
     # Allow .well-known (RFC 8615 — security.txt, ACME, etc.)
     RewriteRule ^\.well-known/ - [L]
 

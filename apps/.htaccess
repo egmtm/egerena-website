@@ -7,6 +7,13 @@ RewriteCond %{REQUEST_METHOD} =POST
 RewriteCond %{HTTP:Content-Type} multipart [NC]
 RewriteRule ^ - [F,L]
 
+# Refuse large or length less request bodies before they reach PHP: the biggest legitimate POST on this
+# site (the contact form) is a few KB. A chunked body has no declared length, so it is refused too.
+RewriteCond %{REQUEST_METHOD} =POST
+RewriteCond %{HTTP:Content-Length} ^[0-9]{6,}$ [OR]
+RewriteCond %{HTTP:Transfer-Encoding} .
+RewriteRule ^ - [R=413,L]
+
 RewriteCond %{HTTP_HOST} ^apps\.enriquegerena\.com$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.apps\.enriquegerena\.com$
 RewriteRule ^/?$ "https\:\/\/egerena\.com\/apps" [R=301,L]

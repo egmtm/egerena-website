@@ -149,7 +149,7 @@
     }
     load('/apps/egm-version.json', function (d) {
       var el = $('#ver');
-      if (el && typeof d.version === 'string' && /^\d+\.\d+\.\d+$/.test(d.version)) {
+      if (el && typeof d.version === 'string' && /^\d+(\.\d+){2,4}$/.test(d.version)) {
         el.textContent = 'v' + d.version;
         el.hidden = false;
       }

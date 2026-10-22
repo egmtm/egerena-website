@@ -139,9 +139,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3>> EGM_DOWNLOADER_v1.5.0<span class="dl-ext">.AppImage</span></h3>
+                <h3>> EGM_DOWNLOADER_v1.5.0.0.1<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px">SHA256: 3a097b5c9e3cf2887338d63d4bbfad1d1cd5a54220523f84fff3535890fa89f3</p>
+                <p class="sha256-line" style="margin-top:10px">SHA256: a3e28f3eadf9d0bbfe4b1fc539b4419c95af554c818860c0ac41925da4a70b6e</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">171 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -149,27 +149,22 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN v1.5.0</div>
+                <div class="section-header">> WHAT'S NEW IN v1.5.0.0.1</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-                <div class="whats-new-subtitle">v1.5.0 — 10/21/2026</div>
+                <div class="whats-new-subtitle">v1.5.0.0.1 — 10/22/2026</div>
                 <p class="terminal-command">$ changelog --latest</p>
-                <div class="polish-label">// raw feed</div>
+                <div class="polish-label">// the one about brotli</div>
                 <ul>
-                    <li>New: SponsorBlock integration — automatically remove sponsor reads, intros, outros, and self-promotion segments from downloaded YouTube videos, powered by the community-run SponsorBlock database. Off by default, choose exactly which segment types to remove, adjustable per subscription</li>
-                    <li>New: "Quit when done" in the Subscriptions download queue. Switch it on while downloads are running and the app closes after a 30 second countdown once everything has finished. The page is dimmed and locked during the countdown until you press Cancel or Esc. It is never saved, and it will not close the app if a download failed or was cancelled.</li>
-                    <li>Changed: "Quit when done" in the main window now also waits for Subscriptions downloads, shows the same 30 second countdown with a Cancel button, in the middle of the window over a dimmed page that stays locked until you press Cancel or Esc, and no longer closes the app if a download failed or was cancelled.</li>
-                    <li>New: Live streams now show a LIVE tag, the recording time and size while they record, and a "Stop and save" button next to Cancel that ends the recording and keeps what was captured. If a live recording fails partway, whatever was captured is now saved instead of lost. Cancel still discards the recording. Live recordings saved as audio can come out as M4A even when another audio format is selected, because the stream is saved as it arrives without converting it.</li>
-                    <li>New: If a live stream drops for a moment, the recording now reconnects on its own (up to 5 times in a row) and joins the pieces into one file. The card shows "Reconnecting… 1/5" meanwhile, and a notice says when a few seconds may be missing or repeated.</li>
-                    <li>Fixed: When Universal MP4 could not convert a video to H.264, the video was saved in its original codec and you were never told. A notice now says so.</li>
-                    <li>Changed: Subscriptions export and import now carry each subscription's own settings (download folder, format, quality, auto fetch and SponsorBlock), not just the links. Older export files still import.</li>
-                    <li>Fixed: A video card no longer shows a broken image when its thumbnail cannot be loaded. Other thumbnails from the same video are tried, then the usual placeholder is shown.</li>
-                    <li>Changed: The status and Cancel buttons of a downloading card now start at the left edge, so a long status such as a live recording does not push Cancel onto a second line. Download all no longer leaves the dimmed Download button on started cards.</li>
-                    <li>Changed: You can now add videos while others are loaded or downloading. Fetch adds the new links to the list instead of starting over (links already in the list are skipped, also when the same video comes back under a different link), Download all picks up the cards you added and joins the run that is going, and Clear keeps the downloads in progress and asks first when it would remove other cards. Quit when done waits for the added cards too. The bar that shows how many downloads are done and active, with Cancel All, now appears from the first download, also when you start downloads one by one, and counts them all together.</li>
-                    <li>Fixed: Importing settings no longer says "Nothing selected" when every subscription in the file is already in your list, and no longer reports success when some subscriptions could not be added. The message now says how many were not added.</li>
-                    <li>Electron runtime updated to v45.0.0 — includes upstream Chromium 156 and Node.js 24.22.0 stability and security updates</li>
+                    <li>Security: The minimum brotli version is now 1.2.1, the library that unpacks compressed web responses, which includes an upstream fix for how malformed data is handled (CVE-2026-111497).</li>
+                    <li>Updated: The minimum yt-dlp version is now 2026.10.21, which includes the reworked Kick extractor for Kick downloads.</li>
                 </ul><details class="history-details">
                     <summary class="history-summary">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version">v1.5.0 — RAW FEED — 10/21/2026</div>
+                        <ul>
+                            <li>SponsorBlock integration, live stream recording with Stop and save and automatic reconnect, Quit when done in Subscriptions, adding videos while others are loaded or downloading, and Electron 45</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version">v1.4.14 — GRAND FINALE — 10/20/2026</div>
                         <ul>
                             <li>Electron 44.9.2 with the compromised eMudhra certificate authority keys blocked, seasonal themes now show only in their season, updated minimum certifi and websockets versions</li>

@@ -11,17 +11,15 @@ to prevent accidental overwrites of working server state.
 
 ## Server-side libraries
 
-### PHPMailer
+### PHPMailer (retired)
 
-- **Purpose:** Email form delivery (contact form on `/index.html`)
-- **Location on server:** `/phpmailer/`
-- **License:** LGPL-2.1
-- **Source:** https://github.com/PHPMailer/PHPMailer
-- **Required by:** `quote-form-handler.php`
-- **Update process:** Download release ZIP → upload via cPanel File Manager → test form
-- **Why not in Git:** Stable runtime dependency, infrequent updates require
-  manual changelog review. Avoids vendoring a third-party library and
-  intermingling licenses.
+- **Status:** No longer used. The contact form switched from PHPMailer (SMTP)
+  to the Resend API on May 17, 2026 (commit `3bdb97f`). `quote-form-handler.php`
+  does not load it.
+- **Location on server:** `/phpmailer/`. It was never in Git (`.gitignore` still
+  lists it). If the folder is still on the server it can be deleted.
+- **Web access:** `.htaccess` keeps a block for `/phpmailer/` until the folder is
+  deleted on the server.
 
 ---
 
@@ -29,13 +27,14 @@ to prevent accidental overwrites of working server state.
 
 ### config.php
 
-- **Purpose:** SMTP credentials for the contact form
+- **Purpose:** Settings and secrets for the contact form (Resend API key,
+  Cloudflare Turnstile secret key, from name, from and to addresses, rate limit)
 - **Location on server:** `/config.php`
 - **Permissions:** chmod 600 (owner read/write only)
 - **Required by:** `quote-form-handler.php`
-- **Why not in Git:** Contains secrets (SMTP host, username, password, from/to
-  addresses, rate limit constant). Rotated periodically by EGM directly on
-  the server.
+- **Why not in Git:** Contains secrets (the Resend API key and the Turnstile
+  secret key) next to the from/to addresses and the rate limit constant.
+  Rotated periodically by EGM directly on the server.
 
 ---
 
@@ -46,6 +45,7 @@ to prevent accidental overwrites of working server state.
 - **Purpose:** STDERR leaderboard storage (top 100 scores)
 - **Location on server:** `/games/game001-scores.json`
 - **Created by:** `games/game001-scores.php` on first POST submission
+- **Web access:** Blocked by `.htaccess` (403). Only the PHP reads it.
 - **Why not in Git:** Updated every time a player submits a score.
   Including in deploy would wipe the leaderboard on every deploy.
 
@@ -54,6 +54,9 @@ to prevent accidental overwrites of working server state.
 - **Purpose:** Per-IP submission rate limit tracking for the leaderboard
 - **Location on server:** `/games/game001-ratelimit.json`
 - **Created by:** `games/game001-scores.php` on first POST submission
+- **Holds:** Visitor IP addresses with a timestamp (entries are cleaned up when
+  a new score is submitted)
+- **Web access:** Blocked by `.htaccess` (403). Only the PHP reads it.
 - **Why not in Git:** Same reason as scores file — runtime data, deploy
   would reset rate limit tracking.
 
@@ -71,7 +74,7 @@ to prevent accidental overwrites of working server state.
 
 When a new agent, contributor, or future-EGM reads this repo and notices
 files referenced in code but missing from the repo (e.g.,
-`require_once __DIR__ . '/phpmailer/PHPMailer.php';` in
+`require_once __DIR__ . '/config.php';` in
 `quote-form-handler.php`), this document explains where those dependencies
 actually live and why.
 

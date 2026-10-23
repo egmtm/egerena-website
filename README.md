@@ -33,8 +33,7 @@ This repository is auto-deployed to the live server via cPanel Git integration.
 
 Files intentionally excluded from this repo (managed directly on the server):
 
-- **`config.php`** — SMTP credentials and Turnstile secret key (chmod 600)
-- **`phpmailer/`** — third-party email library
+- **`config.php`** — Resend API key, Turnstile secret key, the from and to addresses and the contact form rate limit (chmod 600)
 - **`games/game001-scores.json`** — runtime leaderboard data
 - **`games/game001-ratelimit.json`** — runtime rate-limit data
 - **`.cpanel.yml`** — cPanel deploy config (server-managed, gitignored)

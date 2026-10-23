@@ -15,7 +15,7 @@
 Source code for [egerena.com](https://egerena.com), the personal portfolio and
 desktop app distribution site for EGM.
 
-This repository is auto-deployed to the live server via cPanel Git integration.
+The `live` branch of this repository is deployed to the live server with cPanel Git integration.
 
 ---
 
@@ -25,6 +25,7 @@ This repository is auto-deployed to the live server via cPanel Git integration.
 - **`/apps/`** — desktop app product pages (Windows, macOS, Linux variants)
 - **`/i18n/`** — translations and the build script for the translated landing pages (`/apps/<code>/`). Repo only, not deployed
 - **`/games/`** — games hub and STDERR (game001) game + leaderboard
+- **`/fonts/`** — self hosted web fonts (WOFF2 files, licenses and `fonts.css`), so no font request leaves egerena.com
 - **`/.well-known/`** — `security.txt` (RFC 8615 vulnerability disclosure)
 
 ---
@@ -36,7 +37,7 @@ Files intentionally excluded from this repo (managed directly on the server):
 - **`config.php`** — Resend API key, Turnstile secret key, the from and to addresses and the contact form rate limit (chmod 600)
 - **`games/game001-scores.json`** — runtime leaderboard data
 - **`games/game001-ratelimit.json`** — runtime rate-limit data
-- **`.cpanel.yml`** — cPanel deploy config (server-managed, gitignored)
+- **`.cpanel.yml`** — cPanel deploy allowlist (exists only on the `live` branch, not on `main`)
 
 See [`THIRD_PARTY.md`](./THIRD_PARTY.md) for full context on why each is excluded
 and how each is managed.
@@ -51,15 +52,13 @@ The desktop app source code itself lives in a separate repo:
 ```
 Change committed to `main` branch
        ↓
-EGM merges `main` → `live` branch (fast-forward only)
+`main` is merged into the `live` branch
        ↓
-GitHub webhook notifies cPanel
-       ↓
-cPanel pulls `live` branch
+Deployed from cPanel (Git Version Control: Update from Remote, then Deploy HEAD Commit)
        ↓
 .cpanel.yml allowlist copies only website files to /public_html/
        ↓
-Live on egerena.com (~30 seconds end-to-end)
+CDN cache purged, live on egerena.com
 ```
 
 **Branches:**
@@ -75,7 +74,7 @@ EGM Downloader desktop app build artifacts (`EGMd.zip`, `EGMdM.zip`,
 (`egm-version.json`, `egmac-update.json`, `egmlinux-update.json`,
 `egm-portable-version.json`) are uploaded to the server **manually by EGM**
 after each release build. They are NOT in this repo and NOT touched by the
-auto-deploy pipeline.
+deploy pipeline.
 
 ---
 

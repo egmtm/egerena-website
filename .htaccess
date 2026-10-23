@@ -88,6 +88,12 @@ ErrorDocument 500 /500.html
     Require all denied
 </FilesMatch>
 
+# ── Block the leaderboard data files (runtime data, one holds a visitor IP) ──
+# The game only calls game001-scores.php, and PHP reads these files from disk.
+<FilesMatch "^game001-(ratelimit|scores)\.json$">
+    Require all denied
+</FilesMatch>
+
 # ── Block access to hidden files ─────────────────────────────────
 <FilesMatch "^\.">
     Require all denied

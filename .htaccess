@@ -14,7 +14,7 @@ ErrorDocument 500 /500.html
     Require all denied
 </Files>
 
-# ── Rewrites: phpmailer block + HTTPS + scanner passthrough ─────
+# ── Rewrites: upload and size refusal, HTTPS, scanner passthrough ──
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
@@ -33,9 +33,6 @@ ErrorDocument 500 /500.html
 
     # Allow .well-known (RFC 8615 — security.txt, ACME, etc.)
     RewriteRule ^\.well-known/ - [L]
-
-    # Block direct access to phpmailer library files
-    RewriteRule ^phpmailer/.* - [F,L]
 
     # Allow known security scanners through
     RewriteCond %{HTTP_USER_AGENT} (Sucuri|SiteCheck|SiteChecker|UpGuard) [NC]
@@ -85,6 +82,12 @@ ErrorDocument 500 /500.html
 
 # ── Block access to sensitive files ──────────────────────────────
 <FilesMatch "\.(log|sql|bak|env|git|sh|config|ini|yml|yaml)$">
+    Require all denied
+</FilesMatch>
+
+# ── Block the leaderboard data files (runtime data, one holds a visitor IP) ──
+# The game only calls game001-scores.php, and PHP reads these files from disk.
+<FilesMatch "^game001-(ratelimit|scores)\.json$">
     Require all denied
 </FilesMatch>
 

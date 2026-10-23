@@ -70,7 +70,6 @@ Disallow: /
 User-agent: *
 Disallow: /config.php
 Disallow: /quote-form-handler.php
-Disallow: /phpmailer/
 Disallow: /cgi-bin/
 Disallow: /.htaccess
 Disallow: /logs/

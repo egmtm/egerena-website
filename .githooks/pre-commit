@@ -5,8 +5,11 @@
 # loads it must get a new ?v= number in the same commit (otherwise returning
 # visitors run the new page against the old cached file).
 #
-# Rule: when a commit changes an asset that some page loads with ?v=, that
+# Rule 1: when a commit changes an asset that some page loads with ?v=, that
 # page's number must be different from what it says in the last commit.
+#
+# Rule 2: a page you commit must not load a local .css or .js file without a
+# ?v= number, because rule 1 only protects files that carry one.
 #
 # Install once per clone:
 #   git config core.hooksPath .githooks
@@ -37,8 +40,16 @@ def refs(text, page):
     return out
 
 problems = []
+missing = []
 pages = [p for p in (git("ls-files", "-z", "*.html") or "").split("\0") if p]
 for page in pages:
+    if page in changed:
+        for url in re.findall(r'(?:href|src)="([^"#]+)"', git("show", ":" + page) or ""):
+            path, _, query = url.partition("?")
+            if re.match(r"[A-Za-z][A-Za-z0-9+.-]*:|//", path):
+                continue  # external link
+            if path.lower().endswith((".css", ".js")) and not re.search(r"(^|&)v=", query):
+                missing.append((page, url))
     now = refs(git("show", ":" + page), page)
     for asset, v in now.items():
         if asset not in changed:
@@ -54,5 +65,13 @@ if problems:
     for asset, page, v in sorted(problems):
         print(f"   {asset} changed, {page} still says ?v={v}")
     print("   Bump the ?v= number in every page that loads the file, in the same commit, then retry.")
+
+if missing:
+    print("❌ These pages load a local CSS or JS file without a ?v= number, so the cache check cannot protect it:")
+    for page, url in sorted(missing):
+        print(f"   {page} loads {url}")
+    print("   Add ?v=1 to the link (or the next number if the file changed), then retry.")
+
+if problems or missing:
     sys.exit(1)
 PY

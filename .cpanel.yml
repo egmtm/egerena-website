@@ -11,8 +11,7 @@
 # Files NOT listed here are NEVER touched by the deploy.
 #
 # Files intentionally EXCLUDED (managed manually on server):
-#   - config.php           (SMTP secrets, chmod 600)
-#   - phpmailer/           (third-party library, manually updated)
+#   - config.php           (Resend API key, Turnstile secret, chmod 600)
 #   - games/game001-scores.json     (runtime leaderboard data)
 #   - games/game001-ratelimit.json  (runtime rate-limit data)
 #

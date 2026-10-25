@@ -22,7 +22,7 @@
 
 The latest version chip and the GitHub star count on the landing page are filled in by `apps/egm-downloader.js` (from `apps/egm-version.json` and `apps/stars.php`). They are only numbers, so there is nothing to translate. If a label is ever added next to them, it becomes a new string for every language.
 
-Right to left languages (Arabic): also add the code to `RTL` in `i18n/build.py`, which puts `dir="rtl"` on the page. The page mirrors by itself, the sample app windows stay left to right like the app, and the Arabic block at the end of the CSS handles the rest. Wrap file extensions and @handles inside Arabic text in the invisible isolates U+2066 and U+2069 (see `ar.json`), or they show in the wrong order.
+Right to left languages (Arabic): also add the code to `RTL` in `i18n/build.py`, which puts `dir="rtl"` on the page. The page and the sample app windows mirror by themselves, like the app (web addresses stay left to right, and the title bar of each window stays left to right), and the Arabic block at the end of the CSS handles the rest. Wrap file extensions and @handles inside Arabic text in the invisible isolates U+2066 and U+2069 (see `ar.json`), or they show in the wrong order.
 
 ## Changing the English copy
 

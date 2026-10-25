@@ -139,9 +139,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3 translate="no">> EGM_DOWNLOADER_v1.5.0.0.1<span class="dl-ext">.AppImage</span></h3>
+                <h3 translate="no">> EGM_DOWNLOADER_v1.5.0.0.5<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px" translate="no">SHA256: a3e28f3eadf9d0bbfe4b1fc539b4419c95af554c818860c0ac41925da4a70b6e</p>
+                <p class="sha256-line" style="margin-top:10px" translate="no">SHA256: acd30c3f1a0c7adfe9375abee9e59987bddb465d27c8b6d55c2ce52b2bd060b1</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">171 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -149,17 +149,28 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN <span translate="no">v1.5.0.0.1</span></div>
+                <div class="section-header">> WHAT'S NEW IN <span translate="no">v1.5.0.0.5</span></div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-                <div class="whats-new-subtitle"><span translate="no">v1.5.0.0.1</span> — 10/22/2026</div>
+                <div class="whats-new-subtitle"><span translate="no">v1.5.0.0.5</span> — 10/25/2026</div>
                 <p class="terminal-command" translate="no">$ changelog --latest</p>
-                <div class="polish-label">// the one about brotli</div>
+                <div class="polish-label" translate="no">// citius · <bdi lang="ar" style="letter-spacing:0">أصيل</bdi></div>
                 <ul>
-                    <li>Security: The minimum brotli version is now 1.2.1, the library that unpacks compressed web responses, which includes an upstream fix for how malformed data is handled (CVE-2026-111497).</li>
-                    <li>Updated: The minimum yt-dlp version is now 2026.10.21, which includes the reworked Kick extractor for Kick downloads.</li>
+                    <li>New: Arabic now reads right to left, with the whole app mirrored.</li>
+                    <li>Changed: The app starts faster on every platform.</li>
+                    <li>Changed: The splash screen was redesigned.</li>
+                    <li>Changed: The What's New button in the footer was replaced by the version number. Click the version number to see what's new.</li>
+                    <li>Fixed: A few buttons and labels that stayed in English in other languages now follow the selected language.</li>
+                    <li>Fixed: The update check never offers an older release as an update.</li>
+                    <li>Fixed: An older yt-dlp or brotli left over from Update Plugins is removed at start, so the newer one that comes with the app is used.</li>
+                    <li>Fixed: A download that fails partway is no longer reported as saved when only the video part of it was downloaded, and the leftover files are removed.</li>
                 </ul><details class="history-details">
                     <summary class="history-summary" translate="no">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version"><span translate="no">v1.5.0.0.1</span> — THE ONE ABOUT BROTLI — 10/22/2026</div>
+                        <ul>
+                            <li>Minimum brotli version 1.2.1 with an upstream fix for how malformed data is handled, and minimum yt-dlp version 2026.10.21 with the reworked Kick extractor</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version"><span translate="no">v1.5.0</span> — RAW FEED — 10/21/2026</div>
                         <ul>
                             <li>SponsorBlock integration, live stream recording with Stop and save and automatic reconnect, Quit when done in Subscriptions, adding videos while others are loaded or downloading, and Electron 45</li>

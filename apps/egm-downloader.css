@@ -142,7 +142,7 @@ h1{font-weight:800;font-size:clamp(44px,5.6vw,80px);line-height:.96;letter-spaci
 .whead>div{display:flex;align-items:center;gap:8px}
 .wsrch{width:150px;justify-content:flex-start;color:var(--mut)}
 .thbody{display:grid;grid-template-columns:150px minmax(0,1fr)}
-.thside{border-right:1.5px solid var(--line);padding:10px 0;display:flex;flex-direction:column;font-size:13px}
+.thside{border-inline-end:1.5px solid var(--line);padding:10px 0;display:flex;flex-direction:column;font-size:13px}
 .thside div{padding:6px 14px;display:flex;justify-content:space-between;color:var(--mut)}
 .thside .on{color:var(--accT);font-weight:700;background:var(--surf);box-shadow:inset 3px 0 0 var(--acc)}
 .thside .lab{padding-top:14px}
@@ -161,16 +161,16 @@ h1{font-weight:800;font-size:clamp(44px,5.6vw,80px);line-height:.96;letter-spaci
 .fav .heart{fill:var(--accT);stroke:var(--accT)}
 /* subscriptions window */
 .subbody{display:grid;grid-template-columns:196px minmax(0,1fr)}
-.sublist{border-right:1.5px solid var(--line);display:flex;flex-direction:column;gap:10px;padding:12px 0}
+.sublist{border-inline-end:1.5px solid var(--line);display:flex;flex-direction:column;gap:10px;padding:12px 0}
 .subx{padding:0 12px;display:flex;flex-direction:column;gap:8px}
 .subx b{font-weight:800;font-size:15px}
 .subx .urlin{font-size:11.5px;padding:8px 10px;border-radius:8px;border:1.5px solid var(--line);background:var(--surf);color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .subx .two{display:flex;flex-wrap:wrap;gap:8px}
 .subx .two .wbtn{flex:1}
 .subx.bot{margin-top:auto}
-.subitem{display:flex;align-items:center;gap:10px;width:100%;padding:10px 12px;border:0;border-left:3px solid transparent;background:transparent;color:var(--fg);font:600 13px/1.2 'Bricolage Grotesque',system-ui,sans-serif;cursor:pointer;text-align:left}
+.subitem{display:flex;align-items:center;gap:10px;width:100%;padding:10px 12px;border:0;border-inline-start:3px solid transparent;background:transparent;color:var(--fg);font:600 13px/1.2 'Bricolage Grotesque',system-ui,sans-serif;cursor:pointer;text-align:start}
 .subitem:hover{background:var(--surf2)}
-.subitem[aria-pressed="true"]{background:var(--surf);border-left-color:var(--acc);color:var(--accT)}
+.subitem[aria-pressed="true"]{background:var(--surf);border-inline-start-color:var(--acc);color:var(--accT)}
 .subitem .av{width:26px;height:26px;border-radius:999px;flex-shrink:0}
 .subitem .nm{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .subitem .ct{font-size:11px;color:var(--mut);font-weight:400}
@@ -198,7 +198,7 @@ h1{font-weight:800;font-size:clamp(44px,5.6vw,80px);line-height:.96;letter-spaci
 .vrow{display:flex;align-items:center;gap:12px;padding:10px 14px;border-top:1.5px solid var(--line)}
 .vrow .cbx{width:18px;height:18px}
 .vrow .th{width:88px;height:50px;border-radius:8px;flex-shrink:0;position:relative}
-.vrow .th span{position:absolute;right:4px;bottom:4px;font-size:10px;padding:2px 4px;border-radius:4px;background:rgba(0,0,0,.85);color:#fff}
+.vrow .th span{position:absolute;inset-inline-end:4px;bottom:4px;font-size:10px;padding:2px 4px;border-radius:4px;background:rgba(0,0,0,.85);color:#fff}
 .vrow .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
 .vrow .tx b{font-weight:700;font-size:14px;line-height:1.2}
 .vrow .tx div{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--mut)}
@@ -206,8 +206,8 @@ h1{font-weight:800;font-size:clamp(44px,5.6vw,80px);line-height:.96;letter-spaci
 .newb{font:500 10px/1 'DM Mono',ui-monospace,monospace;padding:3px 6px;border-radius:5px;background:var(--acc);color:var(--on)}
 @media (max-width:620px){
 .thbody{grid-template-columns:minmax(0,1fr)}.thside{display:none}.tcard:nth-child(n+13){display:none}.wsrch{display:none}
-.subbody{grid-template-columns:minmax(0,1fr)}.sublist{border-right:0;border-bottom:1.5px solid var(--line)}.subx{display:none}
-.subitems{display:flex;overflow:hidden}.subitem{width:auto;flex-shrink:0;border-left:0;border-bottom:3px solid transparent}.subitem[aria-pressed="true"]{border-bottom-color:var(--acc)}.subitem .ct{display:none}
+.subbody{grid-template-columns:minmax(0,1fr)}.sublist{border-inline-end:0;border-bottom:1.5px solid var(--line)}.subx{display:none}
+.subitems{display:flex;overflow:hidden}.subitem{width:auto;flex-shrink:0;border-inline-start:0;border-bottom:3px solid transparent}.subitem[aria-pressed="true"]{border-bottom-color:var(--acc)}.subitem .ct{display:none}
 .vq{display:none}}
 /* features */
 .sec{padding-bottom:clamp(56px,7vw,104px);display:flex;flex-direction:column;gap:32px}
@@ -305,13 +305,14 @@ h1{font-weight:800;font-size:clamp(44px,5.6vw,80px);line-height:.96;letter-spaci
 /* Japanese: break lines at phrase boundaries, no negative tracking, and a headline size that fits the column */
 html[lang="ja"] h1,html[lang="ja"] h2,html[lang="ja"] h3{word-break:auto-phrase;line-break:strict;letter-spacing:0;line-height:1.2}
 html[lang="ja"] h1{font-size:clamp(30px,3.4vw,48px)}
-/* Arabic reads right to left. Letters join, so no letter spacing; headings get more line height for the marks above the letters.
-   The sample app windows and the site name strip stay left to right, like the real app, and each line of text in a window orders itself. */
+/* Arabic reads right to left, like the app. Letters join, so no letter spacing; headings get more line height for the marks above the letters.
+   The sample app windows mirror the way the app does (sidebars, thumbnails and progress start on the right). The title bar and the offset accent shadow mirror too. Web addresses stay left to right but sit on the right edge. The site name strip is decoration and stays left to right. */
 html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .eyebrow,html[lang="ar"] .wlab,html[lang="ar"] .hero-name small{letter-spacing:0}
 html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3{line-height:1.2}
-html[dir="rtl"] .win,html[dir="rtl"] .mq{direction:ltr}
-html[dir="rtl"] .win{text-align:left}
-html[dir="rtl"] .win *{unicode-bidi:plaintext}
+html[dir="rtl"] .mq{direction:ltr}
+html[dir="rtl"] .win{box-shadow:0 40px 90px -30px rgba(0,0,0,.5),-12px 12px 0 0 var(--acc2)}
+html[dir="rtl"] :is(.urlfield,.purl){direction:ltr;text-align:right}
+html[dir="rtl"] .thside .on{box-shadow:inset -3px 0 0 var(--acc)}
 html[dir="rtl"] .plat .badge{right:auto;left:24px}
 html[lang="ar"] :is(.mono,.chip,.wbtn,.wlab,.sel,.newb){font-family:'DM Mono',system-ui,'Segoe UI',sans-serif}
 html[dir="rtl"] .sr{margin:-1px 0 -1px -1px}

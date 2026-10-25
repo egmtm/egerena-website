@@ -1,11 +1,32 @@
 {
   "_comment": "EGM Downloader Windows Portable update feed. Upload to egerena.com/apps/egm-portable-version.json",
   "_version_notes": [
-    "Security: The minimum brotli version is now 1.2.1, the library that unpacks compressed web responses, which includes an upstream fix for how malformed data is handled (CVE-2026-111497).",
-    "Updated: The minimum yt-dlp version is now 2026.10.21, which includes the reworked Kick extractor for Kick downloads.",
-    "Fixed: Installs that were already set up now get these minimum versions at start instead of keeping older copies. If the app is offline, it starts normally with what it has."
+    "New: Arabic now reads right to left, with the whole app mirrored.",
+    "Changed: The app starts faster on every platform.",
+    "Changed: The splash screen was redesigned.",
+    "Changed: The What's New button in the footer was replaced by the version number. Click the version number to see what's new.",
+    "Fixed: A few buttons and labels that stayed in English in other languages now follow the selected language.",
+    "Fixed: The update check never offers an older release as an update.",
+    "Fixed: A download that fails partway is no longer reported as saved when only the video part of it was downloaded, and the leftover files are removed.",
+    "Fixed: Portable: a rare case where the first launch used Python packages already on your PC instead of its own, which made the next launch noticeably slower while it installed them.",
+    "Changed: The installer edition now needs Python 3.11 or newer (it was 3.10). Python 3.10 reached end of life in October 2026 and newer yt-dlp builds no longer support it. The portable edition is not affected."
   ],
   "_history": [
+    {
+      "version": "1.5.0.0.5",
+      "date": "10/25/2026",
+      "notes": [
+        "New: Arabic now reads right to left, with the whole app mirrored.",
+        "Changed: The app starts faster on every platform.",
+        "Changed: The splash screen was redesigned.",
+        "Changed: The What's New button in the footer was replaced by the version number. Click the version number to see what's new.",
+        "Fixed: A few buttons and labels that stayed in English in other languages now follow the selected language.",
+        "Fixed: The update check never offers an older release as an update.",
+        "Fixed: A download that fails partway is no longer reported as saved when only the video part of it was downloaded, and the leftover files are removed.",
+        "Fixed: Portable: a rare case where the first launch used Python packages already on your PC instead of its own, which made the next launch noticeably slower while it installed them.",
+        "Changed: The installer edition now needs Python 3.11 or newer (it was 3.10). Python 3.10 reached end of life in October 2026 and newer yt-dlp builds no longer support it. The portable edition is not affected."
+      ]
+    },
     {
       "version": "1.5.0.0.1",
       "date": "10/22/2026",
@@ -53,27 +74,19 @@
       "notes": [
         "Electron runtime updated to v44.9.0 \u2014 maintenance update with Electron fixes"
       ]
-    },
-    {
-      "version": "1.4.12",
-      "date": "10/15/2026",
-      "notes": [
-        "Electron runtime updated to v44.8.0 \u2014 Chromium 152.0.7977.167 and backported Chromium and V8 fixes",
-        "Electron runtime updated to v44.8.0 \u2014 fixes the mouse cursor going missing over native dialogs in certain cases"
-      ]
     }
   ],
-  "_last_updated": "2026-10-22T14:55:02-04:00",
-  "version": "1.5.0.0.1",
-  "build": 170,
-  "label": "v1.5.0.0.1 - Build 170 - 10/22/2026 2:39 PM EST",
+  "_last_updated": "2026-10-25T00:14:08-04:00",
+  "version": "1.5.0.0.5",
+  "build": 171,
+  "label": "v1.5.0.0.5 - Build 171 - 10/25/2026 12:00 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd-portable.zip",
   "zip": "EGMd-portable.zip",
   "_checksums": {
-    "sha256": "ff9251c013cbf91818a9f3be550633ac4bdca54f96d1e556d9ec98522c609c2c",
+    "sha256": "c7aa4cb4dfa41e5dece643dde16c71e739595ba8053466016c45badd5adbd739",
     "algorithm": "SHA-256",
     "file": "EGMd-portable.zip"
   },
-  "size_bytes": 682651,
-  "signature": "atHLNG0JEGVEEfTTdgjBKynq0QmT6ak+QTF+cXL6bvTSFzExyV+7ooTR9nY8Cc+30pmnC7o3B0DnLoY9LqYVCA=="
+  "size_bytes": 691583,
+  "signature": "qrdvj2qCkp8BnXgnPgqVy2fqq+BpMujsqxJkX4IDfD/Sz4tZ9pONwMeS/6RtjWUflFHrqDMNbtQhp7K2+XGMCA=="
 }

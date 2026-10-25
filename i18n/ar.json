@@ -8,13 +8,13 @@
     "(sample)": "(مثال)",
     "+ Add": "+ إضافة",
     "+ Create": "+ إنشاء",
-    "128 videos · Last fetched 2 hours ago": "128 فيديو · آخر جلب قبل ساعتين",
+    "128 videos · Last fetched 2 hours ago": "الفيديوهات: 128 · آخر جلب: قبل ساعتين",
     "3 days ago": "قبل 3 أيام",
     "4 days ago": "قبل 4 أيام",
-    "42 videos · Last fetched today": "42 فيديو · آخر جلب اليوم",
+    "42 videos · Last fetched today": "الفيديوهات: 42 · آخر جلب: اليوم",
     "470 permanent across 32 categories, plus 30 seasonal ones that rotate through the year. Here are twelve to try on.": "470 ثيماً دائماً في 32 فئة، إضافةً إلى 30 ثيماً موسمياً يتبدّل على مدار العام. وإليك اثني عشر لتجرّب ارتداءها.",
     "500 themes. Pick one and watch this page change.": "500 ثيم. اختر واحداً وشاهد هذه الصفحة تتغيّر.",
-    "64 videos · Last fetched yesterday": "64 فيديو · آخر جلب أمس",
+    "64 videos · Last fetched yesterday": "الفيديوهات: 64 · آخر جلب: أمس",
     "64-bit, AppImage": "64 بت، AppImage",
     "@EGMDownloader on X": "⁦@EGMDownloader⁩ على X",
     "A LIVE tag marks the stream, the recording time and size show as it goes, and Stop and save keeps what was captured. If the stream drops, the app reconnects on its own and joins the pieces into one file.": "تشير علامة «مباشر» إلى البث، ويظهر وقت التسجيل وحجمه أولاً بأول، ويحفظ زر «إيقاف وحفظ» ما تم التقاطه. وإذا انقطع البث، يعيد التطبيق الاتصال من تلقاء نفسه ويدمج الأجزاء في ملف واحد.",
@@ -123,6 +123,7 @@
     "Some of the supported sites": "بعض المواقع المدعومة",
     "Speaks 10 languages.": "يتحدث 10 لغات.",
     "SponsorBlock, built in.": "SponsorBlock مدمج في التطبيق.",
+    "Subs": "الاشتراكات",
     "Subscriptions": "الاشتراكات",
     "Subscriptions get their own window, with format, quality and folder set for each channel or playlist you add.": "للاشتراكات نافذتها الخاصة، مع صيغة وجودة ومجلد لكل قناة أو قائمة تشغيل تضيفها.",
     "Subscriptions — EGM Downloader": "الاشتراكات — EGM Downloader",
@@ -172,6 +173,6 @@
     "macOS 13 Ventura or later, Apple Silicon": "macOS 13 Ventura أو أحدث، Apple Silicon",
     "wardrobe.": "خزانة ملابس.",
     "…and 1000+ more, powered by yt-dlp.": "…وأكثر من 1000 موقع آخر، بدعم من yt-dlp.",
-    "← Back to app": "← العودة إلى التطبيق"
+    "← Back to app": "→ العودة إلى التطبيق"
   }
 }

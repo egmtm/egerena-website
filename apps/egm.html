@@ -6,7 +6,7 @@
     <meta name="description" content="EGM Downloader - Professional video downloader for Windows. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta name="keywords" content="video downloader, youtube downloader, yt-dlp, windows downloader, multi-site downloader">
     <meta name="author" content="egerena.com">
-    <meta property="og:title" content="EGM Downloader v1.5.0.0.1 - Professional Video Downloader">
+    <meta property="og:title" content="EGM Downloader v1.5.0.0.5 - Professional Video Downloader">
     <meta property="og:description" content="Professional video downloader with zero-config setup. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta property="og:url" content="https://egerena.com/apps/egm.html">
     <meta property="og:type" content="website">
@@ -76,14 +76,14 @@
 
         <section class="section">
             <div class="card download-card">
-                <h2 class="download-title" translate="no">EGM Downloader v1.5.0.0.1</h2>
+                <h2 class="download-title" translate="no">EGM Downloader v1.5.0.0.5</h2>
                 <a href="https://egerena.com/apps/EGMd.zip" class="download-btn">Download <span translate="no">EGM Downloader</span></a>
-                <p class="version-subtitle">Installer &middot; adds Start Menu shortcut &middot; auto-updates &middot; 662 KB &middot; ~800 MB after install</p>
-                <p class="sha256-line" translate="no">SHA256: b462c08181cc31d34e7e0e773502ccabf639ba4ef507414a35d0aea16951f1c9</p>
+                <p class="version-subtitle">Installer &middot; adds Start Menu shortcut &middot; auto-updates &middot; 669 KB &middot; ~800 MB after install</p>
+                <p class="sha256-line" translate="no">SHA256: 383e53790a4b5469f815c455a74a7ce00be6b52b42ba76a5f53ea869eb4e1cef</p>
                 <div class="portable-divider"><span>or</span></div>
                 <a href="https://egerena.com/apps/EGMd-portable.zip" class="download-btn download-btn-secondary">Get the portable version</a>
-                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 667 KB &middot; ~1 GB after first run &middot; digitally signed</p>
-                <p class="sha256-line" translate="no">SHA256: ff9251c013cbf91818a9f3be550633ac4bdca54f96d1e556d9ec98522c609c2c</p>
+                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 675 KB &middot; ~1 GB after first run &middot; digitally signed</p>
+                <p class="sha256-line" translate="no">SHA256: c7aa4cb4dfa41e5dece643dde16c71e739595ba8053466016c45badd5adbd739</p>
         <!-- SmartScreen Disclaimer -->
         <details class="disclaimer-collapsible smartscreen-disclaimer" id="smartscreen-disclaimer">
             <summary class="disclaimer-summary">
@@ -109,16 +109,28 @@
         </details>
 
 <div class="whats-new">
-                    <p class="whats-new-heading">What's New in <span translate="no">v1.5.0.0.1</span> — 10/22/2026</p>
-                    <p class="polish-label">the one about brotli</p>
+                    <p class="whats-new-heading">What's New in <span translate="no">v1.5.0.0.5</span> — 10/25/2026</p>
+                    <p class="polish-label" translate="no">citius · <bdi lang="ar" style="letter-spacing:0">أصيل</bdi></p>
                     <ul>
-                        <li>Security: The minimum brotli version is now 1.2.1, the library that unpacks compressed web responses, which includes an upstream fix for how malformed data is handled (CVE-2026-111497).</li>
-                        <li>Updated: The minimum yt-dlp version is now 2026.10.21, which includes the reworked Kick extractor for Kick downloads.</li>
-                        <li>Fixed: Installs that were already set up now get these minimum versions at start instead of keeping older copies. If the app is offline, it starts normally with what it has.</li>
+                        <li>New: Arabic now reads right to left, with the whole app mirrored.</li>
+                        <li>Changed: The app starts faster on every platform.</li>
+                        <li>Changed: The splash screen was redesigned.</li>
+                        <li>Changed: The What's New button in the footer was replaced by the version number. Click the version number to see what's new.</li>
+                        <li>Fixed: A few buttons and labels that stayed in English in other languages now follow the selected language.</li>
+                        <li>Fixed: The update check never offers an older release as an update.</li>
+                        <li>Fixed: A download that fails partway is no longer reported as saved when only the video part of it was downloaded, and the leftover files are removed.</li>
+                        <li>Fixed: Portable: a rare case where the first launch used Python packages already on your PC instead of its own, which made the next launch noticeably slower while it installed them.</li>
+                        <li>Changed: The installer edition now needs Python 3.11 or newer (it was 3.10). Python 3.10 reached end of life in October 2026 and newer yt-dlp builds no longer support it. The portable edition is not affected.</li>
                     </ul>  </div>
                 <details class="history-details">
                     <summary class="history-summary">Previous Updates</summary>
                     <div class="history-content">
+                        <div class="history-item">
+                            <p class="history-version"><span translate="no">v1.5.0.0.1</span> — THE ONE ABOUT BROTLI — 10/22/2026</p>
+                            <ul>
+                                <li>Minimum brotli version 1.2.1 with an upstream fix for how malformed data is handled, and minimum yt-dlp version 2026.10.21 with the reworked Kick extractor</li>
+                            </ul>
+                        </div>
                         <div class="history-item">
                             <p class="history-version"><span translate="no">v1.5.0</span> — RAW FEED — 10/21/2026</p>
                             <ul>
@@ -497,7 +509,8 @@
                     <h3 class="info-heading">System Requirements</h3>
                     <ul>
                         <li>Windows 10 or 11 (64-bit)</li>
-                        <li><a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">Python 3.10 or newer</a></li>
+                        <li><a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">Python 3.11 or newer</a> (installer edition)</li>
+                        <li>Portable edition: Python 3.10 or newer, for the first launch only</li>
                         <li>~1 GB disk space</li>
                         <li>No admin rights required</li>
                     </ul>

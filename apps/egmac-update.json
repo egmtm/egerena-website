@@ -1,10 +1,28 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Security: The minimum brotli version is now 1.2.1, the library that unpacks compressed web responses, which includes an upstream fix for how malformed data is handled (CVE-2026-111497).",
-    "Updated: The minimum yt-dlp version is now 2026.10.21, which includes the reworked Kick extractor for Kick downloads."
+    "New: Arabic now reads right to left, with the whole app mirrored.",
+    "Changed: The app starts faster on every platform.",
+    "Changed: The splash screen was redesigned.",
+    "Changed: The What's New button in the footer was replaced by the version number. Click the version number to see what's new.",
+    "Fixed: A few buttons and labels that stayed in English in other languages now follow the selected language.",
+    "Fixed: The update check never offers an older release as an update.",
+    "Fixed: A download that fails partway is no longer reported as saved when only the video part of it was downloaded, and the leftover files are removed."
   ],
   "_history": [
+    {
+      "version": "1.5.0.0.5",
+      "date": "10/25/2026",
+      "notes": [
+        "New: Arabic now reads right to left, with the whole app mirrored.",
+        "Changed: The app starts faster on every platform.",
+        "Changed: The splash screen was redesigned.",
+        "Changed: The What's New button in the footer was replaced by the version number. Click the version number to see what's new.",
+        "Fixed: A few buttons and labels that stayed in English in other languages now follow the selected language.",
+        "Fixed: The update check never offers an older release as an update.",
+        "Fixed: A download that fails partway is no longer reported as saved when only the video part of it was downloaded, and the leftover files are removed."
+      ]
+    },
     {
       "version": "1.5.0.0.1",
       "date": "10/22/2026",
@@ -46,26 +64,19 @@
       "notes": [
         "Electron runtime updated to v44.9.0 \u2014 maintenance update with Electron fixes"
       ]
-    },
-    {
-      "version": "1.4.12",
-      "date": "10/15/2026",
-      "notes": [
-        "Electron runtime updated to v44.8.0 \u2014 Chromium 152.0.7977.167 and backported Chromium and V8 fixes"
-      ]
     }
   ],
-  "_last_updated": "2026-10-22T14:55:02-04:00",
-  "version": "1.5.0.0.1",
-  "build": 170,
-  "label": "v1.5.0.0.1 - Build 170 - 10/22/2026 2:39 PM EST",
+  "_last_updated": "2026-10-25T00:14:08-04:00",
+  "version": "1.5.0.0.5",
+  "build": 171,
+  "label": "v1.5.0.0.5 - Build 171 - 10/25/2026 12:00 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "921594eec74fd786ad1607551107123dfb79b0f39dc4b6ff857d81dcf70c1423",
+    "sha256": "0e1872fc95300a062b4c3bfcff17913bb776b4a4b9bcc247b4340e1e143de0fb",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 149747982,
-  "signature": "qG0yt0yHyGtCa9FPMJMOq+CuXFNJLoQUc82INTW50c9Yj0qTJmKV9g4TYyOxfijMEcOFj59LuldOynq0DPVXAA=="
+  "size_bytes": 149735809,
+  "signature": "FfV+zP3jYTwSpxOtlTi/1Bb/uU22dirkUqpONuIcYheTqLH7zQarN61Y7T5i0uH7+liF5+SCjfKLg42BBb9WCw=="
 }

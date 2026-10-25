@@ -1,10 +1,30 @@
 {
   "_comment": "EGM Downloader Linux \u2014 informational, no auto-update. Upload to egerena.com/apps/egmlinux-update.json",
   "_version_notes": [
-    "Security: The minimum brotli version is now 1.2.1, the library that unpacks compressed web responses, which includes an upstream fix for how malformed data is handled (CVE-2026-111497).",
-    "Updated: The minimum yt-dlp version is now 2026.10.21, which includes the reworked Kick extractor for Kick downloads."
+    "New: Arabic now reads right to left, with the whole app mirrored.",
+    "Changed: The app starts faster on every platform.",
+    "Changed: The splash screen was redesigned.",
+    "Changed: The What's New button in the footer was replaced by the version number. Click the version number to see what's new.",
+    "Fixed: A few buttons and labels that stayed in English in other languages now follow the selected language.",
+    "Fixed: The update check never offers an older release as an update.",
+    "Fixed: An older yt-dlp or brotli left over from Update Plugins is removed at start, so the newer one that comes with the app is used.",
+    "Fixed: A download that fails partway is no longer reported as saved when only the video part of it was downloaded, and the leftover files are removed."
   ],
   "_history": [
+    {
+      "version": "1.5.0.0.5",
+      "date": "10/25/2026",
+      "notes": [
+        "New: Arabic now reads right to left, with the whole app mirrored.",
+        "Changed: The app starts faster on every platform.",
+        "Changed: The splash screen was redesigned.",
+        "Changed: The What's New button in the footer was replaced by the version number. Click the version number to see what's new.",
+        "Fixed: A few buttons and labels that stayed in English in other languages now follow the selected language.",
+        "Fixed: The update check never offers an older release as an update.",
+        "Fixed: An older yt-dlp or brotli left over from Update Plugins is removed at start, so the newer one that comes with the app is used.",
+        "Fixed: A download that fails partway is no longer reported as saved when only the video part of it was downloaded, and the leftover files are removed."
+      ]
+    },
     {
       "version": "1.5.0.0.1",
       "date": "10/22/2026",
@@ -46,26 +66,19 @@
       "notes": [
         "Electron runtime updated to v44.9.0 \u2014 maintenance update with Electron fixes"
       ]
-    },
-    {
-      "version": "1.4.12",
-      "date": "10/15/2026",
-      "notes": [
-        "Electron runtime updated to v44.8.0 \u2014 Chromium 152.0.7977.167 and backported Chromium and V8 fixes"
-      ]
     }
   ],
-  "_last_updated": "2026-10-22T14:55:02-04:00",
-  "version": "1.5.0.0.1",
-  "build": 170,
-  "label": "v1.5.0.0.1 - Build 170 - 10/22/2026 2:39 PM EST",
+  "_last_updated": "2026-10-25T00:14:08-04:00",
+  "version": "1.5.0.0.5",
+  "build": 171,
+  "label": "v1.5.0.0.5 - Build 171 - 10/25/2026 12:00 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdL.zip",
   "zip": "EGMdL.zip",
   "_checksums": {
-    "sha256": "a3e28f3eadf9d0bbfe4b1fc539b4419c95af554c818860c0ac41925da4a70b6e",
+    "sha256": "acd30c3f1a0c7adfe9375abee9e59987bddb465d27c8b6d55c2ce52b2bd060b1",
     "algorithm": "SHA-256",
     "file": "EGMdL.zip"
   },
-  "size_bytes": 178855055,
-  "signature": "YxVG4lHs48S8hJQNoPzildrQkEqM3oEEESVGlwJFLmsBhMQfsWHr2XtEM2wph7bJ3sXcm9rRjsOZx6kI+U4gBw=="
+  "size_bytes": 178861460,
+  "signature": "PR2Z+LwlVk/AARBnE6+mnt0ehsZGIs7D2iyrpgvAOC4ubICBIOn9nkZY1I7GFcCgIJs1w6sDUcuoc0u/k11UBw=="
 }

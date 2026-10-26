@@ -19,7 +19,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/apps/egm-icon-192.png">
     <link rel="apple-touch-icon" href="/apps/egm-icon-180.png">
     <title translate="no">EGM Downloader for macOS</title>
-    <link rel="stylesheet" href="egmac-glass.css?v=1">
+    <link rel="stylesheet" href="egmac-glass.css?v=2">
 </head>
 <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -115,6 +115,35 @@
             </div>
         </section>
         </div>
+
+        <!-- Quick Tour Section -->
+        <div class="glass-card">
+            <section class="section">
+                <h2 class="section-title"><span>Quick tour</span></h2>
+                <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_tour_v2_16x9_music.jpg" aria-describedby="tour-caption">
+                    <source src="/apps/media/egm_downloader_tour_v2_16x9_music.mp4" type="video/mp4">
+                    Your browser can't play this video. <a href="/apps/media/egm_downloader_tour_v2_16x9_music.mp4">Open the tour as an MP4 file.</a>
+                </video>
+                <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_tour_v2_9x16_music.jpg" aria-describedby="tour-caption">
+                    <source src="/apps/media/egm_downloader_tour_v2_9x16_music.mp4" type="video/mp4">
+                    Your browser can't play this video. <a href="/apps/media/egm_downloader_tour_v2_9x16_music.mp4">Open the tour as an MP4 file.</a>
+                </video>
+                <p class="tour-caption" id="tour-caption">A 45 second tour of <span translate="no">EGM Downloader</span>: ten languages, subscriptions, themes and the Theme Creator, download history and Advanced settings. It has music and plays only when you press play.</p>
+            </section>
+        </div>
+        <script>
+        (function () {
+            var vids = document.querySelectorAll('.tour-video');
+            var q = window.matchMedia ? window.matchMedia('(max-width: 640px) and (orientation: portrait)') : null;
+            function stop() { vids.forEach(function (o) { o.pause(); }); }
+            vids.forEach(function (v) {
+                v.addEventListener('play', function () {
+                    vids.forEach(function (o) { if (o !== v) o.pause(); });
+                });
+            });
+            if (q) { if (q.addEventListener) q.addEventListener('change', stop); else if (q.addListener) q.addListener(stop); }
+        })();
+        </script>
 
         <!-- Download Section -->
         <div class="glass-card">

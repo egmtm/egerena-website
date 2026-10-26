@@ -836,3 +836,38 @@ body.theme-win95 .pub-key { color: #888; }
     .smartscreen-disclaimer .disclaimer-title { font-size: 11.5px; }
     .smartscreen-disclaimer .disclaimer-badge { display: none; }
 }
+
+/* QUICK TOUR VIDEO: a wide version, and a tall one for phones held upright */
+.tour-video {
+    display: block;
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: #000;
+    border-radius: 6px;
+}
+.tour-tall {
+    display: none;
+}
+@media (max-width: 640px) and (orientation: portrait) {
+    .tour-wide {
+        display: none;
+    }
+    .tour-tall {
+        display: block;
+        aspect-ratio: 9 / 16;
+        max-width: 360px;
+        max-height: 80vh;
+    }
+}
+.tour-caption {
+    max-width: 760px;
+    margin: 0.9rem auto 0;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--text);
+    opacity: 0.75;
+}

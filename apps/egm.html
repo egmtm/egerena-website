@@ -20,7 +20,7 @@
     <link rel="apple-touch-icon" href="/apps/egm-icon-180.png">
     <title translate="no">EGM Downloader for Windows</title>
     <link rel="stylesheet" href="/fonts/fonts.css?v=1">
-    <link rel="stylesheet" href="egm.css?v=1">
+    <link rel="stylesheet" href="egm.css?v=2">
 </head>
 <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -73,6 +73,34 @@
                 
             </div>
         </section>
+
+        <section class="section">
+            <h2 class="section-title">Quick tour</h2>
+            <div class="card tour-card">
+                <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_tour_v2_16x9_music.jpg" aria-describedby="tour-caption">
+                    <source src="/apps/media/egm_downloader_tour_v2_16x9_music.mp4" type="video/mp4">
+                    Your browser can't play this video. <a href="/apps/media/egm_downloader_tour_v2_16x9_music.mp4">Open the tour as an MP4 file.</a>
+                </video>
+                <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_tour_v2_9x16_music.jpg" aria-describedby="tour-caption">
+                    <source src="/apps/media/egm_downloader_tour_v2_9x16_music.mp4" type="video/mp4">
+                    Your browser can't play this video. <a href="/apps/media/egm_downloader_tour_v2_9x16_music.mp4">Open the tour as an MP4 file.</a>
+                </video>
+                <p class="tour-caption" id="tour-caption">A 45 second tour of <span translate="no">EGM Downloader</span>: ten languages, subscriptions, themes and the Theme Creator, download history and Advanced settings. It has music and plays only when you press play.</p>
+            </div>
+        </section>
+        <script>
+        (function () {
+            var vids = document.querySelectorAll('.tour-video');
+            var q = window.matchMedia ? window.matchMedia('(max-width: 640px) and (orientation: portrait)') : null;
+            function stop() { vids.forEach(function (o) { o.pause(); }); }
+            vids.forEach(function (v) {
+                v.addEventListener('play', function () {
+                    vids.forEach(function (o) { if (o !== v) o.pause(); });
+                });
+            });
+            if (q) { if (q.addEventListener) q.addEventListener('change', stop); else if (q.addListener) q.addListener(stop); }
+        })();
+        </script>
 
         <section class="section">
             <div class="card download-card">

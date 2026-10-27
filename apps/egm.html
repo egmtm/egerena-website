@@ -6,7 +6,7 @@
     <meta name="description" content="EGM Downloader - Professional video downloader for Windows. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta name="keywords" content="video downloader, youtube downloader, yt-dlp, windows downloader, multi-site downloader">
     <meta name="author" content="egerena.com">
-    <meta property="og:title" content="EGM Downloader v1.5.0.0.5 - Professional Video Downloader">
+    <meta property="og:title" content="EGM Downloader v1.5.0.0.8 - Professional Video Downloader">
     <meta property="og:description" content="Professional video downloader with zero-config setup. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta property="og:url" content="https://egerena.com/apps/egm.html">
     <meta property="og:type" content="website">
@@ -104,14 +104,14 @@
 
         <section class="section">
             <div class="card download-card">
-                <h2 class="download-title" translate="no">EGM Downloader v1.5.0.0.5</h2>
+                <h2 class="download-title" translate="no">EGM Downloader v1.5.0.0.8</h2>
                 <a href="https://egerena.com/apps/EGMd.zip" class="download-btn">Download <span translate="no">EGM Downloader</span></a>
-                <p class="version-subtitle">Installer &middot; adds Start Menu shortcut &middot; auto-updates &middot; 669 KB &middot; ~800 MB after install</p>
-                <p class="sha256-line" translate="no">SHA256: 383e53790a4b5469f815c455a74a7ce00be6b52b42ba76a5f53ea869eb4e1cef</p>
+                <p class="version-subtitle">Installer &middot; adds Start Menu shortcut &middot; auto-updates &middot; 673 KB &middot; ~800 MB after install</p>
+                <p class="sha256-line" translate="no">SHA256: a0bf6a87fca2a6cdcc3a638bb8d48d33961178db7a9e28f764e3eae052346314</p>
                 <div class="portable-divider"><span>or</span></div>
                 <a href="https://egerena.com/apps/EGMd-portable.zip" class="download-btn download-btn-secondary">Get the portable version</a>
-                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 675 KB &middot; ~1 GB after first run &middot; digitally signed</p>
-                <p class="sha256-line" translate="no">SHA256: c7aa4cb4dfa41e5dece643dde16c71e739595ba8053466016c45badd5adbd739</p>
+                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 683 KB &middot; ~1 GB after first run &middot; digitally signed</p>
+                <p class="sha256-line" translate="no">SHA256: 49b6347870c7986ac08a09a36b4ba92e5c000b6d7a37efd3d0bc0a055f4bd24b</p>
         <!-- SmartScreen Disclaimer -->
         <details class="disclaimer-collapsible smartscreen-disclaimer" id="smartscreen-disclaimer">
             <summary class="disclaimer-summary">
@@ -137,22 +137,25 @@
         </details>
 
 <div class="whats-new">
-                    <p class="whats-new-heading">What's New in <span translate="no">v1.5.0.0.5</span> — 10/25/2026</p>
-                    <p class="polish-label" translate="no">citius · <bdi lang="ar" style="letter-spacing:0">أصيل</bdi></p>
+                    <p class="whats-new-heading">What's New in <span translate="no">v1.5.0.0.8</span> — 10/26/2026</p>
+                    <p class="polish-label" translate="no">citius · <bdi lang="ar" style="letter-spacing:0">أصيل</bdi>: reloaded</p>
                     <ul>
-                        <li>New: Arabic now reads right to left, with the whole app mirrored.</li>
-                        <li>Changed: The app starts faster on every platform.</li>
-                        <li>Changed: The splash screen was redesigned.</li>
-                        <li>Changed: The What's New button in the footer was replaced by the version number. Click the version number to see what's new.</li>
-                        <li>Fixed: A few buttons and labels that stayed in English in other languages now follow the selected language.</li>
-                        <li>Fixed: The update check never offers an older release as an update.</li>
-                        <li>Fixed: A download that fails partway is no longer reported as saved when only the video part of it was downloaded, and the leftover files are removed.</li>
-                        <li>Fixed: Portable: a rare case where the first launch used Python packages already on your PC instead of its own, which made the next launch noticeably slower while it installed them.</li>
-                        <li>Changed: The installer edition now needs Python 3.11 or newer (it was 3.10). Python 3.10 reached end of life in October 2026 and newer yt-dlp builds no longer support it. The portable edition is not affected.</li>
+                        <li>Security: The minimum curl_cffi version is now 0.17.0, the library that lets the app download from sites that check which browser is asking. It includes the same upstream fix as brotli for how malformed compressed data is handled (CVE-2026-111497).</li>
+                        <li>Updated: The minimum yt-dlp version is now 2026.10.26, the first one that works with curl_cffi 0.17.</li>
+                        <li>Fixed: Installs that were already set up now also get these two minimum versions at start instead of keeping older copies. If the app is offline, it starts normally with what it has.</li>
+                        <li>Fixed: The Subscriptions window keeps showing "Fetching videos..." until the fetch has finished, also when the language loads late or two fetches of the same channel run at once.</li>
+                        <li>Fixed: The Theme Creator panel no longer slides across the window when you switch to or from Arabic.</li>
+                        <li>Fixed: More labels that stayed in English in other languages now follow the selected language.</li>
                     </ul>  </div>
                 <details class="history-details">
                     <summary class="history-summary">Previous Updates</summary>
                     <div class="history-content">
+                        <div class="history-item">
+                            <p class="history-version"><span translate="no">v1.5.0.0.5</span> — <span translate="no">CITIUS · <bdi lang="ar" style="letter-spacing:0">أصيل</bdi></span> — 10/25/2026</p>
+                            <ul>
+                                <li>Arabic now reads right to left with the whole app mirrored, a faster start on every platform, a redesigned splash screen, the version number in the footer opening What's New, more labels following the selected language, an update check that never offers an older release, and a failed download no longer reported as saved</li>
+                            </ul>
+                        </div>
                         <div class="history-item">
                             <p class="history-version"><span translate="no">v1.5.0.0.1</span> — THE ONE ABOUT BROTLI — 10/22/2026</p>
                             <ul>

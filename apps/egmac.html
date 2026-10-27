@@ -149,10 +149,10 @@
         <div class="glass-card">
             <section class="section">
                 <div class="download-section">
-                <h3 translate="no">📦 EGM Downloader 1.5.0.0.5</h3>
+                <h3 translate="no">📦 EGM Downloader 1.5.0.0.8</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
-                <p class="version-subtitle" style="text-align:center;margin-top:4px">143 MB &middot; ~300 MB after install &middot; near instant startup</p>
-                <p class="sha256-line" translate="no">SHA256: 0e1872fc95300a062b4c3bfcff17913bb776b4a4b9bcc247b4340e1e143de0fb</p>
+                <p class="version-subtitle" style="text-align:center;margin-top:4px">144 MB &middot; ~300 MB after install &middot; near instant startup</p>
+                <p class="sha256-line" translate="no">SHA256: 33395f963e839c1adb12bcb76d3268133523eabd21b019fd82dda7ea7828fcb5</p>
 
                 <!-- Apple Notarization Trust Signal -->
                 <details class="disclaimer-collapsible apple-trust-signal" id="apple-trust-signal">
@@ -168,20 +168,22 @@
                 </details>
 
 <p class="whats-new-content">
-                    <strong>What's New in <span translate="no">1.5.0.0.5</span> — 10/25/2026:</strong><br>
-<em class="polish-label" translate="no">citius · <bdi lang="ar" style="letter-spacing:0">أصيل</bdi></em><br><br>
-                    • New: Arabic now reads right to left, with the whole app mirrored.<br>
-                    • Changed: The app starts faster on every platform.<br>
-                    • Changed: The splash screen was redesigned.<br>
-                    • Changed: The What's New button in the footer was replaced by the version number. Click the version number to see what's new.<br>
-                    • Fixed: A few buttons and labels that stayed in English in other languages now follow the selected language.<br>
-                    • Fixed: The update check never offers an older release as an update.<br>
-                    • Fixed: A download that fails partway is no longer reported as saved when only the video part of it was downloaded, and the leftover files are removed.
+                    <strong>What's New in <span translate="no">1.5.0.0.8</span> — 10/26/2026:</strong><br>
+<em class="polish-label" translate="no">citius · <bdi lang="ar" style="letter-spacing:0">أصيل</bdi>: reloaded</em><br><br>
+                    • Security: The minimum curl_cffi version is now 0.17.0, the library that lets the app download from sites that check which browser is asking. It includes the same upstream fix as brotli for how malformed compressed data is handled (CVE-2026-111497).<br>
+                    • Updated: The minimum yt-dlp version is now 2026.10.26, the first one that works with curl_cffi 0.17.<br>
+                    • Fixed: The Subscriptions window keeps showing "Fetching videos..." until the fetch has finished, also when the language loads late or two fetches of the same channel run at once.<br>
+                    • Fixed: The Theme Creator panel no longer slides across the window when you switch to or from Arabic.<br>
+                    • Fixed: More labels that stayed in English in other languages now follow the selected language.
                 </p>
 
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>
                     <div class="history-content">
+                        <p class="history-item">
+                            <strong><span translate="no">v1.5.0.0.5</span> — <span translate="no">CITIUS · <bdi lang="ar" style="letter-spacing:0">أصيل</bdi></span> — 10/25/2026:</strong><br>
+                            • Arabic now reads right to left with the whole app mirrored, a faster start on every platform, a redesigned splash screen, the version number in the footer opening What's New, more labels following the selected language, an update check that never offers an older release, and a failed download no longer reported as saved
+                        </p>
                         <p class="history-item">
                             <strong><span translate="no">v1.5.0.0.1</span> — THE ONE ABOUT BROTLI — 10/22/2026:</strong><br>
                             • Minimum brotli version 1.2.1 with an upstream fix for how malformed data is handled, and minimum yt-dlp version 2026.10.21 with the reworked Kick extractor

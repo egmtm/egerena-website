@@ -20,7 +20,7 @@
     <link rel="apple-touch-icon" href="/apps/egm-icon-180.png">
     <title translate="no">EGM Downloader for Linux</title>
     <link rel="stylesheet" href="/fonts/fonts.css?v=1">
-    <link rel="stylesheet" href="egml.css?v=2">
+    <link rel="stylesheet" href="egml.css?v=3">
 </head>
 <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -153,7 +153,7 @@
             </div>
         </section>
         <script>
-        (function () {
+        document.addEventListener('DOMContentLoaded', function () {
             var vids = document.querySelectorAll('.tour-video');
             var q = window.matchMedia ? window.matchMedia('(max-width: 640px) and (orientation: portrait)') : null;
             function stop() { vids.forEach(function (o) { o.pause(); }); }
@@ -163,7 +163,7 @@
                 });
             });
             if (q) { if (q.addEventListener) q.addEventListener('change', stop); else if (q.addListener) q.addListener(stop); }
-        })();
+        });
         </script>
 
         <!-- Download Section -->
@@ -191,7 +191,19 @@
                     <li>Fixed: The Subscriptions window keeps showing "Fetching videos..." until the fetch has finished, also when the language loads late or two fetches of the same channel run at once.</li>
                     <li>Fixed: The Theme Creator panel no longer slides across the window when you switch to or from Arabic.</li>
                     <li>Fixed: More labels that stayed in English in other languages now follow the selected language.</li>
-                </ul><details class="history-details">
+                </ul>
+                <div class="release-video">
+                    <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.0.0.8_16x9_music.jpg" aria-describedby="release-caption">
+                        <source src="/apps/media/egm_downloader_v1.5.0.0.8_16x9_music.mp4" type="video/mp4">
+                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.0.0.8_16x9_music.mp4">Open the release video as an MP4 file.</a>
+                    </video>
+                    <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.0.0.8_9x16_music.jpg" aria-describedby="release-caption">
+                        <source src="/apps/media/egm_downloader_v1.5.0.0.8_9x16_music.mp4" type="video/mp4">
+                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.0.0.8_9x16_music.mp4">Open the release video as an MP4 file.</a>
+                    </video>
+                    <p class="tour-caption" id="release-caption">The release in 15 seconds. It has music and plays only when you press play.</p>
+                </div>
+                <details class="history-details">
                     <summary class="history-summary" translate="no">$ changelog --show-all</summary>
                     <div class="history-content">
                         <div class="whats-new-subtitle history-version"><span translate="no">v1.5.0.0.5</span> — <span translate="no">CITIUS · <bdi lang="ar" style="letter-spacing:0">أصيل</bdi></span> — 10/25/2026</div>

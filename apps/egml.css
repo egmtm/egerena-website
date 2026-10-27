@@ -677,3 +677,6 @@ ul li::marker {
     text-align: center;
     color: var(--terminal-dim);
 }
+.release-video {
+    margin-top: 1.25rem;
+}

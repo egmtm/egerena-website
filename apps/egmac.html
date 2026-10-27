@@ -19,7 +19,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/apps/egm-icon-192.png">
     <link rel="apple-touch-icon" href="/apps/egm-icon-180.png">
     <title translate="no">EGM Downloader for macOS</title>
-    <link rel="stylesheet" href="egmac-glass.css?v=2">
+    <link rel="stylesheet" href="egmac-glass.css?v=3">
 </head>
 <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -132,7 +132,7 @@
             </section>
         </div>
         <script>
-        (function () {
+        document.addEventListener('DOMContentLoaded', function () {
             var vids = document.querySelectorAll('.tour-video');
             var q = window.matchMedia ? window.matchMedia('(max-width: 640px) and (orientation: portrait)') : null;
             function stop() { vids.forEach(function (o) { o.pause(); }); }
@@ -142,7 +142,7 @@
                 });
             });
             if (q) { if (q.addEventListener) q.addEventListener('change', stop); else if (q.addListener) q.addListener(stop); }
-        })();
+        });
         </script>
 
         <!-- Download Section -->
@@ -176,6 +176,17 @@
                     • Fixed: The Theme Creator panel no longer slides across the window when you switch to or from Arabic.<br>
                     • Fixed: More labels that stayed in English in other languages now follow the selected language.
                 </p>
+                <div class="release-video">
+                    <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.0.0.8_16x9_music.jpg" aria-describedby="release-caption">
+                        <source src="/apps/media/egm_downloader_v1.5.0.0.8_16x9_music.mp4" type="video/mp4">
+                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.0.0.8_16x9_music.mp4">Open the release video as an MP4 file.</a>
+                    </video>
+                    <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.0.0.8_9x16_music.jpg" aria-describedby="release-caption">
+                        <source src="/apps/media/egm_downloader_v1.5.0.0.8_9x16_music.mp4" type="video/mp4">
+                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.0.0.8_9x16_music.mp4">Open the release video as an MP4 file.</a>
+                    </video>
+                    <p class="tour-caption" id="release-caption">The release in 15 seconds. It has music and plays only when you press play.</p>
+                </div>
 
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>

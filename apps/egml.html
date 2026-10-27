@@ -169,9 +169,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3 translate="no">> EGM_DOWNLOADER_v1.5.0.0.5<span class="dl-ext">.AppImage</span></h3>
+                <h3 translate="no">> EGM_DOWNLOADER_v1.5.0.0.8<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px" translate="no">SHA256: acd30c3f1a0c7adfe9375abee9e59987bddb465d27c8b6d55c2ce52b2bd060b1</p>
+                <p class="sha256-line" style="margin-top:10px" translate="no">SHA256: 88e82ce21ad9df0ab2229ca3be50ab41c2f9dd2c128e25c9e83915845fe3b493</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">171 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -179,23 +179,26 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN <span translate="no">v1.5.0.0.5</span></div>
+                <div class="section-header">> WHAT'S NEW IN <span translate="no">v1.5.0.0.8</span></div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-                <div class="whats-new-subtitle"><span translate="no">v1.5.0.0.5</span> — 10/25/2026</div>
+                <div class="whats-new-subtitle"><span translate="no">v1.5.0.0.8</span> — 10/26/2026</div>
                 <p class="terminal-command" translate="no">$ changelog --latest</p>
-                <div class="polish-label" translate="no">// citius · <bdi lang="ar" style="letter-spacing:0">أصيل</bdi></div>
+                <div class="polish-label" translate="no">// citius · <bdi lang="ar" style="letter-spacing:0">أصيل</bdi>: reloaded</div>
                 <ul>
-                    <li>New: Arabic now reads right to left, with the whole app mirrored.</li>
-                    <li>Changed: The app starts faster on every platform.</li>
-                    <li>Changed: The splash screen was redesigned.</li>
-                    <li>Changed: The What's New button in the footer was replaced by the version number. Click the version number to see what's new.</li>
-                    <li>Fixed: A few buttons and labels that stayed in English in other languages now follow the selected language.</li>
-                    <li>Fixed: The update check never offers an older release as an update.</li>
-                    <li>Fixed: An older yt-dlp or brotli left over from Update Plugins is removed at start, so the newer one that comes with the app is used.</li>
-                    <li>Fixed: A download that fails partway is no longer reported as saved when only the video part of it was downloaded, and the leftover files are removed.</li>
+                    <li>Security: The minimum curl_cffi version is now 0.17.0, the library that lets the app download from sites that check which browser is asking. It includes the same upstream fix as brotli for how malformed compressed data is handled (CVE-2026-111497).</li>
+                    <li>Updated: The minimum yt-dlp version is now 2026.10.26, the first one that works with curl_cffi 0.17.</li>
+                    <li>Fixed: An older curl_cffi left over from Update Plugins is removed at start, so the newer one that comes with the app is used.</li>
+                    <li>Fixed: The Subscriptions window keeps showing "Fetching videos..." until the fetch has finished, also when the language loads late or two fetches of the same channel run at once.</li>
+                    <li>Fixed: The Theme Creator panel no longer slides across the window when you switch to or from Arabic.</li>
+                    <li>Fixed: More labels that stayed in English in other languages now follow the selected language.</li>
                 </ul><details class="history-details">
                     <summary class="history-summary" translate="no">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version"><span translate="no">v1.5.0.0.5</span> — <span translate="no">CITIUS · <bdi lang="ar" style="letter-spacing:0">أصيل</bdi></span> — 10/25/2026</div>
+                        <ul>
+                            <li>Arabic now reads right to left with the whole app mirrored, a faster start on every platform, a redesigned splash screen, the version number in the footer opening What's New, more labels following the selected language, an update check that never offers an older release, and a failed download no longer reported as saved</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version"><span translate="no">v1.5.0.0.1</span> — THE ONE ABOUT BROTLI — 10/22/2026</div>
                         <ul>
                             <li>Minimum brotli version 1.2.1 with an upstream fix for how malformed data is handled, and minimum yt-dlp version 2026.10.21 with the reworked Kick extractor</li>

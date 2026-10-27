@@ -871,3 +871,6 @@ body.theme-win95 .pub-key { color: #888; }
     color: var(--text);
     opacity: 0.75;
 }
+.release-video {
+    margin-top: 1.25rem;
+}

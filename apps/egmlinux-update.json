@@ -1,16 +1,26 @@
 {
   "_comment": "EGM Downloader Linux \u2014 informational, no auto-update. Upload to egerena.com/apps/egmlinux-update.json",
   "_version_notes": [
-    "New: Arabic now reads right to left, with the whole app mirrored.",
-    "Changed: The app starts faster on every platform.",
-    "Changed: The splash screen was redesigned.",
-    "Changed: The What's New button in the footer was replaced by the version number. Click the version number to see what's new.",
-    "Fixed: A few buttons and labels that stayed in English in other languages now follow the selected language.",
-    "Fixed: The update check never offers an older release as an update.",
-    "Fixed: An older yt-dlp or brotli left over from Update Plugins is removed at start, so the newer one that comes with the app is used.",
-    "Fixed: A download that fails partway is no longer reported as saved when only the video part of it was downloaded, and the leftover files are removed."
+    "Security: The minimum curl_cffi version is now 0.17.0, the library that lets the app download from sites that check which browser is asking. It includes the same upstream fix as brotli for how malformed compressed data is handled (CVE-2026-111497).",
+    "Updated: The minimum yt-dlp version is now 2026.10.26, the first one that works with curl_cffi 0.17.",
+    "Fixed: An older curl_cffi left over from Update Plugins is removed at start, so the newer one that comes with the app is used.",
+    "Fixed: The Subscriptions window keeps showing \"Fetching videos...\" until the fetch has finished, also when the language loads late or two fetches of the same channel run at once.",
+    "Fixed: The Theme Creator panel no longer slides across the window when you switch to or from Arabic.",
+    "Fixed: More labels that stayed in English in other languages now follow the selected language."
   ],
   "_history": [
+    {
+      "version": "1.5.0.0.8",
+      "date": "10/26/2026",
+      "notes": [
+        "Security: The minimum curl_cffi version is now 0.17.0, the library that lets the app download from sites that check which browser is asking. It includes the same upstream fix as brotli for how malformed compressed data is handled (CVE-2026-111497).",
+        "Updated: The minimum yt-dlp version is now 2026.10.26, the first one that works with curl_cffi 0.17.",
+        "Fixed: An older curl_cffi left over from Update Plugins is removed at start, so the newer one that comes with the app is used.",
+        "Fixed: The Subscriptions window keeps showing \"Fetching videos...\" until the fetch has finished, also when the language loads late or two fetches of the same channel run at once.",
+        "Fixed: The Theme Creator panel no longer slides across the window when you switch to or from Arabic.",
+        "Fixed: More labels that stayed in English in other languages now follow the selected language."
+      ]
+    },
     {
       "version": "1.5.0.0.5",
       "date": "10/25/2026",
@@ -59,26 +69,19 @@
         "Fixed: Seasonal themes now show only in their season in both theme pickers, and Hanami and Velvet Rose have seasons.",
         "Updated: minimum certifi and websockets versions, so new installs start with the latest certificate list and connection library"
       ]
-    },
-    {
-      "version": "1.4.13",
-      "date": "10/17/2026",
-      "notes": [
-        "Electron runtime updated to v44.9.0 \u2014 maintenance update with Electron fixes"
-      ]
     }
   ],
-  "_last_updated": "2026-10-25T00:14:08-04:00",
-  "version": "1.5.0.0.5",
-  "build": 171,
-  "label": "v1.5.0.0.5 - Build 171 - 10/25/2026 12:00 AM EST",
+  "_last_updated": "2026-10-26T20:38:27-04:00",
+  "version": "1.5.0.0.8",
+  "build": 172,
+  "label": "v1.5.0.0.8 - Build 172 - 10/26/2026 8:06 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdL.zip",
   "zip": "EGMdL.zip",
   "_checksums": {
-    "sha256": "acd30c3f1a0c7adfe9375abee9e59987bddb465d27c8b6d55c2ce52b2bd060b1",
+    "sha256": "88e82ce21ad9df0ab2229ca3be50ab41c2f9dd2c128e25c9e83915845fe3b493",
     "algorithm": "SHA-256",
     "file": "EGMdL.zip"
   },
-  "size_bytes": 178861460,
-  "signature": "PR2Z+LwlVk/AARBnE6+mnt0ehsZGIs7D2iyrpgvAOC4ubICBIOn9nkZY1I7GFcCgIJs1w6sDUcuoc0u/k11UBw=="
+  "size_bytes": 179426567,
+  "signature": "OY7sEYgwZ4GdzgqtQ01QYFYL0RyWiqdl8AA60dsaToJLz9rML5ZUUtJFo+ycwubpsZegUCxWbmdKlcd40gVMDw=="
 }

@@ -1,17 +1,26 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "New: Arabic now reads right to left, with the whole app mirrored.",
-    "Changed: The app starts faster on every platform.",
-    "Changed: The splash screen was redesigned.",
-    "Changed: The What's New button in the footer was replaced by the version number. Click the version number to see what's new.",
-    "Fixed: A few buttons and labels that stayed in English in other languages now follow the selected language.",
-    "Fixed: The update check never offers an older release as an update.",
-    "Fixed: A download that fails partway is no longer reported as saved when only the video part of it was downloaded, and the leftover files are removed.",
-    "Fixed: Portable: a rare case where the first launch used Python packages already on your PC instead of its own, which made the next launch noticeably slower while it installed them.",
-    "Changed: The installer edition now needs Python 3.11 or newer (it was 3.10). Python 3.10 reached end of life in October 2026 and newer yt-dlp builds no longer support it. The portable edition is not affected."
+    "Security: The minimum curl_cffi version is now 0.17.0, the library that lets the app download from sites that check which browser is asking. It includes the same upstream fix as brotli for how malformed compressed data is handled (CVE-2026-111497).",
+    "Updated: The minimum yt-dlp version is now 2026.10.26, the first one that works with curl_cffi 0.17.",
+    "Fixed: Installs that were already set up now also get these two minimum versions at start instead of keeping older copies. If the app is offline, it starts normally with what it has.",
+    "Fixed: The Subscriptions window keeps showing \"Fetching videos...\" until the fetch has finished, also when the language loads late or two fetches of the same channel run at once.",
+    "Fixed: The Theme Creator panel no longer slides across the window when you switch to or from Arabic.",
+    "Fixed: More labels that stayed in English in other languages now follow the selected language."
   ],
   "_history": [
+    {
+      "version": "1.5.0.0.8",
+      "date": "10/26/2026",
+      "notes": [
+        "Security: The minimum curl_cffi version is now 0.17.0, the library that lets the app download from sites that check which browser is asking. It includes the same upstream fix as brotli for how malformed compressed data is handled (CVE-2026-111497).",
+        "Updated: The minimum yt-dlp version is now 2026.10.26, the first one that works with curl_cffi 0.17.",
+        "Fixed: Installs that were already set up now also get these two minimum versions at start instead of keeping older copies. If the app is offline, it starts normally with what it has.",
+        "Fixed: The Subscriptions window keeps showing \"Fetching videos...\" until the fetch has finished, also when the language loads late or two fetches of the same channel run at once.",
+        "Fixed: The Theme Creator panel no longer slides across the window when you switch to or from Arabic.",
+        "Fixed: More labels that stayed in English in other languages now follow the selected language."
+      ]
+    },
     {
       "version": "1.5.0.0.5",
       "date": "10/25/2026",
@@ -67,27 +76,20 @@
         "Fixed: Seasonal themes now show only in their season in both theme pickers, and Hanami and Velvet Rose have seasons.",
         "Updated: minimum certifi and websockets versions, so new installs start with the latest certificate list and connection library"
       ]
-    },
-    {
-      "version": "1.4.13",
-      "date": "10/17/2026",
-      "notes": [
-        "Electron runtime updated to v44.9.0 \u2014 maintenance update with Electron fixes"
-      ]
     }
   ],
-  "_last_updated": "2026-10-25T00:14:08-04:00",
-  "version": "1.5.0.0.5",
-  "build": 171,
-  "label": "v1.5.0.0.5 - Build 171 - 10/25/2026 12:00 AM EST",
+  "_last_updated": "2026-10-26T20:38:27-04:00",
+  "version": "1.5.0.0.8",
+  "build": 172,
+  "label": "v1.5.0.0.8 - Build 172 - 10/26/2026 8:06 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "383e53790a4b5469f815c455a74a7ce00be6b52b42ba76a5f53ea869eb4e1cef",
+    "sha256": "a0bf6a87fca2a6cdcc3a638bb8d48d33961178db7a9e28f764e3eae052346314",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },
-  "size_bytes": 685011,
-  "signature": "WN9lQu475Yt3PrbR2hJwVTFPcnGBuGN+0Al8GfbfORXZTFYHbnfXQDSwaWRfxeo4ry+IzEwPrrg5ivS9tYAkAg=="
+  "size_bytes": 689163,
+  "signature": "rMHMsicUWnnyog4+Ut1No6zoCjbYfq7Ve9+0QerBN3DtvZNRsqFzB1PsRoB6KJDtPTFWziyxg4fNmGnZoxf5Bw=="
 }

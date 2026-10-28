@@ -1,13 +1,20 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Security: The minimum curl_cffi version is now 0.17.0, the library that lets the app download from sites that check which browser is asking. It includes the same upstream fix as brotli for how malformed compressed data is handled (CVE-2026-111497).",
-    "Updated: The minimum yt-dlp version is now 2026.10.26, the first one that works with curl_cffi 0.17.",
-    "Fixed: The Subscriptions window keeps showing \"Fetching videos...\" until the fetch has finished, also when the language loads late or two fetches of the same channel run at once.",
-    "Fixed: The Theme Creator panel no longer slides across the window when you switch to or from Arabic.",
-    "Fixed: More labels that stayed in English in other languages now follow the selected language."
+    "Fixed: What's New now shows the notes of the version you are running, not the notes of the latest release. It also works without a connection.",
+    "Fixed: When a live recording ends on its own, the card now stays on Converting until it is saved, instead of going back to Recording for a moment.",
+    "Electron runtime updated to v45.1.0, with an updated Chromium (156.0.8078.49) and Node.js 24.22.1, a security release."
   ],
   "_history": [
+    {
+      "version": "1.5.1.0",
+      "date": "10/27/2026",
+      "notes": [
+        "Fixed: What's New now shows the notes of the version you are running, not the notes of the latest release. It also works without a connection.",
+        "Fixed: When a live recording ends on its own, the card now stays on Converting until it is saved, instead of going back to Recording for a moment.",
+        "Electron runtime updated to v45.1.0, with an updated Chromium (156.0.8078.49) and Node.js 24.22.1, a security release."
+      ]
+    },
     {
       "version": "1.5.0.0.8",
       "date": "10/26/2026",
@@ -57,28 +64,19 @@
         "Fixed: Importing settings no longer says \"Nothing selected\" when every subscription in the file is already in your list, and no longer reports success when some subscriptions could not be added. The message now says how many were not added.",
         "Electron runtime updated to v45.0.0 \u2014 includes upstream Chromium 156 and Node.js 24.22.0 stability and security updates"
       ]
-    },
-    {
-      "version": "1.4.14",
-      "date": "10/20/2026",
-      "notes": [
-        "Electron runtime updated to v44.9.2 \u2014 maintenance update with Electron fixes, including blocking the compromised eMudhra certificate authority keys",
-        "Fixed: Seasonal themes now show only in their season in both theme pickers, and Hanami and Velvet Rose have seasons.",
-        "Updated: minimum certifi and websockets versions, so new installs start with the latest certificate list and connection library"
-      ]
     }
   ],
-  "_last_updated": "2026-10-26T20:38:27-04:00",
-  "version": "1.5.0.0.8",
-  "build": 172,
-  "label": "v1.5.0.0.8 - Build 172 - 10/26/2026 8:06 PM EST",
+  "_last_updated": "2026-10-27T21:51:00-04:00",
+  "version": "1.5.1.0",
+  "build": 173,
+  "label": "v1.5.1.0 - Build 173 - 10/27/2026 9:02 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "33395f963e839c1adb12bcb76d3268133523eabd21b019fd82dda7ea7828fcb5",
+    "sha256": "0758de130c64a70e7918fa3914a35270d82920ea45f93300ad58e5e37ba03313",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 150613658,
-  "signature": "j1udV0RbbhBsvZwaR4WLixHGRgvkKZWHqpCjuvnIbw4PycMD5nS7vbtL1O01pdGDgUSKNZKVEFPk0Zy7nUpEBQ=="
+  "size_bytes": 150903632,
+  "signature": "Cc9GdUN8YPI32rBdVZ/OyUagmT9K8Naybh5Q60XREx/q5J35Pq1nLL6xChaRGXpViaVpLaIWtpsaQwKlOYDxDg=="
 }

@@ -149,10 +149,10 @@
         <div class="glass-card">
             <section class="section">
                 <div class="download-section">
-                <h3 translate="no">📦 EGM Downloader 1.5.0.0.8</h3>
+                <h3 translate="no">📦 EGM Downloader 1.5.1.0</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
                 <p class="version-subtitle" style="text-align:center;margin-top:4px">144 MB &middot; ~300 MB after install &middot; near instant startup</p>
-                <p class="sha256-line" translate="no">SHA256: 33395f963e839c1adb12bcb76d3268133523eabd21b019fd82dda7ea7828fcb5</p>
+                <p class="sha256-line" translate="no">SHA256: 0758de130c64a70e7918fa3914a35270d82920ea45f93300ad58e5e37ba03313</p>
 
                 <!-- Apple Notarization Trust Signal -->
                 <details class="disclaimer-collapsible apple-trust-signal" id="apple-trust-signal">
@@ -168,22 +168,20 @@
                 </details>
 
 <p class="whats-new-content">
-                    <strong>What's New in <span translate="no">1.5.0.0.8</span> — 10/26/2026:</strong><br>
-<em class="polish-label" translate="no">citius · <bdi lang="ar" style="letter-spacing:0">أصيل</bdi>: reloaded</em><br><br>
-                    • Security: The minimum curl_cffi version is now 0.17.0, the library that lets the app download from sites that check which browser is asking. It includes the same upstream fix as brotli for how malformed compressed data is handled (CVE-2026-111497).<br>
-                    • Updated: The minimum yt-dlp version is now 2026.10.26, the first one that works with curl_cffi 0.17.<br>
-                    • Fixed: The Subscriptions window keeps showing "Fetching videos..." until the fetch has finished, also when the language loads late or two fetches of the same channel run at once.<br>
-                    • Fixed: The Theme Creator panel no longer slides across the window when you switch to or from Arabic.<br>
-                    • Fixed: More labels that stayed in English in other languages now follow the selected language.
+                    <strong>What's New in <span translate="no">1.5.1.0</span> — 10/27/2026:</strong><br>
+<em class="polish-label" translate="no">steady state</em><br><br>
+                    • Fixed: What's New now shows the notes of the version you are running, not the notes of the latest release. It also works without a connection.<br>
+                    • Fixed: When a live recording ends on its own, the card now stays on Converting until it is saved, instead of going back to Recording for a moment.<br>
+                    • Electron runtime updated to v45.1.0, with an updated Chromium (156.0.8078.49) and Node.js 24.22.1, a security release.
                 </p>
                 <div class="release-video">
-                    <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.0.0.8_16x9_music.jpg" aria-describedby="release-caption">
-                        <source src="/apps/media/egm_downloader_v1.5.0.0.8_16x9_music.mp4" type="video/mp4">
-                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.0.0.8_16x9_music.mp4">Open the release video as an MP4 file.</a>
+                    <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.1.0_16x9_music.jpg" aria-describedby="release-caption">
+                        <source src="/apps/media/egm_downloader_v1.5.1.0_16x9_music.mp4" type="video/mp4">
+                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.1.0_16x9_music.mp4">Open the release video as an MP4 file.</a>
                     </video>
-                    <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.0.0.8_9x16_music.jpg" aria-describedby="release-caption">
-                        <source src="/apps/media/egm_downloader_v1.5.0.0.8_9x16_music.mp4" type="video/mp4">
-                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.0.0.8_9x16_music.mp4">Open the release video as an MP4 file.</a>
+                    <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.1.0_9x16_music.jpg" aria-describedby="release-caption">
+                        <source src="/apps/media/egm_downloader_v1.5.1.0_9x16_music.mp4" type="video/mp4">
+                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.1.0_9x16_music.mp4">Open the release video as an MP4 file.</a>
                     </video>
                     <p class="tour-caption" id="release-caption">The release in 15 seconds. It has music and plays only when you press play.</p>
                 </div>
@@ -191,6 +189,10 @@
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>
                     <div class="history-content">
+                        <p class="history-item">
+                            <strong><span translate="no">v1.5.0.0.8</span> — <span translate="no">CITIUS · <bdi lang="ar" style="letter-spacing:0">أصيل</bdi>: RELOADED</span> — 10/26/2026:</strong><br>
+                            • Minimum curl_cffi version 0.17.0 with the same upstream fix as brotli for how malformed compressed data is handled, minimum yt-dlp version 2026.10.26, installs that were already set up now getting both minimum versions at start, the Subscriptions window waiting for the fetch to finish before it stops saying Fetching videos, the Theme Creator panel no longer sliding when you switch to or from Arabic, and more labels following the selected language
+                        </p>
                         <p class="history-item">
                             <strong><span translate="no">v1.5.0.0.5</span> — <span translate="no">CITIUS · <bdi lang="ar" style="letter-spacing:0">أصيل</bdi></span> — 10/25/2026:</strong><br>
                             • Arabic now reads right to left with the whole app mirrored, a faster start on every platform, a redesigned splash screen, the version number in the footer opening What's New, more labels following the selected language, an update check that never offers an older release, and a failed download no longer reported as saved

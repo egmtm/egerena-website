@@ -169,9 +169,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3 translate="no">> EGM_DOWNLOADER_v1.5.1.0<span class="dl-ext">.AppImage</span></h3>
+                <h3 translate="no">> EGM_DOWNLOADER_v1.5.2.1<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px" translate="no">SHA256: 2b89e472175bf70a8c38be3be78207b089bf1b494183dc636bab39e37fb7e4c2</p>
+                <p class="sha256-line" style="margin-top:10px" translate="no">SHA256: 47e75a44ab71b2dc9c9fc9fd1e1ae7dccc4c8b340c7006ca696a062e2028ff47</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">171 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -179,31 +179,42 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN <span translate="no">v1.5.1.0</span></div>
+                <div class="section-header">> WHAT'S NEW IN <span translate="no">v1.5.2.1</span></div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-                <div class="whats-new-subtitle"><span translate="no">v1.5.1.0</span> — 10/27/2026</div>
+                <div class="whats-new-subtitle"><span translate="no">v1.5.2.1</span> — 10/31/2026</div>
                 <p class="terminal-command" translate="no">$ changelog --latest</p>
-                <div class="polish-label" translate="no">// steady state</div>
+                <div class="polish-label" translate="no">// ritocco</div>
                 <ul>
-                    <li>Fixed: What's New now shows the notes of the version you are running, not the notes of the latest release. It also works without a connection.</li>
-                    <li>Fixed: When a live recording ends on its own, the card now stays on Converting until it is saved, instead of going back to Recording for a moment.</li>
-                    <li>Electron runtime updated to v45.1.0, with an updated Chromium (156.0.8078.49) and Node.js 24.22.1, a security release.</li>
-                    <li>The new Electron also fixes a crash that could happen when the system's D-Bus connection is lost.</li>
+                    <li>New: Drag the small handle at the top of the links card or the Settings panel to swap their places. The app remembers your choice, and it is included in Export and Import.</li>
+                    <li>Fixed: Small labels, like Format, Video quality, the table headers and the Themes window headings, are clearer and easier to read on many themes.</li>
+                    <li>Fixed: The hint text in the download folder field now follows your theme.</li>
+                    <li>Fixed: The History, Console and Subscriptions pages now match the main window's colors on the default theme.</li>
+                    <li>Fixed: The LIVE tag on a video card is readable on every theme.</li>
+                    <li>Fixed: The format badges in History (MP3, MP4, FLAC and the like) are easier to read on light themes.</li>
+                    <li>Fixed: The Save button in the Theme Creator panel is easier to read.</li>
+                    <li>Fixed: Green buttons, like Stop and save, are easier to read on many themes.</li>
+                    <li>Fixed: 139 themes are easier to read, with clearer labels, hints, status colors and button text. Some accents, surfaces and background patterns also changed, so similar themes look different from each other and text stays clear.</li>
+                    <li>Electron runtime updated to v45.2.1.</li>
                 </ul>
                 <div class="release-video">
-                    <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.1.0_16x9_music.jpg" aria-describedby="release-caption">
-                        <source src="/apps/media/egm_downloader_v1.5.1.0_16x9_music.mp4" type="video/mp4">
-                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.1.0_16x9_music.mp4">Open the release video as an MP4 file.</a>
+                    <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.2.1_16x9_music.jpg" aria-describedby="release-caption">
+                        <source src="/apps/media/egm_downloader_v1.5.2.1_16x9_music.mp4" type="video/mp4">
+                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.2.1_16x9_music.mp4">Open the release video as an MP4 file.</a>
                     </video>
-                    <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.1.0_9x16_music.jpg" aria-describedby="release-caption">
-                        <source src="/apps/media/egm_downloader_v1.5.1.0_9x16_music.mp4" type="video/mp4">
-                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.1.0_9x16_music.mp4">Open the release video as an MP4 file.</a>
+                    <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.2.1_9x16_music.jpg" aria-describedby="release-caption">
+                        <source src="/apps/media/egm_downloader_v1.5.2.1_9x16_music.mp4" type="video/mp4">
+                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.2.1_9x16_music.mp4">Open the release video as an MP4 file.</a>
                     </video>
-                    <p class="tour-caption" id="release-caption">The release in 15 seconds. It has music and plays only when you press play.</p>
+                    <p class="tour-caption" id="release-caption">The release in 35 seconds. It has music and plays only when you press play.</p>
                 </div>
                 <details class="history-details">
                     <summary class="history-summary" translate="no">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version"><span translate="no">v1.5.1.0</span> — <span translate="no">STEADY STATE</span> — 10/27/2026</div>
+                        <ul>
+                            <li>What's New showing the notes of the version you are running and working without a connection, a live recording that ends on its own staying on Converting until it is saved, and the Electron runtime updated to v45.1.0 with an updated Chromium (156.0.8078.49) and Node.js 24.22.1, a security release</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version"><span translate="no">v1.5.0.0.8</span> — <span translate="no">CITIUS · <bdi lang="ar" style="letter-spacing:0">أصيل</bdi>: RELOADED</span> — 10/26/2026</div>
                         <ul>
                             <li>Minimum curl_cffi version 0.17.0 with the same upstream fix as brotli for how malformed compressed data is handled, minimum yt-dlp version 2026.10.26, installs that were already set up now getting both minimum versions at start, the Subscriptions window waiting for the fetch to finish before it stops saying Fetching videos, the Theme Creator panel no longer sliding when you switch to or from Arabic, and more labels following the selected language</li>

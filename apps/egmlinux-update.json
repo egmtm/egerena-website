@@ -1,18 +1,38 @@
 {
   "_comment": "EGM Downloader Linux \u2014 informational, no auto-update. Upload to egerena.com/apps/egmlinux-update.json",
   "_version_notes": [
-    "New: Drag the small handle at the top of the links card or the Settings panel to swap their places. The app remembers your choice, and it is included in Export and Import.",
-    "Fixed: Small labels, like Format, Video quality, the table headers and the Themes window headings, are clearer and easier to read on many themes.",
-    "Fixed: The hint text in the download folder field now follows your theme.",
-    "Fixed: The History, Console and Subscriptions pages now match the main window's colors on the default theme.",
-    "Fixed: The LIVE tag on a video card is readable on every theme.",
-    "Fixed: The format badges in History (MP3, MP4, FLAC and the like) are easier to read on light themes.",
-    "Fixed: The Save button in the Theme Creator panel is easier to read.",
-    "Fixed: Green buttons, like Stop and save, are easier to read on many themes.",
-    "Fixed: 139 themes are easier to read, with clearer labels, hints, status colors and button text. Some accents, surfaces and background patterns also changed, so similar themes look different from each other and text stays clear.",
-    "Electron runtime updated to v45.2.1."
+    "Security: The Python that comes with the app is now 3.11.18, a security release, and it includes a newer pip.",
+    "Fixed: Quitting while Subscriptions downloads are running now asks first, and Keep open really keeps the app and its downloads running.",
+    "Fixed: If the app crashes or is force quit, its downloads now stop too, and the next start opens normally instead of being blocked by a leftover copy.",
+    "Fixed: Force refresh in Subscriptions keeps the videos you already downloaded marked as downloaded.",
+    "Fixed: If ffmpeg could not be set up on first start, for example when you were offline, a download now says so right away and what to do, in every language, instead of waiting and then saying it is still being set up.",
+    "Fixed: Installing or updating ffmpeg can no longer leave a broken copy behind, and a plugins update or Deno install that fails now says so instead of reporting Update complete.",
+    "Fixed: A download that fails before it starts now shows an error instead of waiting forever. Cancel also stops the conversion step after a download, and a failed H.264 conversion keeps the original download.",
+    "Fixed: A video with a long title in Japanese, Chinese or emoji is now saved under its title instead of its job number.",
+    "Fixed: Live recordings that cannot be joined keep every piece under its own name, even with a very long title, instead of waiting forever at the end.",
+    "Fixed: A damaged history, settings or subscriptions file no longer breaks the app, and saving a setting right after start can no longer erase your other settings. A copy of a damaged file is kept next to it as a .unreadable file; Clear history and Reset settings remove it.",
+    "Security: Imported history and settings are checked before they are saved, imported text is always shown as plain text, and the app only connects to its own background process, never to another program or a leftover copy. If another program uses the port, the app now says so.",
+    "Electron runtime updated to v45.2.2."
   ],
   "_history": [
+    {
+      "version": "1.5.2.2",
+      "date": "11/04/2026",
+      "notes": [
+        "Security: The Python that comes with the app is now 3.11.18, a security release, and it includes a newer pip.",
+        "Fixed: Quitting while Subscriptions downloads are running now asks first, and Keep open really keeps the app and its downloads running.",
+        "Fixed: If the app crashes or is force quit, its downloads now stop too, and the next start opens normally instead of being blocked by a leftover copy.",
+        "Fixed: Force refresh in Subscriptions keeps the videos you already downloaded marked as downloaded.",
+        "Fixed: If ffmpeg could not be set up on first start, for example when you were offline, a download now says so right away and what to do, in every language, instead of waiting and then saying it is still being set up.",
+        "Fixed: Installing or updating ffmpeg can no longer leave a broken copy behind, and a plugins update or Deno install that fails now says so instead of reporting Update complete.",
+        "Fixed: A download that fails before it starts now shows an error instead of waiting forever. Cancel also stops the conversion step after a download, and a failed H.264 conversion keeps the original download.",
+        "Fixed: A video with a long title in Japanese, Chinese or emoji is now saved under its title instead of its job number.",
+        "Fixed: Live recordings that cannot be joined keep every piece under its own name, even with a very long title, instead of waiting forever at the end.",
+        "Fixed: A damaged history, settings or subscriptions file no longer breaks the app, and saving a setting right after start can no longer erase your other settings. A copy of a damaged file is kept next to it as a .unreadable file; Clear history and Reset settings remove it.",
+        "Security: Imported history and settings are checked before they are saved, imported text is always shown as plain text, and the app only connects to its own background process, never to another program or a leftover copy. If another program uses the port, the app now says so.",
+        "Electron runtime updated to v45.2.2."
+      ]
+    },
     {
       "version": "1.5.2.1",
       "date": "10/31/2026",
@@ -64,27 +84,19 @@
         "Fixed: An older yt-dlp or brotli left over from Update Plugins is removed at start, so the newer one that comes with the app is used.",
         "Fixed: A download that fails partway is no longer reported as saved when only the video part of it was downloaded, and the leftover files are removed."
       ]
-    },
-    {
-      "version": "1.5.0.0.1",
-      "date": "10/22/2026",
-      "notes": [
-        "Security: The minimum brotli version is now 1.2.1, the library that unpacks compressed web responses, which includes an upstream fix for how malformed data is handled (CVE-2026-111497).",
-        "Updated: The minimum yt-dlp version is now 2026.10.21, which includes the reworked Kick extractor for Kick downloads."
-      ]
     }
   ],
-  "_last_updated": "2026-10-31T05:08:06-04:00",
-  "version": "1.5.2.1",
-  "build": 174,
-  "label": "v1.5.2.1 - Build 174 - 10/31/2026 4:43 AM EST",
+  "_last_updated": "2026-11-04T00:28:56-05:00",
+  "version": "1.5.2.2",
+  "build": 175,
+  "label": "v1.5.2.2 - Build 175 - 11/4/2026 12:11 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdL.zip",
   "zip": "EGMdL.zip",
   "_checksums": {
-    "sha256": "47e75a44ab71b2dc9c9fc9fd1e1ae7dccc4c8b340c7006ca696a062e2028ff47",
+    "sha256": "568f44c41228c2c307ea5a62e7c257bdf3f9bbb1dcad834d32ee156a44f13888",
     "algorithm": "SHA-256",
     "file": "EGMdL.zip"
   },
-  "size_bytes": 179128493,
-  "signature": "qOSI+2HXkQ6BzexnFgBsLmpgD2UxmxuSkfxhow085HjXBGlVPb3DG8PRV1hR31T+m+w69HCIljQcD1n8ENFkCQ=="
+  "size_bytes": 180209649,
+  "signature": "YBrO00+To7TDziSFFmXjW7p2jOZZBsMt/3Tw5RE8sljZdSOn5EtENcDaE8Q6SZbTnzVRIxY+w85A9pisJKCnDQ=="
 }

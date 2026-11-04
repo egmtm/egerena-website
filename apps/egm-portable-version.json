@@ -1,18 +1,44 @@
 {
   "_comment": "EGM Downloader Windows Portable update feed. Upload to egerena.com/apps/egm-portable-version.json",
   "_version_notes": [
-    "New: Drag the small handle at the top of the links card or the Settings panel to swap their places. The app remembers your choice, and it is included in Export and Import.",
-    "Fixed: Small labels, like Format, Video quality, the table headers and the Themes window headings, are clearer and easier to read on many themes.",
-    "Fixed: The hint text in the download folder field now follows your theme.",
-    "Fixed: The History, Console and Subscriptions pages now match the main window's colors on the default theme.",
-    "Fixed: The LIVE tag on a video card is readable on every theme.",
-    "Fixed: The format badges in History (MP3, MP4, FLAC and the like) are easier to read on light themes.",
-    "Fixed: The Save button in the Theme Creator panel is easier to read.",
-    "Fixed: Green buttons, like Stop and save, are easier to read on many themes.",
-    "Fixed: 139 themes are easier to read, with clearer labels, hints, status colors and button text. Some accents, surfaces and background patterns also changed, so similar themes look different from each other and text stays clear.",
-    "Electron runtime updated to v45.2.1."
+    "Security: Portable: The Python that comes with the app is now 3.11.18, a security release, and it includes a newer pip.",
+    "Changed: Portable: Your saved themes, history pins and window position now live in the data folder, so copying data when you update keeps them. The steps in instructions.txt show how to reveal the hidden folder.",
+    "Fixed: Quitting while Subscriptions downloads are running now asks first, and Keep open really keeps the app and its downloads running.",
+    "Fixed: The update installer and Restart now (after reinstalling Electron) ask the same question first when Subscriptions downloads are running, and Keep open leaves the update or the reinstall for later.",
+    "Fixed: If the app crashes or is force quit, its downloads now stop too, and the next start opens normally instead of being blocked by a leftover copy.",
+    "Fixed: Force refresh in Subscriptions keeps the videos you already downloaded marked as downloaded.",
+    "Fixed: If ffmpeg could not be set up on first start, for example when you were offline, a download now says so right away and what to do, in every language, instead of waiting and then saying it is still being set up.",
+    "Fixed: Installing or updating ffmpeg can no longer leave a broken copy behind, and a plugins update or Deno install that fails now says so instead of reporting Update complete.",
+    "Fixed: A download that fails before it starts now shows an error instead of waiting forever. Cancel also stops the conversion step after a download, and a failed H.264 conversion keeps the original download.",
+    "Fixed: Live recordings that cannot be joined keep every piece under its own name, even with a very long title, instead of waiting forever at the end.",
+    "Fixed: A damaged history, settings or subscriptions file no longer breaks the app, and saving a setting right after start can no longer erase your other settings. A copy of a damaged file is kept next to it as a .unreadable file; Clear history and Reset settings remove it.",
+    "Security: Imported history and settings are checked before they are saved, imported text is always shown as plain text, and the app only connects to its own background process, never to another program or a leftover copy. If another program uses the port, the app now says so.",
+    "Fixed: Portable: the first start downloads Node.js again if unpacking it was interrupted, and a first start without internet now says what to do instead of hanging.",
+    "Security: Portable: The Python that comes with the app no longer reads your own Python packages folder or Python environment settings when it starts, so a stray file there cannot run code in the launcher.",
+    "Electron runtime updated to v45.2.2."
   ],
   "_history": [
+    {
+      "version": "1.5.2.2",
+      "date": "11/04/2026",
+      "notes": [
+        "Security: Portable: The Python that comes with the app is now 3.11.18, a security release, and it includes a newer pip.",
+        "Changed: Portable: Your saved themes, history pins and window position now live in the data folder, so copying data when you update keeps them. The steps in instructions.txt show how to reveal the hidden folder.",
+        "Fixed: Quitting while Subscriptions downloads are running now asks first, and Keep open really keeps the app and its downloads running.",
+        "Fixed: The update installer and Restart now (after reinstalling Electron) ask the same question first when Subscriptions downloads are running, and Keep open leaves the update or the reinstall for later.",
+        "Fixed: If the app crashes or is force quit, its downloads now stop too, and the next start opens normally instead of being blocked by a leftover copy.",
+        "Fixed: Force refresh in Subscriptions keeps the videos you already downloaded marked as downloaded.",
+        "Fixed: If ffmpeg could not be set up on first start, for example when you were offline, a download now says so right away and what to do, in every language, instead of waiting and then saying it is still being set up.",
+        "Fixed: Installing or updating ffmpeg can no longer leave a broken copy behind, and a plugins update or Deno install that fails now says so instead of reporting Update complete.",
+        "Fixed: A download that fails before it starts now shows an error instead of waiting forever. Cancel also stops the conversion step after a download, and a failed H.264 conversion keeps the original download.",
+        "Fixed: Live recordings that cannot be joined keep every piece under its own name, even with a very long title, instead of waiting forever at the end.",
+        "Fixed: A damaged history, settings or subscriptions file no longer breaks the app, and saving a setting right after start can no longer erase your other settings. A copy of a damaged file is kept next to it as a .unreadable file; Clear history and Reset settings remove it.",
+        "Security: Imported history and settings are checked before they are saved, imported text is always shown as plain text, and the app only connects to its own background process, never to another program or a leftover copy. If another program uses the port, the app now says so.",
+        "Fixed: Portable: the first start downloads Node.js again if unpacking it was interrupted, and a first start without internet now says what to do instead of hanging.",
+        "Security: Portable: The Python that comes with the app no longer reads your own Python packages folder or Python environment settings when it starts, so a stray file there cannot run code in the launcher.",
+        "Electron runtime updated to v45.2.2."
+      ]
+    },
     {
       "version": "1.5.2.1",
       "date": "10/31/2026",
@@ -66,28 +92,19 @@
         "Fixed: Portable: a rare case where the first launch used Python packages already on your PC instead of its own, which made the next launch noticeably slower while it installed them.",
         "Changed: The installer edition now needs Python 3.11 or newer (it was 3.10). Python 3.10 reached end of life in October 2026 and newer yt-dlp builds no longer support it. The portable edition is not affected."
       ]
-    },
-    {
-      "version": "1.5.0.0.1",
-      "date": "10/22/2026",
-      "notes": [
-        "Security: The minimum brotli version is now 1.2.1, the library that unpacks compressed web responses, which includes an upstream fix for how malformed data is handled (CVE-2026-111497).",
-        "Updated: The minimum yt-dlp version is now 2026.10.21, which includes the reworked Kick extractor for Kick downloads.",
-        "Fixed: Installs that were already set up now get these minimum versions at start instead of keeping older copies. If the app is offline, it starts normally with what it has."
-      ]
     }
   ],
-  "_last_updated": "2026-10-31T05:08:06-04:00",
-  "version": "1.5.2.1",
-  "build": 174,
-  "label": "v1.5.2.1 - Build 174 - 10/31/2026 4:43 AM EST",
+  "_last_updated": "2026-11-04T00:28:56-05:00",
+  "version": "1.5.2.2",
+  "build": 175,
+  "label": "v1.5.2.2 - Build 175 - 11/4/2026 12:11 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd-portable.zip",
   "zip": "EGMd-portable.zip",
   "_checksums": {
-    "sha256": "0eeb11e2aed1d962be410c1ff7113823168085bfb91ec77ec73160c183b92af2",
+    "sha256": "39cc512dda4e36e143119f1262790f31ddf7de5e214d6631350bd21c339459c7",
     "algorithm": "SHA-256",
     "file": "EGMd-portable.zip"
   },
-  "size_bytes": 708819,
-  "signature": "yxTtOE8NT27+0NWm15b7DqobHhw8uFlnbZy4hLPWqUmC0LQHY3LKbwljW9TfqqgwxWJFbphiAt67EYEPsKJSDw=="
+  "size_bytes": 718458,
+  "signature": "Y3NLjUo5Tct+dk/Ticob2/r9Os6izAqU+tOjfVZ8+xQjMHXrSTPDpgagydxcCi2SsODJs3U3lYAv9KWdqhYZBQ=="
 }

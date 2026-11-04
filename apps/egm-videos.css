@@ -1,0 +1,22 @@
+/* EGM Downloader videos page. Builds on the landing page styles (egm-downloader.css) and its theme variables. */
+.vhero{padding-top:clamp(16px,3vw,40px);padding-bottom:clamp(28px,4vw,48px);display:flex;flex-direction:column;gap:22px}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr));gap:24px}
+.vcard{background:var(--surf);border:1.5px solid var(--line);border-radius:28px;padding:16px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.vthumb{position:relative;display:block;width:100%;aspect-ratio:16/9;background:#000;border-radius:16px;overflow:hidden}
+.vthumb img{display:block;width:100%;height:100%;object-fit:cover}
+.vthumb::before{content:"";position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(0,0,0,.6);border:2px solid #fff}
+.vthumb::after{content:"";position:absolute;left:50%;top:50%;width:22px;height:26px;margin:-13px 0 0 -8px;background:#fff;clip-path:polygon(0 0,100% 50%,0 100%)}
+.vthumb:hover::before{background:rgba(0,0,0,.8)}
+.vthumb:focus-visible{outline:3px solid var(--accT);outline-offset:3px}
+.vmeta{display:flex;flex-direction:column;gap:8px;padding:0 6px 6px}
+.vline{font-size:13px;color:var(--mut)}
+.vmeta h2{font-weight:800;font-size:clamp(24px,2.4vw,30px);line-height:1.05;letter-spacing:-.02em;text-wrap:balance}
+.vdesc{font-size:16px;line-height:1.5;color:var(--mut);text-wrap:pretty}
+.navl[aria-current="page"]{opacity:1;text-decoration:underline;text-underline-offset:6px}
+#vplayer{border:0;padding:0;background:transparent;max-width:none;max-height:none;overflow:visible}
+#vplayer::backdrop{background:rgba(0,0,0,.85)}
+#vplayer video{display:block;background:#000;border-radius:16px;object-fit:contain}
+#vplayer .v16x9{width:min(92vw,calc(80vh*16/9),1280px);aspect-ratio:16/9}
+#vplayer .v9x16{height:min(80vh,calc(92vw*16/9));aspect-ratio:9/16}
+.vclose{position:absolute;right:0;top:-48px;width:40px;height:40px;border:0;border-radius:50%;background:var(--surf);color:var(--fg);font-size:26px;line-height:1;cursor:pointer}
+.vclose:focus-visible{outline:3px solid var(--accT);outline-offset:2px}

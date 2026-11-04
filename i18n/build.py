@@ -1,17 +1,23 @@
 #!/usr/bin/env python3
-"""Builds the translated copies of the EGM Downloader landing page.
+"""Builds the translated copies of the EGM Downloader landing page and the Videos page.
 
-Source of truth : apps/egm-downloader.html  (English, edited by hand)
+Source of truth : apps/egm-downloader.html, apps/egm-videos.html  (English, edited by hand)
 Translations    : i18n/<code>.json          ({"strings": {"English text": "Translated text"}})
 Do not translate: i18n/keep.txt             (names that stay as written, one per line)
-Output          : apps/<code>/egm-downloader.html
+Output          : apps/<code>/egm-downloader.html, apps/<code>/egm-videos.html
 
 Only text and a short list of attributes are replaced; every tag is kept as is.
 The build stops if an English string has no translation, so a copy edit in the
 source cannot ship half translated.
 
+Text inside an element marked translate="no" (release names, version numbers) is
+never translated and needs no entry in keep.txt. The text of a <time datetime="YYYY-MM-DD">
+element becomes the ISO date itself in every translated copy, so dates need no strings.
+The two pages link to each other inside the language folder, so a visitor stays in
+their language.
+
     python3 i18n/build.py          build every language that has a strings file
-    python3 i18n/build.py --list   print every translatable English string
+    python3 i18n/build.py --list   print every translatable English string (both pages)
 """
 import glob
 import html
@@ -22,9 +28,11 @@ import sys
 from html.parser import HTMLParser
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(ROOT, 'apps', 'egm-downloader.html')
 SITE = 'https://egerena.com/apps/'
-PAGE = 'egm-downloader.html'
+PAGES = ['egm-downloader.html', 'egm-videos.html']  # English sources in apps/, each built for every language
+SIBLING = re.compile(r'^(%s)([#?].*)?$' % '|'.join(re.escape(p) for p in PAGES))
+VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'source', 'track', 'wbr'}
+ISO_DATE = re.compile(r'^\d{4}-\d{2}-\d{2}$')
 
 TEXT_ATTRS = ('aria-label', 'alt', 'title', 'placeholder', 'data-short')
 META_KEYS = ('description', 'og:title', 'og:description')
@@ -39,13 +47,16 @@ def norm(s):
 class Pass(HTMLParser):
     """One walk over the source. With code=None it only collects strings."""
 
-    def __init__(self, code, strings, keep):
+    def __init__(self, code, strings, keep, page):
         super().__init__(convert_charrefs=False)
-        self.code, self.strings, self.keep = code, strings, keep
+        self.code, self.strings, self.keep, self.page = code, strings, keep, page
         self.out, self.buf = [], []
         self.found, self.missing = [], []
         self.skip = 0          # inside <script> or <style>
         self.cur_code = False  # next text is the current language code in the selector
+        self.stack = []        # open elements, to know where a translate="no" element ends
+        self.nt = None         # stack depth of the open translate="no" element, if any
+        self.time_iso = None   # the datetime of the <time> element whose text comes next
 
     # -- text ---------------------------------------------------------------
     def flush(self):
@@ -53,7 +64,13 @@ class Pass(HTMLParser):
             return
         raw = ''.join(self.buf)
         self.buf = []
-        if self.skip:
+        if self.skip or self.nt is not None:
+            self.out.append(raw)
+            return
+        if self.time_iso is not None:
+            iso, self.time_iso = self.time_iso, None
+            if self.code and norm(raw):
+                raw = raw[:len(raw) - len(raw.lstrip())] + iso + raw[len(raw.rstrip()):]
             self.out.append(raw)
             return
         if self.cur_code:
@@ -103,7 +120,7 @@ class Pass(HTMLParser):
             name, val = m.group(2), m.group(4) if m.group(4) is not None else m.group(5)
             lname = name.lower()
             new = val
-            if lname in TEXT_ATTRS or lname.startswith('data-t-') or (is_meta and lname == 'content'):
+            if self.nt is None and (lname in TEXT_ATTRS or lname.startswith('data-t-') or (is_meta and lname == 'content')):
                 key = norm(val)
                 if HAS_LETTER.search(key) and key not in self.keep:
                     self.found.append(key)
@@ -112,11 +129,12 @@ class Pass(HTMLParser):
                     elif self.code:
                         self.missing.append(key)
             elif self.code and lname in ('href', 'src') and not re.match(r'^(#|/|[a-zA-Z][a-zA-Z0-9+.-]*:)', val):
-                new = '../' + val
+                # The two pages live side by side in every language folder; everything else is one level up.
+                new = val if lname == 'href' and SIBLING.match(val) else '../' + val
             elif self.code and tag == 'link' and a.get('rel') == 'canonical' and lname == 'href':
-                new = SITE + self.code + '/' + PAGE
+                new = SITE + self.code + '/' + self.page
             elif self.code and tag == 'meta' and meta_key == 'og:url' and lname == 'content':
-                new = SITE + self.code + '/' + PAGE
+                new = SITE + self.code + '/' + self.page
             if new == val:
                 return m.group(0)
             return '%s%s="%s"' % (m.group(1), name, new)
@@ -131,6 +149,13 @@ class Pass(HTMLParser):
         self.out.append(self.tag_text(tag, attrs))
         if tag in ('script', 'style'):
             self.skip += 1
+        if tag not in VOID:
+            self.stack.append(tag)
+            if self.nt is None and dict(attrs).get('translate') == 'no':
+                self.nt = len(self.stack)
+        if tag == 'time':
+            iso = dict(attrs).get('datetime')
+            self.time_iso = iso if iso and ISO_DATE.match(iso) else None
 
     def handle_startendtag(self, tag, attrs):
         self.flush()
@@ -140,6 +165,13 @@ class Pass(HTMLParser):
         self.flush()
         if tag in ('script', 'style'):
             self.skip -= 1
+        if tag == 'time':
+            self.time_iso = None
+        if tag not in VOID and tag in self.stack:
+            while self.stack.pop() != tag:  # tolerate optional end tags such as </li>
+                pass
+            if self.nt is not None and len(self.stack) < self.nt:
+                self.nt = None
         self.out.append('</%s>' % tag)
 
     def handle_comment(self, d):
@@ -150,7 +182,7 @@ class Pass(HTMLParser):
         self.flush()
         self.out.append('<!%s>' % d)
         if self.code:
-            self.out.append('\n<!-- Generated by i18n/build.py from apps/egm-downloader.html. Edit the source and i18n/%s.json, not this file. -->' % self.code)
+            self.out.append('\n<!-- Generated by i18n/build.py from apps/%s. Edit the source and i18n/%s.json, not this file. -->' % (self.page, self.code))
 
     def result(self):
         self.flush()
@@ -162,22 +194,26 @@ LOCALES = {'es': 'es_LA', 'de': 'de_DE', 'fr': 'fr_FR', 'it': 'it_IT', 'pt': 'pt
 RTL = {'ar'}  # languages written right to left: the page gets dir="rtl"
 
 
-def run(source, code, strings, keep):
-    p = Pass(code, strings, keep)
+def run(source, code, strings, keep, page):
+    p = Pass(code, strings, keep, page)
     p.feed(source)
     p.close()
     return p
 
 
 def main():
-    source = open(SRC, encoding='utf-8').read()
     keep = {norm(l) for l in open(os.path.join(ROOT, 'i18n', 'keep.txt'), encoding='utf-8') if l.strip() and not l.startswith('#')}
 
-    # The parser must reproduce the source byte for byte when nothing is translated.
-    base = run(source, None, {}, keep)
-    if base.result() != source:
-        sys.exit('self test failed: the parser does not reproduce the source page')
-    wanted = sorted(set(base.found))
+    sources, wanted = {}, set()
+    for page in PAGES:
+        source = open(os.path.join(ROOT, 'apps', page), encoding='utf-8').read()
+        # The parser must reproduce each source byte for byte when nothing is translated.
+        base = run(source, None, {}, keep, page)
+        if base.result() != source:
+            sys.exit('self test failed: the parser does not reproduce apps/%s' % page)
+        sources[page] = source
+        wanted |= set(base.found)
+    wanted = sorted(wanted)
 
     if '--list' in sys.argv:
         print('\n'.join(wanted))
@@ -185,21 +221,27 @@ def main():
 
     files = sorted(glob.glob(os.path.join(ROOT, 'i18n', '*.json')))
     codes = [os.path.basename(f)[:-5] for f in files]
-    alts = set(re.findall(r'<link rel="alternate" hreflang="([a-z-]+)"', source)) - {'x-default'}
     problems = []
-    if alts != set(codes) | {'en'}:
-        problems.append('hreflang links in the source %s do not match the strings files %s' % (sorted(alts), sorted(set(codes) | {'en'})))
-    for c in codes:
-        if 'data-lang="%s"' % c not in source:
-            problems.append('the language list in the source has no entry for "%s"' % c)
+    for page, source in sources.items():
+        alts = set(re.findall(r'<link rel="alternate" hreflang="([a-z-]+)"', source)) - {'x-default'}
+        if alts != set(codes) | {'en'}:
+            problems.append('apps/%s: hreflang links %s do not match the strings files %s' % (page, sorted(alts), sorted(set(codes) | {'en'})))
+        for c in codes:
+            if 'data-lang="%s"' % c not in source:
+                problems.append('apps/%s: the language list has no entry for "%s"' % (page, c))
 
     for f, c in zip(files, codes):
         data = json.load(open(f, encoding='utf-8'))
         strings = data['strings']
-        p = run(source, c, strings, keep)
-        miss = sorted(set(p.missing))
-        if miss:
-            problems.append('%s: %d untranslated string(s):\n    %s' % (c, len(miss), '\n    '.join(miss)))
+        built, bad = [], False
+        for page, source in sources.items():
+            p = run(source, c, strings, keep, page)
+            miss = sorted(set(p.missing))
+            if miss:
+                problems.append('%s, apps/%s: %d untranslated string(s):\n    %s' % (c, page, len(miss), '\n    '.join(miss)))
+                bad = True
+            built.append((page, p))
+        if bad:
             continue
         for k, v in strings.items():
             if re.findall(r'\{\d\}', k) != re.findall(r'\{\d\}', v):
@@ -207,10 +249,11 @@ def main():
         unused = sorted(set(strings) - set(wanted))
         if unused:
             print('note: %s has %d unused string(s) (the English text changed or was removed):\n    %s' % (c, len(unused), '\n    '.join(unused)))
-        out = os.path.join(ROOT, 'apps', c, PAGE)
-        os.makedirs(os.path.dirname(out), exist_ok=True)
-        open(out, 'w', encoding='utf-8', newline='\n').write(p.result())
-        print('built apps/%s/%s  (%d strings)' % (c, PAGE, len(set(p.found))))
+        for page, p in built:
+            out = os.path.join(ROOT, 'apps', c, page)
+            os.makedirs(os.path.dirname(out), exist_ok=True)
+            open(out, 'w', encoding='utf-8', newline='\n').write(p.result())
+            print('built apps/%s/%s  (%d strings)' % (c, page, len(set(p.found))))
     if problems:
         sys.exit('\n'.join(['build stopped:'] + problems))
 

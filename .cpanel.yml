@@ -90,6 +90,15 @@ deployment:
     - /bin/cp apps/ru/egm-downloader.html ${DEPLOYPATH}apps/ru/
     - /bin/cp apps/ja/egm-downloader.html ${DEPLOYPATH}apps/ja/
     - /bin/cp apps/ar/egm-downloader.html ${DEPLOYPATH}apps/ar/
+    - /bin/cp apps/es/egm-videos.html ${DEPLOYPATH}apps/es/
+    - /bin/cp apps/de/egm-videos.html ${DEPLOYPATH}apps/de/
+    - /bin/cp apps/fr/egm-videos.html ${DEPLOYPATH}apps/fr/
+    - /bin/cp apps/it/egm-videos.html ${DEPLOYPATH}apps/it/
+    - /bin/cp apps/pt/egm-videos.html ${DEPLOYPATH}apps/pt/
+    - /bin/cp apps/nl/egm-videos.html ${DEPLOYPATH}apps/nl/
+    - /bin/cp apps/ru/egm-videos.html ${DEPLOYPATH}apps/ru/
+    - /bin/cp apps/ja/egm-videos.html ${DEPLOYPATH}apps/ja/
+    - /bin/cp apps/ar/egm-videos.html ${DEPLOYPATH}apps/ar/
     - /bin/cp apps/egmac-glass.css ${DEPLOYPATH}apps/
     - /bin/cp apps/egmac-theme.js ${DEPLOYPATH}apps/
     - /bin/cp apps/egmac.html ${DEPLOYPATH}apps/

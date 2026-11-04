@@ -79,6 +79,8 @@ deployment:
     - /bin/cp apps/egm-downloader.css ${DEPLOYPATH}apps/
     - /bin/cp apps/egm-downloader.html ${DEPLOYPATH}apps/
     - /bin/cp apps/egm-downloader.js ${DEPLOYPATH}apps/
+    - /bin/cp apps/egm-videos.css ${DEPLOYPATH}apps/
+    - /bin/cp apps/egm-videos.html ${DEPLOYPATH}apps/
     - /bin/cp apps/es/egm-downloader.html ${DEPLOYPATH}apps/es/
     - /bin/cp apps/de/egm-downloader.html ${DEPLOYPATH}apps/de/
     - /bin/cp apps/fr/egm-downloader.html ${DEPLOYPATH}apps/fr/

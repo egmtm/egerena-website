@@ -102,9 +102,9 @@
 
     function paint(animate) {
       swatches.forEach(function (b) { b.setAttribute('aria-pressed', +b.getAttribute('data-i') === cur ? 'true' : 'false'); });
-      nameEl.textContent = THEMES[cur].name;
+      if (nameEl) nameEl.textContent = THEMES[cur].name;
       modeBtn.setAttribute('aria-label', modeBtn.getAttribute(THEMES[cur].dark ? 'data-t-light' : 'data-t-dark'));
-      if (animate) { nameEl.classList.remove('pop'); void nameEl.offsetWidth; nameEl.classList.add('pop'); }
+      if (animate && nameEl) { nameEl.classList.remove('pop'); void nameEl.offsetWidth; nameEl.classList.add('pop'); }
     }
 
     function choose(i) {
@@ -116,7 +116,8 @@
 
     swatches.forEach(function (b) { b.addEventListener('click', function () { choose(+b.getAttribute('data-i')); }); });
     modeBtn.addEventListener('click', function () { choose(THEMES[cur].dark ? 1 : 0); }); // quick switch: Porcelain or Ghost
-    $('#surprise').addEventListener('click', function () {
+    var surprise = $('#surprise');
+    if (surprise) surprise.addEventListener('click', function () {
       choose((cur + 1 + Math.floor(Math.random() * (THEMES.length - 1))) % THEMES.length);
     });
     if (mq && mq.addEventListener) {
@@ -132,10 +133,12 @@
         if (a.hasAttribute('aria-current')) { e.preventDefault(); menu.open = false; }
       });
     });
-    document.addEventListener('click', function (e) { if (menu.open && !menu.contains(e.target)) menu.open = false; });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && menu.open) { menu.open = false; menu.querySelector('summary').focus(); }
-    });
+    if (menu) {
+      document.addEventListener('click', function (e) { if (menu.open && !menu.contains(e.target)) menu.open = false; });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && menu.open) { menu.open = false; menu.querySelector('summary').focus(); }
+      });
+    }
 
     // Latest version (from the update feed) and GitHub star count (from /apps/stars.php).
     // Both are plain numbers, so there is nothing to translate. Each stays hidden until a

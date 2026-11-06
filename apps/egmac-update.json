@@ -1,21 +1,26 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Security: The Python that comes with the app is now 3.11.18, a security release.",
-    "The app may start faster.",
-    "Fixed: Quitting while Subscriptions downloads are running now asks first, and Keep open really keeps the app and its downloads running.",
-    "Fixed: If the app crashes or is force quit, its downloads now stop too, and the next start opens normally instead of being blocked by a leftover copy.",
-    "Fixed: Force refresh in Subscriptions keeps the videos you already downloaded marked as downloaded.",
-    "Fixed: If ffmpeg could not be set up on first start, for example when you were offline, a download now says so right away and what to do, in every language, instead of waiting and then saying it is still being set up.",
-    "Fixed: Installing or updating ffmpeg can no longer leave a broken copy behind, and a plugins update or Deno install that fails now says so instead of reporting Update complete.",
-    "Fixed: A download that fails before it starts now shows an error instead of waiting forever. Cancel also stops the conversion step after a download, and a failed H.264 conversion keeps the original download.",
-    "Fixed: A video with a long title in Japanese, Chinese or emoji is now saved under its title instead of its job number.",
-    "Fixed: Live recordings that cannot be joined keep every piece under its own name, even with a very long title, instead of waiting forever at the end.",
-    "Fixed: A damaged history, settings or subscriptions file no longer breaks the app, and saving a setting right after start can no longer erase your other settings. A copy of a damaged file is kept next to it as a .unreadable file; Clear history and Reset settings remove it.",
-    "Security: Imported history and settings are checked before they are saved, imported text is always shown as plain text, and the app only connects to its own background process, never to another program or a leftover copy. If another program uses the port, the app now says so.",
-    "Electron runtime updated to v45.2.2."
+    "Fixed: Random theme on launch no longer picks a seasonal theme outside its dates.",
+    "Fixed: The message when ffmpeg could not be downloaded now names the buttons that exist, in every language.",
+    "Fixed: 7 themes (Dark World, Mermaid, Woodgrain, Odd Cab, Havana, Hangang and Seoul) have clearer accents, error colors and quiet text. Hangang is now cyan instead of pink.",
+    "Fixed: The color dots in the theme lists now match the real colors of every theme.",
+    "Security: Thumbnail file names in History are checked the same strict way everywhere.",
+    "Electron runtime updated to v45.2.3."
   ],
   "_history": [
+    {
+      "version": "1.5.2.3",
+      "date": "11/05/2026",
+      "notes": [
+        "Fixed: Random theme on launch no longer picks a seasonal theme outside its dates.",
+        "Fixed: The message when ffmpeg could not be downloaded now names the buttons that exist, in every language.",
+        "Fixed: 7 themes (Dark World, Mermaid, Woodgrain, Odd Cab, Havana, Hangang and Seoul) have clearer accents, error colors and quiet text. Hangang is now cyan instead of pink.",
+        "Fixed: The color dots in the theme lists now match the real colors of every theme.",
+        "Security: Thumbnail file names in History are checked the same strict way everywhere.",
+        "Electron runtime updated to v45.2.3."
+      ]
+    },
     {
       "version": "1.5.2.2",
       "date": "11/04/2026",
@@ -70,32 +75,19 @@
         "Fixed: The Theme Creator panel no longer slides across the window when you switch to or from Arabic.",
         "Fixed: More labels that stayed in English in other languages now follow the selected language."
       ]
-    },
-    {
-      "version": "1.5.0.0.5",
-      "date": "10/25/2026",
-      "notes": [
-        "New: Arabic now reads right to left, with the whole app mirrored.",
-        "Changed: The app starts faster on every platform.",
-        "Changed: The splash screen was redesigned.",
-        "Changed: The What's New button in the footer was replaced by the version number. Click the version number to see what's new.",
-        "Fixed: A few buttons and labels that stayed in English in other languages now follow the selected language.",
-        "Fixed: The update check never offers an older release as an update.",
-        "Fixed: A download that fails partway is no longer reported as saved when only the video part of it was downloaded, and the leftover files are removed."
-      ]
     }
   ],
-  "_last_updated": "2026-11-04T00:28:56-05:00",
-  "version": "1.5.2.2",
-  "build": 175,
-  "label": "v1.5.2.2 - Build 175 - 11/4/2026 12:11 AM EST",
+  "_last_updated": "2026-11-05T22:28:39-05:00",
+  "version": "1.5.2.3",
+  "build": 176,
+  "label": "v1.5.2.3 - Build 176 - 11/5/2026 9:40 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "d8b998bd2615d7d90b1bfb80b32cff175a18ae56d39da1aa4cb5dc9a39d89e4e",
+    "sha256": "75118f34cf32f4faf588d05f12f1bd8af16659d495ee3cc5cb56804a761e8d8f",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 152272768,
-  "signature": "IrPCBO8mZaklawOXryi6GPWWngXyPBiVINYOIYTSSS8ow3Y0uJSvyE7HhQl68CJO4ME5BKtD8osIIMAby65GBg=="
+  "size_bytes": 152400903,
+  "signature": "Ih7QM42v9xl5oBMZBTj6rEfSQ8IoKZToYkWMsq9/iLtGkw7ULBfOc8XHhWQEz8fsXhTrRJV3q9e8+ZlUFuu3Aw=="
 }

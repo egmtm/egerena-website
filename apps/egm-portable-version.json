@@ -1,23 +1,28 @@
 {
   "_comment": "EGM Downloader Windows Portable update feed. Upload to egerena.com/apps/egm-portable-version.json",
   "_version_notes": [
-    "Security: Portable: The Python that comes with the app is now 3.11.18, a security release, and it includes a newer pip.",
-    "Changed: Portable: Your saved themes, history pins and window position now live in the data folder, so copying data when you update keeps them. The steps in instructions.txt show how to reveal the hidden folder.",
-    "Fixed: Quitting while Subscriptions downloads are running now asks first, and Keep open really keeps the app and its downloads running.",
-    "Fixed: The update installer and Restart now (after reinstalling Electron) ask the same question first when Subscriptions downloads are running, and Keep open leaves the update or the reinstall for later.",
-    "Fixed: If the app crashes or is force quit, its downloads now stop too, and the next start opens normally instead of being blocked by a leftover copy.",
-    "Fixed: Force refresh in Subscriptions keeps the videos you already downloaded marked as downloaded.",
-    "Fixed: If ffmpeg could not be set up on first start, for example when you were offline, a download now says so right away and what to do, in every language, instead of waiting and then saying it is still being set up.",
-    "Fixed: Installing or updating ffmpeg can no longer leave a broken copy behind, and a plugins update or Deno install that fails now says so instead of reporting Update complete.",
-    "Fixed: A download that fails before it starts now shows an error instead of waiting forever. Cancel also stops the conversion step after a download, and a failed H.264 conversion keeps the original download.",
-    "Fixed: Live recordings that cannot be joined keep every piece under its own name, even with a very long title, instead of waiting forever at the end.",
-    "Fixed: A damaged history, settings or subscriptions file no longer breaks the app, and saving a setting right after start can no longer erase your other settings. A copy of a damaged file is kept next to it as a .unreadable file; Clear history and Reset settings remove it.",
-    "Security: Imported history and settings are checked before they are saved, imported text is always shown as plain text, and the app only connects to its own background process, never to another program or a leftover copy. If another program uses the port, the app now says so.",
-    "Fixed: Portable: the first start downloads Node.js again if unpacking it was interrupted, and a first start without internet now says what to do instead of hanging.",
-    "Security: Portable: The Python that comes with the app no longer reads your own Python packages folder or Python environment settings when it starts, so a stray file there cannot run code in the launcher.",
-    "Electron runtime updated to v45.2.2."
+    "Fixed: Random theme on launch no longer picks a seasonal theme outside its dates.",
+    "Fixed: The message when ffmpeg could not be downloaded now names the buttons that exist, in every language.",
+    "Fixed: 7 themes (Dark World, Mermaid, Woodgrain, Odd Cab, Havana, Hangang and Seoul) have clearer accents, error colors and quiet text. Hangang is now cyan instead of pink.",
+    "Fixed: The color dots in the theme lists now match the real colors of every theme.",
+    "Security: Thumbnail file names in History are checked the same strict way everywhere.",
+    "Electron runtime updated to v45.2.3.",
+    "Changed: When the app has to download its own Node.js, it now downloads 24.22.2. A Node.js 22.12 or newer that is already there is kept."
   ],
   "_history": [
+    {
+      "version": "1.5.2.3",
+      "date": "11/05/2026",
+      "notes": [
+        "Fixed: Random theme on launch no longer picks a seasonal theme outside its dates.",
+        "Fixed: The message when ffmpeg could not be downloaded now names the buttons that exist, in every language.",
+        "Fixed: 7 themes (Dark World, Mermaid, Woodgrain, Odd Cab, Havana, Hangang and Seoul) have clearer accents, error colors and quiet text. Hangang is now cyan instead of pink.",
+        "Fixed: The color dots in the theme lists now match the real colors of every theme.",
+        "Security: Thumbnail file names in History are checked the same strict way everywhere.",
+        "Electron runtime updated to v45.2.3.",
+        "Changed: When the app has to download its own Node.js, it now downloads 24.22.2. A Node.js 22.12 or newer that is already there is kept."
+      ]
+    },
     {
       "version": "1.5.2.2",
       "date": "11/04/2026",
@@ -77,34 +82,19 @@
         "Fixed: The Theme Creator panel no longer slides across the window when you switch to or from Arabic.",
         "Fixed: More labels that stayed in English in other languages now follow the selected language."
       ]
-    },
-    {
-      "version": "1.5.0.0.5",
-      "date": "10/25/2026",
-      "notes": [
-        "New: Arabic now reads right to left, with the whole app mirrored.",
-        "Changed: The app starts faster on every platform.",
-        "Changed: The splash screen was redesigned.",
-        "Changed: The What's New button in the footer was replaced by the version number. Click the version number to see what's new.",
-        "Fixed: A few buttons and labels that stayed in English in other languages now follow the selected language.",
-        "Fixed: The update check never offers an older release as an update.",
-        "Fixed: A download that fails partway is no longer reported as saved when only the video part of it was downloaded, and the leftover files are removed.",
-        "Fixed: Portable: a rare case where the first launch used Python packages already on your PC instead of its own, which made the next launch noticeably slower while it installed them.",
-        "Changed: The installer edition now needs Python 3.11 or newer (it was 3.10). Python 3.10 reached end of life in October 2026 and newer yt-dlp builds no longer support it. The portable edition is not affected."
-      ]
     }
   ],
-  "_last_updated": "2026-11-04T00:28:56-05:00",
-  "version": "1.5.2.2",
-  "build": 175,
-  "label": "v1.5.2.2 - Build 175 - 11/4/2026 12:11 AM EST",
+  "_last_updated": "2026-11-05T22:28:39-05:00",
+  "version": "1.5.2.3",
+  "build": 176,
+  "label": "v1.5.2.3 - Build 176 - 11/5/2026 9:40 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd-portable.zip",
   "zip": "EGMd-portable.zip",
   "_checksums": {
-    "sha256": "39cc512dda4e36e143119f1262790f31ddf7de5e214d6631350bd21c339459c7",
+    "sha256": "99d675389c4e03e074fccea299b02f03eec3d2c4f1052e101097eb3804e35c9c",
     "algorithm": "SHA-256",
     "file": "EGMd-portable.zip"
   },
-  "size_bytes": 718458,
-  "signature": "Y3NLjUo5Tct+dk/Ticob2/r9Os6izAqU+tOjfVZ8+xQjMHXrSTPDpgagydxcCi2SsODJs3U3lYAv9KWdqhYZBQ=="
+  "size_bytes": 718072,
+  "signature": "NTQozgthz6DCEVHlw1guM9OEHqSDzDPZ31HeMkzwllnxTEf00LDVRm+XT9Sid+QAjGIzfvihJXQ5BQlna12XDA=="
 }

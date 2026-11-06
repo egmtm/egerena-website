@@ -170,9 +170,9 @@
         <!-- Download Section -->
         <section class="section">
             <div class="terminal-box download-section">
-                <h3 translate="no">> EGM_DOWNLOADER_v1.5.2.2<span class="dl-ext">.AppImage</span></h3>
+                <h3 translate="no">> EGM_DOWNLOADER_v1.5.2.3<span class="dl-ext">.AppImage</span></h3>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px" translate="no">SHA256: 568f44c41228c2c307ea5a62e7c257bdf3f9bbb1dcad834d32ee156a44f13888</p>
+                <p class="sha256-line" style="margin-top:10px" translate="no">SHA256: 466fb996ac152b1c40d8c02b1a80c6282ac31b48ad2da5697cdc77d5930c4481</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">172 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
         </section>
@@ -180,39 +180,38 @@
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN <span translate="no">v1.5.2.2</span></div>
+                <div class="section-header">> WHAT'S NEW IN <span translate="no">v1.5.2.3</span></div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-                <div class="whats-new-subtitle"><span translate="no">v1.5.2.2</span> — 11/04/2026</div>
+                <div class="whats-new-subtitle"><span translate="no">v1.5.2.3</span> — 11/05/2026</div>
                 <p class="terminal-command" translate="no">$ changelog --latest</p>
-                <div class="polish-label" translate="no">// snake eyes</div>
+                <div class="polish-label" translate="no">// snake eyes part ii</div>
                 <ul>
-                    <li>Security: The Python that comes with the app is now 3.11.18, a security release, and it includes a newer pip.</li>
-                    <li>Fixed: Quitting while Subscriptions downloads are running now asks first, and Keep open really keeps the app and its downloads running.</li>
-                    <li>Fixed: If the app crashes or is force quit, its downloads now stop too, and the next start opens normally instead of being blocked by a leftover copy.</li>
-                    <li>Fixed: Force refresh in Subscriptions keeps the videos you already downloaded marked as downloaded.</li>
-                    <li>Fixed: If ffmpeg could not be set up on first start, for example when you were offline, a download now says so right away and what to do, in every language, instead of waiting and then saying it is still being set up.</li>
-                    <li>Fixed: Installing or updating ffmpeg can no longer leave a broken copy behind, and a plugins update or Deno install that fails now says so instead of reporting Update complete.</li>
-                    <li>Fixed: A download that fails before it starts now shows an error instead of waiting forever. Cancel also stops the conversion step after a download, and a failed H.264 conversion keeps the original download.</li>
-                    <li>Fixed: A video with a long title in Japanese, Chinese or emoji is now saved under its title instead of its job number.</li>
-                    <li>Fixed: Live recordings that cannot be joined keep every piece under its own name, even with a very long title, instead of waiting forever at the end.</li>
-                    <li>Fixed: A damaged history, settings or subscriptions file no longer breaks the app, and saving a setting right after start can no longer erase your other settings. A copy of a damaged file is kept next to it as a .unreadable file; Clear history and Reset settings remove it.</li>
-                    <li>Security: Imported history and settings are checked before they are saved, imported text is always shown as plain text, and the app only connects to its own background process, never to another program or a leftover copy. If another program uses the port, the app now says so.</li>
-                    <li>Electron runtime updated to v45.2.2.</li>
+                    <li>Fixed: Random theme on launch no longer picks a seasonal theme outside its dates.</li>
+                    <li>Fixed: The message when ffmpeg could not be downloaded now names the buttons that exist, in every language.</li>
+                    <li>Fixed: 7 themes (Dark World, Mermaid, Woodgrain, Odd Cab, Havana, Hangang and Seoul) have clearer accents, error colors and quiet text. Hangang is now cyan instead of pink.</li>
+                    <li>Fixed: The color dots in the theme lists now match the real colors of every theme.</li>
+                    <li>Security: Thumbnail file names in History are checked the same strict way everywhere.</li>
+                    <li>Electron runtime updated to v45.2.3.</li>
                 </ul>
                 <div class="release-video">
-                    <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.2.2_16x9_music.jpg" aria-describedby="release-caption">
-                        <source src="/apps/media/egm_downloader_v1.5.2.2_16x9_music.mp4" type="video/mp4">
-                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.2.2_16x9_music.mp4">Open the release video as an MP4 file.</a>
+                    <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.2.3_16x9_music.jpg" aria-describedby="release-caption">
+                        <source src="/apps/media/egm_downloader_v1.5.2.3_16x9_music.mp4" type="video/mp4">
+                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.2.3_16x9_music.mp4">Open the release video as an MP4 file.</a>
                     </video>
-                    <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.2.2_9x16_music.jpg" aria-describedby="release-caption">
-                        <source src="/apps/media/egm_downloader_v1.5.2.2_9x16_music.mp4" type="video/mp4">
-                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.2.2_9x16_music.mp4">Open the release video as an MP4 file.</a>
+                    <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.2.3_9x16_music.jpg" aria-describedby="release-caption">
+                        <source src="/apps/media/egm_downloader_v1.5.2.3_9x16_music.mp4" type="video/mp4">
+                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.2.3_9x16_music.mp4">Open the release video as an MP4 file.</a>
                     </video>
-                    <p class="tour-caption" id="release-caption">The release in 33 seconds. It has music and plays only when you press play.</p>
+                    <p class="tour-caption" id="release-caption">The release in 19 seconds. It has music and plays only when you press play.</p>
                 </div>
                 <details class="history-details">
                     <summary class="history-summary" translate="no">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version"><span translate="no">v1.5.2.2</span> — <span translate="no">SNAKE EYES</span> — 11/04/2026</div>
+                        <ul>
+                            <li>Quitting while Subscriptions downloads are running asking first, with Keep open really keeping the app and its downloads running, downloads stopping with the app after a crash or force quit, Force refresh keeping the videos you already downloaded marked as downloaded, a download saying so right away when ffmpeg could not be set up on first start, installing or updating ffmpeg no longer leaving a broken copy behind, a download that fails before it starts showing an error instead of waiting forever, live recordings that cannot be joined keeping every piece under its own name, a damaged history, settings or subscriptions file no longer breaking the app, imported history and settings checked before they are saved, and the Electron runtime updated to v45.2.2</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version"><span translate="no">v1.5.2.1</span> — <span translate="no">RITOCCO</span> — 10/31/2026</div>
                         <ul>
                             <li>Swapping the links card and the Settings panel with a small handle, with your choice remembered and included in Export and Import, clearer small labels, hint text, the LIVE tag, History format badges and green buttons, the History, Console and Subscriptions pages matching the main window's colors on the default theme, 139 themes easier to read, and the Electron runtime updated to v45.2.1</li>

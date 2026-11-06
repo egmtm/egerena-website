@@ -6,7 +6,7 @@
     <meta name="description" content="EGM Downloader - Professional video downloader for Windows. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta name="keywords" content="video downloader, youtube downloader, yt-dlp, windows downloader, multi-site downloader">
     <meta name="author" content="egerena.com">
-    <meta property="og:title" content="EGM Downloader v1.5.2.2 - Professional Video Downloader">
+    <meta property="og:title" content="EGM Downloader v1.5.2.3 - Professional Video Downloader">
     <meta property="og:description" content="Professional video downloader with zero-config setup. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta property="og:url" content="https://egerena.com/apps/egm.html">
     <meta property="og:type" content="website">
@@ -105,14 +105,14 @@
 
         <section class="section">
             <div class="card download-card">
-                <h2 class="download-title" translate="no">EGM Downloader v1.5.2.2</h2>
+                <h2 class="download-title" translate="no">EGM Downloader v1.5.2.3</h2>
                 <a href="https://egerena.com/apps/EGMd.zip" class="download-btn">Download <span translate="no">EGM Downloader</span></a>
                 <p class="version-subtitle">Installer &middot; adds Start Menu shortcut &middot; auto-updates &middot; 686 KB &middot; ~800 MB after install</p>
-                <p class="sha256-line" translate="no">SHA256: cebfd70ee89349d5003f04a0d8d6e3ac659484e01fe046a54926a5711c3b9419</p>
+                <p class="sha256-line" translate="no">SHA256: 4bc9142896e0c6f03aabccc5e0345bd9b09ad2efd270cad0f2970a31eb16a788</p>
                 <div class="portable-divider"><span>or</span></div>
                 <a href="https://egerena.com/apps/EGMd-portable.zip" class="download-btn download-btn-secondary">Get the portable version</a>
-                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 702 KB &middot; ~1 GB after first run &middot; digitally signed</p>
-                <p class="sha256-line" translate="no">SHA256: 39cc512dda4e36e143119f1262790f31ddf7de5e214d6631350bd21c339459c7</p>
+                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 701 KB &middot; ~1 GB after first run &middot; digitally signed</p>
+                <p class="sha256-line" translate="no">SHA256: 99d675389c4e03e074fccea299b02f03eec3d2c4f1052e101097eb3804e35c9c</p>
         <!-- SmartScreen Disclaimer -->
         <details class="disclaimer-collapsible smartscreen-disclaimer" id="smartscreen-disclaimer">
             <summary class="disclaimer-summary">
@@ -138,40 +138,38 @@
         </details>
 
 <div class="whats-new">
-                    <p class="whats-new-heading">What's New in <span translate="no">v1.5.2.2</span> — 11/04/2026</p>
-                    <p class="polish-label" translate="no">snake eyes</p>
+                    <p class="whats-new-heading">What's New in <span translate="no">v1.5.2.3</span> — 11/05/2026</p>
+                    <p class="polish-label" translate="no">snake eyes part ii</p>
                     <ul>
-                        <li>Security: Portable: The Python that comes with the app is now 3.11.18, a security release, and it includes a newer pip.</li>
-                        <li>Changed: Portable: Your saved themes, history pins and window position now live in the data folder, so copying data when you update keeps them. The steps in instructions.txt show how to reveal the hidden folder.</li>
-                        <li>Fixed: Quitting while Subscriptions downloads are running now asks first, and Keep open really keeps the app and its downloads running.</li>
-                        <li>Fixed: The update installer and Restart now (after reinstalling Electron) ask the same question first when Subscriptions downloads are running, and Keep open leaves the update or the reinstall for later.</li>
-                        <li>Fixed: If the app crashes or is force quit, its downloads now stop too, and the next start opens normally instead of being blocked by a leftover copy.</li>
-                        <li>Fixed: Force refresh in Subscriptions keeps the videos you already downloaded marked as downloaded.</li>
-                        <li>Fixed: If ffmpeg could not be set up on first start, for example when you were offline, a download now says so right away and what to do, in every language, instead of waiting and then saying it is still being set up.</li>
-                        <li>Fixed: Installing or updating ffmpeg can no longer leave a broken copy behind, and a plugins update or Deno install that fails now says so instead of reporting Update complete.</li>
-                        <li>Fixed: A download that fails before it starts now shows an error instead of waiting forever. Cancel also stops the conversion step after a download, and a failed H.264 conversion keeps the original download.</li>
-                        <li>Fixed: Live recordings that cannot be joined keep every piece under its own name, even with a very long title, instead of waiting forever at the end.</li>
-                        <li>Fixed: A damaged history, settings or subscriptions file no longer breaks the app, and saving a setting right after start can no longer erase your other settings. A copy of a damaged file is kept next to it as a .unreadable file; Clear history and Reset settings remove it.</li>
-                        <li>Security: Imported history and settings are checked before they are saved, imported text is always shown as plain text, and the app only connects to its own background process, never to another program or a leftover copy. If another program uses the port, the app now says so.</li>
-                        <li>Fixed: Portable: the first start downloads Node.js again if unpacking it was interrupted, and a first start without internet now says what to do instead of hanging.</li>
-                        <li>Security: Portable: The Python that comes with the app no longer reads your own Python packages folder or Python environment settings when it starts, so a stray file there cannot run code in the launcher.</li>
-                        <li>Electron runtime updated to v45.2.2.</li>
+                        <li>Fixed: Random theme on launch no longer picks a seasonal theme outside its dates.</li>
+                        <li>Fixed: The message when ffmpeg could not be downloaded now names the buttons that exist, in every language.</li>
+                        <li>Fixed: 7 themes (Dark World, Mermaid, Woodgrain, Odd Cab, Havana, Hangang and Seoul) have clearer accents, error colors and quiet text. Hangang is now cyan instead of pink.</li>
+                        <li>Fixed: The color dots in the theme lists now match the real colors of every theme.</li>
+                        <li>Security: Thumbnail file names in History are checked the same strict way everywhere.</li>
+                        <li>Electron runtime updated to v45.2.3.</li>
+                        <li>Changed: When the app has to download its own Node.js, it now downloads 24.22.2. A Node.js 22.12 or newer that is already there is kept.</li>
                     </ul>
                     <div class="release-video">
-                        <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.2.2_16x9_music.jpg" aria-describedby="release-caption">
-                            <source src="/apps/media/egm_downloader_v1.5.2.2_16x9_music.mp4" type="video/mp4">
-                            Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.2.2_16x9_music.mp4">Open the release video as an MP4 file.</a>
+                        <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.2.3_16x9_music.jpg" aria-describedby="release-caption">
+                            <source src="/apps/media/egm_downloader_v1.5.2.3_16x9_music.mp4" type="video/mp4">
+                            Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.2.3_16x9_music.mp4">Open the release video as an MP4 file.</a>
                         </video>
-                        <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.2.2_9x16_music.jpg" aria-describedby="release-caption">
-                            <source src="/apps/media/egm_downloader_v1.5.2.2_9x16_music.mp4" type="video/mp4">
-                            Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.2.2_9x16_music.mp4">Open the release video as an MP4 file.</a>
+                        <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.2.3_9x16_music.jpg" aria-describedby="release-caption">
+                            <source src="/apps/media/egm_downloader_v1.5.2.3_9x16_music.mp4" type="video/mp4">
+                            Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.2.3_9x16_music.mp4">Open the release video as an MP4 file.</a>
                         </video>
-                        <p class="tour-caption" id="release-caption">The release in 33 seconds. It has music and plays only when you press play.</p>
+                        <p class="tour-caption" id="release-caption">The release in 19 seconds. It has music and plays only when you press play.</p>
                     </div>
                 </div>
                 <details class="history-details">
                     <summary class="history-summary">Previous Updates</summary>
                     <div class="history-content">
+                        <div class="history-item">
+                            <p class="history-version"><span translate="no">v1.5.2.2</span> — <span translate="no">SNAKE EYES</span> — 11/04/2026</p>
+                            <ul>
+                                <li>Quitting while Subscriptions downloads are running asking first, with Keep open really keeping the app and its downloads running, downloads stopping with the app after a crash or force quit, Force refresh keeping the videos you already downloaded marked as downloaded, a download saying so right away when ffmpeg could not be set up on first start, installing or updating ffmpeg no longer leaving a broken copy behind, a download that fails before it starts showing an error instead of waiting forever, live recordings that cannot be joined keeping every piece under its own name, a damaged history, settings or subscriptions file no longer breaking the app, imported history and settings checked before they are saved, and the Electron runtime updated to v45.2.2</li>
+                            </ul>
+                        </div>
                         <div class="history-item">
                             <p class="history-version"><span translate="no">v1.5.2.1</span> — <span translate="no">RITOCCO</span> — 10/31/2026</p>
                             <ul>

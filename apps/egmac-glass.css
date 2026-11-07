@@ -579,7 +579,7 @@ footer {
 /* Desktop */
 @media (min-width: 769px) {
     .container { padding: 3rem 2rem; }
-    .logo-ascii { font-size: 2.5rem; }
+    .logo-ascii { font-size: min(2.5rem, 3.4vw); }
     .hero { padding: 3rem 2rem 4rem; }
 }
 

@@ -100,6 +100,7 @@
     color: #1a1a1a;
 }
 [data-theme="platinum"] .logo-ascii {
+    animation: none;
     background: none;
     -webkit-background-clip: unset;
     -webkit-text-fill-color: #1a1a1a;
@@ -174,7 +175,7 @@ body::before {
     }
 
     .logo-ascii {
-        font-size: 2.6vw;
+        font-size: 3.4vw;
     }
 
     .nav-content {
@@ -290,13 +291,23 @@ body::before {
     margin-bottom: 2rem;
     font-family: 'SF Mono', Monaco, monospace;
     font-weight: 700;
-    background: var(--accent-gradient);
+    background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, 0.8) 50%, transparent 62%) 100% 0 / 250% 100% no-repeat, var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     display: block;
     overflow: hidden;
+    animation: egmac-glint 5.5s ease-in-out 0.6s infinite;
 }
+
+/* Logo depth: the shadow strokes in a softer tone of each theme. A soft glint of light
+   glides across the letters every few seconds (stops under reduced motion). */
+.logo-ascii i { font-style: normal; -webkit-text-fill-color: #6ebcb2; }
+[data-theme="dark"] .logo-ascii i { -webkit-text-fill-color: #004352; }
+[data-theme="aqua"] .logo-ascii i { -webkit-text-fill-color: #81b7ea; }
+[data-theme="platinum"] .logo-ascii i { -webkit-text-fill-color: #7e7c78; }
+@keyframes egmac-glint { 0% { background-position: 100% 0, 0 0; } 42%, 100% { background-position: 0% 0, 0 0; } }
+@media (prefers-reduced-motion: reduce) { .logo-ascii { animation: none; } }
 
 .tagline {
     color: var(--text-secondary);
@@ -548,7 +559,7 @@ footer {
         font-size: 0.85rem;
     }
 
-    .logo-ascii { font-size: 2.6vw; }
+    .logo-ascii { font-size: 3.4vw; }
 
     .glass-card { padding: 1.75rem 1.25rem; border-radius: 18px; }
 

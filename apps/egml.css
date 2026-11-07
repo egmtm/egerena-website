@@ -184,7 +184,7 @@ body {
 
 @media (max-width: 768px) {
     .logo-ascii {
-        font-size: 2.6vw;
+        font-size: 4vw;
     }
 }
 
@@ -511,6 +511,45 @@ ul li::marker {
 }
 .logo-ascii:hover {
     text-shadow: 0 0 20px var(--terminal-color), 0 0 40px rgba(0, 255, 65, 0.3);
+}
+
+/* Logo depth: the shadow strokes sit back. The letters flicker on one after another like a
+   terminal waking up, then the arrows and a blinking cursor, and a faint scan line sweeps
+   down every few seconds. Stops under reduced motion. */
+.logo-ascii { position: relative; width: fit-content; max-width: 100%; padding: 0 0.6em; }
+.logo-ascii i { font-style: normal; opacity: 0.45; text-shadow: none; }
+.logo-ascii .e, .logo-ascii .g, .logo-ascii .m { animation: egml-crt 0.7s steps(1, end) both; }
+.logo-ascii .g { animation-delay: 0.45s; }
+.logo-ascii .m { animation-delay: 0.9s; }
+.logo-ascii .arr { animation: egml-fade 0.5s 1.7s both; }
+.logo-ascii .cursor {
+    display: inline-block;
+    width: 0.6em;
+    height: 1em;
+    margin: 0 -0.85em 0 0.25em;
+    vertical-align: -0.12em;
+    background: var(--terminal-color);
+    opacity: 0;
+    animation: egml-blink 1s steps(1, end) 2.2s infinite;
+}
+.logo-ascii::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -30%;
+    height: 30%;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.14), transparent);
+    pointer-events: none;
+    animation: egml-sweep 5s linear 3s infinite;
+}
+@keyframes egml-crt { 0% { opacity: 0; } 20% { opacity: 0.9; } 32% { opacity: 0.1; } 48% { opacity: 1; } 62% { opacity: 0.45; } 100% { opacity: 1; } }
+@keyframes egml-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes egml-blink { 0% { opacity: 0; } 1%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+@keyframes egml-sweep { from { top: -30%; } to { top: 100%; } }
+@media (prefers-reduced-motion: reduce) {
+    .logo-ascii .e, .logo-ascii .g, .logo-ascii .m, .logo-ascii .arr, .logo-ascii::after { animation: none; }
+    .logo-ascii .cursor { animation: none; opacity: 1; }
 }
 
 /* Re-release notice */

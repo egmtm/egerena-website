@@ -221,7 +221,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .logo-ascii { font-size: 2.6vw; }
+    .logo-ascii { font-size: 4vw; }
 }
 
 .tagline {
@@ -528,6 +528,34 @@ footer {
 }
 .logo-ascii:hover {
     text-shadow: 0 0 20px var(--accent), 0 0 40px rgba(0, 168, 232, 0.4);
+}
+
+/* Logo depth: the shadow strokes sit back. A download bar fills under the logo while the
+   letters light up with it, then one soft glow pulse. Stops under reduced motion. */
+.logo-ascii i { font-style: normal; opacity: 0.45; }
+.logo-ascii .bar {
+    display: block;
+    width: 30ch;
+    height: 3px;
+    margin: 0.9em auto 0;
+    background: var(--accent-dim);
+}
+.logo-ascii .bar::before {
+    content: "";
+    display: block;
+    height: 100%;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+    transform-origin: left;
+    animation: egm-bar 2.6s cubic-bezier(0.3, 0.7, 0.25, 1) both;
+}
+.logo-ascii .e, .logo-ascii .g, .logo-ascii .m, .logo-ascii .arr { animation: egm-lit 2.6s linear both; }
+.logo-ascii { animation: egm-pulse 1s 2.6s ease-out; }
+@keyframes egm-bar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes egm-lit { from { opacity: 0.35; } to { opacity: 1; } }
+@keyframes egm-pulse { 50% { text-shadow: 0 0 18px var(--accent), 0 0 40px var(--accent); } }
+@media (prefers-reduced-motion: reduce) {
+    .logo-ascii, .logo-ascii .e, .logo-ascii .g, .logo-ascii .m, .logo-ascii .arr, .logo-ascii .bar::before { animation: none; }
 }
 
 /* What's Coming — roadmap section */

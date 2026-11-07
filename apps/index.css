@@ -171,9 +171,6 @@ body::before {
     display: flex;
     flex-direction: column;
 }
-    display: flex;
-    flex-direction: column;
-}
 
 .folder-card:nth-child(1) { animation-delay: 0.1s; }
 .folder-card:nth-child(2) { animation-delay: 0.2s; }

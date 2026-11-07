@@ -14,6 +14,11 @@
 <meta name="version" content="0.1">
 <meta name="description" content="STDERR — a wireframe-3D endless runner by EGM.">
 <link rel="canonical" href="https://egerena.com/games/game001.html">
+<meta property="og:title" content="STDERR v0.1 — A Game by EGM">
+<meta property="og:description" content="STDERR — a wireframe-3D endless runner by EGM.">
+<meta property="og:url" content="https://egerena.com/games/game001.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://egerena.com/icon-512.png">
 <title>STDERR v0.1 — A Game by EGM</title>
 <link rel="icon" type="image/png" href="../icon-192.png">
 <link rel="stylesheet" href="/fonts/fonts.css?v=1">
@@ -143,6 +148,7 @@
 <body>
 <noscript>JavaScript is required to play STDERR.</noscript>
 
+  <h1 class="sr-only">STDERR — an endless runner game. Press space to jump, M to mute, P to pause.</h1>
 <div class="stage" id="stage" role="application" aria-label="STDERR runner game">
   <canvas id="game" width="1600" height="900" aria-hidden="true"></canvas>
 
@@ -241,8 +247,6 @@
       <button class="btn primary" id="victoryRestartBtn">play again</button>
     </div>
   </div>
-
-  <h2 class="sr-only">STDERR — an endless runner game. Press space to jump, M to mute, P to pause.</h2>
 </div>
 
 <script>

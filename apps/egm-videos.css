@@ -20,3 +20,4 @@
 #vplayer .v9x16{height:min(80vh,calc(92vw*16/9));aspect-ratio:9/16}
 .vclose{position:absolute;right:0;top:-48px;width:40px;height:40px;border:0;border-radius:50%;background:var(--surf);color:var(--fg);font-size:26px;line-height:1;cursor:pointer}
 .vclose:focus-visible{outline:3px solid var(--accT);outline-offset:2px}
+a.foot-brand{text-decoration:none}

@@ -1,5 +1,5 @@
 /* EGM Downloader landing page: theme picker, OS aware download button, subscriptions demo,
-   latest version and GitHub star count.
+   latest version, GitHub star count and the fade in on scroll.
    Loaded in the head so the saved or system theme is applied before first paint. */
 (function () {
   'use strict';
@@ -78,6 +78,27 @@
     if (pl.indexOf('mac') === 0 || ua.indexOf('mac os') >= 0) return 'mac';
     if (pl.indexOf('linux') === 0 || ua.indexOf('linux') >= 0 || ua.indexOf('x11') >= 0) return 'linux';
     return 'other';
+  }
+
+  // Fade in on scroll. Only the landing and Videos pages ask for it (data-fx on the html tag). Blocks that start below the
+  // fold are tagged and fade up the first time they come into view; anything already on screen is left alone,
+  // and with reduced motion, no observer support or no script, nothing is ever hidden.
+  var FADE = ['#themes .dock', '.sites', '#windows .row > *', '#features .sec-head', '#features .tile', '#download .sec-head', '#download .plat', '.oss', '.vgrid .vcard'];
+  function reveal() {
+    if (!document.documentElement.hasAttribute('data-fx') || !('IntersectionObserver' in window)) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
+    Array.prototype.forEach.call(document.querySelectorAll(FADE.join(',')), function (el) {
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.92) return;
+      var pos = Array.prototype.indexOf.call(el.parentNode.children, el);
+      el.style.setProperty('--d', (pos % 3) * 0.09 + 's');
+      el.classList.add('rv');
+      io.observe(el);
+    });
   }
 
   function init() {
@@ -174,6 +195,8 @@
         panes.forEach(function (p) { p.hidden = p.getAttribute('data-i') !== i; });
       });
     });
+
+    reveal();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();

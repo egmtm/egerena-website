@@ -80,10 +80,10 @@
     return 'other';
   }
 
-  // Fade in on scroll. Only the landing page asks for it (data-fx on the html tag). Blocks that start below the
+  // Fade in on scroll. Only the landing and Videos pages ask for it (data-fx on the html tag). Blocks that start below the
   // fold are tagged and fade up the first time they come into view; anything already on screen is left alone,
   // and with reduced motion, no observer support or no script, nothing is ever hidden.
-  var FADE = ['#themes .dock', '.sites', '#windows .row > *', '#features .sec-head', '#features .tile', '#download .sec-head', '#download .plat', '.oss'];
+  var FADE = ['#themes .dock', '.sites', '#windows .row > *', '#features .sec-head', '#features .tile', '#download .sec-head', '#download .plat', '.oss', '.vgrid .vcard'];
   function reveal() {
     if (!document.documentElement.hasAttribute('data-fx') || !('IntersectionObserver' in window)) return;
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;

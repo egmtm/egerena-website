@@ -1,4 +1,4 @@
-Contact: mailto:contact@egerena.com
+Contact: mailto:help@egmdownloader.app
 Expires: 2027-05-09T00:00:00.000Z
 Canonical: https://egerena.com/.well-known/security.txt
 Preferred-Languages: en, es

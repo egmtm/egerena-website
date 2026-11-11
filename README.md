@@ -92,7 +92,7 @@ deploy pipeline.
 
 ## Contact
 
-EGM — contact@egerena.com
+EGM — help@egmdownloader.app
 
 ---
 

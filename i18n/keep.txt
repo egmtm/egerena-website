@@ -90,7 +90,7 @@ NL
 RU
 JA
 AR
-contact@egerena.com
+help@egmdownloader.app
 © 2003-2026 egerena.com
 https://video.example/watch?v=sunset-timelapse
 https://video.example/@samplestudio

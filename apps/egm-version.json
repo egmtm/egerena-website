@@ -1,15 +1,66 @@
 {
   "_comment": "EGM Downloader Windows update feed. Upload to egerena.com/apps/egm-version.json",
   "_version_notes": [
-    "Fixed: Random theme on launch no longer picks a seasonal theme outside its dates.",
-    "Fixed: The message when ffmpeg could not be downloaded now names the buttons that exist, in every language.",
-    "Fixed: 7 themes (Dark World, Mermaid, Woodgrain, Odd Cab, Havana, Hangang and Seoul) have clearer accents, error colors and quiet text. Hangang is now cyan instead of pink.",
-    "Fixed: The color dots in the theme lists now match the real colors of every theme.",
-    "Security: Thumbnail file names in History are checked the same strict way everywhere.",
-    "Electron runtime updated to v45.2.3.",
-    "Changed: When the app has to download its own Node.js, it now downloads 24.22.2. A Node.js 22.12 or newer that is already there is kept."
+    "New: The installer now brings everything the app runs on: Electron, Python and its packages. You no longer need Python installed, and the first launch only downloads ffmpeg and Deno.",
+    "Changed: Installing over version 1.5.0 or newer keeps your history, settings, ffmpeg and Deno, and removes the old program files.",
+    "Changed: The uninstaller removes exactly what the installer put there. It asks whether to also remove the downloaded ffmpeg and Deno, and whether to also remove your data. Yes to both removes the install folder, unless it holds files you added.",
+    "Security: The installer refuses a folder that is not empty and shows no sign of EGM Downloader, and the installer and uninstaller only remove old files in a folder where EGM Downloader is installed.",
+    "Fixed: If antivirus blocks or removes the Python that comes with the app, a message now says so and tells you to reinstall, instead of showing an error code.",
+    "Fixed: Every message of the installer and uninstaller is now translated in all ten languages.",
+    "Changed: The installer needs 64 bit Windows on an Intel or AMD processor, and says so if it cannot run. Windows 11 on ARM also works through Windows' own x64 emulation, but it is not officially supported.",
+    "Changed: The installer edition starts faster, how much depends on your computer.",
+    "Fixed: Error messages at start up no longer open behind the splash screen.",
+    "Security: The installer edition's program file no longer accepts the switches and variables that made it run other scripts.",
+    "Security: The Python that comes with the app no longer reads your own Python packages or settings, so a stray file or setting there cannot change it or run code in it.",
+    "Changed: The update check on launch now only tells you that an update exists. The update dialog shows the download size, and nothing is downloaded until you press Update Now.",
+    "Fixed: A finished update download is kept until the update is installed, so it is not downloaded again if you cancel the installer or close the app.",
+    "Security: The update download stops if the file is bigger than the signed update information says.",
+    "Privacy: Spellcheck is off and the app no longer downloads a spellcheck dictionary. Deno and pip no longer look for their own updates, and What's New reads only the notes that come with the app.",
+    "Privacy: The app no longer tells image servers which app is asking: no app name or Electron in the user agent, only the Chrome version number a browser sends, no referrer, and no early lookups of the links on screen.",
+    "Privacy: History pictures are now fetched the way a browser would, with no cookies and no referrer, and only over HTTPS.",
+    "Privacy: The app's own update checks and its ffmpeg and Deno downloads now identify themselves only as EGM-Downloader.",
+    "Privacy: Clear History now also removes the debug and error logs, empties the Console and deletes leftover request files. Import History and the 500 entry limit also delete the pictures of entries that leave the list.",
+    "Privacy: yt-dlp's challenge solver now comes with the app, and Update Plugins keeps it matched to yt-dlp, so it is normally not downloaded while you use the app.",
+    "Fixed: Check for Updates now offers yt-dlp again when the solver package does not match it, and Update Plugins reports it if the solver could not be updated.",
+    "Changed: The app now ignores your own yt-dlp configuration file, so options set there, like a proxy, no longer change what the app does. It also ignores your pip settings, except when it installs the yt-dlp nightly.",
+    "Fixed: Installing yt-dlp nightly no longer fails with \"empty file\" when your pip cache has a damaged copy.",
+    "Privacy: Portable: The launcher's npm no longer sends an audit or checks for a newer npm.",
+    "New: The installer folder now includes THIRD_PARTY_NOTICES.txt, with the licenses of the libraries the app bundles.",
+    "Electron runtime updated to v45.3.2. It no longer trusts certificates issued by eMudhra's revoked RSA intermediates."
   ],
   "_history": [
+    {
+      "version": "1.5.3.2",
+      "date": "11/13/2026",
+      "notes": [
+        "New: The installer now brings everything the app runs on: Electron, Python and its packages. You no longer need Python installed, and the first launch only downloads ffmpeg and Deno.",
+        "Changed: Installing over version 1.5.0 or newer keeps your history, settings, ffmpeg and Deno, and removes the old program files.",
+        "Changed: The uninstaller removes exactly what the installer put there. It asks whether to also remove the downloaded ffmpeg and Deno, and whether to also remove your data. Yes to both removes the install folder, unless it holds files you added.",
+        "Security: The installer refuses a folder that is not empty and shows no sign of EGM Downloader, and the installer and uninstaller only remove old files in a folder where EGM Downloader is installed.",
+        "Fixed: If antivirus blocks or removes the Python that comes with the app, a message now says so and tells you to reinstall, instead of showing an error code.",
+        "Fixed: Every message of the installer and uninstaller is now translated in all ten languages.",
+        "Changed: The installer needs 64 bit Windows on an Intel or AMD processor, and says so if it cannot run. Windows 11 on ARM also works through Windows' own x64 emulation, but it is not officially supported.",
+        "Changed: The installer edition starts faster, how much depends on your computer.",
+        "Fixed: Error messages at start up no longer open behind the splash screen.",
+        "Security: The installer edition's program file no longer accepts the switches and variables that made it run other scripts.",
+        "Security: The Python that comes with the app no longer reads your own Python packages or settings, so a stray file or setting there cannot change it or run code in it.",
+        "Changed: The update check on launch now only tells you that an update exists. The update dialog shows the download size, and nothing is downloaded until you press Update Now.",
+        "Fixed: A finished update download is kept until the update is installed, so it is not downloaded again if you cancel the installer or close the app.",
+        "Security: The update download stops if the file is bigger than the signed update information says.",
+        "Privacy: Spellcheck is off and the app no longer downloads a spellcheck dictionary. Deno and pip no longer look for their own updates, and What's New reads only the notes that come with the app.",
+        "Privacy: The app no longer tells image servers which app is asking: no app name or Electron in the user agent, only the Chrome version number a browser sends, no referrer, and no early lookups of the links on screen.",
+        "Privacy: History pictures are now fetched the way a browser would, with no cookies and no referrer, and only over HTTPS.",
+        "Privacy: The app's own update checks and its ffmpeg and Deno downloads now identify themselves only as EGM-Downloader.",
+        "Privacy: Clear History now also removes the debug and error logs, empties the Console and deletes leftover request files. Import History and the 500 entry limit also delete the pictures of entries that leave the list.",
+        "Privacy: yt-dlp's challenge solver now comes with the app, and Update Plugins keeps it matched to yt-dlp, so it is normally not downloaded while you use the app.",
+        "Fixed: Check for Updates now offers yt-dlp again when the solver package does not match it, and Update Plugins reports it if the solver could not be updated.",
+        "Changed: The app now ignores your own yt-dlp configuration file, so options set there, like a proxy, no longer change what the app does. It also ignores your pip settings, except when it installs the yt-dlp nightly.",
+        "Fixed: Installing yt-dlp nightly no longer fails with \"empty file\" when your pip cache has a damaged copy.",
+        "Privacy: Portable: The launcher's npm no longer sends an audit or checks for a newer npm.",
+        "New: The installer folder now includes THIRD_PARTY_NOTICES.txt, with the licenses of the libraries the app bundles.",
+        "Electron runtime updated to v45.3.2. It no longer trusts certificates issued by eMudhra's revoked RSA intermediates."
+      ]
+    },
     {
       "version": "1.5.2.3",
       "date": "11/05/2026",
@@ -70,32 +121,20 @@
         "Fixed: The installer edition now starts on a newer Python when an older one comes first on your PC, instead of asking you to install Python 3.11 or newer.",
         "Changed: When the app has to download its own Node.js, it now downloads 24.22.1, a security release. A Node.js 22.12 or newer that is already there is kept."
       ]
-    },
-    {
-      "version": "1.5.0.0.8",
-      "date": "10/26/2026",
-      "notes": [
-        "Security: The minimum curl_cffi version is now 0.17.0, the library that lets the app download from sites that check which browser is asking. It includes the same upstream fix as brotli for how malformed compressed data is handled (CVE-2026-111497).",
-        "Updated: The minimum yt-dlp version is now 2026.10.26, the first one that works with curl_cffi 0.17.",
-        "Fixed: Installs that were already set up now also get these two minimum versions at start instead of keeping older copies. If the app is offline, it starts normally with what it has.",
-        "Fixed: The Subscriptions window keeps showing \"Fetching videos...\" until the fetch has finished, also when the language loads late or two fetches of the same channel run at once.",
-        "Fixed: The Theme Creator panel no longer slides across the window when you switch to or from Arabic.",
-        "Fixed: More labels that stayed in English in other languages now follow the selected language."
-      ]
     }
   ],
-  "_last_updated": "2026-11-05T22:28:39-05:00",
-  "version": "1.5.2.3",
-  "build": 176,
-  "label": "v1.5.2.3 - Build 176 - 11/5/2026 9:40 PM EST",
+  "_last_updated": "2026-11-13T15:53:36-05:00",
+  "version": "1.5.3.2",
+  "build": 177,
+  "label": "v1.5.3.2 - Build 177 - 11/13/2026 10:39 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd.zip",
   "installer": "egm-setup.exe",
   "zip": "EGMd.zip",
   "_checksums": {
-    "sha256": "4bc9142896e0c6f03aabccc5e0345bd9b09ad2efd270cad0f2970a31eb16a788",
+    "sha256": "7297253db8884dedd34f7b6e0b17011d79792c88d509d5572452768805d82426",
     "algorithm": "SHA-256",
     "file": "EGMd.zip"
   },
-  "size_bytes": 702481,
-  "signature": "nhRk1V5IvOM5L48x0dc8Wy/UeBefIjAh5+smg8ZgkLF5+HXvFRlY+6zKLjLJIMX1njVr+ZMGIHKsi0rtWvukDw=="
+  "size_bytes": 127933080,
+  "signature": "oIblxT8KigJp9VM5MwvyVMVIegwm8NA4LsTe7av/Mm/rqJkrVMPf3Gupk+PefORrHuFZh67S16I3SomJtGwiCg=="
 }

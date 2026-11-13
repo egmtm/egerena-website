@@ -151,10 +151,10 @@
         <div class="glass-card">
             <section class="section">
                 <div class="download-section">
-                <h3 translate="no">📦 EGM Downloader 1.5.2.3</h3>
+                <h3 translate="no">📦 EGM Downloader 1.5.3.2</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
                 <p class="version-subtitle" style="text-align:center;margin-top:4px">145 MB &middot; ~300 MB after install &middot; near instant startup</p>
-                <p class="sha256-line" translate="no">SHA256: 75118f34cf32f4faf588d05f12f1bd8af16659d495ee3cc5cb56804a761e8d8f</p>
+                <p class="sha256-line" translate="no">SHA256: 2075c7be09d2ec123aba8fb17f460c28a9a02e38db020317b81a4201fb183760</p>
 
                 <!-- Apple Notarization Trust Signal -->
                 <details class="disclaimer-collapsible apple-trust-signal" id="apple-trust-signal">
@@ -170,30 +170,40 @@
                 </details>
 
 <p class="whats-new-content">
-                    <strong>What's New in <span translate="no">1.5.2.3</span> — 11/05/2026:</strong><br>
-<em class="polish-label" translate="no">snake eyes part ii</em><br><br>
-                    • Fixed: Random theme on launch no longer picks a seasonal theme outside its dates.<br>
-                    • Fixed: The message when ffmpeg could not be downloaded now names the buttons that exist, in every language.<br>
-                    • Fixed: 7 themes (Dark World, Mermaid, Woodgrain, Odd Cab, Havana, Hangang and Seoul) have clearer accents, error colors and quiet text. Hangang is now cyan instead of pink.<br>
-                    • Fixed: The color dots in the theme lists now match the real colors of every theme.<br>
-                    • Security: Thumbnail file names in History are checked the same strict way everywhere.<br>
-                    • Electron runtime updated to v45.2.3.
+                    <strong>What's New in <span translate="no">1.5.3.2</span> — 11/13/2026:</strong><br>
+<em class="polish-label" translate="no">the total package</em><br><br>
+                    • Fixed: Error messages at start up no longer open behind the splash screen.<br>
+                    • Security: The Python that comes with the app no longer reads your own Python packages or settings, so a stray file or setting there cannot change it or run code in it.<br>
+                    • Privacy: Spellcheck is off and the app no longer downloads a spellcheck dictionary. Deno and pip no longer look for their own updates, and What's New reads only the notes that come with the app.<br>
+                    • Privacy: The app no longer tells image servers which app is asking: no app name or Electron in the user agent, only the Chrome version number a browser sends, no referrer, and no early lookups of the links on screen.<br>
+                    • Privacy: History pictures are now fetched the way a browser would, with no cookies and no referrer, and only over HTTPS.<br>
+                    • Privacy: The app's own update checks and its ffmpeg and Deno downloads now identify themselves only as EGM-Downloader.<br>
+                    • Privacy: Clear History now also removes the debug and error logs, empties the Console and deletes leftover request files. Import History and the 500 entry limit also delete the pictures of entries that leave the list.<br>
+                    • Privacy: yt-dlp's challenge solver now comes with the app, and Update Plugins keeps it matched to yt-dlp, so it is normally not downloaded while you use the app.<br>
+                    • Fixed: Check for Updates now offers yt-dlp again when the solver package does not match it, and Update Plugins reports it if the solver could not be updated.<br>
+                    • Changed: The app now ignores your own yt-dlp configuration file, so options set there, like a proxy, no longer change what the app does. It also ignores your pip settings, except when it installs the yt-dlp nightly.<br>
+                    • New: The app now includes THIRD_PARTY_NOTICES.txt, with the licenses of the libraries it bundles.<br>
+                    • Electron runtime updated to v45.3.2. It no longer trusts certificates issued by eMudhra's revoked RSA intermediates.
                 </p>
                 <div class="release-video">
-                    <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.2.3_16x9_music.jpg" aria-describedby="release-caption">
-                        <source src="/apps/media/egm_downloader_v1.5.2.3_16x9_music.mp4" type="video/mp4">
-                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.2.3_16x9_music.mp4">Open the release video as an MP4 file.</a>
+                    <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.3.2_16x9_music.jpg" aria-describedby="release-caption">
+                        <source src="/apps/media/egm_downloader_v1.5.3.2_16x9_music.mp4" type="video/mp4">
+                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.3.2_16x9_music.mp4">Open the release video as an MP4 file.</a>
                     </video>
-                    <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.2.3_9x16_music.jpg" aria-describedby="release-caption">
-                        <source src="/apps/media/egm_downloader_v1.5.2.3_9x16_music.mp4" type="video/mp4">
-                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.2.3_9x16_music.mp4">Open the release video as an MP4 file.</a>
+                    <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.3.2_9x16_music.jpg" aria-describedby="release-caption">
+                        <source src="/apps/media/egm_downloader_v1.5.3.2_9x16_music.mp4" type="video/mp4">
+                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.3.2_9x16_music.mp4">Open the release video as an MP4 file.</a>
                     </video>
-                    <p class="tour-caption" id="release-caption">The release in 19 seconds. It has music and plays only when you press play.</p>
+                    <p class="tour-caption" id="release-caption">The release in 24 seconds. It has music and plays only when you press play.</p>
                 </div>
 
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>
                     <div class="history-content">
+                        <p class="history-item">
+                            <strong><span translate="no">v1.5.2.3</span> — <span translate="no">SNAKE EYES PART II</span> — 11/05/2026:</strong><br>
+                            • Random theme on launch no longer picking a seasonal theme outside its dates, the ffmpeg message naming the buttons that exist, 7 themes with clearer accents, error colors and quiet text, the color dots in the theme lists matching the real colors of every theme, thumbnail file names in History checked the same strict way everywhere, and the Electron runtime updated to v45.2.3
+                        </p>
                         <p class="history-item">
                             <strong><span translate="no">v1.5.2.2</span> — <span translate="no">SNAKE EYES</span> — 11/04/2026:</strong><br>
                             • Quitting while Subscriptions downloads are running asking first, with Keep open really keeping the app and its downloads running, downloads stopping with the app after a crash or force quit, Force refresh keeping the videos you already downloaded marked as downloaded, a download saying so right away when ffmpeg could not be set up on first start, installing or updating ffmpeg no longer leaving a broken copy behind, a download that fails before it starts showing an error instead of waiting forever, live recordings that cannot be joined keeping every piece under its own name, a damaged history, settings or subscriptions file no longer breaking the app, imported history and settings checked before they are saved, and the Electron runtime updated to v45.2.2

@@ -1,14 +1,38 @@
 {
   "_comment": "EGM Downloader Mac update feed. Upload to egerena.com/apps/egmac-update.json",
   "_version_notes": [
-    "Fixed: Random theme on launch no longer picks a seasonal theme outside its dates.",
-    "Fixed: The message when ffmpeg could not be downloaded now names the buttons that exist, in every language.",
-    "Fixed: 7 themes (Dark World, Mermaid, Woodgrain, Odd Cab, Havana, Hangang and Seoul) have clearer accents, error colors and quiet text. Hangang is now cyan instead of pink.",
-    "Fixed: The color dots in the theme lists now match the real colors of every theme.",
-    "Security: Thumbnail file names in History are checked the same strict way everywhere.",
-    "Electron runtime updated to v45.2.3."
+    "Fixed: Error messages at start up no longer open behind the splash screen.",
+    "Security: The Python that comes with the app no longer reads your own Python packages or settings, so a stray file or setting there cannot change it or run code in it.",
+    "Privacy: Spellcheck is off and the app no longer downloads a spellcheck dictionary. Deno and pip no longer look for their own updates, and What's New reads only the notes that come with the app.",
+    "Privacy: The app no longer tells image servers which app is asking: no app name or Electron in the user agent, only the Chrome version number a browser sends, no referrer, and no early lookups of the links on screen.",
+    "Privacy: History pictures are now fetched the way a browser would, with no cookies and no referrer, and only over HTTPS.",
+    "Privacy: The app's own update checks and its ffmpeg and Deno downloads now identify themselves only as EGM-Downloader.",
+    "Privacy: Clear History now also removes the debug and error logs, empties the Console and deletes leftover request files. Import History and the 500 entry limit also delete the pictures of entries that leave the list.",
+    "Privacy: yt-dlp's challenge solver now comes with the app, and Update Plugins keeps it matched to yt-dlp, so it is normally not downloaded while you use the app.",
+    "Fixed: Check for Updates now offers yt-dlp again when the solver package does not match it, and Update Plugins reports it if the solver could not be updated.",
+    "Changed: The app now ignores your own yt-dlp configuration file, so options set there, like a proxy, no longer change what the app does. It also ignores your pip settings, except when it installs the yt-dlp nightly.",
+    "New: The app now includes THIRD_PARTY_NOTICES.txt, with the licenses of the libraries it bundles.",
+    "Electron runtime updated to v45.3.2. It no longer trusts certificates issued by eMudhra's revoked RSA intermediates."
   ],
   "_history": [
+    {
+      "version": "1.5.3.2",
+      "date": "11/13/2026",
+      "notes": [
+        "Fixed: Error messages at start up no longer open behind the splash screen.",
+        "Security: The Python that comes with the app no longer reads your own Python packages or settings, so a stray file or setting there cannot change it or run code in it.",
+        "Privacy: Spellcheck is off and the app no longer downloads a spellcheck dictionary. Deno and pip no longer look for their own updates, and What's New reads only the notes that come with the app.",
+        "Privacy: The app no longer tells image servers which app is asking: no app name or Electron in the user agent, only the Chrome version number a browser sends, no referrer, and no early lookups of the links on screen.",
+        "Privacy: History pictures are now fetched the way a browser would, with no cookies and no referrer, and only over HTTPS.",
+        "Privacy: The app's own update checks and its ffmpeg and Deno downloads now identify themselves only as EGM-Downloader.",
+        "Privacy: Clear History now also removes the debug and error logs, empties the Console and deletes leftover request files. Import History and the 500 entry limit also delete the pictures of entries that leave the list.",
+        "Privacy: yt-dlp's challenge solver now comes with the app, and Update Plugins keeps it matched to yt-dlp, so it is normally not downloaded while you use the app.",
+        "Fixed: Check for Updates now offers yt-dlp again when the solver package does not match it, and Update Plugins reports it if the solver could not be updated.",
+        "Changed: The app now ignores your own yt-dlp configuration file, so options set there, like a proxy, no longer change what the app does. It also ignores your pip settings, except when it installs the yt-dlp nightly.",
+        "New: The app now includes THIRD_PARTY_NOTICES.txt, with the licenses of the libraries it bundles.",
+        "Electron runtime updated to v45.3.2. It no longer trusts certificates issued by eMudhra's revoked RSA intermediates."
+      ]
+    },
     {
       "version": "1.5.2.3",
       "date": "11/05/2026",
@@ -64,30 +88,19 @@
         "Fixed: When a live recording ends on its own, the card now stays on Converting until it is saved, instead of going back to Recording for a moment.",
         "Electron runtime updated to v45.1.0, with an updated Chromium (156.0.8078.49) and Node.js 24.22.1, a security release."
       ]
-    },
-    {
-      "version": "1.5.0.0.8",
-      "date": "10/26/2026",
-      "notes": [
-        "Security: The minimum curl_cffi version is now 0.17.0, the library that lets the app download from sites that check which browser is asking. It includes the same upstream fix as brotli for how malformed compressed data is handled (CVE-2026-111497).",
-        "Updated: The minimum yt-dlp version is now 2026.10.26, the first one that works with curl_cffi 0.17.",
-        "Fixed: The Subscriptions window keeps showing \"Fetching videos...\" until the fetch has finished, also when the language loads late or two fetches of the same channel run at once.",
-        "Fixed: The Theme Creator panel no longer slides across the window when you switch to or from Arabic.",
-        "Fixed: More labels that stayed in English in other languages now follow the selected language."
-      ]
     }
   ],
-  "_last_updated": "2026-11-05T22:28:39-05:00",
-  "version": "1.5.2.3",
-  "build": 176,
-  "label": "v1.5.2.3 - Build 176 - 11/5/2026 9:40 PM EST",
+  "_last_updated": "2026-11-13T15:53:36-05:00",
+  "version": "1.5.3.2",
+  "build": 177,
+  "label": "v1.5.3.2 - Build 177 - 11/13/2026 10:39 AM EST",
   "downloadUrl": "https://egerena.com/apps/EGMdM.zip",
   "zip": "EGMdM.zip",
   "_checksums": {
-    "sha256": "75118f34cf32f4faf588d05f12f1bd8af16659d495ee3cc5cb56804a761e8d8f",
+    "sha256": "2075c7be09d2ec123aba8fb17f460c28a9a02e38db020317b81a4201fb183760",
     "algorithm": "SHA-256",
     "file": "EGMdM.zip"
   },
-  "size_bytes": 152400903,
-  "signature": "Ih7QM42v9xl5oBMZBTj6rEfSQ8IoKZToYkWMsq9/iLtGkw7ULBfOc8XHhWQEz8fsXhTrRJV3q9e8+ZlUFuu3Aw=="
+  "size_bytes": 152260090,
+  "signature": "FVou03yudXSEcXT/hYU5kqpWiyRUZoKe5Y0R/mbIVVSIy+rsyvVGPla2DALDgC/R4sRr89Kt1h41lLVGLgnyBA=="
 }

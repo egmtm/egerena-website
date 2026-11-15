@@ -196,6 +196,14 @@
       });
     });
 
+    // Pause button for the moving site names (the page already stands still for visitors who use reduce motion)
+    var mqBtn = $('.mq-toggle'), mqBox = $('.sites');
+    if (mqBtn && mqBox) mqBtn.addEventListener('click', function () {
+      var on = mqBtn.getAttribute('aria-pressed') !== 'true';
+      mqBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      mqBox.classList.toggle('paused', on);
+    });
+
     reveal();
   }
 

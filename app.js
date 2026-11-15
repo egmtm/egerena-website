@@ -377,10 +377,9 @@ function announce(text) {
   setTimeout(() => { live.textContent = text; }, 100);
 }
 
-// Runs whenever the window closes: close button, Esc, click outside, or the timer
+// Runs whenever the window closes (close button, Esc or the timer). What the visitor typed stays in the
+// form for when the window is opened again; only the messages and the Send button are put back.
 function resetQuote() {
-  const form = $('quoteForm');
-  if (form) form.reset();
   const submitBtn = $('submitBtn');
   if (submitBtn) {
     submitBtn.disabled = false;
@@ -394,8 +393,7 @@ function resetQuote() {
     msg.textContent = '';
   }
   announce('');
-  const otherGroup = $('otherPurposeGroup');
-  if (otherGroup) otherGroup.classList.add('form-other-hidden');
+  toggleOtherPurpose();
 }
 
 function handleFormSubmit(e) {
@@ -465,20 +463,10 @@ document.addEventListener('DOMContentLoaded', () => {
   bind('quoteLink',   openQuote);
   bind('closeModal',  closeModal);
   
-  // The window is a native dialog. closedby="any" lets the browser close it on a click outside;
-  // browsers without closedby (Safari) use the click check below.
+  // The window is a native dialog. Only the X and Esc close it (closedby="closerequest"), so a stray click
+  // outside does not throw away a half written request.
   const modal = $('quoteModal');
-  if (modal) {
-    modal.addEventListener('close', resetQuote);
-    if (!('closedBy' in HTMLDialogElement.prototype)) {
-      modal.addEventListener('click', (e) => {
-        if (e.target !== modal) return;
-        const r = modal.getBoundingClientRect();
-        const inside = r.top <= e.clientY && e.clientY <= r.bottom && r.left <= e.clientX && e.clientX <= r.right;
-        if (!inside) closeModal();
-      });
-    }
-  }
+  if (modal) modal.addEventListener('close', resetQuote);
   
   // Form submission
   const form = $('quoteForm');

@@ -13,11 +13,13 @@
 .vmeta h2{font-weight:800;font-size:clamp(24px,2.4vw,30px);line-height:1.05;letter-spacing:-.02em;text-wrap:balance}
 .vdesc{font-size:16px;line-height:1.5;color:var(--mut);text-wrap:pretty}
 .navl[aria-current="page"]{opacity:1;text-decoration:underline;text-underline-offset:6px}
-#vplayer{border:0;padding:0;background:transparent;max-width:none;max-height:none;overflow:visible}
-#vplayer::backdrop{background:rgba(0,0,0,.85)}
+#vplayer{border:0;padding:0;background:transparent;max-width:none;max-height:none;overflow:hidden;border-radius:16px}
+/* Keep scrolling over the player and the dark area from moving the page behind it */
+#vplayer:modal{overscroll-behavior:contain}
+#vplayer::backdrop{background:rgba(0,0,0,.85);overflow:hidden;overscroll-behavior:contain}
 #vplayer video{display:block;background:#000;border-radius:16px;object-fit:contain}
 #vplayer .v16x9{width:min(92vw,calc(80vh*16/9),1280px);aspect-ratio:16/9}
 #vplayer .v9x16{height:min(80vh,calc(92vw*16/9));aspect-ratio:9/16}
-.vclose{position:absolute;right:0;top:-48px;width:40px;height:40px;border:0;border-radius:50%;background:var(--surf);color:var(--fg);font-size:26px;line-height:1;cursor:pointer}
+.vclose{position:absolute;right:10px;top:10px;width:40px;height:40px;border:0;border-radius:50%;background:rgba(0,0,0,.65);color:#fff;font-size:26px;line-height:1;cursor:pointer}
 .vclose:focus-visible{outline:3px solid var(--accT);outline-offset:2px}
 a.foot-brand{text-decoration:none}

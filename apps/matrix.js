@@ -47,7 +47,20 @@ if (canvas) {
         }
     }
 
-    setInterval(draw, 50);
+    let timer = null;
+    function startRain() { if (!timer) timer = setInterval(draw, 50); }
+    function stopRain() { clearInterval(timer); timer = null; }
+
+    // With reduce motion on, the rain starts paused. The button in the navigation lets anyone pause or start it.
+    if (!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) startRain();
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('matrixToggle');
+        if (!btn) return;
+        const sync = () => btn.setAttribute('aria-pressed', timer ? 'false' : 'true');
+        sync();
+        btn.addEventListener('click', () => { if (timer) stopRain(); else startRain(); sync(); });
+    });
 
     window.addEventListener('resize', () => {
         setCanvasSize();

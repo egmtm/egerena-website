@@ -16,7 +16,7 @@
   <link rel="icon" type="image/png" href="./icon-192.png"/>
   <link rel="apple-touch-icon" href="./icon-192.png"/>
   <link rel="stylesheet" href="/fonts/fonts.css?v=1"/>
-  <link rel="stylesheet" href="./style.css?v=3"/>
+  <link rel="stylesheet" href="./style.css?v=5"/>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
@@ -81,8 +81,7 @@
   </main>
 
   <!-- Quote Form Modal -->
-  <div class="modal-overlay" id="quoteModal">
-    <div class="modal-content">
+  <dialog class="modal-content" id="quoteModal" aria-labelledby="modalTitle" closedby="any">
       <button class="modal-close" id="closeModal" aria-label="Close">&times;</button>
       <h2 class="modal-title" id="modalTitle">Consulting Quote</h2>
       
@@ -209,9 +208,9 @@
 
         <!-- Messages -->
         <div class="form-message form-message-hidden" id="formMessage"></div>
+        <div class="sr-only" id="formLive" role="status"></div>
       </form>
-    </div>
-  </div>
+  </dialog>
 
   <noscript>
     <div style="position:fixed;top:0;left:0;right:0;background:#1a1a18;color:#f0ede6;padding:1rem;text-align:center;font-family:monospace;z-index:9999;border-bottom:1px solid rgba(240,237,230,.14)">
@@ -219,6 +218,6 @@
     </div>
   </noscript>
 
-  <script src="./app.js?v=18"></script>
+  <script src="./app.js?v=19"></script>
 </body>
 </html>

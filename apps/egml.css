@@ -136,6 +136,25 @@ body {
 
 .theme-selector:hover { box-shadow: 0 0 15px var(--terminal-color); }
 
+/* Pause button for the matrix rain */
+.matrix-toggle {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 50;
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid var(--terminal-color);
+    color: var(--terminal-color);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    padding: 0.35rem 0.7rem;
+    cursor: pointer;
+    text-shadow: 0 0 8px var(--terminal-color);
+}
+.matrix-toggle:hover { box-shadow: 0 0 15px var(--terminal-color); }
+.matrix-toggle:focus-visible { outline: 2px solid var(--terminal-color); outline-offset: 2px; }
+.matrix-toggle[aria-pressed="true"] { background: var(--terminal-color); color: #000; text-shadow: none; }
+
 .theme-selector option {
     background: #000;
     color: var(--terminal-color);

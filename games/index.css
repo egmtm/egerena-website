@@ -534,12 +534,14 @@ footer a:hover { color: var(--accent); }
     text-shadow: 0 0 8px var(--accent);
 }
 
-/* Scrollbar */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; opacity: 0.6; }
-::-webkit-scrollbar-thumb:hover { opacity: 1; }
+/* Scrollbar: the standard properties first, the old WebKit rules only for browsers that do not have them */
 * { scrollbar-width: thin; scrollbar-color: var(--accent) transparent; }
+@supports not (scrollbar-color: auto) {
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; opacity: 0.6; }
+    ::-webkit-scrollbar-thumb:hover { opacity: 1; }
+}
 
 /* Breadcrumb separator and back link */
 .breadcrumb-sep {

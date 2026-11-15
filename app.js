@@ -361,16 +361,24 @@ function showToast(id, text, clickable, dur) {
 function openQuote(e) {
   e.preventDefault();
   const modal = $('quoteModal');
-  if (!modal) return;
-  modal.classList.add('show');
-  document.body.style.overflow = 'hidden';
+  if (modal && !modal.open) modal.showModal();
 }
 
 function closeModal() {
   const modal = $('quoteModal');
-  if (!modal) return;
-  modal.classList.remove('show');
-  document.body.style.overflow = '';
+  if (modal && modal.open) modal.close();
+}
+
+// Tell screen readers about a message through the always present live region
+function announce(text) {
+  const live = $('formLive');
+  if (!live) return;
+  live.textContent = '';
+  setTimeout(() => { live.textContent = text; }, 100);
+}
+
+// Runs whenever the window closes: close button, Esc, click outside, or the timer
+function resetQuote() {
   const form = $('quoteForm');
   if (form) form.reset();
   const submitBtn = $('submitBtn');
@@ -385,6 +393,7 @@ function closeModal() {
     msg.classList.remove('success', 'error');
     msg.textContent = '';
   }
+  announce('');
   const otherGroup = $('otherPurposeGroup');
   if (otherGroup) otherGroup.classList.add('form-other-hidden');
 }
@@ -396,12 +405,14 @@ function handleFormSubmit(e) {
   const formMsg = $('formMessage');
   const s = S[lang];
 
-  const showError = (text) => {
+  const showError = (text, field) => {
     e.preventDefault();
     if (formMsg) {
       formMsg.textContent = text;
       formMsg.className = 'form-message error';
     }
+    announce(text);
+    if (field) field.focus();
     submitBtn.disabled = false;
     if (submitText) submitText.textContent = s.submitText;
   };
@@ -411,11 +422,11 @@ function handleFormSubmit(e) {
   const description = form.elements['description']?.value.trim() || '';
   const purposes = form.querySelectorAll('input[name="purpose[]"]:checked');
 
-  if (!name)                              return showError(s.errorName);
+  if (!name)                              return showError(s.errorName, form.elements['name']);
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-                                          return showError(s.errorEmail);
-  if (description.length < 120)          return showError(s.errorDescription);
-  if (purposes.length === 0)              return showError(s.errorPurpose);
+                                          return showError(s.errorEmail, form.elements['email']);
+  if (description.length < 120)          return showError(s.errorDescription, form.elements['description']);
+  if (purposes.length === 0)              return showError(s.errorPurpose, form.querySelector('input[name="purpose[]"]'));
 
   submitBtn.disabled = true;
   if (submitText) submitText.textContent = s.sending;
@@ -454,12 +465,19 @@ document.addEventListener('DOMContentLoaded', () => {
   bind('quoteLink',   openQuote);
   bind('closeModal',  closeModal);
   
-  // Modal click outside to close
+  // The window is a native dialog. closedby="any" lets the browser close it on a click outside;
+  // browsers without closedby (Safari) use the click check below.
   const modal = $('quoteModal');
   if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
+    modal.addEventListener('close', resetQuote);
+    if (!('closedBy' in HTMLDialogElement.prototype)) {
+      modal.addEventListener('click', (e) => {
+        if (e.target !== modal) return;
+        const r = modal.getBoundingClientRect();
+        const inside = r.top <= e.clientY && e.clientY <= r.bottom && r.left <= e.clientX && e.clientX <= r.right;
+        if (!inside) closeModal();
+      });
+    }
   }
   
   // Form submission
@@ -487,10 +505,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (status === 'success') {
       // Open modal briefly to show success, then close
       if (modal && formMsg) {
-        modal.classList.add('show');
-        document.body.style.overflow = 'hidden';
+        if (!modal.open) modal.showModal();
         formMsg.textContent = s.successMsg;
         formMsg.className = 'form-message success';
+        announce(s.successMsg);
         cleanUrl();
         setTimeout(() => closeModal(), 4000);
       }
@@ -507,10 +525,10 @@ document.addEventListener('DOMContentLoaded', () => {
         text = s.errorRate;
       }
       if (modal && formMsg) {
-        modal.classList.add('show');
-        document.body.style.overflow = 'hidden';
+        if (!modal.open) modal.showModal();
         formMsg.textContent = text;
         formMsg.className = 'form-message error';
+        announce(text);
         cleanUrl();
       }
     }

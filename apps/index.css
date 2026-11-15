@@ -653,9 +653,11 @@ footer a:hover {
     max-height: 100%;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--cyan-bright); border-radius: 3px; opacity: 0.5; }
-::-webkit-scrollbar-thumb:hover { opacity: 1; }
+/* Scrollbar: the standard properties first, the old WebKit rules only for browsers that do not have them */
 * { scrollbar-width: thin; scrollbar-color: var(--cyan-bright) transparent; }
+@supports not (scrollbar-color: auto) {
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--cyan-bright); border-radius: 3px; opacity: 0.5; }
+    ::-webkit-scrollbar-thumb:hover { opacity: 1; }
+}

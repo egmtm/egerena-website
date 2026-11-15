@@ -97,6 +97,7 @@ hr{width:32px;border:none;border-top:1px solid var(--border);transition:border-c
 
 @media (prefers-reduced-motion: reduce){
   .card.fading,.quote-text,.quote-author,.toast,body,.ctrl-btn{transition:none !important;animation:none !important}
+  body{opacity:1}
 }
 
 @media (max-width: 380px){

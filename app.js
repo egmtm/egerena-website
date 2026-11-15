@@ -396,6 +396,35 @@ function resetQuote() {
   toggleOtherPurpose();
 }
 
+// A rejected send reloads the page, so the typed values are kept in this tab's session storage just before
+// sending and put back when the page returns with an error. They are deleted on every page load and never
+// leave the visitor's browser.
+const DRAFT_KEY = 'egm_quote_draft';
+const DRAFT_FIELDS = ['name', 'email', 'company', 'description', 'budget', 'timeline', 'other_purpose'];
+
+function saveDraft(form) {
+  try {
+    const d = { purpose: [...form.querySelectorAll('input[name="purpose[]"]:checked')].map(c => c.value) };
+    DRAFT_FIELDS.forEach(n => { d[n] = form.elements[n].value; });
+    sessionStorage.setItem(DRAFT_KEY, JSON.stringify(d));
+  } catch (err) { /* storage blocked: the form just comes back empty */ }
+}
+
+function takeDraft() {
+  try {
+    const d = JSON.parse(sessionStorage.getItem(DRAFT_KEY));
+    sessionStorage.removeItem(DRAFT_KEY);
+    return d;
+  } catch (err) { return null; }
+}
+
+function restoreDraft(form, d) {
+  if (!form || !d) return;
+  DRAFT_FIELDS.forEach(n => { if (typeof d[n] === 'string' && form.elements[n]) form.elements[n].value = d[n]; });
+  form.querySelectorAll('input[name="purpose[]"]').forEach(c => { c.checked = Array.isArray(d.purpose) && d.purpose.includes(c.value); });
+  toggleOtherPurpose();
+}
+
 function handleFormSubmit(e) {
   const form = e.target;
   const submitBtn = $('submitBtn');
@@ -426,6 +455,7 @@ function handleFormSubmit(e) {
   if (description.length < 120)          return showError(s.errorDescription, form.elements['description']);
   if (purposes.length === 0)              return showError(s.errorPurpose, form.querySelector('input[name="purpose[]"]'));
 
+  saveDraft(form);
   submitBtn.disabled = true;
   if (submitText) submitText.textContent = s.sending;
   if (formMsg) {
@@ -481,6 +511,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   // Check for form response in URL
+  const draft = takeDraft();
   const params = new URLSearchParams(window.location.search);
   if (params.has('quote')) {
     const status = params.get('quote');
@@ -513,6 +544,7 @@ document.addEventListener('DOMContentLoaded', () => {
         text = s.errorRate;
       }
       if (modal && formMsg) {
+        restoreDraft($('quoteForm'), draft);
         if (!modal.open) modal.showModal();
         formMsg.textContent = text;
         formMsg.className = 'form-message error';

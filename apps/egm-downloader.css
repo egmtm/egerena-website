@@ -118,6 +118,8 @@ h1{font-weight:800;font-size:clamp(44px,5.6vw,80px);line-height:.96;letter-spaci
 .wearing{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
 .wearing b{font-weight:800;font-size:24px;letter-spacing:-.02em;color:var(--accT)}
 .btn-sm{min-height:38px;padding:0 16px;font-size:14px;border-color:var(--line);color:var(--fg);background:transparent}
+.wearing .btn-pri{line-height:1.15;padding-block:8px}.wearing .btn-pri svg{flex:none}
+@media (max-width:560px){.wearing .btn-pri{flex:1 1 100%}}   /* the Themes page button: its own full width line on phones, long languages wrap */
 /* sites marquee */
 .sites{padding:8px 0 clamp(56px,7vw,104px);overflow:hidden;display:flex;flex-direction:column;gap:10px}
 .mq{display:flex;width:max-content;animation:mq 90s linear infinite}
@@ -323,6 +325,7 @@ html[lang="ja"] h1{font-size:clamp(30px,3.4vw,48px)}
 html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .eyebrow,html[lang="ar"] .wlab,html[lang="ar"] .hero-name small{letter-spacing:0}
 html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3{line-height:1.2}
 html[dir="rtl"] .mq{direction:ltr}
+html[dir="rtl"] svg.fwd{transform:scaleX(-1)}   /* a forward arrow points the way the text reads */
 html[dir="rtl"] .win{box-shadow:0 40px 90px -30px rgba(0,0,0,.5),-12px 12px 0 0 var(--acc2)}
 html[dir="rtl"] :is(.urlfield,.purl){direction:ltr;text-align:right}
 html[dir="rtl"] .thside .on{box-shadow:inset -3px 0 0 var(--acc)}

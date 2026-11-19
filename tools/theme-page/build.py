@@ -15,7 +15,8 @@ Reads the app's own markup, CSS, theme list and language files, and writes:
 
 The page's own files (themes/themes.css, themes/preview.css, themes/themes.js) are written by hand.
 The site header and footer are copied from apps/egm-videos.html, so they stay the same as on the other pages.
-Run this after each app update the page should follow, then commit the result.
+Run this after each app update the page should follow, then python3 i18n/build.py for the nine
+translated copies (themes/<code>/index.html, from the site's i18n/<code>.json), then commit the result.
 This folder (tools/) is not deployed.
 """
 import hashlib
@@ -417,8 +418,8 @@ HDR = site_paths(HDR).replace(' aria-current="page"', '')
 HDR, n_nav = re.subn(r'(<a class="navl" href="/apps/egm-videos\.html">)', r'<a class="navl" href="/themes/" aria-current="page">Themes</a>\n        \1', HDR, count=1)
 if n_nav != 1:
     die('could not add the Themes link to the header')
-# Language menu: this page has no translated copies yet, so every entry stays here and only switches the preview
-HDR = re.sub(r'href="/apps/(?:\w\w/)?egm-videos\.html" hreflang', 'href="/themes/" hreflang', HDR)
+# Language menu: each entry goes to this page in that language (/themes/ and /themes/<code>/, built by i18n/build.py)
+HDR = re.sub(r'href="/apps/((?:\w\w/)?)egm-videos\.html" hreflang', r'href="/themes/\1" hreflang', HDR)
 FTR = site_paths(FTR)
 FTR = FTR.replace('<nav class="foot-nav" aria-label="Elsewhere">', '<nav class="foot-nav" aria-label="Elsewhere">' + site_paths(VLINK.group(0)), 1)
 if 'egm-videos.html" hreflang' in HDR or 'hreflang' not in HDR:

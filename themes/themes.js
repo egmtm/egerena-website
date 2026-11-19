@@ -9,17 +9,12 @@
   function sget(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
   function sset(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
 
-  // ── Language: a choice saved on the site wins, then the browser's languages ──
+  // ── Language: the page's own (/themes/ and /themes/<code>/, built by i18n/build.py). On a first visit the shared
+  // site script sends the visitor to their language, as on the landing page. ──
   var CODES = D.langs.codes;
-  function wantedLang() {
-    var s = sget(D.site.langKey);
-    if (s && CODES.indexOf(s) >= 0) return s;
-    var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
-    for (var i = 0; i < list.length; i++) {
-      var c = String(list[i]).toLowerCase().split('-')[0];
-      if (CODES.indexOf(c) >= 0) return c;
-    }
-    return 'en';
+  function pageLang() {
+    var c = document.documentElement.lang;
+    return CODES.indexOf(c) >= 0 ? c : 'en';
   }
 
   // The page keeps the previewed app theme under its own keys (the site theme uses egm-theme).
@@ -450,28 +445,9 @@
     if (closeBtn) closeBtn.addEventListener('click', closeAll);
     atw.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !atwHost.hidden) closeAll(); });
 
-    // ── Language: the app's footer selector and the site selector share one choice ──
+    // ── Language: the app's footer selector goes to this page in that language and saves the choice, as the
+    // site's language menu does (shared script) ──
     var sel = $('#lang-select', win);
-    // The site's language menu (shared header). This page has no translated copies yet, so a pick switches the
-    // preview here; the shared script saves the choice, as on the other pages.
-    var menu = $('#langSel');
-    function markSiteMenu() {
-      if (!menu) return;
-      $$('a[data-lang]', menu).forEach(function (a) {
-        if (a.getAttribute('data-lang') === lang) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
-      });
-      var curEl = $('.lang-cur', menu);
-      if (curEl) curEl.textContent = lang.toUpperCase();
-    }
-    if (menu) $$('a[data-lang]', menu).forEach(function (a) {
-      a.addEventListener('click', function (e) {
-        var c = a.getAttribute('data-lang');
-        if (CODES.indexOf(c) < 0) return;
-        e.preventDefault();
-        setLang(c, true);
-        menu.open = false;
-      });
-    });
     function buildFooterSelect() {   // js/_settings.html buildLangSelector: the active language first
       if (!sel) return;
       sel.textContent = '';
@@ -480,23 +456,25 @@
       });
       sel.value = lang;
     }
-    function setLang(code, remember) {
-      if (CODES.indexOf(code) < 0) code = 'en';
+    function setLang(code) {
       lang = code;
       STR = D.strings[code] || D.strings.en;
       var dir = D.langs.rtl.indexOf(code) >= 0 ? 'rtl' : 'ltr';
       frames.forEach(function (fr) { fr.setAttribute('lang', code); fr.setAttribute('dir', dir); applyStrings(fr); });
       applySamples();
       buildFooterSelect();
-      markSiteMenu();
       buildSidebar();
       renderGrid();
       updateBreadcrumb();
-      if (remember) sset(D.site.langKey, code);
       updateBar();
       fitPhone();
     }
-    if (sel) sel.addEventListener('change', function () { setLang(sel.value, true); });
+    if (sel) sel.addEventListener('change', function () {
+      var alt = document.querySelector('link[rel="alternate"][hreflang="' + sel.value + '"]');
+      if (!alt) { sel.value = lang; return; }
+      sset(D.site.langKey, sel.value);
+      location.href = new URL(alt.getAttribute('href'), location.href).pathname;
+    });
 
     // ── Phones (under 760 px): the window as a scaled picture, a bar under it, All Themes as a sheet, no Creator ──
     var phoneMq = window.matchMedia ? window.matchMedia('(max-width: 759px)') : null;
@@ -534,7 +512,8 @@
     // The sheet's note under the grid
     var sheetNote = document.createElement('div');
     sheetNote.className = 'tp-sheet-note';
-    sheetNote.textContent = 'Previews only. Create your own theme on a computer to export it.';
+    var wrap = $('#tp-wrap');
+    sheetNote.textContent = wrap.getAttribute('data-t-sheet-note');
     sheetNote.dir = 'auto';   // English page text inside a right to left window keeps its own direction
     var atwBody = $('.egm-atw', atw);
     if (atwBody) atwBody.appendChild(sheetNote);
@@ -543,13 +522,15 @@
     if (copyBtn) copyBtn.addEventListener('click', function () {
       var canon = document.querySelector('link[rel="canonical"]');
       var url = canon ? canon.href : location.href;
-      var shown = function (ok) { copied.textContent = ok ? 'Link copied. Open it on your computer.' : url; };
+      var shown = function (ok) { copied.textContent = ok ? wrap.getAttribute('data-t-copied') : url; };
       try {
         navigator.clipboard.writeText(url).then(function () { shown(true); }, function () { shown(false); });
       } catch (e) { shown(false); }
     });
 
-    setLang(wantedLang(), false);
+    var cvpNote = $('.tp-cvp-note', win);
+    if (cvpNote) cvpNote.textContent = wrap.getAttribute('data-t-creator-note');
+    setLang(pageLang());
     frames.forEach(function (fr) { fr.classList.add('t-' + cur); });
     renderPicker();
     updateBar();

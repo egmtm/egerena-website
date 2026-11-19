@@ -15,10 +15,10 @@
     <link rel="apple-touch-icon" href="/apps/egm-icon-180.png">
     <link rel="stylesheet" href="/fonts/fonts.css?v=1">
     <link rel="stylesheet" href="/apps/egm-downloader.css?v=10">
-    <link rel="stylesheet" href="themes.css?v=28523e29d6">
+    <link rel="stylesheet" href="themes.css?v=af824e7b0d">
     <script src="/apps/egm-downloader.js?v=9"></script>
-    <script src="app-data.js?v=c1bd2fd251"></script>
-    <script src="themes.js?v=45babb3d1b"></script>
+    <script src="app-data.js?v=e01bf56e8f"></script>
+    <script src="themes.js?v=c812e55fe8"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -92,9 +92,9 @@
 
 <!-- The app preview lives in shadow roots (themes.js), so the site's styles and the app's styles never meet -->
 <template id="tp-win-tpl">
-    <link rel="stylesheet" href="app.css?v=1cae896028">
-    <link rel="stylesheet" href="preview.css?v=719b3549b6">
-    <div class="egm tp-win" id="tp-win" dir="ltr" lang="en">
+    <link rel="stylesheet" href="app.css?v=8a31db019c">
+    <link rel="stylesheet" href="preview.css?v=415d06f6e1">
+    <div class="egm egm-w tp-win" id="tp-win" dir="ltr" lang="en">
         <div class="egm-main" id="tp-main">
 <header>
   <div class="logo">
@@ -257,12 +257,43 @@
   </div>
 </footer>
         </div>
+<aside id="creator-panel" hidden data-i18n-attr="aria-label:creator.title" aria-label="Theme Creator">
+  <div class="cvp-head">
+    <span class="cvp-dot"></span>
+    <h2 data-i18n="creator.title">Theme Creator</h2>
+    <span class="cvp-live" data-i18n-attr="title:creator.live_badge.tooltip" title="The main window updates live as you pick" data-i18n="creator.live_badge">LIVE</span>
+    <button id="cvp-close" data-i18n-attr="title:creator.btn.close,aria-label:creator.btn.close" title="Close" aria-label="Close">&times;</button>
+  </div>
+  <div class="cvp-body">
+    <label class="cvp-flabel" for="cvp-name" data-i18n="creator.label.theme_name">Theme name</label>
+    <input id="cvp-name" type="text" dir="auto" maxlength="60" autocomplete="off" spellcheck="false"/>
+    <div class="cvp-picks">
+      <div class="cvp-row"><div class="cvp-lab"><b data-i18n="creator.picker.bg">App background</b><span data-i18n="creator.picker.bg.desc">The canvas</span></div><input class="cvp-pick" type="color" data-var="--bg" data-i18n-attr="aria-label:creator.picker.bg" aria-label="App background"/></div>
+      <div class="cvp-row"><div class="cvp-lab"><b data-i18n="creator.picker.surf">Surface</b><span data-i18n="creator.picker.surf.desc">Cards, panels</span></div><input class="cvp-pick" type="color" data-var="--surf" data-i18n-attr="aria-label:creator.picker.surf" aria-label="Surface"/></div>
+      <div class="cvp-row"><div class="cvp-lab"><b data-i18n="creator.picker.surf2">Surface 2</b><span data-i18n="creator.picker.surf2.desc">Slightly lighter surfaces</span></div><input class="cvp-pick" type="color" data-var="--surf2" data-i18n-attr="aria-label:creator.picker.surf2" aria-label="Surface 2"/></div>
+      <div class="cvp-row"><div class="cvp-lab"><b data-i18n="creator.picker.surf3">Deep surface</b><span data-i18n="creator.picker.surf3.desc">Dropdowns, inner panels</span></div><input class="cvp-pick" type="color" data-var="--surf3" data-i18n-attr="aria-label:creator.picker.surf3" aria-label="Deep surface"/></div>
+      <div class="cvp-row"><div class="cvp-lab"><b data-i18n="creator.picker.acc">Accent</b><span data-i18n="creator.picker.acc.desc">Buttons, highlights</span></div><input class="cvp-pick" type="color" data-var="--acc" data-i18n-attr="aria-label:creator.picker.acc" aria-label="Accent"/></div>
+      <div class="cvp-row"><div class="cvp-lab"><b data-i18n="creator.picker.acc_h">Accent hover</b><span data-i18n="creator.picker.acc_h.desc">Button / link hover</span></div><input class="cvp-pick" type="color" data-var="--acc-h" data-i18n-attr="aria-label:creator.picker.acc_h" aria-label="Accent hover"/></div>
+      <div class="cvp-row"><div class="cvp-lab"><b data-i18n="creator.picker.text">Text</b><span data-i18n="creator.picker.text.desc">Primary text</span></div><input class="cvp-pick" type="color" data-var="--text" data-i18n-attr="aria-label:creator.picker.text" aria-label="Text"/></div>
+      <div class="cvp-row"><div class="cvp-lab"><b data-i18n="creator.picker.text2">Muted text</b><span data-i18n="creator.picker.text2.desc">Secondary text</span></div><input class="cvp-pick" type="color" data-var="--text2" data-i18n-attr="aria-label:creator.picker.text2" aria-label="Muted text"/></div>
+      <div class="cvp-row"><div class="cvp-lab"><b data-i18n="creator.picker.border">Border</b><span data-i18n="creator.picker.border.desc">Visible everywhere</span></div><input class="cvp-pick" type="color" data-var="--border" data-i18n-attr="aria-label:creator.picker.border" aria-label="Border"/></div>
+      <div class="cvp-row"><div class="cvp-lab"><b data-i18n="creator.picker.red">Danger</b><span data-i18n="creator.picker.red.desc">Cancel / delete actions</span></div><input class="cvp-pick" type="color" data-var="--red" data-i18n-attr="aria-label:creator.picker.red" aria-label="Danger"/></div>
+    </div>
+    <p class="tp-cvp-note">Export saves a .json file. In the app, open Themes and choose Import.</p>
+  </div>
+  <div class="cvp-foot">
+    <button class="cvp-btn" id="cvp-reset" data-i18n="creator.btn.reset">Reset</button>
+    <button class="cvp-btn" id="cvp-random" data-i18n="creator.btn.random">Random</button>
+    <button class="cvp-btn" id="cvp-export" data-i18n="creator.btn.export">Export</button>
+  </div>
+</aside>
+<div id="toasts"></div>
     </div>
 </template>
 <template id="tp-atw-tpl">
-    <link rel="stylesheet" href="app.css?v=1cae896028">
-    <link rel="stylesheet" href="preview.css?v=719b3549b6">
-    <div class="egm tp-atw" id="tp-atw" dir="ltr" lang="en">
+    <link rel="stylesheet" href="app.css?v=8a31db019c">
+    <link rel="stylesheet" href="preview.css?v=415d06f6e1">
+    <div class="egm egm-a tp-atw" id="tp-atw" dir="ltr" lang="en">
         <div class="egm-atw">
 <div class="topbar">
   <span class="topbar-title" data-i18n="themes.topbar.all">All Themes</span>

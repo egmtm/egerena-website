@@ -413,6 +413,10 @@ def site_paths(h):
 
 
 HDR = site_paths(HDR).replace(' aria-current="page"', '')
+# Same nav as the Videos page, with this page first and marked as the current one (as Videos is there)
+HDR, n_nav = re.subn(r'(<a class="navl" href="/apps/egm-videos\.html">)', r'<a class="navl" href="/themes/" aria-current="page">Themes</a>\n        \1', HDR, count=1)
+if n_nav != 1:
+    die('could not add the Themes link to the header')
 # Language menu: this page has no translated copies yet, so every entry stays here and only switches the preview
 HDR = re.sub(r'href="/apps/(?:\w\w/)?egm-videos\.html" hreflang', 'href="/themes/" hreflang', HDR)
 FTR = site_paths(FTR)

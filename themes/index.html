@@ -15,10 +15,10 @@
     <link rel="apple-touch-icon" href="/apps/egm-icon-180.png">
     <link rel="stylesheet" href="/fonts/fonts.css?v=1">
     <link rel="stylesheet" href="/apps/egm-downloader.css?v=10">
-    <link rel="stylesheet" href="themes.css?v=af824e7b0d">
+    <link rel="stylesheet" href="themes.css?v=f056bf8fa3">
     <script src="/apps/egm-downloader.js?v=9"></script>
     <script src="app-data.js?v=e01bf56e8f"></script>
-    <script src="themes.js?v=c812e55fe8"></script>
+    <script src="themes.js?v=f748c49df3"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -83,9 +83,20 @@
 </section>
 
 <section class="tp-stage-wrap" aria-label="App preview">
+    <div class="tp-phone-note" id="tp-phone-note">
+        <h2>Best on a computer</h2>
+        <p>You can preview every theme here. To make your own theme, open this page on a computer.</p>
+        <button type="button" class="tp-copy" id="tp-copy">Copy link to open on your computer</button>
+        <p class="tp-copied" id="tp-copied" role="status" aria-live="polite"></p>
+    </div>
     <div class="tp-stage" id="tp-stage">
-        <div class="tp-host tp-host-win" id="tp-win-host"></div>
+        <div class="tp-scale" id="tp-scale"><div class="tp-host tp-host-win" id="tp-win-host"></div></div>
         <div class="tp-host tp-host-atw" id="tp-atw-host" hidden></div>
+    </div>
+    <div class="tp-phone-bar" id="tp-phone-bar">
+        <span class="tp-pb-sw" id="tp-pb-sw" aria-hidden="true"></span>
+        <span class="tp-pb-text"><b id="tp-pb-name">Void</b><span>Previewing</span></span>
+        <button type="button" class="tp-pb-all" id="tp-pb-all">All Themes</button>
     </div>
     <p class="tp-note">A preview of the app's layout with sample downloads. Titles, channels and pictures are made up.</p>
 </section>
@@ -93,7 +104,7 @@
 <!-- The app preview lives in shadow roots (themes.js), so the site's styles and the app's styles never meet -->
 <template id="tp-win-tpl">
     <link rel="stylesheet" href="app.css?v=8a31db019c">
-    <link rel="stylesheet" href="preview.css?v=415d06f6e1">
+    <link rel="stylesheet" href="preview.css?v=ccae0064b3">
     <div class="egm egm-w tp-win" id="tp-win" dir="ltr" lang="en">
         <div class="egm-main" id="tp-main">
 <header>
@@ -292,7 +303,7 @@
 </template>
 <template id="tp-atw-tpl">
     <link rel="stylesheet" href="app.css?v=8a31db019c">
-    <link rel="stylesheet" href="preview.css?v=415d06f6e1">
+    <link rel="stylesheet" href="preview.css?v=ccae0064b3">
     <div class="egm egm-a tp-atw" id="tp-atw" dir="ltr" lang="en">
         <div class="egm-atw">
 <div class="topbar">

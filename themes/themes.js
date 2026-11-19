@@ -94,6 +94,7 @@
       renderPicker();
       renderGrid();
       if (creatorOpen) creatorThemeChanged();
+      updateBar();
     }
 
     // ── Themes menu (js/_theme.html renderPicker: current first, then recents, padded to 10 from the app's list) ──
@@ -358,6 +359,31 @@
         cats.appendChild(h); cats.appendChild(grp);
       });
       sb.appendChild(cats);
+      buildChips();
+    }
+    // Phone sheet: the sidebar's choices as a row of chips
+    function buildChips() {
+      var row = $('.tp-chips', atw);
+      if (!row) {
+        row = document.createElement('div'); row.className = 'tp-chips';
+        row.setAttribute('role', 'group');
+        row.setAttribute('aria-label', g('themes.topbar.all') || 'All Themes');
+        var tb = $('.topbar', atw);
+        if (tb && tb.parentNode) tb.parentNode.insertBefore(row, tb.nextSibling);
+      }
+      row.textContent = '';
+      var list = [['all', g('themes.filter.all') || 'All', KEYS.length]];
+      if (countCat('seasonal')) list.push(['seasonal', '✦ ' + (g('themes.tab.seasonal') || 'Seasonal'), countCat('seasonal')]);
+      D.sections.forEach(function (sec) { sec.cats.forEach(function (c) { if (c !== 'custom') list.push([c, catLabel(c), countCat(c)]); }); });
+      list.forEach(function (it) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'tp-chip';
+        b.setAttribute('aria-pressed', it[0] === activeCat ? 'true' : 'false');
+        b.appendChild(document.createTextNode(it[1]));
+        var n = document.createElement('span'); n.className = 'cat-count'; n.textContent = it[2]; b.appendChild(n);
+        b.addEventListener('click', function () { activeCat = it[0]; buildSidebar(); renderGrid(); updateBreadcrumb(); });
+        row.appendChild(b);
+      });
     }
     function matches(k) {
       var d = TH[k];
@@ -415,7 +441,7 @@
       activeCat = 'all'; searchQ = ''; if (search) search.value = '';
       buildSidebar(); renderGrid(); updateBreadcrumb();
     });
-    function showAll() { atwHost.hidden = false; if (search) search.focus({ preventScroll: true }); }
+    function showAll() { atwHost.hidden = false; if (search && !phone) search.focus({ preventScroll: true }); }
     // All Themes and the Creator share the place right of the window: opening one closes the other (asking first
     // when the Creator has changes)
     function openAll() { if (creatorOpen) requestClose(showAll); else showAll(); }
@@ -467,12 +493,64 @@
       renderGrid();
       updateBreadcrumb();
       if (remember) sset(D.site.langKey, code);
+      updateBar();
+      fitPhone();
     }
     if (sel) sel.addEventListener('change', function () { setLang(sel.value, true); });
+
+    // ── Phones (under 760 px): the window as a scaled picture, a bar under it, All Themes as a sheet, no Creator ──
+    var phoneMq = window.matchMedia ? window.matchMedia('(max-width: 759px)') : null;
+    var phone = false;
+    var scaleBox = $('#tp-scale'), barAll = $('#tp-pb-all'), barName = $('#tp-pb-name'), barSw = $('#tp-pb-sw');
+    function fitPhone() {
+      if (!scaleBox) return;
+      if (!phone) { scaleBox.style.height = ''; return; }
+      var s2 = scaleBox.clientWidth / 920;   // the window keeps the app's default width and its full height
+      winHost.style.setProperty('--tp-s', String(s2));
+      scaleBox.style.height = Math.ceil(winHost.offsetHeight * s2) + 'px';
+    }
+    function updateBar() {
+      if (barName) barName.textContent = TH[cur] ? TH[cur].label : cur;
+      if (barSw && TH[cur]) barSw.style.background = 'linear-gradient(135deg,' + TH[cur].bg + ' 0 50%,' + TH[cur].acc + ' 50% 100%)';
+      if (barAll) barAll.textContent = g('themes.topbar.all') || 'All Themes';
+    }
+    function setPhone() {
+      phone = !!(phoneMq && phoneMq.matches);
+      winHost.classList.toggle('tp-phone', phone);
+      atwHost.classList.toggle('tp-phone', phone);
+      if (phone && creatorOpen) requestClose();   // the Theme Creator is for computers
+      fitPhone();
+    }
+    if (phoneMq) {
+      if (phoneMq.addEventListener) phoneMq.addEventListener('change', setPhone); else if (phoneMq.addListener) phoneMq.addListener(setPhone);
+    }
+    window.addEventListener('resize', function () { if (phone) fitPhone(); });
+    // The window's height changes as its styles, fonts and language come in: follow it
+    if (window.ResizeObserver) new ResizeObserver(function () { if (phone) fitPhone(); }).observe(winHost);
+    window.addEventListener('load', fitPhone);
+    if (barAll) barAll.addEventListener('click', openAll);
+    // The sheet's note under the grid
+    var sheetNote = document.createElement('div');
+    sheetNote.className = 'tp-sheet-note';
+    sheetNote.textContent = 'Previews only. Create your own theme on a computer to export it.';
+    var atwBody = $('.egm-atw', atw);
+    if (atwBody) atwBody.appendChild(sheetNote);
+    // Copy the page link (the clipboard can be refused: then the link shows as text to copy by hand)
+    var copyBtn = $('#tp-copy'), copied = $('#tp-copied');
+    if (copyBtn) copyBtn.addEventListener('click', function () {
+      var canon = document.querySelector('link[rel="canonical"]');
+      var url = canon ? canon.href : location.href;
+      var shown = function (ok) { copied.textContent = ok ? 'Link copied. Open it on your computer.' : url; };
+      try {
+        navigator.clipboard.writeText(url).then(function () { shown(true); }, function () { shown(false); });
+      } catch (e) { shown(false); }
+    });
 
     setLang(wantedLang(), false);
     frames.forEach(function (fr) { fr.classList.add('t-' + cur); });
     renderPicker();
+    updateBar();
+    setPhone();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();

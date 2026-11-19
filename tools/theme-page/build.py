@@ -354,7 +354,7 @@ if n_save != 1:
     die('could not take the Save button out of the Theme Creator panel')
 creator = creator.replace('<aside id="creator-panel"', '<aside id="creator-panel" hidden', 1)
 creator = re.sub(r'(\s*</div>\s*<div class="cvp-foot">)',
-                 r'\n    <p class="tp-cvp-note">Export saves a .json file. In the app, open Themes and choose Import.</p>\1', creator, count=1)
+                 r'\n    <p class="tp-cvp-note" dir="auto">Export saves a .json file. In the app, open Themes and choose Import.</p>\1', creator, count=1)
 if 'tp-cvp-note' not in creator:
     die('could not add the export note to the Theme Creator panel')
 CREATOR = clean(creator) + '\n<div id="toasts"></div>'

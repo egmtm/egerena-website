@@ -93,6 +93,7 @@
       }
       renderPicker();
       renderGrid();
+      if (creatorOpen) creatorThemeChanged();
     }
 
     // ── Themes menu (js/_theme.html renderPicker: current first, then recents, padded to 10 from the app's list) ──
@@ -145,6 +146,158 @@
     if (exp) { exp.disabled = true; exp.style.opacity = '.45'; exp.style.cursor = 'not-allowed'; }
     var viewAll = $('.theme-btn-view-all', win);
     if (viewAll) viewAll.addEventListener('click', function () { closePanel(); openAll(); });
+
+    // ── Toasts (js/_bulk.html toast) ──
+    function toast(msg, type) {
+      var c = $('#toasts', win);
+      if (!c) return;
+      var t = document.createElement('div');
+      t.className = 'toast ' + (type || ''); t.textContent = msg;
+      c.appendChild(t);
+      setTimeout(function () { t.remove(); }, 4500);   // TOAST_DURATION in js/_core.html
+    }
+
+    // ── Theme Creator (js/_creator.html), docked in the window. On the page it starts from the theme being
+    //    previewed (EGM's call; the app starts from Void), Export stays off until something changed, there is no Save. ──
+    var C = D.creator;
+    var cPanel = $('#creator-panel', win), mainEl = $('.egm-main', win), winHost = $('#tp-win-host');
+    var cName = $('#cvp-name', win), cExport = $('#cvp-export', win);
+    var cPickers = $$('.cvp-pick', win);
+    var creatorOpen = false, core = {}, baseline = {}, dirty = false, initialName = '', modalEl = null;
+    var previewed = [], pending = null, raf = 0;
+    function applyPreview(vars) {
+      Object.keys(vars).forEach(function (k) {
+        if (C.validateThemeVar(k, vars[k])) { win.style.setProperty(k, vars[k]); if (previewed.indexOf(k) < 0) previewed.push(k); }
+      });
+    }
+    function pushPreview(vars) {
+      pending = Object.assign(pending || {}, vars);
+      if (raf) return;
+      raf = requestAnimationFrame(function () { raf = 0; var v = pending; pending = null; applyPreview(v); });
+    }
+    function revertPreview() {
+      if (raf) { cancelAnimationFrame(raf); raf = 0; pending = null; }
+      previewed.forEach(function (k) { win.style.removeProperty(k); }); previewed = [];
+    }
+    function themeCore() {   // the previewed theme's own 10 colors, read from the window
+      var cs = getComputedStyle(win), o = {};
+      C.CORE_KEYS.forEach(function (k) { o[k] = C.toHex6(cs.getPropertyValue(k)) || C.CORE_DEFAULTS[k]; });
+      return o;
+    }
+    function syncPickers() { cPickers.forEach(function (inp) { inp.value = core[inp.getAttribute('data-var')]; }); }
+    function recomputeDirty() {
+      dirty = C.CORE_KEYS.some(function (k) { return core[k].toLowerCase() !== baseline[k].toLowerCase(); })
+              || cName.value.trim() !== initialName;
+      if (cExport) cExport.disabled = !dirty;
+    }
+    function loadBaseline() {
+      revertPreview();
+      baseline = themeCore();
+      core = Object.assign({}, baseline);
+      syncPickers();
+    }
+    function openCreator() {
+      if (creatorOpen || !cPanel) return;
+      closePanel();
+      if (!atwHost.hidden) atwHost.hidden = true;   // the Creator takes the place of All Themes
+      initialName = g('creator.placeholder.theme_name') || 'My Theme 1';
+      cName.value = initialName;
+      loadBaseline();
+      creatorOpen = true;
+      cPanel.hidden = false;
+      mainEl.classList.add('creator-panel-open');
+      win.classList.add('tp-creator');
+      winHost.classList.add('tp-creator');
+      recomputeDirty();
+    }
+    function closeCreator() {
+      revertPreview();
+      creatorOpen = false;
+      cPanel.hidden = true;
+      mainEl.classList.remove('creator-panel-open');
+      win.classList.remove('tp-creator');
+      winHost.classList.remove('tp-creator');
+      if (modalEl) { modalEl.remove(); modalEl = null; }
+    }
+    // A theme picked while the Creator is open: with no changes the Creator starts again from it; with changes,
+    // the changes stay on top (as in the app). What to do here is still EGM's open question.
+    function creatorThemeChanged() {
+      if (!dirty) { loadBaseline(); recomputeDirty(); }
+    }
+    function showModal(o) {   // js/_creator.html showModal, inside the preview window
+      if (modalEl) modalEl.remove();
+      var back = document.createElement('div'); back.className = 'cvp-modal-back';
+      var box = document.createElement('div'); box.className = 'cvp-modal'; box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true');
+      var h = document.createElement('h3'); h.textContent = o.title;
+      var p = document.createElement('p'); p.textContent = o.body;
+      var acts = document.createElement('div'); acts.className = 'cvp-modal-actions';
+      var no = document.createElement('button'); no.className = 'cvp-mbtn ghost'; no.textContent = o.cancel;
+      var ok = document.createElement('button'); ok.className = 'cvp-mbtn ' + (o.danger ? 'danger' : 'ghost'); ok.textContent = o.ok;
+      acts.appendChild(no); acts.appendChild(ok); box.appendChild(h); box.appendChild(p); box.appendChild(acts); back.appendChild(box);
+      var done = function () { back.remove(); if (modalEl === back) modalEl = null; };
+      no.addEventListener('click', done);
+      ok.addEventListener('click', function () { done(); if (o.onOk) o.onOk(); });
+      win.appendChild(back); modalEl = back;
+      no.focus();
+    }
+    function confirmClose(after) {
+      showModal({ title: g('creator.modal.close.title'), body: g('creator.modal.close.body2'),
+                  cancel: g('creator.modal.close.keep'), ok: g('creator.modal.close.confirm'), danger: true,
+                  onOk: function () { closeCreator(); if (after) after(); } });
+    }
+    function requestClose(after) { if (dirty) confirmClose(after); else { closeCreator(); if (after) after(); } }
+    function slug(name) { return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'my-theme'; }
+    function exportTheme() {
+      var name = cName.value.trim();
+      if (!name) { cName.focus(); toast(g('toast.creator.name_first'), 'err'); return; }
+      var theme = { name: name, 'egm-theme': true, vars: C.validPairs(C.deriveAll(core)) };
+      try {   // the app saves through its own file dialog; a web page downloads the file
+        var url = URL.createObjectURL(new Blob([JSON.stringify(theme, null, 2)], { type: 'application/json' }));
+        var a = document.createElement('a'); a.href = url; a.download = slug(name) + '.json';
+        document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+        toast(g('theme.export.success') + ' ✓', 'ok');
+      } catch (e) { toast(g('toast.export_failed'), 'err'); }
+    }
+    function randomize() {   // js/_creator.html randomize: seed from a theme (memes left out), derive the rest
+      var pool = Object.keys(TH).filter(function (k) { return TH[k].cat !== 'memes' && TH[k].cat !== 'custom'; });
+      if (!pool.length) return;
+      var seed = TH[pool[Math.floor(Math.random() * pool.length)]];
+      var bg = C.toHex6(seed.bg) || baseline['--bg'], surf = C.toHex6(seed.surf) || baseline['--surf'], acc = C.toHex6(seed.acc) || baseline['--acc'];
+      var text = C.relLum(C.hexToRgb(bg)) < 0.4 ? '#e8edf6' : '#14181f';
+      core = { '--bg': bg, '--surf': surf, '--surf2': C.mix(surf, '#ffffff', 0.06), '--surf3': C.mix(surf, text, 0.10),
+               '--acc': acc, '--acc-h': C.mix(acc, '#ffffff', 0.18), '--text': text, '--text2': C.mix(text, surf, 0.45),
+               '--border': C.mix(surf, text, 0.18), '--red': '#ef4444' };
+      syncPickers(); pushPreview(C.deriveAll(core)); recomputeDirty();
+    }
+    if (cPanel) {
+      cPickers.forEach(function (inp) {
+        var k = inp.getAttribute('data-var');
+        var onInput = function () {
+          var v = C.toHex6(inp.value);
+          if (!v || !C.validateThemeVar(k, v)) return;
+          core[k] = v; pushPreview(C.deriveAll(core)); recomputeDirty();
+        };
+        inp.addEventListener('input', onInput); inp.addEventListener('change', onInput);
+      });
+      cName.addEventListener('input', recomputeDirty);
+      $('#cvp-close', win).addEventListener('click', function () { requestClose(); });
+      $('#cvp-reset', win).addEventListener('click', function () {
+        showModal({ title: g('creator.modal.reset.title'), body: g('creator.modal.reset.body'), cancel: g('creator.modal.overwrite.cancel'),
+                    ok: g('creator.btn.reset'), danger: true,
+                    onOk: function () { core = Object.assign({}, baseline); syncPickers(); pushPreview(C.deriveAll(core)); recomputeDirty(); } });
+      });
+      $('#cvp-random', win).addEventListener('click', randomize);
+      cExport.addEventListener('click', exportTheme);
+      win.addEventListener('keydown', function (e) {
+        if (e.key !== 'Escape' || !creatorOpen) return;
+        e.preventDefault();
+        if (modalEl) { modalEl.remove(); modalEl = null; } else requestClose();
+      });
+      var mk = $('#theme-create-btn', win), ak = $('#theme-create-btn', atw);
+      if (mk) mk.addEventListener('click', openCreator);
+      if (ak) ak.addEventListener('click', openCreator);
+    }
 
     // ── All Themes (themes.html: sidebar sections with counts, breadcrumb, sorted grid, search) ──
     var activeCat = 'all', searchQ = '';
@@ -262,7 +415,10 @@
       activeCat = 'all'; searchQ = ''; if (search) search.value = '';
       buildSidebar(); renderGrid(); updateBreadcrumb();
     });
-    function openAll() { atwHost.hidden = false; if (search) search.focus({ preventScroll: true }); }
+    function showAll() { atwHost.hidden = false; if (search) search.focus({ preventScroll: true }); }
+    // All Themes and the Creator share the place right of the window: opening one closes the other (asking first
+    // when the Creator has changes)
+    function openAll() { if (creatorOpen) requestClose(showAll); else showAll(); }
     function closeAll() { atwHost.hidden = true; if (themesBtn) themesBtn.focus({ preventScroll: true }); }
     var closeBtn = $('#tp-atw-close', atw);
     if (closeBtn) closeBtn.addEventListener('click', closeAll);

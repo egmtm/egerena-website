@@ -21,3 +21,5 @@
   .tp-host-win{min-width:0;height:640px}                    /* phones get their own layout in a later step */
 }
 a.foot-brand{text-decoration:none}                          /* as on the Videos page (egm-videos.css) */
+/* The Theme Creator makes the app window 356px wider, as the app does (notifyCreatorPanel) */
+.tp-host-win.tp-creator{flex-basis:1276px;min-width:min(1056px,100%)}

@@ -38,3 +38,8 @@
 :host(.tp-phone) .tp-chip[aria-pressed="true"]{border-color:var(--acc);background:var(--acc-dim);color:var(--acc)}
 :host(.tp-phone) .tp-chip .cat-count{margin-inline-start:6px;opacity:.6;font-size:.7rem}
 :host(.tp-phone) .tp-sheet-note{display:block;flex:none;padding:10px 14px;border-top:1px solid var(--border);background:var(--surf);font-size:.75rem;color:var(--text2)}
+:host(.tp-phone) .egm-w #creator-panel,:host(.tp-phone) .egm-w .cvp-modal-back{display:none!important}   /* Creator kept, not shown on phones */
+:host(.tp-phone) .egm-w .egm-main.creator-panel-open{padding-inline-end:16px}
+:host(.tp-phone) .egm-a .topbar{gap:8px;flex-wrap:wrap}               /* title and close on top, search on its own full line */
+:host(.tp-phone) .egm-a .search-wrap{order:3;flex:1 0 100%;min-width:0}
+:host(.tp-phone) .egm-a #search{width:100%;min-width:0}

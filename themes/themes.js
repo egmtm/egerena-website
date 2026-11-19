@@ -444,7 +444,7 @@
     function showAll() { atwHost.hidden = false; if (search && !phone) search.focus({ preventScroll: true }); }
     // All Themes and the Creator share the place right of the window: opening one closes the other (asking first
     // when the Creator has changes)
-    function openAll() { if (creatorOpen) requestClose(showAll); else showAll(); }
+    function openAll() { if (creatorOpen && !phone) requestClose(showAll); else showAll(); }   // on phones the Creator is hidden, the sheet goes over it
     function closeAll() { atwHost.hidden = true; if (themesBtn) themesBtn.focus({ preventScroll: true }); }
     var closeBtn = $('#tp-atw-close', atw);
     if (closeBtn) closeBtn.addEventListener('click', closeAll);
@@ -518,7 +518,9 @@
       phone = !!(phoneMq && phoneMq.matches);
       winHost.classList.toggle('tp-phone', phone);
       atwHost.classList.toggle('tp-phone', phone);
-      if (phone && creatorOpen) requestClose();   // the Theme Creator is for computers
+      // The Theme Creator is for computers: at phone width it is hidden (CSS), not closed, so changes and an open
+      // dialog are still there when the window is wide again; then it takes its place back from All Themes
+      if (!phone && creatorOpen && !atwHost.hidden) atwHost.hidden = true;
       fitPhone();
     }
     if (phoneMq) {
@@ -533,6 +535,7 @@
     var sheetNote = document.createElement('div');
     sheetNote.className = 'tp-sheet-note';
     sheetNote.textContent = 'Previews only. Create your own theme on a computer to export it.';
+    sheetNote.dir = 'auto';   // English page text inside a right to left window keeps its own direction
     var atwBody = $('.egm-atw', atw);
     if (atwBody) atwBody.appendChild(sheetNote);
     // Copy the page link (the clipboard can be refused: then the link shows as text to copy by hand)

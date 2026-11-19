@@ -1,0 +1,23 @@
+/* Theme page: the parts around the app preview. The site look comes from /apps/egm-downloader.css (shared with the
+   landing and Videos pages); the preview itself is styled inside its shadow roots by app.css and preview.css. */
+.tp-hero{padding-top:clamp(16px,3vw,40px);padding-bottom:clamp(28px,4vw,48px);display:flex;flex-direction:column;gap:22px}
+.tp-stage-wrap{max-width:1720px;margin:0 auto;padding-left:clamp(16px,4vw,40px);padding-right:clamp(16px,4vw,40px);padding-bottom:clamp(56px,7vw,104px)}
+.tp-note{margin-top:14px;font-size:14px;color:var(--mut)}
+
+/* The app window, and All Themes to its right on wide screens (the app's default sizes: 920 x 780 and 720 x 560,
+   shrinking to the app's minimums 700 and 480) */
+.tp-stage{position:relative;display:flex;align-items:flex-start;justify-content:center;gap:16px}
+.tp-host{display:block}
+.tp-host[hidden]{display:none}
+.tp-host-win{flex:0 1 920px;min-width:700px;height:780px}
+.tp-host-atw{flex:0 1 720px;min-width:480px;height:560px}
+
+/* Not enough room for both side by side: All Themes sits over the end of the window (open question for narrow desktops) */
+@media (max-width:1259px){
+  .tp-host-atw{position:absolute;top:12px;inset-inline-end:12px;width:min(560px,calc(100% - 24px));z-index:20}
+  .tp-host-win{flex-basis:100%;min-width:0}
+}
+@media (max-width:759px){
+  .tp-host-win{min-width:0;height:640px}                    /* phones get their own layout in a later step */
+}
+a.foot-brand{text-decoration:none}                          /* as on the Videos page (egm-videos.css) */

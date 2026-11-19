@@ -80,6 +80,7 @@ Disallow: /backup/
 Allow: /$
 Allow: /apps/
 Allow: /games/
+Allow: /themes/
 Allow: /403.html
 Allow: /404.html
 Allow: /500.html

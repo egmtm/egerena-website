@@ -55,6 +55,15 @@ deployment:
     - /bin/mkdir -p ${DEPLOYPATH}fonts/share-tech-mono/
     - /bin/mkdir -p ${DEPLOYPATH}fonts/vt323/
     - /bin/mkdir -p ${DEPLOYPATH}themes/
+    - /bin/mkdir -p ${DEPLOYPATH}themes/es/
+    - /bin/mkdir -p ${DEPLOYPATH}themes/de/
+    - /bin/mkdir -p ${DEPLOYPATH}themes/fr/
+    - /bin/mkdir -p ${DEPLOYPATH}themes/it/
+    - /bin/mkdir -p ${DEPLOYPATH}themes/pt/
+    - /bin/mkdir -p ${DEPLOYPATH}themes/nl/
+    - /bin/mkdir -p ${DEPLOYPATH}themes/ru/
+    - /bin/mkdir -p ${DEPLOYPATH}themes/ja/
+    - /bin/mkdir -p ${DEPLOYPATH}themes/ar/
 
     # ── Root files ──────────────────────────────────────────────
     - /bin/cp .htaccess ${DEPLOYPATH}
@@ -169,6 +178,15 @@ deployment:
     - /bin/cp themes/preview.css ${DEPLOYPATH}themes/
     - /bin/cp themes/themes.css ${DEPLOYPATH}themes/
     - /bin/cp themes/themes.js ${DEPLOYPATH}themes/
+    - /bin/cp themes/es/index.html ${DEPLOYPATH}themes/es/
+    - /bin/cp themes/de/index.html ${DEPLOYPATH}themes/de/
+    - /bin/cp themes/fr/index.html ${DEPLOYPATH}themes/fr/
+    - /bin/cp themes/it/index.html ${DEPLOYPATH}themes/it/
+    - /bin/cp themes/pt/index.html ${DEPLOYPATH}themes/pt/
+    - /bin/cp themes/nl/index.html ${DEPLOYPATH}themes/nl/
+    - /bin/cp themes/ru/index.html ${DEPLOYPATH}themes/ru/
+    - /bin/cp themes/ja/index.html ${DEPLOYPATH}themes/ja/
+    - /bin/cp themes/ar/index.html ${DEPLOYPATH}themes/ar/
 
     # ── /.well-known/ — security.txt (RFC 8615) ─────────────────
     - /bin/mkdir -p ${DEPLOYPATH}.well-known/

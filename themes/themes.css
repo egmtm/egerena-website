@@ -2,7 +2,9 @@
    landing and Videos pages); the preview itself is styled inside its shadow roots by app.css and preview.css. */
 .tp-hero{padding-top:clamp(16px,3vw,40px);padding-bottom:clamp(28px,4vw,48px);display:flex;flex-direction:column;gap:22px}
 .tp-stage-wrap{max-width:1720px;margin:0 auto;padding-left:clamp(16px,4vw,40px);padding-right:clamp(16px,4vw,40px);padding-bottom:clamp(56px,7vw,104px)}
-.tp-note{margin-top:14px;font-size:14px;color:var(--mut)}
+.tp-hero h1{text-align:center}                              /* the heading and the intro line under it, centered (the shared h1 and .lead stay left on other pages) */
+.tp-hero .lead{text-align:center;margin-inline:auto}
+.tp-note{margin-top:14px;font-size:14px;color:var(--mut);text-align:center}
 
 /* The app window, and All Themes to its right on wide screens (the app's default sizes: 920 x 780 and 720 x 560,
    shrinking to the app's minimums 700 and 480) */

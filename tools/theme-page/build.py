@@ -421,6 +421,10 @@ if n_nav != 1:
 # Language menu: each entry goes to this page in that language (/themes/ and /themes/<code>/, built by i18n/build.py)
 HDR = re.sub(r'href="/apps/((?:\w\w/)?)egm-videos\.html" hreflang', r'href="/themes/\1" hreflang', HDR)
 FTR = site_paths(FTR)
+# The Videos footer links here; this page leaves out its own link (as the Videos page does)
+FTR, n_self = re.subn(r'\s*<a class="navl" href="/themes/">Themes</a>', '', FTR)
+if n_self != 1:
+    die('could not find the Themes link in the Videos footer')
 FTR = FTR.replace('<nav class="foot-nav" aria-label="Elsewhere">', '<nav class="foot-nav" aria-label="Elsewhere">' + site_paths(VLINK.group(0)), 1)
 if 'egm-videos.html" hreflang' in HDR or 'hreflang' not in HDR:
     die('the language menu links were not rewritten')

@@ -6,7 +6,7 @@
     <meta name="description" content="EGM Downloader - Professional video downloader for Windows. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta name="keywords" content="video downloader, youtube downloader, yt-dlp, windows downloader, multi-site downloader">
     <meta name="author" content="egerena.com">
-    <meta property="og:title" content="EGM Downloader v1.5.3.2 - Professional Video Downloader">
+    <meta property="og:title" content="EGM Downloader v1.5.4.1 - Professional Video Downloader">
     <meta property="og:description" content="Professional video downloader with zero-config setup. 1000+ supported sites, smart quality selection, and concurrent downloads.">
     <meta property="og:url" content="https://egerena.com/apps/egm.html">
     <meta property="og:type" content="website">
@@ -106,14 +106,14 @@
 
         <section class="section">
             <div class="card download-card">
-                <h2 class="download-title" translate="no">EGM Downloader v1.5.3.2</h2>
+                <h2 class="download-title" translate="no">EGM Downloader v1.5.4.1</h2>
                 <a href="https://egerena.com/apps/EGMd.zip" class="download-btn">Download <span translate="no">EGM Downloader</span></a>
                 <p class="version-subtitle">Installer &middot; adds Start Menu shortcut &middot; auto-updates &middot; 122 MB &middot; ~800 MB after install</p>
-                <p class="sha256-line" translate="no">SHA256: 7297253db8884dedd34f7b6e0b17011d79792c88d509d5572452768805d82426</p>
+                <p class="sha256-line" translate="no">SHA256: 5d0c2efd2620ad47e94df4d13ecd3200c690793f339773cdd9d984059a246a89</p>
                 <div class="portable-divider"><span>or</span></div>
                 <a href="https://egerena.com/apps/EGMd-portable.zip" class="download-btn download-btn-secondary">Get the portable version</a>
-                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 716 KB &middot; ~1 GB after first run &middot; digitally signed</p>
-                <p class="sha256-line" translate="no">SHA256: 2fccde57927d9b2abe161a2895a9026200e6f5b0e458f11887b9362a4d542077</p>
+                <p class="version-subtitle">No install &middot; runs from any folder &middot; USB-friendly &middot; 724 KB &middot; ~1 GB after first run &middot; digitally signed</p>
+                <p class="sha256-line" translate="no">SHA256: 1e4a8a3c3cdabed4a726d625dc56f0f71ff36e71992ee77561a7e05fdfbf09b2</p>
         <!-- SmartScreen Disclaimer -->
         <details class="disclaimer-collapsible smartscreen-disclaimer" id="smartscreen-disclaimer">
             <summary class="disclaimer-summary">
@@ -139,51 +139,41 @@
         </details>
 
 <div class="whats-new">
-                    <p class="whats-new-heading">What's New in <span translate="no">v1.5.3.2</span> — 11/13/2026</p>
-                    <p class="polish-label" translate="no">the total package</p>
+                    <p class="whats-new-heading">What's New in <span translate="no">v1.5.4.1</span> — 11/18/2026</p>
+                    <p class="polish-label" translate="no">raw feed: reloaded</p>
                     <ul>
-                        <li>New: The installer now brings everything the app runs on: Electron, Python and its packages. You no longer need Python installed, and the first launch only downloads ffmpeg and Deno.</li>
-                        <li>Changed: Installing over version 1.5.0 or newer keeps your history, settings, ffmpeg and Deno, and removes the old program files.</li>
-                        <li>Changed: The uninstaller removes exactly what the installer put there. It asks whether to also remove the downloaded ffmpeg and Deno, and whether to also remove your data. Yes to both removes the install folder, unless it holds files you added.</li>
-                        <li>Security: The installer refuses a folder that is not empty and shows no sign of EGM Downloader, and the installer and uninstaller only remove old files in a folder where EGM Downloader is installed.</li>
-                        <li>Fixed: If antivirus blocks or removes the Python that comes with the app, a message now says so and tells you to reinstall, instead of showing an error code.</li>
-                        <li>Fixed: Every message of the installer and uninstaller is now translated in all ten languages.</li>
-                        <li>Changed: The installer needs 64 bit Windows on an Intel or AMD processor, and says so if it cannot run. Windows 11 on ARM also works through Windows' own x64 emulation, but it is not officially supported.</li>
-                        <li>Changed: The installer edition starts faster, how much depends on your computer.</li>
-                        <li>Fixed: Error messages at start up no longer open behind the splash screen.</li>
-                        <li>Security: The installer edition's program file no longer accepts the switches and variables that made it run other scripts.</li>
-                        <li>Security: The Python that comes with the app no longer reads your own Python packages or settings, so a stray file or setting there cannot change it or run code in it.</li>
-                        <li>Changed: The update check on launch now only tells you that an update exists. The update dialog shows the download size, and nothing is downloaded until you press Update Now.</li>
-                        <li>Fixed: A finished update download is kept until the update is installed, so it is not downloaded again if you cancel the installer or close the app.</li>
-                        <li>Security: The update download stops if the file is bigger than the signed update information says.</li>
-                        <li>Privacy: Spellcheck is off and the app no longer downloads a spellcheck dictionary. Deno and pip no longer look for their own updates, and What's New reads only the notes that come with the app.</li>
-                        <li>Privacy: The app no longer tells image servers which app is asking: no app name or Electron in the user agent, only the Chrome version number a browser sends, no referrer, and no early lookups of the links on screen.</li>
-                        <li>Privacy: History pictures are now fetched the way a browser would, with no cookies and no referrer, and only over HTTPS.</li>
-                        <li>Privacy: The app's own update checks and its ffmpeg and Deno downloads now identify themselves only as EGM-Downloader.</li>
-                        <li>Privacy: Clear History now also removes the debug and error logs, empties the Console and deletes leftover request files. Import History and the 500 entry limit also delete the pictures of entries that leave the list.</li>
-                        <li>Privacy: yt-dlp's challenge solver now comes with the app, and Update Plugins keeps it matched to yt-dlp, so it is normally not downloaded while you use the app.</li>
-                        <li>Fixed: Check for Updates now offers yt-dlp again when the solver package does not match it, and Update Plugins reports it if the solver could not be updated.</li>
-                        <li>Changed: The app now ignores your own yt-dlp configuration file, so options set there, like a proxy, no longer change what the app does. It also ignores your pip settings, except when it installs the yt-dlp nightly.</li>
-                        <li>Fixed: Installing yt-dlp nightly no longer fails with "empty file" when your pip cache has a damaged copy.</li>
-                        <li>Privacy: Portable: The launcher's npm no longer sends an audit or checks for a newer npm.</li>
-                        <li>New: The installer folder now includes THIRD_PARTY_NOTICES.txt, with the licenses of the libraries the app bundles.</li>
-                        <li>Electron runtime updated to v45.3.2. It no longer trusts certificates issued by eMudhra's revoked RSA intermediates.</li>
+                        <li>New: Pause and Resume for live recordings. Paused time is not recorded, and the pieces are joined into one file.</li>
+                        <li>New: Quitting during a live recording asks whether to save it, discard it, or keep the app open.</li>
+                        <li>Changed: A finished download stays on screen for a moment, then fades away. A live recording that saved with a note keeps it on screen for 15 seconds.</li>
+                        <li>Fixed: Update Plugins now ignores your pip settings and pip cache at every step, including when it builds the yt-dlp nightly.</li>
+                        <li>Fixed: The MP3 descriptions in the Audio Quality list now show in your language.</li>
+                        <li>Changed: In the quality lists, a long description gets a little smaller to stay on one line.</li>
+                        <li>New: A switch in Advanced hides the footer. The language selector keeps its own switch.</li>
+                        <li>Changed: The History, Themes and Advanced panel is a little narrower. In Advanced, the Interface switches share one row and have shorter names.</li>
+                        <li>Security: Portable: When the app has to download its own Node.js, it now downloads 24.22.3, a security release. A Node.js 22.12 or newer that is already there is kept.</li>
+                        <li>Electron runtime updated to v45.4.1, with backported ANGLE, Chromium, Dawn, FFmpeg, PDFium and V8 security fixes.</li>
                     </ul>
                     <div class="release-video">
-                        <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.3.2_16x9_music.jpg" aria-describedby="release-caption">
-                            <source src="/apps/media/egm_downloader_v1.5.3.2_16x9_music.mp4" type="video/mp4">
-                            Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.3.2_16x9_music.mp4">Open the release video as an MP4 file.</a>
+                        <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.4.1_16x9_music.jpg" aria-describedby="release-caption">
+                            <source src="/apps/media/egm_downloader_v1.5.4.1_16x9_music.mp4" type="video/mp4">
+                            Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.4.1_16x9_music.mp4">Open the release video as an MP4 file.</a>
                         </video>
-                        <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.3.2_9x16_music.jpg" aria-describedby="release-caption">
-                            <source src="/apps/media/egm_downloader_v1.5.3.2_9x16_music.mp4" type="video/mp4">
-                            Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.3.2_9x16_music.mp4">Open the release video as an MP4 file.</a>
+                        <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.4.1_9x16_music.jpg" aria-describedby="release-caption">
+                            <source src="/apps/media/egm_downloader_v1.5.4.1_9x16_music.mp4" type="video/mp4">
+                            Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.4.1_9x16_music.mp4">Open the release video as an MP4 file.</a>
                         </video>
-                        <p class="tour-caption" id="release-caption">The release in 24 seconds. It has music and plays only when you press play.</p>
+                        <p class="tour-caption" id="release-caption">The release in 28 seconds. It has music and plays only when you press play.</p>
                     </div>
                 </div>
                 <details class="history-details">
                     <summary class="history-summary">Previous Updates</summary>
                     <div class="history-content">
+                        <div class="history-item">
+                            <p class="history-version"><span translate="no">v1.5.3.2</span> — <span translate="no">THE TOTAL PACKAGE</span> — 11/13/2026</p>
+                            <ul>
+                                <li>Error messages at start up no longer opening behind the splash screen, the Python that comes with the app no longer reading your own Python packages or settings, spellcheck off with no dictionary download, Deno and pip no longer looking for their own updates, What's New reading only the notes that come with the app, image servers no longer told which app is asking, History pictures fetched the way a browser would, with no cookies, no referrer and only over HTTPS, the app's own update checks and its ffmpeg and Deno downloads identifying themselves only as EGM-Downloader, Clear History also removing the debug and error logs, emptying the Console and deleting leftover request files, Import History and the 500 entry limit also deleting the pictures of entries that leave the list, yt-dlp's challenge solver coming with the app and kept matched to yt-dlp by Update Plugins, Check for Updates offering yt-dlp again when the solver package does not match it, Update Plugins reporting it if the solver could not be updated, the app ignoring your own yt-dlp configuration file and your pip settings except when it installs the yt-dlp nightly, and the Electron runtime updated to v45.3.2, which no longer trusts certificates issued by eMudhra's revoked RSA intermediates</li>
+                            </ul>
+                        </div>
                         <div class="history-item">
                             <p class="history-version"><span translate="no">v1.5.2.3</span> — <span translate="no">SNAKE EYES PART II</span> — 11/05/2026</p>
                             <ul>

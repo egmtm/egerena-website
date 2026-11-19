@@ -1,34 +1,34 @@
 {
   "_comment": "EGM Downloader Windows Portable update feed. Upload to egerena.com/apps/egm-portable-version.json",
   "_version_notes": [
-    "New: The installer now brings everything the app runs on: Electron, Python and its packages. You no longer need Python installed, and the first launch only downloads ffmpeg and Deno.",
-    "Changed: Installing over version 1.5.0 or newer keeps your history, settings, ffmpeg and Deno, and removes the old program files.",
-    "Changed: The uninstaller removes exactly what the installer put there. It asks whether to also remove the downloaded ffmpeg and Deno, and whether to also remove your data. Yes to both removes the install folder, unless it holds files you added.",
-    "Security: The installer refuses a folder that is not empty and shows no sign of EGM Downloader, and the installer and uninstaller only remove old files in a folder where EGM Downloader is installed.",
-    "Fixed: If antivirus blocks or removes the Python that comes with the app, a message now says so and tells you to reinstall, instead of showing an error code.",
-    "Fixed: Every message of the installer and uninstaller is now translated in all ten languages.",
-    "Changed: The installer needs 64 bit Windows on an Intel or AMD processor, and says so if it cannot run. Windows 11 on ARM also works through Windows' own x64 emulation, but it is not officially supported.",
-    "Changed: The installer edition starts faster, how much depends on your computer.",
-    "Fixed: Error messages at start up no longer open behind the splash screen.",
-    "Security: The installer edition's program file no longer accepts the switches and variables that made it run other scripts.",
-    "Security: The Python that comes with the app no longer reads your own Python packages or settings, so a stray file or setting there cannot change it or run code in it.",
-    "Changed: The update check on launch now only tells you that an update exists. The update dialog shows the download size, and nothing is downloaded until you press Update Now.",
-    "Fixed: A finished update download is kept until the update is installed, so it is not downloaded again if you cancel the installer or close the app.",
-    "Security: The update download stops if the file is bigger than the signed update information says.",
-    "Privacy: Spellcheck is off and the app no longer downloads a spellcheck dictionary. Deno and pip no longer look for their own updates, and What's New reads only the notes that come with the app.",
-    "Privacy: The app no longer tells image servers which app is asking: no app name or Electron in the user agent, only the Chrome version number a browser sends, no referrer, and no early lookups of the links on screen.",
-    "Privacy: History pictures are now fetched the way a browser would, with no cookies and no referrer, and only over HTTPS.",
-    "Privacy: The app's own update checks and its ffmpeg and Deno downloads now identify themselves only as EGM-Downloader.",
-    "Privacy: Clear History now also removes the debug and error logs, empties the Console and deletes leftover request files. Import History and the 500 entry limit also delete the pictures of entries that leave the list.",
-    "Privacy: yt-dlp's challenge solver now comes with the app, and Update Plugins keeps it matched to yt-dlp, so it is normally not downloaded while you use the app.",
-    "Fixed: Check for Updates now offers yt-dlp again when the solver package does not match it, and Update Plugins reports it if the solver could not be updated.",
-    "Changed: The app now ignores your own yt-dlp configuration file, so options set there, like a proxy, no longer change what the app does. It also ignores your pip settings, except when it installs the yt-dlp nightly.",
-    "Fixed: Installing yt-dlp nightly no longer fails with \"empty file\" when your pip cache has a damaged copy.",
-    "Privacy: Portable: The launcher's npm no longer sends an audit or checks for a newer npm.",
-    "New: The installer folder now includes THIRD_PARTY_NOTICES.txt, with the licenses of the libraries the app bundles.",
-    "Electron runtime updated to v45.3.2. It no longer trusts certificates issued by eMudhra's revoked RSA intermediates."
+    "New: Pause and Resume for live recordings. Paused time is not recorded, and the pieces are joined into one file.",
+    "New: Quitting during a live recording asks whether to save it, discard it, or keep the app open.",
+    "Changed: A finished download stays on screen for a moment, then fades away. A live recording that saved with a note keeps it on screen for 15 seconds.",
+    "Fixed: Update Plugins now ignores your pip settings and pip cache at every step, including when it builds the yt-dlp nightly.",
+    "Fixed: The MP3 descriptions in the Audio Quality list now show in your language.",
+    "Changed: In the quality lists, a long description gets a little smaller to stay on one line.",
+    "New: A switch in Advanced hides the footer. The language selector keeps its own switch.",
+    "Changed: The History, Themes and Advanced panel is a little narrower. In Advanced, the Interface switches share one row and have shorter names.",
+    "Security: Portable: When the app has to download its own Node.js, it now downloads 24.22.3, a security release. A Node.js 22.12 or newer that is already there is kept.",
+    "Electron runtime updated to v45.4.1, with backported ANGLE, Chromium, Dawn, FFmpeg, PDFium and V8 security fixes."
   ],
   "_history": [
+    {
+      "version": "1.5.4.1",
+      "date": "11/18/2026",
+      "notes": [
+        "New: Pause and Resume for live recordings. Paused time is not recorded, and the pieces are joined into one file.",
+        "New: Quitting during a live recording asks whether to save it, discard it, or keep the app open.",
+        "Changed: A finished download stays on screen for a moment, then fades away. A live recording that saved with a note keeps it on screen for 15 seconds.",
+        "Fixed: Update Plugins now ignores your pip settings and pip cache at every step, including when it builds the yt-dlp nightly.",
+        "Fixed: The MP3 descriptions in the Audio Quality list now show in your language.",
+        "Changed: In the quality lists, a long description gets a little smaller to stay on one line.",
+        "New: A switch in Advanced hides the footer. The language selector keeps its own switch.",
+        "Changed: The History, Themes and Advanced panel is a little narrower. In Advanced, the Interface switches share one row and have shorter names.",
+        "Security: Portable: When the app has to download its own Node.js, it now downloads 24.22.3, a security release. A Node.js 22.12 or newer that is already there is kept.",
+        "Electron runtime updated to v45.4.1, with backported ANGLE, Chromium, Dawn, FFmpeg, PDFium and V8 security fixes."
+      ]
+    },
     {
       "version": "1.5.3.2",
       "date": "11/13/2026",
@@ -110,30 +110,19 @@
         "Fixed: 139 themes are easier to read, with clearer labels, hints, status colors and button text. Some accents, surfaces and background patterns also changed, so similar themes look different from each other and text stays clear.",
         "Electron runtime updated to v45.2.1."
       ]
-    },
-    {
-      "version": "1.5.1.0",
-      "date": "10/27/2026",
-      "notes": [
-        "Fixed: What's New now shows the notes of the version you are running, not the notes of the latest release. It also works without a connection.",
-        "Fixed: When a live recording ends on its own, the card now stays on Converting until it is saved, instead of going back to Recording for a moment.",
-        "Electron runtime updated to v45.1.0, with an updated Chromium (156.0.8078.49) and Node.js 24.22.1, a security release.",
-        "Fixed: The installer edition now starts on a newer Python when an older one comes first on your PC, instead of asking you to install Python 3.11 or newer.",
-        "Changed: When the app has to download its own Node.js, it now downloads 24.22.1, a security release. A Node.js 22.12 or newer that is already there is kept."
-      ]
     }
   ],
-  "_last_updated": "2026-11-13T15:53:36-05:00",
-  "version": "1.5.3.2",
-  "build": 177,
-  "label": "v1.5.3.2 - Build 177 - 11/13/2026 10:39 AM EST",
+  "_last_updated": "2026-11-19T00:13:56-05:00",
+  "version": "1.5.4.1",
+  "build": 178,
+  "label": "v1.5.4.1 - Build 178 - 11/18/2026 11:25 PM EST",
   "downloadUrl": "https://egerena.com/apps/EGMd-portable.zip",
   "zip": "EGMd-portable.zip",
   "_checksums": {
-    "sha256": "2fccde57927d9b2abe161a2895a9026200e6f5b0e458f11887b9362a4d542077",
+    "sha256": "1e4a8a3c3cdabed4a726d625dc56f0f71ff36e71992ee77561a7e05fdfbf09b2",
     "algorithm": "SHA-256",
     "file": "EGMd-portable.zip"
   },
-  "size_bytes": 732856,
-  "signature": "e+LFyVh3WHfCoi+EJvtW240AMeGk85dqod4cLyJOQ7f/exG1Pjjf9zDfEsEmzloBdl6w3otY1BmJ3eRV6AplAg=="
+  "size_bytes": 741319,
+  "signature": "1xpDwgzWTu1G3xCVoLWM5AURzJoYdpU4G/jP04YbmzL8z51tvYkjSKyz0C5cRrp8LdNnOmxjQbUele15XWfNBQ=="
 }

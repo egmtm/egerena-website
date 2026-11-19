@@ -151,10 +151,10 @@
         <div class="glass-card">
             <section class="section">
                 <div class="download-section">
-                <h3 translate="no">📦 EGM Downloader 1.5.3.2</h3>
+                <h3 translate="no">📦 EGM Downloader 1.5.4.1</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
                 <p class="version-subtitle" style="text-align:center;margin-top:4px">145 MB &middot; ~300 MB after install &middot; near instant startup</p>
-                <p class="sha256-line" translate="no">SHA256: 2075c7be09d2ec123aba8fb17f460c28a9a02e38db020317b81a4201fb183760</p>
+                <p class="sha256-line" translate="no">SHA256: 37ac23d36bf0e359e673511a43310043cc243d6f8e6510005159f4f60884712c</p>
 
                 <!-- Apple Notarization Trust Signal -->
                 <details class="disclaimer-collapsible apple-trust-signal" id="apple-trust-signal">
@@ -170,36 +170,38 @@
                 </details>
 
 <p class="whats-new-content">
-                    <strong>What's New in <span translate="no">1.5.3.2</span> — 11/13/2026:</strong><br>
-<em class="polish-label" translate="no">the total package</em><br><br>
-                    • Fixed: Error messages at start up no longer open behind the splash screen.<br>
-                    • Security: The Python that comes with the app no longer reads your own Python packages or settings, so a stray file or setting there cannot change it or run code in it.<br>
-                    • Privacy: Spellcheck is off and the app no longer downloads a spellcheck dictionary. Deno and pip no longer look for their own updates, and What's New reads only the notes that come with the app.<br>
-                    • Privacy: The app no longer tells image servers which app is asking: no app name or Electron in the user agent, only the Chrome version number a browser sends, no referrer, and no early lookups of the links on screen.<br>
-                    • Privacy: History pictures are now fetched the way a browser would, with no cookies and no referrer, and only over HTTPS.<br>
-                    • Privacy: The app's own update checks and its ffmpeg and Deno downloads now identify themselves only as EGM-Downloader.<br>
-                    • Privacy: Clear History now also removes the debug and error logs, empties the Console and deletes leftover request files. Import History and the 500 entry limit also delete the pictures of entries that leave the list.<br>
-                    • Privacy: yt-dlp's challenge solver now comes with the app, and Update Plugins keeps it matched to yt-dlp, so it is normally not downloaded while you use the app.<br>
-                    • Fixed: Check for Updates now offers yt-dlp again when the solver package does not match it, and Update Plugins reports it if the solver could not be updated.<br>
-                    • Changed: The app now ignores your own yt-dlp configuration file, so options set there, like a proxy, no longer change what the app does. It also ignores your pip settings, except when it installs the yt-dlp nightly.<br>
-                    • New: The app now includes THIRD_PARTY_NOTICES.txt, with the licenses of the libraries it bundles.<br>
-                    • Electron runtime updated to v45.3.2. It no longer trusts certificates issued by eMudhra's revoked RSA intermediates.
+                    <strong>What's New in <span translate="no">1.5.4.1</span> — 11/18/2026:</strong><br>
+<em class="polish-label" translate="no">raw feed: reloaded</em><br><br>
+                    • New: Pause and Resume for live recordings. Paused time is not recorded, and the pieces are joined into one file.<br>
+                    • New: Quitting during a live recording asks whether to save it, discard it, or keep the app open.<br>
+                    • Changed: A finished download stays on screen for a moment, then fades away. A live recording that saved with a note keeps it on screen for 15 seconds.<br>
+                    • Fixed: Update Plugins now ignores your pip settings and pip cache at every step, including when it builds the yt-dlp nightly.<br>
+                    • Fixed: The MP3 descriptions in the Audio Quality list now show in your language.<br>
+                    • Changed: In the quality lists, a long description gets a little smaller to stay on one line.<br>
+                    • New: A switch in Advanced hides the footer. The language selector keeps its own switch.<br>
+                    • Changed: The History, Themes and Advanced panel is a little narrower. In Advanced, the Interface switches share one row and have shorter names.<br>
+                    • Fixed: Live recordings work again. With ffmpeg 9 they stopped with "ffmpeg exited with code 251".<br>
+                    • Electron runtime updated to v45.4.1, with backported ANGLE, Chromium, Dawn, FFmpeg, PDFium and V8 security fixes.
                 </p>
                 <div class="release-video">
-                    <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.3.2_16x9_music.jpg" aria-describedby="release-caption">
-                        <source src="/apps/media/egm_downloader_v1.5.3.2_16x9_music.mp4" type="video/mp4">
-                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.3.2_16x9_music.mp4">Open the release video as an MP4 file.</a>
+                    <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.4.1_16x9_music.jpg" aria-describedby="release-caption">
+                        <source src="/apps/media/egm_downloader_v1.5.4.1_16x9_music.mp4" type="video/mp4">
+                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.4.1_16x9_music.mp4">Open the release video as an MP4 file.</a>
                     </video>
-                    <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.3.2_9x16_music.jpg" aria-describedby="release-caption">
-                        <source src="/apps/media/egm_downloader_v1.5.3.2_9x16_music.mp4" type="video/mp4">
-                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.3.2_9x16_music.mp4">Open the release video as an MP4 file.</a>
+                    <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.4.1_9x16_music.jpg" aria-describedby="release-caption">
+                        <source src="/apps/media/egm_downloader_v1.5.4.1_9x16_music.mp4" type="video/mp4">
+                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.4.1_9x16_music.mp4">Open the release video as an MP4 file.</a>
                     </video>
-                    <p class="tour-caption" id="release-caption">The release in 24 seconds. It has music and plays only when you press play.</p>
+                    <p class="tour-caption" id="release-caption">The release in 28 seconds. It has music and plays only when you press play.</p>
                 </div>
 
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>
                     <div class="history-content">
+                        <p class="history-item">
+                            <strong><span translate="no">v1.5.3.2</span> — <span translate="no">THE TOTAL PACKAGE</span> — 11/13/2026:</strong><br>
+                            • Error messages at start up no longer opening behind the splash screen, the Python that comes with the app no longer reading your own Python packages or settings, spellcheck off with no dictionary download, Deno and pip no longer looking for their own updates, What's New reading only the notes that come with the app, image servers no longer told which app is asking, History pictures fetched the way a browser would, with no cookies, no referrer and only over HTTPS, the app's own update checks and its ffmpeg and Deno downloads identifying themselves only as EGM-Downloader, Clear History also removing the debug and error logs, emptying the Console and deleting leftover request files, Import History and the 500 entry limit also deleting the pictures of entries that leave the list, yt-dlp's challenge solver coming with the app and kept matched to yt-dlp by Update Plugins, Check for Updates offering yt-dlp again when the solver package does not match it, Update Plugins reporting it if the solver could not be updated, the app ignoring your own yt-dlp configuration file and your pip settings except when it installs the yt-dlp nightly, and the Electron runtime updated to v45.3.2, which no longer trusts certificates issued by eMudhra's revoked RSA intermediates
+                        </p>
                         <p class="history-item">
                             <strong><span translate="no">v1.5.2.3</span> — <span translate="no">SNAKE EYES PART II</span> — 11/05/2026:</strong><br>
                             • Random theme on launch no longer picking a seasonal theme outside its dates, the ffmpeg message naming the buttons that exist, 7 themes with clearer accents, error colors and quiet text, the color dots in the theme lists matching the real colors of every theme, thumbnail file names in History checked the same strict way everywhere, and the Electron runtime updated to v45.2.3

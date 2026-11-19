@@ -170,7 +170,7 @@ deployment:
     - /bin/cp fonts/vt323/vt323-latin-400-normal.woff2 ${DEPLOYPATH}fonts/vt323/
     - /bin/cp fonts/vt323/vt323-latin-ext-400-normal.woff2 ${DEPLOYPATH}fonts/vt323/
 
-    # ── /themes/ — the Themes page (noindex, not linked from any page yet) ──
+    # ── /themes/ — the Themes page ──
     # tools/theme-page/ INTENTIONALLY EXCLUDED (repo only, the generator for this page)
     - /bin/cp themes/app-data.js ${DEPLOYPATH}themes/
     - /bin/cp themes/app.css ${DEPLOYPATH}themes/

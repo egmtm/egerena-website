@@ -35,9 +35,20 @@
 </section>
 
 <section class="tp-stage-wrap" aria-label="App preview">
+    <div class="tp-phone-note" id="tp-phone-note">
+        <h2>Best on a computer</h2>
+        <p>You can preview every theme here. To make your own theme, open this page on a computer.</p>
+        <button type="button" class="tp-copy" id="tp-copy">Copy link to open on your computer</button>
+        <p class="tp-copied" id="tp-copied" role="status" aria-live="polite"></p>
+    </div>
     <div class="tp-stage" id="tp-stage">
-        <div class="tp-host tp-host-win" id="tp-win-host"></div>
+        <div class="tp-scale" id="tp-scale"><div class="tp-host tp-host-win" id="tp-win-host"></div></div>
         <div class="tp-host tp-host-atw" id="tp-atw-host" hidden></div>
+    </div>
+    <div class="tp-phone-bar" id="tp-phone-bar">
+        <span class="tp-pb-sw" id="tp-pb-sw" aria-hidden="true"></span>
+        <span class="tp-pb-text"><b id="tp-pb-name">Void</b><span>Previewing</span></span>
+        <button type="button" class="tp-pb-all" id="tp-pb-all">All Themes</button>
     </div>
     <p class="tp-note">A preview of the app's layout with sample downloads. Titles, channels and pictures are made up.</p>
 </section>

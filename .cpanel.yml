@@ -84,6 +84,7 @@ deployment:
     # ── /apps/ — desktop app product pages ──────────────────────
     - /bin/cp apps/.htaccess ${DEPLOYPATH}apps/
     - /bin/cp apps/egm-theme.js ${DEPLOYPATH}apps/
+    - /bin/cp apps/egm-top.js ${DEPLOYPATH}apps/
     - /bin/cp apps/egm.css ${DEPLOYPATH}apps/
     - /bin/cp apps/egm.html ${DEPLOYPATH}apps/
     - /bin/cp apps/egm-downloader.css ${DEPLOYPATH}apps/

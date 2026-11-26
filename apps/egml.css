@@ -351,6 +351,115 @@ body {
     box-shadow: 0 0 20px var(--terminal-color);
 }
 
+/* Download boxes: the line that says who each file is for */
+.dl-for {
+    font-size: 0.875rem;
+    color: var(--terminal-dim);
+    margin: -0.75rem 0 0.5rem;
+}
+
+/* Desktop only: the three download boxes side by side. Subgrid lines up title, for line, button, SHA256 and size across the boxes.
+   Below this width the wrapper is a plain block and the boxes stack as before. */
+@media (min-width: 1200px) {
+    .download-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 1.5rem;
+        margin: 3rem 0;
+    }
+
+    .download-grid .download-section {
+        display: grid;
+        grid-row: span 5;
+        grid-template-rows: subgrid;
+        margin: 0;
+        padding: 2rem 1rem;
+    }
+
+    .download-grid .download-section h3 {
+        font-size: 1.1rem;
+        overflow-wrap: anywhere;
+    }
+
+    .download-grid .download-btn {
+        justify-self: center;
+        padding: 1rem 2rem;
+    }
+}
+
+/* Heads up note (the packages are not signed): the idea of the Windows page's SmartScreen note, in the terminal look */
+.heads-up {
+    margin: 1rem 0 2rem;
+    border: 1px solid var(--terminal-dim);
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--terminal-dim);
+    line-height: 1.6;
+}
+
+.heads-up-summary {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    cursor: pointer;
+    list-style: none;
+    color: var(--terminal-color);
+}
+
+.heads-up-summary::-webkit-details-marker {
+    display: none;
+}
+
+.heads-up-title {
+    flex: 1;
+    min-width: 0;
+}
+
+.heads-up-badge {
+    border: 1px solid var(--terminal-color);
+    padding: 0 0.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.heads-up-chevron {
+    transition: transform 0.2s;
+}
+
+.heads-up[open] .heads-up-chevron {
+    transform: rotate(90deg);
+}
+
+.heads-up-body {
+    padding: 0 1rem 1rem;
+}
+
+.heads-up-body p {
+    margin: 0.75rem 0 0;
+}
+
+.heads-up-body ul {
+    margin: 0.5rem 0 0 1.25rem;
+}
+
+.heads-up-body code,
+code.ic {
+    font: inherit;
+    color: var(--terminal-color);
+}
+
+.terminal-note a {
+    color: var(--terminal-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .heads-up-chevron {
+        transition: none;
+    }
+}
+
 /* Content Boxes */
 .whats-new-content,
 .history-content,

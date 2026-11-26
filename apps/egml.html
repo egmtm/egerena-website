@@ -20,7 +20,7 @@
     <link rel="apple-touch-icon" href="/apps/egm-icon-180.png">
     <title translate="no">EGM Downloader for Linux</title>
     <link rel="stylesheet" href="/fonts/fonts.css?v=1">
-    <link rel="stylesheet" href="egml.css?v=5">
+    <link rel="stylesheet" href="egml.css?v=6">
 </head>
 <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -172,47 +172,91 @@
 
         <!-- Download Section -->
         <section class="section">
+            <div class="download-grid">
             <div class="terminal-box download-section">
-                <h3 translate="no" aria-level="2">> EGM_DOWNLOADER_v1.5.4.1<span class="dl-ext">.AppImage</span></h3>
+                <h3 translate="no" aria-level="2">> EGM_DOWNLOADER_v1.5.5.0<span class="dl-ext">.AppImage</span></h3>
+                <p class="dl-for">Runs on most distros. No install step, no root required.</p>
                 <a href="https://egerena.com/apps/EGMdL.zip" class="download-btn">$ ### DOWNLOAD ###</a>
-                <p class="sha256-line" style="margin-top:10px" translate="no">SHA256: 2d9749b10c47f38f7f723ec3d85df6abc6797624603a78cc277a5594ebad4831</p>
+                <p class="sha256-line" style="margin-top:10px" translate="no">SHA256: 0958999e46a3b0d88b9b20922f3737bf33453a106a3994645e01811d42071c2d</p>
                 <p class="sha256-line" style="margin-top:6px;opacity:0.5">172 MB &middot; ~300 MB after first run &middot; near instant startup</p>
             </div>
+            <div class="terminal-box download-section">
+                <h3 translate="no" aria-level="2">> EGM_DOWNLOADER_v1.5.5.0<span class="dl-ext">.deb</span></h3>
+                <p class="dl-for">For 64-bit Debian, Ubuntu and distributions built on them.</p>
+                <a href="https://egerena.com/apps/EGMdL.deb" class="download-btn">$ ### DOWNLOAD ###</a>
+                <p class="sha256-line" style="margin-top:10px" translate="no">SHA256: 3f0d367f8bcfbe6f11d715ba6e02e09edbde3552d0f8e7081289cf1b0f856fe8</p>
+                <p class="sha256-line" style="margin-top:6px;opacity:0.5">138 MB</p>
+            </div>
+            <div class="terminal-box download-section">
+                <h3 translate="no" aria-level="2">> EGM_DOWNLOADER_v1.5.5.0<span class="dl-ext">.rpm</span></h3>
+                <p class="dl-for">For 64-bit Fedora 45, openSUSE Tumbleweed and openSUSE Leap 16.1.</p>
+                <a href="https://egerena.com/apps/EGMdL.rpm" class="download-btn">$ ### DOWNLOAD ###</a>
+                <p class="sha256-line" style="margin-top:10px" translate="no">SHA256: ea09947d68229362cc0768638e0877be1f16ff1d8e258c982ff2bef1fd158ae3</p>
+                <p class="sha256-line" style="margin-top:6px;opacity:0.5">123 MB</p>
+            </div>
+            </div>
+        </section>
+
+        <!-- Heads up: the packages are not signed -->
+        <section class="section">
+            <details class="heads-up" id="packages-heads-up">
+                <summary class="heads-up-summary">
+                    <span class="heads-up-icon">ⓘ</span>
+                    <span class="heads-up-title">The <span translate="no">.deb</span> and <span translate="no">.rpm</span> are not signed, so your system will warn you</span>
+                    <span class="heads-up-badge">heads up</span>
+                    <span class="heads-up-chevron">›</span>
+                </summary>
+                <div class="heads-up-body">
+                    <p>Unlike the Windows installer, the <span translate="no">.deb</span> and <span translate="no">.rpm</span> packages are not signed. When you install a package you downloaded yourself, your system will say so. This is normal for any app downloaded from its own website.</p>
+                    <p>What you may see:</p>
+                    <ul>
+                        <li>Ubuntu's App Center shows "Potentially unsafe" and asks "This package is provided by a third party and may threaten your system and personal data. Are you sure you want to install it?" It also shows "License: unknown" for any <span translate="no">.deb</span> you download.</li>
+                        <li>Fedora's GNOME Software shows "Potentially Unsafe, provided by a third party".</li>
+                        <li><span translate="no">dnf</span> says that it skipped the signature check.</li>
+                        <li><span translate="no">zypper</span> stops at an unsigned file unless you add <code translate="no">--allow-unsigned-rpm</code>, as in the install steps below.</li>
+                    </ul>
+                    <p>To check that you have the file we published, compare its SHA256 with the one on this page: <code translate="no">$ sha256sum EGMdL.deb</code> or <code translate="no">$ sha256sum EGMdL.rpm</code>. If they match, you have the same file we published.</p>
+                </div>
+            </details>
         </section>
 
         <!-- What's New Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> WHAT'S NEW IN <span translate="no">v1.5.4.1</span></div>
+                <div class="section-header">> WHAT'S NEW IN <span translate="no">v1.5.5.0</span></div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
-                <div class="whats-new-subtitle"><span translate="no">v1.5.4.1</span> — 11/18/2026</div>
+                <div class="whats-new-subtitle"><span translate="no">v1.5.5.0</span> — 11/26/2026</div>
                 <p class="terminal-command" translate="no">$ changelog --latest</p>
-                <div class="polish-label" translate="no">// raw feed: reloaded</div>
+                <div class="polish-label" translate="no">// sudo, please</div>
                 <ul>
-                    <li>New: Pause and Resume for live recordings. Paused time is not recorded, and the pieces are joined into one file.</li>
-                    <li>New: Quitting during a live recording asks whether to save it, discard it, or keep the app open.</li>
-                    <li>Changed: A finished download stays on screen for a moment, then fades away. A live recording that saved with a note keeps it on screen for 15 seconds.</li>
-                    <li>Fixed: Update Plugins now ignores your pip settings and pip cache at every step, including when it builds the yt-dlp nightly.</li>
-                    <li>Fixed: The MP3 descriptions in the Audio Quality list now show in your language.</li>
-                    <li>Changed: In the quality lists, a long description gets a little smaller to stay on one line.</li>
-                    <li>New: A switch in Advanced hides the footer. The language selector keeps its own switch.</li>
-                    <li>Changed: The History, Themes and Advanced panel is a little narrower. In Advanced, the Interface switches share one row and have shorter names.</li>
-                    <li>Electron runtime updated to v45.4.1, with backported ANGLE, Chromium, Dawn, FFmpeg, PDFium and V8 security fixes.</li>
+                    <li>New: EGM Downloader is now also offered as a .deb package for 64 bit Debian, Ubuntu and distributions built on them. It needs no libfuse2 and shares your settings and history with the AppImage.</li>
+                    <li>New: EGM Downloader is now also offered as an .rpm package for 64 bit Fedora and openSUSE. It needs no FUSE and shares your settings and history with the AppImage and the .deb.</li>
+                    <li>Security: The .deb and .rpm packages run the app's interface in Chromium's sandbox, as the other platforms do. The AppImage keeps running without it, as before.</li>
+                    <li>New: MP4 · H.265 video output, under MP4 · H.264 in the Video list. A video that is already H.265 is kept as it is; any other video is converted after the download, on a supported GPU when there is one. Without one the conversion is slow, so it is not recommended.</li>
+                    <li>Fixed: Upscale now works on videos recorded with a rotation, like many phone videos, which it skipped without a word.</li>
+                    <li>Fixed: A direct link to a video file no longer keeps showing Fetching quality. It has no quality choices and is downloaded in your chosen format.</li>
+                    <li>Updated: yt-dlp 2026.11.23 now comes with the app.</li>
+                    <li>Updated to Electron version 45.5.0.</li>
                 </ul>
                 <div class="release-video">
-                    <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.4.1_16x9_music.jpg" aria-describedby="release-caption">
-                        <source src="/apps/media/egm_downloader_v1.5.4.1_16x9_music.mp4" type="video/mp4">
-                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.4.1_16x9_music.mp4">Open the release video as an MP4 file.</a>
+                    <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.5.0_16x9_music.jpg" aria-describedby="release-caption">
+                        <source src="/apps/media/egm_downloader_v1.5.5.0_16x9_music.mp4" type="video/mp4">
+                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.5.0_16x9_music.mp4">Open the release video as an MP4 file.</a>
                     </video>
-                    <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.4.1_9x16_music.jpg" aria-describedby="release-caption">
-                        <source src="/apps/media/egm_downloader_v1.5.4.1_9x16_music.mp4" type="video/mp4">
-                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.4.1_9x16_music.mp4">Open the release video as an MP4 file.</a>
+                    <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.5.0_9x16_music.jpg" aria-describedby="release-caption">
+                        <source src="/apps/media/egm_downloader_v1.5.5.0_9x16_music.mp4" type="video/mp4">
+                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.5.0_9x16_music.mp4">Open the release video as an MP4 file.</a>
                     </video>
-                    <p class="tour-caption" id="release-caption">The release in 28 seconds. It has music and plays only when you press play.</p>
+                    <p class="tour-caption" id="release-caption">The release in 32 seconds. It has music and plays only when you press play.</p>
                 </div>
                 <details class="history-details">
                     <summary class="history-summary" translate="no">$ changelog --show-all</summary>
                     <div class="history-content">
+                        <div class="whats-new-subtitle history-version"><span translate="no">v1.5.4.1</span> — <span translate="no">RAW FEED: RELOADED</span> — 11/18/2026</div>
+                        <ul>
+                            <li>Pause and Resume for live recordings, with the paused time left out and the pieces joined into one file, a question when you quit during a live recording asking whether to save it, discard it or keep the app open, a finished download staying on screen for a moment and then fading away, with a live recording that saved with a note kept on screen for 15 seconds, Update Plugins ignoring your pip settings and pip cache at every step, including when it builds the yt-dlp nightly, the MP3 descriptions in the Audio Quality list showing in your language, a long description in the quality lists getting a little smaller to stay on one line, a switch in Advanced that hides the footer, with the language selector keeping its own switch, a slightly narrower History, Themes and Advanced panel, with the Interface switches in Advanced sharing one row and having shorter names, and the Electron runtime updated to v45.4.1, with backported ANGLE, Chromium, Dawn, FFmpeg, PDFium and V8 security fixes</li>
+                        </ul>
+
                         <div class="whats-new-subtitle history-version"><span translate="no">v1.5.3.2</span> — <span translate="no">THE TOTAL PACKAGE</span> — 11/13/2026</div>
                         <ul>
                             <li>Error messages at start up no longer opening behind the splash screen, the Python that comes with the app no longer reading your own Python packages or settings, spellcheck off with no dictionary download, Deno and pip no longer looking for their own updates, What's New reading only the notes that come with the app, image servers no longer told which app is asking, History pictures fetched the way a browser would, with no cookies, no referrer and only over HTTPS, the app's own update checks and its ffmpeg and Deno downloads identifying themselves only as EGM-Downloader, Clear History also removing the debug and error logs, emptying the Console and deleting leftover request files, Import History and the 500 entry limit also deleting the pictures of entries that leave the list, yt-dlp's challenge solver coming with the app and kept matched to yt-dlp by Update Plugins, Check for Updates offering yt-dlp again when the solver package does not match it, Update Plugins reporting it if the solver could not be updated, the app ignoring your own yt-dlp configuration file and your pip settings except when it installs the yt-dlp nightly, and the Electron runtime updated to v45.3.2, which no longer trusts certificates issued by eMudhra's revoked RSA intermediates</li>
@@ -582,7 +626,7 @@
         <!-- Installation Section -->
         <section class="section">
             <div class="terminal-box">
-                <div class="section-header">> INSTALLATION</div>
+                <div class="section-header">> INSTALLATION: APPIMAGE</div>
                 <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
                 <p class="terminal-command" translate="no">$ cd ~/Downloads</p>
                 <p class="terminal-command" translate="no">$ unzip EGMdL.zip && chmod +x "EGM Downloader.AppImage" && ./"EGM Downloader.AppImage"</p>
@@ -595,6 +639,77 @@
                 <div class="terminal-note">
                     <strong>[!] <span translate="no">FUSE</span> error?</strong> Install libfuse2:<br>
                     <code translate="no">$ sudo apt install libfuse2</code>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="terminal-box">
+                <div class="section-header">> INSTALLATION: .DEB (DEBIAN, UBUNTU AND RELATIVES)</div>
+                <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
+                <p class="terminal-command" translate="no">$ cd ~/Downloads</p>
+                <p class="terminal-command" translate="no">$ sudo apt install ./EGMdL.deb</p>
+                <div class="terminal-note">
+                    <strong>[!] Updating?</strong> Close EGM Downloader first. The new file installs over the old one.
+                </div>
+                <div class="terminal-note">
+                    <strong>[!] Then open it:</strong><br>
+                    <code translate="no">$ egm-downloader</code><br>
+                    Or choose "EGM Downloader" in your applications menu.
+                </div>
+                <div class="terminal-note">
+                    <strong>[!] Doesn't open?</strong><br>
+                    <code translate="no">$ egm-downloader --no-sandbox</code><br>
+                    Start it from a terminal without Chromium's sandbox, and <a href="https://github.com/egmtm/EGM-Downloader" target="_blank" rel="noopener noreferrer">let us know</a>. Or use the AppImage instead.
+                </div>
+                <div class="terminal-note">
+                    <strong>[!] Same settings:</strong> The <span translate="no">.deb</span> needs no <span translate="no">libfuse2</span>. It uses the same settings and history folder as the <span translate="no">AppImage</span>, so you can move from one to the other and keep everything.
+                </div>
+                <div class="terminal-note">
+                    <strong>[!] To remove it:</strong><br>
+                    <code translate="no">$ sudo apt remove egm-downloader</code><br>
+                    Removing the package leaves your settings and history in place.
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="terminal-box">
+                <div class="section-header">> INSTALLATION: .RPM (FEDORA AND OPENSUSE)</div>
+                <div class="section-divider">─────────────────────────────────────────────────────────────────────</div>
+                <p class="terminal-command" translate="no">$ cd ~/Downloads</p>
+                <div class="terminal-note">
+                    <strong>[!] On Fedora:</strong><br>
+                    <code translate="no">$ sudo dnf install ./EGMdL.rpm</code>
+                </div>
+                <div class="terminal-note">
+                    <strong>[!] On openSUSE:</strong><br>
+                    <code translate="no">$ sudo zypper install --allow-unsigned-rpm ./EGMdL.rpm</code>
+                </div>
+                <div class="terminal-note">
+                    <strong>[!] Not signed:</strong> <span translate="no">dnf</span> says that it skipped the signature check. <span translate="no">zypper</span> stops at an unsigned file unless <code class="ic" translate="no">--allow-unsigned-rpm</code> is given. Check the file against the SHA256 on this page before installing.
+                </div>
+                <div class="terminal-note">
+                    <strong>[!] Updating?</strong> Close EGM Downloader first. The new file installs over the old one.
+                </div>
+                <div class="terminal-note">
+                    <strong>[!] Then open it:</strong><br>
+                    <code translate="no">$ egm-downloader</code><br>
+                    Or choose "EGM Downloader" in your applications menu.
+                </div>
+                <div class="terminal-note">
+                    <strong>[!] Doesn't open?</strong><br>
+                    <code translate="no">$ egm-downloader --no-sandbox</code><br>
+                    Start it from a terminal without Chromium's sandbox, and <a href="https://github.com/egmtm/EGM-Downloader" target="_blank" rel="noopener noreferrer">let us know</a>. Or use the AppImage instead.
+                </div>
+                <div class="terminal-note">
+                    <strong>[!] Same settings:</strong> The <span translate="no">.rpm</span> needs no <span translate="no">FUSE</span>. It uses the same settings and history folder as the <span translate="no">AppImage</span>, so you can move from one to the other and keep everything.
+                </div>
+                <div class="terminal-note">
+                    <strong>[!] To remove it on Fedora:</strong><br>
+                    <code translate="no">$ sudo dnf remove egm-downloader</code><br>
+                    On openSUSE: <code translate="no">$ sudo zypper remove egm-downloader</code><br>
+                    Removing the package leaves your settings and history in place.
                 </div>
             </div>
         </section>

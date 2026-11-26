@@ -151,10 +151,10 @@
         <div class="glass-card">
             <section class="section">
                 <div class="download-section">
-                <h3 translate="no">📦 EGM Downloader 1.5.4.1</h3>
+                <h3 translate="no">📦 EGM Downloader 1.5.5.0</h3>
                 <a href="https://egerena.com/apps/EGMdM.zip" class="download-btn">Download</a>
                 <p class="version-subtitle" style="text-align:center;margin-top:4px">145 MB &middot; ~300 MB after install &middot; near instant startup</p>
-                <p class="sha256-line" translate="no">SHA256: 37ac23d36bf0e359e673511a43310043cc243d6f8e6510005159f4f60884712c</p>
+                <p class="sha256-line" translate="no">SHA256: 757e411467cc69153fca42fcb683bd7419a3eff2868dce5323a1a8d60e22034d</p>
 
                 <!-- Apple Notarization Trust Signal -->
                 <details class="disclaimer-collapsible apple-trust-signal" id="apple-trust-signal">
@@ -170,34 +170,33 @@
                 </details>
 
 <p class="whats-new-content">
-                    <strong>What's New in <span translate="no">1.5.4.1</span> — 11/18/2026:</strong><br>
-<em class="polish-label" translate="no">raw feed: reloaded</em><br><br>
-                    • New: Pause and Resume for live recordings. Paused time is not recorded, and the pieces are joined into one file.<br>
-                    • New: Quitting during a live recording asks whether to save it, discard it, or keep the app open.<br>
-                    • Changed: A finished download stays on screen for a moment, then fades away. A live recording that saved with a note keeps it on screen for 15 seconds.<br>
-                    • Fixed: Update Plugins now ignores your pip settings and pip cache at every step, including when it builds the yt-dlp nightly.<br>
-                    • Fixed: The MP3 descriptions in the Audio Quality list now show in your language.<br>
-                    • Changed: In the quality lists, a long description gets a little smaller to stay on one line.<br>
-                    • New: A switch in Advanced hides the footer. The language selector keeps its own switch.<br>
-                    • Changed: The History, Themes and Advanced panel is a little narrower. In Advanced, the Interface switches share one row and have shorter names.<br>
-                    • Fixed: Live recordings work again. With ffmpeg 9 they stopped with "ffmpeg exited with code 251".<br>
-                    • Electron runtime updated to v45.4.1, with backported ANGLE, Chromium, Dawn, FFmpeg, PDFium and V8 security fixes.
+                    <strong>What's New in <span translate="no">1.5.5.0</span> — 11/26/2026:</strong><br>
+<em class="polish-label" translate="no">sudo, please</em><br><br>
+                    • New: MP4 · H.265 video output, under MP4 · H.264 in the Video list. A video that is already H.265 is kept as it is; any other video is converted after the download, on a supported GPU when there is one. Without one the conversion is slow, so it is not recommended.<br>
+                    • Fixed: Upscale now works on videos recorded with a rotation, like many phone videos, which it skipped without a word.<br>
+                    • Fixed: A direct link to a video file no longer keeps showing Fetching quality. It has no quality choices and is downloaded in your chosen format.<br>
+                    • Updated: yt-dlp 2026.11.23 now comes with the app.<br>
+                    • Updated to Electron version 45.5.0.
                 </p>
                 <div class="release-video">
-                    <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.4.1_16x9_music.jpg" aria-describedby="release-caption">
-                        <source src="/apps/media/egm_downloader_v1.5.4.1_16x9_music.mp4" type="video/mp4">
-                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.4.1_16x9_music.mp4">Open the release video as an MP4 file.</a>
+                    <video class="tour-video tour-wide" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.5.0_16x9_music.jpg" aria-describedby="release-caption">
+                        <source src="/apps/media/egm_downloader_v1.5.5.0_16x9_music.mp4" type="video/mp4">
+                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.5.0_16x9_music.mp4">Open the release video as an MP4 file.</a>
                     </video>
-                    <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.4.1_9x16_music.jpg" aria-describedby="release-caption">
-                        <source src="/apps/media/egm_downloader_v1.5.4.1_9x16_music.mp4" type="video/mp4">
-                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.4.1_9x16_music.mp4">Open the release video as an MP4 file.</a>
+                    <video class="tour-video tour-tall" controls preload="none" playsinline poster="/apps/media/egm_downloader_v1.5.5.0_9x16_music.jpg" aria-describedby="release-caption">
+                        <source src="/apps/media/egm_downloader_v1.5.5.0_9x16_music.mp4" type="video/mp4">
+                        Your browser can't play this video. <a href="/apps/media/egm_downloader_v1.5.5.0_9x16_music.mp4">Open the release video as an MP4 file.</a>
                     </video>
-                    <p class="tour-caption" id="release-caption">The release in 28 seconds. It has music and plays only when you press play.</p>
+                    <p class="tour-caption" id="release-caption">The release in 32 seconds. It has music and plays only when you press play.</p>
                 </div>
 
                 <details class="history-details">
                     <summary class="history-summary">▼ Previous Updates</summary>
                     <div class="history-content">
+                        <p class="history-item">
+                            <strong><span translate="no">v1.5.4.1</span> — <span translate="no">RAW FEED: RELOADED</span> — 11/18/2026:</strong><br>
+                            • Pause and Resume for live recordings, with the paused time left out and the pieces joined into one file, a question when you quit during a live recording asking whether to save it, discard it or keep the app open, a finished download staying on screen for a moment and then fading away, with a live recording that saved with a note kept on screen for 15 seconds, Update Plugins ignoring your pip settings and pip cache at every step, including when it builds the yt-dlp nightly, the MP3 descriptions in the Audio Quality list showing in your language, a long description in the quality lists getting a little smaller to stay on one line, a switch in Advanced that hides the footer, with the language selector keeping its own switch, a slightly narrower History, Themes and Advanced panel, with the Interface switches in Advanced sharing one row and having shorter names, and the Electron runtime updated to v45.4.1, with backported ANGLE, Chromium, Dawn, FFmpeg, PDFium and V8 security fixes
+                        </p>
                         <p class="history-item">
                             <strong><span translate="no">v1.5.3.2</span> — <span translate="no">THE TOTAL PACKAGE</span> — 11/13/2026:</strong><br>
                             • Error messages at start up no longer opening behind the splash screen, the Python that comes with the app no longer reading your own Python packages or settings, spellcheck off with no dictionary download, Deno and pip no longer looking for their own updates, What's New reading only the notes that come with the app, image servers no longer told which app is asking, History pictures fetched the way a browser would, with no cookies, no referrer and only over HTTPS, the app's own update checks and its ffmpeg and Deno downloads identifying themselves only as EGM-Downloader, Clear History also removing the debug and error logs, emptying the Console and deleting leftover request files, Import History and the 500 entry limit also deleting the pictures of entries that leave the list, yt-dlp's challenge solver coming with the app and kept matched to yt-dlp by Update Plugins, Check for Updates offering yt-dlp again when the solver package does not match it, Update Plugins reporting it if the solver could not be updated, the app ignoring your own yt-dlp configuration file and your pip settings except when it installs the yt-dlp nightly, and the Electron runtime updated to v45.3.2, which no longer trusts certificates issued by eMudhra's revoked RSA intermediates
